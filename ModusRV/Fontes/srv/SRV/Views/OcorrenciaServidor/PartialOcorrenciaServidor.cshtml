@@ -1,0 +1,82 @@
+﻿@model SRV.Models.DTO.CadastroOcorrenciaServidor
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btSalvar");                                                                                                                                                                                               
+        @Html.ToolbarItemLink(true, "Index", "FuncaoOcorrenciaServidor", null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <table class="tableForm">
+            
+            @if (ViewBag.IsEdit)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(model => model.OcorrenciaServidor.IdOcorrenciaServidor)</td>
+                    <td>@Html.DisplayFor(model => model.OcorrenciaServidor.IdOcorrenciaServidor)<br/>
+                        @Html.HiddenFor(model => model.OcorrenciaServidor.IdOcorrenciaServidor, new { id = "IdOcorrenciaServidor" })
+                    </td>
+                </tr>
+            }
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.OcorrenciaServidor.Servidor.IdServidor)</td>
+                <td>@Html.DisplayTextFor(m => m.OcorrenciaServidor.Servidor.IdServidor)<br/>
+                    @Html.HiddenFor(m => m.OcorrenciaServidor.Servidor.IdServidor, new { id = "idServidor" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.OcorrenciaServidor.Servidor.DesNomeServidor)</td>
+                <td>@Html.DisplayTextFor(m => m.OcorrenciaServidor.Servidor.DesNomeServidor)<br/>
+                    @Html.HiddenFor(m => m.OcorrenciaServidor.Servidor.DesNomeServidor, new { id = "nomeServidor" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(model => model.OcorrenciaServidor.DataInicioOcorrencia)</td>
+                <td>
+                    @Html.TextBoxFor(model => model.OcorrenciaServidor.DataInicioOcorrencia, new { style = "width: 80px", @class = "date" })
+                    @Html.ValidationMessageFor(model => model.OcorrenciaServidor.DataInicioOcorrencia)
+                </td>
+            </tr>
+            <tr>
+                <td class="labelRight">@Html.LabelFor(model => model.OcorrenciaServidor.DataFimOcorrencia)</td>
+                <td>
+                    @Html.TextBoxFor(model => model.OcorrenciaServidor.DataFimOcorrencia, new { style = "width: 80px", @class = "date" })
+                    @Html.ValidationMessageFor(model => model.OcorrenciaServidor.DataFimOcorrencia)
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.OcorrenciaServidor.Ocorrencia)</td>
+                <td>
+                    @Html.DropDownListFor(m => m.OcorrenciaServidor.Ocorrencia.IdOcorrencia, (IEnumerable<SelectListItem>)Model.Ocorrencias ?? new List<SelectListItem>(), "", new { id = "IdOcorrencia", style = "width:250px;" })<br/>                        
+                    @Html.ValidationMessageFor(m => m.OcorrenciaServidor.Ocorrencia.IdOcorrencia)
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(model => model.OcorrenciaServidor.Recurso)</td>
+                <td>
+                    @Html.TextAreaFor(model => model.OcorrenciaServidor.Recurso, new { style = "width:250px;" })
+                    @Html.ValidationMessageFor(model => model.OcorrenciaServidor.Recurso)
+                </td>
+            </tr>
+
+        </table>
+    </div>
+}
+
+

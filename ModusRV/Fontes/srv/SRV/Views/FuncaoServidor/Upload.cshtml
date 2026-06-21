@@ -1,0 +1,85 @@
+﻿@model IList<SRV.Models.Domain.ArquivoImportacao>
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm("Upload", "FuncaoServidor", FormMethod.Post, new { enctype = "multipart/form-data", id = "frmUpload" }))
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemJS(true, "openFormatoArquivo", new { id = "formatoArquivo" }, "btFormatoArquivo")
+        @Html.ToolbarItemLink(true, "Upload", null, null, "btAtualizar")
+        @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+    
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+
+        <div >
+            <label class="labelRight">Enviar novo arquivo</label>
+            <input id="fileUpload" type="file" name="fileUpload" size="50" />
+            <a href="#" id="enviarArquivo">Enviar arquivo</a>
+        </div>
+
+        <br/>
+        <div class="labelTitulo">Arquivos</div>
+
+        @Html.Grid(Model).Columns(column =>
+   {
+       column.For(c => c.StatusImportacao != SRV.Models.Domain.StatusImportacao.Concluido ? Html.ActionLink(" ", "Import", new { id = @c.IdArquivoImportacao }, new { @class = "icoLinkImport", onclick = "openWaiting()" }) : null).Named("Importar").Attributes(width => "60px", align => "center").HeaderAttributes(width => "60px", align => "center").Encode(false);
+       column.For(c => c.StatusImportacao != SRV.Models.Domain.StatusImportacao.Concluido ? Html.ActionLink(" ", "", null, new { href = "#", @class = "icoLinkDelete", onclick = "deleteItemAndRedirect(this, '" + @Url.Action("DeleteImport", "FuncaoServidor") + "', '" + @Url.Action("Upload", "FuncaoServidor") + "', " + @c.IdArquivoImportacao + ")" }) : null).Named("Excluir").Attributes(width => "45px", align => "center").HeaderAttributes(width => "45px", align => "center").Encode(false);
+       column.For(c => c.DesArquivoOriginal).Named("Arquivo").Attributes(width => "100%").HeaderAttributes(width => "100%");
+       column.For(c => c.NmLinhas).Named("Qtd. linhas").Attributes(width => "80px", align => "right").HeaderAttributes(width => "80px");
+       column.For(c => c.DtUpload).Named("Data do envio").Attributes(width => "130px").HeaderAttributes(width => "130px");
+       column.For(c => c.StatusImportacao.ToDescription()).Named("Status").Attributes(width => "130px").HeaderAttributes(width => "130px");
+       column.For(c => c.StatusImportacao == SRV.Models.Domain.StatusImportacao.Falha ? @Html.ActionLink(" ", "", null, new { href = "#", @class = "icoLinkOpen", onclick = "openDetalheStatus(" + c.IdArquivoImportacao + ")" }) : @Html.Label("-")).Named("Log").Attributes(width => "40px", align => "center").HeaderAttributes(width => "40px");
+
+   }).Empty("Nenhum registro encontrado")
+
+    </div>  
+    
+}
+
+<script type="text/javascript">
+
+    $(function () {
+        
+        $('#enviarArquivo').button();
+
+        $('#enviarArquivo').click(function () {
+
+            $('#frmUpload').submit();
+        });
+
+        $('#formatoArquivo').click(function () {
+
+            openFormatoArquivo();
+        });
+
+    });
+
+    function openFormatoArquivo() {
+
+        var dlg = $("#modalFormatoArquivo").dialog({
+            title: 'Formato do Arquivo',
+            height: 'auto',
+            width: 750,
+            position: ['center', 120],
+            modal: true,
+            resizable: false,
+            open: function () {
+                $(this).load('@Url.Action("FormatoArquivo", "FuncaoServidor")');
+            },
+            beforeClose: function (event, ui) {
+                $('#modalFormatoArquivo').empty();
+            }
+        });
+
+    }
+
+</script>

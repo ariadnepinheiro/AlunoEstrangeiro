@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="boxContent">
+
+    <p>As colunas do arquivo de importação devem ser obrigatoriamente separadas por ponto-e-vírgula.</p>
+
+    <p>Os campos decimais devem utilizar a vírgula (,) como separador.</p>
+
+    <table class="grid">
+        
+        @* Cabeçalho *@
+        <thead>
+            <tr>
+                <th width="50px">Coluna</th>
+                <th width="200px">Campo</th>
+                <th width="100%">Descrição</th>
+                <th width="120px">Tamanho Máximo</th> 
+            </tr>
+        </thead>
+
+        @* Corpo *@
+        <tbody>
+            <tr class="gridrow">        
+                <td width="50px">1</td>
+                <td width="200px">COD_UNIDADE_ADMINISTRATIVA</td>
+                <td width="100%">Código da Unidade Administrativa</td>
+                <td width="120px">6</td>
+            </tr>
+
+            <tr class="gridrow_alternate">
+                <td width="50px">2</td>
+                <td width="200px">NM_PERC_CURRICULO_MINIMO</td>
+                <td width="100%">Percentual de Currículo Mínimo</td>
+                <td width="120px">5,2</td>
+            </tr>
+
+            <tr class="gridrow">        
+                <td width="50px">3</td>
+                <td width="200px">NM_PERC_LANCAMENTO_NOTA</td>
+                <td width="100%">Percentual de Lançamento de Notas</td>
+                <td width="120px">5,2</td>
+            </tr>
+
+            <tr class="gridrow_alternate">
+                <td width="50px">4</td>
+                <td width="200px">NM_NOTA_IGE (Opcional)</td>
+                <td width="100%">Nota IGE</td>
+                <td width="120px">5,2</td>
+            </tr>
+        </tbody>
+    </table>      
+</div>

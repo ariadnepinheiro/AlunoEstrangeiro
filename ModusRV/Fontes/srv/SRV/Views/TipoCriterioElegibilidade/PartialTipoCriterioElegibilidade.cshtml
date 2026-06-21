@@ -1,0 +1,106 @@
+﻿@model SRV.Models.DTO.CadastroTipoCriterioElegibilidade
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(true, "Create", null, null, "btNovo");
+        @Html.ToolbarItemSubmit(true, "btSalvar");
+        
+        if (Model.TipoCriterioElegibilidade.IdTipoCriterioElegibilidade != null)
+        {
+            @Html.ToolbarItemJS(true, "deleteItemAndRedirectLocal(this, '" + @Url.Action("Delete", "TipoCriterioElegibilidade") + "', '" + @Url.Action("Create", "TipoCriterioElegibilidade") + "', " + @Model.TipoCriterioElegibilidade.IdTipoCriterioElegibilidade + ", " + @Model.TipoCriterioElegibilidade.AnoReferencia.IdAnoReferencia + ", " + @Model.TipoCriterioElegibilidade.TipoUnidadeAdministrativa.IdTipoUnidAdm + ")", null, "btExcluir");
+        }
+                                                                                                                                                                                                
+        @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <table class="tableForm">
+            @if (ViewBag.IsEdit)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.TipoCriterioElegibilidade.IdTipoCriterioElegibilidade)</td>
+                    <td>@Html.DisplayTextFor(m => m.TipoCriterioElegibilidade.IdTipoCriterioElegibilidade)<br/>
+                        @Html.HiddenFor(m => m.TipoCriterioElegibilidade.IdTipoCriterioElegibilidade, new { id = "IdTipoCriterioElegibilidade" })
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.TipoCriterioElegibilidade.TipoUnidadeAdministrativa)</td>
+                    <td>@Html.DisplayTextFor(m => m.TipoCriterioElegibilidade.TipoUnidadeAdministrativa.DesTipoUnidAdm)
+                        @Html.HiddenFor(m => m.TipoCriterioElegibilidade.TipoUnidadeAdministrativa.IdTipoUnidAdm, new { id = "IdTipoUnidAdm" })
+                        @Html.HiddenFor(m => m.TipoCriterioElegibilidade.TipoUnidadeAdministrativa.DesTipoUnidAdm)
+                    </td>
+                </tr>
+            }
+            else
+            {                   
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.TipoCriterioElegibilidade.TipoUnidadeAdministrativa)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.TipoCriterioElegibilidade.TipoUnidadeAdministrativa.IdTipoUnidAdm, (IEnumerable<SelectListItem>)Model.TiposUnidadeAdministrativa ?? new List<SelectListItem>(), "", new { id = "IdTipoUnidAdm", style = "width:250px;" })<br/>                        
+                        @Html.ValidationMessageFor(m => m.TipoCriterioElegibilidade.TipoUnidadeAdministrativa.IdTipoUnidAdm)
+                    </td>
+                </tr>
+            }
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.TipoCriterioElegibilidade.DesTipoCriterioElegibilidade)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.TipoCriterioElegibilidade.DesTipoCriterioElegibilidade, new { style = "width:450px;", maxlength = 200 })<br/>
+                    @Html.ValidationMessageFor(m => m.TipoCriterioElegibilidade.DesTipoCriterioElegibilidade)
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.TipoCriterioElegibilidade.ValorCriterio)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.TipoCriterioElegibilidade.ValorCriterio, new { id = "ValorCriterio", style = "width:80px; text-align:right;", maxlength = 6 })<br/>
+                    @Html.ValidationMessageFor(m => m.TipoCriterioElegibilidade.ValorCriterio)
+                </td>
+            </tr>
+
+        </table>
+    </div>
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $("#ValorCriterio").maskMoney({ thousands: '', decimal: ',', precision: 2, allowZero: true, allowNegative: false, defaultZero: false });
+    })
+
+    function deleteItemAndRedirectLocal(element, url, urlRedirect, id, seq1, seq2) {
+
+        if (confirm("Confirma exclusão do registro?")) {
+
+            $.ajax({ url: url,
+                type: 'post',
+                data: { id: id, seq1: seq1, seq2: seq2 },
+                success: function (data) {
+                    alert(data.Result);
+                    window.location.href = urlRedirect;
+                },
+                error: function (xhr, status, error) {
+                    if (xhr.status != 403) {
+                        $(".boxInfo").remove();
+                        $(".validation-summary-errors").remove();
+                        $(".boxContent").prepend("<div class='validation-summary-errors'><ul><li>" + xhr.responseText + "</li></ul></div>");
+                    }
+                }
+            });
+        }
+    };
+
+</script>

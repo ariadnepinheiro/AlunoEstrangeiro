@@ -1,0 +1,65 @@
+﻿.style2
+{
+	width: 693px;
+}
+.style3
+{
+	height: 14px;
+}
+.style8
+{
+	height: 18px;
+}
+.style9
+{
+	width: 54px;
+	height: 18px;
+}
+.style10
+{
+	width: 20px;
+	height: 18px;
+}
+.style11
+{
+	width: 185px;
+	height: 18px;
+}
+.style12
+{
+	width: 4px;
+}
+.style13
+{
+	height: 18px;
+	width: 188px;
+}
+.style14
+{
+	width: 188px;
+}
+
+@media screen
+{
+	.div-assinatura
+	{
+		display: none;
+	}
+
+	.noPrint
+	{
+		display: block;
+	}
+}
+
+@media print
+{
+	.div-assinatura
+	{
+		display: block;
+	}
+	.noPrint
+	{
+		display: none;
+	}
+}

@@ -1,0 +1,808 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{544B0A06-CEF4-44D3-8337-AC99EBCFFE67}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Techne.Lyceum.Net</RootNamespace>
+    <AssemblyName>PortalBiblioteca</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v9.2, Version=9.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\DevExpress.Data.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxEditors.v9.2, Version=9.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\DevExpress.Web.ASPxEditors.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v9.2, Version=9.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\DevExpress.Web.ASPxGridView.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxTreeList.v9.2, Version=9.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\DevExpress.Web.ASPxTreeList.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v9.2, Version=9.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\DevExpress.Web.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="HadesLycCR, Version=1.0.4283.38154, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\HadesLycCR.dll</HintPath>
+    </Reference>
+    <Reference Include="LyceumCR, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\LyceumCR.dll</HintPath>
+    </Reference>
+    <Reference Include="Seeduc.Infra, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\Seeduc.Infra.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="Techne.Lyceum.Control, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\Techne.Lyceum.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="Techne.Lyceum.Infra, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\Techne.Lyceum.Infra.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Biblioteca\Inicial.aspx.cs">
+      <DependentUpon>Inicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Biblioteca\Inicial.aspx.designer.cs">
+      <DependentUpon>Inicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Biblioteca\Inicial.help.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Biblioteca\Pesquisa.aspx.cs">
+      <DependentUpon>Pesquisa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Biblioteca\Pesquisa.aspx.designer.cs">
+      <DependentUpon>Pesquisa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Biblioteca\Pesquisa.help.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Biblioteca\PesquisaAvancada.aspx.cs">
+      <DependentUpon>PesquisaAvancada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Biblioteca\PesquisaAvancada.aspx.designer.cs">
+      <DependentUpon>PesquisaAvancada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Biblioteca\PesquisaAvancada.help.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Biblioteca\ReservaMaterial.aspx.cs">
+      <DependentUpon>ReservaMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Biblioteca\ReservaMaterial.aspx.designer.cs">
+      <DependentUpon>ReservaMaterial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Biblioteca\ReservaMaterial.help.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Biblioteca\Sugestoes.aspx.cs">
+      <DependentUpon>Sugestoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Biblioteca\Sugestoes.aspx.designer.cs">
+      <DependentUpon>Sugestoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Biblioteca\Sugestoes.help.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Manutencao\403.aspx.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manutencao\403.aspx.designer.cs">
+      <DependentUpon>403.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manutencao\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manutencao\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manutencao\Manutencao.aspx.cs">
+      <DependentUpon>Manutencao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manutencao\Manutencao.aspx.designer.cs">
+      <DependentUpon>Manutencao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\PublicMaster.Master.cs">
+      <DependentUpon>PublicMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\PublicMaster.Master.designer.cs">
+      <DependentUpon>PublicMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage\PublicMaster.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Blue\ASPxGridView.skin" />
+    <Content Include="App_Themes\Blue\Editors\edtButtonBack.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtButtonBackDis.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtButtonBackHover.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtButtonBackPressed.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtCalendarFNNextYear.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtCalendarFNPrevYear.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtCalendarHeadBack.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtCalendarNextMonth.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtCalendarNextMonthDisabled.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtCalendarNextYear.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtCalendarNextYearDisabled.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtCalendarPrevMonth.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtCalendarPrevMonthDisabled.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtCalendarPrevYear.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtCalendarPrevYearDisabled.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtDropDown.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtDropDownDisabled.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtEllipsis.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtEllipsisDisabled.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtError.png" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinDecBtnBack.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinEditDecrementImage.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinEditDecrementImageDisabled.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinEditIncrementImage.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinEditIncrementImageDisabled.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinEditLargeDecImage.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinEditLargeDecImageDisabled.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinEditLargeIncImage.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinEditLargeIncImageDisabled.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinIncBtnBack.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinIncBtnHBack.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinIncBtnPBack.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinLargeIncBtnBack.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinLargeIncBtnHBack.gif" />
+    <Content Include="App_Themes\Blue\Editors\edtSpinLargeIncBtnPBack.gif" />
+    <Content Include="App_Themes\Blue\Editors\fcadd.png" />
+    <Content Include="App_Themes\Blue\Editors\fcaddhot.png" />
+    <Content Include="App_Themes\Blue\Editors\fcgroupaddcondition.png" />
+    <Content Include="App_Themes\Blue\Editors\fcgroupaddgroup.png" />
+    <Content Include="App_Themes\Blue\Editors\fcgroupand.png" />
+    <Content Include="App_Themes\Blue\Editors\fcgroupnotand.png" />
+    <Content Include="App_Themes\Blue\Editors\fcgroupnotor.png" />
+    <Content Include="App_Themes\Blue\Editors\fcgroupor.png" />
+    <Content Include="App_Themes\Blue\Editors\fcgroupremove.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopany.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopbegin.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopbetween.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopblank.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopcontain.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopend.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopequal.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopgreater.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopgreaterorequal.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopless.png" />
+    <Content Include="App_Themes\Blue\Editors\fcoplessorequal.png" />
+    <Content Include="App_Themes\Blue\Editors\fcoplike.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopnotany.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopnotbetween.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopnotblank.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopnotcontain.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopnotequal.png" />
+    <Content Include="App_Themes\Blue\Editors\fcopnotlike.png" />
+    <Content Include="App_Themes\Blue\Editors\fcremove.png" />
+    <Content Include="App_Themes\Blue\Editors\fcremovehot.png" />
+    <Content Include="App_Themes\Blue\Editors\Loading.gif" />
+    <Content Include="App_Themes\Blue\Editors\styles.css" />
+    <Content Include="App_Themes\Blue\GridView\bas_bk.gif" />
+    <Content Include="App_Themes\Blue\GridView\bas_ct.gif" />
+    <Content Include="App_Themes\Blue\GridView\bas_dv.gif" />
+    <Content Include="App_Themes\Blue\GridView\bas_l.gif" />
+    <Content Include="App_Themes\Blue\GridView\bas_r.gif" />
+    <Content Include="App_Themes\Blue\GridView\bt_cancelar.png" />
+    <Content Include="App_Themes\Blue\GridView\bt_editar.png" />
+    <Content Include="App_Themes\Blue\GridView\bt_excluir.png" />
+    <Content Include="App_Themes\Blue\GridView\bt_novo.png" />
+    <Content Include="App_Themes\Blue\GridView\bt_pasta.png" />
+    <Content Include="App_Themes\Blue\GridView\bt_salvar.png" />
+    <Content Include="App_Themes\Blue\GridView\ctd_back.png" />
+    <Content Include="App_Themes\Blue\GridView\ctd_fine.png" />
+    <Content Include="App_Themes\Blue\GridView\ctd_next.png" />
+    <Content Include="App_Themes\Blue\GridView\ctd_preview.png" />
+    <Content Include="App_Themes\Blue\GridView\ct_back.png" />
+    <Content Include="App_Themes\Blue\GridView\ct_fine.png" />
+    <Content Include="App_Themes\Blue\GridView\ct_next.png" />
+    <Content Include="App_Themes\Blue\GridView\ct_preview.png" />
+    <Content Include="App_Themes\Blue\GridView\foo_bk.gif" />
+    <Content Include="App_Themes\Blue\GridView\foo_bk2.gif" />
+    <Content Include="App_Themes\Blue\GridView\foo_l.gif" />
+    <Content Include="App_Themes\Blue\GridView\foo_r.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvCollapsedButton.png" />
+    <Content Include="App_Themes\Blue\GridView\gvDragAndDropArrowDown.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvDragAndDropArrowUp.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvDragAndDropHideColumn.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvExpandedButton.png" />
+    <Content Include="App_Themes\Blue\GridView\gvFilterRowButton.png" />
+    <Content Include="App_Themes\Blue\GridView\gvFocusedBack.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvGradient.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvHeaderFilter.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvHeaderFilterActive.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvHeaderSortDown.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvHeaderSortUp.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvLoadingOnStatusBar.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvParentGroupRows.gif" />
+    <Content Include="App_Themes\Blue\GridView\gvTitleBack.gif" />
+    <Content Include="App_Themes\Blue\GridView\ico_grid.png" />
+    <Content Include="App_Themes\Blue\GridView\lab_bk.gif" />
+    <Content Include="App_Themes\Blue\GridView\lab_r.gif" />
+    <Content Include="App_Themes\Blue\GridView\Loading.gif" />
+    <Content Include="App_Themes\Blue\GridView\mid_l.gif" />
+    <Content Include="App_Themes\Blue\GridView\mid_r.gif" />
+    <Content Include="App_Themes\Blue\GridView\sel.png" />
+    <Content Include="App_Themes\Blue\GridView\styles.css" />
+    <Content Include="App_Themes\Blue\GridView\top_bk.gif" />
+    <Content Include="App_Themes\Blue\GridView\top_ct.gif" />
+    <Content Include="App_Themes\Blue\GridView\top_dv.gif" />
+    <Content Include="App_Themes\Blue\GridView\top_l.gif" />
+    <Content Include="App_Themes\Blue\GridView\top_r.gif" />
+    <Content Include="App_Themes\Blue\GridView\ts-ct_back.png" />
+    <Content Include="App_Themes\Blue\GridView\ts-ct_fine.png" />
+    <Content Include="App_Themes\Blue\GridView\ts-ct_next.png" />
+    <Content Include="App_Themes\Blue\GridView\ts-ct_preview.png" />
+    <Content Include="App_Themes\Blue\GridView\WindowResizer.gif" />
+    <Content Include="App_Themes\Blue\Web\hlTail.gif" />
+    <Content Include="App_Themes\Blue\Web\Loading.gif" />
+    <Content Include="App_Themes\Blue\Web\mHorizontalPopOut.gif" />
+    <Content Include="App_Themes\Blue\Web\mItemBack.gif" />
+    <Content Include="App_Themes\Blue\Web\mItemHBack.gif" />
+    <Content Include="App_Themes\Blue\Web\mItemSBack.gif" />
+    <Content Include="App_Themes\Blue\Web\mItemSeparatorBack.gif" />
+    <Content Include="App_Themes\Blue\Web\mItemVerticalSeparatorBack.gif" />
+    <Content Include="App_Themes\Blue\Web\mPopupBack.gif" />
+    <Content Include="App_Themes\Blue\Web\mPopupHBack.gif" />
+    <Content Include="App_Themes\Blue\Web\mPopupSeparatorBack.gif" />
+    <Content Include="App_Themes\Blue\Web\mSubMenuItem.gif" />
+    <Content Include="App_Themes\Blue\Web\mSubMenuItemChecked.gif" />
+    <Content Include="App_Themes\Blue\Web\mVerticalPopOut.gif" />
+    <Content Include="App_Themes\Blue\Web\nbBack.gif" />
+    <Content Include="App_Themes\Blue\Web\nbCollapse.png" />
+    <Content Include="App_Themes\Blue\Web\nbExpand.png" />
+    <Content Include="App_Themes\Blue\Web\nbGroupBack.gif" />
+    <Content Include="App_Themes\Blue\Web\nbGroupHeaderBack.gif" />
+    <Content Include="App_Themes\Blue\Web\nbHBack.gif" />
+    <Content Include="App_Themes\Blue\Web\nbSBack.gif" />
+    <Content Include="App_Themes\Blue\Web\pAll.png" />
+    <Content Include="App_Themes\Blue\Web\pAllDisabled.png" />
+    <Content Include="App_Themes\Blue\Web\pcCloseButton.png" />
+    <Content Include="App_Themes\Blue\Web\pcHeaderBack.gif" />
+    <Content Include="App_Themes\Blue\Web\pcModalBack.gif" />
+    <Content Include="App_Themes\Blue\Web\pcSizeGrip.png" />
+    <Content Include="App_Themes\Blue\Web\pFirst.png" />
+    <Content Include="App_Themes\Blue\Web\pFirstDisabled.png" />
+    <Content Include="App_Themes\Blue\Web\pLast.png" />
+    <Content Include="App_Themes\Blue\Web\pLastDisabled.png" />
+    <Content Include="App_Themes\Blue\Web\pNext.png" />
+    <Content Include="App_Themes\Blue\Web\pNextDisabled.png" />
+    <Content Include="App_Themes\Blue\Web\pPrev.png" />
+    <Content Include="App_Themes\Blue\Web\pPrevDisabled.png" />
+    <Content Include="App_Themes\Blue\Web\rpBottomLeftCorner.png" />
+    <Content Include="App_Themes\Blue\Web\rpBottomRightCorner.png" />
+    <Content Include="App_Themes\Blue\Web\rpHeader.png" />
+    <Content Include="App_Themes\Blue\Web\rpNoHeaderTopLeftCorner.png" />
+    <Content Include="App_Themes\Blue\Web\rpNoHeaderTopRightCorner.png" />
+    <Content Include="App_Themes\Blue\Web\rpTopEdge.png" />
+    <Content Include="App_Themes\Blue\Web\rpTopLeftCorner.png" />
+    <Content Include="App_Themes\Blue\Web\rpTopRightCorner.png" />
+    <Content Include="App_Themes\Blue\Web\smBack.gif" />
+    <Content Include="App_Themes\Blue\Web\smFirstLevelBack.gif" />
+    <Content Include="App_Themes\Blue\Web\smSecondLevelBullet.gif" />
+    <Content Include="App_Themes\Blue\Web\styles.css" />
+    <Content Include="App_Themes\Blue\Web\tcBack.gif" />
+    <Content Include="App_Themes\Blue\Web\tcTabABack.gif" />
+    <Content Include="App_Themes\Blue\Web\tcTabAHBack.gif" />
+    <Content Include="App_Themes\Blue\Web\tcTabBack.gif" />
+    <Content Include="App_Themes\Blue\Web\tcTabHBack.gif" />
+    <Content Include="App_Themes\Blue\Web\tiBackToTop.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\AlertaMens.gif" />
+    <Content Include="Images\Andamento.gif" />
+    <Content Include="Images\Andamento1.gif" />
+    <Content Include="Images\AvalInstit.gif" />
+    <Content Include="Images\b.gif" />
+    <Content Include="Images\bk_bas-inf.gif" />
+    <Content Include="Images\bk_bas.gif" />
+    <Content Include="Images\bk_bot-h.jpg" />
+    <Content Include="Images\bk_bot.jpg" />
+    <Content Include="Images\bk_top-inf.gif" />
+    <Content Include="Images\bk_top.gif" />
+    <Content Include="Images\bot_buscar-d.png" />
+    <Content Include="Images\bot_buscar.png" />
+    <Content Include="Images\bot_cancelar.png" />
+    <Content Include="Images\bot_confirmar.png" />
+    <Content Include="Images\bot_copiar.png" />
+    <Content Include="Images\bot_desabil.png" />
+    <Content Include="Images\bot_entrar.png" />
+    <Content Include="Images\bot_fechar.png" />
+    <Content Include="Images\bot_fecharnotas.png" />
+    <Content Include="Images\bot_foto.png" />
+    <Content Include="Images\bot_fotografar.png" />
+    <Content Include="Images\bot_imprimir.png" />
+    <Content Include="Images\bot_limpar.png" />
+    <Content Include="Images\bot_marcar.png" />
+    <Content Include="Images\bot_marcarup.png" />
+    <Content Include="Images\bot_transferir.png" />
+    <Content Include="Images\branco.gif" />
+    <Content Include="Images\bt_drop.gif" />
+    <Content Include="Images\bt_drop.png" />
+    <Content Include="Images\bt_foto.png" />
+    <Content Include="Images\bt_sair.png" />
+    <Content Include="Images\bt_salvar.png" />
+    <Content Include="Images\bt_search.gif" />
+    <Content Include="Images\Cancel.gif" />
+    <Content Include="Images\Cancelar.gif" />
+    <Content Include="Images\CarteirinhaFrente.jpg" />
+    <Content Include="Images\CarteirinhaVerso.jpg" />
+    <Content Include="Images\Carteirinha_Sepi_frente.jpg" />
+    <Content Include="Images\Carteririnha_pos_Frente.gif" />
+    <Content Include="Images\Carteririnha_pos_verso.gif" />
+    <Content Include="Images\CheckOff.gif" />
+    <Content Include="Images\CheckOn.gif" />
+    <Content Include="Images\Confirmar.gif" />
+    <Content Include="Images\corte.gif" />
+    <Content Include="Images\EditButtonsCancel.gif" />
+    <Content Include="Images\EditButtonsCancel.png" />
+    <Content Include="Images\EditButtonsCancelFocus.gif" />
+    <Content Include="Images\EditButtonsDelete.gif" />
+    <Content Include="Images\EditButtonsDelete.png" />
+    <Content Include="Images\EditButtonsDeleteFocus.gif" />
+    <Content Include="Images\EditButtonsEdit.gif" />
+    <Content Include="Images\EditButtonsEdit.png" />
+    <Content Include="Images\EditButtonsEditFocus.gif" />
+    <Content Include="Images\EditButtonsHistory.gif" />
+    <Content Include="Images\EditButtonsNew.gif" />
+    <Content Include="Images\EditButtonsNew.png" />
+    <Content Include="Images\EditButtonsNewFocus.gif" />
+    <Content Include="Images\EditButtonsOK.gif" />
+    <Content Include="Images\EditButtonsOk.png" />
+    <Content Include="Images\EditButtonsOKFocus.gif" />
+    <Content Include="Images\EditButtonsPrinters.gif" />
+    <Content Include="Images\EditButtonsPrintersFocus.gif" />
+    <Content Include="Images\EditButtonsReturn.gif" />
+    <Content Include="Images\EditButtonsReturn.png" />
+    <Content Include="Images\EditButtonsReturnFocus.gif" />
+    <Content Include="Images\EditButtonsUndelete.gif" />
+    <Content Include="Images\EditButtonsUndeleteFocus.gif" />
+    <Content Include="Images\Entrar.gif" />
+    <Content Include="Images\esfera.gif" />
+    <Content Include="Images\fndbar.gif" />
+    <Content Include="Images\fnd_login.gif" />
+    <Content Include="Images\fnd_top.gif" />
+    <Content Include="Images\fotoinvalida.jpg" />
+    <Content Include="Images\four.gif" />
+    <Content Include="Images\Gerar_Acordo.gif" />
+    <Content Include="Images\Gerar_Carteirinha.gif" />
+    <Content Include="Images\GridButtonsMultipleDoc.gif" />
+    <Content Include="Images\GridButtonsMultipleDocFocus.gif" />
+    <Content Include="Images\GridButtonsSingleDoc.gif" />
+    <Content Include="Images\GridButtonsSingleDocFocus.gif" />
+    <Content Include="Images\help.gif" />
+    <Content Include="Images\icon03.gif" />
+    <Content Include="Images\icon04.gif" />
+    <Content Include="Images\icon09.gif" />
+    <Content Include="Images\icon10.gif" />
+    <Content Include="Images\icon13.gif" />
+    <Content Include="Images\icon_15.gif" />
+    <Content Include="Images\icon_50.gif" />
+    <Content Include="Images\icon_51.gif" />
+    <Content Include="Images\icon_52.gif" />
+    <Content Include="Images\icon_academico.gif" />
+    <Content Include="Images\icon_alunos.gif" />
+    <Content Include="Images\icon_financeiro.gif" />
+    <Content Include="Images\icon_unidades.gif" />
+    <Content Include="Images\ico_imprime.png" />
+    <Content Include="Images\ico_info.png" />
+    <Content Include="Images\ico_inicio.png" />
+    <Content Include="Images\ico_logoff.png" />
+    <Content Include="Images\ico_mail.png" />
+    <Content Include="Images\ico_suporte.png" />
+    <Content Include="Images\ico_voltar.png" />
+    <Content Include="Images\img_interrog.png" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\logoff.gif" />
+    <Content Include="Images\logo_CEG.png" />
+    <Content Include="Images\Logo_Gov-RJ.jpg" />
+    <Content Include="Images\Logo_Lyceum.gif" />
+    <Content Include="Images\Logo_Lyceum_n.gif" />
+    <Content Include="Images\lyceum_diagrama.jpg" />
+    <Content Include="Images\mntop_b.gif" />
+    <Content Include="Images\mntop_l.gif" />
+    <Content Include="Images\mntop_r.gif" />
+    <Content Include="Images\Ok.gif" />
+    <Content Include="Images\one.gif" />
+    <Content Include="Images\p.gif" />
+    <Content Include="Images\Proc.gif" />
+    <Content Include="Images\sel.png" />
+    <Content Include="Images\select_list.gif" />
+    <Content Include="Images\semfoto.jpg" />
+    <Content Include="Images\smallcancel.png" />
+    <Content Include="Images\smallconfirmar.png" />
+    <Content Include="Images\smalldelete.png" />
+    <Content Include="Images\smalledit.png" />
+    <Content Include="Images\smallnew.png" />
+    <Content Include="Images\smallok.png" />
+    <Content Include="Images\spacer.gif" />
+    <Content Include="Images\SuaEscola.gif" />
+    <Content Include="Images\SuaInstituicao.gif" />
+    <Content Include="Images\tabdefacad.gif" />
+    <Content Include="Images\tabdefAcademico.gif" />
+    <Content Include="Images\tabdefconfig.gif" />
+    <Content Include="Images\tabdefFinanceiro.gif" />
+    <Content Include="Images\tabdefGestor.gif" />
+    <Content Include="Images\tabdefPainelGestor.gif" />
+    <Content Include="Images\tabselacad.gif" />
+    <Content Include="Images\tabselAcademico.gif" />
+    <Content Include="Images\tabselconfig.gif" />
+    <Content Include="Images\tabselgestor.gif" />
+    <Content Include="Images\tabselPainelGestor.gif" />
+    <Content Include="Images\tab_Financeiro.gif" />
+    <Content Include="Images\tab_Lyceum.png" />
+    <Content Include="Images\TDataGridChecked.gif" />
+    <Content Include="Images\TDataGridError.gif" />
+    <Content Include="Images\TDataGridMarkColumn.gif" />
+    <Content Include="Images\TDataGridNoSort.gif" />
+    <Content Include="Images\TDataGridSortAsc.gif" />
+    <Content Include="Images\TDataGridSortDesc.gif" />
+    <Content Include="Images\TDataGridUnchecked.gif" />
+    <Content Include="Images\TDateBoxButton.gif" />
+    <Content Include="Images\techneicon.gif" />
+    <Content Include="Images\three.gif" />
+    <Content Include="Images\tit_acad.png" />
+    <Content Include="Images\tit_acesso.png" />
+    <Content Include="Images\tit_admin.png" />
+    <Content Include="Images\tit_alunos.png" />
+    <Content Include="Images\tit_bi.png" />
+    <Content Include="Images\tit_bibli.png" />
+    <Content Include="Images\tit_bibliadm.png" />
+    <Content Include="Images\tit_biblicad.png" />
+    <Content Include="Images\tit_biblicat.png" />
+    <Content Include="Images\tit_bibliportal.png" />
+    <Content Include="Images\tit_config.png" />
+    <Content Include="Images\tit_contrattemp.png" />
+    <Content Include="Images\tit_critaval.png" />
+    <Content Include="Images\tit_curric.png" />
+    <Content Include="Images\tit_doc-rel.png" />
+    <Content Include="Images\tit_ensino.png" />
+    <Content Include="Images\tit_financa.png" />
+    <Content Include="Images\tit_func.png" />
+    <Content Include="Images\tit_horarios.png" />
+    <Content Include="Images\tit_movi.png" />
+    <Content Include="Images\tit_nolist.png" />
+    <Content Include="Images\tit_notas.png" />
+    <Content Include="Images\tit_pessoas.png" />
+    <Content Include="Images\tit_process.png" />
+    <Content Include="Images\tit_rede.png" />
+    <Content Include="Images\tit_solservicos.png" />
+    <Content Include="Images\tit_verba.png" />
+    <Content Include="Images\topbox_r1_c1.gif" />
+    <Content Include="Images\topbox_r1_c2.gif" />
+    <Content Include="Images\topbox_r1_c3.gif" />
+    <Content Include="Images\topbox_r2_c1.gif" />
+    <Content Include="Images\topbox_r2_c2.gif" />
+    <Content Include="Images\topbox_r2_c3.gif" />
+    <Content Include="Images\topbox_r2_c4.gif" />
+    <Content Include="Images\topbox_r3_c1.gif" />
+    <Content Include="Images\topbox_r3_c2.gif" />
+    <Content Include="Images\topbox_r3_c3.gif" />
+    <Content Include="Images\TSearchFind.png" />
+    <Content Include="Images\two.gif" />
+    <Content Include="Images\unip.JPG" />
+    <Content Include="Images\_semfoto.jpg" />
+    <Content Include="img\bk_bas.gif" />
+    <Content Include="img\bk_deg.jpg" />
+    <Content Include="img\bk_ftext.gif" />
+    <Content Include="img\bk_top-cont.gif" />
+    <Content Include="img\bk_top.gif" />
+    <Content Include="img\bt_acessar.gif" />
+    <Content Include="img\bt_busca.png" />
+    <Content Include="img\bt_cancelar.png" />
+    <Content Include="img\bt_copiar.png" />
+    <Content Include="img\bt_editar.png" />
+    <Content Include="img\bt_exclui2.png" />
+    <Content Include="img\bt_filtro.jpg" />
+    <Content Include="img\bt_limpa.png" />
+    <Content Include="img\bt_limpa2.png" />
+    <Content Include="img\bt_novo.png" />
+    <Content Include="img\bt_salvar.png" />
+    <Content Include="img\bt_search.gif" />
+    <Content Include="img\ico_altera.gif" />
+    <Content Include="img\ico_atention.gif" />
+    <Content Include="img\ico_back.gif" />
+    <Content Include="img\ico_cancel.gif" />
+    <Content Include="img\ico_clear.gif" />
+    <Content Include="img\ico_close.gif" />
+    <Content Include="img\ico_edit.gif" />
+    <Content Include="img\ico_exclui.gif" />
+    <Content Include="img\ico_help.gif" />
+    <Content Include="img\ico_home.gif" />
+    <Content Include="img\ico_hora.gif" />
+    <Content Include="img\ico_mail.gif" />
+    <Content Include="img\ico_mark-flag.png" />
+    <Content Include="img\ico_mark-flag_shad.png" />
+    <Content Include="img\ico_mark-shad.png" />
+    <Content Include="img\ico_mark.png" />
+    <Content Include="img\ico_novo.gif" />
+    <Content Include="img\indicator.gif" />
+    <Content Include="img\log_bk.gif" />
+    <Content Include="img\log_liceum.gif" />
+    <Content Include="img\log_techne.gif" />
+    <Content Include="img\mn_bk.gif" />
+    <Content Include="img\mn_sep.gif" />
+    <Content Include="img\tech.ico" />
+    <Content Include="LyceumNet.css" />
+    <Content Include="LyceumNetWeb.css" />
+    <Content Include="Scripts\FormEditor.js" />
+    <Content Include="Scripts\Help.js" />
+    <Content Include="Scripts\jquery.jqGrid.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.2.2.min.js" />
+    <Content Include="Scripts\js\grid.base.js" />
+    <Content Include="Scripts\js\grid.celledit.js" />
+    <Content Include="Scripts\js\grid.common.js" />
+    <Content Include="Scripts\js\grid.custom.js" />
+    <Content Include="Scripts\js\grid.formedit.js" />
+    <Content Include="Scripts\js\grid.import.js" />
+    <Content Include="Scripts\js\grid.inlinedit.js" />
+    <Content Include="Scripts\js\grid.locale-bg.js" />
+    <Content Include="Scripts\js\grid.locale-bg1251.js" />
+    <Content Include="Scripts\js\grid.locale-cat.js" />
+    <Content Include="Scripts\js\grid.locale-cs.js" />
+    <Content Include="Scripts\js\grid.locale-de.js" />
+    <Content Include="Scripts\js\grid.locale-dk.js" />
+    <Content Include="Scripts\js\grid.locale-el.js" />
+    <Content Include="Scripts\js\grid.locale-en.js" />
+    <Content Include="Scripts\js\grid.locale-fa.js" />
+    <Content Include="Scripts\js\grid.locale-fi.js" />
+    <Content Include="Scripts\js\grid.locale-fr.js" />
+    <Content Include="Scripts\js\grid.locale-is.js" />
+    <Content Include="Scripts\js\grid.locale-it.js" />
+    <Content Include="Scripts\js\grid.locale-jp.js" />
+    <Content Include="Scripts\js\grid.locale-pl.js" />
+    <Content Include="Scripts\js\grid.locale-pt-br.js" />
+    <Content Include="Scripts\js\grid.locale-pt.js" />
+    <Content Include="Scripts\js\grid.locale-ru.js" />
+    <Content Include="Scripts\js\grid.locale-sp.js" />
+    <Content Include="Scripts\js\grid.locale-sv.js" />
+    <Content Include="Scripts\js\grid.locale-tr.js" />
+    <Content Include="Scripts\js\grid.postext.js" />
+    <Content Include="Scripts\js\grid.setcolumns.js" />
+    <Content Include="Scripts\js\grid.subgrid.js" />
+    <Content Include="Scripts\js\grid.tbltogrid.js" />
+    <Content Include="Scripts\js\grid.treegrid.js" />
+    <Content Include="Scripts\js\jqDnR.js" />
+    <Content Include="Scripts\js\jqModal.js" />
+    <Content Include="Scripts\js\jquery.fmatter.js" />
+    <Content Include="Scripts\js\jquery.tablednd.js" />
+    <Content Include="Scripts\js\json2.js" />
+    <Content Include="Scripts\js\JsonXml.js" />
+    <Content Include="Scripts\js\min\grid.base-min.js" />
+    <Content Include="Scripts\js\min\grid.celledit-min.js" />
+    <Content Include="Scripts\js\min\grid.common-min.js" />
+    <Content Include="Scripts\js\min\grid.custom-min.js" />
+    <Content Include="Scripts\js\min\grid.formedit-min.js" />
+    <Content Include="Scripts\js\min\grid.import-min.js" />
+    <Content Include="Scripts\js\min\grid.inlinedit-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-bg-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-bg1251-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-cat-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-cs-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-de-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-dk-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-el-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-en-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-fi-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-fr-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-is-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-it-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-jp-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-pl-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-pt-br-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-pt-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-ru-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-sp-min.js" />
+    <Content Include="Scripts\js\min\grid.locale-tr-min.js" />
+    <Content Include="Scripts\js\min\grid.postext-min.js" />
+    <Content Include="Scripts\js\min\grid.setcolumns-min.js" />
+    <Content Include="Scripts\js\min\grid.subgrid-min.js" />
+    <Content Include="Scripts\js\min\grid.tbltogrid-min.js" />
+    <Content Include="Scripts\js\min\grid.treegrid-min.js" />
+    <Content Include="Scripts\js\min\jqDnR-min.js" />
+    <Content Include="Scripts\js\min\jqModal-min.js" />
+    <Content Include="Scripts\js\min\jquery.fmatter-min.js" />
+    <Content Include="Scripts\js\min\jquery.tablednd-min.js" />
+    <Content Include="Scripts\js\min\json2-min.js" />
+    <Content Include="Scripts\js\min\JsonXml-min.js" />
+    <Content Include="Scripts\MaskTypes.js" />
+    <Content Include="Scripts\NovosScripts.js" />
+    <Content Include="Scripts\Numeric.js" />
+    <Content Include="Scripts\TControl.js" />
+    <Content Include="Scripts\TDateBox.js" />
+    <Content Include="Scripts\themes\basic\grid.css" />
+    <Content Include="Scripts\themes\basic\images\cd_run.gif" />
+    <Content Include="Scripts\themes\basic\images\dirty.gif" />
+    <Content Include="Scripts\themes\basic\images\down.gif" />
+    <Content Include="Scripts\themes\basic\images\find.gif" />
+    <Content Include="Scripts\themes\basic\images\first.gif" />
+    <Content Include="Scripts\themes\basic\images\folder.png" />
+    <Content Include="Scripts\themes\basic\images\grid-blue-ft.gif" />
+    <Content Include="Scripts\themes\basic\images\grid-blue-hd.gif" />
+    <Content Include="Scripts\themes\basic\images\headerbg.gif" />
+    <Content Include="Scripts\themes\basic\images\headerleft.gif" />
+    <Content Include="Scripts\themes\basic\images\headerright.gif" />
+    <Content Include="Scripts\themes\basic\images\ico-close.gif" />
+    <Content Include="Scripts\themes\basic\images\last.gif" />
+    <Content Include="Scripts\themes\basic\images\line3.gif" />
+    <Content Include="Scripts\themes\basic\images\loading.gif" />
+    <Content Include="Scripts\themes\basic\images\minus.gif" />
+    <Content Include="Scripts\themes\basic\images\next.gif" />
+    <Content Include="Scripts\themes\basic\images\nochild.gif" />
+    <Content Include="Scripts\themes\basic\images\off-first.gif" />
+    <Content Include="Scripts\themes\basic\images\off-last.gif" />
+    <Content Include="Scripts\themes\basic\images\off-next.gif" />
+    <Content Include="Scripts\themes\basic\images\off-prev.gif" />
+    <Content Include="Scripts\themes\basic\images\plus.gif" />
+    <Content Include="Scripts\themes\basic\images\prev.gif" />
+    <Content Include="Scripts\themes\basic\images\refresh.gif" />
+    <Content Include="Scripts\themes\basic\images\resize.gif" />
+    <Content Include="Scripts\themes\basic\images\row_add.gif" />
+    <Content Include="Scripts\themes\basic\images\row_delete.gif" />
+    <Content Include="Scripts\themes\basic\images\row_edit.gif" />
+    <Content Include="Scripts\themes\basic\images\sort_asc.gif" />
+    <Content Include="Scripts\themes\basic\images\sort_desc.gif" />
+    <Content Include="Scripts\themes\basic\images\spacer.gif" />
+    <Content Include="Scripts\themes\basic\images\tab_close-on.gif" />
+    <Content Include="Scripts\themes\basic\images\tree_leaf.gif" />
+    <Content Include="Scripts\themes\basic\images\tree_minus.gif" />
+    <Content Include="Scripts\themes\basic\images\tree_plus.gif" />
+    <Content Include="Scripts\themes\basic\images\up.gif" />
+    <Content Include="Scripts\themes\jqModal.css" />
+    <Content Include="Scripts\TMenuWeb.js" />
+    <Content Include="Scripts\TPage.js" />
+    <Content Include="Scripts\TPageLyceum.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Themes\Blue\Editors\Thumbs.db" />
+    <None Include="App_Themes\Blue\GridView\Thumbs.db" />
+    <None Include="App_Themes\Blue\Web\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\LyceumGovRN\Fontes\LyceumRN\LyceumRN.csproj">
+      <Project>{58B5A0E4-BB70-46C6-A104-C86E181A6A7D}</Project>
+      <Name>LyceumRN</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="App_GlobalResources\DevExpress_Web_ASPxGridView_v9_2.resx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Biblioteca\Inicial.aspx" />
+    <Content Include="Biblioteca\Pesquisa.aspx" />
+    <Content Include="Biblioteca\PesquisaAvancada.aspx" />
+    <Content Include="Biblioteca\ReservaMaterial.aspx" />
+    <Content Include="Biblioteca\Sugestoes.aspx" />
+    <Content Include="Images\abertura.jpg" />
+    <Content Include="Images\bt_acesse.png" />
+    <Content Include="Manutencao\403.aspx" />
+    <Content Include="Manutencao\403.htm" />
+    <Content Include="Manutencao\404.aspx" />
+    <Content Include="Manutencao\404.htm" />
+    <Content Include="Manutencao\Manutencao.aspx" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Seguranca\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62849</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/PortalBiblioteca</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,150 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ProcessoSeletivoMaster.master.cs"
+    Inherits="Techne.Lyceum.Net.Modulos.ProcessoSeletivoMaster" %>
+
+<%@ Register Assembly="DevExpress.Web.v9.2" Namespace="DevExpress.Web.ASPxPopupControl"
+    TagPrefix="dxpc" %>
+<%@ Register Assembly="DevExpress.Web.ASPxEditors.v9.2" Namespace="DevExpress.Web.ASPxEditors"
+    TagPrefix="dxe" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>SEEDUC - Governo do Rio de Janeiro</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../site.css" type="text/css" rel="stylesheet" />
+    <link href="../LyceumNet3.css" type="text/css" rel="stylesheet" />
+    <link href="../Scripts/themes/basic/grid.css" rel="stylesheet" type="text/css" />
+    <link href="../Scripts/themes/jqModal.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../Images/favicon.ico" type="image/x-icon" />
+    
+    <link rel='stylesheet' type='text/css' href="../Scripts/themes/calendar.css" />
+    <script type='text/javascript' src='../Scripts/js/calendar.js'></script>
+    
+    <!-- google fonts e fontsawesome-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css" integrity="sha512-3icgkoIO5qm2D4bGSUkPqeQ96LS8+ukJC7Eqhl1H5B2OJMEnFqLmNDxXVmtV/eq5M65tTDkUYS/Q0P4gvZv+yA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+</head>
+
+<body onload="moveRelogio();" approot='<%=Page.ResolveClientUrl("~/") %>'>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery-1.7.1.min.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.jqGrid.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/js/jqModal.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/MaskTypes.js") %>'></script>
+    
+    
+    
+    <!-- HEADER - Menu Principal-->
+    
+
+        <div class="top_inf">
+            <div class="top_outros">
+                <!-- LOGO -->
+                <div class="top_logo_governo"></div>
+                <div class="top_logo_gestao"></div>	
+                <div class="tit_pag">
+				    <!-- Sessão -->  
+					<h5 align="left">Contrato Temporário Professor</h5>
+       			</div>			
+            </div>
+        <!-- Dados do usuário logado -->  
+                <div class="user_saud" align="right" style="margin-top: -60px;margin-right: 160px;">
+                <asp:Literal ID="lblSaudacoes" runat="server" /><br />
+                <div id="divHoraData">
+                </div>
+            </div>
+             <!-- Botão ajuda -->  
+              <div class="top_botoes">
+                     <!-- Botões - Home -->   
+                    <asp:HyperLink ID="hlInicio" runat="server" CssClass="imagem-menu imagem-home" NavigateUrl="~/Index.aspx" ToolTip="Início"></asp:HyperLink>
+                    <!-- Botões - Ajuda -->  
+                     <a id="ctl00_hlHelp" title="Ajuda" class="imagem-menu imagem-ajuda" onclick="__Help(); return(false);" style="cursor:pointer; margin-top: -37px;"></a>
+                    
+                 
+                    <asp:HyperLink ID="hlHelp" runat="server" BorderStyle="None" CssClass="ico_info"
+                        ToolTip="Ajuda"></asp:HyperLink>
+                    <h2 align="left">
+                        &nbsp;</h2>
+               
+             </div>
+            
+             
+            
+           
+     
+        </div>
+        <!-- Fim div top_inf-->
+    
+    
+    <form id="form1" runat="server" submitdisabledcontrols="True">
+    <dxpc:ASPxPopupControl ID="ppcMensagemCompatilidadeIE" runat="server" CloseAction="CloseButton"
+        HeaderText="Processo Seletivo" Modal="true" PopupHorizontalAlign="WindowCenter"
+        PopupVerticalAlign="WindowCenter" AllowDragging="false" ClientInstanceName="ppcMensagemCompatilidadeIE"
+        EnableAnimation="true" EnableViewState="false" ShowCloseButton="true" Width="480px"
+        Height="100px" HeaderStyle-BackColor="#BFD7F3" HeaderStyle-Font-Bold="true" ContentStyle-Font-Bold="true">
+        <Border BorderColor="ButtonShadow" BorderStyle="Ridge" BorderWidth="4px" />
+        <ClientSideEvents Init="function(s,e){ OnInitASPxPopupControlSize(s,e,15000); }" />
+        <ContentCollection>
+            <dxpc:PopupControlContentControl ID="ppcccMensagemCompatilidadeIE" runat="server">
+                <table>
+                    <tr>
+                        <td style="text-align: left; width: 100%">
+                            <asp:Label ID="lblMensagem" runat="server" Font-Names="Verdana" Font-Size="Large"
+                                Font-Bold="true"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                <div align="right">
+                    <br />
+                    <dxe:ASPxButton ClientInstanceName="btnOk" AutoPostBack="false" UseSubmitBehavior="false"
+                        ID="btnOk" OnClick="btnOk_Click" runat="server" Text="Ok">
+                    </dxe:ASPxButton>
+                </div>
+            </dxpc:PopupControlContentControl>
+        </ContentCollection>
+    </dxpc:ASPxPopupControl>
+   
+   
+   
+    <div>
+       <!-- Logo Conexão -->
+        <div class="top">       
+            <div class="logo-conexao" align="center">
+                <asp:Image ID="Image1" runat="server" AlternateText="Governo do Rio de Janeiro - Sec de Estado de Educação"
+                    ImageUrl="~/Images/logo.gif" /></div>           
+        </div>
+    </div>
+    <div id="conteudo" class="conteudo" style="">
+        <asp:ContentPlaceHolder ID="cphFormulario" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div valign="top" class="bas-inf">
+        
+        <!-- Copyright -->
+        <div class="bas">
+            &copy; Todos os direitos reservados SEEDUC - RJ -  
+            <%= DateTime.Now.Year %>
+            | versão
+            <asp:Literal ID="lblVersao" runat="server" /></div>
+    
+    <!-- Redes Sociais -->
+            <div class="redes-sociais">
+                <div class="icones-redes">
+                    <a href="https://www.facebook.com/seeducRJ" target="_blank"><i class="fab fa-facebook-f fa-2x"></i></a>
+                    <a href="https://www.instagram.com/seeducrj/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="https://www.youtube.com/channel/UCzhk54RUJtn1kwqU4LTNP-Q" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+                </div>
+            </div>
+    
+    
+      <script src="../Scripts/site.js"></script>
+    </div>
+    
+    </form>
+</body>
+</html>

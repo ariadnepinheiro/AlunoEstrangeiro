@@ -1,0 +1,87 @@
+﻿
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm("Index", "Upload", FormMethod.Post, new { enctype = "multipart/form-data", target = "fraUpload", id = "frmUpload" }))
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btImportar")
+        @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+    
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+@*
+<div class="validation-summary-errors"><ul><li>Falha na importação. Verifique o log abaixo</li>
+</ul></div>
+*@
+        @Html.ValidationSummary(true)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">Arquivo</td>
+                    <td>
+                        <input id="fileUpload" type="file" name="fileUpload" size="50" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+
+@*
+
+    <table class="grid">
+      <thead>
+        <tr>
+          <th width="50px">
+            Linha
+          </th>
+          <th width="100%">
+            Descrição do Erro
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="gridrow">
+          <td width="50px" align="right">
+            1
+          </td>
+          <td width="100%">
+            Formato Incorreto
+          </td>
+        </tr>
+        <tr class="gridrow_alternate">
+          <td width="50px" align="right">
+            2
+          </td>
+          <td width="100%">
+            Campo CPF é obrigatório
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+*@
+
+
+
+    </div>  
+    
+    
+    
+    
+    
+}
+
+
+
+<script type="text/javascript">
+
+
+</script>

@@ -1,0 +1,87 @@
+﻿/*****
+DADOSPESSOAIS - INICIAL - INICIO
+*****/
+.conteudo {
+	margin: auto;
+	width: 620px;
+}
+
+#txtTelefoneDocente { width:75px; }
+
+.conteudo form { border:1px solid #C0C0C0;padding:5px;background-color:#FFFFFF;margin-bottom:10px;width: 375px;}
+.conteudo form h3 { margin: 0px 0px 10px 0px; }
+.conteudo form td label { float:right; }
+.conteudo form .botoes-acao { display: inline-block; text-align: right; width: 100%; }
+
+input.codigo-combo { width: 50px; font-size: 11px; line-height:14px;}
+input.hora { width: 40px; }
+select.combo-media { width: 220px; font-size: 11px; }
+select.combo-pequena { width: 100px; font-size: 11px; }
+select.combo-diasemana { text-transform: capitalize; }
+
+.conteudo form td span,
+.conteudo form td input,
+.conteudo form td select
+{
+	float:left;
+	margin: 0px 2px 0px 0px
+}
+
+.conteudo form td span {
+	display:block;
+	margin-top:2px;
+}
+
+/**************************/
+
+input, label, select
+{
+    float: none !important;
+}
+        
+input[type="text"] 
+{
+    height: 15px;
+}
+        
+#table-dados-pessoais td { padding: 5px 0; }
+#table-dados-pessoais { table-layout: fixed; width: 560px; }
+#table-dados-pessoais td:nth-child(1) { width: 100px; padding-right: 10px; }
+#table-dados-pessoais td:nth-child(2) { width: 240px; }
+#table-dados-pessoais td:nth-child(3) { width: 80px; padding-right: 10px; }
+#table-dados-pessoais td:nth-child(4) { width: 120px; }
+#table-dados-pessoais td:nth-child(odd) { text-align: right; }
+#table-dados-pessoais tr:nth-child(7) label { width: 78px; display: inline-block; }
+#table-dados-pessoais tr:nth-child(8) label { width: 200px; display: inline-block; vertical-align: top; }
+
+#dados-docente 
+{
+    width: 610px; 
+    table-layout: fixed; 
+    border: 1px solid #cbcbcb;
+    margin-top: 10px;
+    background:#FFFFFF;
+}
+        
+#dados-docente td 
+{
+    padding: 5px 1px;
+}
+        
+#dados-docente td:nth-child(1), #dados-docente td:nth-child(3)
+{
+    font-weight: bold;
+    background-color: #ededed;
+}
+
+#msg-erro-dados-pessoais 
+{
+    color: #f00;
+    text-align: center;
+    display: none;
+    width: 100%;
+}
+
+/*****
+DADOSPESSOAIS - INICIAL - FIM
+*****/

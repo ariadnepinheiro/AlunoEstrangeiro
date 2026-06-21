@@ -1,0 +1,90 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testes", "Testes", "{3ECC1572-2665-44BC-B769-7FCB9D8B5400}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{51E010F3-FAC5-4DCE-9407-F003D6567210}"
+	ProjectSection(SolutionItems) = preProject
+		DocenteOnline.vsmdi = DocenteOnline.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proderj.DOL.Domain", "Proderj.DOL.Domain\Proderj.DOL.Domain.csproj", "{069ACA84-0A80-4A73-AB76-7425C1CBBF79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proderj.DOL.Domain.ClassMap", "Proderj.DOL.Domain.ClassMap\Proderj.DOL.Domain.ClassMap.csproj", "{B6EE5BF8-010E-4890-8083-9C17F79B7BFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proderj.DOL.Repository", "Proderj.DOL.Repository\Proderj.DOL.Repository.csproj", "{72997ACD-AB22-4F41-87EE-7B0EF5115330}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proderj.DOL.Service", "Proderj.DOL.Services\Proderj.DOL.Service.csproj", "{734DEB12-F794-40E1-900F-8853FFF023A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proderj.DOL.WebApp", "Proderj.DOL.WebApp\Proderj.DOL.WebApp.csproj", "{C23B12B4-6597-4DE3-8E51-62BC6D824A78}"
+	ProjectSection(ProjectDependencies) = postProject
+		{069ACA84-0A80-4A73-AB76-7425C1CBBF79} = {069ACA84-0A80-4A73-AB76-7425C1CBBF79}
+		{B6EE5BF8-010E-4890-8083-9C17F79B7BFC} = {B6EE5BF8-010E-4890-8083-9C17F79B7BFC}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proderj.DOL.WebApp.Teste", "Proderj.DOL.WebApp.Tests\Proderj.DOL.WebApp.Teste.csproj", "{0B476621-46D5-410A-B15C-7AC0D088B140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proderj.DOL.Repository.Teste", "Proderj.DOL.Repository.Tests\Proderj.DOL.Repository.Teste.csproj", "{9B8D0577-C355-441D-8C92-212EBBDEE74C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proderj.DOL.Service.Teste", "Proderj.DOL.Service.Tests\Proderj.DOL.Service.Teste.csproj", "{7A46989A-31DE-4D9E-83C6-F536F1E971C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proderj.DOL.Exception", "Proderj.DOL.Exception\Proderj.DOL.Exception.csproj", "{1126A219-6B83-4FC2-9F0C-A5233AB80253}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DocenteOnline.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{069ACA84-0A80-4A73-AB76-7425C1CBBF79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{069ACA84-0A80-4A73-AB76-7425C1CBBF79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{069ACA84-0A80-4A73-AB76-7425C1CBBF79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{069ACA84-0A80-4A73-AB76-7425C1CBBF79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6EE5BF8-010E-4890-8083-9C17F79B7BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6EE5BF8-010E-4890-8083-9C17F79B7BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6EE5BF8-010E-4890-8083-9C17F79B7BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6EE5BF8-010E-4890-8083-9C17F79B7BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72997ACD-AB22-4F41-87EE-7B0EF5115330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72997ACD-AB22-4F41-87EE-7B0EF5115330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72997ACD-AB22-4F41-87EE-7B0EF5115330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72997ACD-AB22-4F41-87EE-7B0EF5115330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{734DEB12-F794-40E1-900F-8853FFF023A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{734DEB12-F794-40E1-900F-8853FFF023A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{734DEB12-F794-40E1-900F-8853FFF023A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{734DEB12-F794-40E1-900F-8853FFF023A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C23B12B4-6597-4DE3-8E51-62BC6D824A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C23B12B4-6597-4DE3-8E51-62BC6D824A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C23B12B4-6597-4DE3-8E51-62BC6D824A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C23B12B4-6597-4DE3-8E51-62BC6D824A78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B476621-46D5-410A-B15C-7AC0D088B140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B476621-46D5-410A-B15C-7AC0D088B140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B476621-46D5-410A-B15C-7AC0D088B140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B8D0577-C355-441D-8C92-212EBBDEE74C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B8D0577-C355-441D-8C92-212EBBDEE74C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B8D0577-C355-441D-8C92-212EBBDEE74C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A46989A-31DE-4D9E-83C6-F536F1E971C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A46989A-31DE-4D9E-83C6-F536F1E971C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A46989A-31DE-4D9E-83C6-F536F1E971C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1126A219-6B83-4FC2-9F0C-A5233AB80253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1126A219-6B83-4FC2-9F0C-A5233AB80253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1126A219-6B83-4FC2-9F0C-A5233AB80253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1126A219-6B83-4FC2-9F0C-A5233AB80253}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{51E010F3-FAC5-4DCE-9407-F003D6567210} = {3ECC1572-2665-44BC-B769-7FCB9D8B5400}
+		{0B476621-46D5-410A-B15C-7AC0D088B140} = {3ECC1572-2665-44BC-B769-7FCB9D8B5400}
+		{9B8D0577-C355-441D-8C92-212EBBDEE74C} = {3ECC1572-2665-44BC-B769-7FCB9D8B5400}
+		{7A46989A-31DE-4D9E-83C6-F536F1E971C8} = {3ECC1572-2665-44BC-B769-7FCB9D8B5400}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

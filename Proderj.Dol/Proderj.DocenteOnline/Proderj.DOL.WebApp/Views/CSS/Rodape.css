@@ -1,0 +1,224 @@
+﻿/*****
+RODAPE INICIO
+*****/
+/*RODA-PÉ EXTERNO */
+.rodape-externo{
+    position:fixed;
+    bottom: 0px;
+    left: 0px;
+    min-height: 95px;
+    color:#ffffff;
+    width: 100%;
+    background:#1E6496;
+    z-index: 10000;
+}
+.rodape-externo .top-footer
+{   
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    width: 100%;
+    min-height: 62px;
+    flex-wrap: wrap;
+}
+.logo-ceg h2{   
+    font-family: 'Open Sans',Tahoma, Geneva, sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-style:italic;
+    display:inline-block;
+    font-weight:600; 
+    margin:0;
+}
+.logo-ceg p{   
+    font-family: 'Open Sans',Tahoma, Geneva, sans-serif;
+    font-size: 16px;
+    display:inline-block;
+    color: #ffffff;
+}
+.logo-conexao-docente {
+	margin-top:15px;
+	}
+.redes-sociais-externo{   
+    text-align:center;  
+}
+.redes-sociais-externo a{
+    font-size: 11px;
+    margin:5px 5px;
+    height:24px;
+}
+.redes-sociais-externo a i{   
+    color:#1E6496;
+    padding: 4px;
+    background: #ffffff;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+.redes-sociais-externo a:hover i
+{   
+    color:#ffffff;
+    padding: 4px;
+    background:#1E6496;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+.redes-sociais-externo .icones-redes-externo{   
+    margin:15px;
+}  
+.bas-externo{
+    text-align:center;
+    position: relative;
+    height: auto;
+    font-size: 12px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+.bas-externo hr{
+    width:70%;
+}
+@media screen and (max-width: 560px) {
+	.rodape-externo .top-footer{
+	    flex-direction: column;
+	    justify-content: center;
+        align-items: center;
+	}
+	.logo-ceg{
+	    padding-top: 6px;
+	}
+	.logo-ceg h2{
+	    font-size: 18px;
+	}
+	.logo-ceg p{
+	    margin:0;
+	    font-size:14px;  
+	}
+	.icones-redes-externo {
+        margin: 4px;
+    }
+    .bas-externo hr{
+        margin-top: 0px;
+        margin-bottom:2px;
+    }
+}
+/* Roda-pé interno*/
+.rodape {
+	display:flex;
+    flex-wrap:wrap;
+    background: #1E6496;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 45px;
+    z-index: 10000;
+    justify-content: space-between;
+    align-items: baseline;
+	
+	/*position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 45px;
+	background: url('<%=Url.Content("~/Imagens/bk_bas-inf.gif")%>') repeat-x;
+	z-index: 10000;*/
+}
+
+.rodape .bas {
+	position: relative;
+    height: 20px;
+    padding: 0 0 0 20px;
+    font-size: 10px;
+    color: #FFF;
+    text-transform: uppercase;
+	/*position: relative;
+	min-width: 640px;
+	height: 20px;
+	background: url('<%=Url.Content("~/Imagens/bk_bas.gif")%>') right no-repeat;
+	padding: 20px 140px 5px 20px;
+	font-size: 10px;
+	color: white;
+	text-transform: uppercase;*/
+}
+.logo-conexao h2
+{   
+    text-transform: uppercase;
+    font-size: 24px;
+    font-style:italic;
+    display:inline-block;
+    font-weight:600; 
+    margin:0;
+}
+.logo-conexao p
+{   
+    font-size: 16px;
+    display:inline-block;
+    color: #ffffff;
+}
+.redes-sociais {
+    text-align: center;
+    margin-top: 5px;
+    /* margin-right: 2em; */
+}
+.redes-sociais a
+{   font-size: 11px;
+    margin:5px 5px;
+    height:24px;
+}
+.redes-sociais a i
+{   
+    color:#1E6496;
+    padding: 4px;
+    background: #ffffff;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+.redes-sociais a:hover i
+{   
+    color:#ffffff;
+    padding: 4px;
+    background:#1E6496;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+.icones-redes
+{   
+    margin:0px;
+}
+@media (max-width:984px){
+    .rodape {
+        flex-direction: column;
+        padding-top: 5px;
+    }
+    .rodape .bas {
+        min-height: 20px;
+    }
+    .logo-conexao{
+        order: -1;
+        margin-left: 2em;
+    }
+    .logo-conexao h2 { 
+        font-size: 14px;
+        margin: 0;
+    }
+    .logo-conexao p {
+        font-size: 12px;
+        margin: 0;
+    }
+}
+@media (max-width:624px){
+    .redes-sociais {
+        display:none;
+    }
+    .rodape .bas {
+        min-height: 20px;
+    }
+}
+
+
+/*****
+RODAPE FIM
+*****/

@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <CanShrink>true</CanShrink>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CONTRATO DE PRESTAÇÃO DE SERVIÇOS POR TEMPO DETERMINADO, NA FORMA  DO ARTIGO 37, INCISO IX DA CONSTITUIÇÃO DA REPÚBLICA E ARTIGO 77, INCISO XI, DA CONSTITUIÇÃO DO ESTADO QUE ENTRE  SI  CELEBRAM  O  ESTADO  DO  RIO DE   JANEIRO,  PELA  SECRETARIA   DE   EDUCAÇÃO E O  SR MARCUS   VINICIUS   MEDINA   COSTA.
+
+
+                                                     O ESTADO DO RIO DE JANEIRO, neste ato pela Secretaria de Educação, doravante denominado CONTRATANTE, representado neste ato pelo Superintendente de Gestão de Pessoas, MARCUS VINICIUS MEDINA COSTA, cédula de Identidade nº 09552242-1 – expedida pelo DETRAN, CPF nº 056.422.027-23, conforme  autorização  do   Exmo.    Sr.  Governador  do Estado, constante do  Decreto Estadual nº 42.265/10,  e  o    Sr(a)., </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!NOME_COMPL.Value, "DS_Contrato")</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>, BRASILEIRA, nascido(a) em </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!DT_NASC.Value, "DS_Contrato")</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value> domiciliado na Rua </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!Endereco.Value, "DS_Contrato")</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>, Bairro </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!BAIRRO.Value, "DS_Contrato")</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>,Cidade </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!Municipio.Value, "DS_Contrato")</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>, portador(a) da Carteira de Identidade nº </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!RG_NUM.Value, "DS_Contrato")</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>, Expedida pelo </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!RG_EMISSOR.Value, "DS_Contrato")</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value> em </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!RG_DTEXP.Value, "DS_Contrato")</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value> e inscrito(a) no CPF sob o nº </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!CPF.Value, "DS_Contrato")</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>, daqui por diante denominado CONTRATADO, resolvem celebrar ao(s) </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Label>DCel</Label>
+                <Value>=Parameters!Dia_Celebracao.Value</Value>
+                <ToolTip>Dia de Celebração</ToolTip>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value> dia(s) do mês de </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Label>MCel</Label>
+                <Value>=Parameters!Mes_Celebracao.Value</Value>
+                <ToolTip>Mês de Celebração</ToolTip>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value> do ano de 2010,  o presente Contrato de Prestação de Serviços por tempo determinado, na forma  do  artigo  37,  inciso  IX,  da  Constituição  da  República,  e  artigo  77,  inciso  XI,  da Constituição  do  Estado,  que  se  regerá  pelas  normas  da  Lei  estadual  nº  4.599,  de  27  de setembro  de  2005,  Decreto  nº  38.604,  de  06 de  dezembro  de  2005,  aplicando-se  a  este contrato  suas  disposições  irrestrita  e  incondicionalmente,  bem  como  pelas cláusulas  e condições seguintes:
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA PRIMEIRA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DO OBJETO</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O presente instrumento tem por objeto a prestação de serviços de Professor para atuação nos anos iniciais do Ensino Fundamental, à CONTRATANTE, de acordo com o resultado do processo seletivo simplificado, pelo prazo determinado na Cláusula Segunda, na forma da Lei Estadual nº 4.599/05 e Decreto Estadual nº 42.265/10, de 26 de janeiro de 2010 e Resolução SEEDUC nº 4403 de 3 de fevereiro de 2010.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA SEGUNDA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DO PRAZO</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+Os contratos terão validade a partir da data de suas formalizações, por tempo determinado, para atendimento ao ano letivo de 2010.
+PARÁGRAFO PRIMEIRO – O prazo contratual poderá ser prorrogado pelo prazo máximo de 1 (um) ano, observando-se a disciplina do artigo 2º e parágrafo único, da Lei nº 4.599, de 27 de setembro de 2005, desde que o prazo total seja de 3 (três) anos.
+
+PARÁGRAFO SEGUNDO – O período do contrato previsto no caput deverá ser executado integralmente e sem interrupções, salvo aquelas expressamente previstas em  lei  e  neste contrato,  sob  pena  de  ser  caracterizada  a  inadimplência  do  CONTRATADO,  com  a conseqüente extinção do contrato de prestação de serviço.
+
+PARÁGRAFO TERCEIRO – A prorrogação prevista nesta Cláusula só poderá ser efetivada segundo a conveniência da Administração,	a critério exclusivo do CONTRATANTE.
+
+PARÁGRAFO QUARTO - O CONTRATADO não poderá prestar serviços no âmbito da Secretaria de Educação após o término do contrato, sob pena de apuração da responsabilidade administrativa e civil das autoridades que determinarem solicitarem, permitirem ou tolerarem tal situação.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA TERCEIRA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DAS OBRIGAÇÕES DO CONTRATANTE</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O CONTRATANTE se obriga a:
+a) depositar a quantia líquida da retribuição a que fizer jus o CONTRATADO, em conta aberta em seu nome no Banco ITAÚ, conforme o calendário de pagamento dos servidores públicos da Administração Direta, Indireta, Fundações e dos Pensionistas do Estado do Rio de Janeiro;
+b) recolher contribuição Previdenciária mensal e o imposto de renda de pessoas físicas – IRPF, deduzidos da retribuição do CONTRATADO;
+c) expedir certidões que atestem a contratação, bem como o tempo de prestação de serviços, para defesa de direitos ou esclarecimento de situação, a requerimento do CONTRATADO;
+d) abster-se de determinar tarefas ou funções que impliquem em eventual desvio de função do CONTRATADO;
+e) pagar tempestiva e integralmente a remuneração pactuada na Cláusula Décima Primeira.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA QUARTA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DAS OBRIGAÇÕES DA CONTRATADA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+Constituem obrigações da CONTRATADA:
+
+a) desenvolver satisfatoriamente, de acordo com sua formação profissional e capacitação técnica especializada, as atividades determinadas pelo superior hierárquico;
+b) estar presente no local de trabalho durante todo o tempo de desenvolvimento normal das atividades  de  execução  do  contrato, que  corresponderá  ao  horário  de  expediente  do CONTRATANTE;
+c) submeter-se às normas, rotinas e horários de trabalho estabelecidos pelo CONTRATANTE;
+d) aceitar os descontos de lei incidentes em sua remuneração mensal bruta, bem como os decorrentes  de  horas  não  trabalhadas  em  função  de  ausência  não  autorizada  ou  falta  não abonada, devidamente apontadas no período de vigência deste contrato;
+e) cumprir  as  determinações  legais  emanadas  das  autoridades  competentes  do  (órgão  ou entidade contratante).
+f) exercer com zelo e dedicação os encargos que lhe forem cometidos;
+g) ser leal ao CONTRATANTE;
+h) observar as normas legais e regulamentares aplicáveis	às atividades do CONTRATANTE;
+i) cumprir as ordens lícitas de superior hierárquico;
+j) atender, com presteza, ao público em geral, prestando as informações requeridas, ressalvadas as legalmente protegidas por sigilo, e preparar aquelas requeridas para a defesa do CONTRATANTE em juízo;
+l) levar ao conhecimento da autoridade superior as irregularidades de que tiver ciência em razão do exercício de suas atividades;
+m) zelar pela economia do material e a conservação do patrimônio público;
+n) guardar sigilo sobre assuntos do CONTRATANTE;
+o) manter conduta compatível com a moralidade administrativa;
+p) ser assíduo e pontual na prestação de seus serviços;
+q) tratar com urbanidade as pessoas;
+r) representar, por intermédio da via hierárquica, contra ilegalidade, omissão ou abuso de poder.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA QUINTA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DAS PROIBIÇÕES</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+Ao CONTRATADO é vedado:
+
+a) ausentar-se do local de prestação de seus serviços, durante o desenvolvimento diário das atividades do projeto, sem prévia autorização do seu superior hierárquico ou de funcionário por ele indicado;
+b) retirar, sem prévia anuência da autoridade competente, qualquer documento ou objeto das dependências do CONTRATANTE;
+c) opor resistência injustificada ao andamento de documento ou processo ou à execução de serviços;
+d) promover manifestação de cunho político-partidário nas dependências do CONTRATANTE;
+e) promover, nas dependências do CONTRATANTE, manifestação pública de agravo ou desagravo  a  outros  agentes  públicos  ou  a  terceiros  que  tenham  com  aquele  órgão  ou entidade administrativa;
+f) cometer a pessoa estranha à execução do projeto, fora dos  casos  previstos  em  lei,  o desempenho de atividades de sua responsabilidade;
+g) atuar como procurador ou intermediário junto a repartições públicas;
+h) receber, exigir  ou  solicitar,  para  si  ou  para  terceiros,  propina,  comissão,  presente  ou vantagem de qualquer espécie, em razão de seus serviços, para a prática ou omissão de ato de ofício, ou valer-se da função exercida para obtenção de vantagem pessoal para si ou para terceiros;
+i) praticar usura sob qualquer de suas formas;
+j) proceder de forma desidiosa;
+l) utilizar  pessoal  ou  recursos  materiais  do  CONTRATANTE  em  serviços  ou  atividades particulares;
+m) exercer quaisquer  atividades  incompatíveis  com  os  serviços  técnicos  prestados  ao CONTRATANTE e com o horário de trabalho;
+n) ser nomeado ou designado, ainda  que  a  título  precário  ou  em  substituição,  para  o exercício  de  cargo  em  comissão  ou  função  de  confiança  em  órgão  ou  entidade  diversos daquele para o qual foi contratado;
+o) participar de  gerência  ou  administração  de  empresa  privada,  de  sociedade  civil  ou exercer o comércio, exceto na qualidade de acionista, cotista ou comanditário;
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA SEXTA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DA RESPONSABILIDADE</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O CONTRATADO responde pessoalmente pelo exercício irregular de seus encargos, por atos  omissivos  ou  comissivos,  dolosos  ou  culposos,  nos  termos  da  legislação  penal, administrativa  e  civil,  não  excluída  ou  atenuada  essa  responsabilidade  pela  presença  ou pelo acompanhamento da execução por servidor ou empregado público.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA SÉTIMA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DOS DIREITOS E DEVERES</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O CONTRATADO terá direito a:  I – licença maternidade;  II  -  licença  paternidade,  III  – férias,  quando  o  período  do  contrato  for  superior  a  12  (doze)  meses,  IV  –  verba indenizatória por rescisão unilateral imotivado por parte da Administração.
+
+PARÁGRAFO ÚNICO – Em caso de faltas por até três dias por motivo de doença, as faltas serão  abonadas  mediante  comprovação  por  atestado  médico,  desde  que  apresentado  no prazo de 48 (quarenta e oito) horas do primeiro dia de afastamento. Em hipótese de faltas superiores a três dias e inferiores ou iguais a 15 dias, o abono dependerá de laudo positivo da Perícia Médica do Estado. Não serão abonadas, por motivo de saúde, mais do que 15 (quinze) faltas por ano de execução do contrato.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA OITAVA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DAS FÉRIAS</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+Após a vigência de 12 (doze) meses do presente contrato, o CONTRATADO terá direito a afastar-se do trabalho por trinta (30) dias consecutivos, sem prejuízo de sua retribuição, a partir de data ajustada entre as partes, atendida a conveniência da Administração Pública.
+
+PARÁGRAFO PRIMEIRO - A rejeição de pedido  de  férias  regulamente  formulado  pelo CONTRATADO  só  será  possível  em  casos  excepcionalíssimos,  assim  reconhecidos  pelo titular do órgão a que o mesmo estiver vinculado, mediante motivação expressa e específica para  o  caso  concreto,  indicando-se  pormenorizadamente  as  tarefas  e  funções  que  não podem ser reduzidas ou suspensas naquele período específico.
+
+PARÁGRAFO  SEGUNDO  -  Ainda  que  configurada  a  estrita  e  inadiável  necessidade  do serviço  a  justificar  a  rejeição  do  pedido  de  férias  formulado  pelo  CONTRATADO,  a concessão de tal afastamento deverá ser tão somente postergada para período futuro, ainda no prazo de vigência do contrato, indicando-se expressamente a previsão das datas de início e término do período de férias então adiadas, de modo a evitar a necessidade de indenização pecuniária de período não gozado de férias.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA NONA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DA DOTAÇÃO ORÇAMENTÁRIA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+As despesas com a execução do presente contrato correrão à conta das seguintes dotações orçamentárias, para o corrente exercício de 2010, assim classificados:
+Natureza das Despesas: 3190-04
+Fonte de Recurso: 15
+Programa de Trabalho: 1801.12.122.0002.2030
+Nota de Empenho: 01376 - 03798
+
+PARÁGRAFO ÚNICO – As despesas relativas  aos  exercícios  subseqüentes correrão  por conta das dotações orçamentárias respectivas, devendo ser empenhadas no início de cada exercício.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DA REMUNERAÇÃO</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+A remuneração bruta total do CONTRATADO será de R$ 584,10 (quinhentos e oitenta e quatro reais e dez centavos) por mês.
+
+PARÁGRAFO ÚNICO - As vantagens e benefícios previstos em legislação específica da categoria funcional  ou  de  cargo  análogo  na  estrutura  estadual  não  repercutirão  sobre  a remuneração do CONTRATADO.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA   DÉCIMA   PRIMEIRA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>:  DA   EXECUÇÃO   E   FISCALIZAÇÃO   DO CONTRATO</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>
+O CONTRATADO executará os serviços descritos na Cláusula Primeira, com carga horária de 22 (vinte e duas) horas semanais, ficando subordinado às determinações da Secretaria de Educação, quanto à forma de exercício de suas funções e horário, observadas as normas legais vigentes.
+
+PARÁGRAFO PRIMEIRO- O CONTRATADO se obriga a exercer sua função na unidade indicada pelo CONTRATANTE.
+PARÁGRAFO SEGUNDO - O CONTRATADO, por necessidade do serviço, poderá ser removido  para  qualquer  unidade  integrante  da  estrutura  da  CONTRATANTE,  vedado, entretanto, o desvio de função, sob pena de rescisão do presente CONTRATO e a apuração da responsabilidade administrativa e civil das autoridades que determinarem, solicitarem, permitirem ou tolerarem tal desvio.
+
+PARÁGRAFO TERCEIRO - A execução do contrato será acompanhada e fiscalizada pela Secretaria de Educação, juntamente com a unidade em que o CONTRATADO estiver prestando o serviço. 
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA SEGUNDA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DA EXTINÇÃO DO CONTRATO</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+Este contrato será extinto, sem indenização ao CONTRATADO, verificada uma das seguintes hipóteses:
+a) término do prazo contratual ou de sua prorrogação, independentemente de termo  de rescisão,  quando  as  partes  se  darão  mútua  quitação,  se  satisfeitas  todas  as  obrigações reciprocamente pactuadas;
+b) por manifestação unilateral motivada do CONTRATANTE;
+c) por vontade de ambas as partes;
+d) por infração aos deveres de assiduidade, pontualidade, urbanidade, discrição,  boa conduta, lealdade e respeito às instituições constitucionais e administrativas a que servir, observância  das  normas  legais  e  regulamentares,  sem  prejuízo  das  demais  disposições constitucionais  e  legais  impostas  aos  ocupantes  de  funções  públicas  ou  incidência  nas proibições estabelecidos em suas cláusulas,	imputadas à responsabilidade do CONTRATADO, depois de apurada a falta em	sindicância conduzida pelo CONTRATANTE, no prazo de trinta (30) dias, em que se lhe tenham sido assegurados o contraditório e a ampla defesa, com os recursos inerentes.
+
+PARÁGRAFO PRIMEIRO - A rescisão decorrente de manifestação unilateral imotivada do CONTRATANTE importará no pagamento, ao CONTRATADO, de indenização no valor correspondente a 1/12 (um doze) avos da remuneração mensal, por mês e/ou período igual ou superior a 15 (quinze) dias efetivamente trabalhados.
+
+PARÁGRAFO SEGUNDO - Não será  computado  no  cálculo  da  verba  indenizatória  da rescisão  unilateral,  referida  no  parágrafo  primeiro  desta  cláusula,  o  período  de  trabalho inferior a 15 (quinze) dias.
+
+PARÁGRAFO TERCEIRO - O CONTRATANTE poderá, ainda, rescindir unilateralmente o contrato, sem que caiba indenização ao CONTRATADO, em razão de:
+
+a) ocorrência de qualquer hipótese impeditiva ao fiel cumprimento do contrato pelo período acordado, inadmitindo-se qualquer suspensão da sua execução;
+b) falta ao trabalho por três dias consecutivos ou cinco intercalados em um período de trinta dias,  mesmo  com  justificação,  ressalvadas  as  faltas  abonadas  por  motivo  de  doença,  em conformidade com o disposto no parágrafo único da cláusula sétima;
+c) afastamento por motivo de doença por prazo superior a 15 dias consecutivos;
+d) apresentação de documento falso ou declaração falsa ou inexata;
+e) insuficiência de desempenho na função para a qual apresentou prova de capacitação.
+
+PARÁGRAFO QUARTO - A declaração de rescisão deste contrato, em todos os casos em que ela é admitida, será sempre feita independentemente de prévia notificação judicial ou extrajudicial  e  operará  seus  efeitos  a  partir  da  publicação  do  ato  no  Diário  Oficial  do Estado.
+
+PARÁGRAFO QUINTO - No ajuste final de contas, dos valores eventualmente devidos ao CONTRATADO, o  CONTRATANTE, como   lhe   incumbe,   procederá   aos   descontos previstos na legislação específica, na forma estabelecida em suas disposições.
+
+PARÁGRAFO SEXTO – O  CONTRATADO  só  poderá  rescindir  ou  interromper  a prestação  de  serviços  por  conta  de  infração  contratual  ou  legal  do  CONTRATANTE mediante  propositura  de  ação  judicial,  devendo  manter  o  cumprimento  integral  de  suas obrigações  legais  e  contratuais  até  expresso  pronunciamento  judicial  que  suspenda  ou extinga a exigibilidade das mesmas.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA TERCEIRA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DAS CONDIÇÕES RESOLUTIVAS</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O presente contrato estará resolvido de pleno direito, não cabendo qualquer indenização ao CONTRATADO, nas hipóteses de sua substituição por servidor efetivo investido em cargo que abarque as funções objeto do presente contrato.
+
+PARÁGRAFO ÚNICO – A substituição mencionada no caput da presente Cláusula pode decorrer de qualquer forma de provimento originário ou derivado do servidor efetivo em questão.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA QUARTA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DA INEXISTÊNCIA DE VÍNCULO</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+A presente contratação não cria vínculo empregatício ou estatutário entre o CONTRATANTE e o CONTRATADO, nem gera para este o direito de ser posteriormente admitido como servidor estadual e nem o de ser aproveitado nos órgãos da administração direta ou indireta ou, ainda, fundação instituída ou mantida pelo Estado.
+</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA QUINTA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DAS DECLARAÇÕES</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O CONTRATADO assina, neste  ato,   as   seguintes   declarações   anexo   ao   presente instrumento, e que dele passam a fazer parte integrante:
+a) ciência  das  proibições  do  artigo  37,  incisos  XVI,  XVII  e  §10º,  da  Constituição  da República;
+b) ciência  e  observância  das  proibições  do  art.  7º,  III,  da  Lei  Estadual  nº  4.599,  de 27/09/2005.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA SEXTA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DA CESSÃO OU TRANSFERÊNCIA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O presente contrato não poderá ser objeto de cessão ou transferência no todo ou em parte.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA  DÉCIMA  SÉTIMA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>:  DA  EXCEÇÃO  DA  RESPONSABILIDADE  DO CONTRATANTE</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>.
+</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>A superveniência de decisão judicial que anule a presente contratação, em especial a declaração de inconstitucionalidade da Lei Estadual nº 4.599/05, não assegurará qualquer direito de reparação ao CONTRATADO, o qual renuncia expressa e irrevogavelmente a qualquer pretensão indenizatória.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA    DÉCIMA    OITAVA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>:	DA	PUBLICAÇÃO	E	CONTROLE	DO CONTRATO</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>
+Após a assinatura do contrato deverá seu extrato ser publicado, dentro do prazo de 20 (vinte) dias, no Diário Oficial do Estado do Rio de Janeiro, devendo ser encaminhado ao Tribunal de Contas do Estado, para  conhecimento,  cópia  autenticada  do  contrato  até  o quinto dia útil seguinte ao da sua assinatura.
+
+PARÁGRAFO ÚNICO – O extrato da publicação deve conter a identificação do instrumento, partes, objeto, prazo, valor, número do empenho e fundamento do ato.
+
+</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA NONA</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>Underline</TextDecoration>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>: DO FORO DE ELEIÇÃO</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+Fica eleito o Foro da Cidade do Rio de Janeiro, comarca da Capital, para dirimir qualquer litígio decorrente do presente contrato que não possa ser resolvido por meio amigável, com expressa renúncia a qualquer outro, por mais privilegiado que seja.
+E, por estarem assim acordes em todas as condições e cláusulas estabelecidas neste contrato, firmam as partes o presente instrumento em 4 (quatro) vias de igual forma e teor, depois de lido e achado conforme, em presença de testemunhas abaixo firmadas.
+
+
+Rio de Janeiro, em 	de __________________________de ______________.
+</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value xml:space="preserve">
+</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>                                 __________________________________________________</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>SECRETARIA DE EDUCAÇÃO
+
+</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>
+_________________________________________________
+ COORDENADORIA REGIONAL
+
+
+
+_________________________________________________
+CONTRATADO(A)
+</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>______________________________________     ______________________________________
+  TESTEMUNHA                                                           TESTEMUNHA</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>
+CPF:_________________________________     CPF:_________________________________
+
+</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>2.06375cm</Top>
+        <Left>0.29104cm</Left>
+        <Height>134.31159cm</Height>
+        <Width>16.75259cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <CanShrink>true</CanShrink>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ESTADO DO RIO DE JANEIRO
+SECRETARIA DE EDUCAÇÃO
+</Value>
+                <Style>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>0.73237cm</Top>
+        <Left>0.29104cm</Left>
+        <Height>1.13771cm</Height>
+        <Width>16.75259cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>54.04188in</Height>
+    <Style>
+      <Border />
+    </Style>
+  </Body>
+  <Width>6.71009in</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2.5cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>2.5cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>dblyceum</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>dcbc09a8-123d-443d-8b92-a67ada7317ea</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DS_Contrato">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@ConcursoDocente">
+            <Value>=Parameters!ConcursoDocente.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Inscricao">
+            <Value>=Parameters!Inscricao.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT        TOP (1) p.NOME_COMPL, CONVERT(varchar(10), p.DT_NASC, 103) AS DT_NASC, RTRIM(p.ENDERECO) + ', ' + p.END_NUM AS Endereco, p.BAIRRO, 
+                         mun.NOME AS Municipio, p.RG_NUM, p.RG_EMISSOR, CONVERT(varchar(10), p.RG_DTEXP, 103) AS RG_DTEXP, p.CPF
+FROM            LY_PESSOA AS p INNER JOIN
+                         LY_DOCENTE AS d ON d.PESSOA = p.PESSOA INNER JOIN
+                         MUNICIPIO AS mun ON mun.CODIGO = p.END_MUNICIPIO INNER JOIN
+                         LY_CANDIDATO_DOCENTE AS cd ON cd.CANDIDATO = d.CANDIDATO AND cd.CONCURSO = d.CONCURSO
+WHERE        (d.MATRICULA LIKE '55%') AND (cd.CONCURSO = @ConcursoDocente) AND (d.matricula = @Inscricao)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="NOME_COMPL">
+          <DataField>NOME_COMPL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DT_NASC">
+          <DataField>DT_NASC</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Endereco">
+          <DataField>Endereco</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BAIRRO">
+          <DataField>BAIRRO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Municipio">
+          <DataField>Municipio</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RG_NUM">
+          <DataField>RG_NUM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RG_EMISSOR">
+          <DataField>RG_EMISSOR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RG_DTEXP">
+          <DataField>RG_DTEXP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CPF">
+          <DataField>CPF</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ConcursoDocente">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>Select CONCURSO, DESCRICAO from LY_CONCURSO_DOCENTE where concurso like '21%' or concurso like '22%'</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="CONCURSO">
+          <DataField>CONCURSO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DESCRICAO">
+          <DataField>DESCRICAO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DS_Candidato">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@concursodocente">
+            <Value>=Parameters!ConcursoDocente.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>Select d.candidato as Inscricao, d.matricula + ' - ' + d.candidato + ' - ' + ltrim(nome) as Candidato from Ly_candidato_docente
+	inner join Ly_docente d
+		on d.candidato = Ly_candidato_docente.candidato
+where d.concurso = @concursodocente
+order by ltrim(nome)</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Candidato">
+          <DataField>Candidato</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Inscricao">
+          <DataField>Inscricao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DS_Candidato_Nome">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@inscricao">
+            <Value>=Parameters!Inscricao.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>Select Nome_Compl from Ly_Docente Where matricula = @inscricao</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Nome_Compl">
+          <DataField>Nome_Compl</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="ConcursoDocente">
+      <DataType>String</DataType>
+      <Prompt>Concurso</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ConcursoDocente</DataSetName>
+          <ValueField>CONCURSO</ValueField>
+          <LabelField>CONCURSO</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Inscricao">
+      <DataType>String</DataType>
+      <Prompt>Matricula</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Nome">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DS_Candidato_Nome</DataSetName>
+          <ValueField>Nome_Compl</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Nome</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DS_Candidato_Nome</DataSetName>
+          <ValueField>Nome_Compl</ValueField>
+          <LabelField>Nome_Compl</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="Dia_Celebracao">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Dia da Celebração</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="usuario">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>usuario</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="Mes_Celebracao">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Mês de Celebração</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>Janeiro</Value>
+            <Label>Janeiro</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Fevereiro</Value>
+            <Label>Fevereiro</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Março</Value>
+            <Label>Março</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Abril</Value>
+            <Label>Abril</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Maio</Value>
+            <Label>Maio</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Junho</Value>
+            <Label>Junho</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Julho</Value>
+            <Label>Julho</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Agosto</Value>
+            <Label>Agosto</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Setembro</Value>
+            <Label>Setembro</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Outubro</Value>
+            <Label>Outubro</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Novembro</Value>
+            <Label>Novembro</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>Dezembro</Value>
+            <Label>Dezembro</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>e1fd94bc-15a9-426a-b1c0-4dd22f18ae3d</rd:ReportID>
+</Report>

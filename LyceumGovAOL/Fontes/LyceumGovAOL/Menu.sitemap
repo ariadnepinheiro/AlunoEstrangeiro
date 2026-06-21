@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode description="root">
+    <siteMapNode url="~/Menu/Config.aspx" title="Aluno Online" description="Abre menu do Aluno Online">
+      <siteMapNode url="" title="Aluno Online"  description="">
+        <siteMapNode url="~/Academico/Boletim.aspx" title="Consulta ao Boletim do aluno" description="Abre página de Notas."/>
+        <siteMapNode url="~/Academico/GoogleEducation.aspx" title="Conta para acessar Classroom" description="Mostra sua conta para acessar o Classroom."/>
+        <siteMapNode url="~/Academico/AcompanhamentoClassroom.aspx" title="Acompanhamento Classroom" description="Acompanhamento dos acessos ao Classroom."/>
+        <!--<siteMapNode url="~/Academico/ConsultaCartao.aspx" title="Cartão do Estudante/Gratuidade" description="Abre consulta Cartão."/>-->
+      </siteMapNode>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

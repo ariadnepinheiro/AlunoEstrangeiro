@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1126A219-6B83-4FC2-9F0C-A5233AB80253}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proderj.DOL.Exception</RootNamespace>
+    <AssemblyName>Proderj.DOL.Exception</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Proderj.Library\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Proderj.Foundation.Framework, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AvaliacaoCurriculoMinimoResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvaliacaoCurriculoMinimoResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroGlpResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CadastroGlpResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CadastroGLP\CadastroGlpException.cs" />
+    <Compile Include="CadastroGLP\CadastroGlpListaException.cs" />
+    <Compile Include="DocenteResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocenteResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RespostaCurriculoMinimoResource.Designer.cs">
+      <DependentUpon>RespostaCurriculoMinimoResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="CoreResource.Designer.cs">
+      <DependentUpon>CoreResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Core\DisciplinaException.cs" />
+    <Compile Include="Core\UnidadeEnsinoException.cs" />
+    <Compile Include="CurriculoMinimo\AvaliacaoCurriculoMinimoException.cs" />
+    <Compile Include="CurriculoMinimo\RespostaCurriculoMinimoException.cs" />
+    <Compile Include="CurriculoMinimo\LogCompetenciaHabilidadeDocenteException.cs" />
+    <Compile Include="Docente\DocenteException.cs" />
+    <Compile Include="LancamentoNotas\LancamentoNotasListaException.cs" />
+    <Compile Include="LancamentoNotas\LancamentoNotasException.cs" />
+    <Compile Include="LancamentoNotasResource1.Designer.cs">
+      <DependentUpon>LancamentoNotasResource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="LancamentoNotas\SubPeriodoLetivoException.cs" />
+    <Compile Include="LogCompetenciaHabilidadeDocenteResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LogCompetenciaHabilidadeDocenteResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\LoginResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\LoginException.cs" />
+    <Compile Include="Login\UltimoResetException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelecaoTurmas\SelecaoTurmasException.cs" />
+    <Compile Include="SelecaoTurmasResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelecaoTurmasResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SubPeriodoLetivoResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubPeriodoLetivoResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TermoAceite\AceiteTermoCompromissoException.cs" />
+    <Compile Include="TermoAceite\TermoCompromissoDocenteException.cs" />
+    <Compile Include="TermoCompromissoResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TermoCompromissoResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AvaliacaoCurriculoMinimoResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AvaliacaoCurriculoMinimoResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroGlpResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CadastroGlpResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocenteResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DocenteResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RespostaCurriculoMinimoResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RespostaCurriculoMinimoResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoreResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CoreResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LancamentoNotasResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LancamentoNotasResource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogCompetenciaHabilidadeDocenteResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LogCompetenciaHabilidadeDocenteResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\LoginResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoginResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelecaoTurmasResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelecaoTurmasResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubPeriodoLetivoResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SubPeriodoLetivoResource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TermoCompromissoResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TermoCompromissoResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,216 @@
+﻿@model SRV.Models.DTO.FiltroLogAuditoria
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btPesquisar")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.TipoOperacao)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.TipoOperacao, (IEnumerable<SelectListItem>)Model.OperacoesAuditoria ?? new List<SelectListItem>(), "", new { style = "width:412px;" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.DataIni)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.DataIni, new { id = "dataEncManifestoIni", style = "width: 80px", @class = "date" })
+                        @Html.TextBoxFor(m => m.HoraIni, new { style = "width:52px;  text-align: right;", maxlength = 5, @class = "hour" })
+                        <div>@Html.ValidationMessageFor(m => m.DataIni)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdUsuario)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.LoginUsuario, new { style = "width:130px;", maxlength = 50 })
+                        <input type="image" id="buttonhitUsuario" src="@Url.Content("~/Content/images/pesquisar.gif")"/>
+                        @Html.TextBoxFor(m => m.NomeUsuario, new { style = "width:250px;", disabled = "disabled" })
+                        @Html.HiddenFor(m => m.NomeUsuario, new { id = "NomeUsuarioHidden" })
+                        @Html.HiddenFor(m => m.IdUsuario)
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.ObjetoAuditoria)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.ObjetoAuditoria, (IEnumerable<SelectListItem>)Model.ObjetosAuditoria ?? new List<SelectListItem>(), "", new { style = "width:412px;" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.DataFin)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.DataFin, new { id = "dataEncManifestoFin", style = "width: 80px", @class = "date" })
+                        @Html.TextBoxFor(m => m.HoraFin, new { style = "width:52px;  text-align: right;", maxlength = 5, @class = "hour" })
+                        <div>@Html.ValidationMessageFor(m => m.DataFin)</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="clear:both"></div>
+
+        @if (Model != null)
+        {
+            if (Model.Logs != null)
+            {
+            @Html.Pager(Model.Logs)
+
+            @Html.Grid(Model.Logs.Items).Columns(column =>
+            {
+                column.For(c => c.DataLog).Named("Data").Attributes(width => "150px").HeaderAttributes(width => "150px").Format("{0:dd/MM/yyyy HH:mm:ss}");
+                    column.For(c => c.Usuario.Nome).Named("Usuário").Attributes(width => "100%").HeaderAttributes(width => "1000%");
+                    column.For(c => c.TipoOperacao.ToDescription()).Named("Operação").Attributes(width => "140px").HeaderAttributes(width => "140px");
+                    column.For(c => c.DesObjeto).Named("Objeto").Attributes(width => "300px").HeaderAttributes(width => "300px");
+                    column.For(c => c.IpCliente).Named("IP").Attributes(width => "150px").HeaderAttributes(width => "150px");
+                    column.For(c => c.TipoOperacao == SRV.Models.Domain.OperacaoAuditoria.Inclusao || c.TipoOperacao == SRV.Models.Domain.OperacaoAuditoria.Atualizacao ||
+                        c.TipoOperacao == SRV.Models.Domain.OperacaoAuditoria.Exclusao ? @Html.ActionLink(" ", "", null, new { href = "#", @class = "icoLinkOpen", onclick = "openDetalheLog(" + c.IdLogAuditoria + ")" }) : @Html.Label("-")).Named("Detalhes").Attributes(width => "60px", align => "center").HeaderAttributes(width => "60px");
+                }).Empty("Nenhum registro encontrado")
+            }
+        }
+    </div>                       
+}
+
+<div id="modalDetalheLog" title="Detalhes do Log" style="display:none;"></div>
+<div id="modalButtonHitUsuario" title="Pesquisa Usuário" style="display:none;"></div>
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $(".hour").mask('99:99', { placeholder: "0" });
+
+        if ($("#HoraIni").val() == "01:01" && $("#HoraFin").val() == "01:01") {
+            $(".hour").val("00:00");
+        }
+
+        @if(@ViewBag.IsFirstTime == true)
+        {
+            @:$("#TipoOperacao").val("");
+            @:$("#ObjetoAuditoria").val("");
+        }
+
+        if($("#TipoOperacao").val() != '@SRV.Models.Domain.OperacaoAuditoria.Inclusao' &&
+            $("#TipoOperacao").val() != '@SRV.Models.Domain.OperacaoAuditoria.Atualizacao' &&
+            $("#TipoOperacao").val() != '@SRV.Models.Domain.OperacaoAuditoria.Exclusao') {
+
+            $("#ObjetoAuditoria").val("");
+            $("#ObjetoAuditoria").attr("disabled", "disabled");
+        } else {
+            $("#ObjetoAuditoria").removeAttr("disabled");
+        }
+
+        $('#TipoOperacao').change(function () {
+            
+            if($("#TipoOperacao").val() != '@SRV.Models.Domain.OperacaoAuditoria.Inclusao' &&
+                $("#TipoOperacao").val() != '@SRV.Models.Domain.OperacaoAuditoria.Atualizacao' &&
+                $("#TipoOperacao").val() != '@SRV.Models.Domain.OperacaoAuditoria.Exclusao') {
+
+                $("#ObjetoAuditoria").val("");
+                $("#ObjetoAuditoria").attr("disabled", "disabled");
+            } else {
+                $("#ObjetoAuditoria").removeAttr("disabled");
+            }
+        });
+
+        $('#buttonhitUsuario').click(function () {
+            var dlg = $("#modalButtonHitUsuario").dialog({
+                title: 'Pesquisar Usuário',
+                height: 'auto',
+                width: 750,
+                position: ['center', 120],
+                modal: true,
+                resizable: false,
+                callback: 'loadUsuario',
+                open: function () {
+                    $(this).load('@Html.Raw(Url.Action("Index", "PesquisaUsuario"))');
+                },
+                beforeClose: function (event, ui) {
+                    $('#modalButtonHitUsuario').empty();
+                }
+            });
+
+            return false;
+        });
+
+        $('#LoginUsuario').blur(function () {
+            if ($('#LoginUsuario').val() != "") {
+                $.getJSON('@Url.Content("~/PesquisaUsuario/FindUsuario")',
+                { login: $('#LoginUsuario').val() },
+                function (data) {
+                    if (data.Result != null) {
+                        $('#LoginUsuario').val(data.Result.Login);
+                        $('#NomeUsuario').val(data.Result.Nome);
+                        $('#NomeUsuarioHidden').val(data.Result.Nome);
+                        $('#IdUsuario').val(data.Result.Id);
+                    }
+                    else {
+                        $('#LoginUsuario').val("");
+                        $('#NomeUsuario').val("");
+                        $('#NomeUsuarioHidden').val("");
+                        $('#IdUsuario').val("");
+                        alert('Usuário não encontrado');
+                        $('#LoginUsuario').focus();
+                    }
+                });
+            }
+            else {
+                $('#LoginUsuario').val("");
+                $('#NomeUsuario').val("");
+                $('#NomeUsuarioHidden').val("");
+                $('#IdUsuario').val("");
+            }
+        });
+
+    });
+
+    function loadUsuario(Id, Login, Nome) {
+        $('#IdUsuario').val(Id);
+        $('#LoginUsuario').val(Login);
+        $('#NomeUsuario').val(Nome);
+        $('#NomeUsuarioHidden').val(Nome);
+    }
+
+    //Função para abrir os detalhes dos logs de importação
+    function openDetalheLog(idLogAuditoria) {
+
+        var dlg = $("#modalDetalheLog").dialog({
+            title: 'Detalhes do Log',
+            height: 'auto',
+            width: 720,
+            modal: true,
+            resizable: false,
+            open: function () {
+                $(this).load('@Html.Raw(Url.Action("Detalhes", "Auditoria"))' + '?id=' + idLogAuditoria);
+            },
+            beforeClose: function (event, ui) {
+                $('#modalDetalheLog').empty();
+            }
+        });
+    }
+
+    @if(@ViewBag.Recurso == true)
+    {
+        @:$("#LoginUsuario").attr("disabled", "disabled");
+        @:$(".boxTitle ul").append('<li><img alt="" src="@Url.Content("~/Content/images/separador.png")"></li><li>Recurso</li>')
+    }
+
+</script>

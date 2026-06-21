@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MvcBuildViews>false</MvcBuildViews>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C23B12B4-6597-4DE3-8E51-62BC6D824A78}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proderj.DOL.WebApp</RootNamespace>
+    <AssemblyName>Proderj.DOL.WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Imagens\favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\Proderj.Library\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\..\Proderj.Library\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Docente_Inclusao_Logs\Proderj.Library\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Validator, Version=1.3.2.4000, Culture=neutral, PublicKeyToken=70154e18752585bd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\NHibernate.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Validator.Specific, Version=1.3.2.4000, Culture=neutral, PublicKeyToken=70154e18752585bd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\NHibernate.Validator.Specific.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\Proderj.Library\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Architecture">
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Architecture.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Common">
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Framework, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Microsoft ASP.NET\ASP.NET MVC 2\\Assemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\MvcRecursos.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MvcRecursos.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Recurso.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recurso.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AjudaController.cs" />
+    <Compile Include="Controllers\AnaliseRendimentoController.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
+    <Compile Include="Controllers\AvaliacaoCurriculoMinimoController.cs" />
+    <Compile Include="Controllers\CadastroGLPController.cs" />
+    <Compile Include="Controllers\CodigoArmazemDoLivroController.cs" />
+    <Compile Include="Controllers\AcompanhamentoClassroomController.cs" />
+    <Compile Include="Controllers\DadosPessoaisController.cs" />
+    <Compile Include="Controllers\DadosDocenteController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ProtocoloNotaController.cs" />
+    <Compile Include="Controllers\ResultadoAvaliacaoController.cs" />
+    <Compile Include="Models\AcompanhamentoClassroom\AcompanhamentoClassroomViewModel.cs" />
+    <Compile Include="Models\AcompanhamentoClassroom\DadosTurmaDocenteViewModel.cs" />
+    <Compile Include="Models\AvaliacaoCurriculoMinimo\AvaliacaoCurriculoMinimoSalvaRequestModel.cs" />
+    <Compile Include="Models\AvaliacaoCurriculoMinimo\AvaliacaoCurriculoMinimoListaViewModel.cs" />
+    <Compile Include="Models\AvaliacaoCurriculoMinimo\AvaliacaoCurriculoMinimoListaRequestModel.cs" />
+    <Compile Include="Controllers\CssController.cs" />
+    <Compile Include="Controllers\RespostaCurriculoMinimoController.cs" />
+    <Compile Include="Controllers\JsController.cs" />
+    <Compile Include="Controllers\LancamentoNotasController.cs" />
+    <Compile Include="Models\Ajuda\AjudaViewModel.cs" />
+    <Compile Include="Models\CadastroGLP\CadastroGLPIncluiDisponibilidadeRequestModel.cs" />
+    <Compile Include="Models\CadastroGLP\CadastroGLPInicialViewModel.cs" />
+    <Compile Include="Models\CadastroGLP\ListaDisponibilidadeRequestModel.cs" />
+    <Compile Include="Models\CadastroGLP\ExcluiDisponibilidadeRequestModel.cs" />
+    <Compile Include="Models\CadastroGLP\IncluiDisponibilidadeRequestModel.cs" />
+    <Compile Include="Models\Captcha\Captcha.cs" />
+    <Compile Include="Models\DadosDocente\AnaliseRendimentoViewModel.cs" />
+    <Compile Include="Models\DadosDocente\CodigoArmazemDoLivroViewModel.cs" />
+    <Compile Include="Models\DadosDocente\ResultadoAvaliacaoViewModel.cs" />
+    <Compile Include="Models\DadosPessoais\DadosPessoaisViewModel.cs" />
+    <Compile Include="Models\DadosPessoais\DadosPessoaisInicialViewModel.cs" />
+    <Compile Include="Models\DadosDocente\DadosCapacitacaoDocenteViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\DadosDocente\DadosDocenteViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\DadosDocente\DadosFormacaoDocenteViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\DadosDocente\DadosGeraisDocenteViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Extensao\DTOItemCombo.cs" />
+    <Compile Include="Models\Captcha\GeraChave.cs" />
+    <Compile Include="Models\Extensao\IDTOItemCombo.cs" />
+    <Compile Include="Models\Extensao\LogadoComTermoAceitoJson.cs" />
+    <Compile Include="Models\LancamentoNotas\LancamentoNotasConsolidadoViewModel.cs" />
+    <Compile Include="Models\LancamentoNotas\LancamentoNotasConsolidadoRequestModel.cs" />
+    <Compile Include="Models\Login\AlteraSenhaViewModel.cs" />
+    <Compile Include="Models\Login\PedidoUsuarioViewModel.cs" />
+    <Compile Include="Models\Login\SenhaRedefinidaViewModel.cs" />
+    <Compile Include="Models\Login\RedefineSenhaViewModel.cs" />
+    <Compile Include="Models\Login\LoginApresentacaoViewModel.cs" />
+    <Compile Include="Models\Login\LoginLogaRequestModel.cs" />
+    <Compile Include="Models\Login\UsuarioPedidoViewModel.cs" />
+    <Compile Include="Models\ProtocoloNota\ProtocoloNotaListaViewModel.cs" />
+    <Compile Include="Models\SelecaoTurmas\ITurmaSelecionadaRequestModel.cs" />
+    <Compile Include="Models\RespostaCurriculoMinimo\RespostaCurriculoMinimoListaViewModel.cs" />
+    <Compile Include="Models\RespostaCurriculoMinimo\RespostaCurriculoMinimoListaRequestModel.cs" />
+    <Compile Include="Models\RespostaCurriculoMinimo\RespostaCurriculoMinimoSalvaRequestModel.cs" />
+    <Compile Include="Models\RespostaCurriculoMinimo\ICurriculoMinimoPrerequisitoLista.cs" />
+    <Compile Include="Models\RespostaCurriculoMinimo\ICurriculoMinimoListaPrerequisito.cs" />
+    <Compile Include="Models\Extensao\ControllerPadrao.cs" />
+    <Compile Include="Models\Extensao\LogadoComTermoAceito.cs" />
+    <Compile Include="Models\SelecaoTurmas\SelecaoTurmasListaViewModel.cs" />
+    <Compile Include="Models\Extensao\PrerequisitoInvalidoResult.cs" />
+    <Compile Include="Models\Extensao\PrerequisitoResult.cs" />
+    <Compile Include="Models\Extensao\PrerequisitoValidoResult.cs" />
+    <Compile Include="Models\Extensao\ViewMontadaResult.cs" />
+    <Compile Include="Models\LancamentoNotas\LancamentoNotasSolicitaReaberturaBimestreRequestModel.cs" />
+    <Compile Include="Models\LancamentoNotas\LancamentoNotasSalvaRequestModel.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SelecaoTurmasController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LancamentoNotas\LancamentoNotasListaViewModel.cs" />
+    <Compile Include="Models\LancamentoNotas\LancamentoNotasListaRequestModel.cs" />
+    <Compile Include="Models\Login\ConfirmaTermoAceiteViewModel.cs" />
+    <Compile Include="Models\Login\DocenteLogadoModelBinder.cs" />
+    <Compile Include="Models\Login\DocenteLogadoBindModel.cs" />
+    <Compile Include="Models\Login\LoginInicialViewModel.cs" />
+    <Compile Include="Models\SelecaoTurmas\SelecaoTurmasTurmaSelecionadaViewModel.cs" />
+    <Compile Include="Models\Shared\CabecalhoPublicViewModel.cs" />
+    <Compile Include="Models\Shared\CabecalhoViewModel.cs" />
+    <Compile Include="Models\ViewModelPadrao.cs" />
+    <Compile Include="Models\WebFormMVCUtil.cs" />
+    <Compile Include="NinjectControllerFactory.cs" />
+    <Compile Include="NinjectModuloController.cs" />
+    <Compile Include="Profiles\DocenteWebProfile.cs" />
+    <Compile Include="Profiles\LancamentoNotasWebProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticMethods.cs" />
+    <Content Include="Imagens\apresentacao_ajuda.png" />
+    <Content Include="Imagens\bg-prof-final.png" />
+    <Content Include="Imagens\bg-prof2.jpg" />
+    <Content Include="Imagens\bg-professor.png" />
+    <Content Include="Imagens\bot_cancelar.png" />
+    <Content Include="Imagens\bot_confirmar.png" />
+    <Content Include="Imagens\btn_EntrarBranco.png" />
+    <Content Include="Imagens\email-fb.png" />
+    <Content Include="Imagens\email-instagram.png" />
+    <Content Include="Imagens\email-top-docente.png" />
+    <Content Include="Imagens\email-top.png" />
+    <Content Include="Imagens\email-twitter.png" />
+    <Content Include="Imagens\favicon.ico" />
+    <Content Include="Imagens\icone-professor.png" />
+    <Content Include="Imagens\icone-site-01.png" />
+    <Content Include="Imagens\icone-site-02.png" />
+    <Content Include="Imagens\icone-site-03.png" />
+    <Content Include="Imagens\icone-site-04.png" />
+    <Content Include="Imagens\icone-site-05.png" />
+    <Content Include="Imagens\icone-site-06.png" />
+    <Content Include="Imagens\icone-site-07.png" />
+    <Content Include="Imagens\icone-site-08.png" />
+    <Content Include="Imagens\icone-site-09.png" />
+    <Content Include="Imagens\icone-site-10.png" />
+    <Content Include="Imagens\icone-site-11.png" />
+    <Content Include="Imagens\icone-site-12.png" />
+    <Content Include="Imagens\loader.gif" />
+    <Content Include="Imagens\loading.gif" />
+    <Content Include="Imagens\logo-conexao-docente.png" />
+    <Content Include="Imagens\logo-conexao.png" />
+    <Content Include="Imagens\logo-docente-azul.png" />
+    <Content Include="Imagens\logo-docente.png" />
+    <Content Include="Imagens\logo-educacao-branca.png" />
+    <Content Include="Imagens\logo-educacao.png" />
+    <Content Include="Imagens\Logo-RJ-Branca.png" />
+    <Content Include="Imagens\mensagem-erro.png" />
+    <Content Include="Imagens\nova-logo.png" />
+    <Content Include="Imagens\tabela_rodape.gif" />
+    <Content Include="Relatorios.aspx.cs">
+      <DependentUpon>Relatorios.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Compile Include="Relatorios.aspx.designer.cs">
+      <DependentUpon>Relatorios.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Arquivos\Termos\Docente2012.htm" />
+    <Content Include="Global.asax" />
+    <Content Include="Imagens\aba_balao.png" />
+    <Content Include="Imagens\ico_ajuda.gif" />
+    <Content Include="Imagens\ico_alerta.png" />
+    <Content Include="Imagens\ico_impressora.png" />
+    <Content Include="Imagens\ico_lixeira.png" />
+    <Content Include="Imagens\ico_salvar.png" />
+    <Content Include="Imagens\ico_voltar.png" />
+    <Content Include="Relatorios.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Ajuda\CadastroGLP.aspx" />
+    <Content Include="Views\Ajuda\ProtocoloNota.aspx" />
+    <Content Include="Views\Ajuda\LancamentoNotas.aspx" />
+    <Content Include="Views\Ajuda\SelecaoTurmas.aspx" />
+    <Content Include="Views\Ajuda\CurriculoMinimo.aspx" />
+    <Content Include="Views\AnaliseRendimento\Inicial.aspx" />
+    <Content Include="Views\CadastroGLP\Inicial.aspx" />
+    <Content Include="Views\CadastroGLP\ListaDisponibilidade.ascx" />
+    <Content Include="Views\CodigoArmazemDoLivro\Inicial.aspx" />
+    <Content Include="Views\AcompanhamentoClassroom\Inicial.aspx" />
+    <Content Include="Views\CSS\AcompanhamentoClassroom.css" />
+    <Content Include="Views\CSS\DadosPessoais-Inicial.css" />
+    <Content Include="Views\JS\AcompanhamentoClassroom-Inicial.js" />
+    <Content Include="Views\Login\PedidoUsuario.aspx" />
+    <Content Include="Views\Login\SenhaRedefinida.aspx" />
+    <Content Include="Views\Login\RedefineSenha.aspx" />
+    <Content Include="Views\Login\UsuarioPedido.aspx" />
+    <Content Include="Views\ResultadoAvaliacao\Inicial.aspx" />
+    <Content Include="Views\Shared\CabecalhoPublic.ascx" />
+    <Content Include="Views\Shared\DadosPessoais.ascx" />
+    <Content Include="Views\DadosPessoais\Inicial.aspx" />
+    <Content Include="Views\CSS\CadastroGLP-Inicial.css" />
+    <Content Include="Views\CSS\Carrega.aspx" />
+    <Content Include="Views\CSS\AvaliacaoCurriculoMinimo-Lista.css" />
+    <Content Include="Views\CSS\CodigoArmazemDoLivro.css" />
+    <Content Include="Views\CSS\DadosDocente.css" />
+    <Content Include="Views\CSS\Login-AlteraSenha.css" />
+    <Content Include="Views\CSS\ProtocoloNota-Lista.css" />
+    <Content Include="Views\CSS\Shared-ErroInesperado.css" />
+    <Content Include="Views\CSS\Login-Apresentacao.css" />
+    <Content Include="Views\CSS\TurmaSelecionada.css" />
+    <Content Include="Views\CSS\RespostaCurriculoMinimo-Lista.css" />
+    <Content Include="Views\CSS\Login-ConfirmaTermoAceite.css" />
+    <Content Include="Views\AvaliacaoCurriculoMinimo\Lista.aspx" />
+    <Content Include="Views\DadosDocente\Inicial.aspx" />
+    <Content Include="Views\JS\AvaliacaoCurriculoMinimo-Lista.js" />
+    <Content Include="Views\JS\CadastroGLP-Inicial.js" />
+    <Content Include="Views\JS\DadosPessoais-Inicial.js" />
+    <Content Include="Views\JS\DadosDocente-Inicial.js" />
+    <Content Include="Views\JS\jquery.inputmask.bundle.min.js" />
+    <Content Include="Views\JS\Login-AlteraSenha.js" />
+    <Content Include="Views\JS\Login-Apresentacao.js" />
+    <Content Include="Views\JS\Master.js" />
+    <Content Include="Views\JS\ProtocoloNota-Lista.js" />
+    <Content Include="Views\JS\jquery.meio.mask.js" />
+    <Content Include="Views\JS\MaskTypes.js" />
+    <Content Include="Views\JS\ProtocoloNota-Paginacao.js" />
+    <Content Include="Views\Login\AlteraSenha.aspx" />
+    <Content Include="Views\Login\Apresentacao.aspx" />
+    <Content Include="Views\ProtocoloNota\Lista.aspx" />
+    <Content Include="Views\ProtocoloNota\ListaProtocolo.ascx" />
+    <Content Include="Views\RespostaCurriculoMinimo\Lista.aspx" />
+    <Content Include="Views\SelecaoTurmas\Lista.aspx" />
+    <Content Include="Views\JS\RespostaCurriculoMinimo-Lista.js" />
+    <Content Include="Views\JS\jquery-ui-1.8.24.ajuda.min.js" />
+    <Content Include="Views\JS\Login-ConfirmaTermoAceite.js" />
+    <Content Include="Views\JS\jquery.fieldSelection.js" />
+    <Content Include="Views\JS\jquery.countdown.min.js" />
+    <Content Include="Views\JS\jquery.numeric.js" />
+    <Content Include="Views\JS\LancamentoNotas-Lista.js" />
+    <Content Include="Views\Login\ConfirmaTermoAceite.aspx" />
+    <Content Include="Views\Login\Inicial.aspx" />
+    <Content Include="Views\Shared\ErroGeral.aspx" />
+    <Content Include="Views\Shared\ErroInesperado.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Arquivos\SAIBA MAIS.PDF" />
+    <Content Include="Views\Shared\Relatorio.Master" />
+    <Content Include="Views\Shared\SitePublic.master" />
+    <None Include="_bin_deployableAssemblies\System.Web.Mvc.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Recurso.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Recurso.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Imagens\bk_bas-inf.gif" />
+    <Content Include="Imagens\bk_bas.gif" />
+    <Content Include="Imagens\bk_top-inf.gif" />
+    <Content Include="Imagens\bk_top.gif" />
+    <Content Include="Imagens\bot_entrar.png" />
+    <Content Include="Imagens\bt_sair.png" />
+    <Content Include="Imagens\ico_info.png" />
+    <Content Include="Imagens\ico_inicio.png" />
+    <Content Include="Imagens\ico_maximini.png" />
+    <Content Include="Imagens\ico_maximizar.png" />
+    <Content Include="Imagens\ico_minimizar.png" />
+    <Content Include="Imagens\ico_mudarturma.png" />
+    <Content Include="Imagens\logo.gif" />
+    <Content Include="Imagens\logo_CEG.png" />
+    <Content Include="Imagens\menu_topo_dir.gif" />
+    <Content Include="Imagens\menu_topo_els.gif" />
+    <Content Include="Imagens\menu_topo_esq.gif" />
+    <Content Include="Imagens\menu_topo_esqdir.png" />
+    <Content Include="Imagens\sel.png" />
+    <Content Include="Imagens\tabela_cabecalho_abadir.gif" />
+    <Content Include="Imagens\tabela_cabecalho_abaesq.gif" />
+    <Content Include="Imagens\tabela_cabecalho_els.gif" />
+    <Content Include="Imagens\tabela_cabecalho_grade_els.gif" />
+    <Content Include="Imagens\tabela_cabecalho_grid.png" />
+    <Content Include="Views\CSS\Cabecalho.css" />
+    <Content Include="Views\CSS\LancamentoNotas-Lista.css" />
+    <Content Include="Views\CSS\SelecaoTurmas-Lista.css" />
+    <Content Include="Views\CSS\Geral.css" />
+    <Content Include="Views\CSS\Login-Inicial.css" />
+    <Content Include="Views\CSS\Rodape.css" />
+    <Content Include="Views\JS\Carrega.aspx" />
+    <Content Include="Views\JS\jquery-1.8.0.min.js" />
+    <Content Include="Views\JS\SelecaoTurmas-Lista.js" />
+    <Content Include="Views\JS\Geral.js" />
+    <Content Include="Views\JS\Login-Inicial.js" />
+    <Content Include="Views\LancamentoNotas\Lista.aspx" />
+    <Content Include="Views\Shared\Cabecalho.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\MvcRecursos.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>MvcRecursos.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Proderj.DOL.Domain.ClassMap\Proderj.DOL.Domain.ClassMap.csproj">
+      <Project>{B6EE5BF8-010E-4890-8083-9C17F79B7BFC}</Project>
+      <Name>Proderj.DOL.Domain.ClassMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proderj.DOL.Domain\Proderj.DOL.Domain.csproj">
+      <Project>{069ACA84-0A80-4A73-AB76-7425C1CBBF79}</Project>
+      <Name>Proderj.DOL.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proderj.DOL.Exception\Proderj.DOL.Exception.csproj">
+      <Project>{1126A219-6B83-4FC2-9F0C-A5233AB80253}</Project>
+      <Name>Proderj.DOL.Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proderj.DOL.Services\Proderj.DOL.Service.csproj">
+      <Project>{734DEB12-F794-40E1-900F-8853FFF023A1}</Project>
+      <Name>Proderj.DOL.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!--
+  <Import 
+    Condition="'$(IsDesktopBuild)' == 'true'" 
+    Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\
+             WebApplications\Microsoft.WebApplication.targets" />
+
+<Import 
+    Condition="'$(IsDesktopBuild)' == 'false'" 
+    Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\
+             WebApplications\Microsoft.WebApplication.targets" />
+			 -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55846</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Proderj.DOL.WebApp</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/Proderj.DOL.WebApp</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+</Project>

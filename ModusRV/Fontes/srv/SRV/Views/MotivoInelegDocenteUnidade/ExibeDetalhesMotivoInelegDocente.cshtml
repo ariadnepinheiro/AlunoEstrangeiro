@@ -1,0 +1,33 @@
+﻿@model SRV.Models.DTO.MotivoInelegDocenteUnidAdm
+
+@using MvcContrib.UI.Grid
+@using SRV.Common.Extension
+
+@{
+    Layout = null;
+}
+
+<div class="boxContent">
+
+    <table class="tableForm">
+        <tr>
+            <td class="labelRight">@Html.LabelFor(m => m.Servidor.IdServidor)</td>
+            <td>@Model.Servidor.IdServidor</td>
+        </tr>
+        <tr>
+            <td class="labelRight">@Html.LabelFor(m => m.Servidor.DesNomeServidor)</td>
+            <td>@Model.m.Servidor.DesNomeServidor</td>
+        </tr>
+    </table>
+
+    <br/>
+
+    @using (@Html.BeginScroller("100%", "250px"))
+    {
+        @Html.Grid(Model.Motivos).Columns(column =>
+        {
+            column.For(c => c.DesMotivoInelegibilidade).Named("Motivo").Attributes(width => "600px").HeaderAttributes(width => "600px");
+        }).Empty("Nenhum registro encontrado")
+    }
+            
+</div>

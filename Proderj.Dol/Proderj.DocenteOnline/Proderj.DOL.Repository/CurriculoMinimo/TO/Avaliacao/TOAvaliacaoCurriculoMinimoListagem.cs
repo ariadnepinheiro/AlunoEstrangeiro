@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Proderj.DOL.Repository
+{
+	public class TOAvaliacaoCurriculoMinimoListagem
+	{
+		public int IdAvaliacaoCurriculoMinimo { get; set; }
+
+		public short Ordem { get; set; }
+
+		public string DescricaoAvaliacao { get; set; }
+
+		public bool? Resposta { get; set; }
+	}
+}

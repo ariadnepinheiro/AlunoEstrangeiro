@@ -1,0 +1,124 @@
+﻿@model SRV.Models.DTO.RptExtratoServidor
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@{
+    ViewBag.CaminhoPao.Nivel1="Relatórios";
+    ViewBag.CaminhoPao.Nivel2="Extrato de RV";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.DownloadToken, new { @id = "download_token_value" })
+    
+    using (Html.BeginToolbar())
+    {
+        if (@Model.IdAnoReferencia != 0)
+        {
+                @Html.ToolbarItemJS(true, "exportarClick()", new { id = "exportar" }, "btExportarExcel")
+        }
+            @Html.ToolbarItemLink(@Model.Retorno, "Index", "RptConsolidado", null, "btVoltar")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.HiddenFor(m => m.MatriculaServidor)
+        @Html.HiddenFor(m => m.IdAnoReferencia)
+        @Html.HiddenFor(m => m.IdRegional)
+
+        @Html.ValidationSummary(true)
+        @if (Model != null && Model.MatriculaServidor != 0)
+        {
+            <fieldset>
+                <legend style="font-size: 14px; padding-bottom:10px; font-weight: normal">Dados do Servidor</legend>
+                <table class="tableForm">
+                    <tr>
+                        <td class="labelRight">@Html.LabelFor(m => m.MatriculaServidor)</td>
+                        <td>@Html.DisplayTextFor(m => m.MatriculaServidor)</td>
+                    </tr>
+                    <tr>
+                        <td class="labelRight">@Html.LabelFor(m => m.Nome)</td>
+                        <td>@Html.DisplayTextFor(m => m.Nome)</td>
+                    </tr>
+                    <tr>
+                        <td class="labelRight">@Html.LabelFor(m => m.CPF)</td>
+                        <td>@Html.DisplayTextFor(m => m.CPF)</td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <br/>
+            <div style="font-size: 14px; text-align: left; font-weight:bold; padding-right: 10px; color:#555">
+                @Html.LabelFor(m => m.Resultado): @Html.DisplayTextFor(m => m.Resultado)
+            </div>
+        }
+
+        <br/>
+
+        <div style="clear:both"></div>
+
+        @if (Model != null && Model.Unidades != null)
+        {
+            using (@Html.BeginScroller())
+            {
+                @Html.Grid(Model.Unidades).Columns(column =>
+           {
+               column.For(c => c.Regional).Named("Regional").Attributes(width => "300px").HeaderAttributes(width => "300px");
+               column.For(c => c.Unidade).Named("Unidade").Attributes(width => "300px").HeaderAttributes(width => "300px");
+               column.For(c => c.FuncaoAtividade).Named("Função / Atividade").Attributes(width => "300px").HeaderAttributes(width => "300px");
+               column.For(c => c.FuncaoBonificacao).Named("Função para Bonificação").Attributes(width => "300px").HeaderAttributes(width => "300px");
+               column.For(c => c.Proporcionalidade + "%").Named("Proporcionalidade").Attributes(width => "120px", align => "right").HeaderAttributes(width => "120px");
+               column.For(c => c.Periodo).Named("Período").Attributes(width => "160px").HeaderAttributes(width => "160px");
+               column.For(c => c.CoeficienteBonificacao.ToString("N2")).Named("Coeficiente Bonificação").Attributes(width => "160px", align => "right").HeaderAttributes(width => "160px");
+               column.For(c => c.Alocacao != null ? c.Alocacao.Value.ToString("N2") + "%" : "" + "%").Named("% Alocação").Attributes(width => "100px", align => "right").HeaderAttributes(width => "100px", align => "right");
+               column.For(c => (c.Eligibilidade && c.EligibilidadeUnidadeServidor)
+                   ? Html.ActionLink(" ", "", null, new { href = "#", @class = "icon_elegivel_sim" }) 
+                   : Html.ActionLink(" ", "", null, new { href = "#", @class = "icon_elegivel_nao", onclick = "openMotivo(" + c.IdUnidadeAdministrativa + ", " + Model.MatriculaServidor + ")" })).Named("Elegível").Attributes(width => "100px", align => "center").HeaderAttributes(width => "100px", align => "right").Encode(false);
+               column.For(c => c.Resultado.ToString("N2")).Named("Resultado Alcançado").Attributes(width => "150px", align => "right").HeaderAttributes(width => "150px");
+
+           }).Empty("Nenhum registro encontrado")
+            }
+        }
+
+
+    </div>                       
+}
+
+    <div id="modalMotivoInelegivel" title=""></div>
+
+    <script type="text/javascript">
+
+        disableWaiting = false;
+        isReport = true;
+
+        function exportarClick() {
+            isReport = true;
+            checkDownload();
+
+            $('#exportar').closest("form").attr('action', '@Url.Action("GeraExcel", "RptExtratoServidor")');
+            $('#exportar').closest("form").submit();
+        }
+
+        function openMotivo(idUnidade, idServidor) {
+
+            var dlg = $("#modalMotivoInelegivel").dialog({
+                title: 'Motivo da Inelegibilidade',
+                height: 400,
+                width: 720,
+                position: ['center', 120],
+                modal: true,
+                resizable: false,
+                open: function () {
+                    $(this).load('@Url.Action("Index", "MotivoInelegDocenteUnidAdm", new { idAnoReferencia = @Model.IdAnoReferencia})&idUnidade=' + idUnidade + '&idServidor=' + idServidor);
+                },
+                beforeClose: function (event, ui) {
+                    $('#modalMotivoInelegivel').empty();
+                }
+            });
+        }
+</script>

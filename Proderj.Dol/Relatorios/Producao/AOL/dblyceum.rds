@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="dblyceum">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=10.12.18.10;Initial Catalog=LYCEUM</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>7744507e-ea70-4ad4-ab7b-ed82f9fd9740</DataSourceID>
+</RptDataSource>

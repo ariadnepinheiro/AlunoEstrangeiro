@@ -1,0 +1,47 @@
+﻿@model SRV.Models.Domain.GrupoFuncao
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(true, "Create", null, null, "btNovo");
+        @Html.ToolbarItemSubmit(true, "btSalvar");
+        
+        if (Model.IdGrupoFuncao != null)
+        {
+            @Html.ToolbarItemJS(true, "deleteItemAndRedirect(this, '" + @Url.Action("Delete", "GrupoFuncao") + "', '" + @Url.Action("Create", "GrupoFuncao") + "', " + @Model.IdGrupoFuncao + ")", null, "btExcluir");
+        }
+                                                                                                                                                                                                
+        @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <table class="tableForm">
+            @if (Model.IdGrupoFuncao != null)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdGrupoFuncao)</td>
+                    <td>@Html.DisplayTextFor(m => m.IdGrupoFuncao)<br/>
+                        @Html.HiddenFor(m => m.IdGrupoFuncao)
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.DesGrupoFuncao)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.DesGrupoFuncao, new { style = "width:450px;", maxlength = 50 })<br/>
+                    @Html.ValidationMessageFor(m => m.DesGrupoFuncao)
+                </td>
+            </tr>
+        </table>
+    </div>
+}

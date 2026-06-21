@@ -1,0 +1,57 @@
+﻿@model SRV.Models.Domain.Nota
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(true, "Create", null, null, "btNovo");
+        @Html.ToolbarItemSubmit(true, "btSalvar");
+        
+        if (Model.IdNota != null)
+        {
+            @Html.ToolbarItemJS(true, "deleteItemAndRedirect(this, '" + @Url.Action("Delete", "Nota") + "', '" + @Url.Action("Create", "Nota") + "', " + @Model.IdNota + ")", null, "btExcluir");
+        }
+                                                                                                                                                                                                
+        @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <table class="tableForm">
+            @if (@Model.IdNota != null)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdNota)</td>
+                    <td>@Html.DisplayTextFor(m => m.IdNota)<br/>
+                        @Html.HiddenFor(m => m.IdNota)
+                    </td>
+                </tr>
+            }
+            
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.DesNota)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.DesNota, new { style = "width:80px; text-align: right;", maxlength = 6 })<br/>
+                    @Html.ValidationMessageFor(m => m.DesNota)
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $("#DesNota").maskMoney({ thousands: '', decimal: ',', precision: 2, allowZero: true, allowNegative: false, defaultZero: false });
+    })
+
+</script>

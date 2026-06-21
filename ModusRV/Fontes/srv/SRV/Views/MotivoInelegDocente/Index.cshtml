@@ -1,0 +1,126 @@
+﻿@model SRV.Models.DTO.FiltroMotivoInelegDocente
+@using MvcContrib.UI.Grid
+@using SRV.Common.Extension
+@{
+    Layout = null;
+}
+<div class="boxContent">
+    <table class="tableForm">
+        <tr>
+            <td class="labelRight">@Html.LabelFor(m => m.Servidor.IdServidor)</td>
+            <td>@Model.Servidor.IdServidor</td>
+        </tr>
+        <tr>
+            <td class="labelRight">@Html.LabelFor(m => m.Servidor.DesNomeServidor)</td>
+            <td>@Model.Servidor.DesNomeServidor</td>
+        </tr>
+    </table>
+    <br />
+
+    @using (@Html.BeginScroller("100%", "250px"))
+    {
+        switch (Model.TipoMotivo)
+        {
+            case SRV.Models.Domain.MotivoInelegibilidade.TipoMotivo.LancamentoNotaDocente:
+                @Html.Grid(Model.LancamentosNotasDocentes).Columns(column => {
+                    
+                    column
+                        .For(c => c.UnidadeAdministrativa.DesUnidadeAdministrativa)
+                        .Named("Unidade")
+                        .Attributes(width => "200px")
+                        .HeaderAttributes(width => "200px");
+
+                    column
+                        .For(c => string.Format("{0}º Bimestre", c.NmBimestre))
+                        .Named("Bimestre")
+                        .Attributes(width => "70px")
+                        .HeaderAttributes(width => "70px");
+
+                    column
+                        .For(c => c.DesTurma)
+                        .Named("Turma")
+                        .Attributes(width => "100px", align => "center")
+                        .HeaderAttributes(width => "100px", align => "center");
+
+                    column
+                        .For(c => c.NmPeriodoDesc)
+                        .Named("Período")
+                        .Attributes(width => "70px", align => "center")
+                        .HeaderAttributes(width => "70px", align => "center");
+
+                    column
+                        .For(c => c.DesDisciplina)
+                        .Named("Disciplina")
+                        .Attributes(width => "150px", align => "center")
+                        .HeaderAttributes(width => "150px", align => "center");
+                }).Empty("Nenhum registro encontrado");           
+                break;
+           
+                case SRV.Models.Domain.MotivoInelegibilidade.TipoMotivo.DenunciaAvaliacaoExterna:
+                    @Html.Grid(Model.DenunciasAvaliacoesExternas).Columns(column =>
+                    {
+                        column
+                            .For(c => c.UnidadeAdministrativa.DesUnidadeAdministrativa)
+                            .Named("Unidade")
+                            .Attributes(width => "200px")
+                            .HeaderAttributes(width => "200px");
+
+                        column
+                            .For(c => c.AvaliacaoExterna.DesAvaliacaoExterna)
+                            .Named("Avaliação")
+                            .Attributes(width => "100px", align => "center")
+                            .HeaderAttributes(width => "100px", align => "center");
+
+                        column
+                            .For(c => c.DesMotivoDenuncia)
+                            .Named("Motivo")
+                            .Attributes(width => "300px", style => "white-space:pre-wrap")
+                            .HeaderAttributes(width => "300px");
+                    }).Empty("Nenhum registro encontrado");
+                      
+                    break;
+            
+                case SRV.Models.Domain.MotivoInelegibilidade.TipoMotivo.AplicacaoProvaAvaliacaoExterna:
+                    @Html.Grid(Model.AplicacoesProvasAvaliacoesExternas).Columns(column => {
+                        column
+                           .For(c => c.UnidadeAdministrativa.DesUnidadeAdministrativa)
+                           .Named("Unidade")
+                           .Attributes(width => "200px")
+                           .HeaderAttributes(width => "200px");
+
+                        column
+                            .For(c => c.DesTurma)
+                            .Named("Turma")
+                            .Attributes(width => "100px", align => "center")
+                            .HeaderAttributes(width => "100px", align => "center");
+
+                        column
+                            .For(c => c.NmPeriodoDesc)
+                            .Named("Período")
+                            .Attributes(width => "70px", align => "center")
+                            .HeaderAttributes(width => "70px", align => "center");
+
+                        column
+                            .For(c => c.DtProva.ToString("dd/MM/yyyy"))
+                            .Named("Data")
+                            .Attributes(width => "70px")
+                            .HeaderAttributes(width => "70px");
+
+                        column
+                            .For(c => c.DtProva.ToString("HH:mm"))
+                            .Named("Hora")
+                            .Attributes(width => "70px")
+                            .HeaderAttributes(width => "70px");
+
+                        column
+                            .For(c => c.AvaliacaoExterna.DesAvaliacaoExterna)
+                            .Named("Avaliação")
+                            .Attributes(width => "100px", align => "center")
+                            .HeaderAttributes(width => "100px", align => "center");
+                    }).Empty("Nenhum registro encontrado");
+               break;
+            }
+        }
+
+
+</div>

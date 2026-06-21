@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B8D0577-C355-441D-8C92-212EBBDEE74C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proderj.DOL.Repository.Teste</RootNamespace>
+    <AssemblyName>Proderj.DOL.Repository.Teste</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=1.2.0.712, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NHibernate, Version=3.2.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Architecture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Architecture.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CadastroGLP\DocenteDisponivelGLPTeste.cs" />
+    <Compile Include="CadastroGLP\GrupoHabilitacaoTeste.cs" />
+    <Compile Include="CadastroGLP\MunicipioTeste.cs" />
+    <Compile Include="CadastroGLP\NucleoTeste.cs" />
+    <Compile Include="CadastroGLP\UnidadeEnsinoTeste.cs" />
+    <Compile Include="CurriculoMinimo\AvaliacaoCurriculoMinimoDocenteTeste.cs" />
+    <Compile Include="CurriculoMinimo\AvaliacaoCurriculoMinimoJustificativaTeste.cs" />
+    <Compile Include="CurriculoMinimo\AvaliacaoCurriculoMinimoTeste.cs" />
+    <Compile Include="CurriculoMinimo\CompetenciaHabilidadeDocenteTeste.cs" />
+    <Compile Include="CurriculoMinimo\CompetenciaHabilidadeGrupoTeste.cs" />
+    <Compile Include="CurriculoMinimo\LogAvaliacaoCurriculoMinimoDocenteTeste.cs" />
+    <Compile Include="CurriculoMinimo\LogAvaliacaoCurriculoMinimoJustificativaTeste.cs" />
+    <Compile Include="CurriculoMinimo\LogCompetenciaHabilidadeDocenteTeste.cs" />
+    <Compile Include="LancamentoNotas\ItemTabelaTeste.cs" />
+    <Compile Include="LancamentoNotas\AlunoTeste.cs" />
+    <Compile Include="LancamentoNotas\FaltaTeste.cs" />
+    <Compile Include="LancamentoNotas\LogNotaTeste.cs" />
+    <Compile Include="TermoAceite\AceiteTermoCompromissoDocenteTeste.cs" />
+    <Compile Include="Docente\DocenteTeste.cs" />
+    <Compile Include="Core\DisciplinaTeste.cs" />
+    <Compile Include="LancamentoNotas\FrequenciaTeste.cs" />
+    <Compile Include="LancamentoNotas\NotaTeste.cs" />
+    <Compile Include="LancamentoNotas\ProvaTeste.cs" />
+    <Compile Include="LancamentoNotas\SolicitacaoAlteracaoNotaTeste.cs" />
+    <Compile Include="LancamentoNotas\LancamentoTeste.cs" />
+    <Compile Include="Login\LoginTeste.cs" />
+    <Compile Include="SelecaoTurmas\MatriculaTeste.cs" />
+    <Compile Include="PessoaTeste.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelecaoTurmas\SelecaoTurmasTeste.cs" />
+    <Compile Include="Core\SubPeriodoTeste.cs" />
+    <Compile Include="LancamentoNotas\SubPeriodoLetivoTeste.cs" />
+    <Compile Include="TermoAceite\TermoCompromissoDocenteTeste.cs" />
+    <Compile Include="Login\UltimoResetTeste.cs" />
+    <Compile Include="TransacaoTeste\TransacaoTeste.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Proderj.DOL.Domain.ClassMap\Proderj.DOL.Domain.ClassMap.csproj">
+      <Project>{B6EE5BF8-010E-4890-8083-9C17F79B7BFC}</Project>
+      <Name>Proderj.DOL.Domain.ClassMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proderj.DOL.Domain\Proderj.DOL.Domain.csproj">
+      <Project>{069ACA84-0A80-4A73-AB76-7425C1CBBF79}</Project>
+      <Name>Proderj.DOL.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proderj.DOL.Repository\Proderj.DOL.Repository.csproj">
+      <Project>{72997ACD-AB22-4F41-87EE-7B0EF5115330}</Project>
+      <Name>Proderj.DOL.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

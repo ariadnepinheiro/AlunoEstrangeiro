@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{734DEB12-F794-40E1-900F-8853FFF023A1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proderj.DOL.Service</RootNamespace>
+    <AssemblyName>Proderj.DOL.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Proderj.Library\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Core.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Core.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Core.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Architecture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Architecture.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Framework, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.ServiceModel.Channels" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\DTO\DTOApi.cs" />
+    <Compile Include="Api\Interface\IApiService.cs" />
+    <Compile Include="Api\ApiService.cs" />
+    <Compile Include="CadastroGLP\CadastroGlpService.cs" />
+    <Compile Include="CadastroGLP\DiaDaSemanaEnum.cs" />
+    <Compile Include="CadastroGLP\DTO\DTOCadastroGlp_DocenteDisponivel.cs" />
+    <Compile Include="CadastroGLP\DTO\DTOCadastroGlp_InsereDocenteDisponivel.cs" />
+    <Compile Include="CadastroGLP\DTO\DTOCadastroGlp_VerificaPermissaoParaInsercaoDocenteDisponivel.cs" />
+    <Compile Include="CadastroGLP\DTO\DTOCadastroGlp_Disciplina.cs" />
+    <Compile Include="CadastroGLP\DTO\DTOCadastroGlp_DocenteLogadoComTelefone.cs" />
+    <Compile Include="CadastroGLP\Interface\ICadastroGlpService.cs" />
+    <Compile Include="Docente\DTO\DadosAcessoDocenteDTO.cs" />
+    <Compile Include="Docente\DTO\DadosTurmaDocenteDTO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EmailApi\EmailApi.cs" />
+    <Compile Include="HADES\HD_PAIS\DTO\DTOHD_PAIS.cs" />
+    <Compile Include="HADES\HD_PAIS\Interface\IHD_PAISService.cs" />
+    <Compile Include="HADES\HD_PAIS\HD_PAISService.cs" />
+    <Compile Include="Core\Municipio\IMunicipioService.cs" />
+    <Compile Include="Core\Municipio\MunicipioService.cs" />
+    <Compile Include="Core\Nucleo\DTOCoordenadoria.cs" />
+    <Compile Include="Core\Nucleo\INucleoService.cs" />
+    <Compile Include="Core\Nucleo\NucleoService.cs" />
+    <Compile Include="Core\ItemTabela\DTOItemTabela.cs" />
+    <Compile Include="Core\ItemTabela\IItemTabelaService.cs" />
+    <Compile Include="Core\ItemTabela\ItemTabelaService.cs" />
+    <Compile Include="Core\PeriodoLetivo\DTOPeriodoLetivo.cs" />
+    <Compile Include="Core\PeriodoLetivo\IPeriodoLetivoService.cs" />
+    <Compile Include="Core\PeriodoLetivo\PeriodoLetivoService.cs" />
+    <Compile Include="Core\Pessoa\IPessoaService.cs" />
+    <Compile Include="Core\Pessoa\PessoaService.cs" />
+    <Compile Include="Core\Regional\DTORegional.cs" />
+    <Compile Include="Core\Regional\IRegionalService.cs" />
+    <Compile Include="Core\Regional\RegionalService.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\AvaliacaoCurriculoMinimoService.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\DTO\DTOAvaliacaoCurriculoMinimo_RespostaAvaliacao.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\DTO\DTOAvaliacaoCurriculoMinimoDocente_AtualizaCompetenciasPor.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\DTO\DTOAvaliacaoCurriculoMinimoJustificativa_AtualizaCompetenciasPor.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\DTO\DTOAvaliacaoCurriculoMinimo_AvaliacoesEJustificativa.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\DTO\DTOAvaliacaoCurriculoMinimo_EnumeraAvaliacoesEJustificativaPor.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\DTO\DTOAvaliacaoCurriculoMinimo_SalvaAvaliacoesEJustificativaPor.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\DTO\DTOAvaliacaoCurriculoMinimo_VerificaPermissaoParaListar.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\Interface\IAvaliacaoCurriculoMinimoService.cs" />
+    <Compile Include="CurriculoMinimo\Interface\ILogCompetenciaHabilidadeDocenteService.cs" />
+    <Compile Include="CurriculoMinimo\Resposta\RespostaCurriculoMinimoService.cs" />
+    <Compile Include="CurriculoMinimo\Resposta\DTO\DTORespostaCurriculoMinimo_RespostasPorGrupo.cs" />
+    <Compile Include="Core\SubPeriodoLetivo\DTOSubPeriodoLetivo_EnumeraParaExibicaoDeCurriculoMinimoPor.cs" />
+    <Compile Include="CurriculoMinimo\Resposta\DTO\DTORespostaCurriculoMinimo_EnumeraRespostasPorGrupoPor.cs" />
+    <Compile Include="CurriculoMinimo\DTO\DTOCurriculoMinimo_VerificaPermissaoBase.cs" />
+    <Compile Include="CurriculoMinimo\Resposta\DTO\DTORespostaCurriculoMinimo_VerificaPermissaoParaListar.cs" />
+    <Compile Include="CurriculoMinimo\Resposta\DTO\DTORespostaCurriculoMinimo_GrupoSimples.cs" />
+    <Compile Include="CurriculoMinimo\Resposta\DTO\DTORespostaCurriculoMinimo_VerificaPermissaoParaSalvar.cs" />
+    <Compile Include="CurriculoMinimo\Resposta\DTO\DTORespostaCurriculoMinimo_StatusPreenchimentoPorTurma.cs" />
+    <Compile Include="CurriculoMinimo\Resposta\DTO\DTORespostaCurriculoMinimo_ObtemStatusPreenchimentoPor.cs" />
+    <Compile Include="CurriculoMinimo\Interface\ICurriculoMinimoService.cs" />
+    <Compile Include="CurriculoMinimo\Resposta\DTO\DTORespostaCurriculoMinimo_SalvaPor.cs" />
+    <Compile Include="CurriculoMinimo\DTO\DTOLogCompetenciaHabilidade.cs" />
+    <Compile Include="CurriculoMinimo\StatusPreenchimentoCurriculoMinimoPorTurmaEnum.cs" />
+    <Compile Include="Core\Disciplina\DisciplinaService.cs" />
+    <Compile Include="Core\Disciplina\DTOConfiguracaoNotaDisciplina.cs" />
+    <Compile Include="Docente\DadosDocenteService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Docente\DTO\DadosCapacitacaoDocenteDTO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Docente\DTO\DadosFormacaoDocenteDTO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Docente\DTO\DadosGeraisDocenteDTO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CurriculoMinimo\LogCompetenciaHabilidadeDocenteService.cs" />
+    <Compile Include="Core\UnidadeEnsino\DTOUnidadeEnsino.cs" />
+    <Compile Include="Docente\Interface\IDadosDocenteService.cs" />
+    <Compile Include="HADES\TCE_LOGRADOURO\DTO\DTOTCE_LOGRADOURO.cs" />
+    <Compile Include="HADES\TCE_LOGRADOURO\TCE_LOGRADOUROService.cs" />
+    <Compile Include="HADES\TCE_LOGRADOURO\Interface\ITCE_LOGRADOUROService.cs" />
+    <Compile Include="HADES\TCE_MUNICIPIO\DTO\DTOTCE_MUNICIPIO.cs" />
+    <Compile Include="HADES\TCE_MUNICIPIO\Interface\ITCE_MUNICIPIOService.cs" />
+    <Compile Include="HADES\TCE_MUNICIPIO\TCE_MUNICIPIOService.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOItemJustificativa.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOItemSalvaNotaFrequenciaAluno.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOLancamentoNotasConsolidado.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOLancamentoNotasConsolidadoSolicitacao.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOMaterialEstudo.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTONotaFrequenciaConsolidado.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOSolicitacaoAlteracaoNotas_ConsultaTurma.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOTurmaMaterialEstudo.cs" />
+    <Compile Include="LancamentoNotas\Interface\IMaterialEstudoService.cs" />
+    <Compile Include="LancamentoNotas\Interface\ITurmaMaterialEstudoService.cs" />
+    <Compile Include="LancamentoNotas\MaterialEstudoService.cs" />
+    <Compile Include="LancamentoNotas\Salvamento\DTO\DTOSolicitacaoReabertura.cs" />
+    <Compile Include="LancamentoNotas\Salvamento\DTO\DTOFaltaSalva.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOFrequenciaTurma.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOItemLancamentoNotaFrequenciaAluno.cs" />
+    <Compile Include="LancamentoNotas\Salvamento\DTO\DTOLancamentoAtualizacaoAulas.cs" />
+    <Compile Include="LancamentoNotas\Salvamento\DTO\DTOLancamentoNotasSalvamento.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOLancamentoNotasValidacao.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOLancamentoNotas.cs" />
+    <Compile Include="LancamentoNotas\Salvamento\DTO\DTONotaSalva.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOProvaParaLancamento.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOProvaTurma.cs" />
+    <Compile Include="LancamentoNotas\DTO\DTOSubPeriodoLetivoAtivo.cs" />
+    <Compile Include="Core\Disciplina\IDisciplinaService.cs" />
+    <Compile Include="LancamentoNotas\Interface\ILancamentoNotasService.cs" />
+    <Compile Include="LancamentoNotas\Interface\ISolicitacaoAlteracaoNotasService.cs" />
+    <Compile Include="LancamentoNotas\Interface\ITurmaService.cs" />
+    <Compile Include="Core\SubPeriodoLetivo\ISubPeriodoLetivoService.cs" />
+    <Compile Include="Core\UnidadeEnsino\IUnidadeEnsinoService.cs" />
+    <Compile Include="LancamentoNotas\LancamentoNotasService.cs" />
+    <Compile Include="LancamentoNotas\Salvamento\DTO\DTOFalta.cs" />
+    <Compile Include="LancamentoNotas\Salvamento\DTO\DTONota.cs" />
+    <Compile Include="LancamentoNotas\Salvamento\DTO\DTOProtocoloNota.cs" />
+    <Compile Include="LancamentoNotas\SolicitacaoAlteracaoNotasService.cs" />
+    <Compile Include="LancamentoNotas\TurmaMaterialEstudoService.cs" />
+    <Compile Include="LancamentoNotas\TurmaService.cs" />
+    <Compile Include="Core\SubPeriodoLetivo\SubPeriodoLetivoService.cs" />
+    <Compile Include="Core\UnidadeEnsino\UnidadeEnsinoService.cs" />
+    <Compile Include="Login\DTO\DTODocenteAlteraSenha.cs" />
+    <Compile Include="Login\DTO\DTODocenteLogado.cs" />
+    <Compile Include="Login\DTO\DTODocenteLogadoAutenticavel.cs" />
+    <Compile Include="Login\DTO\DTODocenteLogadoPrincipal.cs" />
+    <Compile Include="LYCEUM\ARMAZEM_LIVRO_2019Service.cs" />
+    <Compile Include="LYCEUM\DTO\DTOLY_UNIDADE_ENSINO.cs" />
+    <Compile Include="LYCEUM\Interface\IARMAZEM_LIVRO_2019Service.cs" />
+    <Compile Include="LYCEUM\Interface\ILY_UNIDADE_ENSINOService.cs" />
+    <Compile Include="LYCEUM\LY_UNIDADE_ENSINOService.cs" />
+    <Compile Include="LYCEUM\DTO\DTOAtualizaPessoa.cs" />
+    <Compile Include="LYCEUM\DTO\DTOLY_DOCENTE.cs" />
+    <Compile Include="LYCEUM\DTO\DTOLY_PESSOA.cs" />
+    <Compile Include="LYCEUM\LY_PESSOAService.cs" />
+    <Compile Include="LYCEUM\Interface\ILY_PESSOAService.cs" />
+    <Compile Include="LYCEUM\RecursosHumanos\DISPONIBILIDADEGLPService.cs" />
+    <Compile Include="LYCEUM\DTO\DTOListaMUNICIPIOPorID_REGIONAL.cs" />
+    <Compile Include="LYCEUM\RecursosHumanos\DTO\DTOListaDISPONIBILIDADEGLP.cs" />
+    <Compile Include="LYCEUM\RecursosHumanos\DTO\DTOIncluiDISPONIBILIDADEGLP.cs" />
+    <Compile Include="LYCEUM\RecursosHumanos\Interface\IDISPONIBILIDADEGLPService.cs" />
+    <Compile Include="Profiles\AvaliacaoCurriculoMinimoServiceProfile.cs" />
+    <Compile Include="Profiles\CadastroGLPServiceProfile.cs" />
+    <Compile Include="Profiles\APIServiceProfile.cs" />
+    <Compile Include="Profiles\DocenteServiceProfile.cs" />
+    <Compile Include="Profiles\NucleoServiceProfile.cs" />
+    <Compile Include="Profiles\RespostaCurriculoMinimoServiceProfile.cs" />
+    <Compile Include="Profiles\SelecaoTurmasServiceProfile.cs" />
+    <Compile Include="Profiles\SubPeriodoLetivoServiceProfile.cs" />
+    <Compile Include="ProtocolaNota\DTO\DTOProtocoloNotaComData.cs" />
+    <Compile Include="ProtocolaNota\Interface\IProtocoloNotaService.cs" />
+    <Compile Include="ProtocolaNota\ProtocoloNotaService.cs" />
+    <Compile Include="SelecaoTurmas\DTO\DTOSelecaoTurmas.cs" />
+    <Compile Include="SelecaoTurmas\Interface\ISelecaoTurmasService.cs" />
+    <Compile Include="NinjectModuloServico.cs" />
+    <Compile Include="SelecaoTurmas\SelecaoTurmasService.cs" />
+    <Compile Include="TermoAceite\DTO\DTOTermoAceiteExibicao.cs" />
+    <Compile Include="TermoAceite\DTO\DTOTermoAceiteInclusao.cs" />
+    <Compile Include="Docente\Interface\IDocenteService.cs" />
+    <Compile Include="Login\Interface\ILoginService.cs" />
+    <Compile Include="TermoAceite\Interface\ITermoCompromissoDocenteService.cs" />
+    <Compile Include="Login\Interface\IUltimoResetService.cs" />
+    <Compile Include="Docente\DocenteService.cs" />
+    <Compile Include="Login\LoginService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TermoAceite\TermoCompromissoDocenteService.cs" />
+    <Compile Include="Login\UltimoResetService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TermoAceite\Repositorio\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Proderj.DOL.Domain\Proderj.DOL.Domain.csproj">
+      <Project>{069ACA84-0A80-4A73-AB76-7425C1CBBF79}</Project>
+      <Name>Proderj.DOL.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proderj.DOL.Exception\Proderj.DOL.Exception.csproj">
+      <Project>{1126A219-6B83-4FC2-9F0C-A5233AB80253}</Project>
+      <Name>Proderj.DOL.Exception</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proderj.DOL.Repository\Proderj.DOL.Repository.csproj">
+      <Project>{72997ACD-AB22-4F41-87EE-7B0EF5115330}</Project>
+      <Name>Proderj.DOL.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://microsoft.com/webservices/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://microsoft.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/webservices/">
+      <s:element name="SolicitaCartaoSEPI_">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoUnidade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MatriculaLYCEUM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeAluno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataNascimento" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroRG" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoCurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeCurso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Serie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Turma" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SituacaoAluno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoSolicitacao" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioSolic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolicitaCartaoSEPI_Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SolicitaCartaoSEPI_Result" type="tns:CartaoSEPI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CartaoSEPI">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoUnidade" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Matricula" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MatriculaLYCEUM" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroCartao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NomeAluno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataNascimento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoCurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomeCurso" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Serie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Turma" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UsuarioSolic" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroRG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipoSolicitacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SituacaoAluno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCartao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CartaoSEPI" nillable="true" type="tns:CartaoSEPI" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SolicitaCartaoSEPI_SoapIn">
+    <wsdl:part name="parameters" element="tns:SolicitaCartaoSEPI_" />
+  </wsdl:message>
+  <wsdl:message name="SolicitaCartaoSEPI_SoapOut">
+    <wsdl:part name="parameters" element="tns:SolicitaCartaoSEPI_Response" />
+  </wsdl:message>
+  <wsdl:message name="SolicitaCartaoSEPI_HttpGetIn">
+    <wsdl:part name="CodigoUnidade" type="s:string" />
+    <wsdl:part name="MatriculaLYCEUM" type="s:string" />
+    <wsdl:part name="NomeAluno" type="s:string" />
+    <wsdl:part name="DataNascimento" type="s:string" />
+    <wsdl:part name="NumeroRG" type="s:string" />
+    <wsdl:part name="CodigoCurso" type="s:string" />
+    <wsdl:part name="NomeCurso" type="s:string" />
+    <wsdl:part name="Serie" type="s:string" />
+    <wsdl:part name="Turma" type="s:string" />
+    <wsdl:part name="SituacaoAluno" type="s:string" />
+    <wsdl:part name="TipoSolicitacao" type="s:string" />
+    <wsdl:part name="UsuarioSolic" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SolicitaCartaoSEPI_HttpGetOut">
+    <wsdl:part name="Body" element="tns:CartaoSEPI" />
+  </wsdl:message>
+  <wsdl:message name="SolicitaCartaoSEPI_HttpPostIn">
+    <wsdl:part name="CodigoUnidade" type="s:string" />
+    <wsdl:part name="MatriculaLYCEUM" type="s:string" />
+    <wsdl:part name="NomeAluno" type="s:string" />
+    <wsdl:part name="DataNascimento" type="s:string" />
+    <wsdl:part name="NumeroRG" type="s:string" />
+    <wsdl:part name="CodigoCurso" type="s:string" />
+    <wsdl:part name="NomeCurso" type="s:string" />
+    <wsdl:part name="Serie" type="s:string" />
+    <wsdl:part name="Turma" type="s:string" />
+    <wsdl:part name="SituacaoAluno" type="s:string" />
+    <wsdl:part name="TipoSolicitacao" type="s:string" />
+    <wsdl:part name="UsuarioSolic" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SolicitaCartaoSEPI_HttpPostOut">
+    <wsdl:part name="Body" element="tns:CartaoSEPI" />
+  </wsdl:message>
+  <wsdl:portType name="SolicitaCartaoSEPISoap">
+    <wsdl:operation name="SolicitaCartaoSEPI_">
+      <wsdl:input message="tns:SolicitaCartaoSEPI_SoapIn" />
+      <wsdl:output message="tns:SolicitaCartaoSEPI_SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SolicitaCartaoSEPIHttpGet">
+    <wsdl:operation name="SolicitaCartaoSEPI_">
+      <wsdl:input message="tns:SolicitaCartaoSEPI_HttpGetIn" />
+      <wsdl:output message="tns:SolicitaCartaoSEPI_HttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SolicitaCartaoSEPIHttpPost">
+    <wsdl:operation name="SolicitaCartaoSEPI_">
+      <wsdl:input message="tns:SolicitaCartaoSEPI_HttpPostIn" />
+      <wsdl:output message="tns:SolicitaCartaoSEPI_HttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SolicitaCartaoSEPISoap" type="tns:SolicitaCartaoSEPISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SolicitaCartaoSEPI_">
+      <soap:operation soapAction="http://microsoft.com/webservices/SolicitaCartaoSEPI_" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SolicitaCartaoSEPISoap12" type="tns:SolicitaCartaoSEPISoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    <wsdl:operation name="SolicitaCartaoSEPI_">
+      <soap12:operation soapAction="http://microsoft.com/webservices/SolicitaCartaoSEPI_" style="document" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      <wsdl:input>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SolicitaCartaoSEPIHttpGet" type="tns:SolicitaCartaoSEPIHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SolicitaCartaoSEPI_">
+      <http:operation location="/SolicitaCartaoSEPI_" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SolicitaCartaoSEPIHttpPost" type="tns:SolicitaCartaoSEPIHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SolicitaCartaoSEPI_">
+      <http:operation location="/SolicitaCartaoSEPI_" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SolicitaCartaoSEPI">
+    <wsdl:port name="SolicitaCartaoSEPISoap" binding="tns:SolicitaCartaoSEPISoap">
+      <soap:address location="http://172.16.70.129:92/SolicitaCartaoSEPI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SolicitaCartaoSEPISoap12" binding="tns:SolicitaCartaoSEPISoap12">
+      <soap12:address location="http://172.16.70.129:92/SolicitaCartaoSEPI.asmx" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" />
+    </wsdl:port>
+    <wsdl:port name="SolicitaCartaoSEPIHttpGet" binding="tns:SolicitaCartaoSEPIHttpGet">
+      <http:address location="http://172.16.70.129:92/SolicitaCartaoSEPI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SolicitaCartaoSEPIHttpPost" binding="tns:SolicitaCartaoSEPIHttpPost">
+      <http:address location="http://172.16.70.129:92/SolicitaCartaoSEPI.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

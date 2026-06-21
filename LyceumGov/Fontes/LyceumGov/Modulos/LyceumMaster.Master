@@ -1,0 +1,141 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LyceumMaster.master.cs"
+    Inherits="Techne.Lyceum.Net.Modulos.LyceumMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>SEEDUC - Governo do Rio de Janeiro</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="shortcut icon" type="image/png" href="../Images/favicon.png"/>
+    <link href="../Scripts/themes/basic/grid.css" rel="stylesheet" type="text/css" />
+    <link href="../Scripts/themes/jqModal.css" rel="stylesheet" type="text/css" />
+    <link href="../site.css" type="text/css" rel="stylesheet" />
+    <link href="../LyceumNet3.css" type="text/css" rel="stylesheet" />
+    <link rel='stylesheet' type='text/css' href="../Scripts/themes/calendar.css" />
+    <script type='text/javascript' src='../Scripts/js/calendar.js'></script>
+    
+    <!-- google fonts e fontsawesome-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css" integrity="sha512-3icgkoIO5qm2D4bGSUkPqeQ96LS8+ukJC7Eqhl1H5B2OJMEnFqLmNDxXVmtV/eq5M65tTDkUYS/Q0P4gvZv+yA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+
+    <!-- Rybená-->
+        <script type="text/javascript" src="https://cdn.rybena.com.br/dom/master/latest/rybena.js?positionPlayer=left&positionBar=right"></script>
+</head>
+
+<body onload="moveRelogio();" approot='<%=Page.ResolveClientUrl("~/") %>'>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery-1.7.1.min.js") %>'></script>
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.jqGrid.js") %>'></script>
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/js/jqModal.js") %>'></script>
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/js/min/jquery.maskMoney.min.js") %>'></script>
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.maskedinput-1.2.2.min.js") %>'></script>
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/MaskTypes.js") %>'></script>
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.numeric.js") %>'></script>
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/TPage.js") %>'></script>
+
+    <form id="form1" runat="server" submitdisabledcontrols="True">
+    <div id="dvbloqueio" class="Desbloqueado"></div>
+ 
+    <div class="content">
+    
+        <!-- HEADER - Menu Principal-->
+        <div class="top_inf">
+            <div class="top_outros">
+                <!-- LOGO -->
+                <div class="top_logo_governo"></div>
+                <div class="top_logo_gestao"></div>
+				<div class="tit_pag">
+				    <!-- Sessão -->  
+					<h5 align="left">  <asp:Literal ID="lblTituloPagina" runat="server"/> </h5>
+       			</div>
+       			<!-- Dados do usuário logado -->  
+                <div class="top_usuario_logado">
+                    <span><b>Usuário:</b> <asp:Literal ID="lblSaudacoes" runat="server" /></span>
+                    <span><b>E-mail:</b> <asp:Literal ID="lblEmail" runat="server" /></span>
+                    <span><div id="divHoraData"></div></span>
+                </div>
+                <div class="top_botoes">
+                 <!-- Botões - RVE -->   
+                    <asp:HyperLink ID="hlRVE" runat="server" CssClass="imagem-menu imagem-rve" NavigateUrl="~/Menu/RVE.aspx" ToolTip="Início"></asp:HyperLink>
+                    <!-- Botões - Home -->   
+                    <asp:HyperLink ID="hlInicio" runat="server" CssClass="imagem-menu imagem-home" NavigateUrl="~/Default.aspx" ToolTip="Início"></asp:HyperLink>
+                    <!-- Botões - Ajuda -->    
+                    <asp:HyperLink ID="hlHelp" runat="server" CssClass="imagem-menu imagem-ajuda" ToolTip="Ajuda"></asp:HyperLink>
+                    <!-- Botões - Sair -->
+                    <asp:LinkButton ID="lbSair" runat="server" CssClass="imagem-menu imagem-sair" OnClick="lbSair_Click" ToolTip="Logoff"></asp:LinkButton>
+                  </div>
+            </div>
+        
+            <!-- MENU PRINCIPAL -->
+            <div id="top_menu">                        
+                <lyweb:TMenu runat="server" ID="mnu" Height="20px" >
+                    <ItemStyle ForeColor="black" Font-Bold="false" Font-Size="11px" Font-Names="Verdana,Geneva,sans-serif" />
+                    <TitleStyle ForeColor="#1E3695" Font-Bold="true" Font-Size="9pt" Font-Names="Verdana" CssClass="menuTitle" />
+                    <LinkStyle ForeColor="Black" Font-Names="Tahoma" Font-Bold="false" Font-Size="9pt" />
+                </lyweb:TMenu>                        
+            </div>
+        </div>
+        <!-- Fim div top_inf-->
+        
+        <div class="top_wrapper"></div>
+
+        <div id="conteudo" class="conteudo">
+            <dxpc:ASPxPopupControl ID="pucLoading" ClientInstanceName="pucLoading" runat="server"
+                Modal="true" ShowShadow="true" AllowDragging="false" AllowResize="false" ShowCloseButton="false"
+                ShowFooter="false" ShowHeader="false" ShowSizeGrip="False" PopupHorizontalAlign="WindowCenter"
+                PopupVerticalAlign="WindowCenter" DisappearAfter="60" Cursor="wait" EnableAnimation="false"
+                Width="150px" CloseAction="None">
+                <Border BorderColor="Gainsboro" BorderStyle="Ridge" BorderWidth="4px" />
+                <ContentCollection>
+                    <dxpc:PopupControlContentControl>
+                        <div style="text-align: center">
+                            <asp:Image ID="Image2" ImageUrl="~/App_Themes/Blue/GridView/gvLoadingOnStatusBar.gif"
+                                runat="server" Visible="false" />
+                            <asp:Label ID="Label1" Text="Carregando dados..." Font-Bold="true" runat="server" />
+                            <br />
+                            <br />
+                            <asp:Image ID="Image1" ImageUrl="~/App_Themes/Blue/GridView/Loading.gif" runat="server" />
+                        </div>
+                    </dxpc:PopupControlContentControl>
+                </ContentCollection>
+            </dxpc:ASPxPopupControl>
+            <asp:ScriptManager ID="scrMng" runat="server" AllowCustomErrorsRedirect="false" AsyncPostBackTimeout="100000000" OnAsyncPostBackError="scrMng_AsyncPostBackError">
+            </asp:ScriptManager>
+        
+            <asp:ContentPlaceHolder ID="cphFormulario" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="bas_wrapper"></div>
+
+        <div class="bas-inf">
+            <!-- Copyright -->
+            <div class="bas">
+                © Todos os direitos reservados SEEDUC - RJ - 2022 | versão <asp:Literal ID="lblVersao" runat="server" />
+            </div>
+
+            <!-- Logo Conexão -->
+            <div class="logo-conexao">
+                
+            </div>   
+            
+            <!-- Redes Sociais -->
+            
+            <div class="redes-sociais">
+                <div class="icones-redes">
+                    <asp:LinkButton ID="lnkFacebook" runat="server"><i class="fab fa-facebook-f fa-2x"></i></asp:LinkButton>
+                    <asp:LinkButton ID="lnkInstagram" runat="server"><i class="fab fa-instagram fa-2x"></i></asp:LinkButton>
+                    <asp:LinkButton ID="lnkYoutube" runat="server"><i class="fab fa-youtube fa-2x"></i></asp:LinkButton>
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <script src="../Scripts/site.js"></script>
+    </form>
+</body>
+</html>

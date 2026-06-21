@@ -1,0 +1,68 @@
+﻿@model SRV.Models.DTO.FiltroAvaliacaoExternaUnidadeAdmin
+
+@using MvcContrib.UI.Grid
+@using SRV.Common.Extension
+
+@{
+    Layout = null;
+
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        OnSuccess = "OnSuccessAvaliacoesUnidadesDetalhes",
+        OnFailure = "OnFailureAvaliacoesUnidadesDetalhes"
+    };
+}
+
+@using (Ajax.BeginForm(ajaxOpts))
+{
+    <div class="boxContent">
+
+        <br/>
+
+        @using (@Html.BeginScroller("100%", "200px"))
+        {
+            if (Model.AvaliacoesUnidades != null)
+            {
+                @Html.Pager(Model.AvaliacoesUnidades, "pageAvaliacoesUnidades", "changePageAvaliacoesUnidades")
+
+                @Html.Grid(Model.AvaliacoesUnidades.Items).Columns(column =>
+                {
+                    column.For(c => c.AvaliacaoExterna.DesAvaliacaoExterna).Named("Avaliação Externa").Attributes(width => "150px").HeaderAttributes(width => "150px");
+                    column.For(c => c.UnidadeAdministrativa.DesUnidadeAdministrativa).Named("Unidade Administrativa").Attributes(width => "100%").HeaderAttributes(width => "100%");
+                    column.For(c => c.PercParticipacaoDiurno).Named("Participação Diurna").Attributes(width => "100px", align => "right").HeaderAttributes(width => "150px");
+                    column.For(c => c.PercParticipacaoNoturno).Named("Participação Noturna").Attributes(width => "100px", align => "right").HeaderAttributes(width => "150px");
+
+                }).Empty("Nenhum registro encontrado")
+            }
+        }
+
+        @using (@Html.BeginScroller("100%", "300px"))
+        {
+            if (Model.DetalhesAvaliacoesUnidades != null)
+            {
+                @Html.Pager(Model.DetalhesAvaliacoesUnidades, "pageDetalhesAvaliacoesUnidades", "changePageDetalhesAvaliacoesUnidades")          
+            
+                @Html.Grid(Model.DetalhesAvaliacoesUnidades.Items).Columns(column =>
+                {
+                    column.For(c => c.Turma).Named("Turma").Attributes(width => "150px").HeaderAttributes(width => "150px");
+                    column.For(c => c.Periodo.ToDescription()).Named("Período").Attributes(width => "100px").HeaderAttributes(width => "100px");
+                    column.For(c => c.Turno.Codigo).Named("Turno").Attributes(width => "30px").HeaderAttributes(width => "30px");
+                    column.For(c => c.AvaliacaoExterna.DesAvaliacaoExterna).Named("Avaliação Externa").Attributes(width => "150px").HeaderAttributes(width => "150px");
+                    column.For(c => c.Previsto).Named("Previsto").Attributes(width => "50px").HeaderAttributes(width => "50px");
+                    column.For(c => c.Realizado).Named("Realizado").Attributes(width => "60px").HeaderAttributes(width => "60px");
+                    column.For(c => c.PercentualParticipacao).Named("Participação").Format("{0:P2}").Attributes(width => "100px").HeaderAttributes(width => "100px");
+                }).Empty("Nenhum registro encontrado")
+            }
+        }
+    </div>
+}
+
+<script type="text/javascript">
+    function OnSuccessAvaliacoesUnidadesDetalhes(data) {
+        $('#modalDetalhesAvaliacoesExternas').empty().append(data);
+    }
+
+    function OnFailureAvaliacoesUnidadesDetalhes(request, error) {
+        alert("Ocorreu um erro na requisição: " + error);
+    }
+</script>

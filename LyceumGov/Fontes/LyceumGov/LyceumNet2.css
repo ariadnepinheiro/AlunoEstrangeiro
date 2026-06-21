@@ -1,0 +1,825 @@
+﻿/* corpo da página*/
+body, td, th
+{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #000;
+}
+body /* alterção do outro css vai precisar de mais ajustes*/
+{  
+    font-family: 'Open Sans',Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: #000;
+    background-color:#edf2f9;
+}
+
+/* Form Input Text Submit Button Password
+.dxb {
+    border:1px #f5f5f5 solid;
+    padding:1px 3px;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    color:#000000;
+    background:#c1d8f3 url(images/bk_bot.jpg) repeat-x;
+    height:14px;
+    cursor:pointer;
+}
+.dxb:hover  {
+    border:1px #f5f5f5 solid;
+    padding:1px 3px;
+    font-family:Tahoma, Geneva, sans-serif;
+    font-size:11px;
+    font-weight:bold;
+    color:#000000;
+    background:#6ca5e6 url(images/bk_bot-h.jpg) repeat-x;
+    height:14px;
+    cursor:pointer;
+}
+.dxbButton {
+    padding:0px;
+    margin:0px;
+    border:none;
+}
+*/
+
+input[type="submit"], input[type="reset"], input[type="button"]
+{
+    border: 1px #f5f5f5 solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    background: #c1d8f3 url(images/bk_bot.jpg) repeat-x;
+    height: 20px;
+    cursor: pointer;
+}
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover
+{
+    border: 1px #f5f5f5 solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    background: #6ca5e6 url(images/bk_bot-h.jpg) repeat-x;
+    height: 20px;
+    cursor: pointer;
+}
+input[type="text"], input[type="password"], .txtbox, .txtInput
+{
+    border: 1px #9F9F9F solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #000000;
+}
+input[type="text"]:disable, input[type="password"]:disable, .txtbox:disable, .txtInput:disable
+{
+    border: 1px #cdcdcd solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #cdcdcd;
+}
+textarea
+{
+    border: 1px #9F9F9F solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #000000;
+}
+textarea:disable
+{
+    border: 1px #cdcdcd solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #cdcdcd;
+}
+select
+{
+    border: 1px #9F9F9F solid;
+    padding: 0px 0px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #000000;
+    height: 15px;
+}
+select:disable
+{
+    border: 1px #cdcdcd solid;
+    padding: 0px 0px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #cdcdcd;
+}
+#ctl00_cphFormulario_apcDocente_flFoto
+{
+    border: 1px #ccc solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    background-color: #fcfcfc;
+}
+
+
+
+
+/* Conteudo */
+
+.conteudo
+{   min-width:1550px;
+    width:auto;
+    overflow: auto;
+    background: #edf2f9;
+    min-height: 450px;
+    padding: 2em 5px;
+    margin: 96px 0px 55px 0px; /*z-index:1;*/
+   
+}
+/* Atributos flex que estavam no conteudo;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+*/
+
+/*{
+	position:relative;
+	margin:0px;
+	padding:5px;
+	height:100%;
+	background:#FFF;
+	height:455px;
+	z-index:1;
+}*/
+
+.conteudo a:
+{
+    color: #0353ab;
+    text-decoration: none;
+}
+.conteudo a:hover
+{
+    color: #00f;
+    text-decoration: underline;
+}
+
+.scrollLargePopUp
+{
+	overflow: auto;
+	width: 960px;
+	height: 480px;	
+}
+
+/* Barras de Separação */
+.bar_vert
+{
+    position: relative;
+    float: left;
+    margin: 0px;
+    background: url(images/bar_bk.gif) repeat-y;
+    width: 25px;
+    height: 465px; /*z-index:2;*/
+}
+.bar_vert-top
+{
+    position: absolute;
+    top: 0px;
+    margin: 0px;
+    background: url(images/bar_top.gif) no-repeat;
+    width: 25px;
+    height: 10px; /*z-index:2;*/
+}
+.bar_vert-bas
+{
+    position: absolute;
+    bottom: -1px;
+    margin: 0px;
+    background: url(images/bar_bas.gif) no-repeat;
+    width: 25px;
+    height: 10px; /*z-index:2;*/
+}
+
+
+/*titulos*/
+h1
+{
+    margin: 2px 0px 0px 0px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+}
+h2
+{
+    margin: 3px 0px 0px 0px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff; /*text-transform:uppercase;*/
+}
+h3
+{
+    height: 18px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #0353ab;
+    padding: 0px;
+    margin: 2px 0px 5px 0px;
+    border-bottom: 1px #0353ab solid;
+}
+h4
+{
+    width: 100%;
+    min-width: 200px;
+    padding: 2px;
+    bottom: 2px;
+    color: #777;
+    font-size: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-weight: bold;
+}
+/* ÍCONES SUPERIORES */
+.ico_logoff
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+  /*  background-image: url('images/ico_logoff.png');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 18px;*/
+}
+.ico_logoff:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+  /*  background-image: url('images/ico_logoff.png');
+    background-repeat: no-repeat;
+    background-position: -25px;
+    width: 25px;
+    height: 18px;*/
+}
+.ico_sair
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+   /* background-image: url('images/bt_sair.png');
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 18px;*/
+}
+.ico_sair:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+   /* background-image: url('images/bt_sair.png');
+    background-repeat: no-repeat;
+    background-position: -60px;
+    width: 60px;
+    height: 18px;
+    cursor: pointer;*/
+}
+.ico_mail
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    background-image: url('images/ico_mail.png');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 18px;
+}
+.ico_mail:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    background-image: url('images/ico_mail.png');
+    background-repeat: no-repeat;
+    background-position: -25px;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+.ico_info
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    cursor: pointer;
+    background-image: url('images/ico_info.png');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 18px;
+}
+.ico_info:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    background-image: url('images/ico_info.png');
+    background-repeat: no-repeat;
+    background-position: -25px;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+.ico_suporte
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    background-image: url('images/ico_suporte.png');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+.ico_suporte:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    background-image: url('images/ico_suporte.png');
+    background-repeat: no-repeat;
+    background-position: -25px;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+.ico_imprime
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    background-image: url('images/ico_imprime.png');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+.ico_imprime:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    background-image: url('images/ico_imprime.png');
+    background-repeat: no-repeat;
+    background-position: -25px;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+.ico_voltar
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    background-image: url('images/ico_voltar.png');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+.ico_voltar:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    background-image: url('images/ico_voltar.png');
+    background-repeat: no-repeat;
+    background-position: -25px;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+.ico_inicio
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    background-image: url('images/ico_inicio.png');
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+.ico_inicio:hover
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    float: right;
+    margin: 1px 5px 1px 5px;
+    background-image: url('images/ico_inicio.png');
+    background-repeat: no-repeat;
+    background-position: -25px;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/*Login*/
+.conteudo .login
+{
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    width: 350px;
+    height: 350px;
+    margin: 0px 0px 0px -170px;
+    background-color: #f2f6f9; /*z-index:4;*/
+}
+.log_int
+{
+    margin: 15px 0px 0px 60px;
+}
+
+.log_form
+{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #0353ab;
+    border: 1px #0353ab solid;
+    height: 15px;
+    width: 180px;
+    background: #FFF;
+}
+
+.log_bt
+{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFF;
+    border: 1px #FFF solid;
+    height: 20px;
+    margin-right: 65px;
+    background: #0353ab url(image/gvGradient.gif)) repeat-x;
+}
+
+.resetSenha
+{
+    position: absolute;
+    left: 50%;
+    top: 200px;
+    width: 450px;
+    height: 250px;
+    margin: 0px 0px 0px -225px;
+    background-color: #f2f6f9; /*z-index:4;*/
+}
+
+.loginAviso
+{
+    top: 200px;
+    width: 350px;
+}
+
+.loginAvisoVermelho
+{
+    color: #CC0000;
+}
+
+.loginAvisoTexto
+{
+    margin: 5px 0px 10px 5px;
+    top: -10px;
+}
+
+.loginErroTexto
+{
+    height: 15px;
+    margin: 5px;
+    color: #CC0000;
+}
+/*Pop-Up*/
+.pop
+{
+    position: absolute;
+    left: 0;
+    top: 0%;
+    width: 100%;
+    min-height: 300px;
+    margin: 0px;
+    background-color: #f2f6f9;
+    border-bottom: 1px #004A80 solid;
+    border-top: 1px #004A80 solid; /*z-index:4;*/
+}
+.pop_int
+{
+    margin: 5px;
+}
+.pop_form
+{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #004A80;
+    border: 1px #004A80 solid;
+    height: 15px;
+    width: 180px;
+    background: #FFF;
+}
+.pop_bt
+{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFF;
+    border: 1px #FFF solid;
+    height: 20px;
+    cursor: pointer;
+}
+
+/*botoes top*/
+.bot_inicio
+{
+    float: right;
+    width: 25px;
+    height: 18px;
+    background-color: #F00;
+}
+.bot_inicio a
+{
+    background-image: url('images/ico_inicio.png');
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+
+.TSearchButton
+{
+    vertical-align: text-bottom;
+}
+
+TABLE.tsearchtable TH
+{
+    background-color: Black;
+    color: White;
+    height: 19px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+TABLE.tsearchtable TR
+{
+    background-color: White;
+    color: Navy;
+    height: 19px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.menuTitle
+{
+    border-bottom: 1px solid #B8B8B8;
+    padding: 0 0 5px;
+}
+
+
+.divEditButton
+{
+    background-color: #FFFFFF;
+    height: 28px;
+    vertical-align: middle;
+}
+
+.divEditBlock
+{
+    border-bottom: 1px #004A80 solid;
+    min-height: 16px;
+    height: 16px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #004A80;
+    margin: 5px 0px 5px 0px;
+    background-image: url('images/sel.png');
+    background-position: 5px 8px;
+    background-repeat: no-repeat;
+    padding: 9px 5px 5px 30px;
+}
+
+.divEditLabel
+{
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #004A80;
+}
+
+..Panel legend
+{
+    color: Blue;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.TreeViewSelected
+{
+    background-color: #82C3F2;
+}
+/* TSearch controles */
+.ts-ctrl
+{
+    border: none;
+    background-color: #F5F5F5;
+}
+.ts-ctrl input[type="submit"]
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    background-image: url('images/bot_buscar.png');
+    background-repeat: no-repeat;
+    background-position: 2px 0px;
+    background-color: #f5f5f5;
+    width: 99px;
+    height: 27px;
+    color: #FFFFFF;
+    font-size: 0px;
+    cursor: pointer;
+    text-align: right;
+    display: block;
+    padding-left: 99px;
+}
+
+.ts-ctrl input[type="submit"]:disable
+{
+    background-image: url(images/bot_buscar-d.png);
+    background-repeat: no-repeat;
+    background-position: 2px 0px;
+    background-color: #fff;
+    border: none;
+    width: 99px;
+    height: 27px;
+    color: #FFFFFF;
+    font-size: 0px;
+    cursor: pointer;
+    text-align: right;
+    display: block;
+    padding-left: 99px;
+}
+
+
+.tsearchpopup
+{
+    z-index: 60000;
+    border: solid 3px #004a80;
+}
+
+#loading
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+#escuro2
+{
+    background-image: url(../images/bg_loading.png);
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+}
+
+.escuro p
+{
+    text-align: center;
+    margin-top: 200px;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 16pt;
+    color: #FFFFFF;
+    z-index: 100;
+}
+
+.overlay
+{
+    position: fixed;
+    z-index: 99;
+    top: 0px;
+    left: 0px;
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    filter: Alpha(Opacity=70);
+    opacity: 0.70;
+    -moz-opacity: 0.70;
+}
+* html .overlay
+{
+    position: absolute;
+    height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+    width: expression(document.body.scrollWidth > document.body.offsetWidth ? document.body.scrollWidth : document.body.offsetWidth + 'px');
+}
+.loader
+{
+    z-index: 100;
+    position: fixed;
+    width: 120px;
+    margin-left: -60px;
+    top: 50%;
+    left: 50%;
+}
+* html .loader
+{
+    position: absolute;
+    margin-top: expression((document.body.scrollHeight / 4) + (0 - parseInt(this.offsetParent.clientHeight / 2) + (document.documentElement && document.documentElement.scrollTop || document.body.scrollTop)) + 'px');
+}
+
+.borderBottomNone
+{
+    border-bottom-style:none;
+}
+
+.Bloqueado
+{
+	background-color: #F0F0F0;
+	opacity: 0.5; /* standard: ff gt 1.5, opera, safari, ie 9 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* ie 8 */ /* -ms-filter: "alpha(opacity=50)"; */
+	filter: alpha(opacity=50); /* ie 7-5 */
+	_filter: alpha(opacity=50); /* ie lt 7 */
+	-moz-opacity: 0.50; /* ff lt 1.5, netscape */
+	-khtml-opacity: 0.5; /* Safari 1.x */
+	z-index: 20000;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: -10px;
+	left: 0px;
+	background-image: url('images/loader.gif'); 
+	display: block;
+}
+
+.Desbloqueado
+{
+	display: none;
+	background-image: url('images/loader.gif'); 
+}
+
+.centralizar{
+    margin:0 auto:
+}
+#SiteMapControl1{
+    Margin:0 auto;
+}
+.conteudo > table{
+    margin:0 auto;
+}
+.conteudo fieldset{
+    background:#ffffff;
+}
+/* centraliza objetos
+
+.conteudo > div {
+    margin-inline: auto;
+}
+
+ */

@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Proderj.DOL.Domain.DISPONIBILIDADEGLP">
+    <Position X="5.5" Y="1.5" Width="1.5" />
+    <AssociationLine Name="LY_GRUPO_HABILITACAO" Type="Proderj.DOL.Domain.LY_GRUPO_HABILITACAO" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7" Y="3.5" />
+        <Point X="7.375" Y="3.5" />
+        <Point X="7.375" Y="5.375" />
+        <Point X="9.75" Y="5.375" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="LY_DOCENTE" Type="Proderj.DOL.Domain.LY_DOCENTE" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.188" Y="1.5" />
+        <Point X="6.188" Y="0.628" />
+        <Point X="27.875" Y="0.628" />
+        <Point X="27.875" Y="22.23" />
+        <Point X="27.5" Y="22.23" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="DISPONIBILIDADEGLP_DIASEMANA" Type="Proderj.DOL.Domain.DISPONIBILIDADEGLP_DIASEMANA" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.875" Y="3.824" />
+        <Point X="5.875" Y="4.97" />
+        <Point X="3.25" Y="4.97" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="DISPONIBILIDADEGLP_MODALIDADE" Type="Proderj.DOL.Domain.DISPONIBILIDADEGLP_MODALIDADE" FixedFromPoint="true">
+      <Path>
+        <Point X="5.5" Y="2.25" />
+        <Point X="3.25" Y="2.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="DISPONIBILIDADEGLP_UNIDADEENSINO" Type="Proderj.DOL.Domain.DISPONIBILIDADEGLP_UNIDADEENSINO" FixedFromPoint="true">
+      <Path>
+        <Point X="6.562" Y="3.824" />
+        <Point X="6.562" Y="6.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABAACAACAAAAEAAAAgACAAAABAgCAAAAAAAAAAQAAAE=</HashCode>
+      <FileName>LYCEUM\RecursosHumanos\DISPONIBILIDADEGLP.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LY_GRUPO_HABILITACAO" />
+      <Property Name="LY_DOCENTE" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DISPONIBILIDADEGLP_DIASEMANA" />
+      <Property Name="DISPONIBILIDADEGLP_MODALIDADE" />
+      <Property Name="DISPONIBILIDADEGLP_TURNO" />
+      <Property Name="DISPONIBILIDADEGLP_UNIDADEENSINO" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.DISPONIBILIDADEGLP_DIASEMANA">
+    <Position X="1.75" Y="4" Width="1.5" />
+    <AssociationLine Name="DISPONIBILIDADEGLP" Type="Proderj.DOL.Domain.DISPONIBILIDADEGLP" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="4.454" />
+        <Point X="5.562" Y="4.454" />
+        <Point X="5.562" Y="3.824" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAACAAAAQAAAAIQAAAAAAAAAAAA=</HashCode>
+      <FileName>LYCEUM\RecursosHumanos\DISPONIBILIDADEGLP_DIASEMANA.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DISPONIBILIDADEGLP" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.DISPONIBILIDADEGLP_MODALIDADE">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <AssociationLine Name="DISPONIBILIDADEGLP" Type="Proderj.DOL.Domain.DISPONIBILIDADEGLP" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="2.812" />
+        <Point X="5.5" Y="2.812" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAgAACAAAAAAAAAIQAAAAAAAAAAAA=</HashCode>
+      <FileName>LYCEUM\RecursosHumanos\DISPONIBILIDADEGLP_MODALIDADE.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DISPONIBILIDADEGLP" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.DISPONIBILIDADEGLP_TURNO">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAgAACAAAAAAAAAIQAAAAAAACAAAA=</HashCode>
+      <FileName>LYCEUM\RecursosHumanos\DISPONIBILIDADEGLP_TURNO.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DISPONIBILIDADEGLP" />
+      <Property Name="LY_TURNO" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.DISPONIBILIDADEGLP_UNIDADEENSINO">
+    <Position X="5.5" Y="6.25" Width="1.5" />
+    <AssociationLine Name="DISPONIBILIDADEGLP" Type="Proderj.DOL.Domain.DISPONIBILIDADEGLP" FixedToPoint="true">
+      <Path>
+        <Point X="6.188" Y="6.25" />
+        <Point X="6.188" Y="3.824" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.313" Y="0.144" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="LY_UNIDADE_ENSINO" Type="Proderj.DOL.Domain.LY_UNIDADE_ENSINO" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="8.19" />
+        <Point X="6.25" Y="11.844" />
+        <Point X="12.75" Y="11.844" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAiAACAAAAAAAAAIwAAAAAAAAAAAA=</HashCode>
+      <FileName>LYCEUM\RecursosHumanos\DISPONIBILIDADEGLP_UNIDADEENSINO.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DISPONIBILIDADEGLP" />
+      <Property Name="LY_UNIDADE_ENSINO" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_DOCENTE">
+    <Position X="26" Y="20" Width="1.5" />
+    <AssociationLine Name="LY_PESSOA" Type="Proderj.DOL.Domain.LY_PESSOA" FixedFromPoint="true">
+      <Path>
+        <Point X="26" Y="24.562" />
+        <Point X="11.5" Y="24.562" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ARQAAEACIAABAAAAAEgQAAQAkAAAAAAACCAiEQBAAAA=</HashCode>
+      <FileName>LYCEUM\LY_DOCENTE.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LY_PESSOA" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_DOCENTE_FUNCAO_GLP">
+    <Position X="12.75" Y="4.75" Width="1.5" />
+    <AssociationLine Name="LY_UNIDADE_ENSINO" Type="Proderj.DOL.Domain.LY_UNIDADE_ENSINO">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.09" Y="0.317" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAECAAAAAETAAAAAAAAAAEAkAAEgAgBAAAEAAAgA=</HashCode>
+      <FileName>LYCEUM\LY_DOCENTE_FUNCAO_GLP.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LY_FUNCAO" />
+      <Property Name="LY_UNIDADE_ENSINO" />
+      <Property Name="LY_GRUPO_HABILITACAO" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="LY_DOCENTE_FUNCAO_GLP_DETALHE" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_FL_PESSOA">
+    <Position X="7.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAA8AAAAPB4eDwCAFh6CBwAAjwc=</HashCode>
+      <FileName>LYCEUM\LY_FL_PESSOA.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LY_PESSOA" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_GRUPO_HABILITACAO">
+    <Position X="9.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCAAAACIAAAAAAAAEAAAEAABAABAAABASAAAAAAAAA=</HashCode>
+      <FileName>LYCEUM\LY_GRUPO_HABILITACAO.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="LY_DOCENTE_FUNCAO_GLP" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_PESSOA">
+    <Position X="10" Y="13" Width="1.5" />
+    <AssociationLine Name="LY_DOCENTE" Type="Proderj.DOL.Domain.LY_DOCENTE" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="23.188" />
+        <Point X="26" Y="23.188" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>0x7MoiBiEcFELQqbSBIEGCCUIkAGgBgAhGgSNASAYQQ=</HashCode>
+      <FileName>LYCEUM\LY_PESSOA.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LY_FL_PESSOA" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="LY_DOCENTE" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_TURNO">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAACAQAAACAAAABAAAAACAAAAAAAAA=</HashCode>
+      <FileName>LYCEUM\LY_TURNO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_UNIDADE_ENSINO">
+    <Position X="12.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IUABIABiCArAABAxDBABAGqEUCAAAAACACwCAAAgBwA=</HashCode>
+      <FileName>LYCEUM\LY_UNIDADE_ENSINO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_CATEGORIA_DOCENTE">
+    <Position X="16" Y="9.5" Width="1.5" />
+    <AssociationLine Name="LY_DOCENTE" Type="Proderj.DOL.Domain.LY_DOCENTE" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.75" Y="12.978" />
+        <Point X="16.75" Y="21.812" />
+        <Point X="26" Y="21.812" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABAAAAACAAAAAAAAAQAAAGACFAACAAAACCAABAQAAAA=</HashCode>
+      <FileName>LYCEUM\LY_CATEGORIA_DOCENTE.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LY_FUNCAO" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="LY_DOCENTE" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_CH_CATEGORIA">
+    <Position X="21.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAoAAAQAAAAAAEAAAkAAAAACAAAACAAAAAAA=</HashCode>
+      <FileName>LYCEUM\LY_CH_CATEGORIA.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LY_FUNCAO" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_DOCENTE_FUNCAO_GLP_DETALHE">
+    <Position X="16.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACEAAAAgAAAAAAAAEAAAAAgAAAAAEAAABAAAAAAAAA=</HashCode>
+      <FileName>LYCEUM\LY_DOCENTE_FUNCAO_GLP_DETALHE.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LY_DOCENTE_FUNCAO_GLP" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_FUNCAO">
+    <Position X="19" Y="9.5" Width="1.5" />
+    <AssociationLine Name="LY_CH_CATEGORIA" Type="Proderj.DOL.Domain.LY_CH_CATEGORIA" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.5" Y="10.875" />
+        <Point X="22.125" Y="10.875" />
+        <Point X="22.125" Y="7.757" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="LY_DOCENTE_FUNCAO_GLP" Type="Proderj.DOL.Domain.LY_DOCENTE_FUNCAO_GLP" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.75" Y="9.5" />
+        <Point X="19.75" Y="6.562" />
+        <Point X="14.25" Y="6.562" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.258" Y="0.09" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="LY_LOTACAO" Type="Proderj.DOL.Domain.LY_LOTACAO" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.625" Y="13.747" />
+        <Point X="19.625" Y="16.392" />
+        <Point X="23.25" Y="16.392" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AACAwCAIAAACQAAAIAAAOUAAAAABAAAAAQAAAAABACA=</HashCode>
+      <FileName>LYCEUM\LY_FUNCAO.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="LY_CATEGORIA_DOCENTE" />
+      <Property Name="LY_CH_CATEGORIA" />
+      <Property Name="LY_DOCENTE_FUNCAO_GLP" />
+      <Property Name="LY_LOTACAO" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_LOTACAO">
+    <Position X="23.25" Y="14.75" Width="1.5" />
+    <AssociationLine Name="LY_FUNCAO" Type="Proderj.DOL.Domain.LY_FUNCAO" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="23.25" Y="15.688" />
+        <Point X="20.188" Y="15.688" />
+        <Point X="20.188" Y="13.747" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="LY_TURNO" Type="Proderj.DOL.Domain.LY_TURNO" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="24" Y="14.75" />
+        <Point X="24" Y="2.758" />
+        <Point X="14.25" Y="2.758" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AIAAIAAACAAAAwgAgcABAAAAEAAAAIgAAIBCAwCEAIA=</HashCode>
+      <FileName>LYCEUM\LY_LOTACAO.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LY_FUNCAO" />
+      <Property Name="LY_TURNO" />
+      <Property Name="LY_UNIDADE_ENSINO" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

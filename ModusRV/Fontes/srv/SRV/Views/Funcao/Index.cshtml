@@ -1,0 +1,101 @@
+﻿@model SRV.Models.DTO.FiltroFuncao
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btPesquisar")
+        @Html.ToolbarItemLink(true, "Upload", null, null, "btImportar")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdFuncao)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.IdFuncao, new { style = "width: 100px; text-align: right;", maxlength = "15" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.DesFuncao)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.DesFuncao, new { style = "width: 350px", maxlength = "200" })
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdGrupoFuncao)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.IdGrupoFuncao, (IEnumerable<SelectListItem>)Model.GruposFuncoes ?? new List<SelectListItem>(), "", new { id = "IdGrupoFuncao", style = "width:350px;" })                     
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="clear:both"></div>
+
+        @if (Model != null)
+        {
+            if (Model.Funcoes != null)
+            {
+            @Html.Pager(Model.Funcoes)
+
+            @Html.Grid(Model.Funcoes.Items).Columns(column =>
+            {
+                if (@Role.IsGranted("Administrador"))
+                {
+                    column.For(c => Html.ActionLink(" ", "", null, new { href = "#", @class = "icoLinkDelete", onclick = "deleteItemLocal(this, '" + @Url.Action("Delete", "Funcao") + "', '" + @c.IdFuncao + "')" })).Named("Excluir").Attributes(width => "42px", align => "center").HeaderAttributes(width => "42px", align => "center").Encode(false);
+                }
+                    column.For(c => c.IdFuncao).Named("Código").Attributes(width => "80px", align => "right").HeaderAttributes(width => "80px");
+                    column.For(c => c.DesFuncao).Named("Função").Attributes(width => "60%").HeaderAttributes(width => "60%");
+                    column.For(c => c.GrupoFuncao.DesGrupoFuncao).Named("Grupo Função").Attributes(width => "40%").HeaderAttributes(width => "40%");
+                }).Empty("Nenhum registro encontrado")
+            }
+        }
+    </div>                       
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+    });
+
+    function deleteItemLocal(element, url, idFuncao) {
+
+        if (confirm("Confirma exclusão do registro?")) {
+
+            $.ajax({ url: url,
+                type: 'post',
+                data: "idFuncao=" + idFuncao,
+                success: function (data) {
+                    alert(data.Result);
+                    $(element).closest("form").submit();
+                },
+                error: function (xhr, status, error) {
+                    if (xhr.status != 403) {
+                        $(".boxInfo").remove();
+                        $(".validation-summary-errors").remove();
+                        $(".boxContent").prepend("<div class='validation-summary-errors'><ul><li>" + xhr.responseText + "</li></ul></div>");
+                    }
+                }
+            });            
+        }
+    };
+
+</script>

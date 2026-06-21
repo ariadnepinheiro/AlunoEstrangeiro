@@ -1,0 +1,438 @@
+﻿<dxwgv:ASPxGridView runat="server"
+    CssFilePath="~/App_Themes/Blue/{0}/styles.css" CssPostfix="Office2003_Blue"
+	EnableCallbackCompression="true">
+	<SettingsPager>
+        <NextPageButton>
+            <Image AlternateText="Próximo" Url="~/App_Themes/Blue/GridView/ct_next.png" 
+                UrlDisabled="~/App_Themes/Blue/GridView/ctd_next.png" />
+        </NextPageButton>
+        <PrevPageButton>
+            <Image AlternateText="Anterior" Url="~/App_Themes/Blue/GridView/ct_back.png" 
+                UrlDisabled="~/App_Themes/Blue/GridView/ctd_back.png" />
+        </PrevPageButton>
+        <Summary AllPagesText="Páginas: {0} - {1} ({2} itens)" Text="Página {0} de {1} ({2} itens)" />
+    </SettingsPager>
+    <SettingsBehavior ConfirmDelete="true" />
+    <SettingsLoadingPanel Text="Carregando" Mode="ShowAsPopup" ShowImage="true" ImagePosition="Left"/>
+    <SettingsPager AlwaysShowPager="True">
+    </SettingsPager>
+    <Settings ShowTitlePanel="True" />
+    <SettingsText ConfirmDelete="Confirma a remoção?" EmptyDataRow="Não existem dados." />
+	<Images ImageFolder="~/App_Themes/Blue/{0}/">
+        <CollapsedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvCollapsedButton.png" 
+            Width="11px" />
+        <ExpandedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvExpandedButton.png" Width="11px" />
+        <DetailCollapsedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvCollapsedButton.png" 
+            Width="11px" />
+        <DetailExpandedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvExpandedButton.png" Width="11px" />
+        <FilterRowButton Height="13px" Width="13px" />
+    </Images>	
+    <SettingsText Title="&lt;img src='../App_Themes/Blue/GridView/top_r.gif' width='15' height='25' align='right' /&gt;&lt;div class='tab-top_ct' align='center'&gt;&lt;img src='../App_Themes/Blue/GridView/ico_grid.png' width='21' height='20' align=''  /&gt;&lt;/div&gt;&lt;div class='tab-top_dv'&gt;&lt;/div&gt;|Tabela:|" />
+    <StylesPager>
+        <CurrentPageNumber BackColor="#0353AB">
+        </CurrentPageNumber>
+        <PageNumber Font-Names="Verdana" Font-Size="10px" ForeColor="White">
+        </PageNumber>
+        <Summary Font-Names="Verdana" Font-Size="10px" ForeColor="White">
+        </Summary>
+    </StylesPager>
+    <StylesEditors>
+                <ProgressBar Height="25px">
+                </ProgressBar>
+    </StylesEditors>
+    <Styles>
+        <Header CssClass="tab-lab_c">
+        </Header>
+        <Row CssClass="tab-mid_c">
+        </Row>
+        <EditForm CssClass="tab-edit_form"></EditForm>
+        <AlternatingRow CssClass="tab-mid_ca">
+        </AlternatingRow>
+        <FocusedRow BackColor="CornflowerBlue"></FocusedRow>
+        <Header SortingImageSpacing="5"></Header>
+	    <LoadingPanel ImageSpacing="10px" />
+        <FilterRow BackColor="#00528E">
+        </FilterRow>
+        <PagerBottomPanel CssClass="tab-bas_c">
+        </PagerBottomPanel>
+          <TitlePanel CssClass="tab-top_c">
+        </TitlePanel>
+        <CommandColumn CssClass="tab-cell" Wrap="False"></CommandColumn>
+        <Cell CssClass="tab-cell"></Cell>
+    </Styles>	
+</dxwgv:ASPxGridView>
+
+<dxwgv:ASPxGridView runat="server" SkinID="SkinHorarioOperacional"
+    CssFilePath="~/App_Themes/Blue/{0}/styles.css" CssPostfix="Office2003_Blue"
+	EnableCallbackCompression="true">
+	<SettingsPager>
+        <NextPageButton>
+            <Image AlternateText="Próximo" Url="~/App_Themes/Blue/GridView/ct_next.png" 
+                UrlDisabled="~/App_Themes/Blue/GridView/ctd_next.png" />
+        </NextPageButton>
+        <PrevPageButton>
+            <Image AlternateText="Anterior" Url="~/App_Themes/Blue/GridView/ct_back.png" 
+                UrlDisabled="~/App_Themes/Blue/GridView/ctd_back.png" />
+        </PrevPageButton>
+        <Summary AllPagesText="Páginas: {0} - {1} ({2} itens)" Text="Página {0} de {1} ({2} itens)" />
+    </SettingsPager>
+    <SettingsBehavior ConfirmDelete="true" />
+    <SettingsLoadingPanel Text="Carregando" Mode="ShowAsPopup" ShowImage="true" ImagePosition="Left"/>
+    <SettingsPager AlwaysShowPager="False">
+    </SettingsPager>
+    <Settings ShowTitlePanel="True" />
+    <SettingsText ConfirmDelete="Confirma a remoção?"/>
+	<Images ImageFolder="~/App_Themes/Blue/{0}/">
+        <CollapsedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvCollapsedButton.png" 
+            Width="11px" />
+        <ExpandedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvExpandedButton.png" Width="11px" />
+        <DetailCollapsedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvCollapsedButton.png" 
+            Width="11px" />
+        <DetailExpandedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvExpandedButton.png" Width="11px" />
+        <FilterRowButton Height="13px" Width="13px" />
+    </Images>	
+    <SettingsText Title="&lt;img src='../App_Themes/Blue/GridView/top_r.gif' width='15' height='25' align='right' /&gt;&lt;div class='tab-top_ct' align='center'&gt;&lt;img src='../App_Themes/Blue/GridView/ico_grid.png' width='21' height='20' align=''  /&gt;&lt;/div&gt;&lt;div class='tab-top_dv'&gt;&lt;/div&gt;|Tabela:|" />
+    <StylesPager>
+        <CurrentPageNumber BackColor="#0353AB">
+        </CurrentPageNumber>
+        <PageNumber Font-Names="Verdana" Font-Size="10px" ForeColor="White">
+        </PageNumber>
+        <Summary Font-Names="Verdana" Font-Size="10px" ForeColor="White">
+        </Summary>
+    </StylesPager>
+    <StylesEditors>
+                <ProgressBar Height="25px">
+                </ProgressBar>
+    </StylesEditors>
+    <Styles>
+        <Header CssClass="tab-lab_c">
+        </Header>
+        <Row CssClass="tab-mid_c">
+        </Row>
+        <EditForm CssClass="tab-edit_form"></EditForm>
+        <AlternatingRow CssClass="tab-mid_ca">
+        </AlternatingRow>
+        <FocusedRow BackColor="CornflowerBlue"></FocusedRow>
+        <Header SortingImageSpacing="5"></Header>
+	    <LoadingPanel ImageSpacing="10px" />
+        <FilterRow BackColor="#00528E">
+        </FilterRow>
+        <PagerBottomPanel CssClass="tab-bas_c">
+        </PagerBottomPanel>
+          <TitlePanel CssClass="tab-top_c">
+        </TitlePanel>
+        <CommandColumn CssClass="tab-cell" Wrap="False"></CommandColumn>
+        <Cell CssClass="tab-cell"></Cell>
+    </Styles>	
+</dxwgv:ASPxGridView>
+
+
+
+
+<dxwgv:ASPxGridView runat="server" SkinID="TSearchBox"
+	CssFilePath="~/App_Themes/Blue/{0}/styles.css" CssPostfix="Office2003_Blue" EnableCallbackCompression="true" CssClass="ts-all">
+	<SettingsPager>
+        <NextPageButton>
+            <Image AlternateText="Próximo" Url="~/App_Themes/Blue/GridView/ts-ct_next.png" 
+                UrlDisabled="~/App_Themes/Blue/GridView/ctd_next.png" />
+        </NextPageButton>
+        <PrevPageButton>
+            <Image AlternateText="Anterior" Url="~/App_Themes/Blue/GridView/ts-ct_back.png" 
+                UrlDisabled="~/App_Themes/Blue/GridView/ctd_back.png" />
+        </PrevPageButton>
+        <Summary AllPagesText="Páginas: {0} - {1} ({2} itens)" Text="Página {0} de {1} ({2} itens)" />
+    </SettingsPager>
+    <SettingsBehavior ConfirmDelete="true" />
+    <SettingsPager AlwaysShowPager="True">
+    </SettingsPager>
+    <Settings ShowTitlePanel="True" />
+    <SettingsText ConfirmDelete="Confirma a remoção?" EmptyDataRow="Não existem dados." />
+	<Images ImageFolder="~/App_Themes/Blue/{0}/">
+        <CollapsedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvCollapsedButton.png" 
+            Width="11px" />
+        <ExpandedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvExpandedButton.png" Width="11px" />
+        <DetailCollapsedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvCollapsedButton.png" 
+            Width="11px" />
+        <DetailExpandedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvExpandedButton.png" Width="11px" />
+        <FilterRowButton Height="13px" Width="13px" />
+    </Images>	
+    <SettingsText Title=" " />
+    <StylesPager>
+        <CurrentPageNumber BackColor="#bfd7f3">
+        </CurrentPageNumber>
+        <PageNumber Font-Names="Verdana" Font-Size="10px" ForeColor="#0353ab">
+        </PageNumber>
+        <Summary Font-Names="Verdana" Font-Size="10px" ForeColor="#0353ab">
+        </Summary>
+    </StylesPager>
+    <StylesEditors>
+                <ProgressBar Height="25px">
+                </ProgressBar>
+    </StylesEditors>
+    <Styles>
+        <Header CssClass="ts-lab_c">
+        </Header>
+        <Row CssClass="ts-mid_c">
+        </Row>
+
+        <AlternatingRow CssClass="ts-mid_ca">
+        </AlternatingRow>
+        <FocusedRow BackColor="CornflowerBlue"></FocusedRow>
+        <Header SortingImageSpacing="5"></Header>
+	    <LoadingPanel ImageSpacing="10px" />
+        <FilterRow BackColor="#00528E">
+        </FilterRow>
+        <PagerBottomPanel CssClass="ts-bas_c">
+        </PagerBottomPanel>
+          <TitlePanel CssClass="ts-top_c">
+        </TitlePanel>
+        <CommandColumn CssClass="ts-cell"></CommandColumn>
+        <Cell CssClass="ts-cell"></Cell>
+    </Styles>	
+	
+</dxwgv:ASPxGridView>
+
+<dxwgv:ASPxGridView runat="server"
+    CssFilePath="~/App_Themes/Blue/{0}/styles.css" CssPostfix="Office2003_Blue" SkinID="NoConfirmDelete"
+	EnableCallbackCompression="true">
+	<SettingsPager>
+        <NextPageButton>
+            <Image AlternateText="Próximo" Url="~/App_Themes/Blue/GridView/ct_next.png" 
+                UrlDisabled="~/App_Themes/Blue/GridView/ctd_next.png" />
+        </NextPageButton>
+        <PrevPageButton>
+            <Image AlternateText="Anterior" Url="~/App_Themes/Blue/GridView/ct_back.png" 
+                UrlDisabled="~/App_Themes/Blue/GridView/ctd_back.png" />
+        </PrevPageButton>
+        <Summary AllPagesText="Páginas: {0} - {1} ({2} itens)" Text="Página {0} de {1} ({2} itens)" />
+    </SettingsPager>
+    <SettingsBehavior/>
+    <SettingsPager AlwaysShowPager="True">
+    </SettingsPager>
+    <Settings ShowTitlePanel="True" />
+    <SettingsText EmptyDataRow="Não existem dados." />
+	<Images ImageFolder="~/App_Themes/Blue/{0}/">
+        <CollapsedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvCollapsedButton.png" 
+            Width="11px" />
+        <ExpandedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvExpandedButton.png" Width="11px" />
+        <DetailCollapsedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvCollapsedButton.png" 
+            Width="11px" />
+        <DetailExpandedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvExpandedButton.png" Width="11px" />
+        <FilterRowButton Height="13px" Width="13px" />
+    </Images>	
+    <SettingsText Title="&lt;img src='../App_Themes/Blue/GridView/top_r.gif' width='15' height='25' align='right' /&gt;&lt;div class='tab-top_ct' align='center'&gt;&lt;img src='../App_Themes/Blue/GridView/ico_grid.png' width='21' height='20' align=''  /&gt;&lt;/div&gt;&lt;div class='tab-top_dv'&gt;&lt;/div&gt;|Tabela:|" />
+    <StylesPager>
+        <CurrentPageNumber BackColor="#0353AB">
+        </CurrentPageNumber>
+        <PageNumber Font-Names="Verdana" Font-Size="10px" ForeColor="White">
+        </PageNumber>
+        <Summary Font-Names="Verdana" Font-Size="10px" ForeColor="White">
+        </Summary>
+    </StylesPager>
+    <StylesEditors>
+                <ProgressBar Height="25px">
+                </ProgressBar>
+    </StylesEditors>
+    <Styles>
+        <Header CssClass="tab-lab_c">
+        </Header>
+        <Row CssClass="tab-mid_c">
+        </Row>
+        <EditForm CssClass="tab-edit_form"></EditForm>
+        <AlternatingRow CssClass="tab-mid_ca">
+        </AlternatingRow>
+        <FocusedRow BackColor="CornflowerBlue"></FocusedRow>
+        <Header SortingImageSpacing="5"></Header>
+	    <LoadingPanel ImageSpacing="10px" />
+        <FilterRow BackColor="#00528E">
+        </FilterRow>
+        <PagerBottomPanel CssClass="tab-bas_c">
+        </PagerBottomPanel>
+          <TitlePanel CssClass="tab-top_c">
+        </TitlePanel>
+        <CommandColumn CssClass="tab-cell"></CommandColumn>
+        <Cell CssClass="tab-cell"></Cell>
+    </Styles>	
+</dxwgv:ASPxGridView>
+
+<dxwgv:ASPxGridView runat="server"  SkinID="SaldosPrestacaoContas"
+    CssFilePath="~/App_Themes/Blue/{0}/styles.css" CssPostfix="Office2003_Blue"
+	EnableCallbackCompression="true">
+	<SettingsPager>
+        <NextPageButton>
+            <Image AlternateText="Próximo" Url="~/App_Themes/Blue/GridView/ct_next.png" 
+                UrlDisabled="~/App_Themes/Blue/GridView/ctd_next.png" />
+        </NextPageButton>
+        <PrevPageButton>
+            <Image AlternateText="Anterior" Url="~/App_Themes/Blue/GridView/ct_back.png" 
+                UrlDisabled="~/App_Themes/Blue/GridView/ctd_back.png" />
+        </PrevPageButton>
+        <Summary AllPagesText="Páginas: {0} - {1} ({2} itens)" Text="Página {0} de {1} ({2} itens)" />
+    </SettingsPager>
+    <Styles>
+    <Footer Font-Bold="true" HorizontalAlign="Left" />
+    <Cell HorizontalAlign="Left" />
+    </Styles>
+    <SettingsBehavior ConfirmDelete="true" />
+    <SettingsLoadingPanel Text="Carregando" Mode="ShowAsPopup" ShowImage="true" ImagePosition="Left"/>
+    <SettingsPager AlwaysShowPager="True">
+    </SettingsPager>
+    <Settings ShowTitlePanel="True" />
+    <SettingsText ConfirmDelete="Confirma a remoção?" EmptyDataRow="<br/>Não há despesas ou receitas registradas para esta Prestação de Contas.<br/><br/>" />
+	<Images ImageFolder="~/App_Themes/Blue/{0}/">
+        <CollapsedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvCollapsedButton.png" 
+            Width="11px" />
+        <ExpandedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvExpandedButton.png" Width="11px" />
+        <DetailCollapsedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvCollapsedButton.png" 
+            Width="11px" />
+        <DetailExpandedButton Height="12px" 
+            Url="~/App_Themes/Blue/GridView/gvExpandedButton.png" Width="11px" />
+        <FilterRowButton Height="13px" Width="13px" />
+    </Images>	
+    <SettingsText Title="&lt;img src='../App_Themes/Blue/GridView/top_r.gif' width='15' height='25' align='right' /&gt;&lt;div class='tab-top_ct' align='center'&gt;&lt;img src='../App_Themes/Blue/GridView/ico_grid.png' width='21' height='20' align=''  /&gt;&lt;/div&gt;&lt;div class='tab-top_dv'&gt;&lt;/div&gt;|Tabela:|" />
+    <StylesPager>
+        <CurrentPageNumber BackColor="#0353AB">
+        </CurrentPageNumber>
+        <PageNumber Font-Names="Verdana" Font-Size="10px" ForeColor="White">
+        </PageNumber>
+        <Summary Font-Names="Verdana" Font-Size="10px" ForeColor="White">
+        </Summary>
+    </StylesPager>
+    <StylesEditors>
+                <ProgressBar Height="25px">
+                </ProgressBar>
+    </StylesEditors>
+    <Styles>
+        <Header CssClass="tab-lab_c">
+        </Header>
+        <Row CssClass="tab-mid_c">
+        </Row>
+        <EditForm CssClass="tab-edit_form"></EditForm>
+        <AlternatingRow CssClass="tab-mid_ca">
+        </AlternatingRow>
+        <FocusedRow BackColor="CornflowerBlue"></FocusedRow>
+        <Header SortingImageSpacing="5"></Header>
+	    <LoadingPanel ImageSpacing="10px" />
+        <FilterRow BackColor="#00528E">
+        </FilterRow>
+        <PagerBottomPanel CssClass="tab-bas_c">
+        </PagerBottomPanel>
+          <TitlePanel CssClass="tab-top_c">
+        </TitlePanel>
+        <CommandColumn CssClass="tab-cell" Wrap="False"></CommandColumn>
+        <Cell CssClass="tab-cell"></Cell>
+    </Styles>	
+</dxwgv:ASPxGridView>
+
+<dxe:ASPxDateEdit runat="server" Font-Names="Verdana" Font-Size="12px" EditFormat="Custom" EditFormatString="dd/MM/yyyy" MinDate="01/01/1900" Height="20px">
+<CalendarProperties ClearButtonText="Limpar" TodayButtonText="Hoje" ></CalendarProperties>
+<ClientSideEvents ParseDate="function (s, e){ return ASPxDateEditOnParseDate(s, e);}" />
+<ClientSideEvents KeyUp="function (s, e){ return ASPxDateEditMaskData(s, e); }" />
+<ClientSideEvents KeyPress="function (s, e){ SomentePermitirNumeros(s, e.htmlEvent); }" />
+<ClientSideEvents LostFocus="function (s, e){ return ASPxDateEditLostFocus(s, e); }" />
+</dxe:ASPxDateEdit>
+
+<dxe:ASPxDateEdit runat="server" SkinID="deHora" Font-Names="Verdana" Font-Size="12px">
+<CalendarProperties ClearButtonText="Limpar" TodayButtonText="Hoje" ></CalendarProperties>
+</dxe:ASPxDateEdit>
+
+<dxe:ASPxComboBox runat="server" Font-Names="Verdana" Font-Size="12px">
+</dxe:ASPxComboBox>
+
+
+<asp:TextBox runat="server" BackColor="White">
+</asp:TextBox>
+
+<asp:DropDownList runat="server" Font-Names="Verdana" Font-Size="12px">
+</asp:DropDownList>
+
+<asp:Image SkinID="sSeparator" ImageUrl="~/img/mn_sep.gif" runat="server" Width="10px" Height="19px"/>
+                                        
+<asp:Label runat="server" Font-Names="Verdana" Font-Size="12px"></asp:Label>
+
+<asp:Label runat="server" Font-Size="1.1em" ForeColor="Red" Font-Bold="true" SkinID="lblMensagem"></asp:Label>
+
+<asp:Label runat="server" Font-Names="Verdana" Font-Bold="true" ForeColor="Black" SkinID="lblNomePagina"></asp:Label>
+
+<asp:Label runat="server" Font-Names="Verdana" Font-Size="12px" Font-Bold="true" SkinID="lblObrigatorio"></asp:Label>
+
+<asp:LinkButton SkinID="Sair" runat="server" ForeColor="White"></asp:LinkButton>
+
+<asp:RadioButtonList runat="server" Font-Names="Verdana" Font-Size="12px">
+</asp:RadioButtonList>
+
+<asp:ImageButton SkinID="Salvar" runat="server" ImageUrl="~/Images/SmallOk.png" ToolTip="OK" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="Cancelar" runat="server" ImageUrl="~/Images/SmallCancel.png" ToolTip="Cancelar" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="Deletar" runat="server" ImageUrl="~/Images/SmallDelete.png" ToolTip="Excluir" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="Editar" runat="server" ImageUrl="~/Images/SmallEdit.png" ToolTip="Editar" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="Novo" runat="server" ImageUrl="~/Images/SmallNew.png" ToolTip="Novo" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="Voltar" runat="server" ImageUrl="~/images/EditButtonsReturn.png" ToolTip="Voltar" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="Confirmar" runat="server" ImageUrl="~/images/bot_confirmar.png" ToolTip="Confirmar" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="Fotografar" runat="server" ImageUrl="~/images/bot_fotografar.png" ToolTip="Fotografar" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="BcTransferir" runat="server" ImageUrl="~/images/bot_transferir.png" ImageAlign="Right" ToolTip="Transferir" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="BcSalvar" runat="server" ImageUrl="~/images/SmallOk.png" ImageAlign="Right" ToolTip="Salvar" CssStyle="cursor:pointer;" />
+<asp:ImageButton SkinID="BcSalva" runat="server" ImageUrl="~/Images/bt_salvar.png" ImageAlign="Right" ToolTip="Salvar" CssStyle="cursor:pointer;" />
+<asp:ImageButton SkinID="BcBuscar" runat="server" ImageUrl="~/Images/bot_buscar.png" ImageAlign="Right" ToolTip="Buscar" CssStyle="cursor:pointer;" />
+<asp:ImageButton SkinID="BcFecharNotas" runat="server" ImageUrl="~/Images/bot_fecharnotas.png" ImageAlign="Right" ToolTip="Fechar Notas" CssStyle="cursor:pointer;" />
+<asp:ImageButton SkinID="BcFechar" runat="server" ImageUrl="~/Images/bot_fechar.png" ImageAlign="Right" ToolTip="Fechar" CssStyle="cursor:pointer;" />
+<asp:ImageButton SkinID="BcCancelar" runat="server" ImageUrl="~/images/SmallCancel.png" ImageAlign="Right" ToolTip="Cancelar" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="BcDeletar" runat="server" ImageUrl="~/images/SmallDelete.png" ImageAlign="Right" ToolTip="Remover" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="BcDesabilitar" runat="server" ImageUrl="~/images/bot_desabil.png" ImageAlign="Right" ToolTip="Desabilitar" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="BcEditar" runat="server" ImageUrl="~/images/SmallEdit.png" ImageAlign="Right" ToolTip="Editar" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="BcNovo" runat="server" ImageUrl="~/images/SmallNew.png" ImageAlign="Right" ToolTip="Novo" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="BcConfirmar" runat="server" ImageUrl="~/images/SmallConfirmar.png" ImageAlign="Right" ToolTip="Confirmar" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="BcVoltar" runat="server" ImageUrl="~/images/EditButtonsReturn.png" ToolTip="Voltar" ImageAlign="Right" CssStyle="cursor:pointer;"/>
+<asp:ImageButton SkinID="Imprimir" runat="server" ImageUrl="~/Images/bot_imprimir.png" ToolTip="Imprimir" CssStyle="cursor:pointer;"/>
+
+<asp:Label SkinID="BcTitulo" runat="server" CssClass="divEditLabel"/>
+
+<asp:TreeView runat="server" Font-Names="Verdana" Font-Size="Smaller"></asp:TreeView>
+
+<dxtc:ASPxPageControl runat="server" Forecolor="Blue">
+</dxtc:ASPxPageControl>
+
+<tweb:TSearchBox runat="server" SearchButtonImageUrl="~/images/bt_drop.gif"  Separator=" - ">
+    <PopupStyle CssClass="tsearchpopup"></PopupStyle>
+</tweb:TSearchBox>
+
+<tweb:TSearch runat="server" ButtonImageUrl="~/images/bt_drop.gif">
+    <FilterPanelStyle CssClass="ts-ctrl" />
+    <PopupStyle CssClass="tsearchpopup"></PopupStyle>
+</tweb:TSearch>
+
+<tweb:TSearch runat="server" ButtonImageUrl="~/images/bt_drop.gif" SkinID="CEP" Width="18px" Height="18px" Modal="true" ShowTitle="true" Title="Pesquisa de CEP">
+    <TitleStyle BackColor="Navy" ForeColor="White" Font-Bold="true" Font-Size="12px"  />
+    <PopupStyle CssClass="tsearchpopup"></PopupStyle>
+</tweb:TSearch>
+
+<asp:TextBox SkinID="numerico" runat="server" BackColor="White" onkeypress="return isNumberKey(event);" onpaste="return false;" autocomplete="z">
+</asp:TextBox>
+
+<asp:TextBox SkinID="numericoComPonto" runat="server" BackColor="White" onkeypress="return isNumberDotKey(event);" onpaste="return false;" autocomplete="z">
+</asp:TextBox>
+
+<asp:TextBox SkinID="umAteCinco" runat="server" BackColor="White" onkeypress="return isOneToFiveKey(event);" onpaste="return false;" autocomplete="z">
+</asp:TextBox>
+
+<asp:TextBox SkinID="numeroDocumento" runat="server" BackColor="White">
+</asp:TextBox>
+

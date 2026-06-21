@@ -1,0 +1,84 @@
+﻿@model SRV.Models.DTO.FiltroAvaliacaoExternaUnidadeAdmin
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btPesquisar")
+        @Html.ToolbarItemLink(true, "Upload", null, null, "btImportar")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdAvaliacaoExterna)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.IdAvaliacaoExterna, (IEnumerable<SelectListItem>)Model.AvaliacoesExternas ?? new List<SelectListItem>(), "", new { style = "width:405px;" })
+                        @Html.ValidationMessageFor(m => m.IdAvaliacaoExterna)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdUnidadeAdministrativa)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.IdUnidadeAdministrativa, (IEnumerable<SelectListItem>)Model.UnidadesAdministrativas ?? new List<SelectListItem>(), "", new { style = "width:405px;" })
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="clear:both"></div>
+
+        @if (Model.AvaliacoesUnidades != null)
+        {
+            @Html.Pager(Model.AvaliacoesUnidades)
+
+            @Html.Grid(Model.AvaliacoesUnidades.Items).Columns(column =>
+            {
+                if (@Role.IsGranted("Administrador"))
+                {
+                    column.For(c => Html.ActionLink(" ", "", null, new { href = "#", @class = "icoLinkDelete", onclick = "deleteItemLocal(this, '" + @Url.Action("Delete", "AvaliacaoExternaUnidadeAdmin") + "', " + @c.AvaliacaoExterna.IdAvaliacaoExterna + ", " + @c.UnidadeAdministrativa.IdUnidadeAdministrativa + ")" })).Named("Excluir").Attributes(width => "42px", align => "center").HeaderAttributes(width => "42px", align => "center").Encode(false);
+                }
+                column.For(c => c.AvaliacaoExterna.DesAvaliacaoExterna).Named("Avaliação Externa").Attributes(width => "150px").HeaderAttributes(width => "150px");
+                column.For(c => c.UnidadeAdministrativa.DesUnidadeAdministrativa).Named("Unidade Administrativa").Attributes(width => "100%").HeaderAttributes(width => "100%");
+                column.For(c => c.PercParticipacao).Named("Participação").Attributes(width => "100px", align => "right").HeaderAttributes(width => "100px");
+                column.For(c => c.AnoReferencia.IdAnoReferencia).Named("Ano Referência").Attributes(width => "100px", align => "right").HeaderAttributes(width => "100px");
+            }).Empty("Nenhum registro encontrado")
+        }
+    </div>                       
+}
+
+<script type="text/javascript">
+    function deleteItemLocal(element, url, idAvaliacaoExterna, idUnidadeAdministrativa) {
+
+        if (confirm("Confirma exclusão do registro?")) {
+
+            $.ajax({ url: url,
+                type: 'post',
+                data: { idAvaliacaoExterna: idAvaliacaoExterna, idUnidadeAdministrativa: idUnidadeAdministrativa },
+                success: function (data) {
+                    alert(data.Result);
+                    $(element).closest("form").submit();
+                },
+                error: function (xhr, status, error) {
+                    if (xhr.status != 403) {
+                        $(".boxInfo").remove();
+                        $(".validation-summary-errors").remove();
+                        $(".boxContent").prepend("<div class='validation-summary-errors'><ul><li>" + xhr.responseText + "</li></ul></div>");
+                    }
+                }
+            });            
+        }
+    }
+    
+</script>

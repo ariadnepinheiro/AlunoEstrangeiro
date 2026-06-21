@@ -1,0 +1,23 @@
+﻿@model List<string>
+           
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+
+@using (Html.BeginToolbar())
+{
+    @Html.ToolbarItemLink(true, "Upload", null, null, "btImportar")
+    @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+}
+
+<div class="boxContent">
+
+    <div class="boxErro">Falha na importação. Verifique os erros abaixo, corrija o arquivo e faça novo envio</div>
+    <br/>
+
+    @Html.Grid(Model).Columns(column =>
+       {
+           column.For(c => c).Named("Descrição").Attributes(width => "100%").HeaderAttributes(width => "100%");
+       }).Empty("Nenhum registro encontrado")
+
+</div>

@@ -1,0 +1,98 @@
+﻿/*****
+LOGIN - APRESENTACAO - INICIO
+*****/
+.conteudo {
+	margin: auto;
+	width: 620px;
+}
+
+#painel-apresentacao h3 {
+	font-weight: normal;
+	margin-top:0px;
+	font-size:12px;
+}
+#painel-apresentacao {
+	border:1px solid #C0C0C0;
+	padding:10px;
+	font-size:12px;
+	line-height:17px;
+	margin-top:10px;
+	background: #ffffff;
+	border-radius: 5px;
+}
+#ajuda-menu { display:none; }
+
+#seta-lancamento-nota {
+	position: fixed;
+	top: 85px;
+	z-index: 11000;
+	left: 269px;
+	display:none;
+}
+#seta-cadastramento-glp {
+	position: fixed;
+	top: 85px;
+	z-index: 11000;
+	left: 415px;
+	display:none;
+}
+
+#seta-consulta-qhi {
+	position: fixed;
+	top: 85px;
+	z-index: 11000;
+	left: 562px;
+	display:none;
+}
+
+#seta-curriculo-minimo {
+	position: fixed;
+	top: 85px;
+	z-index: 11000;
+	left: 689px;
+	display:none;
+}
+
+#seta-protocolos {
+	position: fixed;
+	top: 85px;
+	z-index: 11000;
+	left: 783px;
+	display:none;
+}
+
+#seta-dados-docente {
+	position: fixed;
+	top: 85px;
+	z-index: 11000;
+	left: 899px;
+	display:none;
+}
+
+#seta-codigo-armazem-do-livro {
+	position: fixed;
+	top: 85px;
+	z-index: 11000;
+	left: 1031px;
+	display:none;
+}
+#seta-dados-pessoais {
+	position: fixed;
+	top: 85px;
+	z-index: 11000;
+	left: 1167px;
+	display:none;
+}
+#seta-acompanhamento-classroom {
+	position: fixed;
+	top: 85px;
+	z-index: 11000;
+	left: 1346px;
+	display:none;
+}
+
+#ajuda-menu { color:#F00; font-size:12px; }
+#btContinuarApresentacao { float: right; }
+/*****
+LOGIN - APRESENTACAO - FIM
+*****/

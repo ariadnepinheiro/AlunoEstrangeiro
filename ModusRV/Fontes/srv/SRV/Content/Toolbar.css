@@ -1,0 +1,71 @@
+﻿
+
+.btNovo {background: url("images/bt_novo.gif") no-repeat top left; display: block; width: 58px; height: 20px;}
+.btPesquisar {background: url("images/bt_pesquisar.gif") no-repeat top left; display: block; width: 82px; height: 20px;}
+.btVoltarPesquisa {background: url("images/bt_voltar_pesquisa.gif") no-repeat top left; display: block; width: 130px; height: 20px;}
+.btVoltar {background: url("images/bt_voltar.gif") no-repeat top left; display: block; width: 70px; height: 20px;}
+.btSalvar {background: url("images/bt_salvar.gif") no-repeat top left; display: block; width: 66px; height: 20px;}
+.btExcluir {background: url("images/bt_excluir.gif") no-repeat top left; display: block; width: 64px; height: 20px;}
+.btCancelar {background: url("images/bt_cancelar.gif") no-repeat top left; display: block; width: 80px; height: 20px;}
+.btExportarExcel {background: url("images/bt_excel.gif") no-repeat top left; display: block; width: 76px; height: 20px;}
+.btImportar {background: url("images/bt_importar.gif") no-repeat top left; display: block; width: 84px; height: 20px;}
+
+.btExecutarCalculo {background: url("images/bt_executar_calculo.gif") no-repeat top left; display: block; width: 125px; height: 20px;}
+.btExportarCoeficiente {background: url("images/bt_exportar_coeficiente.gif") no-repeat top left; display: block; width: 150px; height: 20px;}
+.btFormatoArquivo {background: url("images/bt_formato_arquivo.gif") no-repeat top left; display: block; width: 150px; height: 20px;}
+.btAtualizar {background: url("images/bt_atualizar.gif") no-repeat top left; display: block; width: 80px; height: 20px;}
+
+.toolbar
+{
+    background-color: #f0f0f0;
+
+    border-top: #D0D0D0 1px solid; 
+    border-right: #D0D0D0 1px solid; 
+    border-bottom: #FFF 0px solid; 
+    border-left: #D0D0D0 1px solid; 
+
+    padding: 0px; 
+    margin: 0 10px 0 10px; 
+}
+
+.toolbarInternal
+{
+    background-color: #f0f0f0;
+    border: #ccc 1px solid; 
+    padding: 0px; 
+    margin: 0px; 
+}
+
+.toolbarBorder
+{
+    padding: 0 0 0 5px; 
+    margin: 0; 
+    height: 29px;
+    overflow: hidden;
+    
+}
+
+.toolbarItem
+{
+    background-color: #ededed;
+    border: #d3d3d3 1px solid;
+    float: left; 
+    cursor: pointer; 
+    height: 22px; 
+    margin: 2px 3px 0 0;
+    padding: 1px 3px 0 3px; 
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.toolbarItem:hover
+{
+    background-color: #e4e4e4;
+    border: #999999 1px solid;
+}
+
+.btNovaAlocacao {background: url("images/bt_nova_alocacao.png") no-repeat top left; display: block; width: 115px; height: 20px;}
+.btNovoAfastamento {background: url("images/bt_novo_afastamento.png") no-repeat top left; display: block; width: 140px; height: 20px;}
+.btPesquisarAuditoria {background: url("images/bt_pesquisar_auditoria.png") no-repeat top left; display: block; width: 80px; height: 20px;}
+.btNovaFuncao {background: url("images/bt_nova_funcao.png") no-repeat top left; display: block; width: 102px; height: 20px;}
+.btNovaOcorrencia {background: url("images/bt_nova_ocorrencia.png") no-repeat top left; display: block; width: 125px; height: 20px;}

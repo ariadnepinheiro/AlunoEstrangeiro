@@ -1,0 +1,47 @@
+﻿@model SRV.Models.Domain.TipoUnidadeAdministrativa
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(true, "Create", null, null, "btNovo");
+        @Html.ToolbarItemSubmit(true, "btSalvar");
+
+        if (Model.IdTipoUnidAdm != null)
+        {
+            @Html.ToolbarItemJS(true, "deleteItemAndRedirect(this, '" + @Url.Action("Delete", "TipoUnidadeAdministrativa") + "', '" + @Url.Action("Create", "TipoUnidadeAdministrativa") + "', " + @Model.IdTipoUnidAdm + ")", null, "btExcluir");
+        }
+                                                                                                                                                                                                
+        @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <table class="tableForm">
+            @if (Model.IdTipoUnidAdm != null)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdTipoUnidAdm)</td>
+                    <td>@Html.DisplayTextFor(m => m.IdTipoUnidAdm)<br/>
+                        @Html.HiddenFor(m => m.IdTipoUnidAdm)
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.DesTipoUnidAdm)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.DesTipoUnidAdm, new { style = "width:450px;", maxlength = 50 })<br/>
+                    @Html.ValidationMessageFor(m => m.DesTipoUnidAdm)
+                </td>
+            </tr>
+        </table>
+    </div>
+}

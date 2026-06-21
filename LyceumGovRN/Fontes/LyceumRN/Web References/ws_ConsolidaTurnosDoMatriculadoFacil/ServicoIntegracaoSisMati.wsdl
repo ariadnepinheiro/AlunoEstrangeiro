@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.proderj.rj.gov.br/ServicoIntegracaoSisMati" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.proderj.rj.gov.br/ServicoIntegracaoSisMati" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.proderj.rj.gov.br/ServicoIntegracaoSisMati">
+      <s:element name="ConsolidaTurnosDoMatriculaFacil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Censo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomeUnidade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Curso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Serie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Turno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Modalidade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ano" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Periodo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoRetorno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descricaoRetorno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoOperacao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsolidaTurnosDoMatriculaFacilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConsolidaTurnosDoMatriculaFacilResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoRetorno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="descricaoRetorno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsolidaTurnosDoMatriculaFacilSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsolidaTurnosDoMatriculaFacil" />
+  </wsdl:message>
+  <wsdl:message name="ConsolidaTurnosDoMatriculaFacilSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsolidaTurnosDoMatriculaFacilResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicoIntegracaoSisMatiSoap">
+    <wsdl:operation name="ConsolidaTurnosDoMatriculaFacil">
+      <wsdl:input message="tns:ConsolidaTurnosDoMatriculaFacilSoapIn" />
+      <wsdl:output message="tns:ConsolidaTurnosDoMatriculaFacilSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicoIntegracaoSisMatiSoap" type="tns:ServicoIntegracaoSisMatiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsolidaTurnosDoMatriculaFacil">
+      <soap:operation soapAction="http://www.proderj.rj.gov.br/ServicoIntegracaoSisMati/ConsolidaTurnosDoMatriculaFacil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicoIntegracaoSisMatiSoap12" type="tns:ServicoIntegracaoSisMatiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsolidaTurnosDoMatriculaFacil">
+      <soap12:operation soapAction="http://www.proderj.rj.gov.br/ServicoIntegracaoSisMati/ConsolidaTurnosDoMatriculaFacil" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicoIntegracaoSisMati">
+    <wsdl:port name="ServicoIntegracaoSisMatiSoap" binding="tns:ServicoIntegracaoSisMatiSoap">
+      <soap:address location="http://www.matriculaconsultas.proderj.rj.gov.br/ServicoIntegracaoSisMati.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicoIntegracaoSisMatiSoap12" binding="tns:ServicoIntegracaoSisMatiSoap12">
+      <soap12:address location="http://www.matriculaconsultas.proderj.rj.gov.br/ServicoIntegracaoSisMati.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,144 @@
+﻿@model SRV.Models.DTO.FiltroFuncaoServidor
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btPesquisar")
+        @Html.ToolbarItemLink(true, "Upload", null, null, "btImportar")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdServidor)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.IdServidor, new { style = "width:80px; text-align: right;", maxlength = 8 })
+                        <input type="image" id="buttonhitServidor" src="@Url.Content("~/Content/images/pesquisar.gif")"/>
+                        @Html.TextBoxFor(m => m.NomeServidor, new { style = "width:250px;", disabled = "disabled" })
+                        @Html.HiddenFor(m => m.NomeServidor, new { id = "NomeServidorHidden" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdUnidadeAdministrativa)</td>
+                    <td>
+                         @Html.DropDownListFor(m => m.IdUnidadeAdministrativa, (IEnumerable<SelectListItem>)Model.UnidadesAdministrativas ?? new List<SelectListItem>(), "", new { style = "width:366px;" })
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdFuncao)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.IdFuncao, (IEnumerable<SelectListItem>)Model.Funcoes ?? new List<SelectListItem>(), "", new { style = "width:366px;" })
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="clear:both"></div>
+
+        @if (Model != null && Model.FuncoesServidores != null)
+        {
+            @Html.Pager(Model.FuncoesServidores)
+
+            using (@Html.BeginScroller())
+            {
+                @Html.Grid(Model.FuncoesServidores.Items).Columns(column =>
+                {
+                    if (@Role.IsGranted("Administrador"))
+                    {
+                        column.For(c => Html.ActionLink(" ", "", null, new { href = "#", @class = "icoLinkDelete", onclick = "deleteItem(this, '" + @Url.Action("Delete", "FuncaoServidor") + "', " + @c.IdFuncaoServidor + ")" })).Named("Excluir").Attributes(width => "42px", align => "center").HeaderAttributes(width => "42px", align => "center").Encode(false);
+                    }
+
+                    column.For(c => c.Servidor.IdServidor).Named("Código Servidor").Attributes(width => "110px", align => "right").HeaderAttributes(width => "110px");
+                    column.For(c => c.Servidor.DesNomeServidor).Named("Servidor").Attributes(width => "300px").HeaderAttributes(width => "300px");
+                    column.For(c => c.Funcao.DesFuncao).Named("Função").Attributes(width => "300px").HeaderAttributes(width => "300px");
+                    column.For(c => c.DataInicioFuncao).Named("Data Início Função").Attributes(width => "125px").HeaderAttributes(width => "125px").Format("{0:dd/MM/yyyy}");
+                    column.For(c => c.DataFimFuncao).Named("Data Fim Função").Attributes(width => "115px").HeaderAttributes(width => "115px").Format("{0:dd/MM/yyyy}");
+                    column.For(c => c.Proporcionalidade).Named("Proporcionalidade").Attributes(width => "125px", align => "right").HeaderAttributes(width => "125px");
+                    column.For(c => c.UnidadeAdministrativa.IdUnidadeAdministrativa).Named("Código Unidade Administrativa").Attributes(width => "205px", align => "right").HeaderAttributes(width => "205px");
+                    column.For(c => c.UnidadeAdministrativa.DesUnidadeAdministrativa).Named("Unidade Administrativa").Attributes(width => "350px").HeaderAttributes(width => "350px");
+                }).Empty("Nenhum registro encontrado")
+            }
+        }
+    </div>                       
+}
+
+<div id="modalButtonHitServidor" title="Pesquisa Servidor" style="display:none;"></div>
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $('#IdServidor').mask("??99999999", { placeholder: "" });
+
+        $('#buttonhitServidor').click(function () {
+            var dlg = $("#modalButtonHitServidor").dialog({
+                title: 'Pesquisar Servidor',
+                height: 'auto',
+                width: 750,
+                position: ['center', 120],
+                modal: true,
+                resizable: false,
+                callback: 'loadServidor',
+                open: function () {
+                    $(this).load('@Html.Raw(Url.Action("Index", "PesquisaServidor"))');
+                },
+                beforeClose: function (event, ui) {
+                    $('#modalButtonHitServidor').empty();
+                }
+            });
+
+            return false;
+        });
+
+        $('#IdServidor').blur(function () {
+            if ($('#IdServidor').val() != "") {
+                $.getJSON('@Url.Content("~/PesquisaServidor/FindServidorById")',
+                { idServidor: $('#IdServidor').val() },
+                function (data) {
+                    if (data.Result != null) {
+                        $('#IdServidor').val(data.Result.IdServidor);
+                        $('#NomeServidor').val(data.Result.DesNomeServidor);
+                        $('#NomeServidorHidden').val(data.Result.DesNomeServidor);
+                    }
+                    else {
+                        $('#IdServidor').val("");
+                        $('#NomeServidor').val("");
+                        $('#NomeServidorHidden').val("");
+                        alert('Servidor não encontrado');
+                        $('#IdServidor').focus();
+                    }
+                });
+            }
+            else {
+                $('#IdServidor').val("");
+                $('#NomeServidor').val("");
+                $('#NomeServidorHidden').val("");
+            }
+        });
+
+    });
+
+    function loadServidor(IdServidor, DesNomeServidor) {
+        $('#IdServidor').val(IdServidor);
+        $('#NomeServidor').val(DesNomeServidor);
+        $('#NomeServidorHidden').val(DesNomeServidor);
+    }
+
+</script>

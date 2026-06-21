@@ -1,0 +1,134 @@
+﻿/****
+LOGIN - INICIAL - INICIO
+****/
+.painel-login { width:100%; padding-top:1vh;}
+.painel-login .loginAvisoVermelho { color:#C00;margin: 5px 0px 10px 5px;line-height:15px; }
+
+.painel-login .caixa-login {
+    width: 300px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 5px 1em;
+    border: 2px solid #dfe6ed;
+    border-radius: 5px;
+    box-shadow: 
+    0 2.8px 2.2px rgb(0 0 0 / 3%), 
+    0 6.7px 5.3px rgb(0 0 0 / 5%), 
+    0 12.5px 10px rgb(0 0 0 / 6%), 
+    0 22.3px 17.9px rgb(0 0 0 / 7%), 
+    0 41.8px 33.4px rgb(0 0 0 / 9%), 
+    0 100px 80px rgb(0 0 0 / 12%);
+}
+
+.painel-login .aviso {
+	top: 200px;
+	width: 340px;
+}
+
+.painel-login .loginAvisoTexto {
+	margin: 5px 0px 10px 5px;
+	line-height:15px;
+}
+
+.painel-login h3 {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    color: Black;
+    border-bottom: 2px solid #dfe6ed;
+    margin-top:0;
+    margin-bottom:0;
+}
+.painel-login h3 img{
+    display:inline-block;
+    height:50px;  
+}
+#frm-login {
+	margin: 12px auto;
+    width: 200px;
+}
+#frm-login p{
+    margin: 0;
+}
+.painel-login label,
+.painel-login input {
+	font-family:Tahoma;
+	font-size:11px;
+	display:block;
+	margin:0px 0px 2px 0px;
+}
+.painel-login label{
+    font-weight: 400;
+    margin-top: 9px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.painel-login .log_form {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	height: 15px;
+	width: 180px;
+	background: white;
+}
+.painel-login .esqueci-senha {
+	text-align: right;
+	margin: 20px 0px 0px 0px;
+}
+.painel-login .login-erro {
+	margin: 5px;
+	color: #C00;
+}
+.login-erro li {
+	margin:5px 0px;
+}
+.painel-login #btLoginEntrar  {
+    width: 200px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    background: #04AA6D;
+    border: 2px solid #04AA6D!important;
+    border-radius: 5px!important;
+    height: 37px;
+    padding: 0px 0px;
+    transform: perspective(1px) translateZ(0); 
+}
+.painel-login #btLoginEntrar:hover {
+    background: #059862;
+    border: 2px solid #059862!important;
+    border-radius: 5px!important;
+    height: 37px;
+    padding: 0;
+}
+.login-forms{
+    display: block;
+    margin: 0px auto 8px;
+    width: 200px;
+    box-sizing: border-box;
+    padding: 9px;
+    font-size: 16px!important;
+    color: black;
+    border: 2px #dfe6ed solid!important;
+    border-radius: 5px;
+    height: 37px;
+    background: #FFF;
+}
+.troca-captcha{
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+
+.redefinir-senha
+{
+    width: 100%; 
+    text-align: center; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/****
+LOGIN - INICIAL - FIM
+****/

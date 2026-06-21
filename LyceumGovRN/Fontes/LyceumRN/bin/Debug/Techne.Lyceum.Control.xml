@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Techne.Lyceum.Control</name>
+    </assembly>
+    <members>
+        <member name="F:Techne.Web.JSON.lastErrorIndex">
+            <summary>
+              On decoding, this value holds the position at which the parse failed (-1 = no error).
+            </summary>
+        </member>
+        <member name="M:Techne.Web.JSON.GetLastErrorIndex">
+            <summary>
+              On decoding, this function returns the position at which the parse failed (-1 = no error).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Techne.Web.JSON.GetLastErrorSnippet">
+            <summary>
+              If a decoding error occurred, this function returns a piece of the JSON string 
+              at which the error took place. To ease debugging.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Techne.Web.JSON.JsonDecode(System.String)">
+            <summary>
+              Parses the string json into a value
+            </summary>
+            <param name = "json">A JSON string.</param>
+            <returns>An ArrayList, a Hashtable, a double, a string, null, true, or false</returns>
+        </member>
+        <member name="M:Techne.Web.JSON.JsonEncode(System.Object)">
+            <summary>
+              Converts a Hashtable / ArrayList object into a JSON string
+            </summary>
+            <param name = "json">A Hashtable / ArrayList</param>
+            <returns>A JSON encoded string, or null if object 'json' is not serializable</returns>
+        </member>
+        <member name="M:Techne.Web.JSON.LastDecodeSuccessful">
+            <summary>
+              On decoding, this function returns the position at which the parse failed (-1 = no error).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Techne.Web.JSON.IsNumeric(System.Object)">
+            <summary>
+              Determines if a given object is numeric in any way
+              (can be integer, double, etc). C# has no pretty way to do this.
+            </summary>
+        </member>
+        <member name="F:Techne.Web.TSearchBox.ArgumentChanged">
+            <summary>
+              Indica se houve alteração no valor do controle que representa a descrição
+              após um postback. É alterado em LoadPostData().
+            </summary>
+        </member>
+        <member name="F:Techne.Web.TSearchBox.KeyChanged">
+            <summary>
+              Indica se houve alteração no valor do controle que representa a chave (controle base)
+              após um postback. É alterado em LoadPostData().
+            </summary>
+        </member>
+        <member name="M:Techne.Web.TSearchBox.GetConnection">
+            <summary>
+              Se Connection foi informada, devolve uma conexão com base nela.
+              Caso contrário, se o controle estiver sob um manager, obtém a conexão do TechneDS associado a ele.
+              Caso contrário, devolve connection da TPage.
+              Caso contrário, dá exception.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.DBValue">
+            <summary>
+              Atribui um valor ao controle, buscando a descrição correspondente.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.ArgumentColumns">
+            <summary>
+              Número de caracteres da coluna de argumentos, para dimensionar o tamanho do controle de argumentos
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.ClickToSearchMsg">
+            <summary>
+              Mensagem a ser mostrada quando o usuário informou a descrição mas não clicou em Buscar
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.Connection">
+            <summary>
+              Nome da conexão com banco de dados
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.GridPageSize">
+            <summary>
+              Número de registros que serão mostrados numa página da grid de busca. Caso seja 0, não pagina.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.IsValidDBValue">
+            <summary>
+              Indica se DBValue pertence à lista de valores válidos do controle definida
+              pelas propriedades SqlSelect e SqlWhere.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.NotFoundMsg">
+            <summary>
+              Mensagem a ser mostrada quando nenhum registro é encontrado
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.Separator">
+            <summary>
+              Texto que separa o código e a descrição no modo View
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.ArgumentCol">
+            <summary>
+              Devolve BaseArgument se ele for informado, caso contrário devolve a segunda coluna de BaseSqlSelect.
+              Se BaseSqlSelect também não foi informado ou possui apenas uma coluna, dá exception.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.KeyCol">
+            <summary>
+              Devolve BaseKey se ele for informado, caso contrário devolve a primeira coluna de BaseSqlSelect.
+              Se BaseSqlSelect também não foi informado, dá exception.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.SqlSelectExtended">
+            <summary>
+              Devolve BaseSqlSelect contendo as colunas originais, mais BaseKey, BaseArgument e AlternateKeys.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBox.Item(System.String)">
+            <summary>
+              Neste momento se supõe que tenha passado pelo GetAndBind
+            </summary>
+        </member>
+        <member name="P:Techne.Web.TSearchBoxDataSource.RecordContainer">
+            <summary>
+              Obtém o record container no qual o controle está inserido.
+              Devolve null caso não esteja em nenhum record container.
+            </summary>
+        </member>
+        <member name="M:Techne.Web.TQueryHelper.CreateObject(System.String)">
+            <summary>
+              Cria um objeto de um determinado tipo
+            </summary>
+            <param name = "typeName"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

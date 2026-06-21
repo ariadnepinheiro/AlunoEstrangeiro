@@ -1,0 +1,90 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="boxContent">
+
+    <p>As colunas do arquivo de importação devem ser obrigatoriamente separadas por ponto-e-vírgula.</p>
+
+    <p>Os campos decimais devem utilizar a vírgula (,) como separador.</p>
+
+    <table class="grid">
+        
+        @* Cabeçalho *@
+        <thead>
+            <tr>
+                <th width="50px">Coluna</th>
+                <th width="200px">Campo</th>
+                <th width="100%">Descrição</th>
+                <th width="120px">Tamanho Máximo</th> 
+            </tr>
+        </thead>
+
+        @* Corpo *@
+        <tbody>
+            <tr class="gridrow">        
+                <td width="50px">1</td>
+                <td width="200px">CICLO</td>
+                <td width="100%">Ano Base</td>
+                <td width="120px">4</td>
+            </tr>
+
+            <tr class="gridrow_alternate">
+                <td width="50px">2</td>
+                <td width="200px">CENSO_UNIDADE</td>
+                <td width="100%">Censo da Unidade</td>
+                <td width="120px">8</td>
+            </tr>
+
+            <tr class="gridrow">        
+                <td width="50px">3</td>
+                <td width="200px">UNIDADE_ESCOLAR</td>
+                <td width="100%">Código da Unidade</td>
+                <td width="120px">6</td>
+            </tr>
+
+            <tr class="gridrow">        
+                <td width="50px">4</td>
+                <td width="200px">TURMA</td>
+                <td width="100%">Turma</td>
+                <td width="120px">20</td>
+            </tr>
+
+            <tr class="gridrow_alternate">
+                <td width="50px">5</td>
+                <td width="200px">PERIODO</td>
+                <td width="100%">Período da Turma</td>
+                <td width="120px">1</td>
+            </tr>
+
+            <tr class="gridrow">        
+                <td width="50px">6</td>
+                <td width="200px">TURNO</td>
+                <td width="100%">Turno</td>
+                <td width="120px">1</td>
+            </tr>
+
+            <tr class="gridrow">        
+                <td width="50px">7</td>
+                <td width="200px">AVALIACAO_EXTERNA</td>
+                <td width="100%">Tipo de Avaliação Externa</td>
+                <td width="120px">1</td>
+            </tr>
+
+            <tr class="gridrow_alternate">
+                <td width="50px">8</td>
+                <td width="200px">PREVISTO</td>
+                <td width="100%">Quantidade de alunos prevista</td>
+                <td width="120px">4</td>
+            </tr>
+
+            <tr class="gridrow">        
+                <td width="50px">9</td>
+                <td width="200px">REALIZADO</td>
+                <td width="100%">Quantidade de alunos que realizaram a prova</td>
+                <td width="120px">4</td>
+            </tr>
+
+        </tbody>
+    </table>      
+</div>

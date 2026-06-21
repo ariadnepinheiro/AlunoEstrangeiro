@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcessoNegadoDocente_A_TurmaEDisciplina" xml:space="preserve">
+    <value>Docente não possui permissão para modificar esta turma e disciplina.</value>
+  </data>
+  <data name="AlunoComFrequenciaMaximaSemAvalicao" xml:space="preserve">
+    <value>O Aluno {0} possui 100% de frequência e por isso não é permitido informar que o mesmo não possui avaliação.</value>
+  </data>
+  <data name="AlunoInvalidoParaLancamento" xml:space="preserve">
+    <value>A matrícula do aluno [{0}] não pertence a esta turma</value>
+  </data>
+  <data name="AlunoNaoMatriculado" xml:space="preserve">
+    <value>Aluno não matriculado impede o procedimento.</value>
+  </data>
+  <data name="AlunoSemFrequenciaComAvaliacao" xml:space="preserve">
+    <value>O Aluno {0} possui 0% de frequência e por isso não é permitido informar a nota. No caso de ausência de avaliação, marcar o item  'Sem Avaliação' e sua respectiva justificativa.</value>
+  </data>
+  <data name="AulasDadasMenorQueZero" xml:space="preserve">
+    <value>Não é permitido informar valores inferiores a zero para as aulas dadas no período.</value>
+  </data>
+  <data name="AulasPrevistasMenorQueZero" xml:space="preserve">
+    <value>Não é permitido informar valores inferiores a zero para as aulas previstas no período.</value>
+  </data>
+  <data name="DadosCompementaresNaoAtualizadosCorretamente" xml:space="preserve">
+    <value>Necessário enviar todos os dados complementares (aulas dadas, aulas previstas) para atualizar as notas.</value>
+  </data>
+  <data name="DisciplinaNaoPossuiAulasDadas" xml:space="preserve">
+    <value>Não é permitido lançamento de notas e faltas para disciplinas que não possuem aulas dadas. Por favor, verifique o valor informado para o item 'Aulas Dadas'.</value>
+  </data>
+  <data name="DisciplinaNaoPossuiFrequenciaNoPeriodo" xml:space="preserve">
+    <value>Não há frequência cadastrada nesta disciplina para o período informado.</value>
+  </data>
+  <data name="FaltaNaoLancadaATodosOsAlunos" xml:space="preserve">
+    <value>É necessário lançar as faltas de todos os alunos matriculados.</value>
+  </data>
+  <data name="FaltasMaiorQueAulasDadas" xml:space="preserve">
+    <value>Aluno: {0}. Não é permitido lançar 'Faltas' superior à 'Aulas Dadas'.</value>
+  </data>
+  <data name="FaltasMenorQueZero" xml:space="preserve">
+    <value>Aluno: {0}. Não é permitido lançar faltas inferior à 0.</value>
+  </data>
+  <data name="JustificativaNaoPreenchido" xml:space="preserve">
+    <value>Aluno: {0}. O campo Justificativa é de preenchimento obrigatório quando o campo Sem Avaliação estiver marcado.</value>
+  </data>
+  <data name="JustificativaOutrasAcimaPresencaMinima" xml:space="preserve">
+    <value>Aluno: {0}. O professor deverá lançar valor da nota do(s) instrumento(s) 
+aplicado(s) durante período em que o aluno esteve frequente</value>
+  </data>
+  <data name="NaoHaAlunosMatriculados" xml:space="preserve">
+    <value>Não há alunos matriculados nesta turma e disciplina.</value>
+  </data>
+  <data name="NaoHaAulasDadas" xml:space="preserve">
+    <value>Por favor, informe as aulas dadas no período letivo.</value>
+  </data>
+  <data name="NaoHaAulasPrevistas" xml:space="preserve">
+    <value>Por favor, informe as aulas previstas no período letivo.</value>
+  </data>
+  <data name="NaoHaFaltasEnviadas" xml:space="preserve">
+    <value>Necessário enviar as faltas para atualização das mesmas.</value>
+  </data>
+  <data name="NaoHaNotasEnviadas" xml:space="preserve">
+    <value>Necessário enviar as notas para atualização das mesmas.</value>
+  </data>
+  <data name="NaoHaRecuperacaoNotaAzul" xml:space="preserve">
+    <value>Aluno não necessita de fazer recuperação, porque sua nota está azul.</value>
+  </data>
+  <data name="NaoPermitiNotaAcimaNotaMaxima" xml:space="preserve">
+    <value>Não é permitido Nota acima da Nota Máxima.</value>
+  </data>
+  <data name="NaoPossuiLancamentoFaltas" xml:space="preserve">
+    <value>Está disciplina não possui lançamento de faltas.</value>
+  </data>
+  <data name="NaoPossuiLancamentoNotas" xml:space="preserve">
+    <value>Está disciplina não possui lançamento de notas.</value>
+  </data>
+  <data name="NaoPossuiLancamentoNotasFaltas" xml:space="preserve">
+    <value>Está disciplina não possui lançamento de notas, nem de faltas. Somente "Aulas previstas" e "Aulas dadas".</value>
+  </data>
+  <data name="NotaNaoLancadaATodosOsAlunos" xml:space="preserve">
+    <value>É necessário lançar as notas de todos os alunos matriculados.</value>
+  </data>
+  <data name="NotaRecuperacaoNaoPreenchido" xml:space="preserve">
+    <value>O campo Nota de recuperação de estudos  é de preenchimento obrigatório quando o campo Recuperação de Estudos estiver marcado.</value>
+  </data>
+  <data name="SemMatriculaOUProtocolo" xml:space="preserve">
+    <value>Não será possível realizar a gravação neste momento, tente novamente após fechar o navegador.</value>
+  </data>
+  <data name="SemProvaDaTurmaParaLancamento" xml:space="preserve">
+    <value>Não há dados de lancamento de prova para a turma.</value>
+  </data>
+  <data name="TurmaEDisciplinaInvalidaParaLancamento" xml:space="preserve">
+    <value>Professor(a), no momento, não está disponível o lançamento de notas dos alunos do ensino fundamental de 1a. à 5a. série. Obrigado!</value>
+  </data>
+</root>

@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix15">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.07938cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>14.44584cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.71907cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="N_OCORRENCIA">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!N_OCORRENCIA.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>N_OCORRENCIA</rd:DefaultName>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Subreport Name="Sbr_Informacoes">
+                      <ReportName>Rel_OcorrenciaSUB_Informacoes</ReportName>
+                      <Parameters>
+                        <Parameter Name="OCORRENCIAID">
+                          <Value>=Fields!N_OCORRENCIA.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </Subreport>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Detalhes">
+                <PageBreak>
+                  <BreakLocation>Between</BreakLocation>
+                </PageBreak>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!N_OCORRENCIA.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
+        <FixedColumnHeaders>true</FixedColumnHeaders>
+        <DataSetName>DT_Ocorrencias</DataSetName>
+        <Top>0.3175cm</Top>
+        <Left>0.28787cm</Left>
+        <Height>0.71907cm</Height>
+        <Width>14.52522cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>1.90636in</Height>
+    <Style />
+  </Body>
+  <Width>6.65476in</Width>
+  <Page>
+    <PageHeader>
+      <Height>3.89228cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Image Name="Image2">
+          <Source>Embedded</Source>
+          <Value>logo_govrj</Value>
+          <Sizing>FitProportional</Sizing>
+          <Left>0.71293cm</Left>
+          <Height>3.28359cm</Height>
+          <Width>2.6745cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox16">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value />
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>RELATÓRIO DE OCORRÊNCIAS</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox15</rd:DefaultName>
+          <Left>3.56382cm</Left>
+          <Height>1.79063cm</Height>
+          <Width>12.75717cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="ExecutionTime">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Última Atualização em: </Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Format>d/M/yyyy H:mm</Format>
+                    <Color>Red</Color>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Globals!ExecutionTime</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Format>d/M/yyyy H:mm</Format>
+                    <Color>Red</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>ExecutionTime</rd:DefaultName>
+          <Top>3.15109cm</Top>
+          <Left>0.31114cm</Left>
+          <Height>0.54688cm</Height>
+          <Width>6.41583cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DBLyceum">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=10.11.69.201;Initial Catalog=LYCEUM</ConnectString>
+      </ConnectionProperties>
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <rd:DataSourceID>236295da-7f5a-43c3-95bb-88c610f6f5da</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DT_Regional">
+      <Query>
+        <DataSourceName>DBLyceum</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@usuario">
+            <Value>=Parameters!usuario.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT 0 ID_REGIONAL,' TODAS' REGIONAL
+UNION
+SELECT  L1.ID_REGIONAL, SUBSTRING(L1.REGIONAL,1,35) FROM TCE_REGIONAL L1 (NOLOCK)
+JOIN LYCEUM..LY_UNIDADE_ENSINO L2 (NOLOCK) ON L1.ID_REGIONAL=L2.ID_REGIONAL
+JOIN LYCEUM..LY_USUARIO_UNIDADE_FIS JJ (NOLOCK) ON JJ.UNIDADE_FIS=L2.UNIDADE_ENS
+WHERE (JJ.USUARIO = ISNULL(@usuario,JJ.USUARIO) OR  JJ.USUARIO IS NULL) </CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ID_REGIONAL">
+          <DataField>ID_REGIONAL</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="REGIONAL">
+          <DataField>REGIONAL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DT_Municipio">
+      <Query>
+        <DataSourceName>DBLyceum</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@REGIONAL">
+            <Value>=Parameters!REGIONAL.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@usuario">
+            <Value>=Parameters!usuario.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT DISTINCT L1.CODIGO, L1.NOME FROM LY_UNIDADE_ENSINO L2 (NOLOCK)
+JOIN HADES..MUNICIPIO L1 (NOLOCK) ON L1.CODIGO=L2.MUNICIPIO
+JOIN LYCEUM..TCE_REGIONAL N1 (NOLOCK) ON N1.ID_REGIONAL=L2.ID_REGIONAL
+JOIN LYCEUM..LY_USUARIO_UNIDADE_FIS JJ (NOLOCK) ON JJ.UNIDADE_FIS=L2.UNIDADE_ENS
+WHERE 
+	(N1.ID_REGIONAL =@REGIONAL OR @REGIONAL=0 )
+	AND
+	(JJ.USUARIO = ISNULL(@usuario,JJ.USUARIO) OR  JJ.USUARIO IS NULL) 
+UNION
+SELECT '0' CODIGO,' TODOS' NOME
+UNION
+SELECT 'NULO' CODIGO,' Selecione...' DESCRICAO
+ORDER BY NOME</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CODIGO">
+          <DataField>CODIGO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NOME">
+          <DataField>NOME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DT_Escola">
+      <Query>
+        <DataSourceName>DBLyceum</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@REGIONAL">
+            <Value>=Parameters!REGIONAL.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@MUNICIPIO">
+            <Value>=Parameters!MUNICIPIO.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@usuario">
+            <Value>=Parameters!usuario.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>
+SELECT 'NULO' UNIDADE_ENS, ' Selecione...' NOME_COMP 
+UNION
+SELECT '0' UNIDADE_ENS, ' TODAS' NOME_COMP 
+UNION
+SELECT UE.UNIDADE_ENS, SUBSTRING (UE.NOME_COMP,1,50)NOME_COMP 
+FROM LYCEUM..LY_UNIDADE_ENSINO UE (NOLOCK) 
+JOIN LYCEUM..TCE_REGIONAL R (NOLOCK) ON R.ID_REGIONAL = UE.ID_REGIONAL
+JOIN LYCEUM..LY_USUARIO_UNIDADE_FIS GG (NOLOCK) ON GG.UNIDADE_FIS=UE.UNIDADE_ENS
+WHERE (R.ID_REGIONAL = @REGIONAL OR @REGIONAL=0)
+AND (UE.MUNICIPIO =@MUNICIPIO OR @MUNICIPIO='0')
+AND (GG.USUARIO = ISNULL(@usuario, GG.usuario) OR GG.USUARIO IS NULL) 
+AND  EXISTS (
+				SELECT	1
+				FROM	LY_UNIDADE_ENSINO_SITUACAO US (NOLOCK)
+				WHERE	US.UNIDADE_ENS = UE.UNIDADE_ENS
+				AND		US.SITUACAO = 'ESTADUAL'
+				AND		US.UNIDADE_ENS+CONVERT(VARCHAR(20),US.DT_SITUACAO) IN 
+							(
+							SELECT	UNIDADE_ENS+CONVERT(VARCHAR(20),MAX(DT_SITUACAO)) 
+							FROM LY_UNIDADE_ENSINO_SITUACAO (NOLOCK) GROUP BY UNIDADE_ENS
+							)
+				)
+AND		(UE.SIT_FUNCIONAMENTO IS NULL OR UE.SIT_FUNCIONAMENTO = 'EMATIVIDADE')
+ORDER BY NOME_COMP</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="UNIDADE_ENS">
+          <DataField>UNIDADE_ENS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NOME_COMP">
+          <DataField>NOME_COMP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DT_Ano">
+      <Query>
+        <DataSourceName>DBLyceum</DataSourceName>
+        <CommandText>SELECT 0 AS ANO, 'TODOS' AS TODOS
+UNION
+select distinct year(DATAOCORRENCIA) as ano,CAST(year(DATAOCORRENCIA) AS nvarchar) AS TODOS 
+from [LYCEUM].[Ocorrencias].[OCORRENCIA]</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="ano">
+          <DataField>ANO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="TODOS">
+          <DataField>TODOS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DT_Classe">
+      <Query>
+        <DataSourceName>DBLyceum</DataSourceName>
+        <CommandText> select 0 AS CLASSEID, 'TODOS' AS DESCRICAO
+UNION
+ select CLASSEID, DESCRICAO
+ from  [LYCEUM].[Ocorrencias].[CLASSE]</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CLASSEID">
+          <DataField>CLASSEID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DESCRICAO">
+          <DataField>DESCRICAO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DT_SubClasse">
+      <Query>
+        <DataSourceName>DBLyceum</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@CLASSE">
+            <Value>=Parameters!CLASSE.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>	select 0 AS SUBCLASSEID, 'TODOS' AS DESCRICAO 
+UNION
+	select SUBCLASSEID,DESCRICAO 
+	from  [LYCEUM].[Ocorrencias].[SUBCLASSE]
+	WHERE (CLASSEID = @CLASSE)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SUBCLASSEID">
+          <DataField>SUBCLASSEID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DESCRICAO">
+          <DataField>DESCRICAO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DT_Tratamento">
+      <Query>
+        <DataSourceName>DBLyceum</DataSourceName>
+        <CommandText>select 0 AS TRATAMENTOID,'TODOS' AS DESCRICAO
+UNION
+select TRATAMENTOID,DESCRICAO from  [LYCEUM].[Ocorrencias].[TRATAMENTO]</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="TRATAMENTOID">
+          <DataField>TRATAMENTOID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DESCRICAO">
+          <DataField>DESCRICAO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DT_Informacoes">
+      <Query>
+        <DataSourceName>DBLyceum</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@REGIONAL">
+            <Value>=Parameters!REGIONAL.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@MUNICIPIO">
+            <Value>=Parameters!MUNICIPIO.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ESCOLA">
+            <Value>=Parameters!ESCOLA.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ANO">
+            <Value>=Parameters!ANO.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DATAOCORRENCIA">
+            <Value>=Parameters!DATAOCORRENCIA.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CLASSE">
+            <Value>=Parameters!CLASSE.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SUBCLASSE">
+            <Value>=Parameters!SUBCLASSE.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TRATAMENTO">
+            <Value>=Parameters!TRATAMENTO.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT	  O.[OCORRENCIAID] AS N_OCORRENCIA
+	  ,U.NOME_COMP AS ESCOLA
+	  ,M.NOME AS MUNICIPIO
+	  ,[CENSO]
+	  ,R.REGIONAL
+	  ,[DATAOCORRENCIA]
+	  ,SUBSTRING(iif(T.DESCRICAO is null, '',T.DESCRICAO),0,100) AS TRATAMENTO
+	   ,C.DESCRICAO AS CLASSE
+ 	   ,S.DESCRICAO AS SUBCLASSE
+	   ,YEAR(O.DATACADASTRO) AS ANO
+	  ,pv.NOME_COMPL as VITIMA
+      ,v.[TIPO] as VITIMA_TIPO
+      ,v.[DESCONHECIDO] as VITIMA_DESCONHECIDO
+	  ,PA.NOME_COMPL AS ACUSADO
+	  ,A.TIPO AS ACUSADO_TIPO
+	  ,A.DESCONHECIDO AS ACUSADO_DESCONHECIDO
+  FROM [LYCEUM].[Ocorrencias].[OCORRENCIA] O
+  INNER JOIN LY_UNIDADE_ENSINO U							ON U.UNIDADE_ENS   = O.CENSO
+  INNER JOIN MUNICIPIO M								ON U.MUNICIPIO	   = M.CODIGO
+  INNER JOIN TCE_REGIONAL R							ON R.ID_REGIONAL   = U.ID_REGIONAL
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[OCORRENCIATRATAMENTO] OT   
+		ON OT.OCORRENCIAID = O.OCORRENCIAID
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[TRATAMENTO] T					ON T.TRATAMENTOID  = OT.TRATAMENTOID	
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[CLASSE] C						ON C.CLASSEID      = O.CLASSEID
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[SUBCLASSE] S					ON S.SUBCLASSEID   = O.SUBCLASSEID
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[VITIMA] v				    ON V.OCORRENCIAID = O.OCORRENCIAID
+  LEFT JOIN  [LYCEUM].[dbo].[LY_PESSOA] pv						on v.[PESSOAID] = pv.PESSOA
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[ACUSADO] A				    ON A.OCORRENCIAID = O.OCORRENCIAID
+  LEFT JOIN  [LYCEUM].[dbo].[LY_PESSOA] PA						on A.[PESSOAID] = PA.PESSOA
+where  (R.ID_REGIONAL = @REGIONAL or @REGIONAL = 0) AND 
+             (U.MUNICIPIO = @MUNICIPIO or @MUNICIPIO ='0') AND 
+             (U.UNIDADE_ENS = @ESCOLA or @ESCOLA ='0') AND
+            (YEAR(DATAOCORRENCIA) = @ANO OR @ANO =0) AND
+(DATAOCORRENCIA = @DATAOCORRENCIA OR @DATAOCORRENCIA IS NULL)	AND
+            (C.CLASSEID= @CLASSE OR @CLASSE =0) AND
+            ( O.SUBCLASSEID = @SUBCLASSE OR @SUBCLASSE =0) AND
+            (T.TRATAMENTOID= @TRATAMENTO OR @TRATAMENTO=0) 
+  order by O.[OCORRENCIAID]</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="N_OCORRENCIA">
+          <DataField>N_OCORRENCIA</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ESCOLA">
+          <DataField>ESCOLA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MUNICIPIO">
+          <DataField>MUNICIPIO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CENSO">
+          <DataField>CENSO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="REGIONAL">
+          <DataField>REGIONAL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DATAOCORRENCIA">
+          <DataField>DATAOCORRENCIA</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="TRATAMENTO">
+          <DataField>TRATAMENTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CLASSE">
+          <DataField>CLASSE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SUBCLASSE">
+          <DataField>SUBCLASSE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ANO">
+          <DataField>ANO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="VITIMA">
+          <DataField>VITIMA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VITIMA_TIPO">
+          <DataField>VITIMA_TIPO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="VITIMA_DESCONHECIDO">
+          <DataField>VITIMA_DESCONHECIDO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ACUSADO">
+          <DataField>ACUSADO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ACUSADO_TIPO">
+          <DataField>ACUSADO_TIPO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ACUSADO_DESCONHECIDO">
+          <DataField>ACUSADO_DESCONHECIDO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DT_Ocorrencias">
+      <Query>
+        <DataSourceName>DBLyceum</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@REGIONAL">
+            <Value>=Parameters!REGIONAL.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@MUNICIPIO">
+            <Value>=Parameters!MUNICIPIO.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ESCOLA">
+            <Value>=Parameters!ESCOLA.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ANO">
+            <Value>=Parameters!ANO.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@DATAOCORRENCIA">
+            <Value>=Parameters!DATAOCORRENCIA.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CLASSE">
+            <Value>=Parameters!CLASSE.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@SUBCLASSE">
+            <Value>=Parameters!SUBCLASSE.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TRATAMENTO">
+            <Value>=Parameters!TRATAMENTO.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT	DISTINCT  O.[OCORRENCIAID] AS N_OCORRENCIA
+  FROM [LYCEUM].[Ocorrencias].[OCORRENCIA] O
+  INNER JOIN LY_UNIDADE_ENSINO U							ON U.UNIDADE_ENS   = O.CENSO
+  INNER JOIN MUNICIPIO M								ON U.MUNICIPIO	   = M.CODIGO
+  INNER JOIN TCE_REGIONAL R							ON R.ID_REGIONAL   = U.ID_REGIONAL
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[OCORRENCIATRATAMENTO] OT   
+		ON OT.OCORRENCIAID = O.OCORRENCIAID
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[TRATAMENTO] T					ON T.TRATAMENTOID  = OT.TRATAMENTOID	
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[CLASSE] C						ON C.CLASSEID      = O.CLASSEID
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[SUBCLASSE] S					ON S.SUBCLASSEID   = O.SUBCLASSEID
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[VITIMA] v				    ON V.OCORRENCIAID = O.OCORRENCIAID
+  LEFT JOIN  [LYCEUM].[dbo].[LY_PESSOA] pv						on v.[PESSOAID] = pv.PESSOA
+  LEFT JOIN  [LYCEUM].[Ocorrencias].[ACUSADO] A				    ON A.OCORRENCIAID = O.OCORRENCIAID
+  LEFT JOIN  [LYCEUM].[dbo].[LY_PESSOA] PA						on A.[PESSOAID] = PA.PESSOA
+where  (R.ID_REGIONAL = @REGIONAL or @REGIONAL = 0) AND 
+             (U.MUNICIPIO = @MUNICIPIO or @MUNICIPIO ='0') AND 
+             (U.UNIDADE_ENS = @ESCOLA or @ESCOLA ='0') AND
+            (YEAR(DATAOCORRENCIA) = @ANO OR @ANO =0) AND
+(DATAOCORRENCIA = @DATAOCORRENCIA OR @DATAOCORRENCIA IS NULL)	AND
+            (C.CLASSEID= @CLASSE OR @CLASSE =0) AND
+            ( O.SUBCLASSEID = @SUBCLASSE OR @SUBCLASSE =0) AND
+            (T.TRATAMENTOID= @TRATAMENTO OR @TRATAMENTO=0) 
+  order by O.[OCORRENCIAID]</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="N_OCORRENCIA">
+          <DataField>N_OCORRENCIA</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="usuario">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>usuario</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="REGIONAL">
+      <DataType>String</DataType>
+      <Prompt>REGIONAL</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DT_Regional</DataSetName>
+          <ValueField>ID_REGIONAL</ValueField>
+          <LabelField>REGIONAL</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="MUNICIPIO">
+      <DataType>String</DataType>
+      <Prompt>MUNICIPIO</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DT_Municipio</DataSetName>
+          <ValueField>CODIGO</ValueField>
+          <LabelField>NOME</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ESCOLA">
+      <DataType>String</DataType>
+      <Prompt>ESCOLA</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DT_Escola</DataSetName>
+          <ValueField>UNIDADE_ENS</ValueField>
+          <LabelField>NOME_COMP</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ANO">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ANO</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DT_Ano</DataSetName>
+          <ValueField>ano</ValueField>
+          <LabelField>TODOS</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="DATAOCORRENCIA">
+      <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>DATA DA OCORRÊNCIA</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CLASSE">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>CLASSE</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DT_Classe</DataSetName>
+          <ValueField>CLASSEID</ValueField>
+          <LabelField>DESCRICAO</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="SUBCLASSE">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SUBCLASSE</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DT_SubClasse</DataSetName>
+          <ValueField>SUBCLASSEID</ValueField>
+          <LabelField>DESCRICAO</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="TRATAMENTO">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TRATAMENTO</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DT_Tratamento</DataSetName>
+          <ValueField>TRATAMENTOID</ValueField>
+          <LabelField>DESCRICAO</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logo_govrj">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>60ab3b63-939e-4355-be2e-bd7cb6331226</rd:ReportID>
+</Report>

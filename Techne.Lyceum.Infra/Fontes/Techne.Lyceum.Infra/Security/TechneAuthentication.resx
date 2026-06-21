@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="TechneAuthenticationResult.OK">
+		<value>Autenticação bem sucedida</value>
+	</data>
+	<data name="TechneAuthenticationResult.InvalidUserOrPassword">
+		<value>Usuário ou senha inválidos</value>
+	</data>
+	<data name="TechneAuthenticationResult.ChangePassword">
+		<value>A senha deve ser alterada</value>
+	</data>
+	<data name="TechneAuthenticationResult.UserDisabled">
+		<value>Usuário desabilitado</value>
+	</data>
+	<data name="TechneAuthenticationResult.Undefined">
+		<value>Erro na autenticação</value>
+	</data>
+	<data name="ChangePassword.MustBeDifferent">
+		<value>A nova senha deve ser diferente da antiga.</value>
+	</data>
+	<data name="ChangePassword.MinSize">
+		<value>A senha deve ter no mínimo {0} caracteres.</value>
+	</data>
+	<data name="ChangePassword.MaxSize">
+		<value>A senha deve ter no máximo {0} caracteres.</value>
+	</data>
+	<data name="ChangePassword.DBError">
+		<value>Erro de acesso ao banco de dados. Não foi possível alterar a senha: {0}</value>
+	</data>
+	<data name="WebConfig.AppName">
+		<value>Erro de configuração do site. Falta a definição do atributo appname no tag techne/web/authorization do arquivo web.config.</value>
+	</data>
+	<data name="ValidateUser.DisableUserReason">
+		<value>Usuário desabilitado após {0} tentativas fracassadas de login. </value>
+	</data>
+</root>

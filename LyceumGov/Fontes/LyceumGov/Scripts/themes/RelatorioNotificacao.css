@@ -1,0 +1,11 @@
+﻿ body, p, li,span,label {
+    font-family: Verdana;
+    font-size: 13px;
+    line-height: 2.1;
+  }
+  
+.geral
+{
+    font-family: Verdana;
+    font-size: 13px;
+}

@@ -1,0 +1,71 @@
+﻿@model SRV.Models.DTO.FiltroUsuario
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btPesquisar")
+        @Html.ToolbarItemLink(@Role.IsGranted("Administrador"), "Create", null, null, "btNovo")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Matricula)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Matricula, new { style = "width: 100px", maxlength = "50" })
+                        @Html.ValidationMessageFor(m => m.Nome)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Nome)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Nome, new { style = "width: 300px", maxlength = "50" })
+                        @Html.ValidationMessageFor(m => m.Nome)
+                    </td>
+                </tr>
+                <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.Perfis)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.Perfil, (IEnumerable<SelectListItem>)Model.Perfis ?? new List<SelectListItem>(), new { id = "IdPerfil", style = "width:306px;" })<br/>                        
+                        @Html.ValidationMessageFor(m => m.Perfil)
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="clear:both"></div>
+
+        @if (Model != null && Model.Usuarios != null)
+        {
+            @Html.Pager(Model.Usuarios)
+
+            @Html.Grid(Model.Usuarios.Items).Columns(column =>
+            {
+                if (@Role.IsGranted("Administrador"))
+                {
+                    column.For(c => Html.ActionLink(" ", "Edit", new { id = @c.Id }, new { @class = "icoLinkOpen" })).Named("Abrir").Attributes(width => "35px", align => "center").HeaderAttributes(width => "35px", align => "center").Encode(false);
+                }
+                column.For(c => c.Login).Named("Matricula").Attributes(width => "100px").HeaderAttributes(width => "100px");
+                column.For(c => c.Nome).Named("Nome").Attributes(width => "100%").HeaderAttributes(width => "100%");
+                column.For(c => c.CPF).Named("CPF").Attributes(width => "100px", align => "center").HeaderAttributes(width => "100px");
+                column.For(c => c.EmailUsuario).Named("Email").Attributes(width => "150px").HeaderAttributes(width => "150px");
+                column.For(c => c.Perfil).Named("Perfil").Attributes(width => "100px").HeaderAttributes(width => "100px");
+                column.For(c => c.Ativo ? "Sim" : "Não").Named("Ativo").Attributes(width => "55px", align => "center").HeaderAttributes(width => "55px");
+            }).Empty("Nenhum registro encontrado")
+        }
+    </div>
+
+                 
+}

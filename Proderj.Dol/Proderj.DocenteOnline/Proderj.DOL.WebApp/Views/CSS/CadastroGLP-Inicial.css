@@ -1,0 +1,75 @@
+﻿/*****
+CADASTROGLP - INICIAL - INICIO
+*****/
+.conteudo {
+	margin: auto;
+	width: 620px;
+}
+
+#txtTelefoneDocente { width:75px; }
+
+.conteudo #frmInclusaoDisponibilidade { border:1px solid #C0C0C0;padding:5px;background-color:#FFFFFF;margin-bottom:10px;width: 600px; }
+.conteudo #frmInclusaoDisponibilidade h3 { margin: 0px 0px 10px 0px; }
+.conteudo #frmInclusaoDisponibilidade td label { float:right; }
+.conteudo #frmInclusaoDisponibilidade .botoes-acao { float:right; }
+
+input.codigo-combo { width: 50px; font-size: 11px; line-height:14px;}
+input.hora { width: 40px; }
+select.combo-media { width: 220px; font-size: 11px; }
+select.combo-pequena { width: 100px; font-size: 11px; }
+select.combo-diasemana { text-transform: capitalize; }
+
+.conteudo #frmInclusaoDisponibilidade td span,
+.conteudo #frmInclusaoDisponibilidade td input,
+.conteudo #frmInclusaoDisponibilidade td select
+{
+	float:left;
+	margin: 0px 2px 0px 0px
+}
+
+.conteudo #frmInclusaoDisponibilidade td span {
+	display:block;
+	margin-top:2px;
+}
+
+
+
+
+input, select
+{
+    float: none !important;
+}
+        
+input[type="checkbox"] 
+{
+    position: relative;
+    top: 2px;
+}
+        
+label 
+{
+    margin-right: 5px;
+    float: none !important;
+}
+
+label.titulo-inline 
+{
+    text-align: right;
+    display: inline-block;
+    width: 110px;
+}
+        
+#table-inclusao { table-layout: fixed; }
+#table-inclusao td { padding: 5px 0; }
+#table-inclusao td:nth-child(1) { width: 112px; }
+#table-inclusao td:nth-child(2) { width: 480px; }
+        
+#msg-disciplina { text-align: center; color: #F00; }
+#botoes-acao { display: inline-block; width: 100%; text-align: right; }
+#msg-erro { display: inline-block; text-align: justify; color: #F00; }
+
+#tabela-disponibilidade td { font-size: 9px; }
+
+/*****
+CADASTROGLP - INICIAL - FIM
+*****/

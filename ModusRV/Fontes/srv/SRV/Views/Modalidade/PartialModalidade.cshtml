@@ -1,0 +1,47 @@
+﻿@model SRV.Models.Domain.Modalidade
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(true, "Create", null, null, "btNovo");
+        @Html.ToolbarItemSubmit(true, "btSalvar");
+        
+        if (Model.IdModalidade != null)
+        {
+            @Html.ToolbarItemJS(true, "deleteItemAndRedirect(this, '" + @Url.Action("Delete", "Modalidade") + "', '" + @Url.Action("Create", "Modalidade") + "', " + @Model.IdModalidade + ")", null, "btExcluir");
+        }
+                                                                                                                                                                                                
+        @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(m => m.IdModalidade)
+
+        <table class="tableForm">
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.SiglaModalidade)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.SiglaModalidade, new { style = "width:200px;", maxlength = 20 })<br/>
+                    @Html.ValidationMessageFor(m => m.SiglaModalidade)
+                </td>
+            </tr>
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.DesModalidade)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.DesModalidade, new { style = "width:450px;", maxlength = 50 })<br/>
+                    @Html.ValidationMessageFor(m => m.DesModalidade)
+                </td>
+            </tr>
+        </table>
+    </div>
+}

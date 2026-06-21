@@ -1,0 +1,38 @@
+﻿@model IList<SRV.Models.Domain.TipoUnidadeAdministrativa>
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(@Role.IsGranted("Administrador"), "Create", null, null, "btNovo")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+
+        <br/>
+
+        @if (Model != null)
+        {
+            @Html.Grid(Model).Columns(column =>
+            {
+                if (@Role.IsGranted("Administrador"))
+                {
+                    column.For(c => Html.ActionLink(" ", "Edit", new { id = @c.IdTipoUnidAdm }, new { @class = "icoLinkOpen" })).Named("Abrir").Attributes(width => "35px", align => "center").HeaderAttributes(width => "35px", align => "center").Encode(false);
+                    column.For(c => Html.ActionLink(" ", "", null, new { href = "#", @class = "icoLinkDelete", onclick = "deleteItem(this, '" + @Url.Action("Delete", "TipoUnidadeAdministrativa") + "', " + @c.IdTipoUnidAdm + ")" })).Named("Excluir").Attributes(width => "42px", align => "center").HeaderAttributes(width => "42px", align => "center").Encode(false);
+                }
+                column.For(c => c.IdTipoUnidAdm).Named("Código").Attributes(width => "44px", align => "right").HeaderAttributes(width => "44px");
+                column.For(c => c.DesTipoUnidAdm).Named("Tipo de Unidade Administrativa").Attributes(width => "100%").HeaderAttributes(width => "100%");
+            }).Empty("Nenhum registro encontrado")
+        }
+    </div>                       
+}

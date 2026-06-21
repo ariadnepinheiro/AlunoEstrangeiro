@@ -1,0 +1,812 @@
+﻿/* corpo da página*/
+body
+{
+    font-family: 'Open Sans',Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: #000;
+    background-color: #FFF;
+    margin:0;
+}
+/*Background só funcina na Margaret se ouver apenas um "."antes da barra de endereço da pasta de images
+como está a baixo no codigo do background dentro url("./pasta/img.png")
+*/
+
+.bg-login{
+    background:url("./Images/bg-gestao-final.png") no-repeat;
+    background-size:100% 100%;
+}
+.text-center{
+    text-align:center;
+}
+
+/* BARRA MENU SUPERIOR - Cabeçalho principal */
+.top_inf2
+{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    height: auto;
+    background: #ffffff;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 15%);
+    z-index: 10000;
+}
+.top
+{   
+    display:flex;
+    width: 100%;
+    min-height: 60px;
+    height: auto;
+    
+}
+.top_logo
+{
+    padding:5px;
+}
+.top_logo img{
+    height:50px;
+    margin-left: 1em;
+}
+.top #bt_menu
+{
+    display:none;
+}
+.top label[for="bt_menu"]{
+    
+    padding: 5px;
+    color: #222;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+label[for="bt_menu"]{
+    display: none;
+}
+.menu-responsivo
+{   display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;  
+}
+.tit_sist{
+    min-width:224px;
+    color:#1d55ad;
+    margin-left: 2em;
+}
+.tit_sist h1, p
+{
+    display: inline-block;
+}
+.tit_sist h1
+{   text-transform:uppercase;
+    font-style:italic;
+    font-size:17px;
+}
+.tit_sist p
+{
+    margin-left:5px;
+    font-weight:600;
+}
+.tit_pag2
+{   min-width:308px;
+    height: 20px;
+   
+}
+.icon-externo
+{   color:Black;
+    text-decoration:none;
+    padding: 0px 25px;
+    padding-bottom: 15px;
+    float: right;
+    font-size:16px;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+}
+.icon-externo:hover
+{  
+    text-decoration:none;
+    box-shadow: inset 0 -5px 0 0 #1E6496;
+    
+}
+.ocultar-asp
+{   display:none;
+    }
+.box_data
+{
+    padding: 8px 0px 0px 30px;
+    font-size: 10px;
+    color: #004a80; 
+}
+.user_saud
+{   min-width:245px;
+    color: black;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.ico_top
+{
+    margin: 1px 5px;
+    border: 0px;
+}
+
+/*Cabeçalho Menu*/
+#top_menu
+{
+    width: 100%;
+    height: 20px;
+    display: inline;
+    white-space: nowrap; 
+}
+.tm_bt
+{
+    float: left;
+    height: 20px;
+    margin: 0px 1px;
+    background: url(images/mntop_b.gif);
+    max-width: 180px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFF; 
+}
+.tm_bt a:link
+{
+    text-decoration: none;
+    color: #FFF;
+}
+.tm_bt a:visited
+{
+    text-decoration: none;
+    color: #FFF;
+}
+.tm_bt a:hover
+{
+    text-decoration: underline;
+    color: #94bae5;
+}
+.tm_bt a:active
+{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.link-circulo {
+    width: 250px;
+    height: 250px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    background-color: rgb(253 253 253 / 80%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px;
+	border-style: solid;
+    color: #246da7;
+    border-color: rgb(0 0 0 / 0%);
+	box-shadow: 2px 2px 10px -1px rgb(0 0 0 / 40%);
+	font-size: 1.5em;
+	margin: auto;
+	margin-block: 5px;
+	border-radius:126px;2
+	}	
+
+/* não faço ideia do que é isso por enquanto fica*/
+.info_user
+{
+    /*Coluna com User e Padrão de Tela*/
+    float: left;
+    padding: 12px 0px 0px 5px;
+    width: 260px;
+    height: 30px;
+    color: #FFF;
+    font-size: 10px; /*z-index:3;*/
+}
+
+.info_user2
+{
+    /*Coluna com Empresa e Papel*/
+    float: left;
+    padding: 12px 0px 0px 5px;
+    width: 350px;
+    height: 30px;
+    color: #FFF;
+    font-size: 10px; 
+}/* FIM não faço ideia do que é isso por enquanto fica*/
+
+
+/* Body do site - Conteudo */
+.conteudo
+{  
+    position:relative;
+    display: block;
+    overflow: auto;
+    background: #F8F9FA;    
+    margin: 0px;
+ 
+}
+
+#ctl00_cphFormulario_PanelLogin{   
+    padding-top:60px;
+    padding-bottom:90px;
+    width: 100%;
+    height: auto;
+    min-height: 540px;
+    
+}
+.conteudo a:
+{
+    color: #0353ab;
+    text-decoration: none;
+}
+.conteudo a:hover
+{
+    color: #00f;
+    text-decoration: underline;
+}
+
+.conteudo-externo{  
+    position:relative;
+    display: block;
+    min-height:670px;
+    margin: 0px;
+    height: 100vh;
+}
+.conteudo-externo a:{
+    color: #0353ab;
+    text-decoration: none;
+}
+.conteudo-externo a:hover
+{
+    color: #00f;
+    text-decoration: underline;
+}
+/* Reset senha*/
+#ctl00_cphFormulario_PanelPassword
+{   padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: 67%; 
+}
+.resetSenha
+{   width: 300px;
+    margin: 5em;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%), 
+    0 6.7px 5.3px rgb(0 0 0 / 5%),
+     0 12.5px 10px rgb(0 0 0 / 6%),
+      0 22.3px 17.9px rgb(0 0 0 / 7%),
+       0 41.8px 33.4px rgb(0 0 0 / 9%), 
+       0 100px 80px rgb(0 0 0 / 12%);  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.resetSenha h3 
+{
+    border-bottom: 2px solid #dcdcdc;
+    text-align: center;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+.resetSenha .log_int
+{   
+    font-size: 16px;
+}
+.resetSenha .log_int .log_form{
+    
+    font-size: 18px;
+    color: black;
+    border: 2px #dfe6ed solid;
+    border-radius: 5px;
+    height: 26px;
+    width: 180px;
+    background: #FFF;
+}
+.resetSenha .log_int .btn-confirmar  
+{   display: block;
+    background: #04AA6D;
+    width: 100px; 
+    height: 31px;
+    padding: 1px 44px;
+    border: 2px solid #04AA6D;
+    border-radius: 5px; 
+    margin: 15px 0;  
+}
+.resetSenha .log_int .btn-Cancelar  
+{   display: block;
+    background: red;
+    width: 100px; 
+    height: 31px;
+    padding: 1px 44px;
+    border: 2px solid #04AA6D;
+    border-radius: 5px; 
+    margin: 15px 0;  
+}
+/*flex-box Aplicado
+#ctl00_cphFormulario_PanelLogin
+{
+    width: 100%;
+    min-height: 78vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-wrap: wrap; 
+}
+*/
+/*Login*/
+.conteudo-externo .login
+{ 
+    width: 300px;
+    min-height: 350px;
+    padding: 0 15px;
+    margin: 5vh auto;
+    background-color: #ffffff; 
+    border: 2px solid #dfe6ed;
+    border-radius:5px;
+    box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 3%),
+                 0 6.7px 5.3px rgb(0 0 0 / 5%), 
+                 0 12.5px 10px rgb(0 0 0 / 6%),
+                 0 22.3px 17.9px rgb(0 0 0 / 7%), 
+                 0 41.8px 33.4px rgb(0 0 0 / 9%), 
+                 0 100px 80px rgb(0 0 0 / 12%);
+}
+
+
+.box-100
+{   width:100%;
+    display:inline-block;
+    vertical-align:top;
+    margin:0 auto;
+}
+
+.log_int .row
+{   
+    margin:0 1;
+    
+}
+.login h3, .loginAviso h3
+{   text-align:center;
+    font-weight:500;
+    font-size:16px;
+    color:Black;
+    border-bottom: 2px solid #dfe6ed;
+    margin:0 0 8px 0;
+}
+.login input,.login .log_int input
+{
+    display:block;
+    margin: 0px auto 8px;
+    width:200px;
+    padding: 9px;
+    font-size:16px;
+} 
+    
+div .input-enviar input
+{   height: 33px;
+    padding: 0 9px !important;
+    border: 2px #dfe6ed solid;
+    border-radius:5px;
+    margin:5px auto 12px!important;
+    width:200px!important;
+}
+div .input-enviar img
+{     width: 218px;
+    }
+div .input-enviar input[type="image" i] 
+{   
+    background: #04AA6D;
+    border: 2px solid #04AA6D!important;
+    border-radius:5px!important;
+    height: 33px;
+    padding:0 9px;
+    transform: perspective(1px) translateZ(0);
+}
+div .input-enviar input[type="image" i]:hover
+{   
+    background: #059862;  
+    border: 2px solid #059862!important;
+    border-radius:5px!important;
+    height: 33px;
+    padding:0 9px;
+}
+
+div .input-enviar input[type="image" i]:active {
+    background: #04AA6D;
+    -webkit-animation-name: hvr-push;
+    animation-name: hvr-push;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+.login a
+{   
+    display:block;
+    padding:8px;
+} 
+.login label
+{   
+    font-weight:400;
+    margin: 9px 0;
+    margin-left:40px;
+    font-size: 16px;
+} 
+.loginAviso
+{  
+    vertical-align:top;
+    width:300px;
+    min-height:200px;
+    padding: 0 15px 15px;
+    margin: 9vh auto;
+    background-color: #ffffff; 
+    border: 2px solid #dfe6ed;
+    border-radius:5px;
+}
+.log_int
+{
+    margin: 0 auto;
+}
+.log_int table
+{   
+    margin:0 auto;
+}
+.log_form
+{
+    font-size: 10px;
+    color: black;
+    border: 2px #dfe6ed solid;
+    border-radius:5px;
+    height: 15px;
+    width: 180px;
+    background: #FFF;
+}
+.loginAvisoVermelho
+{   margin-top:12px;
+    font-weight:500;
+    font-size:16px;
+    color: #CC0000;
+}
+.loginAvisoTexto
+{   
+    color:Black;
+    font-weight: 500;
+    font-size:16px;
+    margin: 10px 0px;  
+}
+
+/* Rodapé */
+/* rodapé meu roda pé*/  
+footer
+{   
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    min-height: 95px;
+    color:#ffffff;
+    width: 100%;
+    background:#1E6496;
+    z-index: 10000;
+}
+.container-footer{
+    width: 100%;
+    margin: 0;
+}
+
+footer hr
+{   
+    width:70%;
+}
+.top-footer
+{   
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    width: 100%;
+    min-height: 62px;
+    flex-wrap: wrap;
+}
+
+.logo-conexao h2
+{   
+    text-transform: uppercase;
+    font-size: 24px;
+    font-style:italic;
+    display:inline-block;
+    font-weight:600; 
+    margin:0;
+}
+.logo-conexao p
+{   
+    font-size: 16px;
+    display:inline-block;
+    color: #ffffff;
+}
+.redes-sociais
+{   
+    text-align:center;  
+}
+.redes-sociais h3
+{   
+    font-size: 14px;
+    color:#ffffff;
+    border:none;
+}
+.redes-sociais a
+{   font-size: 11px;
+    margin:5px 5px;
+    height:24px;
+}
+.redes-sociais a i
+{   
+    color:#1E6496;
+    padding: 4px;
+    background: #ffffff;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+.redes-sociais a:hover i
+{   
+    color:#ffffff;
+    padding: 4px;
+    background:#1E6496;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+.icones-redes
+{   
+    margin:15px;
+}    
+.logo-rj 
+{
+    width: 60%;
+    text-align: center;
+    margin: 0px auto;
+}
+.logo-rj img
+{  
+    max-width:600px;
+    margin:20px 0;
+}
+.copyright-footer{
+    text-align:center;
+    position: relative;
+    height: auto;
+    font-size: 12px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+/* fim meu rodapé*/
+
+/*Pop-Up*/
+.pop
+{
+    position: absolute;
+    left: 0;
+    top: 0%;
+    width: 100%;
+    min-height: 300px;
+    height: auto;
+    margin: 0px;
+    background-color: #f2f6f9;
+    border-bottom: 1px #004A80 solid;
+    border-top: 1px #004A80 solid; 
+}
+.pop_int
+{
+    margin: 5px;
+}
+.pop_form
+{
+    font-size: 11px;
+    color: #004A80;
+    border: 1px #004A80 solid;
+    height: 15px;
+    width: 180px;
+    background: #FFF;
+}
+.pop_bt
+{
+    font-size: 11px;
+    font-weight: bold;
+    color: #FFF;
+    border: 1px #FFF solid;
+    height: 20px;
+    cursor: pointer;
+}
+/*RESPONSIVO*/
+@media (max-width: 1334px){
+   
+}
+/* menu responsivo a baixo dessa medida */
+@media (max-width: 1066px)
+{      .top_inf2 {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        min-height: 60px;
+        height: auto;
+        background: #ffffff;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 15%);
+        z-index: 10000;
+        }
+        .top 
+        {   flex-wrap:wrap;
+        }
+        label[for="bt_menu"]
+        {
+         display: block;
+        }
+        .top .menu-responsivo
+        {  display: none;
+           width:100%;
+           flex-direction: column;
+           border-top:2px solid black;
+           transition:all .4s;
+        }
+        #bt_menu:checked ~ .menu-responsivo{
+           display: flex;
+        }
+        .tit_pag2 {
+        margin: 28px;
+        display: flex;
+        min-width: 300px;
+        max-width: 90%;
+        width: auto;
+        height: 119px;
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        background: #F8F9FA;
+        padding-top: 15px;
+        border-radius: 8px;
+        }
+        
+   
+}
+@media (max-width: 967px){
+   
+}
+@media (max-width: 767px)
+{   
+    .conteudo {
+        position: relative;
+        display: block;
+        overflow: auto;
+        background: #F8F9FA;
+        min-height: 640px;
+        margin: 0px;
+    }
+    /* footer */
+    .icones-redes
+    {   
+        margin:0px;
+    }    
+    
+}
+
+/*Media querys*/
+
+/*
+padroes de exibição
+de 900px a 1200px
+de 800px a 900px
+de 700px a 800px
+de 500px a 700px
+
+Telefones em paisagem e abaixo 
+@media (max-width: 480px) { 
+     estilos aqui 
+ }
+
+ Telefones em paisagem a tablet em retrato 
+
+
+ Tablet em retrato a paisagem e desktop 
+@media (min-width: 768px) and (max-width: 979px) {
+    estilos aqui 
+}
+
+ Desktop grande 
+@media (min-width: 1200px) {
+    estilos aqui 
+}
+*/
+
+
+/* Imputs style
+input[type="submit"], input[type="reset"], input[type="button"]
+{
+    border: 1px #f5f5f5 solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    background: #c1d8f3 url(images/bk_bot.jpg) repeat-x;
+    height: 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover
+{
+    border: 1px #f5f5f5 solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    background: #6ca5e6 url(images/bk_bot-h.jpg) repeat-x;
+    height: 20px;
+    cursor: pointer;
+}
+input[type="text"], input[type="password"], .txtbox, .txtInput
+{
+    border: 1px #9F9F9F solid;
+    padding: 5px 5px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+input[type="text"]:disable, input[type="password"]:disable, .txtbox:disable, .txtInput:disable
+{
+    border: 1px #cdcdcd solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #cdcdcd;
+}
+textarea
+{
+    border: 1px #9F9F9F solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #000000;
+}
+textarea:disable
+{
+    border: 1px #cdcdcd solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #cdcdcd;
+}
+select
+{
+    border: 1px #9F9F9F solid;
+    padding: 0px 0px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #000000;
+    height: 15px;
+}
+select:disable
+{
+    border: 1px #cdcdcd solid;
+    padding: 0px 0px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 11px;
+    color: #cdcdcd;
+}
+#ctl00_cphFormulario_apcDocente_flFoto
+{
+    border: 1px #ccc solid;
+    padding: 1px 3px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+    color: #000000;
+    background-color: #fcfcfc;
+}
+*/

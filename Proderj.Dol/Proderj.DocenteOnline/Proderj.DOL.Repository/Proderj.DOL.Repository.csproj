@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{72997ACD-AB22-4F41-87EE-7B0EF5115330}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proderj.DOL.Repository</RootNamespace>
+    <AssemblyName>Proderj.DOL.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Proderj.Library\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Proderj.Library\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Validator, Version=1.3.2.4000, Culture=neutral, PublicKeyToken=70154e18752585bd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\NHibernate.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Validator.Specific, Version=1.3.2.4000, Culture=neutral, PublicKeyToken=70154e18752585bd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\NHibernate.Validator.Specific.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Core.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Core.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.DOL.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.DOL.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Architecture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Architecture.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Foundation.Framework, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proderj.Library\Proderj.Foundation.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\Interface\IApiRepository.cs" />
+    <Compile Include="Api\ApiRepository.cs" />
+    <Compile Include="CadastroGLP\Interface\IDocenteDisponivelGLPRepository.cs" />
+    <Compile Include="CadastroGLP\Interface\IGrupoHabilitacaoRepository.cs" />
+    <Compile Include="CadastroGLP\MunicipioRepository.cs" />
+    <Compile Include="Core\Interface\IMaterialEstudoRepository.cs" />
+    <Compile Include="Core\Interface\IMunicipioRepository.cs" />
+    <Compile Include="CadastroGLP\Interface\INucleoRepository.cs" />
+    <Compile Include="CadastroGLP\DocenteDisponivelGLPRepository.cs" />
+    <Compile Include="CadastroGLP\GrupoHabilitacaoRepository.cs" />
+    <Compile Include="CadastroGLP\Interface\IRegionalRepository.cs" />
+    <Compile Include="CadastroGLP\NucleoRepository.cs" />
+    <Compile Include="CadastroGLP\RegionalRepository.cs" />
+    <Compile Include="CadastroGLP\TO\TODocenteDisponivelGLPExisteDisponibilidade.cs" />
+    <Compile Include="Core\Interface\ITurmaMaterialEstudoRepository.cs" />
+    <Compile Include="Core\MaterialEstudoRepository.cs" />
+    <Compile Include="Core\TurmaMaterialEstudoRepository.cs" />
+    <Compile Include="Docente\DadosAcessoDocenteRepository.cs" />
+    <Compile Include="Docente\DadosTurmaDocenteRepository.cs" />
+    <Compile Include="Docente\Interface\IDadosAcessoDocenteRepository.cs" />
+    <Compile Include="Docente\Interface\IDadosTurmaDocenteRepository.cs" />
+    <Compile Include="HADES\TCE_MUNICIPIORepository.cs" />
+    <Compile Include="HADES\Interface\ITCE_MUNICIPIORepository.cs" />
+    <Compile Include="HADES\TCE_LOGRADOURORepository.cs" />
+    <Compile Include="HADES\HD_PAISRepository.cs" />
+    <Compile Include="HADES\Interface\ITCE_LOGRADOURORepository.cs" />
+    <Compile Include="HADES\Interface\IHD_PAISRepository.cs" />
+    <Compile Include="Core\Interface\IPeriodoLetivoRepository.cs" />
+    <Compile Include="Core\PeriodoLetivoRepository.cs" />
+    <Compile Include="Core\TO\TOSubPeriodoLetivo_EnumeraAtivosParaLancamentoDeRespostaDeCurriculoMinimoPor.cs" />
+    <Compile Include="CurriculoMinimo\Interface\Avaliacao\IAvaliacaoCurriculoMinimoJustificativaRepository.cs" />
+    <Compile Include="CurriculoMinimo\Interface\Avaliacao\IAvaliacaoCurriculoMinimoRepository.cs" />
+    <Compile Include="CurriculoMinimo\Interface\Avaliacao\IAvaliacaoCurriculoMinimoDocenteRepository.cs" />
+    <Compile Include="CurriculoMinimo\Interface\Avaliacao\ILogAvaliacaoCurriculoMinimoDocenteRepository.cs" />
+    <Compile Include="CurriculoMinimo\Interface\Avaliacao\ILogAvaliacaoCurriculoMinimoJustificativaRepository.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\AvaliacaoCurriculoMinimoDocenteRepository.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\AvaliacaoCurriculoMinimoJustificativaRepository.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\AvaliacaoCurriculoMinimoRepository.cs" />
+    <Compile Include="CurriculoMinimo\Competencia\CompetenciaHabilidadeDocenteRepository.cs" />
+    <Compile Include="CurriculoMinimo\Competencia\CompetenciaHabilidadeGrupoRepository.cs" />
+    <Compile Include="CurriculoMinimo\Competencia\CompetenciaHabilidadeItemRepository.cs" />
+    <Compile Include="CurriculoMinimo\Interface\ICompetenciaHabilidadeDocenteRepository.cs" />
+    <Compile Include="CurriculoMinimo\Interface\ICompetenciaHabilidadeGrupoRepository.cs" />
+    <Compile Include="CurriculoMinimo\Interface\ICompetenciaHabilidadeItemRepository.cs" />
+    <Compile Include="CurriculoMinimo\Interface\ILogCompetenciaHabilidadeDocenteRepository.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\LogAvaliacaoCurriculoMinimoDocenteRepository.cs" />
+    <Compile Include="CurriculoMinimo\Avaliacao\LogAvaliacaoCurriculoMinimoJustificativaRepository.cs" />
+    <Compile Include="CurriculoMinimo\Competencia\LogCompetenciaHabilidadeDocenteRepository.cs" />
+    <Compile Include="CurriculoMinimo\TO\Avaliacao\TOAvaliacaoCurriculoMinimoListagem.cs" />
+    <Compile Include="CurriculoMinimo\TO\TOCompetenciaHabilidadeDocente_RemoveCompetenciasAntigas.cs" />
+    <Compile Include="CurriculoMinimo\TO\TOCompetenciaHabilidade_Insere.cs" />
+    <Compile Include="CurriculoMinimo\TO\TOCompetenciaHabilidadeGrupo_EnumeraPor.cs" />
+    <Compile Include="CurriculoMinimo\TO\TOCompetenciaHabilidadeGrupoComResposta.cs" />
+    <Compile Include="Docente\DadosCapacitacaoDocenteRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Docente\DadosFormacaoDocenteRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Docente\DadosGeraisDocenteRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Docente\Interface\IDadosCapacitacaoDocenteRepository.cs" />
+    <Compile Include="Docente\Interface\IDadosFormacaoDocenteRepository.cs" />
+    <Compile Include="Docente\Interface\IDadosGeraisDocenteRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\IDeclaracaoSemNotaRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\ILancamentoNotasConsolidadoRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\INotaConsolidadoRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\IProtocoloNotaRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\IUnidadeEnsinoRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\IAlunoRepository.cs" />
+    <Compile Include="Core\Interface\IDisciplinaRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\IFaltaRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\IFrequenciaRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\IItemTabelaRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\ILancamentoNotasRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\ILogNotaRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\INotaRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\IProvaRepository.cs" />
+    <Compile Include="LancamentoNotas\Interface\ISolicitacaoAlteracaoNotasRepository.cs" />
+    <Compile Include="LancamentoNotas\AlunoRepository.cs" />
+    <Compile Include="Core\DisciplinaRepository.cs" />
+    <Compile Include="LancamentoNotas\DeclaracaoSemNotaRepository.cs" />
+    <Compile Include="LancamentoNotas\FaltaRepository.cs" />
+    <Compile Include="LancamentoNotas\FrequenciaRepository.cs" />
+    <Compile Include="LancamentoNotas\ItemTabelaRepository.cs" />
+    <Compile Include="LancamentoNotas\LancamentoNotasConsolidadoRepository.cs" />
+    <Compile Include="LancamentoNotas\LancamentoNotasRepository.cs" />
+    <Compile Include="LancamentoNotas\LogNotaRepository.cs" />
+    <Compile Include="LancamentoNotas\NotaConsolidadoRepository.cs" />
+    <Compile Include="LancamentoNotas\NotaRepository.cs" />
+    <Compile Include="LancamentoNotas\ProtocoloNotaRepository.cs" />
+    <Compile Include="LancamentoNotas\ProvaRepository.cs" />
+    <Compile Include="LancamentoNotas\SolicitacaoAlteracaoNotasRepository.cs" />
+    <Compile Include="LancamentoNotas\UnidadeEnsinoRepository.cs" />
+    <Compile Include="LYCEUM\ARMAZEM_LIVRO_2019Repository.cs" />
+    <Compile Include="LYCEUM\Interface\ILY_FL_PESSOARepository.cs" />
+    <Compile Include="LYCEUM\LY_FL_PESSOARepository.cs" />
+    <Compile Include="LYCEUM\RecursosHumanos\GOOGLEEDUCATIONRepository.cs" />
+    <Compile Include="LYCEUM\Interface\IARMAZEM_LIVRO_2019Repository.cs" />
+    <Compile Include="LYCEUM\LY_GRUPO_HABILITACAORepository.cs" />
+    <Compile Include="LYCEUM\Interface\ILY_GRUPO_HABILITACAORepository.cs" />
+    <Compile Include="LYCEUM\LY_DOCENTERepository.cs" />
+    <Compile Include="LYCEUM\Interface\ILY_DOCENTERepository.cs" />
+    <Compile Include="LYCEUM\Interface\ILY_UNIDADE_ENSINORepository.cs" />
+    <Compile Include="LYCEUM\LY_UNIDADE_ENSINORepository.cs" />
+    <Compile Include="LYCEUM\Interface\ILY_PESSOARepository.cs" />
+    <Compile Include="LYCEUM\LY_PESSOARepository.cs" />
+    <Compile Include="LYCEUM\RecursosHumanos\DISPONIBILIDADEGLPRepository.cs" />
+    <Compile Include="LYCEUM\RecursosHumanos\Interface\IGOOGLEEDUCATIONRepository.cs" />
+    <Compile Include="LYCEUM\RecursosHumanos\Interface\IDISPONIBILIDADEGLPRepository.cs" />
+    <Compile Include="LYCEUM\StoredProcedures\DTOREL_CH_SERV_ANO.cs" />
+    <Compile Include="LYCEUM\StoredProcedures\IStoredProcedures.cs" />
+    <Compile Include="LYCEUM\StoredProcedures\StoredProcedures.cs" />
+    <Compile Include="SelecaoTurmas\Interface\ISelecaoTurmasRepository.cs" />
+    <Compile Include="Core\Interface\ISubPeriodoLetivoRepository.cs" />
+    <Compile Include="SelecaoTurmas\Interface\IMatriculaRepository.cs" />
+    <Compile Include="SelecaoTurmas\MatriculaRepository.cs" />
+    <Compile Include="SelecaoTurmas\SelecaoTurmasRepository.cs" />
+    <Compile Include="Core\SubPeriodoLetivoRepository.cs" />
+    <Compile Include="Docente\DocenteRepository.cs" />
+    <Compile Include="Docente\Interface\IDocenteRepository.cs" />
+    <Compile Include="Login\Interface\ILoginRepository.cs" />
+    <Compile Include="Core\Interface\IPessoaRepository.cs" />
+    <Compile Include="TermoAceite\AceiteTermoCompromissoDocenteRepository.cs" />
+    <Compile Include="TermoAceite\Interface\IAceiteTermoCompromissoDocenteRepository.cs" />
+    <Compile Include="TermoAceite\Interface\ITermoCompromissoDocenteRepository.cs" />
+    <Compile Include="Login\Interface\IUltimoResetRepository.cs" />
+    <Compile Include="Login\LoginRepository.cs" />
+    <Compile Include="Core\PessoaRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TermoAceite\TermoCompromissoDocenteRepository.cs" />
+    <Compile Include="Login\UltimoResetRepository.cs" />
+    <Compile Include="CurriculoMinimo\TO\Avaliacao\TOLogAvaliacaoCurriculoMinimoDocente_InserePor.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

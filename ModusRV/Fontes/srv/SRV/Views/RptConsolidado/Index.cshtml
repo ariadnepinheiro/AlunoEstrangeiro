@@ -1,0 +1,1710 @@
+﻿@model SRV.Models.DTO.FiltroRptConsolidado
+
+@using SRV.Common
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.DownloadToken, new { @id = "download_token_value" })
+
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemJS(@Role.IsGranted("Administrador, Secretaria, Regional, Escola"), "pesquisarClick()", new { id = "pesquisar" }, "btPesquisar")
+        @Html.ToolbarItemJS(@Role.IsGranted("Administrador, Secretaria, Regional, Escola"), "exportarClick()", new { id = "exportar" }, "btExportarExcel")
+    }
+    
+    <script type="text/javascript">
+
+        jQuery(function ($) {
+
+            $("#tabs").tabs();
+
+        });
+
+    </script>
+    
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdAnoReferencia)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.IdAnoReferencia, (IEnumerable<SelectListItem>)Model.Referencias ?? new List<SelectListItem>(), new { style = "width:105px;" })
+                        @Html.ValidationMessageFor(m => m.IdAnoReferencia)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdRegional)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.IdRegional, (IEnumerable<SelectListItem>)Model.Regionais ?? new List<SelectListItem>(), "", new { style = "width:405px;" })
+                        @Html.ValidationMessageFor(m => m.IdRegional)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdUnidadeAdministrativa)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.IdUnidadeAdministrativa, (IEnumerable<SelectListItem>)Model.UnidadesAdministrativas ?? new List<SelectListItem>(), "", new { style = "width:405px;" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.MatriculaServidor)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.MatriculaServidor, new { id = "IdServidor", style = "width:100px; text-align: right;", maxlength = 8 })
+                        <input type="image" id="buttonhitServidor" src="@Url.Content("~/Content/images/pesquisar.gif")"/>
+                        @Html.TextBoxFor(m => m.NoServidor, new { id = "NoServidor", style = "width:272px;", disabled = "disabled" })
+                    </td>
+                </tr>
+            </table>
+
+        <div style="clear:both"></div>
+
+        @if (@Model.Resultado != null && @Model.Resultado.Count != 0)
+        {
+
+        <div id="tabs" style="display: none;">
+          
+            <ul>
+                <li><a href="#fragment-1">Elegibilidade de Unidades Administrativas</a></li>
+                <li><a href="#fragment-2">Ensino Regular</a></li>
+                <li><a href="#fragment-3">EJA Presencial</a></li>
+            </ul>
+      
+            <div id="fragment-1" style="padding: 5px 0 5px 0;">
+
+                <table style="table-layout: fixed" id="tblGrid1" cellspacing="0" cellpadding="0">
+                  <tbody>
+                    <tr>
+                      <td class="lado_esquerdo">
+
+                        <!-- cabeçalho esquerdo -->
+                        <div class="cabecalho_esquerdo">
+                          <table style="table-layout: fixed" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                    <th style="width: 45px">Código</th>
+                                    <th style="width: 200px">Unidade Administrativa</th>
+                                    <th style="width: 45px" class="cabecalho_esquerdo_coluna_3">Elegível</th>
+                                </tr>
+                            </thead>
+                          </table>
+                        </div>
+
+                        <!-- conteúdo lado esquerdo -->
+                        <div class="conteudo_esquerdo" id="conteudo_esquerdo_grid_1">
+                          <table style="table-layout: fixed" cellspacing="0" cellpadding="0">
+                            <tbody>
+
+                              @foreach (var linha in @Model.Resultado)
+                              {
+                                  if (linha.Value.Unidade.Regional)
+                                  {
+                                                             
+                                  <!-- quebra regional lado esquerdo -->
+                                  <tr>
+                                    <td style="width: 45px"  class="quebra_esquerdo" align="right">
+                                        @linha.Value.Unidade.IdUnidade
+                                    </td>
+                                    <td style="width: 200px" class="quebra_esquerdo" title="@linha.Value.Unidade.DesUnidade">
+                                        @linha.Value.Unidade.DesUnidade
+                                    </td>
+                                    <td style="width: 45px" class="quebra_esquerdo_img" align="center">
+
+                                      @if (linha.Value.Unidade.Elegivel)
+                                      {
+                                        <span class = "icon_elegivel_sim_quebra"></span>
+                                      }
+                                      else
+                                      {
+                                        @Html.ActionLink(" ", "", null, new { href = "#", @class = "icon_elegivel_nao_quebra", onclick = "openMotivo(" + @linha.Value.Unidade.IdUnidade + ");" })
+                                      }
+
+                                    </td>
+                                  </tr>
+                                  }
+                                  else
+                                  {
+                                    
+                                  <!-- conteúdo lado esquerdo -->
+                                  <tr>
+                                    <td style="width: 45px" class="coluna_1">
+                                        @linha.Value.Unidade.IdUnidade
+                                    </td>
+                                    <td style="width: 200px" class="coluna_2" title="@linha.Value.Unidade.DesUnidade">
+                                        @linha.Value.Unidade.DesUnidade
+                                    </td>
+                                    <td style="width: 45px" class="coluna_3" align="center">
+
+                                      @if (linha.Value.Unidade.Elegivel)
+                                      {
+                                        <span class = "icon_elegivel_sim"></span>
+                                      }
+                                      else
+                                      {
+                                        @Html.ActionLink(" ", "", null, new { href = "#", @class = "icon_elegivel_nao", onclick = "openMotivo(" + @linha.Value.Unidade.IdUnidade + ");" })
+                                      }
+
+                                    </td>
+                                  </tr>
+                                  }
+                              }
+
+                            </tbody>
+                            </table>
+                        </div>
+                      </td>
+
+                      <!-- conteúdo lado direito -->
+                      <td>
+
+                        <div id="cabecalho_direito_grid_1">
+
+                          <table cellspacing="0" cellpadding="0" class="cabecalho_direito">
+                            <thead>
+                              <!-- cabeçalho direito/linha 1 -->
+                              <tr height="45px">
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                    IDERJ ER<br/>
+                                    Fundamental I
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                    IDERJ ER<br/>
+                                    Fundamental II
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                    IDERJ ER<br/>
+                                    Ensino Médio
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                    ID EJA Presencial<br/>
+                                    Fundamental II
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                    ID EJA Presencial<br/>
+                                    Ensino Médio
+                                </th>
+                                <th class="cabecalho_direito_coluna amarela_larga" rowspan="2" colspan="1">
+                                    %<br/>
+                                    Lançamento<br/>
+                                    de Notas
+                                </th>
+                                <th class="cabecalho_direito_coluna amarela_larga" rowspan="2" colspan="1">
+                                    %<br/>
+                                    Currículo<br/>
+                                    Mínimo
+                                </th>
+                                <th class="cabecalho_direito_coluna amarela_larga" colspan="5">
+                                    Avaliação Externa e Interna
+                                </th>
+                              </tr>
+                        
+                              <!-- cabeçalho direito/linha 2 -->
+                              <tr height="30px" class="ultima_linha_cabecalho">
+                                <th class="cabecalho_direito_coluna">
+                                    P
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    R
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    %
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    P
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    R
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    %
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    P
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    R
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    %
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    P
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    R
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    %
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    P
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    R
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                    %
+                                </th>
+                                <th class="cabecalho_direito_coluna amarela_larga">
+                                    Saerjinho1
+                                </th>
+                                <th class="cabecalho_direito_coluna amarela_larga">
+                                    Saerjinho2
+                                </th>
+                                <th class="cabecalho_direito_coluna amarela_larga">
+                                    Saerjinho3
+                                </th>
+                                <th class="cabecalho_direito_coluna amarela_larga">
+                                    SAERJ
+                                </th>
+                                <th class="cabecalho_direito_coluna amarela_larga">
+                                    Detalhes
+                                </th>
+                              </tr>
+                            </thead>                                        
+                          </table>                                  
+                        </div>          
+                        
+                        <div id="conteudo_direito_grid_1">
+                          <table class="conteudo_direito_grid_1" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              @foreach (var linha in @Model.Resultado)
+                              {
+                                  if (linha.Value.Unidade.Regional)
+                                  {
+
+                                  <!-- quebra regional lado direito -->
+                                  <tr>
+                                    <td class="quebra_direito_coluna">
+
+                                      @if (linha.Value.IderjERFundamental1.Previsto != null)
+                                      {
+                                          @linha.Value.IderjERFundamental1.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IderjERFundamental1.Realizado != null)
+                                      {
+                                          @linha.Value.IderjERFundamental1.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IderjERFundamental1.Percentual != null)
+                                      {
+                                          @linha.Value.IderjERFundamental1.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IderjERFundamental2.Previsto != null)
+                                      {
+                                          @linha.Value.IderjERFundamental2.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IderjERFundamental2.Realizado != null)
+                                      {
+                                          @linha.Value.IderjERFundamental2.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IderjERFundamental2.Percentual != null)
+                                      {
+                                          @linha.Value.IderjERFundamental2.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IderjEREnsinoMedio.Previsto != null)
+                                      {
+                                          @linha.Value.IderjEREnsinoMedio.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IderjEREnsinoMedio.Realizado != null)
+                                      {
+                                          @linha.Value.IderjEREnsinoMedio.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IderjEREnsinoMedio.Percentual != null)
+                                      {
+                                          @linha.Value.IderjEREnsinoMedio.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IdEjaFundamental2.Previsto != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IdEjaFundamental2.Realizado != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IdEjaFundamental2.Percentual != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IdEjaEnsinoMedio.Previsto != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IdEjaEnsinoMedio.Realizado != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IdEjaEnsinoMedio.Percentual != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.PercLancamentoNotas.Percentual != null)
+                                      {
+                                          @linha.Value.PercLancamentoNotas.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+
+                                      @if (linha.Value.PercCurriculoMinimoRegional.Percentual != null)
+                                      {
+                                          @linha.Value.PercCurriculoMinimoRegional.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+                                      
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                                        
+                                      @if (linha.Value.Saerjinho1.Percentual != null)
+                                      {
+                                          @linha.Value.Saerjinho1.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                         
+                                      @if (linha.Value.Saerjinho2.Percentual != null)
+                                      {
+                                          @linha.Value.Saerjinho2.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                         
+                                      @if (linha.Value.Saerjinho3.Percentual != null)
+                                      {
+                                          @linha.Value.Saerjinho3.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.Saerj.Percentual != null)
+                                      {
+                                          @linha.Value.Saerj.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                                        <!-- Detalhes de Avaliações Externas -->                             
+                                    </td>
+                                  </tr>
+                                  }
+                                  else
+                                  {
+                                  <!-- conteúdo lado direito -->
+                                  <tr>
+                                    <td class="conteudo_direito_coluna_amarela">
+                                      
+                                      @if (linha.Value.IderjERFundamental1.Previsto != null)
+                                      {
+                                          @linha.Value.IderjERFundamental1.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IderjERFundamental1.Realizado != null)
+                                      {
+                                          @linha.Value.IderjERFundamental1.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+                            
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IderjERFundamental1.Percentual != null)
+                                      {
+                                          @linha.Value.IderjERFundamental1.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+                            
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IderjERFundamental2.Previsto != null)
+                                      {
+                                          @linha.Value.IderjERFundamental2.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                          
+                                      @if (linha.Value.IderjERFundamental2.Realizado != null)
+                                      {
+                                          @linha.Value.IderjERFundamental2.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IderjERFundamental2.Percentual != null)
+                                      {
+                                          @linha.Value.IderjERFundamental2.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IderjEREnsinoMedio.Previsto != null)
+                                      {
+                                          @linha.Value.IderjEREnsinoMedio.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IderjEREnsinoMedio.Realizado != null)
+                                      {
+                                          @linha.Value.IderjEREnsinoMedio.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IderjEREnsinoMedio.Percentual != null)
+                                      {
+                                          @linha.Value.IderjEREnsinoMedio.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                          
+                                      @if (linha.Value.IdEjaFundamental2.Previsto != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                          
+                                      @if (linha.Value.IdEjaFundamental2.Realizado != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                          
+                                      @if (linha.Value.IdEjaFundamental2.Percentual != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IdEjaEnsinoMedio.Previsto != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IdEjaEnsinoMedio.Realizado != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IdEjaEnsinoMedio.Percentual != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+                                
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela amarela_larga">
+                           
+                                      @if (linha.Value.PercLancamentoNotas.Percentual != null)
+                                      {
+                                          @linha.Value.PercLancamentoNotas.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela amarela_larga">
+                           
+                                      @if (linha.Value.PercCurriculoMinimo.Percentual != null)
+                                      {
+                                          @linha.Value.PercCurriculoMinimo.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela amarela_larga">
+                           
+                                      @if (linha.Value.Saerjinho1.Percentual != null)
+                                      {
+                                          @linha.Value.Saerjinho1.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela amarela_larga">
+                           
+                                      @if (linha.Value.Saerjinho2.Percentual != null)
+                                      {
+                                          @linha.Value.Saerjinho2.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela amarela_larga">
+                           
+                                      @if (linha.Value.Saerjinho3.Percentual != null)
+                                      {
+                                          @linha.Value.Saerjinho3.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela amarela_larga">
+                           
+                                      @if (linha.Value.Saerj.Percentual != null)
+                                      {
+                                          @linha.Value.Saerj.Percentual.Value.ToString("N2")@:%&nbsp;
+                                      }
+
+                                    </td>
+
+                                    <td style="width: 45px" class="conteudo_direito_coluna_amarela amarela_larga" align="center">
+                                        @Html.ActionLink(" ", "", null, new { href = "#", @class = "icoLinkDetalhes", onclick = "openDetalhesAvaliacoesExternas(" + @linha.Value.Unidade.IdUnidade + ");" })
+                                    </td>
+                                  </tr>
+                                  }
+                              }
+                            </tbody>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+
+
+            <div id="fragment-2" style="padding: 5px 0 5px 0;">
+
+                <table style="table-layout: fixed" id="tblGrid2" cellspacing="0" cellpadding="0" >
+                  <tbody>
+                    <tr>
+
+                      <td class="lado_esquerdo">
+                
+                        <!-- cabeçalho esquerdo -->
+                        <div class="cabecalho_esquerdo">
+                          <table style="table-layout: fixed" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                  <th style="width: 45px">Código</th>
+                                  <th style="width: 200px">Unidade Administrativa</th>
+                                  <th style="width: 45px" class="cabecalho_esquerdo_coluna_3">Elegível</th>
+                                </tr>
+                            </thead>
+                          </table>
+                        </div>
+
+                        <!-- conteúdo lado esquerdo -->
+                        <div class="conteudo_esquerdo" id="conteudo_esquerdo_grid_2">
+                          <table style="table-layout: fixed" cellspacing="0" cellpadding="0">
+                            <tbody>
+
+                              @foreach (var linha in @Model.Resultado)
+                              {
+                                  if (linha.Value.Unidade.Regional)
+                                  {
+                                
+                                  <!-- quebra regional lado esquerdo -->
+                                  <tr>
+                                    <td style="width: 45px"  class="quebra_esquerdo" align="right">
+                                      @linha.Value.Unidade.IdUnidade
+                                    </td>
+                                    <td style="width: 200px" class="quebra_esquerdo" title="@linha.Value.Unidade.DesUnidade">
+                                      @linha.Value.Unidade.DesUnidade
+                                    </td>
+                                    <td style="width: 45px" class="quebra_esquerdo_img" align="center">
+
+                                      @if (linha.Value.Unidade.Elegivel)
+                                      {
+                                        <span class = "icon_elegivel_sim_quebra"></span>
+                                      }
+                                      else
+                                      {
+                                        @Html.ActionLink(" ", "", null, new { href = "#", @class = "icon_elegivel_nao_quebra", onclick = "openMotivo(" + @linha.Value.Unidade.IdUnidade + ");" })
+                                      }
+
+                                    </td>
+                                  </tr>
+                                  }
+                                  else
+                                  {
+
+                                  <!-- conteúdo lado esquerdo -->
+                                  <tr>
+                                    <td style="width: 45px" class="coluna_1">
+                                      @linha.Value.Unidade.IdUnidade
+                                    </td>
+                                    <td style="width: 200px" class="coluna_2"  title="@linha.Value.Unidade.DesUnidade">
+                                      @linha.Value.Unidade.DesUnidade
+                                    </td>
+                                    <td style="width: 45px" class="coluna_3" align="center">
+
+                                      @if (linha.Value.Unidade.Elegivel)
+                                      {
+                                        <span class = "icon_elegivel_sim"></span>
+                                      }
+                                      else
+                                      {
+                                        @Html.ActionLink(" ", "", null, new { href = "#", @class = "icon_elegivel_nao", onclick = "openMotivo(" + @linha.Value.Unidade.IdUnidade + ");" })
+                                      }
+
+                                    </td>
+                                  </tr>
+                                  }
+                              }
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </td>
+
+                      <!-- conteúdo lado direito -->
+                      <td>
+
+                        <div id="cabecalho_direito_grid_2">
+
+                          <table cellspacing="0" cellpadding="0" class="cabecalho_direito">
+                            <thead>
+
+                              <!-- cabeçalho direito/linha 1 -->
+                              <tr height="25px">
+
+                                <th class="cabecalho_direito_coluna" colspan="6">
+                                  Ensino Fundamental I
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="6">
+                                  Ensino Fundamental II
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="6">
+                                  Ensino Médio
+                                </th>
+                              </tr>
+
+                              <!-- cabeçalho direito/linha 2 -->
+                              <tr height="25px">
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                  ID
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                  IF
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                  ID
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                  IF
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                  ID
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                  IF
+                                </th>
+                              </tr>
+
+                              <!-- cabeçalho direito/linha 3 -->
+                              <tr height="25px" class="ultima_linha_cabecalho">
+                                <th class="cabecalho_direito_coluna">
+                                  P
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  R
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  %
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  P
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  R
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  %
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  P
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  R
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  %
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  P
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  R
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  %
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  P
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  R
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  %
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  P
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  R
+                                </th>
+                                <th class="cabecalho_direito_coluna">
+                                  %
+                                </th>
+                              </tr>
+                            </thead>
+                          </table>
+                        </div>
+
+                        <div id="conteudo_direito_grid_2">
+                          <table class="conteudo_direito_grid_2" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              @foreach (var linha in @Model.Resultado)
+                              {
+                                  if (linha.Value.Unidade.Regional)
+                                  {
+                                  <tr>
+                                    <td class="quebra_direito_coluna">
+                                  
+                                      @if (linha.Value.IdERFundamental1.Previsto != null)
+                                      {
+                                          @linha.Value.IdERFundamental1.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+                                  
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                                
+                                      @if (linha.Value.IdERFundamental1.Realizado != null)
+                                      {
+                                          @linha.Value.IdERFundamental1.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                                
+                                      @if (linha.Value.IdERFundamental1.Percentual != null)
+                                      {
+                                          @linha.Value.IdERFundamental1.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IfERFundamental1.Previsto != null)
+                                      {
+                                          @linha.Value.IfERFundamental1.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IfERFundamental1.Realizado != null)
+                                      {
+                                          @linha.Value.IfERFundamental1.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IfERFundamental1.Percentual != null)
+                                      {
+                                          @linha.Value.IfERFundamental1.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IdERFundamental2.Previsto != null)
+                                      {
+                                          @linha.Value.IdERFundamental2.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IdERFundamental2.Realizado != null)
+                                      {
+                                          @linha.Value.IdERFundamental2.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IdERFundamental2.Percentual != null)
+                                      {
+                                          @linha.Value.IdERFundamental2.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IfERFundamental2.Previsto != null)
+                                      {
+                                          @linha.Value.IfERFundamental2.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IfERFundamental2.Realizado != null)
+                                      {
+                                          @linha.Value.IfERFundamental2.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IfERFundamental2.Percentual != null)
+                                      {
+                                          @linha.Value.IfERFundamental2.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                          
+                                      @if (linha.Value.IdEREnsinoMedio.Previsto != null)
+                                      {
+                                          @linha.Value.IdEREnsinoMedio.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IdEREnsinoMedio.Realizado != null)
+                                      {
+                                          @linha.Value.IdEREnsinoMedio.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IdEREnsinoMedio.Percentual != null)
+                                      {
+                                          @linha.Value.IdEREnsinoMedio.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IfEREnsinoMedio.Previsto != null)
+                                      {
+                                          @linha.Value.IfEREnsinoMedio.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IfEREnsinoMedio.Realizado != null)
+                                      {
+                                          @linha.Value.IfEREnsinoMedio.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna">
+                           
+                                      @if (linha.Value.IfEREnsinoMedio.Percentual != null)
+                                      {
+                                          @linha.Value.IfEREnsinoMedio.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                  </tr>
+                                  }
+                                  else
+                                  {
+                                  <!-- conteúdo lado direito -->
+                                  <tr>
+                                    <td class="conteudo_direito_coluna_azul">
+                                  
+                                      @if (linha.Value.IdERFundamental1.Previsto != null)
+                                      {
+                                          @linha.Value.IdERFundamental1.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+                                  
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul">
+                                
+                                      @if (linha.Value.IdERFundamental1.Realizado != null)
+                                      {
+                                          @linha.Value.IdERFundamental1.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul">
+                                
+                                      @if (linha.Value.IdERFundamental1.Percentual != null)
+                                      {
+                                          @linha.Value.IdERFundamental1.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul">
+                           
+                                        @if (linha.Value.IfERFundamental1.Previsto != null)
+                                        {
+                                          @linha.Value.IfERFundamental1.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul">
+                           
+                                      @if (linha.Value.IfERFundamental1.Realizado != null)
+                                      {
+                                          @linha.Value.IfERFundamental1.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul">
+                           
+                                      @if (linha.Value.IfERFundamental1.Percentual != null)
+                                      {
+                                          @linha.Value.IfERFundamental1.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IdERFundamental2.Previsto != null)
+                                      {
+                                          @linha.Value.IdERFundamental2.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IdERFundamental2.Realizado != null)
+                                      {
+                                          @linha.Value.IdERFundamental2.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IdERFundamental2.Percentual != null)
+                                      {
+                                          @linha.Value.IdERFundamental2.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IfERFundamental2.Previsto != null)
+                                      {
+                                          @linha.Value.IfERFundamental2.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IfERFundamental2.Realizado != null)
+                                      {
+                                          @linha.Value.IfERFundamental2.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela">
+                           
+                                      @if (linha.Value.IfERFundamental2.Percentual != null)
+                                      {
+                                          @linha.Value.IfERFundamental2.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul">
+                           
+                                      @if (linha.Value.IdEREnsinoMedio.Previsto != null)
+                                      {
+                                          @linha.Value.IdEREnsinoMedio.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul">
+                           
+                                      @if (linha.Value.IdEREnsinoMedio.Realizado != null)
+                                      {
+                                          @linha.Value.IdEREnsinoMedio.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul">
+                           
+                                      @if (linha.Value.IdEREnsinoMedio.Percentual != null)
+                                      {
+                                          @linha.Value.IdEREnsinoMedio.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul">
+                           
+                                      @if (linha.Value.IfEREnsinoMedio.Previsto != null)
+                                      {
+                                          @linha.Value.IfEREnsinoMedio.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul">
+                           
+                                      @if (linha.Value.IfEREnsinoMedio.Realizado != null)
+                                      {
+                                          @linha.Value.IfEREnsinoMedio.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul">
+                           
+                                      @if (linha.Value.IfEREnsinoMedio.Percentual != null)
+                                      {
+                                          @linha.Value.IfEREnsinoMedio.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                  </tr>
+                                  }
+                              }
+                            </tbody>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+              <div id="fragment-3" style="padding: 5px 0 5px 0;">
+
+                <table style="table-layout: fixed" id="tblGrid3" cellspacing="0" cellpadding="0">
+                  <tbody>
+                    <tr>
+                      <td class="lado_esquerdo_grid_3">
+
+                        <!-- cabeçalho esquerdo -->
+                        <div class="cabecalho_esquerdo">
+                          <table style="table-layout: fixed" cellspacing="0" cellpadding="0">
+                            <thead>
+                                <tr>
+                                  <th style="width: 45px">Código</th>
+                                  <th style="width: 200px">Unidade Administrativa</th>
+                                  <th style="width: 45px" class="cabecalho_esquerdo_coluna_3">Elegível</th>
+                                </tr>
+                            </thead>
+                          </table>
+                        </div>
+
+                        <!-- conteúdo lado esquerdo -->
+                        <div class="conteudo_esquerdo" id="conteudo_esquerdo_grid_3">
+                          <table style="table-layout: fixed" cellspacing="0" cellpadding="0">
+                            <tbody>
+
+                            @foreach (var linha in @Model.Resultado)
+                            {
+                                if (linha.Value.Unidade.Regional)
+                                {
+
+                                  <!-- quebra regional lado esquerdo -->
+                                  <tr>
+                                    <td style="width: 45px" class="quebra_esquerdo" align="right">
+                                      @linha.Value.Unidade.IdUnidade
+                                    </td>
+                                    <td style="width: 200px" class="quebra_esquerdo" title="@linha.Value.Unidade.DesUnidade">
+                                      @linha.Value.Unidade.DesUnidade
+                                    </td>
+                                    <td style="width: 45px" class="quebra_esquerdo_img" align="center">
+
+                                      @if (linha.Value.Unidade.Elegivel)
+                                      {
+                                        <span class = "icon_elegivel_sim_quebra"></span>
+                                      }
+                                      else
+                                      {
+                                        @Html.ActionLink(" ", "", null, new { href = "#", @class = "icon_elegivel_nao_quebra", onclick = "openMotivo(" + @linha.Value.Unidade.IdUnidade + ");" })
+                                      }
+
+                                    </td>
+                                  </tr>
+                                }
+                                else
+                                {
+
+                                  <!-- conteúdo lado esquerdo -->
+                                  <tr>
+                                    <td style="width: 45px" class="coluna_1" align="right">
+                                      @linha.Value.Unidade.IdUnidade
+                                    </td>
+                                    <td style="width: 200px" class="coluna_2" title="@linha.Value.Unidade.DesUnidade">
+                                      @linha.Value.Unidade.DesUnidade
+                                    </td>
+                                    <td style="width: 45px" class="coluna_3" align="center">
+
+                                      @if (linha.Value.Unidade.Elegivel)
+                                      {
+                                        <span class = "icon_elegivel_sim"></span>
+                                      }
+                                      else
+                                      {
+                                        @Html.ActionLink(" ", "", null, new { href = "#", @class = "icon_elegivel_nao", onclick = "openMotivo(" + @linha.Value.Unidade.IdUnidade + ");" })
+                                      }
+
+                                    </td>
+                                  </tr>
+                                }
+                            }
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </td>
+
+                      <!-- conteúdo lado direito -->
+                      <td>
+                        <div id="cabecalho_direito_grid_3">
+                          <table style="width: 100%" cellspacing="0" cellpadding="3" class="cabecalho_direito">
+                            <thead>
+
+                              <!-- cabeçalho direito/linha 1 -->
+                              <tr height="25px">
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                  Ensino Fundamental II
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                  Ensino Médio
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                  IGE
+                                </th>
+                              </tr>
+
+                              <!-- cabeçalho direito/linha 2 -->
+                              <tr height="25px">
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                  ID
+                                </th>
+                                <th class="cabecalho_direito_coluna" colspan="3">
+                                  ID
+                                </th>
+                                <th class="cabecalho_direito_coluna" rowspan="2" style="width: 55px">
+                                  P
+                                </th>
+                                <th class="cabecalho_direito_coluna" rowspan="2" style="width: 55px">
+                                  R
+                                </th>
+                                <th class="cabecalho_direito_coluna" rowspan="2" style="width: 55px">
+                                  %
+                                </th>
+                              </tr>
+
+                              <!-- cabeçalho direito/linha 3 -->
+                              <tr height="25px">
+                                <th class="cabecalho_direito_coluna" style="width: 55px">
+                                  P
+                                </th>
+                                <th class="cabecalho_direito_coluna" style="width: 55px">
+                                  R
+                                </th>
+                                <th class="cabecalho_direito_coluna" style="width: 55px">
+                                  %
+                                </th>
+                                <th class="cabecalho_direito_coluna" style="width: 55px">
+                                  P
+                                </th>
+                                <th class="cabecalho_direito_coluna" style="width: 55px">
+                                  R
+                                </th>
+                                <th class="cabecalho_direito_coluna" style="width: 55px">
+                                  %
+                                </th>
+                              </tr>
+                            </thead>
+                          </table>
+                        </div>
+
+                        <div id="conteudo_direito_grid_3">
+                          <table style="width: 100%;" class="conteudo_direito_grid_3" cellspacing="0" cellpadding="0">
+                            <tbody>
+                              
+                              @foreach (var linha in @Model.Resultado)
+                              {
+                                  if (linha.Value.Unidade.Regional)
+                                  {
+
+                                  <!-- quebra regional lado direito -->
+                                  <tr>
+                                    <td class="quebra_direito_coluna" style="width: 55px">
+                                  
+                                      @if (linha.Value.IdEjaFundamental2.Previsto != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna" style="width: 55px">
+                          
+                                      @if (linha.Value.IdEjaFundamental2.Realizado != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna" style="width: 55px">
+                          
+                                      @if (linha.Value.IdEjaFundamental2.Percentual != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna" style="width: 55px">
+                          
+                                      @if (linha.Value.IdEjaEnsinoMedio.Previsto != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna" style="width: 55px">
+                          
+                                      @if (linha.Value.IdEjaEnsinoMedio.Realizado != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna" style="width: 55px">
+                          
+                                      @if (linha.Value.IdEjaEnsinoMedio.Percentual != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna" style="width: 55px">
+                           
+                                      @if (linha.Value.Ige.Previsto != null)
+                                      {
+                                          @linha.Value.Ige.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna" style="width: 55px">
+                           
+                                      @if (linha.Value.Ige.Realizado != null)
+                                      {
+                                          @linha.Value.Ige.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="quebra_direito_coluna" style="width: 55px">
+                           
+                                      @if (linha.Value.Ige.Percentual != null)
+                                      {
+                                          @linha.Value.Ige.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                  </tr>
+                                  }
+                                  else
+                                  {
+                                     
+                                  <tr>
+                                    <td class="conteudo_direito_coluna_azul" style="width: 55px">
+                          
+                                      @if (linha.Value.IdEjaFundamental2.Previsto != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul" style="width: 55px">
+                          
+                                      @if (linha.Value.IdEjaFundamental2.Realizado != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul" style="width: 55px">
+                          
+                                      @if (linha.Value.IdEjaFundamental2.Percentual != null)
+                                      {
+                                          @linha.Value.IdEjaFundamental2.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela" style="width: 55px">
+                          
+                                      @if (linha.Value.IdEjaEnsinoMedio.Previsto != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela" style="width: 55px">
+                          
+                                      @if (linha.Value.IdEjaEnsinoMedio.Realizado != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_amarela" style="width: 55px">
+
+                                      @if (linha.Value.IdEjaEnsinoMedio.Percentual != null)
+                                      {
+                                          @linha.Value.IdEjaEnsinoMedio.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul" style="width: 55px">
+                           
+                                      @if (linha.Value.Ige.Previsto != null)
+                                      {
+                                          @linha.Value.Ige.Previsto.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul" style="width: 55px">
+                           
+                                      @if (linha.Value.Ige.Realizado != null)
+                                      {
+                                          @linha.Value.Ige.Realizado.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                    <td class="conteudo_direito_coluna_azul" style="width: 55px">
+                           
+                                      @if (linha.Value.Ige.Percentual != null)
+                                      {
+                                          @linha.Value.Ige.Percentual.Value.ToString("N2")@:&nbsp;
+                                      }
+
+                                    </td>
+                                  </tr>
+                                  }
+                              }
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        }
+        else if (Model.Resultado != null && Model.Resultado.Count == 0)
+        {
+            <br />
+            
+            <table class="grid">
+                <thead>
+                    <tr>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nenhum registro encontrado</td>
+                    </tr>
+                </tbody>
+            </table>   
+        }
+    </div>
+    
+}
+<div id="modalButtonHitServidor" title=""></div>
+<div id="modalMotivoInelegivel" title=""></div>
+<div id="modalDetalhesAvaliacoesExternas" title=""></div>
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        disableWaiting = false;
+
+        $(document).ready(function () {
+            $("#tabs").show();
+        });
+
+        //Scroll lado direito grid 1
+        $('#conteudo_direito_grid_1').scroll(function () {
+            $('#conteudo_esquerdo_grid_1').scrollTop($(this).scrollTop());
+            $('#cabecalho_direito_grid_1').scrollLeft($(this).scrollLeft());
+        });
+
+        //Scroll lado direito grid 2
+        $('#conteudo_direito_grid_2').scroll(function () {
+            $('#conteudo_esquerdo_grid_2').scrollTop($(this).scrollTop());
+            $('#cabecalho_direito_grid_2').scrollLeft($(this).scrollLeft());
+        });
+
+        //Scroll lado direito grid 3
+        $('#conteudo_direito_grid_3').scroll(function () {
+            $('#conteudo_esquerdo_grid_3').scrollTop($(this).scrollTop());
+        });
+
+        $('#IdAnoReferencia').change(function () {
+            loadRegional($('#IdAnoReferencia').val());
+
+            $("#IdUnidadeAdministrativa").html("");
+            $("#IdUnidadeAdministrativa").attr("disabled", "disabled");
+
+            $('#IdServidor').val("");
+            $('#NoServidor').val("");
+        });
+
+        $('#IdRegional').change(function () {
+            loadUnidadeAdministrativa($('#IdRegional').val());
+
+            $('#IdServidor').val("");
+            $('#NoServidor').val("");
+        });
+
+        $('#IdUnidadeAdministrativa').change(function () {
+            $('#IdServidor').val("");
+            $('#NoServidor').val("");
+        });
+
+        $('#IdServidor').mask("??99999999", { placeholder: "" });
+
+        if ($('#IdRegional').val() == "") {
+            $("#IdUnidadeAdministrativa").html("");
+            $("#IdUnidadeAdministrativa").attr("disabled", "disabled");
+        } else {
+            $("#IdUnidadeAdministrativa").removeAttr("disabled");
+        }
+
+        $('#buttonhitServidor').click(function () {
+            var dlg = $("#modalButtonHitServidor").dialog({
+                title: 'Pesquisar Servidor',
+                height: 'auto',
+                width: 750,
+                position: ['center', 120],
+                modal: true,
+                resizable: false,
+                callback: 'loadServidor',
+                open: function () {
+                    $(this).load('@Html.Raw(Url.Action("Index", "PesquisaServidor"))?idRegional=' + $('#IdRegional').val() + '&idUnidadeAdministrativa=' + $("#IdUnidadeAdministrativa").val() + '&idAnoReferencia=' + $("#IdAnoReferencia").val());
+                },
+                beforeClose: function (event, ui) {
+                    $('#modalButtonHitServidor').empty();
+                }
+            });
+
+            return false;
+        });
+
+        $('#IdServidor').blur(function () {
+            if ($('#IdServidor').val() != "") {
+                $.getJSON('@Url.Content("~/PesquisaServidor/FindServidor")',
+                { idServidor: $('#IdServidor').val(), idRegional: $('#IdRegional').val(), idUnidadeAdministrativa: $("#IdUnidadeAdministrativa").val(), idAnoReferencia: $("#IdAnoReferencia").val() },
+                function (data) {
+                    if (data.Result != null) {
+                        $('#IdServidor').val(data.Result.IdServidor);
+                        $('#NoServidor').val(data.Result.DesNomeServidor);
+                    }
+                    else {
+                        $('#IdServidor').val("");
+                        $('#NoServidor').val("");
+                        alert('Servidor não encontrado');
+                        $('#IdServidor').focus();
+                    }
+                });
+            }
+            else {
+                $('#IdServidor').val("");
+                $('#NoServidor').val("");
+            }
+        });
+
+    });
+
+    function pesquisarClick() {
+        isReport = false;
+
+        if ($('#IdServidor').val() != "") {
+            $('#pesquisar').closest("form").attr('action', '@Url.Action("Index", "RptExtratoServidor")');
+        } else {
+            $('#pesquisar').closest("form").attr('action', '@Url.Action("Index", "RptConsolidado")');
+        }
+
+        $('#pesquisar').closest("form").submit();
+    }
+
+    function exportarClick() {
+        isReport = true;
+        checkDownload();
+
+        if ($('#IdServidor').val() != "") {
+            $('#exportar').closest("form").attr('action', '@Url.Action("GeraExcel", "RptExtratoServidor")');
+        } else {
+            $('#exportar').closest("form").attr('action', '@Url.Action("GeraExcel", "RptConsolidado")');
+        }
+
+        $('#exportar').closest("form").submit();
+    }
+
+    function loadRegional(idAnoReferencia) {
+
+        $("#IdRegional").html("");
+        $("#IdUnidadeAdministrativa").html("");
+
+        if (idAnoReferencia != "") {
+
+            $.getJSON('@Url.Content("~/RptConsolidado/GetRegionais")',
+                {
+                    idAnoReferencia: idAnoReferencia
+                },
+                function (data) {
+                    $("#IdRegional").append("<option value=''></option>");
+                    $.each(data.Result, function (index, obj) {
+                        $("#IdRegional").append("<option value='" + obj.IdUnidadeAdministrativa + "'>" + obj.DesUnidadeAdministrativa + "</option>");
+                    });
+                });
+        } 
+    }
+
+    function loadUnidadeAdministrativa(idRegional) {
+
+        $("#IdUnidadeAdministrativa").html("");
+
+        if (idRegional != "") {
+            $("#IdUnidadeAdministrativa").removeAttr("disabled");
+
+            $.getJSON('@Url.Content("~/RptConsolidado/GetUnidadeAdministrativa")',
+                {
+                    idAnoReferencia: $("#IdAnoReferencia").val(),        
+                    idRegional: idRegional
+                },
+                function (data) {
+                    $("#IdUnidadeAdministrativa").append("<option value=''></option>");
+                    $.each(data.Result, function (index, obj) {
+                        $("#IdUnidadeAdministrativa").append("<option value='" + obj.IdUnidadeAdministrativa + "'>" + obj.DesUnidadeAdministrativa + "</option>");
+                    });
+                });
+        } else {
+
+            $("#IdUnidadeAdministrativa").attr("disabled", "disabled");
+        }
+    }
+
+    function openMotivo(idUnidade) {
+        
+        var dlg = $("#modalMotivoInelegivel").dialog({
+            title: 'Motivo da Inelegibilidade',
+            height: 400,
+            width: 720,
+            position: ['center', 120],
+            modal: true,
+            resizable: false,
+            open: function () {
+                $(this).load('@Url.Action("Index", "MotivoInelegDocenteUnidAdm", new { idAnoReferencia = @Model.IdAnoReferencia })&idUnidade=' + idUnidade);
+            },
+            beforeClose: function (event, ui) {
+                $('#modalMotivoInelegivel').empty();
+            }
+        });
+
+    }
+
+    function loadServidor(IdServidor, DesNomeServidor) {
+        $('#IdServidor').val(IdServidor);
+        $('#NoServidor').val(DesNomeServidor);
+    }
+
+    function openDetalhesAvaliacoesExternas(idUnidade) {
+
+        var dlg = $("#modalDetalhesAvaliacoesExternas").dialog({
+            title: 'Participação nas Avaliações Externas',
+            height: 600,
+            width: 800,
+            position: ['center', 120],
+            modal: true,
+            resizable: false,
+            open: function () {
+                $(this).load('@Url.Action("Detalhes", "AvaliacaoExternaUnidadeAdmin")?idUnidade=' + idUnidade);
+            },
+            beforeClose: function (event, ui) {
+                $('#modalDetalhesAvaliacoesExternas').empty();
+            }
+        });
+    }
+
+</script>

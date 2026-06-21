@@ -1,0 +1,124 @@
+﻿/*****
+AVALIACAO CURRICULO MINIMO - LISTA - INICIO
+*****/
+.conteudo {
+	margin: auto;
+	width: 760px;
+}
+
+.conteudo .mensagem-sucesso { 
+	color: #060;
+	border: 1px solid #7D7;
+	padding: 5px;
+	background-color: #EFE;
+	font-size: 12px;
+	margin-bottom:10px;
+}
+
+#tab-bimestres 
+{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	display:block;
+	border-bottom:1px solid #C0C0C0;
+	width: 100%;
+	height: 20px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+	#tab-bimestres li 
+	{
+		display:block;
+		float:left;
+		margin-left:2px;
+		border: 1px solid #C0C0C0;
+		padding:3px;
+		background-color: #E0E0E0;
+		width:130px;
+		text-align:center;
+		cursor:pointer;
+	}
+
+	#tab-bimestres li:hover { background-color:#F0F0F0; }
+	#tab-bimestres li.selecionado { border-bottom: 1px solid #FFF; background-color: #FFF; }
+
+
+
+.conteudo h2 {
+	margin: 15px 0px 10px 0px;
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333;
+}
+
+
+.perguntas > li { margin-bottom:10px;}
+
+.perguntas h3 {
+	margin:0px 0px 5px 0px;
+	font-size:12px;
+}
+.perguntas{
+	margin: 0px 0px 0px 20px;
+	padding:0px;
+	font-size: 11px;
+}
+
+.respostas {
+	margin: 0px;
+	padding:0px;
+	list-style:none;
+}
+
+.respostas input {
+	float:left;
+}
+
+.respostas label {
+	line-height:20px;
+	font-size:12px;
+}
+.respostas li {
+	clear:both;
+}
+
+.justificativa label {
+	display:block;
+	font-size:12px;
+	margin-bottom:4px;
+}
+
+.justificativa textarea {
+	font-size:11px;
+	font-family:Tahoma;
+	width:450px;
+	height:75px;
+}
+
+.validation-summary-errors {
+	border: 1px solid #F55;
+	padding: 5px;
+	background-color: #FED;
+	font-size: 12px;
+	color: red;
+}
+
+.validation-summary-errors > span {
+	font-weight:bold;
+}
+
+.validation-summary-errors li {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+<% if (Request.Browser.Browser == "IE" && Request.Browser.Version == "7.0") { %>
+	#bt-salvar-lancamento { width: 80px; }
+	#bt-cancelar-lancamento { width: 90px; }
+<% } %>
+
+/*****
+AVALIACAO CURRICULO MINIMO - LISTA - FIM
+*****/

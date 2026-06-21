@@ -1,0 +1,30 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+  
+@{
+    Layout = "~/Views/Shared/_ErrorLayout.cshtml";
+}
+
+<div class="boxContent">
+
+    <div class="boxErro">
+        Ocorreu um erro na aplicação
+        <br/>
+        <br/>
+        Por favor repita a operação. Se o problema persistir entre em contato com o administrador do sistema.
+        <br/>
+        Clique @Html.ActionLink("aqui", "Index", "Home") para retornar à página principal.
+    </div>
+
+
+    @if (Model != null)
+    {
+        <br/>
+        <div class="boxErro">
+            Descrição do erro: @Model.Exception.Message
+            <p>
+                <textarea readonly="readonly" rows="20" style="width: 100%">@Model.Exception.StackTrace</textarea>
+            </p>
+        </div>        
+    }
+
+</div>    

@@ -1,0 +1,1 @@
+Para adicionar arquivos a serem utilizados no Conexao Gestão, será necessario adicionar o pdf na Pasta Arquivos no margaret / producão

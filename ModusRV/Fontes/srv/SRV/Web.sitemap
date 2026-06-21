@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode>
+
+    <siteMapNode title="Cadastros" group="true" roles="Administrador, Secretaria">
+      <siteMapNode title="Ano Referência" controller="AnoReferencia" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Avaliação Externa" controller="AvaliacaoExterna" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Função e Ocorrência de Servidor" controller="FuncaoOcorrenciaServidor" action="Index" roles="Administrador"/>
+      <siteMapNode title="Grupo Função" controller="GrupoFuncao" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Indicador" controller="Indicador" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Modalidade" controller="Modalidade" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Nota" controller="Nota" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Nível de Ensino" controller="NivelEnsino" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Ocorrência" controller="Ocorrencia" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Parâmetro Curva Premiação" controller="ParametroCurva" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Parâmetro Nota" controller="ParametroNota" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Parâmetro Peso" controller="ParametroPeso" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Tipo Critério Elegibilidade" controller="TipoCriterioElegibilidade" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Tipo de Ocorrência" controller="TipoOcorrencia" action="Index" roles="Administrador, Secretaria"/>
+      <siteMapNode title="Tipo Unidade Administrativa" controller="TipoUnidadeAdministrativa" action="Index" roles="Administrador, Secretaria"/>
+    </siteMapNode>
+    
+    <siteMapNode title="Ferramentas" group="true" roles="Administrador, Secretaria">
+      <siteMapNode title="Carga de Dados" group="true" roles="Administrador, Secretaria">
+        <siteMapNode title="Avaliação Externa Unidade Administrativa" controller="AvaliacaoExternaUnidadeAdmin" action="Index" roles="Administrador, Secretaria"/>
+        <siteMapNode title="Critério Unidade Administrativa" controller="CriterioUnidadeAdministrativa" action="Index" roles="Administrador, Secretaria"/>
+        <siteMapNode title="Função" controller="Funcao" action="Index" roles="Administrador, Secretaria"/>
+        <siteMapNode title="Função Servidor" controller="FuncaoServidor" action="Index" roles="Administrador, Secretaria"/>
+        <siteMapNode title="Indicador Unidade Administrativa" controller="IndicadorUnidadeAdministrativa" action="Index" roles="Administrador, Secretaria"/>
+        <siteMapNode title="Meta IGE Unidade Administrativa" controller="MetaIGEUnidadeAdministrativa" action="Index" roles="Administrador, Secretaria"/>
+        <siteMapNode title="Meta Unidade Administrativa" controller="MetaUnidadeAdministrativa" action="Index" roles="Administrador, Secretaria"/>
+        <siteMapNode title="Ocorrência Servidor" controller="OcorrenciaServidor" action="Index" roles="Administrador, Secretaria"/>
+        <siteMapNode title="Servidor" controller="Servidor" action="Index" roles="Administrador, Secretaria"/>
+        <siteMapNode title="Unidade Administrativa" controller="UnidadeAdministrativa" action="Index" roles="Administrador, Secretaria"/>
+		<siteMapNode title="Avaliação externa - aplicação de prova" controller="AplicacaoProvaAvaliacaoExterna" action="Index" roles="Administrador, Secretaria"/>
+        <siteMapNode title="Avaliação externa por Denúncia" controller="DenunciaAvaliacaoExterna" action="Index" roles="Administrador, Secretaria"/>
+        <siteMapNode title="Lançamento de Notas por Docente" controller="LancamentoNotaDocente" action="Index" roles="Administrador, Secretaria"/>
+      </siteMapNode>
+      <siteMapNode title="Log" group="true" roles="Administrador">
+        <siteMapNode title="Auditoria" controller="Auditoria" action="Index" roles="Administrador"/>
+      </siteMapNode>
+      <siteMapNode title="Gerenciamento de Usuários" controller="Usuario" action="Index" roles="Administrador"/>
+    </siteMapNode>
+
+    <siteMapNode title="Remuneração Variável" group="true" roles="Administrador">
+      <siteMapNode title="Cálculo Geral de RV" controller="CalculoRV" action="Index" roles="Administrador"/>
+    </siteMapNode>
+
+    <siteMapNode title="Relatórios" group="true" roles="Administrador, Secretaria, Regional, Escola, Servidor">
+      <siteMapNode title="Consolidado de RV" controller="RptConsolidado" action="Index" roles="Administrador, Secretaria, Regional, Escola"/>
+      <siteMapNode title="Extrato de RV" controller="RptExtratoServidor" action="Index" roles="Regional, Escola, Servidor"/>
+    </siteMapNode>
+
+  </siteMapNode>
+</siteMap>

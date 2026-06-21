@@ -1,0 +1,1708 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58B5A0E4-BB70-46C6-A104-C86E181A6A7D}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>LyceumRN</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Techne.Lyceum.RN</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <WebReference_EnableProperties>true</WebReference_EnableProperties>
+    <WebReference_EnableSQLTypes>false</WebReference_EnableSQLTypes>
+    <WebReference_EnableLegacyEventingModel>true</WebReference_EnableLegacyEventingModel>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CDONTS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\CDONTS.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v9.2, Version=9.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Componentes\DevExpress.Data.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NPOI, Version=1.2.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="Proderj.Framework.Common, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\Proderj.Framework.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <ProjectReference Include="..\..\..\HadesLycCR\Fontes\HadesLycCR\HadesLycCRComplete.csproj">
+      <Project>{526758C4-F26B-43D5-97D5-6C6EE006E23F}</Project>
+      <Name>HadesLycCRComplete</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\LyceumGovCR\Fontes\LyceumCR\LyceumCRComplete.csproj">
+      <Project>{23CB57BB-A925-4A1A-BEBE-D5458BF18B4D}</Project>
+      <Name>LyceumCRComplete</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Seeduc.Infra\Seeduc.InfraComplete.csproj">
+      <Project>{227D3D8B-E93B-44CD-ADEE-68DFABCC9E9B}</Project>
+      <Name>Seeduc.InfraComplete</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Techne.Lyceum.Control\Fontes\Techne.Lyceum.Control\Techne.Lyceum.Control.csproj">
+      <Project>{4102AA89-A7B8-4F44-976E-A10000B7FFE7}</Project>
+      <Name>Techne.Lyceum.Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Techne.Lyceum.Infra\Fontes\Techne.Lyceum.Infra\Techne.Lyceum.Infra.csproj">
+      <Project>{3AAA8991-8A03-44B0-9AC5-D7C127DAFB41}</Project>
+      <Name>Techne.Lyceum.Infra</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AAGE\DocenteAAGEUnidadeEnsino.cs" />
+    <Compile Include="AAGE\DocenteArticuladorRegional.cs" />
+    <Compile Include="AAGE\DocenteMediadorUnidadeEnsino.cs" />
+    <Compile Include="AAGE\Entidades\DocenteAAGEUnidadeEnsino.cs" />
+    <Compile Include="AAGE\Entidades\DocenteArticuladorRegional.cs" />
+    <Compile Include="AAGE\Entidades\DocenteMediadorUnidadeEnsino.cs" />
+    <Compile Include="AbsorcaoUnidadeEnsino.cs" />
+    <Compile Include="AceiteTermoCompromissoDocente.cs" />
+    <Compile Include="AceiteTermoCompromissoGestao.cs" />
+    <Compile Include="AcessoPortalBiblioteca.cs" />
+    <Compile Include="AcessoUsuario.cs" />
+    <Compile Include="Agenda\Agenda.cs" />
+    <Compile Include="Agenda\Agenda_Curso.cs" />
+    <Compile Include="Agenda\Agenda_Curso__Agenda_UnidadeEnsino.cs" />
+    <Compile Include="Agenda\Agenda_EnvioMensagem.cs" />
+    <Compile Include="Agenda\Agenda_UnidadeEnsino.cs" />
+    <Compile Include="Agenda\Entidades\Agenda.cs" />
+    <Compile Include="Agenda\Entidades\Agenda_Curso.cs" />
+    <Compile Include="Agenda\Entidades\Agenda_Curso__Agenda_UnidadeEnsino.cs" />
+    <Compile Include="Agenda\Entidades\Agenda_UnidadeEnsino.cs" />
+    <Compile Include="Agenda\Entidades\Evento.cs" />
+    <Compile Include="Agenda\Entidades\ParametroBloqueioEncerramento.cs" />
+    <Compile Include="Agenda\Entidades\ParametroMinimoVaga.cs" />
+    <Compile Include="Agenda\Entidades\ParametroTurnoVaga.cs" />
+    <Compile Include="Agenda\Entidades\PeriodoLetivoAgenda.cs" />
+    <Compile Include="Agenda\Entidades\ProcessoSeletivo.cs" />
+    <Compile Include="Agenda\Entidades\TipoEvento.cs" />
+    <Compile Include="Agenda\Entidades\TipoEventoCorrelato.cs" />
+    <Compile Include="Agenda\Evento.cs" />
+    <Compile Include="Agenda\ParametroBloqueioEncerramento.cs" />
+    <Compile Include="Agenda\ParametroMinimoVaga.cs" />
+    <Compile Include="Agenda\ParametroTurnoVaga.cs" />
+    <Compile Include="Agenda\PeriodoLetivoAgenda.cs" />
+    <Compile Include="Agenda\ProcessoSeletivo.cs" />
+    <Compile Include="Agenda\TipoEvento.cs" />
+    <Compile Include="Agenda\TipoEventoCorrelato.cs" />
+    <Compile Include="Agenda\UnidadeEnsinoProcessoSeletivo.cs" />
+    <Compile Include="Aluno.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlunoConcomitante.cs" />
+    <Compile Include="AlunoEducEspecial.cs" />
+    <Compile Include="AlunoLicenca.cs" />
+    <Compile Include="AreaConhecimento.cs" />
+    <Compile Include="AreaFormacaoPessoal.cs" />
+    <Compile Include="ArmazemLivro.cs" />
+    <Compile Include="AssistenteEnsino.cs" />
+    <Compile Include="Atividade.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Auditoria.cs" />
+    <Compile Include="AulaDocente.cs" />
+    <Compile Include="AulaDocenteGreve.cs" />
+    <Compile Include="AulaDocenteTipo.cs" />
+    <Compile Include="AvaliacaoCurriculoMinimo.cs" />
+    <Compile Include="AvaliacaoCurriculoMinimoDocente.cs" />
+    <Compile Include="AvaliacaoCurriculoMinimoJustificativa.cs" />
+    <Compile Include="AvaliacaoExterna\AlunoParticipante.cs" />
+    <Compile Include="AvaliacaoExterna\Avaliacao.cs" />
+    <Compile Include="AvaliacaoExterna\Componente.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\AlunoParticipante.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\Avaliacao.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\Componente.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\Etapa.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\Habilidade.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\Prova.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\Questao.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\ReaberturaTurma.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\Resposta.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\SituacaoParticipante.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\TipoAvaliacao.cs" />
+    <Compile Include="AvaliacaoExterna\Entidades\TranscricaoTurma.cs" />
+    <Compile Include="AvaliacaoExterna\Etapa.cs" />
+    <Compile Include="AvaliacaoExterna\Habilidade.cs" />
+    <Compile Include="AvaliacaoExterna\Prova.cs" />
+    <Compile Include="AvaliacaoExterna\Questao.cs" />
+    <Compile Include="AvaliacaoExterna\ReaberturaTurma.cs" />
+    <Compile Include="AvaliacaoExterna\Resposta.cs" />
+    <Compile Include="AvaliacaoExterna\SituacaoParticipante.cs" />
+    <Compile Include="AvaliacaoExterna\TipoAvaliacao.cs" />
+    <Compile Include="AvaliacaoExterna\TranscricaoTurma.cs" />
+    <Compile Include="Bairro.cs" />
+    <Compile Include="Basico.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Biblioteca.cs" />
+    <Compile Include="Boletim.cs" />
+    <Compile Include="Cache\ConsultarDisciplinasDocente.cs" />
+    <Compile Include="Cache\TabelaGeral.cs" />
+    <Compile Include="Cadastros\DTOs\MaeDadosAnalise.cs" />
+    <Compile Include="Cadastros\DTOs\MaeDadosBancarios.cs" />
+    <Compile Include="Cadastros\DTOs\MaeDadosInscricao.cs" />
+    <Compile Include="Cadastros\Entidades\MaeFormularioBancoArquivo.cs" />
+    <Compile Include="Cadastros\Entidades\MaeMotivoDesligamento.cs" />
+    <Compile Include="Cadastros\Entidades\MaeMotivoNaoHabilitado.cs" />
+    <Compile Include="Cadastros\MaeFormularioBancoArquivo.cs" />
+    <Compile Include="Cadastros\MaeInscricao.cs" />
+    <Compile Include="Cadastros\MaeInscricaoAluno.cs" />
+    <Compile Include="Cadastros\MaeLotacao.cs" />
+    <Compile Include="Cadastros\MaeMotivoDesligamento.cs" />
+    <Compile Include="Cadastros\MaeMotivoNaoHabilitado.cs" />
+    <Compile Include="CampoEnvioMensagem.cs" />
+    <Compile Include="CandidatoDocente.cs" />
+    <Compile Include="CandidatoDocExperiencias.cs" />
+    <Compile Include="CandidatoDocTitulacoes.cs" />
+    <Compile Include="CapacidaDeAlunoTurma.cs" />
+    <Compile Include="CapacidadeAlunoTurmaMunicipio.cs" />
+    <Compile Include="Capacitacao.cs" />
+    <Compile Include="Captcha.cs" />
+    <Compile Include="CartaoAluno.cs" />
+    <Compile Include="CartaoEstudante\Domain\Critica.cs" />
+    <Compile Include="CartaoEstudante\Domain\Processo.cs" />
+    <Compile Include="CartaoEstudante\Domain\StatusProcesso.cs" />
+    <Compile Include="CartaoEstudante\DTO\AcompanhamentoRemessaDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\CartaoResponseDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\CarteirinhaDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\ControleProcessamentoDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\CriticaDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\DadosAlunoOperadoraDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\DadosPaginadosRequestDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\DadosPaginadosResponseDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\DuplicidadeDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\Filter\AcompanhamentoRemessaFilterDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\Filter\MatriculaDuplicadaFilterDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\GeraSolicitacaoManualRequestDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\GeraSolicitacaoManualResponseDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\LogControleProcessamentoDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\MatriculaResponseDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\RegistroCartaoDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\RegistroDuplicidadeMatriculaDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\RegistroRetornoResponseDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\RemessaDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\RetornoCriticaDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\RetornoDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\RetornoLoginDTO.cs" />
+    <Compile Include="CartaoEstudante\DTO\SolicitacaoDTO.cs" />
+    <Compile Include="CartaoEstudante\Entities\LoteRemessa.cs" />
+    <Compile Include="CartaoEstudante\Entities\Remessa.cs" />
+    <Compile Include="CartaoEstudante\Entities\RetornoLoteRemessa.cs" />
+    <Compile Include="CartaoEstudante\Entities\RetornoRemessa.cs" />
+    <Compile Include="CartaoEstudante\Entity\Cartao.cs" />
+    <Compile Include="CartaoEstudante\Entity\CartaoAluno.cs" />
+    <Compile Include="CartaoEstudante\Entity\CartaoAlunoSituacao.cs" />
+    <Compile Include="CartaoEstudante\Entity\CartaoSituacao.cs" />
+    <Compile Include="CartaoEstudante\Entity\ControleProcessamento.cs" />
+    <Compile Include="CartaoEstudante\Entity\Duplicidade.cs" />
+    <Compile Include="CartaoEstudante\Entity\Execucao.cs" />
+    <Compile Include="CartaoEstudante\Entity\ExecucaoIntegrador.cs" />
+    <Compile Include="CartaoEstudante\Entity\ExecucaoLogErro.cs" />
+    <Compile Include="CartaoEstudante\Entity\LogControleProcessamento.cs" />
+    <Compile Include="CartaoEstudante\Entity\LoginOperadoraAluno.cs" />
+    <Compile Include="CartaoEstudante\Entity\LogLoteRemessa.cs" />
+    <Compile Include="CartaoEstudante\Entity\LogRemessa.cs" />
+    <Compile Include="CartaoEstudante\Entity\LoteRemessa.cs" />
+    <Compile Include="CartaoEstudante\Entity\Operadora.cs" />
+    <Compile Include="CartaoEstudante\Entity\Processo.cs" />
+    <Compile Include="CartaoEstudante\Entity\Remessa.cs" />
+    <Compile Include="CartaoEstudante\Entity\Retorno.cs" />
+    <Compile Include="CartaoEstudante\Entity\RetornoCartao.cs" />
+    <Compile Include="CartaoEstudante\Entity\RetornoCritica.cs" />
+    <Compile Include="CartaoEstudante\Entity\RetornoLogin.cs" />
+    <Compile Include="CartaoEstudante\Entity\Solicitacao.cs" />
+    <Compile Include="CartaoEstudante\Entity\TipoCancelamento.cs" />
+    <Compile Include="CartaoEstudante\Entity\TipoRetornoCritica.cs" />
+    <Compile Include="CartaoEstudante\Entity\TipoSituacaoCartao.cs" />
+    <Compile Include="CartaoEstudante\Entity\TipoSolicitacao.cs" />
+    <Compile Include="CartaoEstudante\Entity\WsStatusFoto.cs" />
+    <Compile Include="CartaoEstudante\Enum\OperadoraEnum.cs" />
+    <Compile Include="CartaoEstudante\Enum\SituacaoProcessamentoEnum.cs" />
+    <Compile Include="CartaoEstudante\Enum\SituacaoProcessoEnum.cs" />
+    <Compile Include="CartaoEstudante\Enum\SituacaoSolicitacaoEnum.cs" />
+    <Compile Include="CartaoEstudante\Enum\StatusExecucaoEnum.cs" />
+    <Compile Include="CartaoEstudante\Enum\TipoSituacaoProcessamentoEnum.cs" />
+    <Compile Include="CartaoEstudante\Enum\TipoSolicitacaoEnum.cs" />
+    <Compile Include="CartaoEstudante\ExecucaoIntegrador.cs" />
+    <Compile Include="CartaoEstudante\FotoPessoa.cs" />
+    <Compile Include="CartaoEstudante\Query\AlunoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\CartaoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\CarteirinhaQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\ControleProcessamentoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\CriticaQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\DuplicidadeQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\ExecucaoLogErroQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\ExecucaoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\IQueryBase.cs" />
+    <Compile Include="CartaoEstudante\Query\LogControleProcessamentoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\LoginOperadoraAlunoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\LogLoteRemessaQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\LogRemessaQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\LoteRemessaQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\OperadoraQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\ProcessoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\QueryBase.cs" />
+    <Compile Include="CartaoEstudante\Query\RegistrosRetornoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\RemessaQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\RetornoCartaoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\RetornoCriticaQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\RetornoLoginQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\RetornoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\SolicitacaoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\TipoCancelamentoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\TipoSituacaoCartaoQuery.cs" />
+    <Compile Include="CartaoEstudante\Query\TipoSolicitacaoQuery.cs" />
+    <Compile Include="CartaoEstudante\Repository\RepositoryLoteRemessa.cs" />
+    <Compile Include="CartaoEstudante\Repository\RepositoryRemessa.cs" />
+    <Compile Include="CartaoEstudante\Service\AlunoService.cs" />
+    <Compile Include="CartaoEstudante\Service\CartaoService.cs" />
+    <Compile Include="CartaoEstudante\Service\CarteirinhaService.cs" />
+    <Compile Include="CartaoEstudante\Service\ControleProcessamentoService.cs" />
+    <Compile Include="CartaoEstudante\Service\CriticaService.cs" />
+    <Compile Include="CartaoEstudante\Service\DuplicidadeMatriculaService.cs" />
+    <Compile Include="CartaoEstudante\Service\LoginOperadoraAlunoService.cs" />
+    <Compile Include="CartaoEstudante\Service\LogLoteRemessaService.cs" />
+    <Compile Include="CartaoEstudante\Service\LogRemessaService.cs" />
+    <Compile Include="CartaoEstudante\Service\LoteRemessaService.cs" />
+    <Compile Include="CartaoEstudante\Service\OperadoraService.cs" />
+    <Compile Include="CartaoEstudante\Service\ProcessoService.cs" />
+    <Compile Include="CartaoEstudante\Service\RegistroRetornoService.cs" />
+    <Compile Include="CartaoEstudante\Service\RemessaService.cs" />
+    <Compile Include="CartaoEstudante\Service\RetornoLoginService.cs" />
+    <Compile Include="CartaoEstudante\Service\RetornoService.cs" />
+    <Compile Include="CartaoEstudante\Service\SolicitacaoService.cs" />
+    <Compile Include="CartaoEstudante\Service\TipoSolicitacaoService.cs" />
+    <Compile Include="CartaoEstudante\SingletonBase.cs" />
+    <Compile Include="CartaoEstudante\Solicitacao.cs" />
+    <Compile Include="CartaoEstudante\Util\Conexao.cs" />
+    <Compile Include="CartaoEstudante\WsStatusFoto.cs" />
+    <Compile Include="Carteirinha.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CategoriaDocente.cs" />
+    <Compile Include="Certificacao\AssinaturaDigitalA3.cs" />
+    <Compile Include="Certificacao\CertidaoEscolar.cs" />
+    <Compile Include="Certificacao\CertificadoEscolar.cs" />
+    <Compile Include="Certificacao\DocumentoCertificacao.cs" />
+    <Compile Include="Certificacao\DocumentoGerado.cs" />
+    <Compile Include="Certificacao\DTOs\HistoricoEscolarDTO.cs" />
+    <Compile Include="Certificacao\DTOs\PainelCertificacao.cs" />
+    <Compile Include="Certificacao\EnccejaAluno.cs" />
+    <Compile Include="Certificacao\EnccejaDocumentoArquivo.cs" />
+    <Compile Include="Certificacao\EnccejaRequerimento.cs" />
+    <Compile Include="Certificacao\Entidades\DocumentoCertificacao.cs" />
+    <Compile Include="Certificacao\Entidades\DocumentoGerado.cs" />
+    <Compile Include="Certificacao\Entidades\GrupoUnidadeCertificadora.cs" />
+    <Compile Include="Certificacao\Entidades\MotivoIndeferido.cs" />
+    <Compile Include="Certificacao\Entidades\TipoCertificacao.cs" />
+    <Compile Include="Certificacao\Entidades\TipoCertificacaoUnidadeCertificadora.cs" />
+    <Compile Include="Certificacao\Entidades\TipoConclusao.cs" />
+    <Compile Include="Certificacao\Entidades\TipoDocumentoCertifica.cs" />
+    <Compile Include="Certificacao\Entidades\UnidadeCertificadora.cs" />
+    <Compile Include="Certificacao\Entidades\UsuarioUnidadeCertificadora.cs" />
+    <Compile Include="Certificacao\GrupoUnidadeCertificadora.cs" />
+    <Compile Include="Certificacao\HistoricoEscolar.cs" />
+    <Compile Include="Certificacao\MotivoIndeferido.cs" />
+    <Compile Include="Certificacao\SignerWrappers_.cs" />
+    <Compile Include="Certificacao\SituacaoEnccejaRequerimento.cs" />
+    <Compile Include="Certificacao\TipoCertificacao.cs" />
+    <Compile Include="Certificacao\TipoCertificacaoUnidadeCertificadora.cs" />
+    <Compile Include="Certificacao\TipoConclusao.cs" />
+    <Compile Include="Certificacao\TipoDocumentoCertifica.cs" />
+    <Compile Include="Certificacao\UnidadeCertificadora.cs" />
+    <Compile Include="Certificacao\UsuarioUnidadeCertificadora.cs" />
+    <Compile Include="Certificacao\Util.cs" />
+    <Compile Include="Certificacao\ValidaInfCertificacao.cs" />
+    <Compile Include="Compartilhada.cs" />
+    <Compile Include="CompartilhadaOferta.cs" />
+    <Compile Include="CompetenciaHabilidadeDocente.cs" />
+    <Compile Include="CompetenciaHabilidadeGrupo.cs" />
+    <Compile Include="CompetenciaHabilidadeItem.cs" />
+    <Compile Include="ComposicaoTurma.cs" />
+    <Compile Include="Conceito.cs" />
+    <Compile Include="Concurso.cs" />
+    <Compile Include="ConcursoDocHabilitacao.cs" />
+    <Compile Include="ConfirmacaoMatricula.cs" />
+    <Compile Include="Constantes.cs" />
+    <Compile Include="CandidatoDocContrato.cs" />
+    <Compile Include="ContratoTemporario\CandidatoDocente_GrupoHabilitacao.cs" />
+    <Compile Include="ContratoTemporario\ConcursoDocente_CategoriaDocente.cs" />
+    <Compile Include="ContratoTemporario\Cota.cs" />
+    <Compile Include="ContratoTemporario\Entidades\CandidatoDocente_GrupoHabilitacao.cs" />
+    <Compile Include="ControleVaga.cs" />
+    <Compile Include="ConverterUtil.cs" />
+    <Compile Include="Coordenadoria.cs" />
+    <Compile Include="CtvAgendaConfTurnoVaga.cs" />
+    <Compile Include="CtvAnalise.cs" />
+    <Compile Include="CtvConfTurno.cs" />
+    <Compile Include="CtvConfTurnoInicial.cs" />
+    <Compile Include="CtvConfVaga.cs" />
+    <Compile Include="CtvFinalizado.cs" />
+    <Compile Include="CtvJustificativa.cs" />
+    <Compile Include="CtvLogEncerramento.cs" />
+    <Compile Include="CtvPropostaSeeduc.cs" />
+    <Compile Include="CtvRestricao.cs" />
+    <Compile Include="CtvTurmaProvisoria.cs" />
+    <Compile Include="Curriculo.cs" />
+    <Compile Include="Curso.cs" />
+    <Compile Include="CursoCapacitacao.cs" />
+    <Compile Include="CursoDuracao.cs" />
+    <Compile Include="CursoFormacaoPessoal.cs" />
+    <Compile Include="Custom\Hd_agencia.cs" />
+    <Compile Include="Custom\Hd_trecho_logradouro.cs" />
+    <Compile Include="Custom\Ly_bib_assunto_cdd.cs" />
+    <Compile Include="Custom\Ly_bib_editora.cs">
+    </Compile>
+    <Compile Include="Custom\Ly_candidato_docente.cs">
+    </Compile>
+    <Compile Include="Custom\Ly_conceito.cs" />
+    <Compile Include="Custom\Ly_concurso_docente.cs" />
+    <Compile Include="Custom\Ly_concurso_experiencia.cs" />
+    <Compile Include="Custom\Ly_concurso_titulacao.cs" />
+    <Compile Include="Custom\Ly_contato_unid_fis.cs">
+    </Compile>
+    <Compile Include="Custom\Ly_curriculo.cs" />
+    <Compile Include="Custom\Ly_disciplina.cs" />
+    <Compile Include="Custom\Ly_documentos_ingresso.cs" />
+    <Compile Include="Custom\Ly_grade.cs" />
+    <Compile Include="Custom\Ly_grupo_conceito.cs" />
+    <Compile Include="Custom\Ly_instituicao.cs" />
+    <Compile Include="Custom\Ly_nucleo.cs">
+    </Compile>
+    <Compile Include="Custom\Ly_pessoa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom\Hd_setor.cs">
+    </Compile>
+    <Compile Include="Custom\Ly_prova_discip.cs" />
+    <Compile Include="Custom\Ly_serie.cs" />
+    <Compile Include="Custom\Ly_serie_sufixo.cs" />
+    <Compile Include="Custom\Ly_subperiodo_letivo.cs" />
+    <Compile Include="Custom\Ly_tipo_disciplina.cs" />
+    <Compile Include="Custom\Ly_turno.cs" />
+    <Compile Include="Custom\Ly_unidade_ensino.cs" />
+    <Compile Include="Custom\Ly_unidade_fisica.cs" />
+    <Compile Include="Custom\Ly_vinculo.cs">
+    </Compile>
+    <Compile Include="DeclaracaoAusencia.cs" />
+    <Compile Include="DeclaracaoSemNota.cs" />
+    <Compile Include="Dependencia.cs" />
+    <Compile Include="Diario.cs" />
+    <Compile Include="Disciplina.cs" />
+    <Compile Include="DisciplinaMultipla.cs" />
+    <Compile Include="Distrito.cs" />
+    <Compile Include="DocCelebradoMunicipalizacao.cs" />
+    <Compile Include="DocenteCursoCapacitacao.cs" />
+    <Compile Include="DocenteGLP.cs" />
+    <Compile Include="Docentes.cs" />
+    <Compile Include="Documento.cs" />
+    <Compile Include="DocumentoAluno.cs" />
+    <Compile Include="DocumentosRequeridos.cs" />
+    <Compile Include="DTOs\Agenda\DadosAgendaEvento.cs" />
+    <Compile Include="DTOs\Agenda\DadosParticipacao.cs" />
+    <Compile Include="DTOs\AlunoAutenticado.cs" />
+    <Compile Include="DTOs\Atendimento.cs" />
+    <Compile Include="DTOs\ConsolidaTurnosDoMatriculaFacil.cs" />
+    <Compile Include="DTOs\CvtConfirmacaoEscolaTurnos.cs" />
+    <Compile Include="DTOs\DadosAgendaTurnos.cs" />
+    <Compile Include="DTOs\DadosAgendaVagas.cs" />
+    <Compile Include="DTOs\DadosAlunoCertificacao.cs" />
+    <Compile Include="DTOs\DadosAlunoFechamento.cs" />
+    <Compile Include="DTOs\DadosAlunoNotificacao.cs" />
+    <Compile Include="DTOs\DadosAlunoPessoa.cs" />
+    <Compile Include="DTOs\DadosAnalise.cs" />
+    <Compile Include="DTOs\DadosAnaliseProtocolo.cs" />
+    <Compile Include="DTOs\DadosAvaliacaoNapes.cs" />
+    <Compile Include="DTOs\DadosBaixaBemPatrimonial.cs" />
+    <Compile Include="DTOs\DadosBemPatrimonial.cs" />
+    <Compile Include="DTOs\DadosBemReavaliacao.cs" />
+    <Compile Include="DTOs\DadosCadastroBemPatrimonial.cs" />
+    <Compile Include="DTOs\DadosCandidato.cs" />
+    <Compile Include="DTOs\DadosCandidatoMatriculaEspecial.cs" />
+    <Compile Include="DTOs\DadosCartaoAluno.cs" />
+    <Compile Include="DTOs\DadosCompetenciaCurriculo.cs" />
+    <Compile Include="DTOs\DadosConfirmacaoCandidato.cs" />
+    <Compile Include="DTOs\DadosConfirmacaoVagasOferta.cs" />
+    <Compile Include="DTOs\DadosConfirmacaoVagasOfertaCurso.cs" />
+    <Compile Include="DTOs\DadosConfTurno.cs" />
+    <Compile Include="DTOs\DadosConfVaga.cs" />
+    <Compile Include="DTOs\DadosConfVagaEncadeado.cs" />
+    <Compile Include="DTOs\DadosConsolidadoBimestralTurma.cs" />
+    <Compile Include="DTOs\DadosContratoEscola.cs" />
+    <Compile Include="DTOs\DadosControleVaga.cs" />
+    <Compile Include="DTOs\DadosConvocados.cs" />
+    <Compile Include="DTOs\DadosCurso.cs" />
+    <Compile Include="DTOs\DadosDiretor.cs" />
+    <Compile Include="DTOs\DadosDisciplinaParaFechamento.cs" />
+    <Compile Include="DTOs\DadosDistruicaoEletivas.cs" />
+    <Compile Include="DTOs\DadosDocente.cs" />
+    <Compile Include="DTOs\DadosDocenteCandidato.cs" />
+    <Compile Include="DTOs\DadosDuplicidadeAluno.cs" />
+    <Compile Include="DTOs\DadosEducacaoEspecial.cs" />
+    <Compile Include="DTOs\DadosEmail.cs" />
+    <Compile Include="DTOs\DadosEncaminhamentoEspecial.cs" />
+    <Compile Include="DTOs\DadosEncerramentoAluno.cs" />
+    <Compile Include="DTOs\DadosEncerramentoConfVagas.cs" />
+    <Compile Include="DTOs\DadosEnsProfConcomitante.cs" />
+    <Compile Include="DTOs\DadosEnturmacaoAluno.cs" />
+    <Compile Include="DTOs\DadosEnturmacaoEletiva.cs" />
+    <Compile Include="DTOs\DadosEquipamentoUnidadeFisica.cs" />
+    <Compile Include="DTOs\DadosExclusaoFuncaoLotacao.cs" />
+    <Compile Include="DTOs\DadosExterno.cs" />
+    <Compile Include="DTOs\DadosFaltasAulas.cs" />
+    <Compile Include="DTOs\DadosFichaAluno.cs" />
+    <Compile Include="DTOs\DadosFichaConfirmacao.cs" />
+    <Compile Include="DTOs\DadosFichaIndividualBem.cs" />
+    <Compile Include="DTOs\DadosFichaRenovacao.cs" />
+    <Compile Include="DTOs\DadosFinalizacaoOferta.cs" />
+    <Compile Include="DTOs\DadosFrequenciaDiaria.cs" />
+    <Compile Include="DTOs\DadosFrequenciaGLP.cs" />
+    <Compile Include="DTOs\DadosHistoricoTurnoVaga.cs" />
+    <Compile Include="DTOs\DadosHorarios.cs" />
+    <Compile Include="DTOs\DadosInclusaoModalidadeSerieTurnosVagas.cs" />
+    <Compile Include="DTOs\DadosIrmao.cs" />
+    <Compile Include="DTOs\DadosLiberacaoConfirmacao.cs" />
+    <Compile Include="DTOs\DadosLoginRedeEmail.cs" />
+    <Compile Include="DTOs\DadosLotacaoDocenteFuncionario.cs" />
+    <Compile Include="DTOs\DadosMaisEducacao.cs" />
+    <Compile Include="DTOs\DadosMovimentacaoServidor.cs" />
+    <Compile Include="DTOs\DadosMunicipio.cs" />
+    <Compile Include="DTOs\DadosNecessidadeEspecialFiltroProcesso.cs" />
+    <Compile Include="DTOs\DadosOcorrencia.cs" />
+    <Compile Include="DTOs\DadosOpcaoCandidato.cs" />
+    <Compile Include="DTOs\DadosOpcaoConvocada.cs" />
+    <Compile Include="DTOs\DadosPainelCertificacao.cs" />
+    <Compile Include="DTOs\DadosPessoaisAAGEMediador.cs" />
+    <Compile Include="DTOs\DadosPossiveisRenovacoes.cs" />
+    <Compile Include="DTOs\DadosPrazoRepostaTroca.cs" />
+    <Compile Include="DTOs\DadosPropostaTurnosVagas.cs" />
+    <Compile Include="DTOs\DadosProrrogacaoPrazoConfirmacao.cs" />
+    <Compile Include="DTOs\DadosReabertura.cs" />
+    <Compile Include="DTOs\DadosRecursoNecessidadeEspecial.cs" />
+    <Compile Include="DTOs\DadosRegional.cs" />
+    <Compile Include="DTOs\DadosRelaratorioDependencia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTOs\DadosRelatorioInspecaoEscolar.cs" />
+    <Compile Include="DTOs\DadosRenovacaoAutomatica.cs" />
+    <Compile Include="DTOs\DadosReplicacaoCapacidadeTurma.cs" />
+    <Compile Include="DTOs\DadosRetornoOpcaoNaoConfirmada.cs" />
+    <Compile Include="DTOs\DadosRota.cs" />
+    <Compile Include="DTOs\DadosRotaCadastro.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DTOs\DadosSalaAlternativa.cs" />
+    <Compile Include="DTOs\DadosTipoFuncao.cs" />
+    <Compile Include="DTOs\DadosTransferencia.cs" />
+    <Compile Include="DTOs\DadosTrocaMatriculaDocente.cs" />
+    <Compile Include="DTOs\DadosTrocaMatriculaVinculo.cs" />
+    <Compile Include="DTOs\DadosTurma.cs" />
+    <Compile Include="DTOs\DadosTurmaAgenda.cs" />
+    <Compile Include="DTOs\DadosTurmaConfVaga.cs" />
+    <Compile Include="DTOs\DadosTurmaGLP.cs" />
+    <Compile Include="DTOs\DadosTurnoHabilitado.cs" />
+    <Compile Include="DTOs\DadosTurnoInclusaoModalidadeSerie.cs" />
+    <Compile Include="DTOs\DadosVagaSalva.cs" />
+    <Compile Include="DTOs\DadosVagasPorTurma.cs" />
+    <Compile Include="DTOs\DadosVoluntario.cs" />
+    <Compile Include="DTOs\DetalhesConsolidaTurnosDoMatriculaFacil.cs" />
+    <Compile Include="DTOs\DisciplinaTurmaTransferenciaAluno.cs" />
+    <Compile Include="DTOs\FichaImplantacaoDocente.cs" />
+    <Compile Include="DTOs\FiltroAvaliacao.cs" />
+    <Compile Include="DTOs\FiltroBoletim.cs" />
+    <Compile Include="DTOs\FiltroGrupoCompetenciaHabilidade.cs" />
+    <Compile Include="DTOs\FiltroRestricaoTerminalidade.cs" />
+    <Compile Include="DTOs\FrequenciaAlunoTurma.cs" />
+    <Compile Include="DTOs\GrupoItemCompetenciaHabilidade.cs" />
+    <Compile Include="DTOs\MatriculaOptativaReforcoDTO.cs" />
+    <Compile Include="DTOs\NotaTurmaAtualTransferenciaAluno.cs" />
+    <Compile Include="DTOs\RespostaItemCompetenciaHabilidade.cs" />
+    <Compile Include="DTOs\ResumoRestricoesParaCadastro.cs" />
+    <Compile Include="DTOs\StatusSolicitacaoAlteracaoNota.cs" />
+    <Compile Include="DTOs\StatusSolicitacaoHabilitacaoDocente.cs" />
+    <Compile Include="DTOs\UnidadeCaracteristicasFisicas.cs" />
+    <Compile Include="DTOs\UnidadeDadosInternet.cs" />
+    <Compile Include="DTOs\UnidadeDadosPedagogicos.cs" />
+    <Compile Include="DTOs\UnidadeInformacoesGerais.cs" />
+    <Compile Include="ECheque.cs" />
+    <Compile Include="ECompra.cs" />
+    <Compile Include="ECotacao.cs" />
+    <Compile Include="EDespesa.cs" />
+    <Compile Include="EItem.cs" />
+    <Compile Include="EItemDespesa.cs" />
+    <Compile Include="EMovimentacaoBancaria.cs" />
+    <Compile Include="Empresas.cs" />
+    <Compile Include="EncerramentoAluno.cs" />
+    <Compile Include="Endereco.cs" />
+    <Compile Include="Entidades\AreasConhecimento.cs" />
+    <Compile Include="Entidades\Bairro.cs" />
+    <Compile Include="Entidades\CapacidaDeAlunoTurma.cs" />
+    <Compile Include="Entidades\CapacidadeAlunoTurmaMunicipio.cs" />
+    <Compile Include="Entidades\ClasseGenerica.cs" />
+    <Compile Include="Entidades\CursoCapacitacao.cs" />
+    <Compile Include="Entidades\DeclaracaoAusencia.cs" />
+    <Compile Include="Entidades\DeclaracaoSemNota.cs" />
+    <Compile Include="Entidades\DocenteCursoCapacitacao.cs" />
+    <Compile Include="Entidades\EstudoAdicional.cs" />
+    <Compile Include="Entidades\FiltroProcesso.cs" />
+    <Compile Include="Entidades\Funcao.cs" />
+    <Compile Include="Entidades\LogAtualizacaoMatriculaServidor.cs" />
+    <Compile Include="Entidades\LyAlunoLicenca.cs" />
+    <Compile Include="Entidades\LyAulaDocente.cs" />
+    <Compile Include="Entidades\LyCandidatoDocContrato.cs" />
+    <Compile Include="Entidades\LyCandidatoDocExperiencias.cs" />
+    <Compile Include="Entidades\LyCandidatoDocTitulacoes.cs" />
+    <Compile Include="Entidades\LogAtualizacaoMatricula.cs" />
+    <Compile Include="Entidades\LyCategoriaDocente.cs" />
+    <Compile Include="Entidades\LyCurriculo.cs" />
+    <Compile Include="Entidades\LyDocenteFuncaoGlp.cs" />
+    <Compile Include="Entidades\LyDocenteFuncaoGlpDetalhe.cs" />
+    <Compile Include="Entidades\LyGrupoHabilitacao.cs" />
+    <Compile Include="Entidades\LyGrupoHabilitacaoDoc.cs" />
+    <Compile Include="Entidades\LyHCurrAluno.cs" />
+    <Compile Include="Entidades\HdUsuario.cs" />
+    <Compile Include="Entidades\HistoricoImportacao.cs" />
+    <Compile Include="Entidades\Importacao\importaResultadoProcessoSeletivoAluno.cs" />
+    <Compile Include="Entidades\IrmaosAluno.cs" />
+    <Compile Include="Entidades\LogImpressaoFichaMatricula.cs" />
+    <Compile Include="Entidades\LyAluno.cs" />
+    <Compile Include="Entidades\LyCandidatoDocente.cs" />
+    <Compile Include="Entidades\LyCapacitacao.cs" />
+    <Compile Include="Entidades\LyConcursoDocHabilitacao.cs" />
+    <Compile Include="Entidades\LyDependencia.cs" />
+    <Compile Include="Entidades\LyDisciplina.cs" />
+    <Compile Include="Entidades\LyDisciplinaMultipla.cs" />
+    <Compile Include="Entidades\LyDocente.cs" />
+    <Compile Include="Entidades\LyFalta.cs" />
+    <Compile Include="Entidades\LyFaltaHistmatr.cs" />
+    <Compile Include="Entidades\LyFlPessoa.cs" />
+    <Compile Include="Entidades\LyFotoPessoa.cs" />
+    <Compile Include="Entidades\LyFuncao.cs" />
+    <Compile Include="Entidades\LyGradeSerie.cs" />
+    <Compile Include="Entidades\LyHCursosConcl.cs" />
+    <Compile Include="Entidades\LyHistFaculdade.cs" />
+    <Compile Include="Entidades\LyHistMatGrade.cs" />
+    <Compile Include="Entidades\LyHistMatricula.cs" />
+    <Compile Include="Entidades\LyHistoricoDocente.cs" />
+    <Compile Include="Entidades\LyHorOper.cs" />
+    <Compile Include="Entidades\LyLicencaDocente.cs" />
+    <Compile Include="Entidades\LyLicencaPessoa.cs" />
+    <Compile Include="Entidades\LyLicencas.cs" />
+    <Compile Include="Entidades\LyLotacao.cs" />
+    <Compile Include="Entidades\LyMatGrade.cs" />
+    <Compile Include="Entidades\LyMatricula.cs" />
+    <Compile Include="Entidades\LyNota.cs" />
+    <Compile Include="Entidades\LyNotaHistmatr.cs" />
+    <Compile Include="Entidades\LyCursoLyTipoDependencia.cs" />
+    <Compile Include="Entidades\LyPeriodoLetivo.cs" />
+    <Compile Include="Entidades\LyPessoa.cs" />
+    <Compile Include="Entidades\LyProva.cs" />
+    <Compile Include="Entidades\LySerie.cs" />
+    <Compile Include="Entidades\LyTransporteUnid.cs" />
+    <Compile Include="Entidades\LyTurma.cs" />
+    <Compile Include="Entidades\LyUnidadeEnsino.cs" />
+    <Compile Include="Entidades\LyUnidadeEnsinoCursos.cs" />
+    <Compile Include="Entidades\LyUnidadeEnsinoSituacao.cs" />
+    <Compile Include="Entidades\LyUnidadeFisica.cs" />
+    <Compile Include="Entidades\LyUnidadeFisicaConcessionaria.cs" />
+    <Compile Include="Entidades\LyUnidadeFisicaEdificacao.cs" />
+    <Compile Include="Entidades\LyUnidadesAssociadas.cs" />
+    <Compile Include="Entidades\LyVinculo.cs" />
+    <Compile Include="Entidades\PerfilModalidade.cs" />
+    <Compile Include="Entidades\PessoaRecursoAplicacaoProva.cs" />
+    <Compile Include="Entidades\PessoaTranstornoAprendizagem.cs" />
+    <Compile Include="Entidades\ProgressaoCursoSerie.cs" />
+    <Compile Include="Entidades\RelacaoPessoa.cs" />
+    <Compile Include="Entidades\ProgressaoSerie.cs" />
+    <Compile Include="Entidades\SerieAbsorvida.cs" />
+    <Compile Include="Entidades\TabelaItem.cs" />
+    <Compile Include="Entidades\TceAceiteTermoCompromissoDocente.cs" />
+    <Compile Include="Entidades\TceAceiteTermoCompromissoGestao.cs" />
+    <Compile Include="Entidades\TceAlunoConcomitante.cs" />
+    <Compile Include="Entidades\TceAlunoEducEspecial.cs" />
+    <Compile Include="Entidades\TceAreaFormacaoPessoal.cs" />
+    <Compile Include="Entidades\TceAulaDocenteGreve.cs" />
+    <Compile Include="Entidades\TceAvaliacaoCurriculoMinimo.cs" />
+    <Compile Include="Entidades\TceAvaliacaoCurriculoMinimoDocente.cs" />
+    <Compile Include="Entidades\TceAvaliacaoCurriculoMinimoJustificativa.cs" />
+    <Compile Include="Entidades\TceCompartilhada.cs" />
+    <Compile Include="Entidades\TceCompartilhadaOferta.cs" />
+    <Compile Include="Entidades\TceCompetenciaHabilidadeDocente.cs" />
+    <Compile Include="Entidades\TceCompetenciaHabilidadeItem.cs" />
+    <Compile Include="Entidades\TceCompetenciaHabilidadeGrupo.cs" />
+    <Compile Include="Entidades\TceConfirmacaoMatricula.cs" />
+    <Compile Include="Entidades\TceControleVaga.cs" />
+    <Compile Include="Entidades\TceCtvAgendaConfTurnoVaga.cs" />
+    <Compile Include="Entidades\TceCtvAnalise.cs" />
+    <Compile Include="Entidades\TceCtvConfTurno.cs" />
+    <Compile Include="Entidades\TceCtvConfTurnoInicial.cs" />
+    <Compile Include="Entidades\TceCtvConfVaga.cs" />
+    <Compile Include="Entidades\TceCtvConfVagaLog.cs" />
+    <Compile Include="Entidades\TceCtvFinalizado.cs" />
+    <Compile Include="Entidades\TceCtvJustificativa.cs" />
+    <Compile Include="Entidades\TceCtvLogEncerramento.cs" />
+    <Compile Include="Entidades\TceCtvPropostaSeeduc.cs" />
+    <Compile Include="Entidades\TceCtvRestricao.cs" />
+    <Compile Include="Entidades\TceCtvTurmaProvisoria.cs" />
+    <Compile Include="Entidades\TceCursoDuracao.cs" />
+    <Compile Include="Entidades\TceCursoFormacaoPessoal.cs" />
+    <Compile Include="Entidades\TceDocCelebradoMunicipalizacao.cs" />
+    <Compile Include="Entidades\TceDocumento.cs" />
+    <Compile Include="Entidades\TceDocumentoAluno.cs" />
+    <Compile Include="Entidades\TceEquipamentoUnidadeFisica.cs" />
+    <Compile Include="Entidades\TceFeriadoMunicipal.cs" />
+    <Compile Include="Entidades\TceFeriadoNacionalEstadual.cs" />
+    <Compile Include="Entidades\TceFeriadoUnidadeEnsino.cs" />
+    <Compile Include="Entidades\TceFormacaoPessoal.cs" />
+    <Compile Include="Entidades\TceMacroCampos.cs" />
+    <Compile Include="Entidades\TceMunicipalizacao.cs" />
+    <Compile Include="Entidades\TceMunicipio.cs" />
+    <Compile Include="Entidades\TceMunicipioLimitrofe.cs" />
+    <Compile Include="Entidades\TcePadacesPerfil.cs" />
+    <Compile Include="Entidades\TcePerfil.cs" />
+    <Compile Include="Entidades\TceProgramaSocial.cs" />
+    <Compile Include="Entidades\TceProtocoloNota.cs" />
+    <Compile Include="Entidades\TceRegional.cs" />
+    <Compile Include="Entidades\TceRestricaoIdadeSerie.cs" />
+    <Compile Include="Entidades\TceSituacaoFinalAluno.cs" />
+    <Compile Include="Entidades\TceSolicitacaoAlteracaoNota.cs" />
+    <Compile Include="Entidades\TceSolicitacaoHabilitacaoDocente.cs" />
+    <Compile Include="Entidades\TceTermoCompromissoDocente.cs" />
+    <Compile Include="Entidades\TceTermoCompromissoGestao.cs" />
+    <Compile Include="Entidades\TceTipoDependenciaUnidadeFisica.cs" />
+    <Compile Include="Entidades\TceTransferencia.cs" />
+    <Compile Include="Entidades\TceTransferenciaDestino.cs" />
+    <Compile Include="Entidades\TceTransferenciaOrigem.cs" />
+    <Compile Include="Entidades\TceValidacaoTipoDependencia.cs" />
+    <Compile Include="Entidades\TceVersao.cs" />
+    <Compile Include="Entidades\TceVinculo.cs" />
+    <Compile Include="Entidades\TiposCursosCapacitacao.cs" />
+    <Compile Include="EPequenasDespesas.cs" />
+    <Compile Include="EPrestacaoContas.cs" />
+    <Compile Include="EquipamentoUnidadeFisica.cs" />
+    <Compile Include="ESaldoFinalidade.cs" />
+    <Compile Include="Estagio.cs" />
+    <Compile Include="EstudoAdicional.cs" />
+    <Compile Include="Etnia.cs" />
+    <Compile Include="EventoGeral.cs" />
+    <Compile Include="ExtraClasse.cs" />
+    <Compile Include="Falta.cs" />
+    <Compile Include="FaltaHistmatr.cs" />
+    <Compile Include="FechamentoMatricula.cs" />
+    <Compile Include="FeriadoMunicipal.cs" />
+    <Compile Include="FeriadoNacionalEstadual.cs" />
+    <Compile Include="FeriadoUnidadeEnsino.cs" />
+    <Compile Include="FiscalizacaoLink\Avaliacao.cs" />
+    <Compile Include="FiscalizacaoLink\ChamadoAnatel.cs" />
+    <Compile Include="FiscalizacaoLink\CircuitoSetor.cs" />
+    <Compile Include="FiscalizacaoLink\Contrato.cs" />
+    <Compile Include="FiscalizacaoLink\ContratoOperadora.cs" />
+    <Compile Include="FiscalizacaoLink\ContratoSetor.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\Avaliacao.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\ChamadoAnatel.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\CircuitoSetor.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\Contrato.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\ContratoOperadora.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\ContratoSetor.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\Interrupcao.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\MotivoInterrupcao.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\Operadora.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\Tecnologia.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\TipoLink.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\UnidadeVelocidade.cs" />
+    <Compile Include="FiscalizacaoLink\Entidades\Velocidade.cs" />
+    <Compile Include="FiscalizacaoLink\Interrupcao.cs" />
+    <Compile Include="FiscalizacaoLink\MotivoInterrupcao.cs" />
+    <Compile Include="FiscalizacaoLink\Operadora.cs" />
+    <Compile Include="FiscalizacaoLink\Tecnologia.cs" />
+    <Compile Include="FiscalizacaoLink\TipoLink.cs" />
+    <Compile Include="FiscalizacaoLink\UnidadeVelocidade.cs" />
+    <Compile Include="FiscalizacaoLink\Velocidade.cs" />
+    <Compile Include="FlPessoa.cs" />
+    <Compile Include="FormacaoPessoal.cs" />
+    <Compile Include="Formula.cs" />
+    <Compile Include="FotoPessoa.cs" />
+    <Compile Include="Freq.cs" />
+    <Compile Include="Frequencia.cs" />
+    <Compile Include="Funcao.cs" />
+    <Compile Include="GestaoRede\AcessoInternet.cs" />
+    <Compile Include="GestaoRede\Entidades\RegiaoFinanceira.cs" />
+    <Compile Include="GestaoRede\Entidades\RegiaoFinanceiraMunicipio.cs" />
+    <Compile Include="GestaoRede\Entidades\RegionalHistoricoUnidade.cs" />
+    <Compile Include="GestaoRede\Entidades\Subsecretaria.cs" />
+    <Compile Include="GestaoRede\Entidades\Superintendencia.cs" />
+    <Compile Include="GestaoRede\Entidades\TipoSetor.cs" />
+    <Compile Include="GestaoRede\Entidades\UnidadeFisicaRedeInternet.cs" />
+    <Compile Include="GestaoRede\Entidades\UnidadeFisicaTratamentoLixo.cs" />
+    <Compile Include="GestaoRede\FormasAcessibilidade.cs" />
+    <Compile Include="GestaoRede\MaterialPedagogico.cs" />
+    <Compile Include="GestaoRede\OrgaoColegiado.cs" />
+    <Compile Include="GestaoRede\RegiaoFinanceira.cs" />
+    <Compile Include="GestaoRede\RegiaoFinanceiraMunicipio.cs" />
+    <Compile Include="GestaoRede\RegionalHistoricoUnidade.cs" />
+    <Compile Include="GestaoRede\Subsecretaria.cs" />
+    <Compile Include="GestaoRede\Superintendencia.cs" />
+    <Compile Include="GestaoRede\TipoSetor.cs" />
+    <Compile Include="GestaoRede\TratamentoLixo.cs" />
+    <Compile Include="GestaoRede\UnidadeFisicaAcessoInternet.cs" />
+    <Compile Include="GestaoRede\UnidadeFisicaFormasAcessibilidade.cs" />
+    <Compile Include="GestaoRede\UnidadeFisicaMaterialPedagogico.cs" />
+    <Compile Include="GestaoRede\UnidadeFisicaOrgaoColegiado.cs" />
+    <Compile Include="GestaoRede\UnidadeFisicaRedeInternet.cs" />
+    <Compile Include="GestaoRede\UnidadeFisicaTratamentoLixo.cs" />
+    <Compile Include="GestaoRede\HistoricoUnidadeAdministrativa.cs" />
+    <Compile Include="Grade.cs" />
+    <Compile Include="GradeSerie.cs" />
+    <Compile Include="GradeTurma.cs" />
+    <Compile Include="GrupoHabilitacao.cs" />
+    <Compile Include="GrupoHabilitacaoDoc.cs" />
+    <Compile Include="HCurrAluno.cs" />
+    <Compile Include="HCursosConcl.cs" />
+    <Compile Include="HistFaculdade.cs" />
+    <Compile Include="HistMatGrade.cs" />
+    <Compile Include="HistMatricula.cs" />
+    <Compile Include="HistoricoDocente.cs" />
+    <Compile Include="HistoricoImportacao.cs" />
+    <Compile Include="Historicos.cs" />
+    <Compile Include="HorarioOperacional.cs" />
+    <Compile Include="HorariosAluno.cs" />
+    <Compile Include="HorariosDocente.cs" />
+    <Compile Include="Identificacao.cs" />
+    <Compile Include="Importacao\ImportacaoArquivo.cs" />
+    <Compile Include="Importacao\ImportaResultadoProcessoSeletivoAluno.cs" />
+    <Compile Include="InspecaoEscolar\AcaoDirecao.cs" />
+    <Compile Include="InspecaoEscolar\Acervo.cs" />
+    <Compile Include="InspecaoEscolar\Assunto.cs" />
+    <Compile Include="InspecaoEscolar\Campanha.cs" />
+    <Compile Include="InspecaoEscolar\CampanhaEscola.cs" />
+    <Compile Include="InspecaoEscolar\DTOs\DadosCampanhaEscola.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\AcaoDirecao.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\Acervo.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\Assunto.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\Campanha.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\CampanhaEscola.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\Grupo.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\IdentificacaoDependencia.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\Medida.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\OpcoesAssunto.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\RespostaAssunto.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\RespostaDependencia.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\RespostaDependenciaOpcao.cs" />
+    <Compile Include="InspecaoEscolar\Entidades\TipoAssunto.cs" />
+    <Compile Include="InspecaoEscolar\Grupo.cs" />
+    <Compile Include="InspecaoEscolar\IdentificacaoDependencia.cs" />
+    <Compile Include="InspecaoEscolar\Medida.cs" />
+    <Compile Include="InspecaoEscolar\OpcoesAssunto.cs" />
+    <Compile Include="InspecaoEscolar\Replicacao.cs" />
+    <Compile Include="InspecaoEscolar\RespostaAssunto.cs" />
+    <Compile Include="InspecaoEscolar\RespostaDependencia.cs" />
+    <Compile Include="InspecaoEscolar\RespostaDependenciaOpcao.cs" />
+    <Compile Include="InspecaoEscolar\TipoAssunto.cs" />
+    <Compile Include="InspecaoEscolar\Util.cs" />
+    <Compile Include="Instituicao.cs" />
+    <Compile Include="LancamentoNotas\Entidades\MaterialEstudo.cs" />
+    <Compile Include="LancamentoNotas\Entidades\TurmaMaterialEstudo.cs" />
+    <Compile Include="LancamentoNotas\MaterialEstudo .cs" />
+    <Compile Include="LancamentoNotas\TurmaMaterialEstudo.cs" />
+    <Compile Include="LancFrequencia.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LiberacaoCandidatoDocente.cs" />
+    <Compile Include="LicencaDocente.cs" />
+    <Compile Include="LicencaPessoa.cs" />
+    <Compile Include="Licencas.cs" />
+    <Compile Include="LogAtualizacaoMatricula.cs" />
+    <Compile Include="LogAtualizacaoMatriculaServidor.cs" />
+    <Compile Include="LogImpressaoFichaMatricula.cs" />
+    <Compile Include="LogNota.cs" />
+    <Compile Include="LogSistema.cs" />
+    <Compile Include="Lotacao.cs" />
+    <Compile Include="MacroCampos.cs" />
+    <Compile Include="Matgrade.cs" />
+    <Compile Include="Matricula.cs" />
+    <Compile Include="MatriculaBkp.cs" />
+    <Compile Include="Matriculas\Agenda.cs" />
+    <Compile Include="Matriculas\ContatoOpcaoInscricao.cs" />
+    <Compile Include="Matriculas\ContatoOpcaoInscricaoHist.cs" />
+    <Compile Include="Matriculas\ConvocacaoDisciplinaSemEmail.cs" />
+    <Compile Include="Matriculas\ConvocacaoSemEmail.cs" />
+    <Compile Include="Matriculas\DiasNaoLetivos.cs" />
+    <Compile Include="Matriculas\EncaminhamentoEspecial.cs" />
+    <Compile Include="Matriculas\Entidades\ContatoOpcaoInscricao.cs" />
+    <Compile Include="Matriculas\Entidades\ContatoOpcaoInscricaoHist.cs" />
+    <Compile Include="Matriculas\Entidades\ConvocacaoSemEmail.cs" />
+    <Compile Include="Matriculas\Entidades\CursoSerieMensagens.cs" />
+    <Compile Include="Matriculas\Entidades\DiasNaoLetivos.cs" />
+    <Compile Include="Matriculas\Entidades\InscricaoAluno.cs" />
+    <Compile Include="Matriculas\Entidades\MotivoEncaminhamentoEspecial.cs" />
+    <Compile Include="Matriculas\Entidades\MotivoRejeicaoInscricao.cs" />
+    <Compile Include="Matriculas\Entidades\MotivoRetorno.cs" />
+    <Compile Include="Matriculas\Entidades\OpcaoInscricao.cs" />
+    <Compile Include="Matriculas\Entidades\OpcaoInscricaoHist.cs" />
+    <Compile Include="Matriculas\Entidades\PessoaAluno.cs" />
+    <Compile Include="Matriculas\Entidades\PreCadastroAluno.cs" />
+    <Compile Include="Matriculas\Entidades\PreCadastroAlunoFoto.cs" />
+    <Compile Include="Matriculas\Entidades\RestricaoIdadeSerie.cs" />
+    <Compile Include="Matriculas\Entidades\TipoFila.cs" />
+    <Compile Include="Matriculas\Entidades\VagaReservada.cs" />
+    <Compile Include="Matriculas\InscricaoAluno.cs" />
+    <Compile Include="Matriculas\MatriculaEspecial.cs" />
+    <Compile Include="Matriculas\MatriculaEspecialDisciplina.cs" />
+    <Compile Include="Matriculas\MotivoEncaminhamentoEspecial.cs" />
+    <Compile Include="Matriculas\MotivoRejeicaoInscricao.cs" />
+    <Compile Include="Matriculas\MotivoRetorno.cs" />
+    <Compile Include="Matriculas\OpcaoInscricao.cs" />
+    <Compile Include="Matriculas\OpcaoInscricaoHist.cs" />
+    <Compile Include="Matriculas\PessoaAluno.cs" />
+    <Compile Include="Matriculas\PreCadastroAluno.cs" />
+    <Compile Include="Matriculas\PreCadastroAlunoFoto.cs" />
+    <Compile Include="Matriculas\PreCadastroAlunoPessoaHist.cs" />
+    <Compile Include="Matriculas\RestricaoIdadeSerie.cs" />
+    <Compile Include="Matriculas\VagaReservada.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Municipalizacao.cs" />
+    <Compile Include="Municipio.cs" />
+    <Compile Include="MunicipioLimitrofe.cs" />
+    <Compile Include="NecessidadeEspecial\AlunoRecursoNecessidadeEspecial.cs" />
+    <Compile Include="NecessidadeEspecial\AvaliacaoNapes.cs" />
+    <Compile Include="NecessidadeEspecial\CuidadorAluno.cs" />
+    <Compile Include="NecessidadeEspecial\Entidades\AlunoRecursoNecessidadeEspecial.cs" />
+    <Compile Include="NecessidadeEspecial\Entidades\AvaliacaoNapes.cs" />
+    <Compile Include="NecessidadeEspecial\Entidades\CuidadorAluno.cs" />
+    <Compile Include="NecessidadeEspecial\Entidades\InterpreteTurma.cs" />
+    <Compile Include="NecessidadeEspecial\Entidades\LedorAluno.cs" />
+    <Compile Include="NecessidadeEspecial\Entidades\NecessidadeEspecial.cs" />
+    <Compile Include="NecessidadeEspecial\Entidades\PAPEE.cs" />
+    <Compile Include="NecessidadeEspecial\Entidades\RecursoAplicacaoProva.cs" />
+    <Compile Include="NecessidadeEspecial\Entidades\RecursoNecessidadeEspecial.cs" />
+    <Compile Include="NecessidadeEspecial\Entidades\SalaRecurso.cs" />
+    <Compile Include="NecessidadeEspecial\InterpreteTurma.cs" />
+    <Compile Include="NecessidadeEspecial\LedorAluno.cs" />
+    <Compile Include="NecessidadeEspecial\NecessidadeEspecial.cs" />
+    <Compile Include="NecessidadeEspecial\PAPEE.cs" />
+    <Compile Include="NecessidadeEspecial\RecursoAplicacaoProva.cs" />
+    <Compile Include="NecessidadeEspecial\RecursoNecessidadeEspecial.cs" />
+    <Compile Include="NecessidadeEspecial\SalaRecurso.cs" />
+    <Compile Include="NecessidadeEspecial\TipoRecursoNecessidadeEspecial.cs" />
+    <Compile Include="NivelCurso.cs" />
+    <Compile Include="Nota.cs" />
+    <Compile Include="NotaFiscal\AcompanhamentoNota.cs" />
+    <Compile Include="NotaFiscal\Entidades\AcompanhamentoNota.cs" />
+    <Compile Include="NotaHistmatr.cs" />
+    <Compile Include="Ocorrencia.cs" />
+    <Compile Include="Ocorrencias\Acusado.cs" />
+    <Compile Include="Ocorrencias\ArquivoOcorrencia.cs" />
+    <Compile Include="Ocorrencias\Batalhao.cs" />
+    <Compile Include="Ocorrencias\Classe.cs" />
+    <Compile Include="Ocorrencias\Delegacia.cs" />
+    <Compile Include="Ocorrencias\Entidades\Acusado.cs" />
+    <Compile Include="Ocorrencias\Entidades\ArquivoOcorrencia.cs" />
+    <Compile Include="Ocorrencias\Entidades\Classe.cs" />
+    <Compile Include="Ocorrencias\Entidades\Meio.cs" />
+    <Compile Include="Ocorrencias\Entidades\MotivoCancelamento.cs" />
+    <Compile Include="Ocorrencias\Entidades\Ocorrencia.cs" />
+    <Compile Include="Ocorrencias\Entidades\OcorrenciaEncaminhamento.cs" />
+    <Compile Include="Ocorrencias\Entidades\OcorrenciaEncaminhamentoAquivo.cs" />
+    <Compile Include="Ocorrencias\Entidades\OcorrenciaInterrupcao.cs" />
+    <Compile Include="Ocorrencias\Entidades\SubClasse.cs" />
+    <Compile Include="Ocorrencias\Entidades\Tratamento.cs" />
+    <Compile Include="Ocorrencias\Entidades\Vitima.cs" />
+    <Compile Include="Ocorrencias\Meio.cs" />
+    <Compile Include="Ocorrencias\MotivoCancelamento.cs" />
+    <Compile Include="Ocorrencias\Ocorrencia.cs" />
+    <Compile Include="Ocorrencias\OcorrenciaArma.cs" />
+    <Compile Include="Ocorrencias\OcorrenciaEncaminhamento.cs" />
+    <Compile Include="Ocorrencias\OcorrenciaEncaminhamentoArquivo.cs" />
+    <Compile Include="Ocorrencias\OcorrenciaInterrupcao.cs" />
+    <Compile Include="Ocorrencias\OcorrenciaTratamento.cs" />
+    <Compile Include="Ocorrencias\SubClasse.cs" />
+    <Compile Include="Ocorrencias\Tratamento.cs" />
+    <Compile Include="Ocorrencias\Vitima.cs" />
+    <Compile Include="PadacesPerfil.cs" />
+    <Compile Include="PadraoAcessoFuncao.cs" />
+    <Compile Include="PadraoAcessoTurmas.cs" />
+    <Compile Include="PadroesDeAcessos.cs" />
+    <Compile Include="ParametrizarDependencia.cs" />
+    <Compile Include="Patrimonio\AgenteResponsavel.cs" />
+    <Compile Include="Patrimonio\Bem.cs" />
+    <Compile Include="Patrimonio\BemValor.cs" />
+    <Compile Include="Patrimonio\Classificacao.cs" />
+    <Compile Include="Patrimonio\Entidades\AgenteResponsavel.cs" />
+    <Compile Include="Patrimonio\Entidades\Bem.cs" />
+    <Compile Include="Patrimonio\Entidades\BemValor.cs" />
+    <Compile Include="Patrimonio\Entidades\Classificacao.cs" />
+    <Compile Include="Patrimonio\Entidades\ClassificacaoVigencia.cs" />
+    <Compile Include="Patrimonio\Entidades\EstadoConservacao.cs" />
+    <Compile Include="Patrimonio\Entidades\Moeda.cs" />
+    <Compile Include="Patrimonio\Entidades\MotivoBaixa.cs" />
+    <Compile Include="Patrimonio\Entidades\Movimentacao.cs" />
+    <Compile Include="Patrimonio\Entidades\Operacao.cs" />
+    <Compile Include="Patrimonio\Entidades\PeriodoLancamento.cs" />
+    <Compile Include="Patrimonio\Entidades\PeriodoVidaFutura.cs" />
+    <Compile Include="Patrimonio\Entidades\PeriodoVidaUtilizado.cs" />
+    <Compile Include="Patrimonio\Entidades\Reavaliacao.cs" />
+    <Compile Include="Patrimonio\Entidades\Transferencia.cs" />
+    <Compile Include="Patrimonio\Entidades\TransferenciaItem.cs" />
+    <Compile Include="Patrimonio\EstadoConservacao.cs" />
+    <Compile Include="Patrimonio\Moeda.cs" />
+    <Compile Include="Patrimonio\MotivoBaixa.cs" />
+    <Compile Include="Patrimonio\Movimentacao.cs" />
+    <Compile Include="Patrimonio\Operacao.cs" />
+    <Compile Include="Patrimonio\PeriodoLancamento.cs" />
+    <Compile Include="Patrimonio\PeriodoVidaFutura.cs" />
+    <Compile Include="Patrimonio\PeriodoVidaUtilizado.cs" />
+    <Compile Include="Patrimonio\Reavaliacao.cs" />
+    <Compile Include="Patrimonio\Transferencia.cs" />
+    <Compile Include="Patrimonio\TransferenciaItem.cs" />
+    <Compile Include="Pedagogico\AreaItinerarioFormativo.cs" />
+    <Compile Include="Pedagogico\CategoriaItinerarioFormativo.cs" />
+    <Compile Include="Pedagogico\ComposicaoItinerarioFormativo.cs" />
+    <Compile Include="Pedagogico\Entidades\AreaItinerarioFormativo.cs" />
+    <Compile Include="Pedagogico\Entidades\CategoriaItinerarioFormativo.cs" />
+    <Compile Include="Pedagogico\Entidades\ComposicaoItinerarioFormativo.cs" />
+    <Compile Include="Pedagogico\Entidades\ItinerarioFormativo.cs" />
+    <Compile Include="Pedagogico\Entidades\PeriodoConfirmacao.cs" />
+    <Compile Include="Pedagogico\Entidades\PeriodoConfirmacaoCurso.cs" />
+    <Compile Include="Pedagogico\Entidades\TrilhaAprendizagem.cs" />
+    <Compile Include="Pedagogico\Entidades\TrilhaAprendizagemAluno.cs" />
+    <Compile Include="Pedagogico\Entidades\TrilhaAprendizagemEscola.cs" />
+    <Compile Include="Pedagogico\Entidades\TrilhaAprendizagemEscolaFinalizada.cs" />
+    <Compile Include="Pedagogico\Entidades\UnidadeCurricular.cs" />
+    <Compile Include="Pedagogico\ItinerarioFormativo.cs" />
+    <Compile Include="Pedagogico\PeriodoConfirmacao.cs" />
+    <Compile Include="Pedagogico\PeriodoConfirmacaoCurso.cs" />
+    <Compile Include="Pedagogico\TrilhaAprendizagem.cs" />
+    <Compile Include="Pedagogico\TrilhaAprendizagemAluno.cs" />
+    <Compile Include="Pedagogico\TrilhaAprendizagemEscola.cs" />
+    <Compile Include="Pedagogico\TrilhaAprendizagemEscolaFinalizada.cs" />
+    <Compile Include="Pedagogico\UnidadeCurricular.cs" />
+    <Compile Include="PeDeMeiaCorrecao\AlunoPeDeMeia.cs" />
+    <Compile Include="PeDeMeiaCorrecao\AlunoPeDeMeiaCorrecao.cs" />
+    <Compile Include="PeDeMeiaCorrecao\Entidades\FrequenciaAluno.cs" />
+    <Compile Include="PeDeMeiaCorrecao\Entidades\FrequenciaTurma.cs" />
+    <Compile Include="PeDeMeiaCorrecao\Entidades\PeriodoFrequenciaAluno.cs" />
+    <Compile Include="PeDeMeiaCorrecao\FrequenciaAluno.cs" />
+    <Compile Include="PeDeMeiaCorrecao\FrequenciaTurma.cs" />
+    <Compile Include="PeDeMeiaCorrecao\PeriodoFrequenciaAluno.cs" />
+    <Compile Include="Perfil.cs" />
+    <Compile Include="PerfilModalidade.cs" />
+    <Compile Include="PeriodoLetivo.cs" />
+    <Compile Include="Pessoa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PessoaRecursoAplicacaoProva.cs" />
+    <Compile Include="PessoaTranstornoAprendizagem.cs" />
+    <Compile Include="PrestacaoContas\AnaliseContaCorrente.cs" />
+    <Compile Include="PrestacaoContas\AnalisePlanilhaOrcamentaria.cs" />
+    <Compile Include="PrestacaoContas\AnaliseRepasse.cs" />
+    <Compile Include="PrestacaoContas\AplicacaoFinanceira.cs" />
+    <Compile Include="PrestacaoContas\AplicacaoFinanceiraComprovanteArquivo.cs" />
+    <Compile Include="PrestacaoContas\ArquivoAae.cs" />
+    <Compile Include="PrestacaoContas\ComprovantePagamentoArquivo.cs" />
+    <Compile Include="PrestacaoContas\ContaCorrente.cs" />
+    <Compile Include="PrestacaoContas\DeclaracaoAae.cs" />
+    <Compile Include="PrestacaoContas\DeclaracaoFiscalArquivo.cs" />
+    <Compile Include="PrestacaoContas\DocumentoNecCredDeb.cs" />
+    <Compile Include="PrestacaoContas\DocumentosFornecedor.cs" />
+    <Compile Include="PrestacaoContas\DocumentosNecessariosFornecedor.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosArquivoXml.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosContaCorrente.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosDespesa.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosEvento.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosEventoArquivo.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosExtratoBancario.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosFormulario1.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosFormulario2.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosFormulario5.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosFormularioFornecedor.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosFornecedor.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosModalidadesEnsino.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosPequenaDespesaServidor.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosReceitasProjetoRecebidas.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosReceitasRecebidas.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosSaldoInicial.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosTesoureiro.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosUnidadeAae.cs" />
+    <Compile Include="PrestacaoContas\DTOs\DadosXmlItem.cs" />
+    <Compile Include="PrestacaoContas\Entidades\AcompanhamentoNota.cs" />
+    <Compile Include="PrestacaoContas\Entidades\AnaliseContaCorrente.cs" />
+    <Compile Include="PrestacaoContas\Entidades\AnalisePlanilhaOrcamentaria.cs" />
+    <Compile Include="PrestacaoContas\Entidades\AnaliseRepasse.cs" />
+    <Compile Include="PrestacaoContas\Entidades\AplicacaoFinanceira.cs" />
+    <Compile Include="PrestacaoContas\Entidades\AplicacaoFinanceiraComprovanteArquivo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ArquivoAae.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ComprovantePagamentoArquivo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ContaCorrente.cs" />
+    <Compile Include="PrestacaoContas\Entidades\DeclaracaoAae.cs" />
+    <Compile Include="PrestacaoContas\Entidades\DeclaracaoFiscalArquivo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\DocumentoNecCredDeb.cs" />
+    <Compile Include="PrestacaoContas\Entidades\DocumentosFornecedor.cs" />
+    <Compile Include="PrestacaoContas\Entidades\DocumentosNecessariosFornecedor.cs" />
+    <Compile Include="PrestacaoContas\Entidades\Evento.cs" />
+    <Compile Include="PrestacaoContas\Entidades\EventoCredito.cs" />
+    <Compile Include="PrestacaoContas\Entidades\EventoHistoricoExclusao.cs" />
+    <Compile Include="PrestacaoContas\Entidades\EventoNotaFiscalArquivo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\EvidenciaArquivo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ExigenciaEvento.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ExigenciaEventoArquivo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ExigenciaExtrato.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ExigenciaExtratoArquivo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ExtratoBancario.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ExtratoBancarioArquivo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\Finalidade.cs" />
+    <Compile Include="PrestacaoContas\Entidades\FonteRecurso.cs" />
+    <Compile Include="PrestacaoContas\Entidades\Fornecedor.cs" />
+    <Compile Include="PrestacaoContas\Entidades\FornecedorAnalise.cs" />
+    <Compile Include="PrestacaoContas\Entidades\FornecedorDocumentoArquivo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\FornecedorProdutoServicoGrupo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\FornecedorRazaoSocial.cs" />
+    <Compile Include="PrestacaoContas\Entidades\FornecedorRepresentanteLegal.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ImportacaoFgv.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ImportacaoRepasse.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ImportacaoSei.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ImportacaoXmlEvento.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ItemPlanilhaOrcamentaria.cs" />
+    <Compile Include="PrestacaoContas\Entidades\LancamentoRepasse.cs" />
+    <Compile Include="PrestacaoContas\Entidades\LogErroImportacao.cs" />
+    <Compile Include="PrestacaoContas\Entidades\LogErroImportacaoRepasse.cs" />
+    <Compile Include="PrestacaoContas\Entidades\MandatoAae.cs" />
+    <Compile Include="PrestacaoContas\Entidades\MotivoExigenciaCredDeb.cs" />
+    <Compile Include="PrestacaoContas\Entidades\MotivoExigenciaEvento.cs" />
+    <Compile Include="PrestacaoContas\Entidades\MotivoImpedimento.cs" />
+    <Compile Include="PrestacaoContas\Entidades\MotivoRepOperacao.cs" />
+    <Compile Include="PrestacaoContas\Entidades\MotivoReprovacaoContaCorrente.cs" />
+    <Compile Include="PrestacaoContas\Entidades\MotivoReprovacaoFornecedor.cs" />
+    <Compile Include="PrestacaoContas\Entidades\MotivoReprovacaoLancamentoRepasse.cs" />
+    <Compile Include="PrestacaoContas\Entidades\MotivoReprovacaoPlanilhaOrcamentaria.cs" />
+    <Compile Include="PrestacaoContas\Entidades\NaturezaDespesa.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ObrigacaoFiscalAae.cs" />
+    <Compile Include="PrestacaoContas\Entidades\Operacao.cs" />
+    <Compile Include="PrestacaoContas\Entidades\OperacaoDocumento.cs" />
+    <Compile Include="PrestacaoContas\Entidades\OperacaoExigencia.cs" />
+    <Compile Include="PrestacaoContas\Entidades\OperacaoExigenciaArquivo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\OrcamentoArquivo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\PainelFinanceiro.cs" />
+    <Compile Include="PrestacaoContas\Entidades\PequenaDespesa.cs" />
+    <Compile Include="PrestacaoContas\Entidades\PequenaDespesaServidor.cs" />
+    <Compile Include="PrestacaoContas\Entidades\PeriodoReferencia.cs" />
+    <Compile Include="PrestacaoContas\Entidades\PeriodoReferenciaExtratoBancario.cs" />
+    <Compile Include="PrestacaoContas\Entidades\PlanilhaOrcamentaria.cs" />
+    <Compile Include="PrestacaoContas\Entidades\PlanoTrabalho.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ProdutoServico.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ProdutoServicoGrupo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ProdutoServicoValorMaximo.cs" />
+    <Compile Include="PrestacaoContas\Entidades\ProgramaTrabalho.cs" />
+    <Compile Include="PrestacaoContas\Entidades\RegiaoFgv.cs" />
+    <Compile Include="PrestacaoContas\Entidades\SaldoInicial.cs" />
+    <Compile Include="PrestacaoContas\Entidades\Tesoureiro.cs" />
+    <Compile Include="PrestacaoContas\Entidades\TipoContratacao.cs" />
+    <Compile Include="PrestacaoContas\Entidades\TipoDespesa.cs" />
+    <Compile Include="PrestacaoContas\Entidades\TipoExigenciaExtrato.cs" />
+    <Compile Include="PrestacaoContas\Entidades\TipoExigenciaOperacao.cs" />
+    <Compile Include="PrestacaoContas\Entidades\TipoProdutoServico.cs" />
+    <Compile Include="PrestacaoContas\Entidades\TipoTransporte.cs" />
+    <Compile Include="PrestacaoContas\Entidades\UnidadeEnsinoImpedida.cs" />
+    <Compile Include="PrestacaoContas\Entidades\UnidadeMedida.cs" />
+    <Compile Include="PrestacaoContas\Evento.cs" />
+    <Compile Include="PrestacaoContas\EventoCredito.cs" />
+    <Compile Include="PrestacaoContas\EventoHistoricoExclusao.cs" />
+    <Compile Include="PrestacaoContas\EventoNotaFiscalArquivo.cs" />
+    <Compile Include="PrestacaoContas\EvidenciaArquivo.cs" />
+    <Compile Include="PrestacaoContas\ExigenciaEvento.cs" />
+    <Compile Include="PrestacaoContas\ExigenciaEventoArquivo.cs" />
+    <Compile Include="PrestacaoContas\ExigenciaExtrato.cs" />
+    <Compile Include="PrestacaoContas\ExigenciaExtratoArquivo.cs" />
+    <Compile Include="PrestacaoContas\ExtratoBancario.cs" />
+    <Compile Include="PrestacaoContas\ExtratoBancarioArquivo.cs" />
+    <Compile Include="PrestacaoContas\Finalidade.cs" />
+    <Compile Include="PrestacaoContas\FonteRecurso.cs" />
+    <Compile Include="PrestacaoContas\FormularioSei.cs" />
+    <Compile Include="PrestacaoContas\Fornecedor.cs" />
+    <Compile Include="PrestacaoContas\FornecedorAnalise.cs" />
+    <Compile Include="PrestacaoContas\FornecedorDocumentoArquivo.cs" />
+    <Compile Include="PrestacaoContas\FornecedorProdutoServicoGrupo.cs" />
+    <Compile Include="PrestacaoContas\FornecedorRazaoSocial.cs" />
+    <Compile Include="PrestacaoContas\FornecedorRepresentanteLegal.cs" />
+    <Compile Include="PrestacaoContas\ImportacaoFgv.cs" />
+    <Compile Include="PrestacaoContas\ImportacaoSei.cs" />
+    <Compile Include="PrestacaoContas\ImportacaoTabelaFgv.cs" />
+    <Compile Include="PrestacaoContas\ImportacaoXmlEvento.cs" />
+    <Compile Include="PrestacaoContas\ImportarProgramacaoOrcamentaria.cs" />
+    <Compile Include="PrestacaoContas\IncluirCreditoeDebito.cs" />
+    <Compile Include="PrestacaoContas\ItemPlanilhaOrcamentaria.cs" />
+    <Compile Include="PrestacaoContas\LancamentoRepasse.cs" />
+    <Compile Include="PrestacaoContas\MandatoAae.cs" />
+    <Compile Include="PrestacaoContas\MotivoExigenciaCredDeb.cs" />
+    <Compile Include="PrestacaoContas\MotivoExigenciaEvento.cs" />
+    <Compile Include="PrestacaoContas\MotivoImpedimento.cs" />
+    <Compile Include="PrestacaoContas\MotivoRepOperacao.cs" />
+    <Compile Include="PrestacaoContas\MotivoReprovacaoContaCorrente.cs" />
+    <Compile Include="PrestacaoContas\MotivoReprovacaoFornecedor.cs" />
+    <Compile Include="PrestacaoContas\MotivoReprovacaoLancamentoRepasse.cs" />
+    <Compile Include="PrestacaoContas\MotivoReprovacaoPlanilhaOrcamentaria.cs" />
+    <Compile Include="PrestacaoContas\NaturezaDespesa.cs" />
+    <Compile Include="PrestacaoContas\ObrigacaoFiscalAae.cs" />
+    <Compile Include="PrestacaoContas\Operacao.cs" />
+    <Compile Include="PrestacaoContas\OperacaoArquivo.cs" />
+    <Compile Include="PrestacaoContas\OperacaoDocumentos.cs" />
+    <Compile Include="PrestacaoContas\OperacaoExclusao.cs" />
+    <Compile Include="PrestacaoContas\OperacaoExigencia.cs" />
+    <Compile Include="PrestacaoContas\OperacaoExigenciaArquivo.cs" />
+    <Compile Include="PrestacaoContas\OrcamentoArquivo.cs" />
+    <Compile Include="PrestacaoContas\PainelFinanceiro.cs" />
+    <Compile Include="PrestacaoContas\PequenaDespesa.cs" />
+    <Compile Include="PrestacaoContas\PequenaDespesaServidor.cs" />
+    <Compile Include="PrestacaoContas\PeriodoReferencia.cs" />
+    <Compile Include="PrestacaoContas\PeriodoReferenciaExtratoBancario.cs" />
+    <Compile Include="PrestacaoContas\PlanilhaOrcamentaria.cs" />
+    <Compile Include="PrestacaoContas\PlanoTrabalho.cs" />
+    <Compile Include="PrestacaoContas\ProdutoServico.cs" />
+    <Compile Include="PrestacaoContas\ProdutoServicoGrupo.cs" />
+    <Compile Include="PrestacaoContas\ProdutoServicoValorMaximo.cs" />
+    <Compile Include="PrestacaoContas\ProgramaTrabalho.cs" />
+    <Compile Include="PrestacaoContas\RegiaoFgv.cs" />
+    <Compile Include="PrestacaoContas\SaldoInicial.cs" />
+    <Compile Include="PrestacaoContas\Tesoureiro.cs" />
+    <Compile Include="PrestacaoContas\TipoContratacao.cs" />
+    <Compile Include="PrestacaoContas\TipoDespesa.cs" />
+    <Compile Include="PrestacaoContas\TipoExigenciaExtrato.cs" />
+    <Compile Include="PrestacaoContas\TipoExigenciaOperacao.cs" />
+    <Compile Include="PrestacaoContas\TipoProdutoServico.cs" />
+    <Compile Include="PrestacaoContas\TipoTransporte.cs" />
+    <Compile Include="PrestacaoContas\UnidadeEnsinoImpedida.cs" />
+    <Compile Include="PrestacaoContas\UnidadeMedida.cs" />
+    <Compile Include="Processos.cs" />
+    <Compile Include="ProcessoSeletivo.cs" />
+    <Compile Include="ProcessoSeletivoAluno\Candidato.cs" />
+    <Compile Include="ProcessoSeletivoAluno\DTOs\ConfirmacaoProcessoSeletivoAluno.cs" />
+    <Compile Include="ProcessoSeletivoAluno\Entidades\Candidato.cs" />
+    <Compile Include="ProcessoSeletivoAluno\Entidades\Inscricao.cs" />
+    <Compile Include="ProcessoSeletivoAluno\Entidades\ProcessoSeletivo_HistoricoImportacao.cs" />
+    <Compile Include="ProcessoSeletivoAluno\Entidades\RecursoAplicacaoProvaCandidato.cs" />
+    <Compile Include="ProcessoSeletivoAluno\Entidades\UnidadeEnsinoCursoTurnoInscricao.cs" />
+    <Compile Include="ProcessoSeletivoAluno\Inscricao.cs" />
+    <Compile Include="ProcessoSeletivoAluno\Inscricao_EnvioMensagem.cs" />
+    <Compile Include="ProcessoSeletivoAluno\ProcessoSeletivoAluno_HistoricoImportacao.cs" />
+    <Compile Include="ProcessoSeletivoAluno\RecursoAplicacaoProvaCandidato.cs" />
+    <Compile Include="ProcessoSeletivoAluno\UnidadeEnsinoCursoTurnoInscricao.cs" />
+    <Compile Include="ProcessoSeletivoAluno\ValidacaoCandidato.cs" />
+    <Compile Include="ProgramaAluno.cs" />
+    <Compile Include="ProgramaSocial.cs" />
+    <Compile Include="ProgramasSociais.cs" />
+    <Compile Include="ProgramasUnidade.cs" />
+    <Compile Include="ProgressaoCursoSerie.cs" />
+    <Compile Include="ProgressaoSerie.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="ProtocoloNota.cs" />
+    <Compile Include="Protocolo\Analise.cs" />
+    <Compile Include="Protocolo\Entidades\Analise.cs" />
+    <Compile Include="Protocolo\Entidades\ProgramaProtocolo.cs" />
+    <Compile Include="Protocolo\Entidades\ProtocoloPrestacao.cs" />
+    <Compile Include="Protocolo\Entidades\SituacaoProtocolo.cs" />
+    <Compile Include="Protocolo\Entidades\TipoProtocolo.cs" />
+    <Compile Include="Protocolo\ProgramaProtocolo.cs" />
+    <Compile Include="Protocolo\ProtocoloPrestacao.cs" />
+    <Compile Include="Protocolo\SituacaoProtocolo.cs" />
+    <Compile Include="Protocolo\TipoProtocolo.cs" />
+    <Compile Include="Prova.cs" />
+    <Compile Include="ProvaAluno.cs" />
+    <Compile Include="ProvaDisciplina.cs" />
+    <Compile Include="ProvaSerie.cs" />
+    <Compile Include="ProvaTurma.cs" />
+    <Compile Include="Query\QueryAgencia.cs" />
+    <Compile Include="Query\QueryAlunoAssociacaoTransporte.cs" />
+    <Compile Include="Query\QueryAlunoCancelamentoRegres.cs" />
+    <Compile Include="Query\QueryAlunoCertificacao.cs" />
+    <Compile Include="Query\QueryAlunoConfirmacaoMatricula.cs" />
+    <Compile Include="Query\QueryAlunoEletiva.cs" />
+    <Compile Include="Query\QueryAlunoRemessaRetornoCartao.cs" />
+    <Compile Include="Query\QueryArmazemLivro.cs" />
+    <Compile Include="Query\QueryBanco.cs" />
+    <Compile Include="Query\QueryBuscarCEP.cs" />
+    <Compile Include="Query\QueryBuscarCEPRioLimitrofes.cs" />
+    <Compile Include="Query\QueryAbsorcaoUnidadeEnsino.cs" />
+    <Compile Include="Query\QueryAbsorcaoUnidadeEnsinoOrigem.cs" />
+    <Compile Include="Query\QueryAgentePatrimonio.cs" />
+    <Compile Include="Query\QueryAlunoConfRenovacao.cs" />
+    <Compile Include="Query\QueryAlunoEnturmadoNecessidadeEspecial.cs" />
+    <Compile Include="Query\QueryAlunoNecessidadeEspecial.cs" />
+    <Compile Include="Query\QueryAlunoReabertura.cs" />
+    <Compile Include="Query\QueryAlunoRemessaCartao.cs" />
+    <Compile Include="Query\QueryAlunoSolicitacaoManual.cs" />
+    <Compile Include="Query\QueryAlunoSolicitacaoServico.cs" />
+    <Compile Include="Query\QueryAlunoTransf.cs" />
+    <Compile Include="Query\QueryAlunoTransfTurma.cs" />
+    <Compile Include="Query\QueryAnalisador.cs" />
+    <Compile Include="Query\QueryBancoProcessoSeletivo.cs" />
+    <Compile Include="Query\QueryCEP.cs" />
+    <Compile Include="Query\LyceumQuery.cs" />
+    <Compile Include="Query\QueryAluno.cs" />
+    <Compile Include="Query\QueryCursoCapacidade.cs" />
+    <Compile Include="Query\QueryDisciplina.cs" />
+    <Compile Include="Query\QueryDisciplinasParaHabilitacao.cs" />
+    <Compile Include="Query\QueryDocente.cs" />
+    <Compile Include="Query\QueryDocenteCad.cs" />
+    <Compile Include="Query\QueryDocenteLotacaoAtiva.cs" />
+    <Compile Include="Query\QueryDocenteQHI.cs" />
+    <Compile Include="Query\QueryDocente_Voluntario.cs" />
+    <Compile Include="Query\QueryInstituicao.cs" />
+    <Compile Include="Query\QueryLivro.cs" />
+    <Compile Include="Query\QueryMatriculaMovimentacao.cs" />
+    <Compile Include="Query\QueryMatriculasDuplicadas.cs" />
+    <Compile Include="Query\QueryMunicipio.cs" />
+    <Compile Include="Query\QueryPessoa.cs" />
+    <Compile Include="Query\QueryPessoaLotacao.cs" />
+    <Compile Include="Query\QueryPessoaLotacaoAutorizadas.cs" />
+    <Compile Include="Query\QueryRecurso.cs" />
+    <Compile Include="Query\QueryRecursoExterno.cs" />
+    <Compile Include="Query\QuerySerie.cs" />
+    <Compile Include="Query\QuerySerieReclassificacao.cs" />
+    <Compile Include="Query\QueryServidor.cs" />
+    <Compile Include="Query\QuerySetor.cs" />
+    <Compile Include="Query\QuerySetorCedente.cs" />
+    <Compile Include="Query\QueryTesoureiro.cs" />
+    <Compile Include="Query\QueryTurmaTransferencia.cs" />
+    <Compile Include="Query\QueryUnidadeEnsinoTurnosEVagas.cs" />
+    <Compile Include="Query\QueryUniEnsino.cs" />
+    <Compile Include="Query\QueryUsuarioExterno.cs" />
+    <Compile Include="Query\QueryUsuarioRedeEmail.cs" />
+    <Compile Include="Query\QueryVoluntarioCad.cs" />
+    <Compile Include="Reclassificacao.cs" />
+    <Compile Include="RecursosHumanos\Acumulacao.cs" />
+    <Compile Include="RecursosHumanos\AgrupamentoCargos.cs" />
+    <Compile Include="RecursosHumanos\AtendimentoOutroEspaco.cs" />
+    <Compile Include="RecursosHumanos\AulasDesalocadas.cs" />
+    <Compile Include="RecursosHumanos\CargaHNaoTrabMes.cs" />
+    <Compile Include="RecursosHumanos\CargaHNaoTrabMesFinalizada.cs" />
+    <Compile Include="RecursosHumanos\ChAgrupamentoCargo.cs" />
+    <Compile Include="RecursosHumanos\ChGlp.cs" />
+    <Compile Include="RecursosHumanos\DocenteCandidato.cs" />
+    <Compile Include="RecursosHumanos\DocenteCandidatoArquivo.cs" />
+    <Compile Include="RecursosHumanos\DocenteCandidatoExperiencia.cs" />
+    <Compile Include="RecursosHumanos\DocenteCandidatoTitulacao.cs" />
+    <Compile Include="RecursosHumanos\DocenteFuncaoGlpTurma.cs" />
+    <Compile Include="RecursosHumanos\DTO\DadosAlocacaoMigracao.cs" />
+    <Compile Include="RecursosHumanos\DTO\DadosCadastraisAluno.cs" />
+    <Compile Include="RecursosHumanos\DTO\DadosInscricaoMigracao.cs" />
+    <Compile Include="RecursosHumanos\DTO\DadosTurmaAlocacao.cs" />
+    <Compile Include="RecursosHumanos\DTO\DocenteCandidatoTitulacao.cs" />
+    <Compile Include="RecursosHumanos\EmailNaoEnviado.cs" />
+    <Compile Include="RecursosHumanos\Entidades\Acumulacao.cs" />
+    <Compile Include="RecursosHumanos\Entidades\AgrupamentoCargos.cs" />
+    <Compile Include="RecursosHumanos\Entidades\AtendimentoOutroEspaco.cs" />
+    <Compile Include="RecursosHumanos\Entidades\AulasDesalocadas.cs" />
+    <Compile Include="RecursosHumanos\Entidades\CargaHNaoTrabMes.cs" />
+    <Compile Include="RecursosHumanos\Entidades\CargaHNaoTrabMesFinalizada.cs" />
+    <Compile Include="RecursosHumanos\Entidades\ChAgrupamentoCargo.cs" />
+    <Compile Include="RecursosHumanos\Entidades\ChGlp.cs" />
+    <Compile Include="RecursosHumanos\Entidades\DocenteCandidato.cs" />
+    <Compile Include="RecursosHumanos\Entidades\DocenteCandidatoArquivo.cs" />
+    <Compile Include="RecursosHumanos\Entidades\DocenteCandidatoExperiencia.cs" />
+    <Compile Include="RecursosHumanos\Entidades\DocenteCandidatoTitulacao.cs" />
+    <Compile Include="RecursosHumanos\Entidades\DocenteFuncaoGlpTurma.cs" />
+    <Compile Include="RecursosHumanos\Entidades\EmailNaoEnviado.cs" />
+    <Compile Include="RecursosHumanos\Entidades\GoogleEducation.cs" />
+    <Compile Include="RecursosHumanos\Entidades\HistoricoAlteracaoAluno.cs" />
+    <Compile Include="RecursosHumanos\Entidades\HistoricoAlteracaoAlunoCampos.cs" />
+    <Compile Include="RecursosHumanos\Entidades\JustificativaFalta.cs" />
+    <Compile Include="RecursosHumanos\Entidades\PeriodoAlteracaoAluno.cs" />
+    <Compile Include="RecursosHumanos\Entidades\PeriodoFrequenciaGLP.cs" />
+    <Compile Include="RecursosHumanos\Entidades\PeriodoLancamentoFreqGLP.cs" />
+    <Compile Include="RecursosHumanos\Entidades\PovoIndigena.cs" />
+    <Compile Include="RecursosHumanos\Entidades\TipoDocumento.cs" />
+    <Compile Include="RecursosHumanos\Entidades\TipoDocumentoConcurso.cs" />
+    <Compile Include="RecursosHumanos\Entidades\TipoUsuarioExterno.cs" />
+    <Compile Include="RecursosHumanos\Entidades\TranstornoAprendizagem.cs" />
+    <Compile Include="RecursosHumanos\Entidades\UsuarioExterno.cs" />
+    <Compile Include="RecursosHumanos\Entidades\PessoaDadosBancarios.cs" />
+    <Compile Include="RecursosHumanos\GoogleEducation.cs" />
+    <Compile Include="RecursosHumanos\HistoricoAlteracaoAluno.cs" />
+    <Compile Include="RecursosHumanos\HistoricoAlteracaoAlunoCampos.cs" />
+    <Compile Include="RecursosHumanos\JustificativaFalta.cs" />
+    <Compile Include="RecursosHumanos\LoginRede.cs" />
+    <Compile Include="RecursosHumanos\NomeSemValidacao.cs" />
+    <Compile Include="RecursosHumanos\PeriodoAlteracaoAluno.cs" />
+    <Compile Include="RecursosHumanos\PeriodoFrequenciaGLP.cs" />
+    <Compile Include="RecursosHumanos\PeriodoLancamentoFreqGLP.cs" />
+    <Compile Include="RecursosHumanos\PessoaDadosBancarios.cs" />
+    <Compile Include="RecursosHumanos\PovoIndigena.cs" />
+    <Compile Include="RecursosHumanos\ProtocoloRelHorasTrabalhadaGlp.cs" />
+    <Compile Include="RecursosHumanos\RegimeContratacao.cs" />
+    <Compile Include="RecursosHumanos\TipoDocumento.cs" />
+    <Compile Include="RecursosHumanos\TipoDocumentoConcurso.cs" />
+    <Compile Include="RecursosHumanos\TipoUsuarioExterno.cs" />
+    <Compile Include="RecursosHumanos\TranstornoAprendizagem.cs" />
+    <Compile Include="RecursosHumanos\UsuarioExterno.cs" />
+    <Compile Include="Regional.cs" />
+    <Compile Include="RelacaoPessoa.cs" />
+    <Compile Include="Relatorio.cs" />
+    <Compile Include="RelatorioAvaliacao.cs" />
+    <Compile Include="Relatorios\TechneReportCredentials.cs" />
+    <Compile Include="RenovacaoMatricula\Entidades\LogImpressaoFichaRenovacao.cs" />
+    <Compile Include="RenovacaoMatricula\Entidades\Renovacao.cs" />
+    <Compile Include="RenovacaoMatricula\Entidades\RenovacaoConfirmacaoMatricula.cs" />
+    <Compile Include="RenovacaoMatricula\Entidades\UnidadeEnsinoRenovacaoAutomatica.cs" />
+    <Compile Include="RenovacaoMatricula\LogImpressaoFichaRenovacao.cs" />
+    <Compile Include="RenovacaoMatricula\Renovacao.cs" />
+    <Compile Include="RenovacaoMatricula\RenovacaoConfirmacaoMatricula.cs" />
+    <Compile Include="RenovacaoMatricula\UnidadeEnsinoRenovacaoAutomatica.cs" />
+    <Compile Include="Reposicao\Entidades\PeriodoLancamento.cs" />
+    <Compile Include="Reposicao\Entidades\Reposicao.cs" />
+    <Compile Include="Reposicao\PeriodoLancamento.cs" />
+    <Compile Include="Reposicao\Reposicao.cs" />
+    <Compile Include="RestricaoIdadeSerie.cs" />
+    <Compile Include="RetError.cs" />
+    <Compile Include="RNBase.cs" />
+    <Compile Include="Senha.cs" />
+    <Compile Include="Serie.cs" />
+    <Compile Include="SerieAbsorvida.cs" />
+    <Compile Include="Servico.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServicoAluno.cs" />
+    <Compile Include="Servicos\PalavrasProibidasEmNomes.cs" />
+    <Compile Include="SessaoUsuario.cs" />
+    <Compile Include="Setores.cs" />
+    <Compile Include="Sistema.cs" />
+    <Compile Include="SituacaoFinalAluno.cs" />
+    <Compile Include="SolicitacaoAlteracaoNota.cs" />
+    <Compile Include="SolicitacaoHabilitacaoDocente.cs" />
+    <Compile Include="SubperiodoLetivo.cs" />
+    <Compile Include="TabelaGeral.cs" />
+    <Compile Include="TermoCompromissoDocente.cs" />
+    <Compile Include="TermoCompromissoGestao.cs" />
+    <Compile Include="TipoBeneficio.cs" />
+    <Compile Include="TipoCursoCapacitacao.cs" />
+    <Compile Include="TipoDependencia.cs" />
+    <Compile Include="TipoDependenciaUnidadeFisica.cs" />
+    <Compile Include="TipoFuncao.cs" />
+    <Compile Include="TipoMaterial.cs" />
+    <Compile Include="TipoTransporte.cs" />
+    <Compile Include="Titulacao.cs" />
+    <Compile Include="Transferencia.cs" />
+    <Compile Include="TransferenciaEJA.cs" />
+    <Compile Include="TransferenciaTurma.cs" />
+    <Compile Include="TransporteUnid.cs" />
+    <Compile Include="Transporte\Condutor.cs" />
+    <Compile Include="Transporte\CondutorBloqueio.cs" />
+    <Compile Include="Transporte\Entidades\Condutor.cs" />
+    <Compile Include="Transporte\Entidades\CondutorBloqueio.cs" />
+    <Compile Include="Transporte\Entidades\MotivoBloqueio.cs" />
+    <Compile Include="Transporte\Entidades\Pagamento.cs" />
+    <Compile Include="Transporte\Entidades\PagamentoRota.cs" />
+    <Compile Include="Transporte\Entidades\PontoEmbarque.cs" />
+    <Compile Include="Transporte\Entidades\Prestador.cs" />
+    <Compile Include="Transporte\Entidades\PrestadorBloqueio.cs" />
+    <Compile Include="Transporte\Entidades\PrestadorVigencia.cs" />
+    <Compile Include="Transporte\Entidades\Rota.cs" />
+    <Compile Include="Transporte\Entidades\RotaAluno.cs" />
+    <Compile Include="Transporte\Entidades\RotaTrajeto.cs" />
+    <Compile Include="Transporte\Entidades\SituacaoPagamento.cs" />
+    <Compile Include="Transporte\Entidades\TipoCalculoPagamento.cs" />
+    <Compile Include="Transporte\Entidades\TipoContratacao.cs" />
+    <Compile Include="Transporte\Entidades\TipoVeiculo.cs" />
+    <Compile Include="Transporte\Entidades\Veiculo.cs" />
+    <Compile Include="Transporte\Entidades\VeiculoBloqueio.cs" />
+    <Compile Include="Transporte\MotivoBloqueio.cs" />
+    <Compile Include="Transporte\Pagamento.cs" />
+    <Compile Include="Transporte\PagamentoRota.cs" />
+    <Compile Include="Transporte\PontoEmbarque.cs" />
+    <Compile Include="Transporte\Prestador.cs" />
+    <Compile Include="Transporte\PrestadorBloqueio.cs" />
+    <Compile Include="Transporte\PrestadorVigencia.cs" />
+    <Compile Include="Transporte\Rota.cs" />
+    <Compile Include="Transporte\RotaAluno.cs" />
+    <Compile Include="Transporte\RotaTrajeto.cs" />
+    <Compile Include="Transporte\SituacaoPagamento.cs" />
+    <Compile Include="Transporte\TipoCalculoPagamento.cs" />
+    <Compile Include="Transporte\TipoContratacao.cs" />
+    <Compile Include="Transporte\TipoVeiculo.cs" />
+    <Compile Include="Transporte\Veiculo.cs" />
+    <Compile Include="Transporte\VeiculoBloqueio.cs" />
+    <Compile Include="Turma.cs" />
+    <Compile Include="TurmaProgParcial.cs" />
+    <Compile Include="TurmaProjeto.cs" />
+    <Compile Include="Turmas\AlunosAusentes.cs" />
+    <Compile Include="Turmas\CardapioEletiva.cs" />
+    <Compile Include="Turmas\CardapioEletivaDisciplina.cs" />
+    <Compile Include="Turmas\DiaSemAula.cs" />
+    <Compile Include="Turmas\DiaSemAulaTempos.cs" />
+    <Compile Include="Turmas\DTOs\DadosAluno.cs" />
+    <Compile Include="Turmas\DTOs\DadosAlunoDia.cs" />
+    <Compile Include="Turmas\DTOs\DadosCardapio.cs" />
+    <Compile Include="Turmas\DTOs\DadosTurma.cs" />
+    <Compile Include="Turmas\DTOs\ResultadoConsecutivos.cs" />
+    <Compile Include="Turmas\Entidades\AlunosAusentes.cs" />
+    <Compile Include="Turmas\Entidades\CardapioEletiva.cs" />
+    <Compile Include="Turmas\Entidades\CardapioEletivaDisciplina.cs" />
+    <Compile Include="Turmas\Entidades\DiaSemAula.cs" />
+    <Compile Include="Turmas\Entidades\DiaSemAulaTempos.cs" />
+    <Compile Include="Turmas\Entidades\FormaContato.cs" />
+    <Compile Include="Turmas\Entidades\FrequenciaAluno.cs" />
+    <Compile Include="Turmas\Entidades\FrequenciaDiaria.cs" />
+    <Compile Include="Turmas\Entidades\FrequenciaDiariaAlunoFalta.cs" />
+    <Compile Include="Turmas\Entidades\FrequenciaPlanoDeAula.cs" />
+    <Compile Include="Turmas\Entidades\FrequenciaTurma.cs" />
+    <Compile Include="Turmas\Entidades\HistoricoSuspensao.cs" />
+    <Compile Include="Turmas\Entidades\MedidaConselhoTutelar.cs" />
+    <Compile Include="Turmas\Entidades\MedidaMPRJ.cs" />
+    <Compile Include="Turmas\Entidades\MotivoDiaSemAula.cs" />
+    <Compile Include="Turmas\Entidades\Notificacao.cs" />
+    <Compile Include="Turmas\Entidades\OficioConselho.cs" />
+    <Compile Include="Turmas\Entidades\OficioMPRJ.cs" />
+    <Compile Include="Turmas\Entidades\PeriodoFrequenciaAluno.cs" />
+    <Compile Include="Turmas\Entidades\SituacaoFamiliar.cs" />
+    <Compile Include="Turmas\Entidades\TipoEncaminhamento.cs" />
+    <Compile Include="Turmas\FormaContato.cs" />
+    <Compile Include="Turmas\FrequenciaAluno.cs" />
+    <Compile Include="Turmas\FrequenciaDiaria.cs" />
+    <Compile Include="Turmas\FrequenciaDiariaAlunoFalta.cs" />
+    <Compile Include="Turmas\FrequenciaPlanoDeAula.cs" />
+    <Compile Include="Turmas\FrequenciaTurma.cs" />
+    <Compile Include="Turmas\HistoricoSuspensao.cs" />
+    <Compile Include="Turmas\MedidaConselhoTutelar.cs" />
+    <Compile Include="Turmas\MedidaMPRJ.cs" />
+    <Compile Include="Turmas\MotivoDiaSemAula.cs" />
+    <Compile Include="Turmas\Notificacao.cs" />
+    <Compile Include="Turmas\OficioConselho.cs" />
+    <Compile Include="Turmas\OficioMPRJ.cs" />
+    <Compile Include="Turmas\PeriodoFrequenciaAluno.cs" />
+    <Compile Include="Turmas\SituacaoFamiliar.cs" />
+    <Compile Include="Turmas\TipoEncaminhamento.cs" />
+    <Compile Include="Turno.cs" />
+    <Compile Include="TurnosVagas\ConfirmacaoOferta.cs" />
+    <Compile Include="TurnosVagas\ConfirmacaoOfertaVagas.cs" />
+    <Compile Include="TurnosVagas\Entidades\ConfirmacaoOferta.cs" />
+    <Compile Include="TurnosVagas\Entidades\ConfirmacaoOfertaVagas.cs" />
+    <Compile Include="TurnosVagas\Entidades\HistoricoJustificativa.cs" />
+    <Compile Include="TurnosVagas\Entidades\HistoricoTurno.cs" />
+    <Compile Include="TurnosVagas\Entidades\HistoricoTurnoVaga.cs" />
+    <Compile Include="TurnosVagas\Entidades\HistoricoVaga.cs" />
+    <Compile Include="TurnosVagas\Entidades\ProgressaoSerie_UnidadeEnsino.cs" />
+    <Compile Include="TurnosVagas\Entidades\ResultadoAnalise.cs" />
+    <Compile Include="TurnosVagas\Entidades\SerieEntrada.cs" />
+    <Compile Include="TurnosVagas\Entidades\TipoHistorico.cs" />
+    <Compile Include="TurnosVagas\HistoricoJustificativa.cs" />
+    <Compile Include="TurnosVagas\HistoricoSalaAula.cs" />
+    <Compile Include="TurnosVagas\HistoricoTurno.cs" />
+    <Compile Include="TurnosVagas\HistoricoTurnoVaga.cs" />
+    <Compile Include="TurnosVagas\HistoricoVaga.cs" />
+    <Compile Include="TurnosVagas\ProgressaoSerie_UnidadeEnsino.cs" />
+    <Compile Include="TurnosVagas\ResultadoAnalise.cs" />
+    <Compile Include="TurnosVagas\SerieEntrada.cs" />
+    <Compile Include="TurnosVagas\TipoHistorico.cs" />
+    <Compile Include="UnidadeEnsino.cs" />
+    <Compile Include="UnidadeEnsinoCompartilhada\Aluno_UnidadeEnsinoCompartilhada.cs" />
+    <Compile Include="UnidadeEnsinoCompartilhada\Entidades\Aluno_UnidadeEnsinoCompartilhada.cs" />
+    <Compile Include="UnidadeEnsinoCursos.cs" />
+    <Compile Include="UnidadeEnsinoSituacao.cs" />
+    <Compile Include="UnidadeFisica.cs" />
+    <Compile Include="UnidadeFisicaConcessionaria.cs" />
+    <Compile Include="UnidadeFisicaEdificacao.cs" />
+    <Compile Include="UnidadesAssociadas.cs" />
+    <Compile Include="UserDefaults.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Usuarios.cs" />
+    <Compile Include="UsuarioUnidadeFis.cs" />
+    <Compile Include="Util\Auditoria.cs" />
+    <Compile Include="Util\Cache.cs" />
+    <Compile Include="Util\Download.cs" />
+    <Compile Include="Util\Email.cs" />
+    <Compile Include="Util\EmailApi.cs" />
+    <Compile Include="Util\ExportaCsv.cs" />
+    <Compile Include="Util\Imagem.cs" />
+    <Compile Include="Util\ExportaExcel.cs" />
+    <Compile Include="Util\ExportaPdf.cs" />
+    <Compile Include="Util\ImportacaoArquivo\ImportaArquivoCsv.cs" />
+    <Compile Include="Util\ImportacaoArquivo\ImportaAtributoArquivo.cs" />
+    <Compile Include="Util\ImportacaoArquivo\ImportaAttributoCampo.cs" />
+    <Compile Include="Util\ImportacaoArquivo\ReflectionHelper.cs" />
+    <Compile Include="Util\Log.cs" />
+    <Compile Include="Util\PDFSigner.cs" />
+    <Compile Include="Util\Utils.cs" />
+    <Compile Include="Util\ValidacaoDados.cs" />
+    <Compile Include="Util\ZipFileStream.cs" />
+    <Compile Include="Validacao.cs" />
+    <Compile Include="ValidacaoTipoDependencia.cs" />
+    <Compile Include="Verbas.cs" />
+    <Compile Include="Versao.cs" />
+    <Compile Include="VinculoLy.cs" />
+    <Compile Include="VinculoTce.cs" />
+    <Compile Include="Web References\ws_ConsolidaTurnosDoMatriculadoFacil\Reference.cs" />
+    <Compile Include="Web References\ws_SolicitaCartaoSEPI\Reference.cs">
+      <DependentUpon>Reference.map</DependentUpon>
+      <SubType>code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ws_ConsolidaTurnosDoMatriculadoFacil\Reference.map" />
+    <None Include="Web References\ws_ConsolidaTurnosDoMatriculadoFacil\ServicoIntegracaoSisMati.wsdl" />
+    <None Include="Web References\ws_SolicitaCartaoSEPI\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ws_SolicitaCartaoSEPI\SolicitaCartaoSEPI.disco" />
+    <None Include="Web References\ws_SolicitaCartaoSEPI\SolicitaCartaoSEPI.wsdl" />
+    <EmbeddedResource Include="Custom\Ly_pessoa.resx">
+      <DependentUpon>Ly_pessoa.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <WebReferenceUrl Include="http://172.16.70.129:92/SolicitaCartaoSEPI.asmx">
+      <RelPath>Web References\ws_SolicitaCartaoSEPI\</RelPath>
+      <UrlBehavior>Static</UrlBehavior>
+    </WebReferenceUrl>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web References\ws_ConsolidaTurnosDoMatriculadoFacil\ServicoIntegracaoSisMati.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CartaoEstudante\Rules\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>xcopy /y "$(ProjectDir)..\..\..\Componentes\log4net.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)..\..\..\Componentes\PostSharp-2.1.5.1\Reference Assemblies\.NET Framework 2.0\PostSharp.dll" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

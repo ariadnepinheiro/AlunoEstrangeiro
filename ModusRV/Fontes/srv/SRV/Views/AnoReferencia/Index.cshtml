@@ -1,0 +1,41 @@
+﻿@model IList<SRV.Models.Domain.AnoReferencia>
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(@Role.IsGranted("Administrador"), "Create", null, null, "btNovo")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+
+        <br/>
+
+        @if (Model != null)
+        {
+            @Html.Grid(Model).Columns(column =>
+            {
+                if (@Role.IsGranted("Administrador"))
+                {
+                    column.For(c => Html.ActionLink(" ", "Edit", new { id = @c.IdAnoReferencia }, new { @class = "icoLinkOpen" })).Named("Abrir").Attributes(width => "35px", align => "center").HeaderAttributes(width => "35px", align => "center").Encode(false);
+                    column.For(c => Html.ActionLink(" ", "", null, new { href = "#", @class = "icoLinkDelete", onclick = "deleteItem(this, '" + @Url.Action("Delete", "AnoReferencia") + "', " + @c.IdAnoReferencia + ")" })).Named("Excluir").Attributes(width => "42px", align => "center").HeaderAttributes(width => "42px", align => "center").Encode(false);
+                }
+
+                column.For(c => c.IdAnoReferencia).Named("Ano").Attributes(width => "300px", align => "right").HeaderAttributes(width => "300px");
+                column.For(c => c.DtInicioPeriodoLetivo).Named("Início do Ano Letivo").Format("{0:dd/MM/yyyy}").Attributes(width => "50%").HeaderAttributes(width => "50%");
+                column.For(c => c.DtFimPeriodoLetivo).Named("Fim do Ano Letivo").Format("{0:dd/MM/yyyy}").Attributes(width => "50%").HeaderAttributes(width => "50%");
+            }).Empty("Nenhum registro encontrado")
+
+        }
+    </div>                       
+}

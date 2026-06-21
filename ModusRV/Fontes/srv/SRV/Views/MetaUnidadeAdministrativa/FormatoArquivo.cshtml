@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="boxContent">
+
+    <p>As colunas do arquivo de importação devem ser obrigatoriamente separadas por ponto-e-vírgula.</p>
+
+    <p>Os campos decimais devem utilizar a vírgula (,) como separador.</p>
+
+    <table class="grid">
+        
+        @* Cabeçalho *@
+        <thead>
+            <tr>
+                <th width="50px">Coluna</th>
+                <th width="200px">Campo</th>
+                <th width="100%">Descrição</th>
+                <th width="120px">Tamanho Máximo</th> 
+            </tr>
+        </thead>
+
+        @* Corpo *@
+        <tbody>
+            <tr class="gridrow">        
+                <td width="50px">1</td>
+                <td width="200px">COD_INDICADOR</td>
+                <td width="100%">Código do Indicador</td>
+                <td width="120px">9</td>
+            </tr>
+            
+            <tr class="gridrow_alternate">        
+                <td width="50px">2</td>
+                <td width="200px">COD_CENSO</td>
+                <td width="100%">Código do Censo</td>
+                <td width="120px">8</td>
+            </tr>
+
+            <tr class="gridrow">
+                <td width="50px">3</td>
+                <td width="200px">COD_MODALIDADE</td>
+                <td width="100%">Código da Modalidade</td>
+                <td width="120px">20</td>
+            </tr>
+
+            <tr class="gridrow_alternate">
+                <td width="50px">4</td>
+                <td width="200px">COD_NIVEL_ENSINO</td>
+                <td width="100%">Código do Nível de Ensino</td>
+                <td width="120px">50</td>
+            </tr>
+
+            <tr class="gridrow">        
+                <td width="50px">5</td>
+                <td width="200px">NM_VALOR_META (Opcional)</td>
+                <td width="100%">Valor da Meta</td>
+                <td width="120px">5,2</td>
+            </tr>
+        </tbody>
+    </table>      
+</div>

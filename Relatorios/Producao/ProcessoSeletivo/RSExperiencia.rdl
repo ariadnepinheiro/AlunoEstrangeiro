@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="tb_experiencia_dentro_seeduc">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>5.3975cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>5.3975cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>5.3975cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="EXPERIENCIA">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!EXPERIENCIA.Value</Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value> - </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!PONTUACAO.Value</Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value> pt</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>EXPERIENCIA</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Group1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!CANDIDATO.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!CANDIDATO.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixMembers>
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>=System.String.IsNullOrEmpty(First(Fields!EXPERIENCIA.Value, "ds_experiencia_dentro_seeduc"))</Hidden>
+                  </Visibility>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>ds_experiencia</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!ORIGEM.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>S</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
+        <Top>0.61695cm</Top>
+        <Left>0.31753cm</Left>
+        <Height>0.6cm</Height>
+        <Width>16.1925cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Tablix Name="tb_experiencia_fora_seeduc">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>5.3975cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>5.3975cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>5.3975cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="EXPERIENCIA2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!EXPERIENCIA.Value</Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value> - </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!PONTUACAO.Value</Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value> pt</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>EXPERIENCIA</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Group2">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!CANDIDATO.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!CANDIDATO.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixMembers>
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>=System.String.IsNullOrEmpty(First(Fields!EXPERIENCIA.Value, "ds_experiencia_fora_seeduc"))</Hidden>
+                  </Visibility>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>ds_experiencia</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!ORIGEM.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>N</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
+        <Top>1.74639cm</Top>
+        <Left>0.31753cm</Left>
+        <Height>0.6cm</Height>
+        <Width>16.1925cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Experiências fora da SEE-RJ: </Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=iif(System.String.IsNullOrEmpty(First(Fields!EXPERIENCIA.Value, "ds_experiencia_fora_seeduc")), "Sem Experiência - 0 pt", "")</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>1.2875cm</Top>
+        <Left>0.00003cm</Left>
+        <Height>0.45889cm</Height>
+        <Width>16.51003cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox8">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Experiências na SEE-RJ: </Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=iif(System.String.IsNullOrEmpty(First(Fields!EXPERIENCIA.Value, "ds_experiencia_dentro_seeduc")), "Sem Experiência - 0 pt", "")</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Height>0.6cm</Height>
+        <Width>16.51003cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>0.92378in</Height>
+    <Style />
+  </Body>
+  <Width>7.48426in</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DS_Experiencia">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=10.11.69.197;Initial Catalog=LYCEUM</ConnectString>
+      </ConnectionProperties>
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <rd:DataSourceID>12d689f3-ae03-4615-8454-e069e413beaf</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="ds_experiencia">
+      <Query>
+        <DataSourceName>DS_Experiencia</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@P_CONCURSO">
+            <Value>=Parameters!P_CONCURSO.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@P_CANDIDATO">
+            <Value>=Parameters!P_CANDIDATO.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select CD.CANDIDATO AS CANDIDATO, COE.EXPERIENCIA, CODE.PONTUACAO AS PONTUACAO, COE.ORIGEM
+from  LY_CONCURSO_DOC_EXPERIENCIA code  
+inner join LY_CANDIDATO_DOC_EXPERIENCIAS cade on code.CONCURSO = cade.CONCURSO 
+inner join LY_CONCURSO_EXPERIENCIA coe on coe.EXPERIENCIA = code.EXPERIENCIA and code.EXPERIENCIA = cade.EXPERIENCIA 
+INNER JOIN LY_CANDIDATO_DOCENTE CD ON CD.CANDIDATO = cade.CANDIDATO AND CD.CONCURSO = cade.CONCURSO 
+WHERE CD.CONCURSO = @P_CONCURSO 
+AND CD.CANDIDATO = @P_CANDIDATO 
+ORDER BY CD.CANDIDATO, COE.ORIGEM</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="CANDIDATO">
+          <DataField>CANDIDATO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="EXPERIENCIA">
+          <DataField>EXPERIENCIA</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="PONTUACAO">
+          <DataField>PONTUACAO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="ORIGEM">
+          <DataField>ORIGEM</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ds_experiencia_dentro_seeduc">
+      <Query>
+        <DataSourceName>DS_Experiencia</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@P_CONCURSO">
+            <Value>=Parameters!P_CONCURSO.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@P_CANDIDATO">
+            <Value>=Parameters!P_CANDIDATO.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select CD.CANDIDATO AS CANDIDATO, COE.EXPERIENCIA, CODE.PONTUACAO AS PONTUACAO, COE.ORIGEM
+from  LY_CONCURSO_DOC_EXPERIENCIA code  
+inner join LY_CANDIDATO_DOC_EXPERIENCIAS cade on code.CONCURSO = cade.CONCURSO 
+inner join LY_CONCURSO_EXPERIENCIA coe on coe.EXPERIENCIA = code.EXPERIENCIA and code.EXPERIENCIA = cade.EXPERIENCIA 
+INNER JOIN LY_CANDIDATO_DOCENTE CD ON CD.CANDIDATO = cade.CANDIDATO AND CD.CONCURSO = cade.CONCURSO
+WHERE CD.CONCURSO = @P_CONCURSO
+AND CD.CANDIDATO = @P_CANDIDATO 
+AND COE.ORIGEM = 'S' 
+ORDER BY CD.CANDIDATO, COE.ORIGEM</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="CANDIDATO">
+          <DataField>CANDIDATO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="EXPERIENCIA">
+          <DataField>EXPERIENCIA</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="PONTUACAO">
+          <DataField>PONTUACAO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="ORIGEM">
+          <DataField>ORIGEM</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ds_experiencia_fora_seeduc">
+      <Query>
+        <DataSourceName>DS_Experiencia</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@P_CONCURSO">
+            <Value>=Parameters!P_CONCURSO.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@P_CANDIDATO">
+            <Value>=Parameters!P_CANDIDATO.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select CD.CANDIDATO AS CANDIDATO, COE.EXPERIENCIA, CODE.PONTUACAO AS PONTUACAO, COE.ORIGEM
+from  LY_CONCURSO_DOC_EXPERIENCIA code  
+inner join LY_CANDIDATO_DOC_EXPERIENCIAS cade on code.CONCURSO = cade.CONCURSO 
+inner join LY_CONCURSO_EXPERIENCIA coe on coe.EXPERIENCIA = code.EXPERIENCIA and code.EXPERIENCIA = cade.EXPERIENCIA 
+INNER JOIN LY_CANDIDATO_DOCENTE CD ON CD.CANDIDATO = cade.CANDIDATO AND CD.CONCURSO = cade.CONCURSO 
+WHERE CD.CONCURSO = @P_CONCURSO 
+AND CD.CANDIDATO = @P_CANDIDATO 
+AND COE.ORIGEM = 'N' 
+ORDER BY CD.CANDIDATO, COE.ORIGEM</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="CANDIDATO">
+          <DataField>CANDIDATO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="EXPERIENCIA">
+          <DataField>EXPERIENCIA</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="PONTUACAO">
+          <DataField>PONTUACAO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="ORIGEM">
+          <DataField>ORIGEM</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="P_CONCURSO">
+      <DataType>String</DataType>
+      <Prompt>P_CONCURSO</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="P_CANDIDATO">
+      <DataType>String</DataType>
+      <Prompt>P CANDIDATO</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="usuario">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>usuario</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>2b9610ae-0930-4d58-9fe3-c32f9fdc0345</rd:ReportID>
+</Report>

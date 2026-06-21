@@ -1,0 +1,202 @@
+﻿.logo-impressao 
+{
+    border-width:0px;
+}
+
+.topo-padrao
+{
+    padding-top: 15px;
+}
+
+.mensagem-inicial 
+    {
+        margin: auto;    
+        color: Red;
+        width: 600px;
+    }
+
+.tabela-padrao 
+{
+	width: 600px;
+	margin:auto;	
+}
+
+.tabela-padrao table 
+{
+	width: 600px;	
+}
+
+.tabela-padrao table thead tr:first-child
+{
+	font-weight: bold;
+	font-family: Calibri;
+	font-size: 12pt;
+	background-color: #6495ed;
+	text-align: center;
+}
+
+.tabela-padrao table thead tr:first-child td 
+{
+    color: White;
+}
+
+.tabela-padrao table tbody td:first-child 
+{
+    font-weight: bold;
+    width: 250px;
+}
+
+@media screen 
+{
+    .cabecalho-impressao { display: none; }
+    .div-assinatura 
+    {
+        display: none;
+    }
+    
+    .div-dados-impressao 
+    {
+        display: none;
+    }
+    
+    .div-bt-imprimir 
+    {
+        display: block;
+    }
+
+    .div-dados-impressao  
+    {
+        display: none;
+        text-align:right;
+    }
+    
+    .lbl-data-hora-impressao 
+    {
+        display: none;
+        text-align: right;
+    }
+}
+
+@media print 
+{
+    /* DESABILITANDO ITENS DO CABEÇALHO PADRÃO */
+    .top_inf { display: none; }
+    .cabecalho { display: none; }
+    .top { display: none; }
+    .rodape { display: none; }
+    
+    .cabecalho-impressao { display: block; }
+
+    .mensagem-inicial 
+    {
+        margin: 0;
+        color: Red;
+        width: 600px;
+    }
+    
+    .div-assinatura 
+    {
+        display: block;
+        text-align: center;
+        padding-top: 50px;
+    }
+    
+    hr
+    {
+        width: 300px;
+    }
+
+    .lbl-assinatura
+    {
+        width: 300px;
+        text-align: center;
+    }
+
+    .div-bt-imprimir 
+    {
+        display: none;
+    }
+    
+    .div-dados-impressao  
+    {
+        display: block;
+        text-align: right;
+    }
+    
+    .lbl-data-hora-impressao 
+    {
+        display: block;
+        text-align: right;
+        width: 300px;
+    }
+    
+    .topo-padrao
+    {
+        page-break-inside: avoid;
+        -webkit-region-break-inside: avoid;
+    }
+}
+
+.titulo-tabela 
+{
+    font-weight: bold;
+    font-size: 14px;
+    color: #2b6ab3
+}
+
+.tabela-dados-docente 
+{
+    width: 600px !important;
+}
+
+.campo-email-titulo 
+{
+    width: 50px !important;
+}
+
+.campo-email-valor 
+{
+    width: 550px !important;
+}
+
+.tabela-turmas 
+{
+    width: 300px !important;
+}
+
+.campo-unidadeescolar-titulo
+{
+    width: 150px !important;
+}
+
+.campo-turma-titulo 
+{
+    width: 150px !important;
+}
+
+.campo-unidadeescolar-valor
+{
+    width: 150px !important;
+    font-weight: normal !important;
+}
+
+.campo-turma-valor 
+{
+    width: 150px !important;
+}
+
+.tabela-ultimosacessos 
+{
+    width: 150px !important;
+}
+
+.campo-datalogin-titulo 
+{
+    width: 150px !important;
+}
+
+.campo-datalogin-valor
+{
+    width: 150px !important;
+    font-weight: normal !important;
+}

@@ -1,0 +1,276 @@
+﻿@model SRV.Models.DTO.CadastroUsuario
+@using SRV.Common.Extension
+@using SRV.Models.Domain
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+    @Html.ToolbarItemLink(true, "Create", null, null, "btNovo");
+    @Html.ToolbarItemSubmit(true, "btSalvar");
+    @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(m => m.PerfilAtual)
+
+        <table class="tableForm">
+            @if (Model.Usuario.Id != null)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.Id)
+                    </td>
+                    <td>@Html.DisplayTextFor(m => m.Usuario.Id)<br />
+                        @Html.HiddenFor(m => m.Usuario.Id)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.Login)
+                    </td>
+                    <td>
+                        @Html.DisplayTextFor(m => m.Usuario.Login)<br />
+                        @Html.HiddenFor(m => m.Usuario.Login)
+                    </td>
+                </tr>
+                if (Model.PerfilAtual == Perfil.Administrador || Model.PerfilAtual == Perfil.Secretaria)
+                {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.Nome)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Usuario.Nome, new { style = "width: 400px", maxlength = "70" })<br />
+                        @Html.ValidationMessageFor(m => m.Usuario.Nome)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.EmailUsuario)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Usuario.EmailUsuario, new { style = "width: 400px; text-transform: none", maxlength = "50" })<br />
+                        @Html.ValidationMessageFor(m => m.Usuario.EmailUsuario)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.CPF)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Usuario.CPF, new { id = "Cpf", style = "width: 100px" })<br />
+                        @Html.ValidationMessageFor(m => m.Usuario.CPF)
+                    </td>
+                </tr>
+                }
+                else
+                {                    
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayTextFor(m => m.Usuario.Nome)<br />
+                        @Html.HiddenFor(m => m.Usuario.Nome)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.EmailUsuario)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Usuario.EmailUsuario, new { style = "width: 400px; text-transform: none", maxlength = "50" })<br />
+                        @Html.ValidationMessageFor(m => m.Usuario.EmailUsuario)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.CPF)
+                    </td>
+                    <td>
+                        @Html.DisplayTextFor(m => m.Usuario.CPF)<br />
+                        @Html.HiddenFor(m => m.Usuario.CPF)
+                    </td>
+                </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.Login)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Usuario.Login, new { style = "width: 400px", maxlength = "50" })<br />
+                        @Html.ValidationMessageFor(m => m.Usuario.Login)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.Nome)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Usuario.Nome, new { style = "width: 400px", maxlength = "70" })<br />
+                        @Html.ValidationMessageFor(m => m.Usuario.Nome)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.EmailUsuario)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Usuario.EmailUsuario, new { style = "width: 400px; text-transform: none", maxlength = "50" })<br />
+                        @Html.ValidationMessageFor(m => m.Usuario.EmailUsuario)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario.CPF)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Usuario.CPF, new { id = "Cpf", style = "width: 100px" })<br />
+                        @Html.ValidationMessageFor(m => m.Usuario.CPF)
+                    </td>
+                </tr>                
+            }
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.Perfis)
+                </td>
+                <td>
+                    @Html.DropDownListFor(m => m.Usuario.Perfil, (IEnumerable<SelectListItem>)Model.Perfis ?? new List<SelectListItem>(), "", new { id = "IdPerfil", style = "width:250px;" })<br />
+                    @Html.ValidationMessageFor(m => m.Usuario.Perfil)
+                </td>
+            </tr>
+            <tr id="trRegional">
+                <td class="labelRight">@Html.LabelFor(m => m.Usuario.IdRegional)
+                </td>
+                <td>
+                    @Html.DropDownListFor(m => m.Usuario.IdRegional, (IEnumerable<SelectListItem>)Model.Regionais ?? new List<SelectListItem>(), "", new { style = "width:405px;" })
+                    @Html.ValidationMessageFor(m => m.Usuario.IdRegional)
+                </td>
+            </tr>
+            <tr id="trEscola">
+                <td class="labelRight">@Html.LabelFor(m => m.Usuario.IdUnidadeAdministrativa)
+                </td>
+                <td>
+                    @Html.DropDownListFor(m => m.Usuario.IdUnidadeAdministrativa, (IEnumerable<SelectListItem>)Model.UnidadesAdministrativas ?? new List<SelectListItem>(), "", new { style = "width:405px;" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="labelLeft">
+                    @Html.CheckBoxFor(m => m.Usuario.Ativo) @Html.LabelFor(m => m.Usuario.Ativo)
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+<script type="text/javascript">
+
+    jQuery(function ($) {
+        if ($('#IdPerfil').val() == 'Regional') {
+            $("#trRegional").show();
+            $("#trEscola").hide();
+        }
+        else if ($('#IdPerfil').val() == 'Escola') {
+            $("#trRegional").show();
+            $("#trEscola").show();
+        }
+        else {
+            $("#trRegional").hide();
+            $("#trEscola").hide();
+            $("#Usuario_IdRegional").html("");
+            $("#Usuario_IdUnidadeAdministrativa").html("");
+        }
+        if ($('#Cpf').val() != "")
+            $("#Cpf").mask("999.999.999-99");
+        else
+            $("#Cpf").mask("??99999999999", { placeholder: "" });
+
+        $("#Cpf").focusin(function () {
+            $('#Cpf').unmask().mask("??99999999999", { placeholder: "" });
+            $('#Cpf').focus();
+        });
+
+        $("#Cpf").focusout(function () {
+
+            if ($('#Cpf').val() != "") {
+                if ($("#Cpf").unmask().mask("??99999999999", { placeholder: "" }).val().length == 11) {
+                    $("#Cpf").unmask().mask("999.999.999-99");
+                } else {
+                    alert("Cpf inválido");
+                    $("#Cpf").val("");
+                    $("#Cpf").unmask().mask("??99999999999", { placeholder: "" });
+                    $('#Cpf').focus();
+                }
+            }
+        });
+
+
+        $('#IdPerfil').change(function () {
+
+            if ($('#IdPerfil').val() == 'Regional') {
+                loadRegional();
+                $("#trRegional").show();
+                $("#trEscola").hide();
+                $("#IdUnidadeAdministrativa").html("");
+                $("#IdUnidadeAdministrativa").attr("disabled", "disabled");
+            }
+            else if ($('#IdPerfil').val() == 'Escola') {
+                loadRegional();
+                $("#trRegional").show();
+                $("#trEscola").show();
+                $("#IdUnidadeAdministrativa").html("");
+                $("#IdUnidadeAdministrativa").attr("disabled", "disabled");
+            }
+            else {
+                $("#trRegional").hide();
+                $("#trEscola").hide();
+                $("#Usuario_IdRegional").html("");
+                $("#Usuario_IdUnidadeAdministrativa").html("");
+            }
+        });
+
+        $('#Usuario_IdRegional').change(function () {
+            loadUnidadeAdministrativa($('#Usuario_IdRegional').val());
+        });
+
+    });
+
+
+    function loadRegional() {
+
+        $("#Usuario_IdRegional").html("");
+        $("#Usuario_IdUnidadeAdministrativa").html("");
+
+        $.getJSON('@Url.Content("~/RptConsolidado/GetRegionais")',
+            {
+                idAnoReferencia: 2012
+            },
+            function (data) {
+                $("#Usuario_IdRegional").append("<option value=''></option>");
+                $.each(data.Result, function (index, obj) {
+                    $("#Usuario_IdRegional").append("<option value='" + obj.IdUnidadeAdministrativa + "'>" + obj.DesUnidadeAdministrativa + "</option>");
+                });
+            });
+    }
+
+    function loadUnidadeAdministrativa(idRegional) {
+
+        $("#Usuario_IdUnidadeAdministrativa").html("");
+
+        if (idRegional != "") {
+            $("#Usuario_IdUnidadeAdministrativa").removeAttr("disabled");
+
+            $.getJSON('@Url.Content("~/RptConsolidado/GetUnidadeAdministrativa")',
+                {
+                    idAnoReferencia: 2012,
+                    idRegional: idRegional
+                },
+                function (data) {
+                    $("#Usuario_IdUnidadeAdministrativa").append("<option value=''></option>");
+                    $.each(data.Result, function (index, obj) {
+                        $("#Usuario_IdUnidadeAdministrativa").append("<option value='" + obj.IdUnidadeAdministrativa + "'>" + obj.DesUnidadeAdministrativa + "</option>");
+                    });
+                });
+        } else {
+
+            $("#Usuario_IdUnidadeAdministrativa").attr("disabled", "disabled");
+        }
+    }
+
+</script>

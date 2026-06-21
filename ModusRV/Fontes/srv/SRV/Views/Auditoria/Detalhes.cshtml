@@ -1,0 +1,22 @@
+﻿@model IList<SRV.Models.Domain.LogAuditoriaItem>
+
+@using MvcContrib.UI.Grid
+@using SRV.Common.Extension
+
+@{
+    Layout = null;
+}
+
+<div class="boxContent">
+
+    @if (Model != null)
+    {
+        @Html.Grid(Model).Columns(column =>
+        {
+            column.For(c => c.DesAtributo).Named("Campo").Attributes(data => new MvcContrib.Hash(title => data.Item.DesAtributo, width => "50%")).HeaderAttributes(width => "50%");
+            column.For(c => c.VlrAnterior).Named("Valor Anterior").Attributes(data => new MvcContrib.Hash(title => data.Item.VlrAnterior, width => "25%")).HeaderAttributes(width => "25%");
+            column.For(c => c.VlrAtual).Named("Valor Atual").Attributes(data => new MvcContrib.Hash(title => data.Item.VlrAtual, width => "25%")).HeaderAttributes(width => "25%");
+        }).Empty("Nenhum registro encontrado")
+    }
+            
+</div>

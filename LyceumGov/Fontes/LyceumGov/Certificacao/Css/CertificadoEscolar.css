@@ -1,0 +1,180 @@
+﻿
+
+page
+{
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+page[size="A4"]
+{
+    width: 21cm;
+    height: 29.7cm;
+}
+page[size="A4"][layout="landscape"]
+{
+    width: 29.7cm;
+    height: 21cm;
+}
+page[size="A3"]
+{
+    width: 29.7cm;
+    height: 42cm;
+}
+page[size="A3"][layout="landscape"]
+{
+    width: 42cm;
+    height: 29.7cm;
+}
+page[size="A5"]
+{
+    width: 14.8cm;
+    height: 21cm;
+}
+page[size="A5"][layout="landscape"]
+{
+    width: 21cm;
+    height: 14.8cm;
+}
+@media print
+{
+    body, page
+    {
+        margin: 0;
+        box-shadow: 0;
+    }
+}
+
+body
+{
+    width: 800px;
+    margin: 38px auto 0;
+    background: rgb(204,204,204);
+  	font: 12pt Times New Roman, serif;
+  line-height: 1.8em;
+}
+
+#cabecalho1
+{
+    padding: 10px;
+}
+#cabecalho1 p
+{
+   
+    font-size: 10pt;
+    text-align: center;
+	line-height: 0.8;
+}
+#cabecalho1 img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   /* width: 165px;
+   width:95px;*/
+   height:119px;
+}
+
+#cabecalho2
+{
+    margin-bottom: 17px;
+}
+
+#cabecalho2 p
+{
+    font-weight: 700;
+    margin: 0 auto;
+    font-size: 15px;
+    text-align: center;
+}
+
+#corpo
+{
+    margin: 0 auto;
+    text-align: justify;
+    padding: 0 35px;
+	font: 12pt Times New Roman, serif;
+	line-height: 1.8em;
+}
+#tudo p.z
+{
+ margin-right: 35px;
+  padding: 0 35px;
+  
+}
+
+#corpo p
+{
+    text-indent: 0em;
+	
+}
+#corpo p.corpo
+{
+	text-indent: 0em;
+	margin-top: -12px;
+}
+#rodape
+{
+	 padding: 0 35px;
+}
+#rodape p.x
+{
+    margin-right: 35px;
+    text-align: right;
+}
+#rodape p.y
+{
+    text-align: center;
+    margin-top: 15px;
+}
+
+#assinatura img
+{
+    width: 500px;
+    padding: 0 135px;
+}
+
+#assinatura table.x
+{
+}
+#assinatura th.x, td.x
+{
+    border: 0px solid black;
+}
+#assinatura2
+{
+	/*border-top: 1px solid red;
+	border: 01px solid black;*/
+	width: 254px;
+	/*margin: 0 0 auto 96px;
+	margin-left:90px;*/
+	font: 08pt Times New Roman, serif;
+	text-align: justify;
+	padding: 0 10px 0 10px;
+	
+}
+#assinatura2 p.c
+{
+text-align: center;
+}
+
+#assinatura2 img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 53px;
+    height:66px;
+}
+
+#erro th, td
+{
+   border: 0;     /*First set all the borders to 0, then set the desired borders width*/
+     
+  
+}
+
+
+

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{227D3D8B-E93B-44CD-ADEE-68DFABCC9E9B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Seeduc.Infra</RootNamespace>
+    <AssemblyName>Seeduc.Infra</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Componentes\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Seeduc.Infra.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v9.2, Version=9.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\Componentes\DevExpress.Data.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxEditors.v9.2, Version=9.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\Componentes\DevExpress.Web.ASPxEditors.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGridView.v9.2, Version=9.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\Componentes\DevExpress.Web.ASPxGridView.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v9.2, Version=9.2.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\Componentes\DevExpress.Web.v9.2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\Componentes\log4net.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="PostSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Componentes\PostSharp-2.1.5.1\Reference Assemblies\.NET Framework 2.0\PostSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Techne.Lyceum.Control, Version=1.0.0.1503, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Componentes\Techne.Lyceum.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="Techne.Lyceum.Infra, Version=1.0.0.1503, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Componentes\Techne.Lyceum.Infra.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aspects\ExceptionsDataContext.cs" />
+    <Compile Include="Aspects\WatchAllExceptionsAndTraceContextQuery.cs" />
+    <Compile Include="Aspects\WatchAllExceptions.cs" />
+    <Compile Include="Cache\ReflectionCache.cs" />
+    <Compile Include="Configuration\ApplicationName.cs" />
+    <Compile Include="Configuration\ConfigurationManager.cs" />
+    <Compile Include="Configuration\ContextQueryConfigElement.cs" />
+    <Compile Include="Configuration\BulkConfigElement.cs" />
+    <Compile Include="Configuration\LogConfigElement.cs" />
+    <Compile Include="Configuration\SectionHandler.cs" />
+    <Compile Include="Data\ContextQuery.cs" />
+    <Compile Include="Data\ContextQueryBulkManager.cs" />
+    <Compile Include="Data\ContextQueryParameter.cs" />
+    <Compile Include="Data\ContextQueryParameters.cs" />
+    <Compile Include="Data\ContextQueryException.cs" />
+    <Compile Include="Data\DataContextBuilder.cs" />
+    <Compile Include="Data\ContextQueryType.cs" />
+    <Compile Include="Data\DataContextException.cs" />
+    <Compile Include="Data\ProcessMode.cs" />
+    <Compile Include="Data\TechneDbType.cs" />
+    <Compile Include="Data\TechneNumericUdtTypeAttribute.cs" />
+    <Compile Include="Data\TechneTextUdtTypeAttribute.cs" />
+    <Compile Include="Data\TechneUdtTypeAttribute.cs" />
+    <Compile Include="Data\TransactionContext.cs" />
+    <Compile Include="Data\DataContext.cs" />
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Helpers\ContextQueryConverter.cs" />
+    <Compile Include="Helpers\ContextQueryHelper.cs" />
+    <Compile Include="Helpers\DbHelper.cs" />
+    <Compile Include="Helpers\DevExpressHelper.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="Helpers\TechneConverter.cs" />
+    <Compile Include="MapeamentoAtributos\AtributoCampo.cs" />
+    <Compile Include="MapeamentoAtributos\AtributoTabela.cs" />
+    <Compile Include="MapeamentoAtributos\ParamentroQueryString.cs" />
+    <Compile Include="Mapper\ConvertObject.cs" />
+    <Compile Include="Mapper\BaseMapper.cs" />
+    <Compile Include="Mapper\DataTableMapper.cs" />
+    <Compile Include="Mapper\DataRowMapper.cs" />
+    <Compile Include="Mapper\DictionaryMapper.cs" />
+    <Compile Include="Mapper\QueryTableMapper.cs" />
+    <Compile Include="Mapper\SimpleRowMapper.cs" />
+    <Compile Include="Mapper\SqlDataReaderMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeeducException.cs" />
+    <Compile Include="Services\IForbiddenWordsCollector.cs" />
+    <Compile Include="Validation\TextValidator.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <DontImportPostSharp>True</DontImportPostSharp>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\Componentes\PostSharp-2.1.5.1\PostSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

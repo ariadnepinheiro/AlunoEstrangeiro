@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="boxContent">
+
+    <p>As colunas do arquivo de importação devem ser obrigatoriamente separadas por ponto-e-vírgula.</p>
+
+    <p>Os campos decimais devem utilizar a vírgula (,) como separador.</p>
+
+    <table class="grid">
+        
+        @* Cabeçalho *@
+        <thead>
+            <tr>
+                <th width="50px">Coluna</th>
+                <th width="200px">Campo</th>
+                <th width="100%">Descrição</th>
+                <th width="120px">Tamanho Máximo</th> 
+            </tr>
+        </thead>
+
+        @* Corpo *@
+        <tbody>
+            <tr class="gridrow">        
+                <td width="50px">1</td>
+                <td width="200px">COD_SERVIDOR</td>
+                <td width="100%">Código do Servidor</td>
+                <td width="120px">8</td>
+            </tr>
+
+            <tr class="gridrow_alternate">
+                <td width="50px">2</td>
+                <td width="200px">COD_UNIDADE_ADMINISTRATIVA</td>
+                <td width="100%">Código da Unidade Administrativa</td>
+                <td width="120px">6</td>
+            </tr>
+
+            <tr class="gridrow">
+                <td width="50px">3</td>
+                <td width="200px">COD_FUNCAO</td>
+                <td width="100%">Código da Função</td>
+                <td width="120px">15</td>
+            </tr>
+
+            <tr class="gridrow_alternate">        
+                <td width="50px">4</td>
+                <td width="200px">DT_INICIO_FUNCAO</td>
+                <td width="100%">Data de Início da Função</td>
+                <td width="120px">DD/MM/AAAA</td>
+            </tr>
+
+            <tr class="gridrow">
+                <td width="50px">5</td>
+                <td width="200px">DT_FIM_FUNCAO</td>
+                <td width="100%">Data Final da Função</td>
+                <td width="120px">DD/MM/AAAA</td>
+            </tr>
+
+            <tr class="gridrow_alternate">        
+                <td width="50px">6</td>
+                <td width="200px">CARGA_HORARIA_ALOCADO</td>
+                <td width="100%">Carga horária alocada</td>
+                <td width="120px">5,2</td>
+            </tr>
+
+            <tr class="gridrow">        
+                <td width="50px">7</td>
+                <td width="200px">CARGA_HORARIA_TOTAL</td>
+                <td width="100%">Carga horária total</td>
+                <td width="120px">5,2</td>
+            </tr>
+
+            <tr class="gridrow_alternate">
+                <td width="50px">8</td>
+                <td width="200px">CARGA_HORARIA_LIVRE</td>
+                <td width="100%">Carga horária livre</td>
+                <td width="120px">6</td>
+            </tr>
+        </tbody>
+    </table>      
+</div>

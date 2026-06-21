@@ -1,0 +1,556 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Help">
+  <PropertyGroup>
+    <Quote>"</Quote>
+    <SolutionDir>Solucoes</SolutionDir>
+    <Configuration>Release</Configuration>
+    <Targets>Rebuild</Targets>
+    <GenerateBuildArchive>true</GenerateBuildArchive>
+    <GeneratePreCompiled>true</GeneratePreCompiled>
+    <PublishDir>C:\Producao</PublishDir>
+    <SvnDir>$(programfiles)\Subversion\bin</SvnDir>
+
+    <LyceumGovSolution>$(SolutionDir)\LyceumGov.sln</LyceumGovSolution>
+    <LyceumGovAOLSolution>$(SolutionDir)\LyceumGovAOL.sln</LyceumGovAOLSolution>
+    <LyceumGovDOLSolution>$(SolutionDir)\LyceumGovDOL.sln</LyceumGovDOLSolution>
+    <ProcessoSeletivoAlunoSolution>$(SolutionDir)\ProcessoSeletivoAluno.sln</ProcessoSeletivoAlunoSolution>
+    <NovoDocenteOnlineSolution>Proderj.Dol\Proderj.DocenteOnline\DocenteOnline.sln</NovoDocenteOnlineSolution>
+    <PortalBibliotecaSolution>$(SolutionDir)\PortalBiblioteca.sln</PortalBibliotecaSolution>
+    <CoreSolution>$(SolutionDir)\Core.sln</CoreSolution>
+    <CronosSolution>$(SolutionDir)\Cronos.sln</CronosSolution>
+
+    <ReportServerDir>$(PublishDir)\ReportServer</ReportServerDir>
+    <ReportServerSourceDir>Relatorios\Producao</ReportServerSourceDir>
+
+    <LyceumGovDir>LyceumGov\Fontes\LyceumGov</LyceumGovDir>
+    <LyceumGovAssemblyInfo>$(LyceumGovDir)\Properties\AssemblyInfo.cs</LyceumGovAssemblyInfo>
+    <LyceumGovAOLDir>LyceumGovAOL\Fontes\LyceumGovAOL</LyceumGovAOLDir>
+    <LyceumGovAOLAssemblyInfo>$(LyceumGovAOLDir)\Properties\AssemblyInfo.cs</LyceumGovAOLAssemblyInfo>
+    <LyceumGovDOLDir>LyceumGovDOL\Fontes\LyceumGovDOL</LyceumGovDOLDir>
+    <LyceumGovDOLAssemblyInfo>$(LyceumGovDOLDir)\Properties\AssemblyInfo.cs</LyceumGovDOLAssemblyInfo>
+    <ProcessoSeletivoAlunoDir>ProcessoSeletivoAluno\Fontes\ProcessoSeletivoAluno</ProcessoSeletivoAlunoDir>
+    <ProcessoSeletivoAlunoAssemblyInfo>$(ProcessoSeletivoAlunoDir)\Properties\AssemblyInfo.cs</ProcessoSeletivoAlunoAssemblyInfo>
+    <NovoDocenteOnlineDir>Proderj.Dol\Proderj.DocenteOnline\Proderj.DOL.WebApp</NovoDocenteOnlineDir>
+    <NovoDocenteOnlineAssemblyInfo>$(NovoDocenteOnlineDir)\Properties\AssemblyInfo.cs</NovoDocenteOnlineAssemblyInfo>
+    <PortalBibliotecaDir>PortalBiblioteca\Fontes\PortalBiblioteca</PortalBibliotecaDir>
+    <PortalBibliotecaAssemblyInfo>$(PortalBibliotecaDir)\Properties\AssemblyInfo.cs</PortalBibliotecaAssemblyInfo>
+    <LyceumRNDir>LyceumGovRN\Fontes\LyceumRN</LyceumRNDir>
+    <LyceumRNAssemblyInfo>$(LyceumRNDir)\Properties\AssemblyInfo.cs</LyceumRNAssemblyInfo>
+    <SeeducInfraDir>Seeduc.Infra</SeeducInfraDir>
+    <SeeducInfraAssemblyInfo>$(SeeducInfraDir)\Properties\AssemblyInfo.cs</SeeducInfraAssemblyInfo>
+    <TechneLyceumControlDir>Techne.Lyceum.Control\Fontes\Techne.Lyceum.Control</TechneLyceumControlDir>
+    <TechneLyceumControlAssemblyInfo>$(TechneLyceumControlDir)\Properties\AssemblyInfo.cs</TechneLyceumControlAssemblyInfo>
+    <TechneLyceumInfraDir>Techne.Lyceum.Infra\Fontes\Techne.Lyceum.Infra</TechneLyceumInfraDir>
+    <TechneLyceumInfraAssemblyInfo>$(TechneLyceumInfraDir)\Properties\AssemblyInfo.cs</TechneLyceumInfraAssemblyInfo>
+
+    <LyceumCRDir>LyceumGovCR\Fontes\LyceumCR</LyceumCRDir>
+    <LyceumCRAssemblyInfo>$(LyceumCRDir)\Properties\AssemblyInfo.cs</LyceumCRAssemblyInfo>
+    <HadesLycCRDir>HadesLycCR\Fontes\HadesLycCR</HadesLycCRDir>
+    <HadesLycCRAssemblyInfo>$(HadesLycCRDir)\Properties\AssemblyInfo.cs</HadesLycCRAssemblyInfo>
+
+    <ComponentDir>$(MSBuildStartupDirectory)\Componentes</ComponentDir>
+
+    <PreCompiledPublishDir>$(PublishDir)\PreCompiled</PreCompiledPublishDir>
+    <PreCompiledLyceumGovPublishDir>$(PreCompiledPublishDir)\LyceumGov</PreCompiledLyceumGovPublishDir>
+    <PreCompiledLyceumGovAOLPublishDir>$(PreCompiledPublishDir)\LyceumGovAOL</PreCompiledLyceumGovAOLPublishDir>
+    <PreCompiledLyceumGovDOLPublishDir>$(PreCompiledPublishDir)\LyceumGovDOL</PreCompiledLyceumGovDOLPublishDir>
+    <PreCompiledProcessoSeletivoAlunoPublishDir>$(PreCompiledPublishDir)\ProcessoSeletivoAluno</PreCompiledProcessoSeletivoAlunoPublishDir>
+    <PreCompiledNovoDocenteOnlinePublishDir>$(PreCompiledPublishDir)\NovoDocenteOnline</PreCompiledNovoDocenteOnlinePublishDir>
+    <PreCompiledPortalBibliotecaPublishDir>$(PreCompiledPublishDir)\PortalBiblioteca</PreCompiledPortalBibliotecaPublishDir>
+
+    <LyceumGovBinDir>$(PublishDir)\LyceumGov\bin</LyceumGovBinDir>
+    <LyceumGovPublishDir>$(PublishDir)\LyceumGov</LyceumGovPublishDir>
+    <LyceumGovAOLBinDir>$(PublishDir)\LyceumGovAOL\bin</LyceumGovAOLBinDir>
+    <LyceumGovAOLPublishDir>$(PublishDir)\LyceumGovAOL</LyceumGovAOLPublishDir>
+    <LyceumGovDOLBinDir>$(PublishDir)\LyceumGovDOL\bin</LyceumGovDOLBinDir>
+    <LyceumGovDOLPublishDir>$(PublishDir)\LyceumGovDOL</LyceumGovDOLPublishDir>
+    <ProcessoSeletivoAlunoBinDir>$(PublishDir)\ProcessoSeletivoAluno\bin</ProcessoSeletivoAlunoBinDir>
+    <ProcessoSeletivoAlunoPublishDir>$(PublishDir)\ProcessoSeletivoAluno</ProcessoSeletivoAlunoPublishDir>
+    <NovoDocenteOnlineBinDir>$(PublishDir)\NovoDocenteOnline\bin</NovoDocenteOnlineBinDir>
+    <NovoDocenteOnlinePublishDir>$(PublishDir)\NovoDocenteOnline</NovoDocenteOnlinePublishDir>
+    <PortalBibliotecaBinDir>$(PublishDir)\PortalBiblioteca\bin</PortalBibliotecaBinDir>
+    <PortalBibliotecaPublishDir>$(PublishDir)\PortalBiblioteca</PortalBibliotecaPublishDir>
+
+    <ReleaseDir>$(PublishDir)\Releases</ReleaseDir>
+    <LyceumGovReleaseDir>$(ReleaseDir)\LyceumGov</LyceumGovReleaseDir>
+    <LyceumGovAOLReleaseDir>$(ReleaseDir)\LyceumGovAOL</LyceumGovAOLReleaseDir>
+    <LyceumGovDOLReleaseDir>$(ReleaseDir)\LyceumGovDOL</LyceumGovDOLReleaseDir>
+    <ProcessoSeletivoAlunoReleaseDir>$(ReleaseDir)\ProcessoSeletivoAluno</ProcessoSeletivoAlunoReleaseDir>
+    <NovoDocenteOnlineReleaseDir>$(ReleaseDir)\NovoDocenteOnline</NovoDocenteOnlineReleaseDir>
+    <PortalBibliotecaReleaseDir>$(ReleaseDir)\PortalBiblioteca</PortalBibliotecaReleaseDir>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildExtensionsPath32)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\ExtensionPack\MSBuild.ExtensionPack.tasks" />
+
+  <Target Name="CheckDirectories">
+    <Message Text="Creating the directories (if not exists)..." />
+
+    <MakeDir Directories="$(PublishDir)" Condition="!Exists('$(PublishDir)')" />
+    <MakeDir Directories="$(LyceumGovPublishDir)" Condition="!Exists('$(LyceumGovPublishDir)')" />
+    <MakeDir Directories="$(LyceumGovAOLPublishDir)" Condition="!Exists('$(LyceumGovAOLPublishDir)')" />
+    <MakeDir Directories="$(LyceumGovDOLPublishDir)" Condition="!Exists('$(LyceumGovDOLPublishDir)')" />
+    <MakeDir Directories="$(ProcessoSeletivoAlunoPublishDir)" Condition="!Exists('$(ProcessoSeletivoAlunoPublishDir)')" />
+    <MakeDir Directories="$(NovoDocenteOnlinePublishDir)" Condition="!Exists('$(NovoDocenteOnlinePublishDir)')" />
+    <MakeDir Directories="$(PortalBibliotecaPublishDir)" Condition="!Exists('$(PortalBibliotecaPublishDir)')" />
+
+    <MakeDir Directories="$(ReleaseDir)" Condition="!Exists('$(ReleaseDir)')" />
+    <MakeDir Directories="$(LyceumGovReleaseDir)" Condition="!Exists('$(LyceumGovReleaseDir)')" />
+    <MakeDir Directories="$(LyceumGovAOLReleaseDir)" Condition="!Exists('$(LyceumGovAOLReleaseDir)')" />
+    <MakeDir Directories="$(LyceumGovDOLReleaseDir)" Condition="!Exists('$(LyceumGovDOLReleaseDir)')" />
+    <MakeDir Directories="$(ProcessoSeletivoAlunoReleaseDir)" Condition="!Exists('$(ProcessoSeletivoAlunoReleaseDir)')" />
+    <MakeDir Directories="$(NovoDocenteOnlineReleaseDir)" Condition="!Exists('$(NovoDocenteOnlineReleaseDir)')" />
+    <MakeDir Directories="$(PortalBibliotecaReleaseDir)" Condition="!Exists('$(PortalBibliotecaReleaseDir)')" />
+
+    <MakeDir Directories="$(PreCompiledPublishDir)" Condition="!Exists('$(PreCompiledPublishDir)')" />
+    <MakeDir Directories="$(PreCompiledLyceumGovPublishDir)" Condition="!Exists('$(PreCompiledLyceumGovPublishDir)')" />
+    <MakeDir Directories="$(PreCompiledLyceumGovAOLPublishDir)" Condition="!Exists('$(PreCompiledLyceumGovAOLPublishDir)')" />
+    <MakeDir Directories="$(PreCompiledLyceumGovDOLPublishDir)" Condition="!Exists('$(PreCompiledLyceumGovDOLPublishDir)')" />
+    <MakeDir Directories="$(PreCompiledProcessoSeletivoAlunoPublishDir)" Condition="!Exists('$(PreCompiledProcessoSeletivoAlunoPublishDir)')" />
+    <MakeDir Directories="$(PreCompiledNovoDocenteOnlinePublishDir)" Condition="!Exists('$(PreCompiledNovoDocenteOnlinePublishDir)')" />
+    <MakeDir Directories="$(PreCompiledPortalBibliotecaPublishDir)" Condition="!Exists('$(PreCompiledPortalBibliotecaPublishDir)')" />
+
+    <MakeDir Directories="$(ReportServerDir)" Condition="!Exists('$(ReportServerDir)')" />
+  </Target>
+
+  <Target Name="GetDate">
+    <Time Format="yyyy-MM-dd-HHmmss">
+      <Output TaskParameter="FormattedTime" PropertyName="BuildDate" />
+    </Time>
+  </Target>
+
+  <Target Name="LyceumGov" DependsOnTargets="CheckDirectories; GetDate">
+    <Message Text="Removing the existing files from LyceumGov..." />
+
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(LyceumGovPublishDir)" />
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(PreCompiledLyceumGovPublishDir)" />
+
+    <Message Text="Cleaning LyceumGov..." />
+
+    <MSBuild Projects="$(LyceumGovSolution)" Targets="Clean" Properties="Configuration=$(Configuration)" />
+
+    <Message Text="Building LyceumGov..." />
+
+    <SvnVersion LocalPath="$(LyceumGovDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(LyceumGovAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <SvnVersion LocalPath="$(LyceumRNDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(LyceumRNAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <MSBuild Projects="$(LyceumGovSolution)" Targets="$(Targets)" Properties="Configuration=$(Configuration);OutDir=$(LyceumGovBinDir)\;WebProjectOutputDir=$(LyceumGovPublishDir);" />
+
+    <ItemGroup>
+      <Xmls Include="$(LyceumGovBinDir)\*.xml" />
+      <Pdbs Include="$(LyceumGovBinDir)\*.pdb" />
+    </ItemGroup>
+    <Delete Files="@(Xmls)" />
+    <Delete Files="@(Pdbs)" />
+
+    <AspNetCompiler VirtualPath="/LyceumGov" PhysicalPath="$(LyceumGovPublishDir)" TargetPath="$(PreCompiledLyceumGovPublishDir)" Force="true" Debug="false" Condition="'$(GeneratePreCompiled)' == 'true'" />
+
+    <ItemGroup Condition="'$(GenerateBuildArchive)' == 'true'">
+      <LyceumGovFilesToZip Include="$(PreCompiledLyceumGovPublishDir)\**\*" Exclude="*.zip" />
+      <LyceumGovDll Include="$(LyceumGovBinDir)\LyceumGov.dll" />
+    </ItemGroup>
+    <GetAssemblyIdentity AssemblyFiles="@(LyceumGovDll)" Condition="'$(GenerateBuildArchive)' == 'true'">
+      <Output TaskParameter="Assemblies" ItemName="LyceumGovAssembly" />
+    </GetAssemblyIdentity>
+    <MSBuild.Community.Tasks.Zip Files="@(LyceumGovFilesToZip)" WorkingDirectory="$(PreCompiledLyceumGovPublishDir)" ZipFileName="$(LyceumGovReleaseDir)\LyceumGov %(LyceumGovAssembly.Version) - $(BuildDate).zip" ZipLevel="0" Condition="'$(GenerateBuildArchive)' == 'true'" />
+
+    <Exec Command="$(Quote)$(SvnDir)\svn.exe$(Quote) revert $(Quote)$(LyceumGovAssemblyInfo)$(Quote) $(Quote)$(LyceumRNAssemblyInfo)$(Quote)" />
+
+    <Message Text="LyceumGov built!" />
+  </Target>
+
+  <Target Name="LyceumGovAOL" DependsOnTargets="CheckDirectories; GetDate">
+    <Message Text="Removing the existing files from LyceumGovAOL..." />
+
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(LyceumGovAOLPublishDir)" />
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(PreCompiledLyceumGovAOLPublishDir)" />
+
+    <Message Text="Cleaning LyceumGovAOL..." />
+
+    <MSBuild Projects="$(LyceumGovAOLSolution)" Targets="Clean" Properties="Configuration=$(Configuration)" />
+
+    <Message Text="Building LyceumGovAOL..." />
+
+    <SvnVersion LocalPath="$(LyceumGovAOLDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(LyceumGovAOLAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <SvnVersion LocalPath="$(LyceumRNDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(LyceumRNAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <MSBuild Projects="$(LyceumGovAOLSolution)" Targets="$(Target)" Properties="Configuration=$(Configuration);OutDir=$(LyceumGovAOLBinDir)\;WebProjectOutputDir=$(LyceumGovAOLPublishDir);" />
+
+    <ItemGroup>
+      <Xmls Include="$(LyceumGovAOLBinDir)\*.xml" />
+      <Pdbs Include="$(LyceumGovAOLBinDir)\*.pdb" />
+    </ItemGroup>
+    <Delete Files="@(Xmls)" />
+    <Delete Files="@(Pdbs)" />
+
+    <AspNetCompiler VirtualPath="/LyceumGovAOL" PhysicalPath="$(LyceumGovAOLPublishDir)" TargetPath="$(PreCompiledLyceumGovAOLPublishDir)" Force="true" Debug="false" Condition="'$(GeneratePreCompiled)' == 'true'" />
+
+    <ItemGroup Condition="'$(GenerateBuildArchive)' == 'true'">
+      <LyceumGovAOLFilesToZip Include="$(PreCompiledLyceumGovAOLPublishDir)\**\*" Exclude="*.zip" />
+      <LyceumGovAOLDll Include="$(LyceumGovAOLBinDir)\LyceumGovAOL.dll" />
+    </ItemGroup>
+    <GetAssemblyIdentity AssemblyFiles="@(LyceumGovAOLDll)" Condition="'$(GenerateBuildArchive)' == 'true'">
+      <Output TaskParameter="Assemblies" ItemName="LyceumGovAOLAssembly" />
+    </GetAssemblyIdentity>
+    <MSBuild.Community.Tasks.Zip Files="@(LyceumGovAOLFilesToZip)" WorkingDirectory="$(PreCompiledLyceumGovAOLPublishDir)" ZipFileName="$(LyceumGovAOLReleaseDir)\LyceumGovAOL %(LyceumGovAOLAssembly.Version) - $(BuildDate).zip" ZipLevel="0" Condition="'$(GenerateBuildArchive)' == 'true'" />
+
+    <Exec Command="$(Quote)$(SvnDir)\svn.exe$(Quote) revert $(Quote)$(LyceumGovAOLAssemblyInfo)$(Quote) $(Quote)$(LyceumRNAssemblyInfo)$(Quote)" />
+
+    <Message Text="LyceumGovAOL built!" />
+  </Target>
+
+  <Target Name="LyceumGovDOL" DependsOnTargets="CheckDirectories; GetDate">
+    <Message Text="Removing the existing files from LyceumGovDOL..." />
+
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(LyceumGovDOLPublishDir)" />
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(PreCompiledLyceumGovDOLPublishDir)" />
+
+    <Message Text="Cleaning LyceumGovDOL..." />
+
+    <MSBuild Projects="$(LyceumGovDOLSolution)" Targets="Clean" Properties="Configuration=$(Configuration)" />
+
+    <Message Text="Building LyceumGovDOL..." />
+
+    <SvnVersion LocalPath="$(LyceumGovDOLDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(LyceumGovDOLAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <SvnVersion LocalPath="$(LyceumRNDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(LyceumRNAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <MSBuild Projects="$(LyceumGovDOLSolution)" Targets="$(Target)" Properties="Configuration=$(Configuration);OutDir=$(LyceumGovDOLBinDir)\;WebProjectOutputDir=$(LyceumGovDOLPublishDir);" />
+
+    <ItemGroup>
+      <Xmls Include="$(LyceumGovDOLBinDir)\*.xml" />
+      <Pdbs Include="$(LyceumGovDOLBinDir)\*.pdb" />
+    </ItemGroup>
+    <Delete Files="@(Xmls)" />
+    <Delete Files="@(Pdbs)" />
+
+    <AspNetCompiler VirtualPath="/LyceumGovDOL" PhysicalPath="$(LyceumGovDOLPublishDir)" TargetPath="$(PreCompiledLyceumGovDOLPublishDir)" Force="true" Debug="false" Condition="'$(GeneratePreCompiled)' == 'true'" />
+
+    <ItemGroup Condition="'$(GenerateBuildArchive)' == 'true'">
+      <LyceumGovDOLFilesToZip Include="$(PreCompiledLyceumGovDOLPublishDir)\**\*" Exclude="*.zip" />
+      <LyceumGovDOLDll Include="$(LyceumGovDOLBinDir)\LyceumGovDOL.dll" />
+    </ItemGroup>
+    <GetAssemblyIdentity AssemblyFiles="@(LyceumGovDOLDll)" Condition="'$(GenerateBuildArchive)' == 'true'">
+      <Output TaskParameter="Assemblies" ItemName="LyceumGovDOLAssembly" />
+    </GetAssemblyIdentity>
+    <MSBuild.Community.Tasks.Zip Files="@(LyceumGovDOLFilesToZip)" WorkingDirectory="$(PreCompiledLyceumGovDOLPublishDir)" ZipFileName="$(LyceumGovDOLReleaseDir)\LyceumGovDOL %(LyceumGovDOLAssembly.Version) - $(BuildDate).zip" ZipLevel="0" Condition="'$(GenerateBuildArchive)' == 'true'" />
+
+    <Exec Command="$(Quote)$(SvnDir)\svn.exe$(Quote) revert $(Quote)$(LyceumGovDOLAssemblyInfo)$(Quote) $(Quote)$(LyceumRNAssemblyInfo)$(Quote)" />
+
+    <Message Text="LyceumGovDOL built!" />
+  </Target>
+
+  <Target Name="ProcessoSeletivoAluno" DependsOnTargets="CheckDirectories; GetDate">
+    <Message Text="Removing the existing files from ProcessoSeletivoAluno..." />
+
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(ProcessoSeletivoAlunoPublishDir)" />
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(PreCompiledProcessoSeletivoAlunoPublishDir)" />
+
+    <Message Text="Cleaning ProcessoSeletivoAluno..." />
+
+    <MSBuild Projects="$(ProcessoSeletivoAlunoSolution)" Targets="Clean" Properties="Configuration=$(Configuration)" />
+
+    <Message Text="Building ProcessoSeletivoAluno..." />
+
+    <SvnVersion LocalPath="$(ProcessoSeletivoAlunoDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(ProcessoSeletivoAlunoAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <SvnVersion LocalPath="$(LyceumRNDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(LyceumRNAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <MSBuild Projects="$(ProcessoSeletivoAlunoSolution)" Targets="$(Target)" Properties="Configuration=$(Configuration);OutDir=$(ProcessoSeletivoAlunoBinDir)\;WebProjectOutputDir=$(ProcessoSeletivoAlunoPublishDir);" />
+
+    <ItemGroup>
+      <Xmls Include="$(ProcessoSeletivoAlunoBinDir)\*.xml" />
+      <Pdbs Include="$(ProcessoSeletivoAlunoBinDir)\*.pdb" />
+    </ItemGroup>
+    <Delete Files="@(Xmls)" />
+    <Delete Files="@(Pdbs)" />
+
+    <AspNetCompiler VirtualPath="/ProcessoSeletivoAluno" PhysicalPath="$(ProcessoSeletivoAlunoPublishDir)" TargetPath="$(PreCompiledProcessoSeletivoAlunoPublishDir)" Force="true" Debug="false" Condition="'$(GeneratePreCompiled)' == 'true'" />
+
+    <ItemGroup Condition="'$(GenerateBuildArchive)' == 'true'">
+      <ProcessoSeletivoAlunoFilesToZip Include="$(PreCompiledProcessoSeletivoAlunoPublishDir)\**\*" Exclude="*.zip" />
+      <ProcessoSeletivoAlunoDll Include="$(ProcessoSeletivoAlunoBinDir)\ProcessoSeletivoAluno.dll" />
+    </ItemGroup>
+    <GetAssemblyIdentity AssemblyFiles="@(ProcessoSeletivoAlunoDll)" Condition="'$(GenerateBuildArchive)' == 'true'">
+      <Output TaskParameter="Assemblies" ItemName="ProcessoSeletivoAlunoAssembly" />
+    </GetAssemblyIdentity>
+    <MSBuild.Community.Tasks.Zip Files="@(ProcessoSeletivoAlunoFilesToZip)" WorkingDirectory="$(PreCompiledProcessoSeletivoAlunoPublishDir)" ZipFileName="$(ProcessoSeletivoAlunoReleaseDir)\ProcessoSeletivoAluno %(ProcessoSeletivoAlunoAssembly.Version) - $(BuildDate).zip" ZipLevel="0" Condition="'$(GenerateBuildArchive)' == 'true'" />
+
+    <Exec Command="$(Quote)$(SvnDir)\svn.exe$(Quote) revert $(Quote)$(ProcessoSeletivoAlunoAssemblyInfo)$(Quote) $(Quote)$(LyceumRNAssemblyInfo)$(Quote)" />
+
+    <Message Text="ProcessoSeletivoAluno built!" />
+  </Target>
+  
+  <Target Name="NovoDocenteOnline" DependsOnTargets="CheckDirectories; GetDate">
+    <Message Text="Removing the existing files from NovoDocenteOnline..." />
+
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(NovoDocenteOnlinePublishDir)" />
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(PreCompiledNovoDocenteOnlinePublishDir)" />
+
+    <Message Text="Cleaning NovoDocenteOnline..." />
+
+    <MSBuild Projects="$(NovoDocenteOnlineSolution)" Targets="Clean" Properties="Configuration=$(Configuration)" />
+
+    <Message Text="Building NovoDocenteOnline..." />
+
+    <SvnVersion LocalPath="$(NovoDocenteOnlineDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(NovoDocenteOnlineAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <SvnVersion LocalPath="$(LyceumRNDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(LyceumRNAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <MSBuild Projects="$(NovoDocenteOnlineSolution)" Targets="$(Target)" Properties="Configuration=$(Configuration);OutDir=$(NovoDocenteOnlineBinDir)\;WebProjectOutputDir=$(NovoDocenteOnlinePublishDir);" />
+
+    <ItemGroup>
+      <Xmls Include="$(NovoDocenteOnlineBinDir)\*.xml" />
+      <Pdbs Include="$(NovoDocenteOnlineBinDir)\*.pdb" />
+    </ItemGroup>
+    <Delete Files="@(Xmls)" />
+    <Delete Files="@(Pdbs)" />
+
+    <AspNetCompiler
+		VirtualPath="/NovoDocenteOnline" 
+		PhysicalPath="$(NovoDocenteOnlinePublishDir)" 
+		TargetPath="$(PreCompiledNovoDocenteOnlinePublishDir)" 
+		Force="true" 
+		Debug="false" 
+		Condition="'$(GeneratePreCompiled)' == 'true'" 
+		ToolPath="C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\" />
+
+    <ItemGroup Condition="'$(GenerateBuildArchive)' == 'true'">
+      <NovoDocenteOnlineFilesToZip Include="$(PreCompiledNovoDocenteOnlinePublishDir)\**\*" Exclude="*.zip" />
+      <NovoDocenteOnlineDll Include="$(NovoDocenteOnlineBinDir)\Proderj.DOL.WebApp.dll" />
+    </ItemGroup>
+    <GetAssemblyIdentity AssemblyFiles="@(NovoDocenteOnlineDll)" Condition="'$(GenerateBuildArchive)' == 'true'">
+      <Output TaskParameter="Assemblies" ItemName="NovoDocenteOnlineAssembly" />
+    </GetAssemblyIdentity>
+    <MSBuild.Community.Tasks.Zip Files="@(NovoDocenteOnlineFilesToZip)" WorkingDirectory="$(PreCompiledNovoDocenteOnlinePublishDir)" ZipFileName="$(NovoDocenteOnlineReleaseDir)\NovoDocenteOnline %(NovoDocenteOnlineAssembly.Version) - $(BuildDate).zip" ZipLevel="0" Condition="'$(GenerateBuildArchive)' == 'true'" />
+	
+    <Exec Command="$(Quote)$(SvnDir)\svn.exe$(Quote) revert $(Quote)$(NovoDocenteOnlineAssemblyInfo)$(Quote) $(Quote)$(LyceumRNAssemblyInfo)$(Quote)" />
+
+    <Message Text="NovoDocenteOnline built!" />
+  </Target>  
+
+  <Target Name="PortalBiblioteca" DependsOnTargets="CheckDirectories; GetDate">
+    <Message Text="Removing the existing files from PortalBiblioteca..." />
+
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(PortalBibliotecaPublishDir)" />
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(PreCompiledPortalBibliotecaPublishDir)" />
+
+    <Message Text="Cleaning PortalBiblioteca..." />
+
+    <MSBuild Projects="$(PortalBibliotecaSolution)" Targets="Clean" Properties="Configuration=$(Configuration)" />
+
+    <Message Text="Building PortalBiblioteca..." />
+
+    <SvnVersion LocalPath="$(PortalBibliotecaDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(PortalBibliotecaAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <SvnVersion LocalPath="$(LyceumRNDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(LyceumRNAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <MSBuild Projects="$(PortalBibliotecaSolution)" Targets="$(Target)" Properties="Configuration=$(Configuration);OutDir=$(PortalBibliotecaBinDir)\;WebProjectOutputDir=$(PortalBibliotecaPublishDir);" />
+
+    <ItemGroup>
+      <Xmls Include="$(PortalBibliotecaBinDir)\*.xml" />
+      <Pdbs Include="$(PortalBibliotecaBinDir)\*.pdb" />
+    </ItemGroup>
+    <Delete Files="@(Xmls)" />
+    <Delete Files="@(Pdbs)" />
+
+    <AspNetCompiler VirtualPath="/PortalBiblioteca" PhysicalPath="$(PortalBibliotecaPublishDir)" TargetPath="$(PreCompiledPortalBibliotecaPublishDir)" Force="true" Debug="false" Condition="'$(GeneratePreCompiled)' == 'true'" />
+
+    <ItemGroup Condition="'$(GenerateBuildArchive)' == 'true'">
+      <PortalBibliotecaFilesToZip Include="$(PreCompiledPortalBibliotecaPublishDir)\**\*" Exclude="*.zip" />
+      <PortalBibliotecaDll Include="$(PortalBibliotecaBinDir)\PortalBiblioteca.dll" />
+    </ItemGroup>
+    <GetAssemblyIdentity AssemblyFiles="@(PortalBibliotecaDll)" Condition="'$(GenerateBuildArchive)' == 'true'">
+      <Output TaskParameter="Assemblies" ItemName="PortalBibliotecaAssembly" />
+    </GetAssemblyIdentity>
+    <MSBuild.Community.Tasks.Zip Files="@(PortalBibliotecaFilesToZip)" WorkingDirectory="$(PreCompiledPortalBibliotecaPublishDir)" ZipFileName="$(PortalBibliotecaReleaseDir)\PortalBiblioteca %(PortalBibliotecaAssembly.Version) - $(BuildDate).zip" ZipLevel="0" Condition="'$(GenerateBuildArchive)' == 'true'" />
+
+    <Exec Command="$(Quote)$(SvnDir)\svn.exe$(Quote) revert $(Quote)$(PortalBibliotecaAssemblyInfo)$(Quote) $(Quote)$(LyceumRNAssemblyInfo)$(Quote)" />
+
+    <Message Text="PortalBiblioteca built!" />
+  </Target>
+
+  <Target Name="UpdateCronos">
+    <Message Text="Cleaning Cronos..." />
+
+    <MSBuild Projects="$(CronosSolution)" Targets="Clean" Properties="Configuration=$(Configuration)" />
+
+    <Message Text="Building Cronos..." />
+
+    <SvnVersion LocalPath="$(LyceumCRDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(LyceumCRAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <SvnVersion LocalPath="$(HadesLycCRDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(HadesLycCRAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <MSBuild Projects="$(CronosSolution)" Targets="$(Target)" Properties="Configuration=$(Configuration);DebugSymbols=false;DebugType=None;NoWarn=1572,1573,1591;OutputPath=$(ComponentDir);" />
+
+    <FileUpdate Files="$(LyceumCRAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.0" />
+    <FileUpdate Files="$(HadesLycCRAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.0" />
+
+    <Message Text="Removing config files..." />
+
+    <ItemGroup>
+      <Configs Include="$(ComponentDir)\*.config" />
+    </ItemGroup>
+    <Delete Files="@(Configs)" />
+
+    <Message Text="Cronos built!" />
+  </Target>
+
+  <Target Name="UpdateCore">
+    <Message Text="Cleaning Core..." />
+
+    <MSBuild Projects="$(CoreSolution)" Targets="Clean" Properties="Configuration=$(Configuration)" />
+
+    <Message Text="Building Core..." />
+
+    <SvnVersion LocalPath="$(SeeducInfraDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(SeeducInfraAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <SvnVersion LocalPath="$(TechneLyceumControlDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(TechneLyceumControlAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <SvnVersion LocalPath="$(TechneLyceumInfraDir)" ToolPath="$(SvnDir)">
+      <Output TaskParameter="Revision" PropertyName="Revision" />
+    </SvnVersion>
+    <FileUpdate Files="$(TechneLyceumInfraAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.$(Revision)" />
+
+    <MSBuild Projects="$(CoreSolution)" Targets="$(Target)" Properties="Configuration=$(Configuration);DebugSymbols=false;DebugType=None;NoWarn=1572,1573,1591;OutputPath=$(ComponentDir);" />
+
+    <FileUpdate Files="$(SeeducInfraAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.0" />
+    <FileUpdate Files="$(TechneLyceumControlAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.0" />
+    <FileUpdate Files="$(TechneLyceumInfraAssemblyInfo)" Regex="(\d+)\.(\d+)\.(\d+)\.(\d+)" ReplacementText="$1.$2.$3.0" />
+
+    <Message Text="Removing config files..." />
+
+    <ItemGroup>
+      <Configs Include="$(ComponentDir)\*.config" />
+    </ItemGroup>
+    <Delete Files="@(Configs)" />
+
+    <Message Text="Core built!" />
+  </Target>
+
+  <Target Name="UpdateDLLs">
+    <Message Text="Deploying Cronos and Core..." />
+
+    <Message Text="Core built!" />
+  </Target>
+
+  <Target Name="UpdateDLLs">
+    <Message Text="Deploying Cronos and Core..." />
+
+    <CallTarget Targets="UpdateCronos"></CallTarget>
+
+    <CallTarget Targets="UpdateCore"></CallTarget>
+
+    <Message Text="Cronos and Core deployed!" />
+  </Target>
+
+  <Target Name="UpdateRDLs">
+    <Message Text="Deploying Reports..." />
+
+    <ItemGroup>
+      <RDLs Include="$(ReportServerSourceDir)\**\*.rdl" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(RDLs)" DestinationFolder="$(ReportServerDir)\%(RecursiveDir)"></Copy>
+
+    <Message Text="Reports deployed!" />
+  </Target>
+
+  <Target Name="All">
+    <Message Text="Deploying all modules..." />
+
+    <CallTarget Targets="UpdateCronos"></CallTarget>
+
+    <CallTarget Targets="UpdateCore"></CallTarget>
+
+    <CallTarget Targets="UpdateCore"></CallTarget>
+    
+    <CallTarget Targets="UpdateRDLs"></CallTarget>
+
+    <CallTarget Targets="LyceumGov"></CallTarget>
+
+    <CallTarget Targets="LyceumGovAOL"></CallTarget>
+
+    <CallTarget Targets="LyceumGovDOL"></CallTarget>
+
+    <CallTarget Targets="ProcessoSeletivoAluno"></CallTarget>
+    
+    <CallTarget Targets="PortalBiblioteca"></CallTarget>
+
+    <Message Text="All modules deployed!" />
+  </Target>
+
+  <Target Name="Clean">
+    <Message Text="Cleaning the deploy directory..." />
+
+    <MSBuild.ExtensionPack.FileSystem.Folder TaskAction="RemoveContent" Path="$(PublishDir)" />
+
+    <Message Text="Deploy directory cleaned!" />
+  </Target>
+
+  <Target Name="Help">
+    <Message Text="Command not specified!%0D%0A" Importance="high" />
+    <Message Text="Please select one of the available commands:" Importance="high" />
+    <Message Text="- clean: clean the deploy directory" Importance="high" />
+    <Message Text="- gestao: Deploy LyceumGov" Importance="high" />
+    <Message Text="- aol: Deploy LyceumGovAOL" Importance="high" />
+    <Message Text="- dol: Deploy LyceumGovDOL" Importance="high" />
+    <Message Text="- processoseletivo: Deploy ProcessoSeletivoAluno" Importance="high" />
+    <Message Text="- NovoDocenteOnline: Deploy NovoDocenteOnline" Importance="high" />
+    <Message Text="- biblioteca: Deploy PortalBiblioteca" Importance="high" />
+    <Message Text="- cronos: Deploy Cronos" Importance="high" />
+    <Message Text="- core: Deploy Core" Importance="high" />
+    <Message Text="- dlls: Deploy Cronos and Core" Importance="high" />
+    <Message Text="- reports: Deploy Reports" Importance="high" />
+    <Message Text="- all: Deploy all modules" Importance="high" />
+  </Target>
+</Project>

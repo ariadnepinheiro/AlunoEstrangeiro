@@ -1,0 +1,103 @@
+﻿@model SRV.Models.DTO.FiltroLancamentoNotaDocente
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btPesquisar")
+        @Html.ToolbarItemLink(true, "Upload", null, null, "btImportar")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdServidor)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.IdServidor, new { style = "width: 100px; text-align: right;", maxlength = 8 })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.DesNomeServidor)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.DesNomeServidor, new { style = "width: 350px;", maxlength = 70 })
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="clear:both"></div>
+
+        @if (Model.LancamentosNotasDocentes != null)
+        {
+            @Html.Pager(Model.LancamentosNotasDocentes)
+
+            @Html.Grid(Model.LancamentosNotasDocentes.Items).Columns(column =>
+            {
+                if (@Role.IsGranted("Administrador"))
+                {
+                    column.For(
+						c => Html.ActionLink(" ", "", null, 
+							new { 
+								href = "#", @class = "icoLinkDelete", 
+								onclick = "deleteItemLocal(this, '" + @Url.Action("Delete", "LancamentoNotaDocente") + "', " + @c.IdLancamentoNotaDocente+ ")" 
+							}
+						)
+					)
+					.Named("Excluir")
+					.Attributes(width => "42px", align => "center")
+					.HeaderAttributes(width => "42px", align => "center")
+					.Encode(false);
+                }
+                column.For(c => c.AnoReferencia.IdAnoReferencia).Named("Ciclo").Attributes(width => "50px").HeaderAttributes(width => "50px");
+                column.For(c => c.UnidadeAdministrativa.IdCenso).Named("Censo").Attributes(width => "50px").HeaderAttributes(width => "50px");
+                column.For(c => c.UnidadeAdministrativa.DesUnidadeAdministrativa).Named("Unidade").Attributes(width => "250px").HeaderAttributes(width => "250px");
+                column.For(c => c.Servidor.IdServidor).Named("Matrícula").Attributes(width => "80px").HeaderAttributes(width => "80px");
+                column.For(c => c.Servidor.DesNomeServidor).Named("Nome").Attributes(width => "200px").HeaderAttributes(width => "200px");
+                column.For(c => c.NmBimestre).Named("Bimestre").Attributes(width => "50px").HeaderAttributes(width => "50px");
+                column.For(c => c.DesTurma).Named("Turma").Attributes(width => "80px").HeaderAttributes(width => "80px");
+                column.For(c => c.NmPeriodo).Named("Período").Attributes(width => "50px").HeaderAttributes(width => "50px");
+                column.For(c => c.DesDisciplina).Named("Disciplina").Attributes(width => "150px").HeaderAttributes(width => "150px");
+            }).Empty("Nenhum registro encontrado")
+        }
+    </div>                       
+}
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $('#IdServidor').mask("??99999999", { placeholder: "" });
+    });
+
+    function deleteItemLocal(element, url, idLancamentoNotaDocente) {
+
+        if (confirm("Confirma exclusão do registro?")) {
+
+            $.ajax({ url: url,
+                type: 'post',
+                data: { IdLancamentoNotaDocente: idLancamentoNotaDocente },
+                success: function (data) {
+                    alert(data.Result);
+                    $(element).closest("form").submit();
+                },
+                error: function (xhr, status, error) {
+                    if (xhr.status != 403) {
+                        $(".boxInfo").remove();
+                        $(".validation-summary-errors").remove();
+                        $(".boxContent").prepend("<div class='validation-summary-errors'><ul><li>" + xhr.responseText + "</li></ul></div>");
+                    }
+                }
+            });            
+        }
+    }
+    
+</script>

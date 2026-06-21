@@ -1,0 +1,895 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{103DE944-B263-4DF1-85E3-FB1F2D0585EF}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SRV</RootNamespace>
+    <AssemblyName>SRV</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <!--<MvcBuildViews>false</MvcBuildViews>-->
+    <!--<UseIISExpress>false</UseIISExpress>-->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL" />
+    <Reference Include="MvcContrib, Version=3.0.51.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=1.2.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\CustomMvcResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomMvcResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\AppInfo.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Exceptions\BusinessException.cs" />
+    <Compile Include="Common\Exceptions\ExceptionHandler.cs" />
+    <Compile Include="Common\Exceptions\FieldValidationException.cs" />
+    <Compile Include="Common\Extension\Enums.cs" />
+    <Compile Include="Common\Extension\Extensions.cs" />
+    <Compile Include="Common\Extension\Role.cs" />
+    <Compile Include="Common\Extension\ListBoxForExtension.cs" />
+    <Compile Include="Common\Extension\PagerHelperExtension.cs" />
+    <Compile Include="Common\Extension\Scroller.cs" />
+    <Compile Include="Common\Extension\ScrollerHelperExtension.cs" />
+    <Compile Include="Common\Extension\SimpleCheckboxHelperExtension.cs" />
+    <Compile Include="Common\Extension\SortGridRenderer.cs" />
+    <Compile Include="Common\Extension\Toolbar.cs" />
+    <Compile Include="Common\Extension\ToolbarHelperExtension.cs" />
+    <Compile Include="Common\Extension\ToolbarItemHelperExtension.cs" />
+    <Compile Include="Common\Loader\CsvFileLoader.cs" />
+    <Compile Include="Common\Loader\ImportFieldAttribute.cs" />
+    <Compile Include="Common\Loader\ImportFileAttribute.cs" />
+    <Compile Include="Common\Loader\ReflectionHelper.cs" />
+    <Compile Include="Common\Logging\PrimaryKeyAttribute.cs" />
+    <Compile Include="Common\Mail\Mail.cs" />
+    <Compile Include="Common\Menu.cs" />
+    <Compile Include="Common\Validation\Cpf.cs" />
+    <Compile Include="Common\Validation\CustomRequiredAttribute.cs" />
+    <Compile Include="Common\View\HttpCustomStatusCodeResult.cs" />
+    <Compile Include="Controllers\AlteracaoSenhaController.cs" />
+    <Compile Include="Controllers\AnoReferenciaController.cs" />
+    <Compile Include="Controllers\AplicacaoProvaAvaliacaoExternaController.cs" />
+    <Compile Include="Controllers\AvaliacaoExternaController.cs" />
+    <Compile Include="Controllers\AvaliacaoExternaUnidadeAdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CalculoRVController.cs" />
+    <Compile Include="Controllers\CriterioUnidadeAdministrativaController.cs" />
+    <Compile Include="Controllers\DenunciaAvaliacaoExternaController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\FuncaoController.cs" />
+    <Compile Include="Controllers\FuncaoOcorrenciaServidorController.cs" />
+    <Compile Include="Controllers\FuncaoServidorController.cs" />
+    <Compile Include="Controllers\GrupoFuncaoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndicadorController.cs" />
+    <Compile Include="Controllers\IndicadorUnidadeAdministrativaController.cs" />
+    <Compile Include="Controllers\AuditoriaController.cs" />
+    <Compile Include="Controllers\LancamentoNotaDocenteController.cs" />
+    <Compile Include="Controllers\LogImportacaoController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MetaIGEUnidadeAdministrativaController.cs" />
+    <Compile Include="Controllers\MetaUnidadeAdministrativaController.cs" />
+    <Compile Include="Controllers\ModalidadeController.cs" />
+    <Compile Include="Controllers\MotivoInelegDocenteController.cs" />
+    <Compile Include="Controllers\MotivoInelegDocenteUnidAdmController.cs" />
+    <Compile Include="Controllers\NivelEnsinoController.cs" />
+    <Compile Include="Controllers\NotaController.cs" />
+    <Compile Include="Controllers\NovaSenhaController.cs" />
+    <Compile Include="Controllers\OcorrenciaController.cs" />
+    <Compile Include="Controllers\OcorrenciaServidorController.cs" />
+    <Compile Include="Controllers\ParametroCurvaController.cs" />
+    <Compile Include="Controllers\ParametroNotaController.cs" />
+    <Compile Include="Controllers\ParametroPesoController.cs" />
+    <Compile Include="Controllers\PesquisaServidorController.cs" />
+    <Compile Include="Controllers\PesquisaUsuarioController.cs" />
+    <Compile Include="Controllers\RptConsolidadoController.cs" />
+    <Compile Include="Controllers\RptExtratoServidorController.cs" />
+    <Compile Include="Controllers\ServidorController.cs" />
+    <Compile Include="Controllers\TipoCriterioElegibilidadeController.cs" />
+    <Compile Include="Controllers\TipoOcorrenciaController.cs" />
+    <Compile Include="Controllers\TipoUnidadeAdministrativaController.cs" />
+    <Compile Include="Controllers\UnidadeAdministrativaController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Filters\AuthorizeControllerAttribute.cs" />
+    <Compile Include="Filters\CustomAuthorizeAttribute.cs" />
+    <Compile Include="Filters\HandleAndLogErrorAttribute.cs" />
+    <Compile Include="Filters\LoadManagerContextAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Domain\AlocacaoServidor.cs" />
+    <Compile Include="Models\Domain\AplicacaoProvaAvaliacaoExterna.cs" />
+    <Compile Include="Models\Domain\AvaliacaoExterna.cs" />
+    <Compile Include="Models\Domain\AvaliacaoExternaUnidadeAdmin.cs" />
+    <Compile Include="Models\Domain\AvaliacaoExternaUnidadeAdminDetalhe.cs" />
+    <Compile Include="Models\Domain\CriterioUnidadeAdministrativa.cs" />
+    <Compile Include="Models\Domain\Funcao.cs" />
+    <Compile Include="Models\Domain\FuncaoServidor.cs" />
+    <Compile Include="Models\Domain\IndicadorUnidadeAdministrativa.cs" />
+    <Compile Include="Models\Domain\LancamentoNotaDocente.cs" />
+    <Compile Include="Models\Domain\MetaIGEUnidadeAdministrativa.cs" />
+    <Compile Include="Models\Domain\MetaUnidadeAdministrativa.cs" />
+    <Compile Include="Models\Domain\MotivoInelegDocente.cs" />
+    <Compile Include="Models\Domain\MotivoInelegibilidade.cs" />
+    <Compile Include="Models\Domain\MotivoInelegUnidAdm.cs" />
+    <Compile Include="Models\Domain\NivelEnsinoUnidadeAdministrativa.cs" />
+    <Compile Include="Models\Domain\OcorrenciaServidor.cs" />
+    <Compile Include="Models\Domain\ParametroNota.cs" />
+    <Compile Include="Models\Domain\ExecucaoCalculo.cs" />
+    <Compile Include="Models\Domain\GrupoFuncao.cs" />
+    <Compile Include="Models\Domain\NivelEnsino.cs" />
+    <Compile Include="Models\Domain\Nota.cs" />
+    <Compile Include="Models\Domain\ParametroCurva.cs" />
+    <Compile Include="Models\Domain\ParametroPeso.cs" />
+    <Compile Include="Models\Domain\TipoCriterioElegibilidade.cs" />
+    <Compile Include="Models\Domain\TokenAlteracaoSenha.cs" />
+    <Compile Include="Models\Domain\AnoReferencia.cs" />
+    <Compile Include="Models\Domain\ArquivoImportacao.cs" />
+    <Compile Include="Models\Domain\Indicador.cs" />
+    <Compile Include="Models\Domain\LogAuditoria.cs" />
+    <Compile Include="Models\Domain\LogAuditoriaItem.cs" />
+    <Compile Include="Models\Domain\Modalidade.cs" />
+    <Compile Include="Models\Domain\Ocorrencia.cs" />
+    <Compile Include="Models\Domain\Servidor.cs" />
+    <Compile Include="Models\Domain\TipoOcorrencia.cs" />
+    <Compile Include="Models\Domain\TipoUnidadeAdministrativa.cs" />
+    <Compile Include="Models\Domain\Turno.cs" />
+    <Compile Include="Models\Domain\UnidadeAdministrativa.cs" />
+    <Compile Include="Models\Domain\Usuario.cs" />
+    <Compile Include="Models\DTO\AlteracaoSenha.cs" />
+    <Compile Include="Models\DTO\CadastroFuncaoServidor.cs" />
+    <Compile Include="Models\DTO\CadastroIndicador.cs" />
+    <Compile Include="Models\DTO\CadastroNivelEnsino.cs" />
+    <Compile Include="Models\DTO\CadastroOcorrencia.cs" />
+    <Compile Include="Models\DTO\CadastroOcorrenciaServidor.cs" />
+    <Compile Include="Models\DTO\CadastroParametroCurva.cs" />
+    <Compile Include="Models\DTO\CadastroTipoCriterioElegibilidade.cs" />
+    <Compile Include="Models\DTO\CadastroUsuario.cs" />
+    <Compile Include="Models\DTO\CaminhoPao.cs" />
+    <Compile Include="Models\DTO\CoeficienteServidor.cs" />
+    <Compile Include="Models\DTO\CadastroParametroNota.cs" />
+    <Compile Include="Models\DTO\CadastroParametroPeso.cs" />
+    <Compile Include="Models\Domain\DenunciaAvaliacaoExterna.cs" />
+    <Compile Include="Models\DTO\FiltroAplicacaoProvaAvaliacaoExterna.cs" />
+    <Compile Include="Models\DTO\FiltroAvaliacaoExternaUnidadeAdminDetalhe.cs" />
+    <Compile Include="Models\DTO\FiltroDenunciaAvaliacaoExterna.cs" />
+    <Compile Include="Models\DTO\FiltroFuncaoOcorrenciaServidor.cs" />
+    <Compile Include="Models\DTO\FiltroLancamentoNotaDocente.cs" />
+    <Compile Include="Models\DTO\ImportAplicacaoProvaAvaliacaoExterna.cs" />
+    <Compile Include="Models\DTO\ImportAvaliacaoExternaUnidadeAdminDetalhe.cs" />
+    <Compile Include="Models\DTO\ImportDenunciaAvaliacaoExterna.cs" />
+    <Compile Include="Models\DTO\ImportFuncaoServidor.cs" />
+    <Compile Include="Models\DTO\FiltroFuncaoServidor.cs" />
+    <Compile Include="Models\DTO\FiltroOcorrenciaServidor.cs" />
+    <Compile Include="Models\DTO\ImportLancamentoNotaDocente.cs" />
+    <Compile Include="Models\DTO\ImportOcorrenciaServidor.cs" />
+    <Compile Include="Models\DTO\ImportUnidadeAdministrativaDemaisUnidades.cs" />
+    <Compile Include="Models\DTO\ImportUnidadeAdministrativaEscolar.cs" />
+    <Compile Include="Models\DTO\ImportUnidadeAdministrativaRegional.cs" />
+    <Compile Include="Models\DTO\FiltroMotivoInelegDocente.cs" />
+    <Compile Include="Models\DTO\PesquisaUsuario.cs" />
+    <Compile Include="Models\DTO\FiltroLogAuditoria.cs" />
+    <Compile Include="Models\DTO\FiltroUnidadeAdministrativa.cs" />
+    <Compile Include="Models\DTO\ImportMetaUnidadeAdministrativa.cs" />
+    <Compile Include="Models\DTO\FiltroMetaUnidadeAdministrativa.cs" />
+    <Compile Include="Models\DTO\ImportMetaIGEUnidadeAdministrativa.cs" />
+    <Compile Include="Models\DTO\FiltroMetaIGEUnidadeAdministrativa.cs" />
+    <Compile Include="Models\DTO\ImportCriterioUnidadeAdministrativa.cs" />
+    <Compile Include="Models\DTO\FiltroCriterioUnidadeAdministrativa.cs" />
+    <Compile Include="Models\DTO\FiltroAvaliacaoExternaUnidadeAdmin.cs" />
+    <Compile Include="Models\DTO\FiltroIndicadorUnidadeAdministrativa.cs" />
+    <Compile Include="Models\DTO\FiltroNivelEnsinoUnidadeAdministrativa.cs" />
+    <Compile Include="Models\DTO\ImportAvaliacaoExternaUnidadeAdmin.cs" />
+    <Compile Include="Models\DTO\ImportFuncao.cs" />
+    <Compile Include="Models\DTO\FiltroFuncao.cs" />
+    <Compile Include="Models\DTO\EsqueciSenha.cs" />
+    <Compile Include="Models\DTO\ImportIndicadorUnidadeAdministrativa.cs" />
+    <Compile Include="Models\DTO\MotivoInelegDocenteUnidAdm.cs" />
+    <Compile Include="Models\DTO\NovaSenha.cs" />
+    <Compile Include="Models\DTO\ParametroCurvaItem.cs" />
+    <Compile Include="Models\DTO\ParametroNotaItem.cs" />
+    <Compile Include="Models\DTO\PesquisaServidor.cs" />
+    <Compile Include="Models\DTO\RptExtratoServidor.cs" />
+    <Compile Include="Models\DTO\RptRegionalExtratoServidor.cs" />
+    <Compile Include="Models\DTO\UnidadeConsolidado.cs" />
+    <Compile Include="Models\DTO\UploadUnidadeAdministrativa.cs" />
+    <Compile Include="Models\DTO\ValorConsolidado.cs" />
+    <Compile Include="Models\DTO\FiltroRptConsolidado.cs" />
+    <Compile Include="Models\DTO\ConsolidadoUnidadeAdm.cs" />
+    <Compile Include="Models\DTO\FiltroServidor.cs" />
+    <Compile Include="Models\DTO\FiltroUsuario.cs" />
+    <Compile Include="Models\DTO\ImportServidor.cs" />
+    <Compile Include="Models\DTO\Login.cs" />
+    <Compile Include="Models\DTO\MenuItem.cs" />
+    <Compile Include="Models\DTO\Paging.cs" />
+    <Compile Include="Models\DTO\UserState.cs" />
+    <Compile Include="Models\Mapper\AlocacaoServidorMapper.cs" />
+    <Compile Include="Models\Mapper\AplicacaoProvaAvaliacaoExternaMapper.cs" />
+    <Compile Include="Models\Mapper\AvaliacaoExternaMapper.cs" />
+    <Compile Include="Models\Mapper\AvaliacaoExternaUnidadeAdminDetalheMapper.cs" />
+    <Compile Include="Models\Mapper\AvaliacaoExternaUnidadeAdminMapper.cs" />
+    <Compile Include="Models\Mapper\CriterioUnidadeAdministrativaMapper.cs" />
+    <Compile Include="Models\Mapper\DenunciaAvaliacaoExternaMapper.cs" />
+    <Compile Include="Models\Mapper\ExecucaoCalculoMapper.cs" />
+    <Compile Include="Models\Mapper\FuncaoMapper.cs" />
+    <Compile Include="Models\Mapper\FuncaoServidorMapper.cs" />
+    <Compile Include="Models\Mapper\GrupoFuncaoMapper.cs" />
+    <Compile Include="Models\Mapper\IndicadorUnidadeAdministrativaMapper.cs" />
+    <Compile Include="Models\Mapper\LancamentoNotaDocenteMapper.cs" />
+    <Compile Include="Models\Mapper\MetaIGEUnidadeAdministrativaMapper.cs" />
+    <Compile Include="Models\Mapper\MetaUnidadeAdministrativaMapper.cs" />
+    <Compile Include="Models\Mapper\MotivoInelegibilidadeMapper.cs" />
+    <Compile Include="Models\Mapper\MotivoInelegDocenteMapper.cs" />
+    <Compile Include="Models\Mapper\NivelEnsinoMapper.cs" />
+    <Compile Include="Models\Mapper\NivelEnsinoUnidadeAdministrativaMapper.cs" />
+    <Compile Include="Models\Mapper\NotaMapper.cs" />
+    <Compile Include="Models\Mapper\OcorrenciaServidorMapper.cs" />
+    <Compile Include="Models\Mapper\ParametroCurvaMapper.cs" />
+    <Compile Include="Models\Mapper\ParametroNotaMapper.cs" />
+    <Compile Include="Models\Mapper\ParametroPesoMapper.cs" />
+    <Compile Include="Models\Mapper\TipoCriterioElegibilidadeMapper.cs" />
+    <Compile Include="Models\Mapper\TokenAlteracaoSenhaMapper.cs" />
+    <Compile Include="Models\Mapper\AnoReferenciaMapper.cs" />
+    <Compile Include="Models\Mapper\ArquivoImportacaoLogMapper.cs" />
+    <Compile Include="Models\Mapper\ArquivoImportacaoMapper.cs" />
+    <Compile Include="Models\Mapper\BaseMapper.cs" />
+    <Compile Include="Models\Mapper\CalculoRVMapper.cs" />
+    <Compile Include="Models\Mapper\IndicadorMapper.cs" />
+    <Compile Include="Models\Mapper\LogAuditoriaItemMapper.cs" />
+    <Compile Include="Models\Mapper\LogAuditoriaMapper.cs" />
+    <Compile Include="Models\Mapper\LoginMapper.cs" />
+    <Compile Include="Models\Mapper\ModalidadeMapper.cs" />
+    <Compile Include="Models\Mapper\MotivoInelegUnidAdmMapper.cs" />
+    <Compile Include="Models\Mapper\OcorrenciaMapper.cs" />
+    <Compile Include="Models\Mapper\RptExtratoServidorMapper.cs" />
+    <Compile Include="Models\Mapper\RptRegionalExtratoServidorMapper.cs" />
+    <Compile Include="Models\Mapper\TurnoMapper.cs" />
+    <Compile Include="Models\Mapper\UnidadeConsolidadoMapper.cs" />
+    <Compile Include="Models\Mapper\ValorConsolidadoMapper.cs" />
+    <Compile Include="Models\Mapper\ServidorMapper.cs" />
+    <Compile Include="Models\Mapper\TipoOcorrenciaMapper.cs" />
+    <Compile Include="Models\Mapper\TipoUnidadeAdministrativaMapper.cs" />
+    <Compile Include="Models\Mapper\UnidadeAdministrativaMapper.cs" />
+    <Compile Include="Models\Mapper\UsuarioMapper.cs" />
+    <Compile Include="Models\Service\AplicacaoProvaAvaliacaoExternaService.cs" />
+    <Compile Include="Models\Service\AvaliacaoExternaService.cs" />
+    <Compile Include="Models\Service\AvaliacaoExternaUnidadeAdminDetalheService.cs" />
+    <Compile Include="Models\Service\AvaliacaoExternaUnidadeAdminService.cs" />
+    <Compile Include="Models\Service\CriterioUnidadeAdministrativaService.cs" />
+    <Compile Include="Models\Service\DenunciaAvaliacaoExternaService.cs" />
+    <Compile Include="Models\Service\FuncaoService.cs" />
+    <Compile Include="Models\Service\FuncaoServidorService.cs" />
+    <Compile Include="Models\Service\GrupoFuncaoService.cs" />
+    <Compile Include="Models\Service\IndicadorUnidadeAdministrativaService.cs" />
+    <Compile Include="Models\Service\LancamentoNotaDocenteService.cs" />
+    <Compile Include="Models\Service\LogAuditoriaItemService.cs" />
+    <Compile Include="Models\Service\LogAuditoriaService.cs" />
+    <Compile Include="Models\Service\MetaIGEUnidadeAdministrativaService.cs" />
+    <Compile Include="Models\Service\MetaUnidadeAdministrativaService.cs" />
+    <Compile Include="Models\Service\NivelEnsinoService.cs" />
+    <Compile Include="Models\Service\NotaService.cs" />
+    <Compile Include="Models\Service\OcorrenciaServidorService.cs" />
+    <Compile Include="Models\Service\ParametroCurvaService.cs" />
+    <Compile Include="Models\Service\ParametroNotaService.cs" />
+    <Compile Include="Models\Service\ParametroPesoService.cs" />
+    <Compile Include="Models\Service\TipoCriterioElegibilidadeService.cs" />
+    <Compile Include="Models\Service\TokenAlteracaoSenhaService.cs" />
+    <Compile Include="Models\Service\AnoReferenciaService.cs" />
+    <Compile Include="Models\Service\ArquivoImportacaoLogService.cs" />
+    <Compile Include="Models\Service\ArquivoImportacaoService.cs" />
+    <Compile Include="Models\Service\BaseService.cs" />
+    <Compile Include="Models\Service\CalculoRVService.cs" />
+    <Compile Include="Models\Service\IndicadorService.cs" />
+    <Compile Include="Models\Service\LoginService.cs" />
+    <Compile Include="Models\Service\ModalidadeService.cs" />
+    <Compile Include="Models\Service\MotivoInelegDocenteUnidAdmService.cs" />
+    <Compile Include="Models\Service\OcorrenciaService.cs" />
+    <Compile Include="Models\Service\RptConsolidadoService.cs" />
+    <Compile Include="Models\Service\RptExtratoServidorService.cs" />
+    <Compile Include="Models\Service\ServidorService.cs" />
+    <Compile Include="Models\Service\TipoOcorrenciaService.cs" />
+    <Compile Include="Models\Service\TipoUnidadeAdministrativaService.cs" />
+    <Compile Include="Models\Service\UnidadeAdministrativaService.cs" />
+    <Compile Include="Models\Service\UsuarioService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\Crypt.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Default.css" />
+    <Content Include="Content\Consolidado.css" />
+    <Content Include="Content\iepngfix.htc" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\background.png" />
+    <Content Include="Content\images\bg-BodyHome.png" />
+    <Content Include="Content\images\bg-bordamenu.png" />
+    <Content Include="Content\images\bg-home.png" />
+    <Content Include="Content\images\bg-login.png" />
+    <Content Include="Content\images\bg-loginbottomform.png" />
+    <Content Include="Content\images\bg-menu.png" />
+    <Content Include="Content\images\blank.gif" />
+    <Content Include="Content\images\bt_atualizar.gif" />
+    <Content Include="Content\images\bt_cancelar.gif" />
+    <Content Include="Content\images\bt_entrar.png" />
+    <Content Include="Content\images\bt_excel.gif" />
+    <Content Include="Content\images\bt_excluir.gif" />
+    <Content Include="Content\images\bt_executar_calculo.gif" />
+    <Content Include="Content\images\bt_exportar_coeficiente.gif" />
+    <Content Include="Content\images\bt_formato_arquivo.gif" />
+    <Content Include="Content\images\bt_importar.gif" />
+    <Content Include="Content\images\bt_nova_alocacao.png" />
+    <Content Include="Content\images\bt_nova_funcao.png" />
+    <Content Include="Content\images\bt_nova_ocorrencia.png" />
+    <Content Include="Content\images\bt_novo.gif" />
+    <Content Include="Content\images\bt_novo_afastamento.png" />
+    <Content Include="Content\images\bt_pesquisar.gif" />
+    <Content Include="Content\images\bt_pesquisar_auditoria.png" />
+    <Content Include="Content\images\bt_salvar.gif" />
+    <Content Include="Content\images\bt_voltar.gif" />
+    <Content Include="Content\images\bt_voltar_pesquisa.gif" />
+    <Content Include="Content\images\calendar.gif" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\fotos_login.png" />
+    <Content Include="Content\images\fundo_campos_login.jpg" />
+    <Content Include="Content\images\icoDetalhes.png" />
+    <Content Include="Content\images\icoNao.png" />
+    <Content Include="Content\images\icoSim.png" />
+    <Content Include="Content\images\ico_erro.gif" />
+    <Content Include="Content\images\lk_abrir.gif" />
+    <Content Include="Content\images\lk_excluir.gif" />
+    <Content Include="Content\images\lk_importar.gif" />
+    <Content Include="Content\images\lk_retornar.gif" />
+    <Content Include="Content\images\paginator.png" />
+    <Content Include="Content\images\pesquisar.gif" />
+    <Content Include="Content\images\pix.gif" />
+    <Content Include="Content\images\separador.png" />
+    <Content Include="Content\images\setaMenu.png" />
+    <Content Include="Content\images\setaMenuOn.png" />
+    <Content Include="Content\images\topo.png" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\menu.css" />
+    <Content Include="Content\menu_ie.css" />
+    <Content Include="Content\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\smoothness\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\Toolbar.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\functions.js" />
+    <Content Include="Scripts\hoverIntent.js" />
+    <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.1.js" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.bgiframe.js" />
+    <Content Include="Scripts\jquery.dropdown.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.2.2.js" />
+    <Content Include="Scripts\jquery.maskMoney.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-pt-BR.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\LoginAsp.cshtml" />
+    <Content Include="Views\Home\OpenAsp.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\CustomMvcResources.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>CustomMvcResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Version.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Ocorrencia\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Ocorrencia\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Ocorrencia\PartialOcorrencia.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Ocorrencia\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Servidor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Servidor\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Usuario\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Usuario\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ParametroCurva\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Usuario\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_ErrorLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AlteracaoSenha\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Error\NotFound.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CalculoRV\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoOcorrencia\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoOcorrencia\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoOcorrencia\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoOcorrencia\PartialTipoOcorrencia.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoUnidadeAdministrativa\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoUnidadeAdministrativa\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoUnidadeAdministrativa\PartialTipoUnidadeAdministrativa.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoUnidadeAdministrativa\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RptConsolidado\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RptExtratoServidor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LogImportacao\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MotivoInelegDocenteUnidAdm\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\RptConsolidado.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PesquisaServidor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\RptExtratoServidor.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AlteracaoSenha\Modal.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modalidade\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modalidade\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modalidade\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modalidade\PartialModalidade.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Indicador\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Indicador\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Indicador\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Indicador\PartialIndicador.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AvaliacaoExterna\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AvaliacaoExterna\PartialAvaliacaoExterna.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AvaliacaoExterna\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AvaliacaoExterna\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AnoReferencia\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AnoReferencia\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AnoReferencia\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AnoReferencia\PartialAnoReferencia.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\GrupoFuncao\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\GrupoFuncao\PartialGrupoFuncao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\GrupoFuncao\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\GrupoFuncao\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Nota\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Nota\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Nota\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Nota\PartialNota.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NivelEnsino\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NivelEnsino\PartialNivelEnsino.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NivelEnsino\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NivelEnsino\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoCriterioElegibilidade\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoCriterioElegibilidade\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoCriterioElegibilidade\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoCriterioElegibilidade\PartialTipoCriterioElegibilidade.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ParametroNota\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ParametroPeso\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NovaSenha\Solicitacao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Usuario\PartialUsuario.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\NovaSenha\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Servidor\FormatoArquivo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Funcao\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Funcao\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Funcao\FormatoArquivo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AvaliacaoExternaUnidadeAdmin\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AvaliacaoExternaUnidadeAdmin\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AvaliacaoExternaUnidadeAdmin\FormatoArquivo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CriterioUnidadeAdministrativa\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CriterioUnidadeAdministrativa\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CriterioUnidadeAdministrativa\FormatoArquivo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\IndicadorUnidadeAdministrativa\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\IndicadorUnidadeAdministrativa\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\IndicadorUnidadeAdministrativa\FormatoArquivo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MetaIGEUnidadeAdministrativa\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MetaIGEUnidadeAdministrativa\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MetaIGEUnidadeAdministrativa\FormatoArquivo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MetaUnidadeAdministrativa\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MetaUnidadeAdministrativa\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MetaUnidadeAdministrativa\FormatoArquivo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Auditoria\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Auditoria\Detalhes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PesquisaUsuario\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UnidadeAdministrativa\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OcorrenciaServidor\FormatoArquivo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UnidadeAdministrativa\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UnidadeAdministrativa\FormatoArquivo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuncaoServidor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OcorrenciaServidor\Index.cshtml" />
+    <Content Include="Views\OcorrenciaServidor\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuncaoServidor\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuncaoServidor\FormatoArquivo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuncaoOcorrenciaServidor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuncaoServidor\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuncaoServidor\PartialFuncaoServidor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\FuncaoServidor\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OcorrenciaServidor\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OcorrenciaServidor\PartialOcorrenciaServidor.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\OcorrenciaServidor\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AplicacaoProvaAvaliacaoExterna\FormatoArquivo.cshtml" />
+    <Content Include="Views\AplicacaoProvaAvaliacaoExterna\Index.cshtml" />
+    <Content Include="Views\AplicacaoProvaAvaliacaoExterna\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DenunciaAvaliacaoExterna\FormatoArquivo.cshtml" />
+    <Content Include="Views\DenunciaAvaliacaoExterna\Index.cshtml" />
+    <Content Include="Views\DenunciaAvaliacaoExterna\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LancamentoNotaDocente\FormatoArquivo.cshtml" />
+    <Content Include="Views\LancamentoNotaDocente\Index.cshtml" />
+    <Content Include="Views\LancamentoNotaDocente\Upload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MotivoInelegDocente\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\AvaliacaoExternaUnidadeAdmin\Detalhes.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61320</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

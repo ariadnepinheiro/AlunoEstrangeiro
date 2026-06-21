@@ -1,0 +1,69 @@
+﻿@model SRV.Models.DTO.MotivoInelegDocenteUnidAdm
+
+@using MvcContrib.UI.Grid
+@using SRV.Common.Extension
+
+@{
+    Layout = null;
+}
+
+<div class="boxContent">
+
+    @Html.HiddenFor(m => m.Servidor.IdServidor)
+    @Html.HiddenFor(m => m.IdAnoReferencia)
+    @Html.HiddenFor(m => m.UnidadeAdministrativa.IdUnidadeAdministrativa)
+
+    <table class="tableForm">
+        <tr>
+            <td class="labelRight">@Html.LabelFor(m => m.UnidadeAdministrativa.IdUnidadeAdministrativa)</td>
+            <td>@Model.UnidadeAdministrativa.IdUnidadeAdministrativa</td>
+        </tr>
+        <tr>
+            <td class="labelRight">@Html.LabelFor(m => m.UnidadeAdministrativa.DesUnidadeAdministrativa)</td>
+            <td>@Model.UnidadeAdministrativa.DesUnidadeAdministrativa</td>
+        </tr>
+    </table>
+
+    <br/>
+
+    @using (@Html.BeginScroller("100%", "250px"))
+    {
+        @Html.Grid(Model.Motivos).Columns(column =>
+        {
+            column
+                .For(c => (c.IdMotivoInelegibilidade > 0)
+                           ? Html.ActionLink(" ", "", null, new { href = "#", @class = "icoLinkDetalhes", onclick = "exibirDetalhesServidor(" + c.IdMotivoInelegibilidade + "," + @Model.UnidadeAdministrativa.IdUnidadeAdministrativa + "," + @Model.Servidor.IdServidor + ")" })
+                           : Html.Label("-")
+                )
+                .Named("Detalhe")
+                .Attributes(width => "50px", align => "center")
+                .HeaderAttributes(width => "50px", align => "center")
+                .Encode(false);
+            
+            column.For(c => c.DesMotivoInelegibilidade).Named("Motivo").Attributes(width => "600px").HeaderAttributes(width => "600px");
+        }).Empty("Nenhum registro encontrado")
+    }
+            
+</div>
+
+<div id="modalMotivoInelegivelDocente" title=""></div>
+<div id="modalMotivoInelegivelDocenteDetalhe" title=""></div>
+
+<script type="text/javascript">
+    function exibirDetalhesServidor(idMotivo, idUnidade, idServidor) {
+        var dlg = $("#modalMotivoInelegivelDocenteDetalhe").dialog({
+            title: 'Detalhamento do Motivo da Inelegibilidade',
+            height: 400,
+            width: 720,
+            position: ['center', 120],
+            modal: true,
+            resizable: false,
+            open: function () {
+                $(this).load('@Url.Action("Index", "MotivoInelegDocente", new { idAnoReferencia = @Model.IdAnoReferencia})&idUnidade=' + idUnidade + '&idServidor=' + idServidor + '&idMotivo=' + idMotivo);
+            },
+            beforeClose: function (event, ui) {
+                $('#modalMotivoInelegivelDocenteDetalhe').empty();
+            }
+        });
+    }
+</script>

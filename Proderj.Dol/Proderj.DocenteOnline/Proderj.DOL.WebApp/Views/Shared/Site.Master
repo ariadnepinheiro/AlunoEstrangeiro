@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" EnableViewState="true" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <title>
+        <asp:ContentPlaceHolder ID="TituloPagina" runat="server" />
+    </title>
+    <link id="page_favicon" href="../../Imagens/favicon.ico" rel="SHORTCUT ICON" />
+    <asp:ContentPlaceHolder ID="HeadPagina" runat="server" />
+
+        <script type="text/javascript" src="<%=Url.Action("Carrega", "JS", new { funcao = "master-bloqueio" }) %>"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css" integrity="sha512-3icgkoIO5qm2D4bGSUkPqeQ96LS8+ukJC7Eqhl1H5B2OJMEnFqLmNDxXVmtV/eq5M65tTDkUYS/Q0P4gvZv+yA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    
+        <!-- Rybená-->
+        <script type="text/javascript" src="https://cdn.rybena.com.br/dom/master/latest/rybena.js?positionPlayer=left&positionBar=right"></script>
+</head>
+<body class="py-8">
+    <div id="dvbloqueio" class="Desbloqueado" >
+    </div> 
+    <asp:ContentPlaceHolder ID="Cabecalho" runat="server" />
+    <asp:ContentPlaceHolder ID="Conteudo" runat="server" />
+    
+    <div valign="top" class="rodape">
+        
+        <!-- Copyright -->
+        <div class="bas">
+            © Todos os direitos reservados SEEDUC - RJ - 2022 | versão <%Response.Write((typeof(Proderj.DOL.WebApp.MvcApplication).Assembly.GetName().Version) + ConfigurationManager.AppSettings["VersaoSufixo"].ToString()); %>
+        </div>
+
+        <!-- Logo Conexão -->
+        <div class="logo-conexao">
+                
+        </div>   
+            
+        <!-- Redes Sociais -->
+        <div class="redes-sociais">
+            <div class="icones-redes">
+                <a href="https://www.facebook.com/seeducRJ" target="_blank"><i class="fab fa-facebook-f fa-2x"></i></a>
+                <a href="https://www.instagram.com/seeducrj/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://www.youtube.com/channel/UCzhk54RUJtn1kwqU4LTNP-Q" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+            </div>
+        </div>
+      
+    </div>
+</body>
+</html>

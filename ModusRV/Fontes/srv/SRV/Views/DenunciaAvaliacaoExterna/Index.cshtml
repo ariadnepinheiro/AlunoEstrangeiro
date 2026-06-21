@@ -1,0 +1,97 @@
+﻿@model SRV.Models.DTO.FiltroDenunciaAvaliacaoExterna
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btPesquisar")
+        @Html.ToolbarItemLink(true, "Upload", null, null, "btImportar")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdServidor)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.IdServidor, new { style = "width: 100px; text-align: right;", maxlength = 8 })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.DesNomeServidor)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.DesNomeServidor, new { style = "width: 350px;", maxlength = 70 })
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="clear:both"></div>
+
+        @if (Model.DenunciasAvaliacoesExternas != null)
+        {
+            @Html.Pager(Model.DenunciasAvaliacoesExternas)
+
+            @Html.Grid(Model.DenunciasAvaliacoesExternas.Items).Columns(column =>
+            {
+                if (@Role.IsGranted("Administrador"))
+                {
+                    column.For(
+						c => Html.ActionLink(" ", "", null, 
+							new { 
+								href = "#", @class = "icoLinkDelete", 
+								onclick = "deleteItemLocal(this, '" + @Url.Action("Delete", "DenunciaAvaliacaoExterna") + "', " + @c.Servidor.IdServidor + ")" 
+							}
+						)
+					)
+					.Named("Excluir")
+					.Attributes(width => "42px", align => "center")
+					.HeaderAttributes(width => "42px", align => "center")
+					.Encode(false);
+                }
+
+                column.For(c => c.Servidor.IdServidor).Named("Matrícula").Attributes(width => "150px").HeaderAttributes(width => "150px");
+                column.For(c => c.Servidor.DesNomeServidor).Named("Nome").Attributes(width => "100%").HeaderAttributes(width => "100%");
+            }).Empty("Nenhum registro encontrado")
+        }
+    </div>                       
+}
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $('#IdServidor').mask("??99999999", { placeholder: "" });
+    });
+
+    function deleteItemLocal(element, url, idServidor) {
+
+        if (confirm("Confirma exclusão do registro?")) {
+
+            $.ajax({ url: url,
+                type: 'post',
+                data: { idServidor: idServidor },
+                success: function (data) {
+                    alert(data.Result);
+                    $(element).closest("form").submit();
+                },
+                error: function (xhr, status, error) {
+                    if (xhr.status != 403) {
+                        $(".boxInfo").remove();
+                        $(".validation-summary-errors").remove();
+                        $(".boxContent").prepend("<div class='validation-summary-errors'><ul><li>" + xhr.responseText + "</li></ul></div>");
+                    }
+                }
+            });            
+        }
+    }
+    
+</script>

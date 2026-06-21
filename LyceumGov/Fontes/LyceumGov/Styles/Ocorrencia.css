@@ -1,0 +1,53 @@
+﻿.teste
+{
+	background-color: white;
+	border: solid 1px #6a8ccb;
+    font-family: Arial !important;
+    font-size: 7pt !important;
+    height: 113px;
+    width: 70% !important;
+    
+}
+.dxeListBox_Office2003_Blue .dxeHD
+{
+	font-weight: bold;
+}
+.dxeListBox_Office2003_Blue div.dxlbd
+{
+	padding-top: 1px;    
+    height: 112px;
+}
+.dxeListBoxItem_Office2003_Blue
+{    
+    border-bottom: solid 1px white;    
+    border-left: solid 1px white;    
+    border-right: solid 1px white;    
+    color: Black;        
+    font-family: Arial !important;
+    font-size: 7pt !important;
+    padding: 3px 2px 4px 3px;
+    white-space: nowrap;
+    text-align: left;
+    cursor: default;
+     
+}
+.dxeListBoxItemHover_Office2003_Blue        /* inherits dxeListBoxItem */
+{
+    background-color: #cce2fc;
+}
+.dxeListBoxItemSelected_Office2003_Blue     /* inherits dxeListBoxItem */
+{    
+    color: black;       
+    width: 70% !important;
+}
+.dxeListBox_Office2003_Blue td.dxeI 
+{
+    padding-right: 0px!important;
+    border-right-width: 0px!important;
+}
+.dxeListBox_Office2003_Blue td.dxeT
+{
+    width: 70% !important;    
+    border-left-width: 0px!important;
+       
+}

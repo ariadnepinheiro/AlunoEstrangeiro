@@ -1,0 +1,427 @@
+﻿/****
+CABECALHO INICIO
+****/
+
+.cabecalho {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	min-height: 60px;
+	background:#ffffff;
+	box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 15%);
+	z-index: 10000;
+}
+
+.top_wrapper 
+{
+    position: relative;
+    height: 60px;
+}
+
+.cabecalho .top {
+	display: flex;
+	position: relative;
+	min-height: 60px;
+	width: 100%;
+	align-items: center;
+	/*background: url('<%=Url.Content("~/Imagens/bk_top.gif")%>') no-repeat;*/
+}
+.top #bt_menu{
+    display:none;
+}
+.top label[for="bt_menu"]{
+    
+    padding: 5px;
+    color: #222;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+label[for="bt_menu"]{
+    display: none;
+}
+.cabecalho .top .menu-responsivo
+{   display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;  
+}
+
+.cabecalho .top_inf {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 90px;
+	/*background: white url('<%=Url.Content("~/Imagens/bk_top-inf.gif")%>') repeat-x;*/
+	border-bottom: 5px #0353AB solid;
+	z-index: 10000;
+}
+
+.cabecalho .ico_sair{
+    float:right;
+    display:flex;
+    margin:1px 5px 1px 5px;
+	width:76px;
+    height:auto;
+    border:2px solid #1E6496;
+    background: #ffffff;
+    color:#1E6496; 
+    text-align:center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    justify-content: space-around;
+    align-items: center;
+}
+.icon-sair{
+    display: inline-block;
+    Height:30px;
+    width:30px;
+    background:url("../Imagens/icone-site-09.png")no-repeat;
+    background-size:30px;
+}
+
+.cabecalho .ico_sair:hover{
+    background-position:-60px;
+    cursor:pointer;
+    border:2px solid #1E6496;
+    background: #1E6496;
+    color:#ffffff;
+}
+.cabecalho .ico_sair:hover .icon-sair{
+    Height:30px;
+    width:30px;
+    background:url("../Imagens/icone-site-06.png")no-repeat;
+    background-size:30px;
+}
+.cabecalho .ico_inicio {
+	float:right;
+	display:flex;
+    margin:1px 5px 1px 5px;
+	width:76px;
+    height:auto;
+    border:2px solid #1E6496;
+    background: #ffffff;
+    color:#1E6496; 
+    text-align:center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    justify-content: space-around;
+    align-items: center;
+}
+.icon-home{
+    display: inline-block;
+    Height:30px;
+    width:30px;
+    background:url("../Imagens/icone-site-07.png")no-repeat;
+    background-size:30px;
+}
+.cabecalho .ico_inicio:hover {
+	background-position:-60px;
+    cursor:pointer;
+    border:2px solid #1E6496;
+    background: #1E6496;
+    color:#ffffff;
+}
+.cabecalho .ico_inicio:hover .icon-home{
+    Height:30px;
+    width:30px;
+    background:url("../Imagens/icone-site-04.png")no-repeat;
+    background-size:30px;
+}
+.cabecalho .ico_info{
+	float:right;
+	display:flex;
+    margin:1px 5px 1px 5px;
+	width:76px;
+    height:auto;
+    border:2px solid #1E6496;
+    background: #ffffff;
+    color:#1E6496; 
+    text-align:center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    justify-content: space-around;
+    align-items: center;
+}
+.icon-ajuda{
+    display: inline-block;
+    Height:30px;
+    width:30px;
+    background:url("../Imagens/icone-site-08.png")no-repeat;
+    background-size:30px;
+}
+.cabecalho .ico_info:hover {
+	background-position:-60px;
+    cursor:pointer;
+    border:2px solid #1E6496;
+    background: #1E6496;
+    color:#ffffff;
+}
+.cabecalho .ico_info:hover .icon-ajuda{
+    Height:30px;
+    width:30px;
+    background:url("../Imagens/icone-site-05.png")no-repeat;
+    background-size:30px;
+}
+.cabecalho .top_logo {
+	padding:5px;
+	height: 50px;
+}
+.cabecalho .top_logo img{   
+    height: 50px;
+    margin-left:1em;
+}
+.cabecalho .tit_sist {
+	display: flex;
+	flex-direction: column;
+	width: auto;
+	min-width: 224px;
+	margin-left:2em;
+	align-items: baseline;
+}
+.cabecalho .tit_sist span{
+    display:flex;
+    align-items: baseline;
+}
+.cabecalho .tit_sist h2{
+    font-family: 'Open Sans',Tahoma, Geneva, sans-serif;
+    font-size: 17px;
+    text-transform:uppercase;
+    color: #1d55ad;
+    font-style:italic;
+    margin:0;
+}
+#public-bg .cabecalho .tit_sist .marca-pagina{
+    display:none;   
+}
+
+.cabecalho .tit_sist p{
+    margin:0;
+    margin-left:5px;
+    color:#1d55ad;
+    font-weight: 600;
+}
+.cabecalho .tit_sist .marca-pagina{
+    color:#ffffff;
+    background:gray; 
+    padding: 2px 10px;
+    border-radius: 5px;
+} 
+.cabecalho .tit_sist .marca-pagina h1{   
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 5px;
+    color: #ffffff;
+}
+.cabecalho .tit_sist .marca-pagina p{   
+    color: #ffffff;
+    font-size: 15px;
+    margin: 0;
+}  
+/*.cabecalho .tit_pag 
+{
+	position: absolute;
+	top: 35px;
+	right: 10px;
+	height: 20px;
+	width: 765px;
+}*/
+
+.cabecalho .botoes-menu-superior{
+	width: 300px;
+}
+#public-bg .cabecalho .botoes-menu-superior {
+   display:none;
+}
+.tit_pag 
+{
+    min-width: 220px;
+    height: 20px;
+}
+#public-bg .tit_pag {
+    display:block;
+    min-width:308px;
+    height: 20px;
+}
+.icon-externo{
+    color:Black;
+    text-decoration:none;
+    padding: 0px 25px;
+    padding-bottom: 15px;
+    float: right;
+    font-size:16px;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
+}
+.icon-externo:hover
+{  
+    text-decoration:none;
+    box-shadow: inset 0 -5px 0 0 #1E6496;
+    
+}
+.cabecalho .tit_pag .botao{
+	display:inline-block;
+	border-style:None;
+	cursor:pointer;
+}
+.cabecalho .saudacao {
+	color: black;
+	font-size: 11px;
+	font-weight: 700;
+}/*
+.cabecalho .menu-topo{ 
+    width: 100%;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    margin-left:2em;
+    padding-top:6px;
+}*/
+.cabecalho .menu-topo {
+    width: 100%;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 2em;
+    padding-top: 6px;
+    border-top: 2px solid #dfe6ed;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.cabecalho .menu-topo li a{
+	float:left;
+	line-height:18px;
+	height:20px;
+	padding: 0px 1px;
+	background:#1E6496;
+	color:#FFF;
+	text-decoration:none;
+	font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 5px;	
+}
+.cabecalho .menu-topo li a:hover{
+	text-decoration:underline;	
+}
+
+.cabecalho .menu-topo li .menu-aba-esquerda{
+	width:10px;
+	height:20px;
+	display:inline-block;
+	background-image: url(<%=Url.Content("~/Imagens/menu_topo_esqdir.png")%>);
+	background-repeat: no-repeat;
+	background-position: left;
+	float:left;
+}
+.cabecalho .menu-topo li .menu-aba-direita {
+	width:10px;
+	height:20px;
+	display:inline-block;
+	background-image: url(<%=Url.Content("~/Imagens/menu_topo_esqdir.png")%>);
+	background-repeat: no-repeat;
+	background-position: right;
+	float:left;
+}
+.cabecalho .menu-topo li {
+	list-style:none;
+	float:left;
+	margin-right:2px;
+}
+
+@media (max-width:984px){
+    .cabecalho .top{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    label[for="bt_menu"] {
+        display: block;
+    }
+    
+    .cabecalho .top .menu-responsivo {
+        display:none;
+        flex-direction: column;
+        width:100%;
+    } 
+     #bt_menu:checked ~ .menu-responsivo{
+        display:flex;
+    }
+    .cabecalho .tit_sist {
+        margin:0;
+    }
+    .cabecalho .saudacao {
+        margin:5px 0;
+    }
+    
+    .cabecalho .botoes-menu-superior {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        order:2;
+        margin:1em;  
+    }
+    .cabecalho .ico_sair {
+        box-sizing: border-box;
+        margin: 0;
+        height: 24px;
+        width: 100%;
+        margin-bottom: 8px;
+        order:3;
+    }
+    .cabecalho .ico_inicio {
+	    box-sizing: border-box;
+        margin: 0;
+        height: 24px;
+        width: 100%;
+        margin-bottom: 8px; 
+    }
+    .cabecalho .ico_info{
+        box-sizing: border-box;
+        margin: 0;
+        height: 24px;
+        width: 100%;
+        margin-bottom: 8px;
+        order:2;
+    }
+    
+    /*
+    .cabecalho .menu-topo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+    }
+    .cabecalho .menu-topo li {
+        list-style: none;
+        /* float: left;
+        /* margin-right: 2px; 
+        margin: 2px;
+        width: 200px;
+    }
+    .cabecalho .menu-topo li a {
+        height: 24px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    */
+    
+    
+} 
+/****
+CABECALHO FIM
+****/

@@ -1,0 +1,1635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CONTRATO DE PRESTAÇÃO DE SERVIÇOS POR TEMPO DETERMINADO, NA FORMA DO ARTIGO 37, INCISO IX DA CONSTITUIÇÃO DA REPÚBLICA E ARTIGO 77, INCISO XI, DA CONSTITUIÇÃO DO ESTADO QUE ENTRE SI CELEBRAM O ESTADO DO RIO DE JANEIRO, PELA SECRETARIA DE EDUCAÇÃO E A SRA. PATRICIA HELENA DOS REIS BARBASTEFANO.
+
+
+O ESTADO DO RIO DE JANEIRO, neste ato pela Secretaria de Educação, doravante denominado CONTRATANTE, representado neste ato pela Superintendente de Gestão de Pessoas, PATRICIA HELENA DOS REIS BARBASTEFANO, cédula de Identidade nº 0008126970-6 – expedida pelo IFP, conforme autorização do Exmo.    Sr.  Governador  do Estado, constante do  Decreto Estadual nº 43.469 de 16/02/2012,  e  o    Sr(a).</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!NOME_CONTRATADO.Value</Value>
+                <Style>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> nascido(a) em </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!NASCIMENTO.Value</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, domiciliado à </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!ENDERECO.Value</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>,  nº </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!END_NUM.Value</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, complemento </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!END_COMPL.Value</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> Bairro </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!BAIRRO.Value</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, Cidade  </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!NOME.Value</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> 	e inscrito no CPF sob o nº </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!CPF.Value</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> , daqui por diante denominado CONTRATADO, resolvem celebrar ao(s) dias </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!DIA_ADMISSAO.Value</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> do mês de </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!MES_ADMISSAO.Value</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> do ano de </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!ANO_ADMISSAO.Value</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, o presente Contrato de Prestação de Serviços por tempo determinado, na forma  do  artigo  37,  inciso  IX,  da  Constituição  da  República,  e  artigo  77,  inciso  XI,  da Constituição  do  Estado,  que  se  regerá  pelas  normas  da  Lei  estadual  nº  4.599,  de  27  de setembro  de  2005,  Decreto  nº  38.604,  de  06  de  dezembro  de  2005,  aplicando-se  a  este contrato  suas  disposições  irrestritas  e  incondicionalmente,  bem  como  pelas  cláusulas  e condições seguintes:
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA PRIMEIRA: DO OBJETO</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O presente instrumento tem por objeto a prestação de serviços de Professor para atuação nos anos finais do Ensino Fundamental, Ensino Médio e Educação Profissional à CONTRATANTE, de acordo com o resultado do processo seletivo simplificado, pelo prazo determinado na Cláusula Segunda, na forma da Lei Estadual nº 4.599/05, Decreto Estadual nº 43.469 de 16/02/2012 e Resolução SEEDUC nº 4.792 de 12/04/2012.
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA SEGUNDA: DO PRAZO</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+Os contratos terão validade a partir da data de suas formalizações, por tempo determinado, para atendimento ao ano letivo de 2012.
+ PARÁGRAFO PRIMEIRO – O prazo contratual poderá ser prorrogado pelo prazo máximo de até 1 (um) ano, observando-se a disciplina do artigo 2º e parágrafo único, da Lei nº 4.599, de 27 de setembro de 2005, desde que o prazo total seja de 3 (três) anos.
+PARÁGRAFO SEGUNDO – O período do contrato previsto no </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>caput</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> deverá ser executado integralmente e sem interrupções, salvo aquelas expressamente previstas em  lei  e  neste contrato,  sob  pena  de  ser  caracterizada  a  inadimplência  do  CONTRATADO,  com  a conseqüente extinção do contrato de prestação de serviço.
+
+PARÁGRAFO TERCEIRO – A prorrogação prevista  nesta Cláusula só poderá ser efetivada segundo a conveniência	da Administração, a critério exclusivo do CONTRATANTE.
+
+PARÁGRAFO QUARTO - O CONTRATADO não poderá prestar serviços no âmbito da Secretaria de Educação após o término do contrato, sob pena de apuração da responsabilidade administrativa e civil das autoridades que determinarem, solicitarem, permitirem ou tolerarem tal situação.
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA TERCEIRA: DAS OBRIGAÇÕES DO CONTRATANTE</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O CONTRATANTE se obriga a:
+a) depositar a quantia líquida da retribuição a que fizer jus o CONTRATADO, em conta aberta em seu nome no Banco BRADESCO, conforme o calendário de pagamento dos servidores públicos da Administração Direta, Indireta, Fundações e dos Pensionistas do Estado do Rio de Janeiro;
+b) recolher contribuição Previdenciária mensal e o imposto de renda de pessoas físicas – IRPF, deduzidos da retribuição do CONTRATADO;
+c) expedir certidões que atestem a contratação, bem como o tempo de prestação de serviços, para defesa de direitos ou esclarecimento de situação, a requerimento do CONTRATADO;
+d) abster-se de determinar tarefas ou funções que impliquem em eventual desvio de função do CONTRATADO;
+
+e) pagar tempestiva e integralmente a remuneração pactuada na Cláusula Décima Primeira.
+
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA QUARTA: DAS OBRIGAÇÕES DA CONTRATADA</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+Constituem obrigações da CONTRATADA:
+
+a) desenvolver satisfatoriamente, de acordo com sua formação profissional e capacitação técnica especializada, as atividades determinadas pelo superior hierárquico;
+b) estar presente no local de trabalho durante todo o tempo de desenvolvimento normal das atividades de execução do contrato, que corresponderá ao horário de expediente do CONTRATANTE;
+c) submeter-se às normas, rotinas e horários de trabalho estabelecidos pelo CONTRATANTE;
+d) aceitar os descontos de lei incidentes em sua remuneração mensal bruta, bem como os decorrentes de horas não trabalhadas  em  função  de  ausência  não  autorizada  ou  falta  não abonada, devidamente apontadas no período de vigência deste contrato;
+e) cumprir as determinações legais emanadas das autoridades competentes do (órgão ou entidade contratante).
+f) exercer com zelo e dedicação os encargos que lhe forem cometidos;
+g) ser leal ao CONTRATANTE;
+h) observar as normas legais e regulamentares aplicáveis às atividades do CONTRATANTE;
+i) cumprir as ordens lícitas de superior hierárquico;
+j) atender, com presteza, ao público em geral prestando as informações requeridas, ressalvadas as legalmente protegidas por sigilo, e preparar aquelas requeridas para a defesa do CONTRATANTE em juízo;
+l) levar ao conhecimento da autoridade superior as irregularidades de que tiver ciência em razão do exercício de suas atividades;
+m) zelar pela economia do material e a conservação do patrimônio público;
+n) guardar sigilo sobre assuntos do CONTRATANTE;
+o) manter conduta compatível com a moralidade administrativa;
+p) ser assíduo e pontual na prestação de seus serviços;
+q) tratar com urbanidade as pessoas;
+r) representar, por intermédio da via hierárquica, contra ilegalidade, omissão ou abuso de poder.
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA QUINTA: DAS PROIBIÇÕES</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+Ao CONTRATADO é vedado:
+
+a) ausentar-se do local de prestação de seus serviços, durante o desenvolvimento diário das atividades do projeto, sem prévia autorização do seu superior hierárquico ou de funcionário por ele indicado;
+b) retirar, sem prévia anuência da autoridade competente, qualquer documento ou objeto das dependências do CONTRATANTE;
+c) opor resistência injustificada ao andamento de documento ou processo ou à execução de serviços;
+d) promover manifestação de cunho político-partidário nas dependências do CONTRATANTE;
+e) promover, nas dependências do CONTRATANTE, manifestação pública de agravo ou desagravo  a  outros  agentes  públicos  ou  a  terceiros  que  tenham  com  aquele  órgão  ou entidade administrativa;
+f) cometer a pessoa estranha à execução  do  projeto,  fora  dos  casos  previstos  em  lei,  o desempenho de atividades de sua responsabilidade;
+g) atuar como procurador ou intermediário junto a repartições públicas;
+h) receber, exigir ou solicitar, para si ou para terceiros, propina, comissão, presente ou vantagem de qualquer espécie, em razão de seus serviços, para a prática ou omissão de ato de ofício, ou valer-se da função exercida para obtenção de vantagem pessoal para si ou para terceiros;
+i) praticar usura sob qualquer de suas formas;
+j) proceder de forma desidiosa;
+l) utilizar pessoal ou recursos materiais do CONTRATANTE em serviços ou atividades particulares;
+m) exercer quaisquer atividades incompatíveis com os serviços técnicos prestados ao CONTRATANTE e com o horário de trabalho;
+n) ser nomeado ou designado, ainda que a título precário ou em substituição, para o exercício de cargo em comissão ou  função  de  confiança  em  órgão  ou  entidade  diversos daquele para o qual foi contratado;
+o) participar de gerência ou administração de empresa privada, de sociedade civil ou exercer o comércio, exceto na qualidade de acionista, cotista ou comanditário;
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA SEXTA: DA RESPONSABILIDADE</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O CONTRATADO responde pessoalmente pelo exercício irregular de seus encargos, por atos omissivos ou comissivos, dolosos ou culposos, nos termos da legislação penal, administrativa e civil, não excluída ou atenuada essa responsabilidade pela presença ou pelo acompanhamento da execução por servidor ou empregado público.
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+CLÁUSULA SÉTIMA: DOS DIREITOS E DEVERES</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O CONTRATADO terá direito a: I – licença maternidade; II - licença paternidade, III – férias, quando o período  do  contrato  for  superior  a  12  (doze)  meses,  IV  –  verba indenizatória por rescisão unilateral imotivado por parte da Administração.
+
+PARÁGRAFO ÚNICO – Em caso de faltas por até três dias por motivo de doença, as faltas serão abonadas mediante comprovação  por  atestado  médico,  desde  que  apresentado  no prazo de 48 (quarenta e oito) horas do primeiro dia de afastamento. Em hipótese de faltas superiores a três dias e inferiores ou iguais a 15 dias, o abono dependerá de laudo positivo da Perícia Médica do Estado. Não serão abonadas, por motivo de saúde, mais do que 15 (quinze) faltas por ano de execução do contrato.
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+CLÁUSULA OITAVA: DAS FÉRIAS
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+Após a vigência de 12 (doze) meses do presente contrato, o CONTRATADO terá direito a afastar-se do trabalho por trinta (30) dias consecutivos, sem prejuízo de sua retribuição, a partir de data ajustada entre as partes, atendida a conveniência da Administração Pública.
+
+PARÁGRAFO PRIMEIRO - A rejeição de pedido de férias regulamente formulado pelo CONTRATADO só será possível  em  casos  excepcionalíssimos,  assim  reconhecidos  pelo titular do órgão a que o mesmo estiver vinculado, mediante motivação expressa e específica para  o  caso  concreto,  indicando-se  pormenorizadamente  as  tarefas  e  funções  que  não podem ser reduzidas ou suspensas naquele período específico.
+PARÁGRAFO SEGUNDO - Ainda que configurada a estrita e inadiável necessidade do serviço a justificar a rejeição do pedido de férias formulado pelo CONTRATADO, a concessão de tal afastamento deverá ser tão somente postergada para período futuro, ainda no prazo de vigência do contrato, indicando-se expressamente a previsão das datas de início e término do período de férias então adiadas, de modo a evitar a necessidade de indenização pecuniária de período não gozado de férias.
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA NONA: DA DOTAÇÃO ORÇAMENTÁRIA</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+As despesas com a execução do presente contrato correrão à conta das seguintes dotações orçamentárias, para o corrente exercício de 2012, assim classificados:
+Natureza das Despesas: 3190-04
+Fonte de Recurso: 15
+Programa de Trabalho: 1801.12.361.0002.2030
+
+PARÁGRAFO ÚNICO – As despesas relativas aos exercícios subseqüentes correrão por conta das dotações orçamentárias respectivas, devendo ser empenhadas no início de cada exercício.
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+CLÁUSULA DÉCIMA: DA REMUNERAÇÃO</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+A remuneração bruta total do CONTRATADO será de R$	1001,82 (mil e um reais e oitenta e dois centavos) por mês.
+
+PARÁGRAFO ÚNICO - As vantagens e benefícios previstos em legislação específica da categoria funcional ou de  cargo  análogo  na  estrutura  estadual  não  repercutirão  sobre  a remuneração do CONTRATADO.
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+CLÁUSULA   DÉCIMA   PRIMEIRA:  DA   EXECUÇÃO   E   FISCALIZAÇÃO   DO CONTRATO</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O CONTRATADO executará os serviços descritos na Cláusula Primeira, com carga horária de 16 (dezesseis) horas semanais, ficando subordinado às determinações da Secretaria de Educação, quanto à forma de exercício de suas funções e horário, observadas as normas legais vigentes.
+
+PARÁGRAFO PRIMEIRO - O CONTRATADO se obriga a exercer sua função na unidade indicada pelo CONTRATANTE.
+PARÁGRAFO SEGUNDO - O CONTRATADO, por necessidade do serviço, poderá ser removido para qualquer unidade integrante da estrutura da CONTRATANTE, vedado, entretanto, o desvio de função, sob pena de rescisão do presente CONTRATO e a apuração da responsabilidade administrativa e civil das autoridades que determinarem, solicitarem, permitirem ou tolerarem tal desvio.
+
+PARÁGRAFO TERCEIRO - A execução do contrato será acompanhada e fiscalizada pela Secretaria de Educação, juntamente com a unidade em que o CONTRATADO estiver prestando o serviço.
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA SEGUNDA: DA EXTINÇÃO DO CONTRATO</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+Este contrato será extinto, sem indenização ao CONTRATADO, verificada uma das seguintes hipóteses:
+a) término do prazo contratual ou de sua prorrogação, independentemente de termo de rescisão, quando as partes se darão mútua  quitação,  se  satisfeitas  todas  as  obrigações reciprocamente pactuadas;
+b) por manifestação unilateral motivada do CONTRATANTE;
+c) por vontade de ambas as partes;
+d) por infração aos deveres  de  assiduidade,  pontualidade,  urbanidade,  discrição,  boa conduta, lealdade e respeito às instituições constitucionais e administrativas a que servir, observância  das  normas  legais  e  regulamentares,  sem  prejuízo  das  demais  disposições constitucionais  e  legais  impostas  aos  ocupantes  de  funções  públicas  ou  incidência  nas proibições	estabelecidos em suas cláusulas, imputadas à responsabilidade do CONTRATADO, depois de apurada a falta em sindicância	conduzida	pelo CONTRATANTE, no prazo de trinta (30) dias, em que se lhe tenham sido assegurados o contraditório e a ampla defesa, com os recursos inerentes.
+
+PARÁGRAFO PRIMEIRO - A rescisão decorrente de manifestação unilateral imotivada do CONTRATANTE importará no pagamento, ao CONTRATADO, de indenização no valor correspondente a 1/12 (um doze) avos da remuneração mensal, por mês e/ou período igual ou superior a 15 (quinze) dias efetivamente trabalhados.
+
+PARÁGRAFO SEGUNDO - Não será computado no cálculo da verba indenizatória da rescisão unilateral, referida no parágrafo primeiro desta cláusula, o período de trabalho inferior a 15 (quinze) dias.
+
+PARÁGRAFO TERCEIRO - O CONTRATANTE poderá, ainda, rescindir unilateralmente o contrato, sem que caiba indenização ao CONTRATADO, em razão de:
+
+a) ocorrência de qualquer hipótese impeditiva ao fiel cumprimento do contrato pelo período acordado, inadmitindo-se qualquer suspensão da sua execução;
+b) falta ao trabalho por três dias consecutivos ou cinco intercalados em um período de trinta dias, mesmo com justificação, ressalvadas as faltas  abonadas  por  motivo  de  doença,  em conformidade com o disposto no parágrafo único da cláusula sétima;
+c) afastamento por motivo de doença por prazo superior a 15 dias consecutivos;
+d) apresentação de documento falso ou declaração falsa ou inexata;
+e) insuficiência de desempenho na função para a qual apresentou prova de capacitação.
+
+PARÁGRAFO QUARTO - A declaração de rescisão deste contrato, em todos os casos em que ela é admitida, será sempre feita independentemente de prévia notificação judicial ou extrajudicial e operará seus efeitos a partir da publicação do ato no Diário Oficial do Estado.
+
+PARÁGRAFO QUINTO - No ajuste final de contas, dos valores eventualmente devidos ao CONTRATADO, o CONTRATANTE, como lhe incumbe, procederá aos descontos previstos na legislação específica, na forma estabelecida em suas disposições.
+
+PARÁGRAFO SEXTO – O CONTRATADO só poderá rescindir ou interromper a prestação de serviços por conta de infração contratual ou legal do CONTRATANTE mediante propositura de ação judicial, devendo manter o cumprimento integral  de  suas obrigações  legais  e  contratuais  até  expresso  pronunciamento  judicial  que  suspenda  ou extinga a exigibilidade das mesmas.
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA TERCEIRA: DAS CONDIÇÕES RESOLUTIVAS</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O presente contrato estará resolvido de pleno direito, não cabendo qualquer indenização ao CONTRATADO, nas hipóteses de sua substituição por servidor efetivo investido em cargo que abarque as funções objeto do presente contrato.
+
+PARÁGRAFO ÚNICO – A substituição mencionada no </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>caput</Value>
+                <Style>
+                  <FontStyle>Italic</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> da presente Cláusula pode decorrer de qualquer forma de provimento originário ou derivado do servidor efetivo em questão.
+
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA QUARTA: DA INEXISTÊNCIA DE VÍNCULO</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+A presente contratação não cria vinculo empregatício ou estatutário	 entre	o CONTRATANTE e o CONTRATADO, nem gera para este o direito de ser posteriormente admitido como servidor estadual e nem o de ser aproveitado nos órgãos da administração direta ou indireta ou, ainda, fundação instituída ou mantida pelo Estado.
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA QUINTA: DAS DECLARAÇÕES</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O CONTRATADO assina, neste ato, as seguintes   declarações   anexo   ao   presente instrumento, e que dele passam a fazer parte integrante:
+a) ciência das proibições do artigo 37, incisos XVI, XVII  e  §10º,  da  Constituição  da República;
+b) ciência e observância das proibições do art. 7º, III, da Lei Estadual nº 4.599, de 27/09/2005.
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA SEXTA: DA CESSÃO OU TRANSFERÊNCIA</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+O presente contrato não poderá ser objeto de cessão ou transferência no todo ou em parte.
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA  DÉCIMA  SÉTIMA:  DA  EXCEÇÃO  DA  RESPONSABILIDADE  DO CONTRATANTE.</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+A superveniência  de  decisão  judicial  que  anule  a  presente  contratação,  em  especial  a declaração de inconstitucionalidade da Lei Estadual nº 4.599/05, não assegurará qualquer direito  de  reparação  ao  CONTRATADO,  o  qual  renuncia  expressa  e  irrevogavelmente  a qualquer pretensão indenizatória.
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA    DÉCIMA    OITAVA: DA PUBLICAÇÃO E CONTROLE DO CONTRATO</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+Após a assinatura do contrato deverá seu extrato  ser  publicado,  dentro  do  prazo  de  20 (vinte) dias, no Diário Oficial do Estado do Rio de Janeiro, devendo ser encaminhado ao Tribunal  de  Contas  do  Estado,  para  conhecimento,  cópia  autenticada  do  contrato  até  o quinto dia útil seguinte ao da sua assinatura.
+
+PARÁGRAFO ÚNICO – O  extrato  da   publicação   deve   conter   a   identificação   do instrumento, partes, objeto, prazo, valor, número do empenho e fundamento do ato.
+
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>CLÁUSULA DÉCIMA NONA: DO FORO DE ELEIÇÃO</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>
+
+Fica eleito o Foro da Cidade do Rio de Janeiro, comarca da Capital, para dirimir qualquer litígio decorrente do presente contrato que não possa ser resolvido por meio amigável, com expressa renúncia a qualquer outro, por mais privilegiado que seja.
+E, por estarem assim acordes em todas as condições e cláusulas estabelecidas neste contrato, firmam as partes o presente instrumento em 4 (quatro) vias de igual forma e teor, depois de lido e achado conforme, em presença de testemunhas abaixo firmadas.
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <HangingIndent>0cm</HangingIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <HangingIndent>0cm</HangingIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>
+Rio de Janeiro, em_______de_________________de______.</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <HangingIndent>0cm</HangingIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <HangingIndent>0cm</HangingIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <HangingIndent>0cm</HangingIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <HangingIndent>0cm</HangingIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <HangingIndent>0cm</HangingIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>____________________________________________</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>SECRETARIA DE EDUCAÇÃO</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>____________________________________________</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value> CONTRATADA</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value xml:space="preserve">             </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>___________________________________                                    ________________________ </Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>              COORDENADOR DE GESTÃO DE PESSOAS                                                  TESTEMUNHA</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve">
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0.10054cm</LeftIndent>
+            <RightIndent>0.10054cm</RightIndent>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value xml:space="preserve">
+</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <LeftIndent>0cm</LeftIndent>
+            <HangingIndent>0cm</HangingIndent>
+            <Style>
+              <TextAlign>General</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.32628cm</Top>
+        <Left>0.33549cm</Left>
+        <Height>116.09731cm</Height>
+        <Width>16.5623cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>______________________________________________________</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CONTRATADO</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>116.77798cm</Top>
+        <Left>3.71334cm</Left>
+        <Height>1.79062cm</Height>
+        <Width>10.25229cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>
+
+__________________________________________ TESTEMUNHA</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>119.16645cm</Top>
+        <Left>8.79272cm</Left>
+        <Height>1.99163cm</Height>
+        <Width>7.95042cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>__________________________________________</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>TESTEMUNHA</Value>
+                <Style>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>119.11353cm</Top>
+        <Left>0.66591cm</Left>
+        <Height>1.99163cm</Height>
+        <Width>7.95042cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>47.96455in</Height>
+    <Style />
+  </Body>
+  <Width>8.50175in</Width>
+  <Page>
+    <PageHeader>
+      <Height>2.80522cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>logo_seeduc</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.08883cm</Top>
+          <Left>0.33549cm</Left>
+          <Height>1.05833cm</Height>
+          <Width>3.30729cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox15">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>ESTADO DO RIO DE JANEIRO
+SECRETARIA DE EDUCAÇÃO</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>
+
+Matrícula: </Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>=Fields!MATRICULA.Value</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Identidade Funcional: ___________</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox15</rd:DefaultName>
+          <Top>0.33549cm</Top>
+          <Left>3.71334cm</Left>
+          <Height>2.21396cm</Height>
+          <Width>11.46938cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>0.5cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=10.12.18.10;Initial Catalog=LYCEUM</ConnectString>
+        <Prompt>Especifique um nome de usuário e uma senha para a fonte de dados DataSource1:</Prompt>
+      </ConnectionProperties>
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <rd:DataSourceID>e3260fe9-05ac-4502-a0bf-f9bbe3585271</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@MATRICULA">
+            <Value>=Parameters!MATRICULA.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select DISTINCT 
+ ly_docente.MATRICULA,
+isnull(LY_DOCENTE.CPF, ly_pessoa.cpf) as CPF,
+ UPPER(ly_docente.NOME_COMPL) NOME_CONTRATADO ,
+CONVERT(VARCHAR(10), ly_docente.DT_NASC, 103) AS NASCIMENTO,
+ ly_docente.ENDERECO,
+ LY_DOCENTE.END_NUM,
+ LY_DOCENTE.END_COMPL,
+ LY_DOCENTE.CEP,
+ LY_DOCENTE.BAIRRO,
+ MUNIC_RES.NOME , 
+ DAY(dt_admissao) DIA_ADMISSAO,
+CASE WHEN MONTH(dt_admissao)= '1' THEN 'Janeiro'
+	WHEN MONTH(dt_admissao)= '2' THEN 'Fevereiro'
+	WHEN MONTH(dt_admissao)= '3' THEN 'Março'
+	WHEN MONTH(dt_admissao)= '4' THEN 'Abril'
+	WHEN MONTH(dt_admissao)= '5' THEN 'Maio'
+	WHEN MONTH(dt_admissao)= '6' THEN 'Junho'
+	WHEN MONTH(dt_admissao)= '7' THEN 'Julho'
+	WHEN MONTH(dt_admissao)= '8' THEN 'Agosto'
+	WHEN MONTH(dt_admissao)= '9' THEN 'Setembro'
+	WHEN MONTH(dt_admissao)= '10' THEN 'Outubro'
+	WHEN MONTH(dt_admissao)= '11' THEN 'Novembro'
+	WHEN MONTH(dt_admissao)= '12' THEN 'Dezembro' END AS MES_ADMISSAO,
+YEAR(dt_admissao) ANO_ADMISSAO,
+ --isnull(CONVERT(VARCHAR(10), DT_INICIO_CONTRATO, 103),'') as DT_INICIO_CONTRATO,
+ --isnull(CONVERT(VARCHAR(10), DT_FIM_CONTRATO, 103),'') as DT_FIM_CONTRATO,
+ --ly_lotacao.data_desativacao,
+ --ly_docente.categoria
+ --, LY_FUNCAO.DESCRICAO AS FUNCAO
+ --, isnull(CONVERT(VARCHAR(10), DATA_DESATIVACAO, 103),'') as DATA_DEMISSAO,
+ --, isnull(convert(varchar(10), VW_INTEG_LICENCA_DOCENTE.DTINI, 103), '') as DATA_INI_SITUACAO
+ --, isnull(convert(varchar(10), VW_INTEG_LICENCA_DOCENTE.DTFIM, 103), '') AS DATA_FIM_SITUACAO
+ --, LY_LICENCAS.DESCRICAO AS SITUACAO
+ --LY_FUNCAO.DESCRICAO,
+ --LY_GRUPO_HABILITACAO.DESCRICAO
+DAY(GETDATE()) AS DIA,
+CASE WHEN MONTH(GETDATE())= '1' THEN 'Janeiro'
+	WHEN MONTH(GETDATE())= '2' THEN 'Fevereiro'
+	WHEN MONTH(GETDATE())= '3' THEN 'Março'
+	WHEN MONTH(GETDATE())= '4' THEN 'Abril'
+	WHEN MONTH(GETDATE())= '5' THEN 'Maio'
+	WHEN MONTH(GETDATE())= '6' THEN 'Junho'
+	WHEN MONTH(GETDATE())= '7' THEN 'Julho'
+	WHEN MONTH(GETDATE())= '8' THEN 'Agosto'
+	WHEN MONTH(GETDATE())= '9' THEN 'Setembro'
+	WHEN MONTH(GETDATE())= '10' THEN 'Outubro'
+	WHEN MONTH(GETDATE())= '11' THEN 'Novembro'
+	WHEN MONTH(GETDATE())= '12' THEN 'Dezembro' END AS MES,
+YEAR(GETDATE()) AS ANO,
+(SELECT CARGA_HORARIA FROM dbo.LY_CANDIDATO_DOCENTE CD WHERE CD.CANDIDATO=ly_docente.CANDIDATO AND CD.CONCURSO=ly_docente.CONCURSO) AS CH,
+COUNT(*) AS TOTAL_AULAS
+from  ly_docente
+inner join LY_PESSOA on LY_PESSOA.PESSOA = LY_DOCENTE.PESSOA
+
+INNER JOIN LY_AULA_DOCENTE ad WITH(NOLOCK)                    
+   ON ad.NUM_FUNC = ly_docente.NUM_FUNC                    
+INNER JOIN LY_TURMA tu WITH(NOLOCK)                    
+   ON tu.TURMA = ad.TURMA                    
+    AND tu.DISCIPLINA = ad.DISCIPLINA                    
+    AND tu.SEMESTRE = ad.SEMESTRE                    
+    AND tu.DT_FIM  = ad.DATA_FIM 
+    and ad.FACULDADE=tu.FACULDADE
+    and ad.TURNO=tu.TURNO
+    AND tu.SIT_TURMA IN ('ABERTA', 'FINALIZADA')
+    and tu.ANO = '2011'	
+									
+inner join LY_LOTACAO on ly_docente.MATRICULA = LY_LOTACAO.MATRICULA
+inner join LY_FUNCAO on LY_FUNCAO.FUNCAO = LY_LOTACAO.FUNCAO
+inner join HADES..HD_SETOR HD_SETOR on LY_LOTACAO.SETOR = HD_SETOR.SETOR
+left JOIN LY_UNIDADE_ENSINO ON LY_UNIDADE_ENSINO.SETOR = LY_LOTACAO.SETOR
+/*inner join ly_unidade_ensino_situacao UES on UES.UNIDADE_ENS = LY_UNIDADE_ENSINO.UNIDADE_ENS
+											AND UES.DT_SITUACAO = (SELECT MAX(DT_SITUACAO)
+											FROM LY_UNIDADE_ENSINO_SITUACAO LY_UNIDADE_ENSINO_SITUACAO
+											WHERE ly_unidade_ensino.UNIDADE_ENS=LY_UNIDADE_ENSINO_SITUACAO.UNIDADE_ENS)*/		
+LEFT join LY_CANDIDATO_DOC_CONTRATO on LY_CANDIDATO_DOC_CONTRATO.CONCURSO = LY_DOCENTE.CONCURSO
+				and LY_CANDIDATO_DOC_CONTRATO.CANDIDATO = LY_DOCENTE.CANDIDATO											
+LEFT JOIN MUNICIPIO ON MUNICIPIO.CODIGO = HD_SETOR.MUNICIPIO 	
+LEFT JOIN MUNICIPIO MUNIC_RES ON MUNIC_RES.CODIGO = LY_DOCENTE.MUNICIPIO																											
+LEFT JOIN VW_INTEG_LICENCA_DOCENTE ON VW_INTEG_LICENCA_DOCENTE.MATRICULA = ly_docente.MATRICULA
+LEFT JOIN LY_LICENCAS ON LY_LICENCAS.MOTIVO = VW_INTEG_LICENCA_DOCENTE.COD_LICENCA															
+where 
+--(ly_lotacao.data_desativacao is null or ly_lotacao.data_desativacao &gt; = GETDATE())
+--AND year (DT_INICIO_CONTRATO) in ('2011')
+--and 
+ly_docente.categoria LIKE '%DOC%'
+--AND (ly_docente.categoria LIKE '% I %' or ly_docente.categoria LIKE '% I')
+--AND ISNULL(LY_UNIDADE_ENSINO.SETOR,HD_SETOR.SETOR) &lt;&gt; '187777'
+--AND (DT_FIM_CONTRATO &gt; = GETDATE() OR DT_FIM_CONTRATO IS NULL)
+AND ly_docente.matricula = @MATRICULA
+AND (ly_docente.MATRICULA LIKE '55%' OR ly_docente.MATRICULA LIKE '33%')
+GROUP  BY  ly_docente.MATRICULA,
+isnull(LY_DOCENTE.CPF, ly_pessoa.cpf),
+ 
+ 
+ly_docente.NOME_COMPL,
+ 
+ 
+CONVERT(VARCHAR(10), ly_docente.DT_NASC, 103),
+ ly_docente.ENDERECO,
+ LY_DOCENTE.END_NUM,
+ LY_DOCENTE.END_COMPL,
+ LY_DOCENTE.CEP,
+ LY_DOCENTE.BAIRRO,
+ MUNIC_RES.NOME ,
+ DAY(dt_admissao),
+CASE WHEN MONTH(dt_admissao)= '1' THEN 'Janeiro'
+	WHEN MONTH(dt_admissao)= '2' THEN 'Fevereiro'
+	WHEN MONTH(dt_admissao)= '3' THEN 'Março'
+	WHEN MONTH(dt_admissao)= '4' THEN 'Abril'
+	WHEN MONTH(dt_admissao)= '5' THEN 'Maio'
+	WHEN MONTH(dt_admissao)= '6' THEN 'Junho'
+	WHEN MONTH(dt_admissao)= '7' THEN 'Julho'
+	WHEN MONTH(dt_admissao)= '8' THEN 'Agosto'
+	WHEN MONTH(dt_admissao)= '9' THEN 'Setembro'
+	WHEN MONTH(dt_admissao)= '10' THEN 'Outubro'
+	WHEN MONTH(dt_admissao)= '11' THEN 'Novembro'
+	WHEN MONTH(dt_admissao)= '12' THEN 'Dezembro' END,
+YEAR(dt_admissao)  ,
+ly_docente.CANDIDATO,
+ly_docente.CONCURSO
+HAVING COUNT (*)&gt;=12 and (SELECT CARGA_HORARIA FROM dbo.LY_CANDIDATO_DOCENTE CD WHERE CD.CANDIDATO=ly_docente.CANDIDATO AND CD.CONCURSO=ly_docente.CONCURSO) &gt;= 12</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="MATRICULA">
+          <DataField>MATRICULA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CPF">
+          <DataField>CPF</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NOME_CONTRATADO">
+          <DataField>NOME_CONTRATADO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NASCIMENTO">
+          <DataField>NASCIMENTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ENDERECO">
+          <DataField>ENDERECO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="END_NUM">
+          <DataField>END_NUM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="END_COMPL">
+          <DataField>END_COMPL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CEP">
+          <DataField>CEP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BAIRRO">
+          <DataField>BAIRRO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NOME">
+          <DataField>NOME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DIA_ADMISSAO">
+          <DataField>DIA_ADMISSAO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MES_ADMISSAO">
+          <DataField>MES_ADMISSAO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ANO_ADMISSAO">
+          <DataField>ANO_ADMISSAO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DIA">
+          <DataField>DIA</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MES">
+          <DataField>MES</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ANO">
+          <DataField>ANO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CH">
+          <DataField>CH</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TOTAL_AULAS">
+          <DataField>TOTAL_AULAS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="usuario">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>usuario</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="MATRICULA">
+      <DataType>String</DataType>
+      <Prompt>Matricula</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logo_seeduc">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>306bad9c-702f-4c1b-933b-e7e7ce958874</rd:ReportID>
+</Report>

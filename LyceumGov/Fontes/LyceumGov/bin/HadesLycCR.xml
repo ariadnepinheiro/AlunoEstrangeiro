@@ -1,0 +1,3044 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HadesLycCR</name>
+    </assembly>
+    <members>
+        <member name="M:Techne.HadesLyc.CR.Hd_agencia.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_agencia.Row.Query(Techne.Data.TConnection,System.String,System.Nullable{System.Decimal})">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Agencia">
+            <summary>
+            AGENCIA: VARCHAR(7), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Banco">
+            <summary>
+            BANCO: NUMERIC(3), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Nome">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Municipio">
+            <summary>
+            MUNICIPIO: VARCHAR(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Bairro">
+            <summary>
+            BAIRRO: VARCHAR(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Uf">
+            <summary>
+            UF: CHAR(2)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Endereco">
+            <summary>
+            ENDERECO: VARCHAR(60)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Contato">
+            <summary>
+            CONTATO: VARCHAR(60)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Cargo">
+            <summary>
+            CARGO: VARCHAR(12)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Telefone">
+            <summary>
+            TELEFONE: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Cep">
+            <summary>
+            CEP: VARCHAR(8)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Nome_municipio">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.Row.Nome_bairro">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnAgencia.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnBanco.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnMunicipio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnBairro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnUf.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnEndereco.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnContato.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnCargo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnTelefone.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnCep.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnNome_municipio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_agencia.ColumnNome_bairro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_banco.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_banco.Row.Query(Techne.Data.TConnection,System.Nullable{System.Decimal})">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_banco.Row.Banco">
+            <summary>
+            BANCO: NUMERIC(3), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_banco.Row.Nome">
+            <summary>
+            NOME: VARCHAR(100), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_banco.Row.Maskag">
+            <summary>
+            MASKAG: VARCHAR(7)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_banco.Row.Maskconta">
+            <summary>
+            MASKCONTA: VARCHAR(15)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_banco.ColumnBanco.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_banco.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_banco.ColumnMaskag.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_banco.ColumnMaskconta.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_bairro.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_bairro.Row.Query(Techne.Data.TConnection,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_bairro.Row.Municipio">
+            <summary>
+            MUNICIPIO: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_bairro.Row.Bairro">
+            <summary>
+            BAIRRO: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_bairro.Row.Nome">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_bairro.Row.Ix_buscatexto">
+            <summary>
+            IX_BUSCATEXTO: NUMERIC(18), AutoNumber, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_bairro.Row.Municipio_nome">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_bairro.ColumnMunicipio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_bairro.ColumnBairro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_bairro.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_bairro.ColumnIx_buscatexto.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_bairro.ColumnMunicipio_nome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_logradouro.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_logradouro.Row.Query(Techne.Data.TConnection,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.Row.Municipio">
+            <summary>
+            MUNICIPIO: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.Row.Logradouro">
+            <summary>
+            LOGRADOURO: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.Row.Tipo_logr">
+            <summary>
+            TIPO_LOGR: VARCHAR(5), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.Row.Nome">
+            <summary>
+            NOME: VARCHAR(100), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.Row.Oficial">
+            <summary>
+            OFICIAL: CHAR(1), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.Row.Sinonimos">
+            <summary>
+            SINONIMOS: VARCHAR(300)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.Row.Ix_buscatexto">
+            <summary>
+            IX_BUSCATEXTO: NUMERIC(18), AutoNumber, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.ColumnMunicipio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.ColumnLogradouro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.ColumnTipo_logr.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.ColumnOficial.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.ColumnSinonimos.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_logradouro.ColumnIx_buscatexto.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_municipio.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_municipio.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.Row.Municipio">
+            <summary>
+            MUNICIPIO: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.Row.Uf">
+            <summary>
+            UF: CHAR(2), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.Row.Nome">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.Row.Verbairro">
+            <summary>
+            VERBAIRRO: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.Row.Verlog">
+            <summary>
+            VERLOG: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.Row.Cep">
+            <summary>
+            CEP: VARCHAR(8)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.Row.Desvinc_bairro_logr">
+            <summary>
+            DESVINC_BAIRRO_LOGR: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.Row.Codigo_ibge">
+            <summary>
+            CODIGO_IBGE: VARCHAR(20)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.ColumnMunicipio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.ColumnUf.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.ColumnVerbairro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.ColumnVerlog.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.ColumnCep.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.ColumnDesvinc_bairro_logr.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio.ColumnCodigo_ibge.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_numero_valido.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_numero_valido.Row.Query(Techne.Data.TConnection,System.String,System.String,System.String,System.Nullable{System.Decimal})">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numero_valido.Row.Municipio">
+            <summary>
+            MUNICIPIO: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numero_valido.Row.Logradouro">
+            <summary>
+            LOGRADOURO: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numero_valido.Row.Trecho_logr">
+            <summary>
+            TRECHO_LOGR: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numero_valido.Row.Numero">
+            <summary>
+            NUMERO: NUMERIC(6), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numero_valido.ColumnMunicipio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numero_valido.ColumnLogradouro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numero_valido.ColumnTrecho_logr.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numero_valido.ColumnNumero.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_tipo_logradouro.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_tipo_logradouro.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tipo_logradouro.Row.Tipo_logr">
+            <summary>
+            TIPO_LOGR: VARCHAR(5), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tipo_logradouro.Row.Descricao">
+            <summary>
+            DESCRICAO: VARCHAR(15), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tipo_logradouro.ColumnTipo_logr.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tipo_logradouro.ColumnDescricao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_trecho_logradouro.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_trecho_logradouro.Row.Query(Techne.Data.TConnection,System.String,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.Row.Logradouro">
+            <summary>
+            LOGRADOURO: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.Row.Municipio">
+            <summary>
+            MUNICIPIO: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.Row.Trecho_logr">
+            <summary>
+            TRECHO_LOGR: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.Row.Num_inicio">
+            <summary>
+            NUM_INICIO: NUMERIC(6)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.Row.Num_fim">
+            <summary>
+            NUM_FIM: NUMERIC(6)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.Row.Lado">
+            <summary>
+            LADO: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.Row.Cep">
+            <summary>
+            CEP: VARCHAR(8)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.Row.Bairro">
+            <summary>
+            BAIRRO: VARCHAR(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.Row.Vernumvalido">
+            <summary>
+            VERNUMVALIDO: CHAR(1), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.ColumnLogradouro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.ColumnMunicipio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.ColumnTrecho_logr.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.ColumnNum_inicio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.ColumnNum_fim.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.ColumnLado.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.ColumnCep.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.ColumnBairro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_trecho_logradouro.ColumnVernumvalido.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_uf.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_uf.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_uf.Row.Uf">
+            <summary>
+            UF: CHAR(2), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_uf.Row.Nome">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_uf.ColumnUf.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_uf.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_menu.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_menu.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menu.Row.Menu">
+            <summary>
+            MENU: VARCHAR(20), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menu.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menu.Row.Descricao">
+            <summary>
+            DESCRICAO: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menu.Row.Tipo">
+            <summary>
+            TIPO: VARCHAR(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menu.ColumnMenu.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menu.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menu.ColumnDescricao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menu.ColumnTipo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_menuitem.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_menuitem.Row.Query(Techne.Data.TConnection,System.String,System.Nullable{System.Decimal})">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.Row.Menu">
+            <summary>
+            MENU: VARCHAR(20), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.Row.Menuitem">
+            <summary>
+            MENUITEM: NUMERIC(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.Row.Menuitempai">
+            <summary>
+            MENUITEMPAI: NUMERIC(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.Row.Trans">
+            <summary>
+            TRANS: VARCHAR(100)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.Row.Ordem">
+            <summary>
+            ORDEM: NUMERIC(2), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.Row.Texto">
+            <summary>
+            TEXTO: VARCHAR(40)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.Row.Imagem">
+            <summary>
+            IMAGEM: VARCHAR(256)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.Row.Tipo">
+            <summary>
+            TIPO: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.Row.Subtipo">
+            <summary>
+            SUBTIPO: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.ColumnMenu.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.ColumnMenuitem.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.ColumnMenuitempai.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.ColumnTrans.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.ColumnOrdem.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.ColumnTexto.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.ColumnImagem.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.ColumnTipo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_menuitem.ColumnSubtipo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_numeracao.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_numeracao.Row.Query(Techne.Data.TConnection,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numeracao.Row.Tipo">
+            <summary>
+            TIPO: VARCHAR(20), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numeracao.Row.Base">
+            <summary>
+            BASE: VARCHAR(28), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numeracao.Row.Lastnum">
+            <summary>
+            LASTNUM: NUMERIC(12), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numeracao.ColumnTipo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numeracao.ColumnBase.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_numeracao.ColumnLastnum.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.Row.Municipio_estrangeiro">
+            <summary>
+            MUNICIPIO_ESTRANGEIRO: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.Row.Pais">
+            <summary>
+            PAIS: VARCHAR(10), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.Row.Nome">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.Row.Estado">
+            <summary>
+            ESTADO: VARCHAR(20)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.Row.Cep">
+            <summary>
+            CEP: VARCHAR(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.Row.Nome_estado">
+            <summary>
+            NOME_ESTADO: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.ColumnMunicipio_estrangeiro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.ColumnPais.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.ColumnEstado.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.ColumnCep.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_municipio_estrangeiro.ColumnNome_estado.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_pais.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_pais.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_pais.Row.Pais">
+            <summary>
+            PAIS: VARCHAR(10), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_pais.Row.Nome">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_pais.ColumnPais.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_pais.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_grupo_parametros_hades.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_grupo_parametros_hades.Row.Query(Techne.Data.TConnection,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_parametros_hades.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_parametros_hades.Row.Grupo">
+            <summary>
+            GRUPO: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_parametros_hades.Row.Descricao">
+            <summary>
+            DESCRICAO: VARCHAR(60)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_parametros_hades.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_parametros_hades.ColumnGrupo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_parametros_hades.ColumnDescricao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_parametro_hades.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Query(Techne.Data.TConnection,System.String,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Grupo">
+            <summary>
+            GRUPO: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Opcao">
+            <summary>
+            OPCAO: VARCHAR(30), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Descricao">
+            <summary>
+            DESCRICAO: VARCHAR(1500)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Valor">
+            <summary>
+            VALOR: VARCHAR(2000)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Tipo_valor">
+            <summary>
+            TIPO_VALOR: CHAR(1), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Tamanho">
+            <summary>
+            TAMANHO: NUMERIC(4), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Sql_lista">
+            <summary>
+            SQL_LISTA: VARCHAR(2000)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Col_valor">
+            <summary>
+            COL_VALOR: VARCHAR(30)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Col_descr">
+            <summary>
+            COL_DESCR: VARCHAR(30)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Valmin">
+            <summary>
+            VALMIN: NUMERIC(28, 25)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Valmax">
+            <summary>
+            VALMAX: NUMERIC(28, 25)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Valor_default">
+            <summary>
+            VALOR_DEFAULT: VARCHAR(2000)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.Row.Tipo_alt">
+            <summary>
+            TIPO_ALT: NUMERIC(1), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnGrupo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnOpcao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnDescricao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnValor.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnTipo_valor.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnTamanho.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnSql_lista.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnCol_valor.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnCol_descr.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnValmin.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnValmax.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnValor_default.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_hades.ColumnTipo_alt.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_nacionalidade.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_nacionalidade.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_nacionalidade.Row.Nacionalidade">
+            <summary>
+            NACIONALIDADE: VARCHAR(15), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_nacionalidade.Row.Nome">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_nacionalidade.ColumnNacionalidade.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_nacionalidade.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_grupo_processos.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_grupo_processos.Row.Query(Techne.Data.TConnection,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_processos.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_processos.Row.Grupoproc">
+            <summary>
+            GRUPOPROC: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_processos.Row.Descricao">
+            <summary>
+            DESCRICAO: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_processos.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_processos.ColumnGrupoproc.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_processos.ColumnDescricao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_parametro_processo.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Query(Techne.Data.TConnection,System.String,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Processo">
+            <summary>
+            PROCESSO: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Parametro">
+            <summary>
+            PARAMETRO: VARCHAR(20), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Ordem">
+            <summary>
+            ORDEM: NUMERIC(2), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Tipo">
+            <summary>
+            TIPO: NUMERIC(2), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Descricao">
+            <summary>
+            DESCRICAO: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Obrigatorio">
+            <summary>
+            OBRIGATORIO: CHAR(1), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Valor">
+            <summary>
+            VALOR: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Sql_texto">
+            <summary>
+            SQL_TEXTO: VARCHAR(2000)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Col_valor">
+            <summary>
+            COL_VALOR: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Col_descr">
+            <summary>
+            COL_DESCR: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.Row.Nomes_colunas">
+            <summary>
+            NOMES_COLUNAS: VARCHAR(100)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnProcesso.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnParametro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnOrdem.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnTipo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnDescricao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnObrigatorio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnValor.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnSql_texto.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnCol_valor.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnCol_descr.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_processo.ColumnNomes_colunas.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_processo.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_processo.Row.Query(Techne.Data.TConnection,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.Row.Processo">
+            <summary>
+            PROCESSO: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.Row.Grupoproc">
+            <summary>
+            GRUPOPROC: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.Row.Descricao">
+            <summary>
+            DESCRICAO: VARCHAR(100)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.Row.Arquivo">
+            <summary>
+            ARQUIVO: VARCHAR(100)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.Row.Auditar">
+            <summary>
+            AUDITAR: CHAR(1), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.Row.Reprocessavel">
+            <summary>
+            REPROCESSAVEL: CHAR(1), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.ColumnProcesso.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.ColumnGrupoproc.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.ColumnDescricao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.ColumnArquivo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.ColumnAuditar.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_processo.ColumnReprocessavel.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_grupo_relatorios.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_grupo_relatorios.Row.Query(Techne.Data.TConnection,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_relatorios.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_relatorios.Row.Gruporelat">
+            <summary>
+            GRUPORELAT: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_relatorios.Row.Descricao">
+            <summary>
+            DESCRICAO: VARCHAR(200), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_relatorios.Row.Arquivo">
+            <summary>
+            ARQUIVO: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_relatorios.Row.Metodo">
+            <summary>
+            METODO: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_relatorios.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_relatorios.ColumnGruporelat.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_relatorios.ColumnDescricao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_relatorios.ColumnArquivo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_relatorios.ColumnMetodo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_padrel.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_padrel.Row.Query(Techne.Data.TConnection,System.String,System.String,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padrel.Row.Padaces">
+            <summary>
+            PADACES: VARCHAR(14), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padrel.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padrel.Row.Gruporelat">
+            <summary>
+            GRUPORELAT: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padrel.Row.Relatorio">
+            <summary>
+            RELATORIO: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padrel.ColumnPadaces.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padrel.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padrel.ColumnGruporelat.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padrel.ColumnRelatorio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_parametro_relatorio.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Query(Techne.Data.TConnection,System.String,System.String,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Gruporelat">
+            <summary>
+            GRUPORELAT: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Relatorio">
+            <summary>
+            RELATORIO: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Parametro">
+            <summary>
+            PARAMETRO: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Ordem">
+            <summary>
+            ORDEM: NUMERIC(2), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Tipo">
+            <summary>
+            TIPO: NUMERIC(2), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Descricao">
+            <summary>
+            DESCRICAO: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Obrigatorio">
+            <summary>
+            OBRIGATORIO: CHAR(1), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Valor">
+            <summary>
+            VALOR: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Sql_texto">
+            <summary>
+            SQL_TEXTO: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Col_valor">
+            <summary>
+            COL_VALOR: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Col_descr">
+            <summary>
+            COL_DESCR: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.Row.Nomes_colunas">
+            <summary>
+            NOMES_COLUNAS: VARCHAR(100)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnGruporelat.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnRelatorio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnParametro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnOrdem.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnTipo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnDescricao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnObrigatorio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnValor.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnSql_texto.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnCol_valor.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnCol_descr.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_parametro_relatorio.ColumnNomes_colunas.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_relatorio.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_relatorio.Row.Query(Techne.Data.TConnection,System.String,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.Row.Gruporelat">
+            <summary>
+            GRUPORELAT: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.Row.Relatorio">
+            <summary>
+            RELATORIO: VARCHAR(50), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.Row.Descricao">
+            <summary>
+            DESCRICAO: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.Row.Arquivo">
+            <summary>
+            ARQUIVO: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.Row.Auditar">
+            <summary>
+            AUDITAR: CHAR(1), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.Row.Funcao">
+            <summary>
+            FUNCAO: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.ColumnGruporelat.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.ColumnRelatorio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.ColumnDescricao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.ColumnArquivo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.ColumnAuditar.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_relatorio.ColumnFuncao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_grupo_usuarios.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_grupo_usuarios.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_usuarios.Row.Grupousu">
+            <summary>
+            GRUPOUSU: VARCHAR(30), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_grupo_usuarios.ColumnGrupousu.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_padaces.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_padaces.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padaces.Row.Padaces">
+            <summary>
+            PADACES: VARCHAR(14), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padaces.Row.Nome">
+            <summary>
+            NOME: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padaces.Row.Pagina_inicial">
+            <summary>
+            PAGINA_INICIAL: VARCHAR(100)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padaces.ColumnPadaces.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padaces.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padaces.ColumnPagina_inicial.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_padusuario.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_padusuario.Row.Query(Techne.Data.TConnection,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padusuario.Row.Padaces">
+            <summary>
+            PADACES: VARCHAR(14), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padusuario.Row.Usuario">
+            <summary>
+            USUARIO: VARCHAR(15), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padusuario.Row.Nome02">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padusuario.ColumnPadaces.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padusuario.ColumnUsuario.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padusuario.ColumnNome02.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_usuario.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_usuario.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Usuario">
+            <summary>
+            USUARIO: VARCHAR(15), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Nome">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Grupousu">
+            <summary>
+            GRUPOUSU: VARCHAR(30)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Senha">
+            <summary>
+            SENHA: VARCHAR(30)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Privilegiado">
+            <summary>
+            PRIVILEGIADO: CHAR(1), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Email">
+            <summary>
+            EMAIL: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Matricula">
+            <summary>
+            MATRICULA: VARCHAR(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Setor">
+            <summary>
+            SETOR: VARCHAR(15)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Habilitado">
+            <summary>
+            HABILITADO: CHAR(1), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Motivo_desabilitado">
+            <summary>
+            MOTIVO_DESABILITADO: VARCHAR(2000)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Data_alteracao_senha">
+            <summary>
+            DATA_ALTERACAO_SENHA: DATETIME
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Alterar_senha">
+            <summary>
+            ALTERAR_SENHA: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Senhas_anteriores">
+            <summary>
+            SENHAS_ANTERIORES: VARCHAR(1500)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Senha_temp">
+            <summary>
+            SENHA_TEMP: VARCHAR(60)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Ultimo_login">
+            <summary>
+            ULTIMO_LOGIN: DATETIME
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Tentativas_incorretas">
+            <summary>
+            TENTATIVAS_INCORRETAS: NUMERIC(5)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Winusuario">
+            <summary>
+            WINUSUARIO: VARCHAR(100)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Pessoa">
+            <summary>
+            PESSOA: NUMERIC(12)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Priv_unidade_ens">
+            <summary>
+            PRIV_UNIDADE_ENS: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Mat_cadastro">
+            <summary>
+            MAT_CADASTRO: VARCHAR(8)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.Row.Dt_cadastro">
+            <summary>
+            DT_CADASTRO: DATETIME
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnUsuario.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnGrupousu.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnSenha.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnPrivilegiado.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnEmail.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnMatricula.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnSetor.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnHabilitado.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnMotivo_desabilitado.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnData_alteracao_senha.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnAlterar_senha.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnSenhas_anteriores.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnSenha_temp.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnUltimo_login.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnTentativas_incorretas.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnWinusuario.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnPessoa.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnPriv_unidade_ens.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnMat_cadastro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_usuario.ColumnDt_cadastro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_setor.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_setor.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Setor">
+            <summary>
+            SETOR: VARCHAR(15), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Nome">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Setorpai">
+            <summary>
+            SETORPAI: VARCHAR(15)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Tipo_setor">
+            <summary>
+            TIPO_SETOR: VARCHAR(20)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Dtini">
+            <summary>
+            DTINI: DATETIME
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Dtfim">
+            <summary>
+            DTFIM: DATETIME
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Numerolog">
+            <summary>
+            NUMEROLOG: NUMERIC(6)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Complemento">
+            <summary>
+            COMPLEMENTO: VARCHAR(20)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Fone">
+            <summary>
+            FONE: VARCHAR(15)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Fax">
+            <summary>
+            FAX: VARCHAR(15)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Ativo">
+            <summary>
+            ATIVO: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Municipio">
+            <summary>
+            MUNICIPIO: VARCHAR(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Bairro">
+            <summary>
+            BAIRRO: VARCHAR(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Logradouro">
+            <summary>
+            LOGRADOURO: VARCHAR(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Trecho_logr">
+            <summary>
+            TRECHO_LOGR: VARCHAR(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Cnpj">
+            <summary>
+            CNPJ: VARCHAR(19)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Pais">
+            <summary>
+            PAIS: VARCHAR(10)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Cep">
+            <summary>
+            CEP: VARCHAR(9)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Stamp_atualizacao">
+            <summary>
+            STAMP_ATUALIZACAO: DATETIME
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Observacao">
+            <summary>
+            OBSERVACAO: VARCHAR(2000)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Nome02">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.Row.Nome03">
+            <summary>
+            NOME: VARCHAR(100), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnSetor.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnSetorpai.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnTipo_setor.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnDtini.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnDtfim.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnNumerolog.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnComplemento.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnFone.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnFax.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnAtivo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnMunicipio.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnBairro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnLogradouro.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnTrecho_logr.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnCnpj.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnPais.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnCep.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnStamp_atualizacao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnObservacao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnNome02.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_setor.ColumnNome03.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_modulo.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_modulo.Row.Query(Techne.Data.TConnection,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_modulo.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_modulo.Row.Modulo">
+            <summary>
+            MODULO: VARCHAR(30), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_modulo.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_modulo.ColumnModulo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_padtrans.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_padtrans.Row.Query(Techne.Data.TConnection,System.String,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.Row.Padaces">
+            <summary>
+            PADACES: VARCHAR(14), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.Row.Trans">
+            <summary>
+            TRANS: VARCHAR(100), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.Row.Podealt">
+            <summary>
+            PODEALT: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.Row.Podecad">
+            <summary>
+            PODECAD: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.Row.Poderem">
+            <summary>
+            PODEREM: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.Row.Itemmenu">
+            <summary>
+            ITEMMENU: VARCHAR(100)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.Row.Trans02">
+            <summary>
+            TRANS: VARCHAR(100), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.ColumnPadaces.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.ColumnTrans.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.ColumnPodealt.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.ColumnPodecad.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.ColumnPoderem.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.ColumnItemmenu.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_padtrans.ColumnTrans02.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_sistema.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_sistema.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.Row.Nome">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.Row.Versao">
+            <summary>
+            VERSAO: VARCHAR(11)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.Row.Take">
+            <summary>
+            TAKE: DATETIME
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.Row.Habilitado">
+            <summary>
+            HABILITADO: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.Row.Url">
+            <summary>
+            URL: VARCHAR(200)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.Row.P">
+            <summary>
+            P: VARCHAR(30)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.Row.U">
+            <summary>
+            U: VARCHAR(30)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.ColumnVersao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.ColumnTake.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.ColumnHabilitado.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.ColumnUrl.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.ColumnP.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_sistema.ColumnU.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_transacao.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_transacao.Row.Query(Techne.Data.TConnection,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Trans">
+            <summary>
+            TRANS: VARCHAR(100), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Nome">
+            <summary>
+            NOME: VARCHAR(100)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Publica">
+            <summary>
+            PUBLICA: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Acessoanonimo">
+            <summary>
+            ACESSOANONIMO: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Paginaweb">
+            <summary>
+            PAGINAWEB: VARCHAR(100)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Form">
+            <summary>
+            FORM: VARCHAR(8)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Itemmenu">
+            <summary>
+            ITEMMENU: VARCHAR(100)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Auditar">
+            <summary>
+            AUDITAR: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Modulo">
+            <summary>
+            MODULO: VARCHAR(30)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Nomesis">
+            <summary>
+            NOME: VARCHAR(50), Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Versao">
+            <summary>
+            VERSAO: VARCHAR(11)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Take">
+            <summary>
+            TAKE: DATETIME
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.Row.Habilitado">
+            <summary>
+            HABILITADO: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnTrans.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnNome.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnPublica.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnAcessoanonimo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnPaginaweb.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnForm.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnItemmenu.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnAuditar.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnModulo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnNomesis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnVersao.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnTake.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_transacao.ColumnHabilitado.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_tabela.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_tabela.Row.Query(Techne.Data.TConnection,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.Row.Tabela">
+            <summary>
+            TABELA: VARCHAR(20), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.Row.Descr">
+            <summary>
+            DESCR: VARCHAR(160)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.Row.Taminfo">
+            <summary>
+            TAMINFO: NUMERIC(2)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.Row.Tipo">
+            <summary>
+            TIPO: CHAR(1)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.Row.Nome_tabela">
+            <summary>
+            NOME_TABELA: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.Row.Coluna_tabela">
+            <summary>
+            COLUNA_TABELA: VARCHAR(50)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.ColumnTabela.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.ColumnDescr.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.ColumnTaminfo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.ColumnTipo.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.ColumnNome_tabela.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabela.ColumnColuna_tabela.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_tabelafk.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_tabelafk.Row.Query(Techne.Data.TConnection,System.String,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelafk.Row.Tabela">
+            <summary>
+            TABELA: VARCHAR(20), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelafk.Row.Tabelafk">
+            <summary>
+            TABELAFK: VARCHAR(40), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelafk.Row.Colunafk">
+            <summary>
+            COLUNAFK: VARCHAR(40), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelafk.ColumnTabela.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelafk.ColumnTabelafk.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelafk.ColumnColunafk.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_tabelaitem.FilterColumns(System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Filtra o array de colunas retornando somente as colunas pertencentes ao DataTable.
+            Devolve StringCollection para que seja possível utilizar o método Contains().
+            </summary>
+            <param name="toLower">As colunas serão devolvidas em minúsculas</param>
+            <param name="tabPrincipal">Somente colunas da tabela principal</param>
+        </member>
+        <member name="M:Techne.HadesLyc.CR.Hd_tabelaitem.Row.Query(Techne.Data.TConnection,System.String,System.String)">
+            <summary>
+            Obtém um registro do banco. Um TDataTable é instanciado para acomodar o registro obtido.
+            Se nenhum registro for encontrado, devolve null, e conexão trará erro correspondente.
+            Dá exception se mais de um registro for encontrado.
+            </summary>
+            <param name="connection">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelaitem.Row.Tabela">
+            <summary>
+            TABELA: VARCHAR(20), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelaitem.Row.Item">
+            <summary>
+            ITEM: VARCHAR(40), Primary Key, Not Null
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelaitem.Row.Descr">
+            <summary>
+            DESCR: VARCHAR(180)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelaitem.Row.Sis">
+            <summary>
+            SIS: VARCHAR(12)
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelaitem.ColumnTabela.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelaitem.ColumnItem.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelaitem.ColumnDescr.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.HadesLyc.CR.Hd_tabelaitem.ColumnSis.NotNull">
+            <summary>
+            Esta propriedade indica se a coluna no banco de dados é NotNull ou não. Diferente de AllowDBNull.
+            </summary>
+        </member>
+    </members>
+</doc>

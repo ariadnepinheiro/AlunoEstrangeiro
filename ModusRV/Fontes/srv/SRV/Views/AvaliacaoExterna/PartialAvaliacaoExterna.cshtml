@@ -1,0 +1,72 @@
+﻿@model SRV.Models.Domain.AvaliacaoExterna
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(true, "Create", null, null, "btNovo");
+        @Html.ToolbarItemSubmit(true, "btSalvar");
+        
+        if (ViewBag.IsEdit)
+        {
+            @Html.ToolbarItemJS(true, "deleteItemAndRedirect(this, '" + @Url.Action("Delete", "AvaliacaoExterna") + "', '" + @Url.Action("Create", "AvaliacaoExterna") + "', " + @Model.IdAvaliacaoExterna + ")", null, "btExcluir");
+        }
+                                                                                                                                                                                                
+        @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <table class="tableForm">
+            @if (ViewBag.IsEdit)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdAvaliacaoExterna)</td>
+                    <td>@Html.DisplayTextFor(m => m.IdAvaliacaoExterna)<br/>
+                        @Html.HiddenFor(m => m.IdAvaliacaoExterna)
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdAvaliacaoExterna)</td>
+                    <td>@Html.TextBoxFor(m => m.IdAvaliacaoExterna, new { style = "width:80px; text-align: right", maxlength = 9 })<br/>
+                        @Html.ValidationMessageFor(m => m.IdAvaliacaoExterna)
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.DesAvaliacaoExterna)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.DesAvaliacaoExterna, new { style = "width:200px;", maxlength = 20 })<br/>
+                    @Html.ValidationMessageFor(m => m.DesAvaliacaoExterna)
+                </td>
+            </tr>
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.DesPeriodoAvaliacao)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.DesPeriodoAvaliacao, new { style = "width:200px;", maxlength = 20 })<br/>
+                    @Html.ValidationMessageFor(m => m.DesPeriodoAvaliacao)
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $("#IdAvaliacaoExterna").mask("??999999999", { placeholder: "" });
+    })
+
+</script>

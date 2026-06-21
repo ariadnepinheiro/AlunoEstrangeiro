@@ -1,0 +1,163 @@
+﻿.titulo
+{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+	text-align: center;
+}
+.tablePrincipal
+{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 10px;
+	width: 447px;
+	border-spacing: 0px;
+	border: #9F9F9F;
+}
+.tdTituloPrincipal
+{
+	font-weight: bold;
+	text-align: right;
+	background-color: #BFD7F3;
+}
+.tdFrequenciaGlobal
+{
+	background-color: #BFD7F3;
+	border-width: 1px;
+	font-weight: bold;
+	text-align: right;
+}
+.tabela-padrao-principal
+{
+	width: 100%;
+}
+.tabela-padrao .tabela-cabecalho
+{
+	background-position: 0px 0px;
+	padding: 5px 0px 0px 10px;
+	height: 25px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #0353AB;
+	padding: 5px 0px 0px 10px;
+	height: 30px;
+	-webkit-region-break-inside: avoid;
+	page-break-inside: avoid;
+	position: relative;
+}
+
+.tabela-padrao .tabela-cabecalho img.aba-direita
+{
+	float: right;
+}
+
+.tabela-padrao .tabela-cabecalho .aba-esquerda
+{
+	float: right;
+	background-position: 0px -5px;
+	height: 30px;
+	width: 60px;
+}
+
+.tabela-padrao .tabela-cabecalho div.centro
+{
+	float: right;
+	background-position: 0px -5px;
+	height: 25px;
+	min-width: 60px;
+	padding: 5px 5px 0px 5px;
+}
+
+.tabela-padrao .tabela-legenda li
+{
+	float: right;
+	margin-left: 10px;
+	list-style: none;
+}
+
+.tabela-padrao .tabela-legenda .caixinha-cor
+{
+	display: inline-block;
+	width: 20px;
+	height: 12px;
+	float: left;
+	margin: 0px 4px;
+}
+
+.tabela-padrao table
+{
+	border-collapse: collapse;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 9px;
+	width: 100%;
+
+}
+
+.tabela-padrao table td
+{
+	border-collapse: collapse;
+	border: 1px solid #C0C0C0;
+	padding: 4px;
+}
+
+.tabela-padrao table thead tr
+{
+	font-weight: bold;
+}
+.tabela-padrao .expansor
+{
+	background-repeat: no-repeat;
+	background-position: right; /* começa sempre maximizado */
+	width: 11px;
+	height: 11px;
+	float: left;
+	display: inline-block;
+	margin-right: 4px;
+	cursor: pointer;
+}
+
+.tabela-padrao .td-centro
+{
+	text-align: center;
+}
+
+.tabela-padrao tfoot td
+{
+	height: 28px;
+	vertical-align: bottom;
+	color: #FFF;
+	border-width: 0px;
+}
+.tabela-padrao table td.centralizado-micro
+{
+	text-align: center;
+	width: 40px;
+
+}
+.tabela-padrao table td.centralizado-micro-titulo
+{
+	text-align: center;
+	width: 40px;
+	background-color: #BFD7F3;
+}
+.tabela-padrao table td.centralizado-micro input
+{
+	text-align: center;
+	width: 40px;
+	margin: 0px;
+}
+
+.tabela-padrao table td.centralizado-micro-disciplina
+{
+	text-align: center;
+	width: 40px;
+	background-color: #BFD7F3;
+}
+.tabela-padrao table td.centralizado-micro-totais
+{
+	text-align: center;
+	width: 40px;
+	background-color: #F0F0F0;
+}
+

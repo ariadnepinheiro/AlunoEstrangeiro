@@ -1,0 +1,1345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Image Name="Image7">
+        <Source>Embedded</Source>
+        <Value>SELONACIONAL</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.55113cm</Top>
+        <Left>0.8675cm</Left>
+        <Height>3.1234cm</Height>
+        <Width>3.31791cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Governo do Estado do Rio de Janeiro
+Secretaria de Estado de Educação</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Label>ESCOLA</Label>
+                <Value>=First(Fields!ESCOLA.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>3.76713cm</Top>
+        <Left>6.72042cm</Left>
+        <Height>1.71979cm</Height>
+        <Width>7.80457cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image8">
+        <Source>Embedded</Source>
+        <Value>logo_govrj</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.55113cm</Top>
+        <Left>17.80901cm</Left>
+        <Height>3.1234cm</Height>
+        <Width>2.42654cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="NUMEROGERADO">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Label>CÓDIGO VALIDADOR</Label>
+                <Value>=First(Fields!NUMEROGERADO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>6.30978cm</Top>
+        <Left>6.72042cm</Left>
+        <Height>0.635cm</Height>
+        <Width>7.80457cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Rectangle Name="Rectangle1">
+        <ReportItems>
+          <Image Name="Image2">
+            <Source>Embedded</Source>
+            <Value>logo_govrj1</Value>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.01458in</Top>
+            <Left>1.20697in</Left>
+            <Height>0.5in</Height>
+            <Width>0.425in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+          <Textbox Name="Textbox75">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Governo do Estado do Rio de Janeiro
+Secretaria de Estado de Educação</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox75</rd:DefaultName>
+            <Top>0.54236in</Top>
+            <Left>0.35948in</Left>
+            <Height>0.34375in</Height>
+            <Width>2in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Line Name="Line1">
+            <Top>1.75417in</Top>
+            <Left>0.35948in</Left>
+            <Height>0in</Height>
+            <Width>2in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+            </Style>
+          </Line>
+          <Textbox Name="Textbox81">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Nome do Prof. Inspetor Escolar e ID/Vínculo</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox81</rd:DefaultName>
+            <Top>1.79584in</Top>
+            <Left>0.26492in</Left>
+            <Height>0.22917in</Height>
+            <Width>2.29167in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox7">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Coordenadoria Regional de Inspeção Escolar - Regional </Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Label>REGIONAL</Label>
+                    <Value>=First(Fields!REGIONAL.Value, "CERTIFICADO")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>, verificada a documentação escolar, declaro a regularidade dos estudos realizados, nos termos da legislação em vigor.</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox7</rd:DefaultName>
+            <Top>2.32127cm</Top>
+            <Height>1.73771cm</Height>
+            <Width>7.23851cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>7.73738in</Top>
+        <Left>0.34153in</Left>
+        <Height>2.0625in</Height>
+        <Width>2.84981in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+          <TopBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </TopBorder>
+          <BottomBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </BottomBorder>
+          <LeftBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </LeftBorder>
+          <RightBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>1pt</Width>
+          </RightBorder>
+        </Style>
+      </Rectangle>
+      <Textbox Name="TIPODOCUMENTO1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Label>TIPODOCUMENTO</Label>
+                <Value>=First(Fields!TIPODOCUMENTO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.19667in</Top>
+        <Left>2.64583in</Left>
+        <Height>0.25in</Height>
+        <Width>3.07266in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>OBSERVAÇÕES: </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>OBSERVACAO</Label>
+                <Value>=First(Fields!OBSERVACAO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>5.28946in</Top>
+        <Left>0.35542in</Left>
+        <Height>0.25in</Height>
+        <Width>7.61133in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Label>MUNICIPIOESCOLA</Label>
+                <Value>=code.CAPITALIZA(Fields!MUNCIPIOESCOLA.Value)</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>DATADOCUMENTO</Label>
+                <Value>=First(Fields!DATAALTERACAO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>.</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Right</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>5.72002in</Top>
+        <Left>4.26883in</Left>
+        <Height>0.25in</Height>
+        <Width>3.69792in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Confere</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Secretário Escolar</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Confere</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value />
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Direção da Unidade Escolar</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>6.19294in</Top>
+        <Left>0.35542in</Left>
+        <Height>1.23958in</Height>
+        <Width>7.61133in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>O Diretor do </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>ESCOLA</Label>
+                <Value>=First(Fields!ESCOLA.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, em cumprimento ao art. 24, inciso VII da Lei Federal nº 9.394/1996 e a </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>Resolução SEEDUC nº 6.346 de 08 de abril de 2025</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, confere a </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>NOME DO ALUNO</Label>
+                <Value>=First(Fields!NOMEALUNO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>NACIONALIDADE</Label>
+                <Value>=First(Fields!NACIONALIDADE.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>(o), portador(a) da identidade </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>RG nº </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>NUMRG</Label>
+                <Value>=First(Fields!RGNUMERO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>expedido pelo(a) </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>RGEMISSOR</Label>
+                <Value>=First(Fields!RGEMISSOR.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>filho(a) de </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>NOMEMAE</Label>
+                <Value>=code.Capitaliza(Fields!NOMEMAE.Value)</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> e </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>NOMEPAI</Label>
+                <Value>=code.Capitaliza(Fields!NOMEPAI.Value)</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, natural do(e) </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>NATURALIDADE</Label>
+                <Value>=First(Fields!NATURALIDADE.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>nascido(a) em </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>DTNASCIMENTO</Label>
+                <Value>=First(Fields!DATANASCIMENTO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, o presente </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>TIPODOCUMENTO</Label>
+                <Value>=First(Fields!TIPODOCUMENTO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> pela conclusão do </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>NOMECURSO</Label>
+                <Value>=First(Fields!NOMECURSO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>autorizado nos termos da(o) </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>ATOAUTORIZA</Label>
+                <Value>=First(Fields!ATOAUTORIZA.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> de </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>DATAAUTORIZA</Label>
+                <Value>=First(Fields!DATAAUTORIZA.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>com carga horária total de </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>CARGAHORARIA</Label>
+                <Value>=First(Fields!TOTALHORASAULA.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> horas-aula, que correspondem a </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>HORARELOGIO</Label>
+                <Value>=First(Fields!TOTALHORASRELOGIO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> horas</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, concluído em </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>DATACONCLUSAO</Label>
+                <Value>=First(Fields!DATACONCLUSAO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, a fim de que </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>NOME DO ALUNO</Label>
+                <Value>=First(Fields!NOMEALUNO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> possa gozar de todos os direitos e prerrogativas legais. E, por ser verdade, é lavrado o presente </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>TIPODOCUMENTO</Label>
+                <Value>=First(Fields!TIPODOCUMENTO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, que dato e assino.</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>General</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>3.03252in</Top>
+        <Left>0.35542in</Left>
+        <Height>1.71875in</Height>
+        <Width>7.61133in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Este Certificado foi registrado sob o nº </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>NUMLIVRO</Label>
+                <Value>=First(Fields!NUMEROLIVRO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, em fls. </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>NUMFL</Label>
+                <Value>=First(Fields!FOLHALIVRO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>, do livro nº </Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Label>LIVRO</Label>
+                <Value>=First(Fields!LIVRO.Value, "CERTIFICADO")</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> desta U.E.</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>4.81377in</Top>
+        <Left>0.34153in</Left>
+        <Height>0.25in</Height>
+        <Width>7.62522in</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>25.85508cm</Height>
+    <Style />
+  </Body>
+  <Width>21cm</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>1.27cm</TopMargin>
+    <BottomMargin>1.27cm</BottomMargin>
+    <ColumnSpacing>1.27cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="LYCEUM">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=10.11.69.200;Initial Catalog=LYCEUM</ConnectString>
+      </ConnectionProperties>
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <rd:DataSourceID>3026eee8-b6eb-4a78-b97b-7e4085061b5b</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="CERTIFICADO">
+      <Query>
+        <DataSourceName>LYCEUM</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@CPF">
+            <Value>=Parameters!cpf.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SET LANGUAGE 'Portuguese'
+
+SELECT DISTINCT UE.NOME_COMP AS ESCOLA,
+			UPPER(TDC.DESCRICAO) AS TIPODOCUMENTO,
+			ADG.NUMEROGERADO,
+            UPPER(AC.NOME) AS NOMEALUNO,
+            LOWER(AC.NOMEMAE) AS NOMEMAE,
+            LOWER(AC.NOMEPAI) AS NOMEPAI,
+            DATENAME(DAY, AC.DATANASCIMENTO) + ' de ' +
+			DATENAME(MONTH, AC.DATANASCIMENTO) + ' de ' +
+			DATENAME(YEAR, AC.DATANASCIMENTO) AS DATANASCIMENTO,
+            MU.NOME AS NATURALIDADE,
+            AC.NACIONALIDADE,
+            AC.CPF,
+            AC.RGNUMERO,
+            AC.RGEMISSOR,
+            AC.RGUF,
+            AD.NOMECURSO,
+			AD.ATOAUTORIZA,
+            DATENAME(DAY, AD.DATAAUTORIZA) + ' de ' +
+			DATENAME(MONTH, AD.DATAAUTORIZA) + ' de ' +
+			DATENAME(YEAR, AD.DATAAUTORIZA) AS DATAAUTORIZA,
+            AD.TOTALHORASAULA,
+            AD.TOTALHORASRELOGIO,
+            DATENAME(DAY, AD.DATACONCLUSAO) + ' de ' +
+			DATENAME(MONTH, AD.DATACONCLUSAO) + ' de ' +
+			DATENAME(YEAR, AD.DATACONCLUSAO) AS DATACONCLUSAO,
+            AD.NUMEROLIVRO,
+            AD.FOLHALIVRO,
+            AD.LIVRO, 
+            AD.OBSERVACAO,
+			LOWER(TM.NOME) AS MUNCIPIOESCOLA,
+			TR.REGIONAL,
+            DATENAME(DAY, ADG.DATAALTERACAO) + ' de ' +
+			DATENAME(MONTH, ADG.DATAALTERACAO) + ' de ' +
+			DATENAME(YEAR, ADG.DATAALTERACAO) AS DATAALTERACAO
+  FROM CertificacaoEscolar.ALUNOCERTIFICACAO AS AC (NOLOCK)
+		JOIN CertificacaoEscolar.ALUNODOCUMENTO AS AD
+		ON AC.ALUNOCERTIFICACAOID = AD.ALUNOCERTIFICACAOID		
+		JOIN CertificacaoEscolar.ALUNODOCUMENTOGERADO AS ADG
+		ON ADG.ALUNODOCUMENTOID = AD.ALUNODOCUMENTOID		
+		JOIN CertificacaoEscolar.TIPOCONCLUSAO AS TC
+		ON TC.TIPOCONCLUSAOID = AD.TIPOCONCLUSAOID
+		JOIN CertificacaoEscolar.TIPODOCUMENTOCERTIFICA AS TDC
+		ON TDC.DOCUMENTOID = AD.DOCUMENTOID
+		JOIN dbo.LY_UNIDADE_ENSINO AS UE
+		ON UE.UNIDADE_ENS = AD.UNIDADEENSINO
+		JOIN dbo.TCE_REGIONAL AS TR
+		ON TR.ID_REGIONAL = UE.ID_REGIONAL
+		JOIN HADES.dbo.HD_MUNICIPIO AS MU
+		ON MU.MUNICIPIO = AC.MUNICIPIONASCIMENTO
+		JOIN HADES.dbo.TCE_MUNICIPIO AS TM
+		ON TM.ID_MUNICIPIO = UE.MUNICIPIO
+	WHERE 	TDC.DESCRICAO = 'DIPLOMA' AND
+			AC.CPF = @CPF</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="ESCOLA">
+          <DataField>ESCOLA</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="TIPODOCUMENTO">
+          <DataField>TIPODOCUMENTO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="NUMEROGERADO">
+          <DataField>NUMEROGERADO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="NOMEALUNO">
+          <DataField>NOMEALUNO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="NOMEMAE">
+          <DataField>NOMEMAE</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="NOMEPAI">
+          <DataField>NOMEPAI</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="DATANASCIMENTO">
+          <DataField>DATANASCIMENTO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="NATURALIDADE">
+          <DataField>NATURALIDADE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MUNICIPIO">
+          <DataField>MUNICIPIO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="NACIONALIDADE">
+          <DataField>NACIONALIDADE</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="CPF">
+          <DataField>CPF</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="RGNUMERO">
+          <DataField>RGNUMERO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="RGEMISSOR">
+          <DataField>RGEMISSOR</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="RGUF">
+          <DataField>RGUF</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="NOMECURSO">
+          <DataField>NOMECURSO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="ATOAUTORIZA">
+          <DataField>ATOAUTORIZA</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="DATAAUTORIZA">
+          <DataField>DATAAUTORIZA</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="MODALIDADE">
+          <DataField>MODALIDADE</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="TOTALHORASAULA">
+          <DataField>TOTALHORASAULA</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="TOTALHORASRELOGIO">
+          <DataField>TOTALHORASRELOGIO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="DATACONCLUSAO">
+          <DataField>DATACONCLUSAO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="NUMEROLIVRO">
+          <DataField>NUMEROLIVRO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="FOLHALIVRO">
+          <DataField>FOLHALIVRO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="LIVRO">
+          <DataField>LIVRO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="MUNCIPIOESCOLA">
+          <DataField>MUNCIPIOESCOLA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="OBSERVACAO">
+          <DataField>OBSERVACAO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="REGIONAL">
+          <DataField>REGIONAL</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="DATAALTERACAO">
+          <DataField>DATAALTERACAO</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="usuario">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>usuario</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="cpf">
+      <DataType>String</DataType>
+      <Prompt>cpf</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>
+    Public Function Capitaliza(texto As String) As String
+    If texto Is Nothing Then Return ""
+
+    Dim preposicoes() As String = {"da", "de", "di", "do", "dos", "das", "du", "d’"}
+
+    ' separar e remover entradas vazias
+    Dim raw() As String = texto.Trim().Split(New Char() {" "c})
+    Dim words As New System.Collections.ArrayList()
+    For Each w As String In raw
+    If Not String.IsNullOrEmpty(w) AndAlso w.Trim().Length &gt; 0 Then
+    words.Add(w.Trim())
+    End If
+    Next
+
+    For i As Integer = 0 To words.Count - 1
+    Dim tmp As String = words(i).ToString().ToLower()
+    If i = 0 Or Array.IndexOf(preposicoes, tmp) = -1 Then
+    If tmp.Length &gt; 0 Then words(i) = Char.ToUpper(tmp(0)) &amp; tmp.Substring(1)
+    Else
+    words(i) = tmp
+    End If
+    Next
+
+    Dim sb As New System.Text.StringBuilder()
+    For i As Integer = 0 To words.Count - 1
+    If i &gt; 0 Then sb.Append(" ")
+    sb.Append(words(i).ToString())
+    Next
+
+    Return sb.ToString()
+    End Function
+  </Code>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logo_seeduc">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="SELONACIONAL">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="logo_govrj">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="logo_govrj1">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>3f37b985-db40-4c3f-ac81-c9a70b86a803</rd:ReportID>
+</Report>

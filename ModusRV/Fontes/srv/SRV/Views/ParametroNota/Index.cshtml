@@ -1,0 +1,144 @@
+﻿@model SRV.Models.DTO.CadastroParametroNota
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemJS(@Role.IsGranted("Administrador") && Model.IdModalidade != null, "salvar()", new { id = "salvar" }, "btSalvar")
+    }
+    
+    <div class="boxContent">
+        
+        @if (@TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdModalidade)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.IdModalidade, (IEnumerable<SelectListItem>)Model.Modalidades ?? new List<SelectListItem>(), "", new { style = "width:350px;" })<br/>                        
+                        @Html.ValidationMessageFor(m => m.IdModalidade)
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br/>
+
+        @if (Model.Indicadores != null)
+        {
+            <table class="grid">
+            
+                @* Cabeçalho *@
+                <thead>
+
+                    <tr>
+                        <th width="100%">Indicador</th>
+
+                        @foreach (var nota in @Model.Notas)
+                        {
+                            <th width="75px" style="text-align: center;">Nota @nota.DesNota</th>
+                        }
+                  
+                    </tr>
+
+                </thead>
+
+                @* Corpo *@
+                <tbody>
+
+                    @{ short columnCont = 0; }
+                    @{ short rowCont = 0; }
+
+                    @{ decimal percentual = 0; }
+                    @{ bool valorMeta = false; }
+                    @{ bool existia = false; }
+
+                    @{ string classe = "gridrow"; }
+
+                    @foreach (var indicador in @Model.Indicadores)
+                    {
+                        classe = rowCont % 2 == 0 ? "gridrow" : "gridrow_alternate";
+                
+                        <tr class="@classe">
+
+                            <td width="100%">@indicador.DesIndicador</td>
+
+                            @foreach (var nota in @Model.Notas)
+                            {
+                                if (@Model.Values != null)
+                                {
+                                    foreach (var value in @Model.Values)
+                                    {
+                                        if (value.ParametroNota.Indicador.IdIndicador == indicador.IdIndicador && value.ParametroNota.Nota.IdNota == nota.IdNota)
+                                        {
+                                            percentual = value.ParametroNota.Percentual;
+                                            valorMeta = value.ParametroNota.ValorMeta;
+                                            existia = true;
+
+                                            break;
+                                        }
+                                    }
+                                }
+                            
+                                <td width="75px">
+                                    @Html.TextBox("NewValues[" + @rowCont + "][" + @columnCont + "].ParametroNota.Percentual", percentual, new { @class = "nota", maxlength = "6", style = "width: 70px; text-align: right;" })
+                                    @Html.Hidden("NewValues[" + @rowCont + "][" + @columnCont + "].ParametroNota.ValorMeta", valorMeta)
+                                    @Html.Hidden("NewValues[" + @rowCont + "][" + @columnCont + "].ParametroNota.Indicador.IdIndicador", @indicador.IdIndicador)
+                                    @Html.Hidden("NewValues[" + @rowCont + "][" + @columnCont + "].ParametroNota.Nota.IdNota", @nota.IdNota)
+                                    @Html.Hidden("NewValues[" + @rowCont + "][" + @columnCont + "].ParametroNota.AnoReferencia.IdAnoReferencia", (int)@ViewBag.UsuarioLogado.Ciclo)
+                                    @Html.Hidden("NewValues[" + @rowCont + "][" + @columnCont + "].ParametroNota.Modalidade.IdModalidade", @Model.IdModalidade)
+                                    @Html.Hidden("NewValues[" + @rowCont + "][" + @columnCont + "].Existia", existia)
+                                </td>
+
+                                percentual = 0;
+                                valorMeta = false;
+                                existia = false;
+
+                                columnCont++;
+                            }
+                      
+                        </tr>
+                
+                            rowCont++;
+
+                            if (columnCont == @Model.Notas.Count)
+                            {
+                                columnCont = 0;
+                            }
+                    }
+
+                </tbody>
+            </table>
+        }
+    </div>    
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $(".nota").maskMoney({ thousands: '', decimal: ',', precision: 2, allowZero: true, allowNegative: false, defaultZero: true });
+
+        $("#IdModalidade").change(function () {
+
+            $('#IdModalidade').closest("form").attr('action', '@Url.Action("Index", "ParametroNota")');
+            $('#IdModalidade').closest("form").submit();
+        });
+    })
+
+    function salvar() {
+
+        $('#salvar').closest("form").attr('action', '@Url.Action("Edit", "ParametroNota")');
+        $('#salvar').closest("form").submit();
+    }
+
+</script>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>9.39589cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CURRICULO">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>. </Value>
+                              <Style />
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!CURRICULO.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CURRICULO</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Detalhes" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Left>0.44661cm</Left>
+        <Height>0.6cm</Height>
+        <Width>9.39589cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>0.55208in</Height>
+    <Style />
+  </Body>
+  <Width>4.13542in</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=10.11.69.201;Initial Catalog=LYCEUM</ConnectString>
+      </ConnectionProperties>
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <rd:DataSourceID>48eb7dda-e8be-472a-917e-1908ccb3a7a7</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@ano">
+            <Value>=Parameters!ano.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@turma">
+            <Value>=Parameters!turma.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@semestre">
+            <Value>=Parameters!semestre.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@disciplina">
+            <Value>=Parameters!disciplina.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@datafrequencia">
+            <Value>=Parameters!datafrequencia.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@tipo">
+            <Value>=Parameters!tipo.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT DISTINCT  (G.GRUPO + ' - ' + I.COMPETENCIA_HABILIDADE)  AS CURRICULO
+              FROM TCE_COMPETENCIA_HABILIDADE_DOCENTE D
+											INNER JOIN TCE_COMPETENCIA_HABILIDADE_ITEM I ON D.ID_COMPETENCIA_HABILIDADE_ITEM = I.ID_COMPETENCIA_HABILIDADE_ITEM
+											INNER JOIN TCE_COMPETENCIA_HABILIDADE_GRUPO G ON G.ID_COMPETENCIA_HABILIDADE_GRUPO = I.ID_COMPETENCIA_HABILIDADE_GRUPO
+                                        WHERE D.ANO = @ano						AND D.PERIODO = @semestre											AND D.TURMA = @turma
+	                                AND D.DISCIPLINA = @disciplina
+	                                AND DATAFREQUENCIA =@datafrequencia
+												AND TIPO=@tipo</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="CURRICULO">
+          <DataField>CURRICULO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="ano">
+      <DataType>String</DataType>
+      <Prompt>ano</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="semestre">
+      <DataType>String</DataType>
+      <Prompt>semestre</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="turma">
+      <DataType>String</DataType>
+      <Prompt>turma</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="disciplina">
+      <DataType>String</DataType>
+      <Prompt>disciplina</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="tipo">
+      <DataType>String</DataType>
+      <Prompt>tipo</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="datafrequencia">
+      <DataType>DateTime</DataType>
+      <Prompt>datafrequencia</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>7926e9c0-d756-4899-a3b9-50446c3e1119</rd:ReportID>
+</Report>

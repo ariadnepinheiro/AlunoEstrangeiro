@@ -1,0 +1,374 @@
+body 
+{
+    margin: 0;
+}
+
+.top_wrapper 
+{
+    position: relative;
+    height: 130px;
+}
+
+.top_inf
+{   
+    position: fixed;
+    width: 100%;
+    background: #1E6496;
+    color:#ffffff;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 15%);
+    height: 65px;
+    font-size: small;
+    font-family: verdana, arial, helvetica;
+    z-index: 9999;
+}
+
+@media (max-width: 1179px) {
+    .top_botoes 
+    {
+        /*display: none;*/
+    }
+}
+
+.top_outros 
+{
+    position: relative;
+    height: 65px;
+}
+
+.top_logo_governo
+{
+    background-image: url("images/logo-educacao-branca.png");
+    background-size: cover;
+    width: 164px;
+    height: 50px;
+    margin: 7px auto;
+    position: absolute;
+    left: 20px;
+}
+
+.top_logo_gestao
+{
+    background-image: url("images/logo-conexao.png");
+    background-size: cover;
+    width: 257px;
+    height: 30px;
+    margin-top: 10px;
+    position: absolute;
+    left: 210px;
+}
+
+.tit_pag {
+    position: absolute;
+    top: 20px;
+    left: 210px;
+    height: 20px;
+    width: 775px;
+}
+
+.tit_pag > h5 
+{
+    width: 260px;
+}
+
+.top_usuario_logado
+{
+    height: 50px;
+    margin: 7px auto;
+    position: absolute;
+    left: 480px;
+    right: 180px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    /*min-width: 320px;*/
+}
+
+.top_usuario_logado > span 
+{
+    display: block;
+}
+
+.top_botoes 
+{
+    width: 240px;
+    height: 50px;
+    margin: 7px auto;
+    position: absolute;
+    right: 10px;
+}
+
+.buttom-top 
+{   
+    text-align: center;
+    width: 70px;
+    padding:0px 8px;
+    border:2px solid #1E6496;
+    border-radius:5px;
+    margin: 8px 5px 0 5px;
+    color:#1E6496;
+    Background:white;
+    font-size:1em; 
+    font-weight:600;
+    font-family: 'Verdana', Geneva, sans-serif!important;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.buttom-top:hover
+{   
+    padding:0px 8px;
+    border:2px solid #ffffff;
+    color:white;
+    Background:#1E6496;
+    font-size:1em;
+    text-decoration: none;
+}
+
+.main 
+{
+    position: relative;
+    background-color: white;
+    width: 100%;
+}
+
+.main > table {
+    margin: 0 auto;
+    font-family: 'Open Sans',Tahoma, Geneva, sans-serif;
+}
+
+.main > table > tbody > tr > td 
+{
+    top: 0 !important;
+}
+
+.bas_wrapper {
+    position: relative;
+    height: 45px;
+}
+
+.bas-inf
+{   
+    display:flex;
+    flex-wrap:wrap;
+    background: #1E6496;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 45px;
+    z-index: 10000;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.bas
+{
+    position: relative;
+    height: 15px;
+    padding: 0 0 0 20px;
+    font-size: 10px;
+    color: #FFF;
+    text-transform: uppercase;
+    margin: auto 0;
+}
+
+.redes-sociais
+{   
+    text-align:center;  
+    margin: auto 0;
+}
+
+.redes-sociais a
+{   font-size: 11px;
+    margin:5px 5px;
+    height:24px;
+}
+
+.redes-sociais a i
+{   
+    color:#1E6496;
+    padding: 4px;
+    background: #ffffff;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+.redes-sociais a:hover i
+{   
+    color:#ffffff;
+    padding: 4px;
+    background:#1E6496;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+.icones-redes
+{   
+    margin:0px;
+}
+
+.imagem-menu 
+{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 35px;
+    border: 1px solid transparent;
+}
+
+.imagem-rve
+{
+    background-image: url("Images/icone-site-rve.png");
+}
+
+.imagem-home
+{
+    background-image: url("Images/icone-site-04.png");
+}
+
+.imagem-ajuda
+{
+    background-image: url("Images/icone-site-05.png");
+}
+
+.imagem-sair
+{
+    background-image: url("Images/icone-site-06.png");
+}
+
+/*! CSS Used from: http://localhost:11474/Scripts/themes/basic/grid.css */
+tr{padding:0;}
+/*! CSS Used from: http://localhost:11474/LyceumNet2.css */
+td{font-size:11px;color:#000;}
+a:link{text-decoration:none;color:#0353ab;}
+a:visited{text-decoration:none;color:#0353ab;}
+a:hover{text-decoration:underline;color:#666;}
+a:active{text-decoration:none;color:#0353ab;}
+#top_menu
+{
+    background-color: #ffffff;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);    
+    white-space:nowrap;
+    border-top: 1px solid #dfe6ed;
+    padding-top:10px;
+    position: absolute;
+    display: block !important;
+    min-width: 1000px;
+    width:100%;
+    height:30px;
+    opacity: 0.95;
+}
+#ctl00_mnu ul li div > a,#ctl00_mnu ul li div > a:active,#ctl00_mnu ul li div > a:link,#ctl00_mnu ul li div > a:visited{padding:9px!important;text-decoration:none;height:20px;color:#1E6496;font-family:Verdana, Geneva, sans-serif!important;font-weight:600!important;font-size:12px!important;transition:all 0.3s ease-in-out;}
+#ctl00_mnu ul li div > a:hover{box-shadow:inset 0 -5px 0 0 #ffffff;color:#1E6496!important;}
+#ctl00_mnu ul li:hover div a.sub{background-position:right bottom;white-space:nowrap;position:relative;box-shadow:inset 0 -5px 0 0 #1E6496;color:#1E6496!important;}
+#ctl00_mnu ul :hover div.holder{position:absolute;top:23px!important;left:1px!important;margin:0;padding:0;z-index:10000;}
+#ctl00_mnu ul li:nth-child(1):hover div.holder{position:absolute;left:0px!important;margin:0;padding:0;z-index:10000;}
+#ctl00_mnu ul li:nth-child(2):hover div.holder{position:absolute;left:0px!important;margin:0;padding:0;z-index:10000;}
+#ctl00_mnu ul li:nth-child(3):hover div.holder{position:absolute;left:0px!important;margin:0;padding:0;z-index:10000;}
+#ctl00_mnu ul li:nth-child(4):hover div.holder{position:absolute;left:0px!important;margin:0;padding:0;z-index:10000;}
+#ctl00_mnu ul li:nth-child(5):hover div.holder{position:absolute;left:0px!important;margin:0;padding:0;z-index:10000;}
+#ctl00_mnu ul li:nth-child(6):hover div.holder{position:absolute;left:0px!important;margin:0;padding:0;z-index:10000;}
+#ctl00_mnu ul li:nth-child(7):hover div.holder{position:absolute;left:0px!important;margin:0;padding:0;z-index:10000;}
+#ctl00_mnu ul li:nth-child(8):hover div.holder{position:absolute;left:0px!important;margin:0;padding:0;z-index:10000;}
+#ctl00_mnu ul li:nth-child(9):hover div.holder{position:absolute;left:0px!important;margin:0;padding:0;z-index:10000;}
+#ctl00_mnu ul dd a,#ctl00_mnu ul dd a:active,#ctl00_mnu ul dd a:link,#ctl00_mnu ul dd a:visited{height:20px;line-height:20px;font-family:Verdana, Geneva, sans-serif!important;font-weight:600!important;font-size:10pt!important;transition:all 0.3s ease-in-out;}
+#ctl00_mnu ul dd a:hover{box-shadow:inset 3px 0 #1E6496;text-decoration:none!important;color:#1E6496!important;}
+.menuTitle{border-bottom:1px solid #B8B8B8;padding:0 0 5px;}
+
+/*! CSS Used from: Embedded */
+#ctl00_mnu{height:20px;position:relative;margin:0;float:left;padding-right:20px;}
+#ctl00_mnu ul{padding:0;margin:0;list-style:none;}
+#ctl00_mnu ul li{float:left;}
+#ctl00_mnu ul li a,#ctl00_mnu ul li a:active,#ctl00_mnu ul li a:link,#ctl00_mnu ul li a:visited{padding:0px;text-decoration:none;height:20px;color:Black;font-family:'Verdana';font-weight:normal;font-size:11px;}
+#ctl00_mnu ul li div.holder{position:absolute;left:-9999px;border:#CCC 1px solid;z-index:10000;}
+#ctl00_mnu ul li div .leftSide{float:left;background:#FFF no-repeat left bottom;z-index:10000;}
+#ctl00_mnu ul li div .rightSide{float:left;margin-left:10px;display:inline;padding:0 10px 0 0;z-index:10000;}
+#ctl00_mnu ul li:hover{position:relative;}
+#ctl00_mnu ul li a:hover{background-position:right center;white-space:nowrap;position:relative;}
+#ctl00_mnu ul li a.sub:hover{background-position:right bottom;white-space:nowrap;position:relative;}
+#ctl00_mnu ul li:hover a.sub{background-position:right bottom;white-space:nowrap;position:relative;}
+#ctl00_mnu ul :hover div.holder{position:absolute;top:20px;left:4px;margin:0;padding:0;z-index:10000;}
+#ctl00_mnu ul dl{width:auto;margin:5px 0 10px 0;padding:0 5px;list-style:none;}
+#ctl00_mnu ul dl dt{padding:0 10px;margin:0;line-height:20px;white-space:nowrap;color:#1E6496;font-family:'Verdana';font-weight:bold;font-size:8pt !important;}
+#ctl00_mnu ul dl dd{display:block;padding:0;margin:0;}
+#ctl00_mnu ul dd a,#ctl00_mnu ul dd a:active,#ctl00_mnu ul dd a:link,#ctl00_mnu ul dd a:visited{background-image:none;display:block;height:20px;line-height:20px;text-align:left;margin:0;padding:0 10px;white-space:nowrap;float:none;color:Black;font-family:'Tahoma';font-weight:normal;font-size:8pt !important;}
+#ctl00_mnu ul dd a:hover{color:#1E6496;text-decoration:underline;}
+#ctl00_mnu ul table td{vertical-align:top;}
+
+.mnbox_tit {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    min-width: 246px;
+    height: 43px;
+    border-radius: 7px 7px 0 0;
+    text-align: center;
+}
+
+.mnbox_int {
+    width: 300px;
+    min-width: 250px;
+    min-height: 100px;
+    margin: 12px;
+    box-shadow: 4px 4px 4px 0px rgb(0 0 0 / 20%), 0 0px 0px rgb(0 0 0 / 0%), 0 0px 0px rgb(0 0 0 / 0%), 0 0px 0px rgb(0 0 0 / 0%), 0 0px 0px rgb(0 0 0 / 0%), 0 0px 0px rgb(0 0 0 / 0%);
+    border-radius: 8px;
+    background: #e8e9e9
+}
+
+.mnbox_int ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.mnbox_int ul li a {
+    display: block;
+    padding: 3px 15px;
+    font-size: 14px;
+}
+
+.mnbox_int ul li:last-child a {
+    margin-bottom: 15px;
+}
+
+.mnbox_int ul li a:link {
+    text-decoration: none;
+    color: #1e6496;
+}
+
+.mnbox_tit h4 {
+    width: 100%;
+    min-width: 200px;
+    padding: 2px;
+    bottom: 2px;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: Open sans, Geneva, sans-serif;
+    font-weight: bold;
+    margin: 0;
+	text-align: left;
+	margin-left: 28px;
+}
+
+.tit_alunos { background: url("Images/tit_alunos.png"); }
+.tit_relatorios { background: url("Images/tit_relatorios.png"); }
+.tit_horarios { background: url("Images/tit_horarios.png"); }
+.tit_movi { background: url("Images/tit_movi.png"); }
+.tit_notas { background: url("Images/tit_notas.png"); }
+.tit_doc-rel { background: url("Images/tit_doc-rel.png"); }
+.tit_recursosrecebido { background: url("Images/tit_recursosrecebido.png"); }
+.tit_solservicos { background: url("Images/tit_solservicos.png"); }
+.tit_vagas { background: url("Images/tit_vagas.png"); }
+.tit_rede { background: url("Images/tit_rede.png"); }
+.tit_ensino { background: url("Images/tit_ensino.png"); }
+.tit_acad { background: url("Images/tit_acad.png"); }
+.tit_questionario { background: url("Images/tit_questionario.png"); }
+.tit_rve { background: url("Images/tit_rve.png"); }

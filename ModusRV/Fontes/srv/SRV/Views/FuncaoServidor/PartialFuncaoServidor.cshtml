@@ -1,0 +1,161 @@
+﻿@model SRV.Models.DTO.CadastroFuncaoServidor
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btSalvar");                                                                                                                                                                                               
+        @Html.ToolbarItemLink(true, "Index", "FuncaoOcorrenciaServidor", null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <table class="tableForm">
+            
+            @if (ViewBag.IsEdit)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.FuncaoServidor.IdFuncaoServidor)</td>
+                    <td>@Html.DisplayTextFor(m => m.FuncaoServidor.IdFuncaoServidor)<br/>
+                        @Html.HiddenFor(m => m.FuncaoServidor.IdFuncaoServidor, new { id = "IdFuncaoServidor" })
+                    </td>
+                </tr>
+            }
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.FuncaoServidor.Servidor.IdServidor)</td>
+                <td>@Html.DisplayTextFor(m => m.FuncaoServidor.Servidor.IdServidor)<br/>
+                    @Html.HiddenFor(m => m.FuncaoServidor.Servidor.IdServidor, new { id = "idServidor" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.FuncaoServidor.Servidor.DesNomeServidor)</td>
+                <td>@Html.DisplayTextFor(m => m.FuncaoServidor.Servidor.DesNomeServidor)<br/>
+                    @Html.HiddenFor(m => m.FuncaoServidor.Servidor.DesNomeServidor, new { id = "nomeServidor" })
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.FuncaoServidor.UnidadeAdministrativa)</td>
+                <td>
+                    @Html.DropDownListFor(m => m.FuncaoServidor.UnidadeAdministrativa.IdUnidadeAdministrativa, (IEnumerable<SelectListItem>)Model.UnidadesAdministrativas ?? new List<SelectListItem>(), "", new { id = "IdUnidadeAdministrativa", style = "width:250px;" })<br/>                        
+                    @Html.ValidationMessageFor(m => m.FuncaoServidor.UnidadeAdministrativa.IdUnidadeAdministrativa)
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.FuncaoServidor.Funcao)</td>
+                <td>
+                    @Html.DropDownListFor(m => m.FuncaoServidor.Funcao.IdFuncao, (IEnumerable<SelectListItem>)Model.Funcoes ?? new List<SelectListItem>(), "", new { id = "IdFuncao", style = "width:250px;" })<br/>                        
+                    @Html.ValidationMessageFor(m => m.FuncaoServidor.Funcao.IdFuncao)
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(model => model.FuncaoServidor.DataInicioFuncao)</td>
+                <td>
+                    @Html.TextBoxFor(model => model.FuncaoServidor.DataInicioFuncao, new { style = "width: 80px", @class = "date" })
+                    @Html.ValidationMessageFor(model => model.FuncaoServidor.DataInicioFuncao)
+                </td>
+            </tr>
+            <tr>
+                <td class="labelRight">@Html.LabelFor(model => model.FuncaoServidor.DataFimFuncao)</td>
+                <td>
+                    @Html.TextBoxFor(model => model.FuncaoServidor.DataFimFuncao, new { style = "width: 80px", @class = "date" })
+                    @Html.ValidationMessageFor(model => model.FuncaoServidor.DataFimFuncao)
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(model => model.FuncaoServidor.CargaHorariaAlocada)</td>
+                <td>
+                    @Html.TextBoxFor(model => model.FuncaoServidor.CargaHorariaAlocada, new { style = "width:80px; text-align: right;", maxlength = 9 })
+                    @Html.ValidationMessageFor(model => model.FuncaoServidor.CargaHorariaAlocada)
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(model => model.FuncaoServidor.CargaHorariaTotal)</td>
+                <td>
+                    @Html.TextBoxFor(model => model.FuncaoServidor.CargaHorariaTotal, new { style = "width:80px; text-align: right;", maxlength = 9 })
+                    @Html.ValidationMessageFor(model => model.FuncaoServidor.CargaHorariaTotal)
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(model => model.FuncaoServidor.CargaHorariaLivre)</td>
+                <td>
+                    @Html.TextBoxFor(model => model.FuncaoServidor.CargaHorariaLivre, new { style = "width:80px; text-align: right;", maxlength = 9 })
+                    @Html.ValidationMessageFor(model => model.FuncaoServidor.CargaHorariaLivre)
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(model => model.FuncaoServidor.Proporcionalidade)</td>
+                <td>
+                    <input type="text" value="@Model.FuncaoServidor.Proporcionalidade" readonly="readonly" id="txtProporcionalidade" /> 
+                    @Html.HiddenFor(model => model.FuncaoServidor.Proporcionalidade)
+                    @Html.ValidationMessageFor(model => model.FuncaoServidor.Proporcionalidade)
+                </td>
+            </tr>
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(model => model.FuncaoServidor.Recurso)</td>
+                <td>
+                    @Html.TextAreaFor(model => model.FuncaoServidor.Recurso, new { style = "width:250px;" })
+                    @Html.ValidationMessageFor(model => model.FuncaoServidor.Recurso)
+                </td>
+            </tr>
+
+
+        </table>
+    </div>
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+        $("#FuncaoServidor_CargaHorariaAlocada").maskMoney({ thousands: '', decimal: ',', precision: 2, allowZero: false, allowNegative: false, defaultZero: false });
+        $("#FuncaoServidor_CargaHorariaLivre").maskMoney({ thousands: '', decimal: ',', precision: 2, allowZero: true, allowNegative: false, defaultZero: false });
+        $("#FuncaoServidor_CargaHorariaTotal").maskMoney({ thousands: '', decimal: ',', precision: 2, allowZero: false, allowNegative: false, defaultZero: false });
+
+        $('#FuncaoServidor_CargaHorariaAlocada').blur(function () {        
+            CalculaProporcionalidade();
+        });
+
+        $('#FuncaoServidor_CargaHorariaLivre').blur(function () {
+            CalculaProporcionalidade();
+        });
+
+        $('#FuncaoServidor_CargaHorariaTotal').blur(function () {
+            CalculaProporcionalidade();
+        });
+    })
+    
+    function CalculaProporcionalidade() {
+        if ($('#FuncaoServidor_CargaHorariaAlocada').val() != "" && parseFloat($('#FuncaoServidor_CargaHorariaTotal').val().toString().replace(',', '.')) != NaN
+                && ($('#FuncaoServidor_CargaHorariaTotal').val() != "" && parseFloat($('#FuncaoServidor_CargaHorariaTotal').val().toString().replace(',', '.')) != NaN )
+                    && $('#FuncaoServidor_CargaHorariaLivre').val() != "" && parseFloat($('#FuncaoServidor_CargaHorariaTotal').val().toString().replace(',', '.')) != NaN
+            ) {
+            var proporcionalidade = (parseFloat($('#FuncaoServidor_CargaHorariaAlocada').val().toString().replace(',', '.')) + parseFloat($('#FuncaoServidor_CargaHorariaLivre').val().toString().replace(',', '.'))) / parseFloat($('#FuncaoServidor_CargaHorariaTotal').val().toString().replace(',', '.'));
+            proporcionalidade = (Math.round(proporcionalidade * 100) / 100).toString().replace('.', ',');
+            $('#FuncaoServidor_Proporcionalidade').val(proporcionalidade);
+            $('#txtProporcionalidade').val(proporcionalidade);
+        }
+        else {
+            $('#FuncaoServidor_Proporcionalidade').val("");
+            $('#txtProporcionalidade').val("");
+        }
+            //proporcionalidade = Decimal.Round(((importFuncaoServidor.Alocado + importFuncaoServidor.Livre) / importFuncaoServidor.Total), 2);
+    }
+
+</script>

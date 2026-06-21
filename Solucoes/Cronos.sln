@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HadesLycCR", "..\HadesLycCR\Fontes\HadesLycCR\HadesLycCR.csproj", "{526758C4-F26B-43D5-97D5-6C6EE006E23F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyceumCR", "..\LyceumGovCR\Fontes\LyceumCR\LyceumCR.csproj", "{23CB57BB-A925-4A1A-BEBE-D5458BF18B4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{526758C4-F26B-43D5-97D5-6C6EE006E23F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{526758C4-F26B-43D5-97D5-6C6EE006E23F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{526758C4-F26B-43D5-97D5-6C6EE006E23F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{526758C4-F26B-43D5-97D5-6C6EE006E23F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23CB57BB-A925-4A1A-BEBE-D5458BF18B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23CB57BB-A925-4A1A-BEBE-D5458BF18B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23CB57BB-A925-4A1A-BEBE-D5458BF18B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23CB57BB-A925-4A1A-BEBE-D5458BF18B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

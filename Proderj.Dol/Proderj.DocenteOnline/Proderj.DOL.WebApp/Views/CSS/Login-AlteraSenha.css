@@ -1,0 +1,72 @@
+﻿/****
+LOGIN - ALTERA SENHA
+****/
+.painel-login { width:98%; }
+.painel-login .loginAvisoVermelho { color:#C00;margin: 5px 0px 10px 5px;line-height:15px; }
+
+.painel-login .caixa-login {
+	width: 340px;
+	margin: auto;
+	background-color: #F2F6F9;
+	padding: 5px 0px;
+}
+
+.painel-login .aviso {
+	top: 200px;
+	width: 340px;
+}
+
+.painel-login .loginAvisoTexto {
+	margin: 5px 0px 10px 5px;line-height:15px;
+}
+.painel-login h3 img { margin:0px 5px;float:left;}
+.painel-login h3 {
+	height: 18px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	color: #0353AB;
+	padding: 0px;
+	margin: 2px 0px 5px 0px;
+	border-bottom: 1px #0353AB solid;
+}
+
+#frm-login {
+	margin: 0px 0px 0px 100px;
+}
+
+.painel-login label,
+.painel-login input 
+{
+	font-family:Tahoma;font-size:11px;
+	display:block;
+	margin:0px 0px 2px 0px;
+}
+
+.painel-login label { font-weight: bold;}
+.painel-login .log_form 
+{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	height: 15px;
+	width: 180px;
+	background: white;
+}
+
+.painel-login .esqueci-senha {
+	text-align: right;
+	margin: 20px 0px 0px 0px;
+}
+
+.painel-login .login-erro 
+{
+	margin: 5px;
+	color: #C00;
+}
+
+.login-erro li {
+	margin:5px 0px;
+}
+.painel-login #btLoginEntrar { margin-top:10px;}
+/****
+LOGIN - ALTERA SENHA
+****/

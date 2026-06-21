@@ -1,0 +1,20 @@
+﻿@model IList<string>
+
+@using MvcContrib.UI.Grid
+@using SRV.Common.Extension
+
+@{
+    Layout = null;
+}
+
+<div class="boxContent">
+
+    @using (@Html.BeginScroller("100%", "440px"))
+    {
+        @Html.Grid(Model).Columns(column =>
+        {
+            column.For(c => c).Named("Descrição").Attributes(width => "100%").HeaderAttributes(width => "100%");
+        }).Empty("Nenhum registro encontrado")
+    }
+            
+</div>

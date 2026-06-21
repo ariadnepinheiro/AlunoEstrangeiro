@@ -1,0 +1,140 @@
+﻿@model SRV.Models.DTO.CadastroParametroCurva
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemJS(@Role.IsGranted("Administrador") && Model.IdTipoUnidadeAdm != null, "salvar()", new { id = "salvar" }, "btSalvar")
+    }
+    
+    <div class="boxContent">
+        
+        @if (@TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdTipoUnidadeAdm)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.IdTipoUnidadeAdm, (IEnumerable<SelectListItem>)Model.TiposUnidadesAdm ?? new List<SelectListItem>(), "", new { style = "width:350px;" })<br/>                        
+                        @Html.ValidationMessageFor(m => m.IdTipoUnidadeAdm)
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br/>
+
+        @if (Model.Grupos != null)
+        {
+            <table class="grid">
+            
+                @* Cabeçalho *@
+                <thead>
+
+                    <tr>
+                        <th width="100%">Grupo de Função</th>
+
+                        @foreach (var nota in @Model.Notas)
+                        {
+                            <th width="75px" style="text-align: center;">Nota @nota.DesNota</th>
+                        }
+                  
+                    </tr>
+
+                </thead>
+
+                @* Corpo *@
+                <tbody>
+
+                    @{ short columnCont = 0; }
+                    @{ short rowCont = 0; }
+
+                    @{ decimal qtdeVencimento = 0; }
+                    @{ bool existia = false; }
+
+                    @{ string classe = "gridrow"; }
+
+                    @foreach (var grupo in @Model.Grupos)
+                    {
+                        classe = rowCont % 2 == 0 ? "gridrow" : "gridrow_alternate";
+                
+                        <tr class="@classe">
+
+                            <td width="100%">@grupo.DesGrupoFuncao</td>
+
+                            @foreach (var nota in @Model.Notas)
+                            {
+                                if (@Model.Values != null)
+                                {
+                                    foreach (var value in @Model.Values)
+                                    {
+                                        if (value.ParametroCurva.GrupoFuncao.IdGrupoFuncao == grupo.IdGrupoFuncao && value.ParametroCurva.Nota.IdNota == nota.IdNota)
+                                        {
+                                            qtdeVencimento = value.ParametroCurva.QuantidadeVencimento;
+                                            existia = true;
+
+                                            break;
+                                        }
+                                    }
+                                }
+                            
+                                <td width="75px">
+                                    @Html.TextBox("NewValues[" + @rowCont + "][" + @columnCont + "].ParametroCurva.QuantidadeVencimento", qtdeVencimento, new { @class = "nota", maxlength = "5", style = "width: 70px; text-align: right;" })
+                                    @Html.Hidden("NewValues[" + @rowCont + "][" + @columnCont + "].ParametroCurva.GrupoFuncao.IdGrupoFuncao", @grupo.IdGrupoFuncao)
+                                    @Html.Hidden("NewValues[" + @rowCont + "][" + @columnCont + "].ParametroCurva.Nota.IdNota", @nota.IdNota)
+                                    @Html.Hidden("NewValues[" + @rowCont + "][" + @columnCont + "].ParametroCurva.AnoReferencia.IdAnoReferencia", (int)@ViewBag.UsuarioLogado.Ciclo)
+                                    @Html.Hidden("NewValues[" + @rowCont + "][" + @columnCont + "].ParametroCurva.TipoUnidadeAdministrativa.IdTipoUnidAdm", @Model.IdTipoUnidadeAdm)
+                                    @Html.Hidden("NewValues[" + @rowCont + "][" + @columnCont + "].Existia", existia)
+                                </td>
+
+                                qtdeVencimento = 0;
+                                existia = false;
+
+                                columnCont++;
+                            }
+                      
+                        </tr>
+                
+                            rowCont++;
+
+                            if (columnCont == @Model.Notas.Count)
+                            {
+                                columnCont = 0;
+                            }
+                    }
+
+                </tbody>
+            </table>
+        }
+    </div>    
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $(".nota").maskMoney({ thousands: '', decimal: ',', precision: 2, allowZero: true, allowNegative: false, defaultZero: true });
+
+        $("#IdTipoUnidadeAdm").change(function () {
+
+            $('#IdTipoUnidadeAdm').closest("form").attr('action', '@Url.Action("Index", "ParametroCurva")');
+            $('#IdTipoUnidadeAdm').closest("form").submit();
+        });
+    })
+
+    function salvar() {
+
+        $('#salvar').closest("form").attr('action', '@Url.Action("Edit", "ParametroCurva")');
+        $('#salvar').closest("form").submit();
+    }
+
+</script>

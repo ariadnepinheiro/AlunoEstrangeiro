@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AjudaCadastroGLP_TituloPagina" xml:space="preserve">
+    <value>Ajuda - Cadastramento para GLP</value>
+  </data>
+  <data name="AjudaCurriculoMinimo_TituloPagina" xml:space="preserve">
+    <value>Ajuda - Currículo mínimo</value>
+  </data>
+  <data name="AjudaDadosPessoais_TituloPagina" xml:space="preserve">
+    <value>Ajuda - Dados Pessoais</value>
+  </data>
+  <data name="AjudaLancamentoNotas_TituloPagina" xml:space="preserve">
+    <value>Ajuda - Lançamento de notas e frequência</value>
+  </data>
+  <data name="AjudaProtocoloNota_TituloPagina" xml:space="preserve">
+    <value>Ajuda - Protocolos de lançamento de notas gerados</value>
+  </data>
+  <data name="AjudaSelecaoTurmas_TituloPagina" xml:space="preserve">
+    <value>Ajuda - Seleção de turmas</value>
+  </data>
+  <data name="AvaliacaoCurriculoMinimoLista_BimestreNaoConfiguradoParaLancamentoDeCurriculoMinimo" xml:space="preserve">
+    <value>Este bimestre não está configurado para lançamento de Currículo mínimo</value>
+  </data>
+  <data name="AvaliacaoCurriculoMinimoLista_LegendaJustificativa" xml:space="preserve">
+    <value>Informe as competências/habilidades trabalhadas e que não estão no currículo mínimo:</value>
+  </data>
+  <data name="AvaliacaoCurriculoMinimoLista_MensagemSairSemSalvar" xml:space="preserve">
+    <value>Esta operação cancela a digitação de avaliação do Currículo mínimo. Nenhuma avaliação de Currículo mínimo será salva. Deseja continuar?</value>
+  </data>
+  <data name="AvaliacaoCurriculoMinimoLista_MensagemSumario" xml:space="preserve">
+    <value>Por favor, verifique os erros encontrados abaixo</value>
+  </data>
+  <data name="AvaliacaoCurriculoMinimoLista_TituloLancamentoResposta" xml:space="preserve">
+    <value>Responda as questões abaixo:</value>
+  </data>
+  <data name="AvaliacaoCurriculoMinimoLista_TituloPagina" xml:space="preserve">
+    <value>Lançamento de avaliação do currículo mínimo</value>
+  </data>
+  <data name="AvaliacaoCurriculoMinimoSalva_MensagemLancamentoPersistido" xml:space="preserve">
+    <value>Avaliação de currículo mínimo respondida com sucesso.</value>
+  </data>
+  <data name="CadastroGLPInicial_TituloPagina" xml:space="preserve">
+    <value>Cadastramento para GLP</value>
+  </data>
+  <data name="CodigoArmazemDoLivroInicial_TituloPagina" xml:space="preserve">
+    <value>Acesso ao Armazém do Livro</value>
+  </data>
+  <data name="ConsultaAlocacaoQHI_TituloPagina" xml:space="preserve">
+    <value>Consulta alocação QHI</value>
+  </data>
+  <data name="DadosDocente_MensagemInicial" xml:space="preserve">
+    <value>PREZADO PROFESSOR,&lt;br/&gt;&lt;br/&gt;
+VERIFIQUE OS DADOS ABAIXO QUE FORAM CADASTRADOS NO SISTEMA CONEXÃO E CASO HAJA ALGUMA INFORMAÇÃO DESATUALIZADA OU EM BRANCO ORIENTAMOS PROCURAR O AGENTE DE PESSOAL DA SUA UNIDADE ESCOLAR DE LOTAÇÃO, O DIRETOR OU A COORDENAÇÃO REGIONAL DE GESTÃO DE PESSOAS PARA ATUALIZAÇÃO.</value>
+  </data>
+  <data name="DadosDocente_TituloPagina" xml:space="preserve">
+    <value>Atualização do Cadastro de Docente</value>
+  </data>
+  <data name="Classroom_TituloPagina" xml:space="preserve">
+    <value>Acompanhamento Classroom</value>
+  </data>
+  <data name="ResultadoAvaliacao_TituloPagina" xml:space="preserve">
+    <value>Resultado Avaliação Externa</value>
+  </data>
+  <data name="AnaliseRendimento_TituloPagina" xml:space="preserve">
+    <value>Painel de Análise de Rendimento</value>
+  </data>
+  <data name="DadosPessoaisInicial_TituloPagina" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+  <data name="LancamentoNotasLista_ExceptionBimestreSelecionadoInvalido" xml:space="preserve">
+    <value>O bimestre selecionado é inválido</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemAlunosOrdemAlfabetica" xml:space="preserve">
+    <value>ATENÇÃO: os alunos estão relacionados por ordem alfabética, podendo não coincidir com o diário de classe.</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemBimestreAnteriorPendente" xml:space="preserve">
+    <value>Existem pendências de lançamentos em bimestres / trimestres anteriores.</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemConfirmaImpressaoFilipeta" xml:space="preserve">
+    <value>&lt;p&gt;Lançamento realizado com sucesso, anote o seu nº de protocolo: &lt;strong&gt;{0}&lt;/strong&gt;.&lt;/p&gt; &lt;p&gt; Deseja imprimir o comprovante da filipeta eletrônica ?&lt;/p&gt;</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemConsolidado" xml:space="preserve">
+    <value>Prezado Professor, &lt;br/&gt;&lt;br/&gt;
+
+A aba Consolidado Bimestral/Trimestral traz as informações da nota final e total de faltas por aluno a cada bimestre/
+trimestre. Estão sendo indicados em vermelho os alunos com nota final abaixo de 5.0, os alunos sem avaliação e os que possuem frequência menor do que 75%. 
+Esta sinalização facilitará a identificação dos casos que necessitam uma maior atenção por parte do docente e da equipe diretiva da unidade escolar.&lt;br/&gt;&lt;br/&gt;
+
+Para seu controle e acompanhamento será informado nas três últimas colunas o total de notas e faltas acumuladas ao longo dos bimestres/trimestres e o percentual de frequência, com base no número total de aulas dadas.&lt;br/&gt;&lt;br/&gt;
+
+Se deseja imprimir, será aberto um documento com todas as informações disponíveis nesta aba.</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemContagemRegressiva" xml:space="preserve">
+    <value>Para salvar o lançamento, é necessário informar a nota e frequência de todos os alunos ativos (Matriculados) da turma.
+O tempo máximo por turma é de {0} minutos para clicar no botão de salvar ou haverá perda total dos dados digitados.</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemContagemRegressivaExpirada" xml:space="preserve">
+    <value>Tempo esgotado para o lançamento de notas!</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemCurriculoMinimoCompleto" xml:space="preserve">
+    <value>Formulário de cumprimento do "Curriculo mínimo" foi  &lt;strong&gt;COMPLETAMENTE&lt;/strong&gt; preenchido em &lt;strong&gt;{0}&lt;/strong&gt; às &lt;strong&gt;{1}&lt;/strong&gt;.</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemCurriculoMinimoParcial" xml:space="preserve">
+    <value>Formulário de cumprimento do "Curriculo mínimo" ainda está  &lt;strong&gt;PARCIALMENTE ({0:N2}%)&lt;/strong&gt; preenchido.&lt;br/&gt;Última atualização: &lt;strong&gt;{1}&lt;/strong&gt; às &lt;strong&gt;{2}&lt;/strong&gt;.</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemCurriculoMinimoPendente" xml:space="preserve">
+    <value>Formulário de cumprimento do "Curriculo mínimo" está &lt;strong&gt;PENDENTE&lt;/strong&gt; para ser preenchido.</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemSairSemSalvar" xml:space="preserve">
+    <value>Esta operação cancela a digitação de notas referente à turma. Nenhuma nota lançada será salva. Deseja continuar?</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemSolicitacaoAlteracaoNotasExistente" xml:space="preserve">
+    <value>A solicitação de reabertura de bimestre/trimestre para lançamento enviada em {0} às {1} está aguardando análise da unidade escolar.</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemSucessoLancamento" xml:space="preserve">
+    <value>&lt;strong&gt;Lançamento realizado com sucesso.&lt;/strong&gt;Nº protocolo gerado: {0}</value>
+  </data>
+  <data name="LancamentoNotasLista_MensagemSumario" xml:space="preserve">
+    <value>Não foi possível confirmar o lançamento de notas para a turma [{0}] motivo:</value>
+  </data>
+  <data name="LancamentoNotasLista_SolicitacaoReaberturaIndisponivel" xml:space="preserve">
+    <value>Solicitação reabertura não pode ocorrer nesse momento.</value>
+  </data>
+  <data name="LancamentoNotasLista_SolicitacaoReaberturaLancamento" xml:space="preserve">
+    <value>&lt;strong&gt;Solicitação enviada com sucesso. &lt;/strong&gt;&lt;p&gt;Acompanhe o status da liberação do lançamento através do campo 'Status para Lançamento' na tela de seleção de turmas. &lt;/p&gt;&lt;p&gt;Após a liberação do diretor, você terá 7 dias consecutivos para efetuar o lançamento.&lt;/p&gt;</value>
+  </data>
+  <data name="LancamentoNotasLista_TabelaTitulo" xml:space="preserve">
+    <value>Lançamento de notas e frequências da turma</value>
+  </data>
+  <data name="LancamentoNotasLista_TabelaTituloConsolidado" xml:space="preserve">
+    <value>Notas e frequências consolidadas da turma</value>
+  </data>
+  <data name="LancamentoNotasLista_TituloPagina" xml:space="preserve">
+    <value>Lançamento de notas e frequência</value>
+  </data>
+  <data name="LancamentoNotasSelecaoTurma_MensagemSumario" xml:space="preserve">
+    <value>Não foi possível realizar o lançamento de notas para a turma [{0}] motivo:</value>
+  </data>
+  <data name="LancamentoNotasSelecaoTurma_TituloPagina" xml:space="preserve">
+    <value>Lançamento de notas - Seleção de turmas</value>
+  </data>
+  <data name="LoginAlteraSenha_TituloPagina" xml:space="preserve">
+    <value>Alteração de Senha</value>
+  </data>
+  <data name="LoginApresentacao_TituloPagina" xml:space="preserve">
+    <value>Apresentação</value>
+  </data>
+  <data name="LoginConfirmaTermoAceite_TituloPagina" xml:space="preserve">
+    <value>Confirmação de aceite do termo de compromisso</value>
+  </data>
+  <data name="LoginEntra_Matricula" xml:space="preserve">
+    <value>Usuário:</value>
+  </data>
+  <data name="LoginEntra_MatriculaRequired" xml:space="preserve">
+    <value>Por favor informe a matrícula</value>
+  </data>
+  <data name="LoginEntra_Senha" xml:space="preserve">
+    <value>Senha do Docente On-Line:</value>
+  </data>
+  <data name="LoginEntra_SenhaRequired" xml:space="preserve">
+    <value>Por favor informe a senha</value>
+  </data>
+  <data name="LoginInicial_TituloPagina" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Menu_AcompanhamentoClassroom" xml:space="preserve">
+    <value>Acompanhamento Classroom</value>
+  </data>
+  <data name="Menu_ResultadoAvaliacao" xml:space="preserve">
+    <value>Resultado Avaliação Externa</value>
+  </data>
+  <data name="Menu_AnaliseRendimento" xml:space="preserve">
+    <value>Painel de Análise de Rendimento</value>
+  </data>
+  <data name="Menu_CadastramentoParaGLP" xml:space="preserve">
+    <value>Cadastramento para GLP</value>
+  </data>
+  <data name="Menu_CodigoArmazemDoLivro" xml:space="preserve">
+    <value>Voucher - Armazém do Livro</value>
+  </data>
+  <data name="Menu_ConsultaAlocacaoQHI" xml:space="preserve">
+    <value>Consulta alocação QHI</value>
+  </data>
+  <data name="Menu_CurriculoMinimo" xml:space="preserve">
+    <value>Currículo mínimo</value>
+  </data>
+  <data name="Menu_DadosDocente" xml:space="preserve">
+    <value>Consulta ao meu cadastro</value>
+  </data>
+  <data name="Menu_DadosPessoais" xml:space="preserve">
+    <value>Dados Pessoais</value>
+  </data>
+  <data name="Menu_LancamentoDeNota" xml:space="preserve">
+    <value>Lançamento de notas</value>
+  </data>
+  <data name="Menu_Protocolos" xml:space="preserve">
+    <value>Protocolos</value>
+  </data>
+  <data name="ProtocoloNotaLista_TituloPagina" xml:space="preserve">
+    <value>Protocolos de lançamento de notas gerados</value>
+  </data>
+  <data name="RespostaCurriculoMinimoLista_BimestreNaoConfiguradoParaLancamentoDeCurriculoMinimo" xml:space="preserve">
+    <value>Este bimestre não está configurado para lançamento de Currículo mínimo</value>
+  </data>
+  <data name="RespostaCurriculoMinimoLista_ExceptionBimestreSelecionadoInvalido" xml:space="preserve">
+    <value>O bimestre selecionado é inválido</value>
+  </data>
+  <data name="RespostaCurriculoMinimoLista_MensagemSairSemSalvar" xml:space="preserve">
+    <value>Esta operação cancela a digitação de Currículo mínimo. Nenhuma resposta de Currículo mínimo será salva. Deseja continuar?</value>
+  </data>
+  <data name="RespostaCurriculoMinimoLista_MensagemSumario" xml:space="preserve">
+    <value>Por favor, verifique os erros encontrados abaixo:</value>
+  </data>
+  <data name="RespostaCurriculoMinimoLista_TituloLancamentoResposta" xml:space="preserve">
+    <value>Marque as competências/habilidades trabalhadas no bimestre com essa turma:</value>
+  </data>
+  <data name="RespostaCurriculoMinimoLista_TituloPagina" xml:space="preserve">
+    <value>Lançamento de respostas do currículo mínimo</value>
+  </data>
+  <data name="RespostaCurriculoMinimoSalva_MensagemLancamentoPersistido" xml:space="preserve">
+    <value>Currículo mínimo respondido com sucesso.</value>
+  </data>
+  <data name="RespostaCurriculoMinimoSelecaoTurmas_MensagemInicial" xml:space="preserve">
+    <value>Selecione a turma para acessar o formulário de respostas do "Curriculo mínimo"</value>
+  </data>
+  <data name="RespostaCurriculoMinimoSelecaoTurmas_MensagemSumario" xml:space="preserve">
+    <value>Não foi possível confirmar o lançamento de currículo mínimo para a turma [{0}] motivo:</value>
+  </data>
+  <data name="RespostaCurriculoMinimoSelecaoTurmas_TituloPagina" xml:space="preserve">
+    <value>Currículo mínimo - Seleção de turmas</value>
+  </data>
+  <data name="SelecaoTurmasLista_AlertaInvalidoParaLancamento" xml:space="preserve">
+    <value>Professor(a), no momento, não está disponível o lançamento de notas dos alunos do ensino fundamental de 1a. à 5a. série. Obrigado!</value>
+  </data>
+  <data name="SelecaoTurmasLista_MensagemInicial" xml:space="preserve">
+    <value>Selecione uma das opções de turma e disciplina abaixo para realizar o lançamento de notas</value>
+  </data>
+  <data name="SelecaoTurmasLista_TabelaTitulo" xml:space="preserve">
+    <value>Turmas e disciplinas do docente</value>
+  </data>
+</root>

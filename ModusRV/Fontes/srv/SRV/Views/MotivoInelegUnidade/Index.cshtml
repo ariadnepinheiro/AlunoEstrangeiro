@@ -1,0 +1,33 @@
+﻿@model SRV.Models.DTO.MotivoInelegUnidade
+
+@using MvcContrib.UI.Grid
+@using SRV.Common.Extension
+
+@{
+    Layout = null;
+}
+
+<div class="boxContent">
+
+    <table class="tableForm">
+        <tr>
+            <td class="labelRight">@Html.LabelFor(m => m.Unidade.IdUnidadeAdministrativa)</td>
+            <td>@Model.Unidade.IdUnidadeAdministrativa</td>
+        </tr>
+        <tr>
+            <td class="labelRight">@Html.LabelFor(m => m.Unidade.DesUnidadeAdministrativa)</td>
+            <td>@Model.Unidade.DesUnidadeAdministrativa</td>
+        </tr>
+    </table>
+
+    <br/>
+
+    @using (@Html.BeginScroller("100%", "250px"))
+    {
+        @Html.Grid(Model.Motivos).Columns(column =>
+        {
+            column.For(c => c).Named("Motivo").Attributes(width => "800px").HeaderAttributes(width => "800px");
+        }).Empty("Nenhum registro encontrado")
+    }
+            
+</div>

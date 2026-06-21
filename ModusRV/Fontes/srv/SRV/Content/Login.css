@@ -1,0 +1,195 @@
+﻿body 
+{
+    font-size: 13px;
+    font-family: Tahoma, Sans-Serif; 
+    color: #477191;
+    background:#fff url("images/bg-login.png") repeat-x left top;	
+    margin:0px;	
+    padding:0px;	    
+}
+
+.boxHeaderLogin
+{
+    /*text-align: center; 
+    width: 405px; */
+    height: 57px;    
+    margin: 0pt auto; 
+}    
+
+.boxFormLogin
+{
+    /*height: 34px;  
+    */
+    min-height: 20px;  
+    text-align: center; 
+    margin: 0; 
+    background-color: #dedede;
+}    
+
+.boxFormLoginBottom
+{
+    background:#fff url("images/bg-loginbottomform.png") repeat-x left top;	
+    text-align: center; 
+    height: 10px;  
+}    
+
+
+.tableForm
+{
+    border-collapse: separate;
+    border-spacing: 5px;
+    padding: 0;
+    margin-top: 2px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+}
+
+.boxTitle
+{
+    background-color: #1d71c6;
+    height: 14px;
+    text-align: center; 
+    font-weight: bold;
+    color: #ffffff;
+    padding: 5px; 
+    border-top: 1px solid #5b85ae;
+    border-right: 1px solid #5b85ae;
+    border-bottom: 0;
+    border-left: 1px solid #5b85ae;
+    -moz-border-radius: 5px 5px 0 0;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.boxContent
+{
+    min-height: 150px;
+    background-color: #f5f5f5;
+
+    border-bottom: #5b85ae 1px solid; 
+    border-left: #5b85ae 1px solid; 
+    border-right: #5b85ae 1px solid; 
+    border-top: #5b85ae 1px solid; 
+
+    padding-top: 15px;    
+    padding-right: 0; 
+    padding-bottom: 5px; 
+    padding-left: 15px; 
+}
+
+.boxVersion
+{
+    width: 930px;
+    text-align: right;
+    color: #707070;
+    font-size: 10px;
+    margin: 0 auto;
+}
+
+.boxInfo
+{
+    background-color: #ffffcc;
+    border: #ffcc66 1px solid;
+    padding: 5px 10px 5px 10px;
+    margin: 5px 5px 5px 5px;
+    color: Green;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.boxMessage
+{
+    color: Green;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom: 3px;
+}
+
+#showEsqueciSenha
+{
+    text-decoration: none;
+    font-size: 8pt;
+    color: #477191;
+}
+
+.dialogContent
+{
+    background-color: #f5f5f5;
+    border-bottom: #D0D0D0 1px solid; 
+    border-left: #D0D0D0 1px solid; 
+    border-right: #D0D0D0 1px solid; 
+    border-top: #D0D0D0 1px solid; 
+    padding: 10px; 
+    margin: 0 10px 0px 10px;
+/*  min-height: 650px;    
+    height: 650px;*/
+    overflow: auto;
+
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;    
+}
+
+.tableFormDialog
+{
+    border-collapse: separate;
+    border-spacing: 5px;
+    padding: 0;
+}
+
+/* Styles for JQuery UI
+-----------------------------------------------------------*/
+
+.ui-widget { font-size: 13px !important; font-family: Tahoma, Sans-Serif !important;}
+
+.ui-dialog .ui-dialog-content {padding: 0.8em 0 !important; .height: auto !important;}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    font-size: 12px;
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    /*font-weight: bold;*/
+    color: #ff0000;
+}
+
+.validation-summary-errors ul
+{
+    list-style: none outside none;
+    padding: 0;
+    margin: 5px 0;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+
+.validation-summary-errors-esquecisenha li
+{
+    background: url("images/ico_erro.gif") no-repeat scroll 0 0 #FFEEEE;   
+    border: #ff0000 1px solid;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 2px 10px 2px 25px;
+    margin: 2px 0 2px 0;
+}
+

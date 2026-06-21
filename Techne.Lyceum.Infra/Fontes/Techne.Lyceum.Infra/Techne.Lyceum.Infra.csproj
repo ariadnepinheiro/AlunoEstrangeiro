@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3AAA8991-8A03-44B0-9AC5-D7C127DAFB41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Techne</RootNamespace>
+    <AssemblyName>Techne.Lyceum.Infra</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Techne.Lyceum.Infra.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechneJ, Version=1.0.3245.21981, Culture=neutral, PublicKeyToken=4a25cea0e390af6e, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Componentes\TechneJ.dll</HintPath>
+    </Reference>
+    <Reference Include="vjslib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HadesConnectionList.cs" />
+    <Compile Include="HadesHttpApplicationBase.cs" />
+    <Compile Include="HadesParameter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HadesPermission.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AuditingSettings.cs" />
+    <Compile Include="Security\Settings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Web\HadesAuthorizationModule.cs" />
+    <Compile Include="Web\HadesMembershipProvider.cs" />
+    <Compile Include="Web\HadesRoleProvider.cs" />
+    <Compile Include="Web\HadesSiteMap.cs" />
+    <Compile Include="Web\HadesSiteMapProvider.cs" />
+    <Compile Include="Web\Hades\HadesUtil.cs" />
+    <Compile Include="Web\Hades\HdMenu.cs" />
+    <Compile Include="Web\Hades\HdTransacao.cs" />
+    <Compile Include="Web\Hades\HdUsuario.cs" />
+    <Compile Include="Web\Hades\Menu.cs" />
+    <Compile Include="Web\Hades\Padaces.cs" />
+    <Compile Include="Web\Hades\Seguranca.cs" />
+    <Compile Include="Web\Hades\Transacao.cs" />
+    <Compile Include="Web\Hades\Usuario.cs" />
+    <Compile Include="Web\StringResource.cs" />
+    <Compile Include="Web\WebHelper.cs" />
+    <Compile Include="Attributes\BusinessAttributes.cs" />
+    <Compile Include="Attributes\CaptionAttribute.cs" />
+    <Compile Include="Attributes\MainAssemblyAttribute.cs" />
+    <Compile Include="Attributes\NavigationAttributes.cs" />
+    <Compile Include="Attributes\PageTitleAttribute.cs" />
+    <Compile Include="Attributes\TextAttribute.cs" />
+    <Compile Include="Auditing\AuditField.cs" />
+    <Compile Include="Auditing\AuditingInfo.cs" />
+    <Compile Include="Configuration\DatabaseSectionHandler.cs" />
+    <Compile Include="Configuration\NameValueSectionHandler.cs" />
+    <Compile Include="Configuration\SingleTagSectionHandler.cs" />
+    <Compile Include="Controls\BusinessMethod.cs" />
+    <Compile Include="Controls\DataGridConverter.cs" />
+    <Compile Include="Controls\DbImage.cs" />
+    <Compile Include="Controls\Dependency.cs" />
+    <Compile Include="Controls\Design\TImageUrlEditor.cs" />
+    <Compile Include="Controls\Design\TUrlEditor.cs" />
+    <Compile Include="Controls\EditButtons.cs" />
+    <Compile Include="Controls\GridButtons\DataColumnList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\GridButtons\DataGridColumnsEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\GridButtons\GridButtons.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\GridButtons\GridButtonsDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\HtmlImageButton.cs" />
+    <Compile Include="Controls\ImageLink.cs" />
+    <Compile Include="Controls\ITControl\ColumnNameConverter.cs" />
+    <Compile Include="Controls\ITControl\DataTypeConverter.cs" />
+    <Compile Include="Controls\ITControl\ITControl.cs" />
+    <Compile Include="Controls\ITControl\TControl.cs" />
+    <Compile Include="Controls\ITControl\TControlContainer.cs" />
+    <Compile Include="Controls\ITControl\TControlConverter.cs" />
+    <Compile Include="Controls\ITControl\TControlDesigner.cs" />
+    <Compile Include="Controls\ITControl\TControlEditable.cs" />
+    <Compile Include="Controls\RecordManager\LabelConverter.cs" />
+    <Compile Include="Controls\RecordManager\RecordManager.cs" />
+    <Compile Include="Controls\RecordManager\RecordManagerConverter.cs" />
+    <Compile Include="Controls\RecordManager\RecordManagerDesigner.cs" />
+    <Compile Include="Controls\Record\ContainerManagerLib.cs" />
+    <Compile Include="Controls\Record\IContainerManager.cs" />
+    <Compile Include="Controls\Record\IRecordContainer.cs" />
+    <Compile Include="Controls\Record\RecordContainerLib.cs" />
+    <Compile Include="Controls\Record\RecordEditorLib.cs" />
+    <Compile Include="Controls\ReturnButton.cs" />
+    <Compile Include="Controls\SetSqlClausesEvent.cs" />
+    <Compile Include="Controls\StringArrayConverter.cs" />
+    <Compile Include="Controls\StringList\StringList.cs" />
+    <Compile Include="Controls\TabStrip.cs" />
+    <Compile Include="Controls\TCheckBox\TCheckBox.cs" />
+    <Compile Include="Controls\TCheckBox\TCheckBoxDesigner.cs" />
+    <Compile Include="Controls\TDataGrid\Columns\CheckBoxColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\Columns\CheckImageColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\Columns\DropDownListColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\Columns\LinkMethodColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\Columns\MarkColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\Columns\TextBoxColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\Columns\TGridColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\Columns\THyperLinkColumn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\TDataGrid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\TDataGridBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\TDataGridColumnCollectionEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\TDataGridConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\TDataGridDesigner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\TGridItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataGrid\TTableCell.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\TDataSourceClassEditor.cs" />
+    <Compile Include="Controls\TDateBox\TDateBox.cs" />
+    <Compile Include="Controls\TDateBox\TDateBoxDesigner.cs" />
+    <Compile Include="Controls\TDropDownList\SetItemDescription.cs" />
+    <Compile Include="Controls\TDropDownList\TDropDownList.cs" />
+    <Compile Include="Controls\TDropDownList\TDropDownListBase.cs" />
+    <Compile Include="Controls\TDropDownList\TDropDownListDesigner.cs" />
+    <Compile Include="Controls\THyperLink\THyperLink.cs" />
+    <Compile Include="Controls\THyperLink\THyperLinkBase.cs" />
+    <Compile Include="Controls\THyperLink\THyperLinkInternal.cs" />
+    <Compile Include="Controls\THyperLink\THyperLinkList.cs" />
+    <Compile Include="Controls\THyperLink\TLinkParameter.cs" />
+    <Compile Include="Controls\TLinkButton\TLinkBase.cs" />
+    <Compile Include="Controls\TLinkButton\TLinkButton.cs" />
+    <Compile Include="Controls\TLinkButton\TLinkButtonBase.cs" />
+    <Compile Include="Controls\TLinkButton\TLinkMethod.cs" />
+    <Compile Include="Controls\TSearch\TSearch.cs" />
+    <Compile Include="Controls\TSearch\TSearchBase.cs" />
+    <Compile Include="Controls\TSearch\TSearchDesigner.cs" />
+    <Compile Include="Controls\TTableDataSource\ConfigureTTableDataSource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\TTableDataSource\ConfigureTTableDataSource.Designer.cs">
+      <DependentUpon>ConfigureTTableDataSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TTableDataSource\TTableDataSource.cs" />
+    <Compile Include="Controls\TTableDataSource\TTableDataSourceDesigner.cs" />
+    <Compile Include="Controls\TTableDataSource\TTableDataSourceSelectingEventArgs.cs" />
+    <Compile Include="Controls\TTableDataSource\TTableDataView.cs" />
+    <Compile Include="Controls\TTableDataSource\TTableDataViewDesigner.cs" />
+    <Compile Include="Controls\TTextBox\TTextBox.cs" />
+    <Compile Include="Controls\TTextBox\TTextBoxDesigner.cs" />
+    <Compile Include="Controls\Util.cs" />
+    <Compile Include="Data\ConnectionInfo.cs" />
+    <Compile Include="Data\ConnectionList.cs" />
+    <Compile Include="Data\DataTableCommand.cs" />
+    <Compile Include="Data\QueryTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\SelectArguments.cs" />
+    <Compile Include="Data\TCommand.cs" />
+    <Compile Include="Data\TConnection.cs" />
+    <Compile Include="Data\TDataAdapter.cs" />
+    <Compile Include="Data\TDataColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\TDataReader.cs" />
+    <Compile Include="Data\TDataRow.cs" />
+    <Compile Include="Data\TDataTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\TechneDS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\TFactory.cs" />
+    <Compile Include="Data\TParameter.cs" />
+    <Compile Include="Data\TRowUpdateEvent.cs" />
+    <Compile Include="Library\BusinessRules.cs" />
+    <Compile Include="Library\CRCustomLibBase.cs" />
+    <Compile Include="Library\DataLib.cs" />
+    <Compile Include="Library\DataLib2.cs" />
+    <Compile Include="Library\DbLib.cs" />
+    <Compile Include="Library\DbObjectList.cs" />
+    <Compile Include="Library\DebugLib.cs" />
+    <Compile Include="Library\DesignerLib.cs" />
+    <Compile Include="Library\Errors.cs" />
+    <Compile Include="Library\FileLib.cs" />
+    <Compile Include="Library\HashtableOrdered.cs" />
+    <Compile Include="Library\HistoryLib.cs" />
+    <Compile Include="Library\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Library\ItemList.cs" />
+    <Compile Include="Library\MsgMultiLang.cs" />
+    <Compile Include="Library\NameDbObjectCollection.cs" />
+    <Compile Include="Library\NameObjectCollection.cs" />
+    <Compile Include="Library\RetVal.cs" />
+    <Compile Include="Library\RetVal2.cs" />
+    <Compile Include="Library\Sql\Structure\Converter\SqlSelectConverter.cs" />
+    <Compile Include="Library\Sql\Structure\SqlSelect.cs" />
+    <Compile Include="Library\StringBlock.cs" />
+    <Compile Include="Library\StrLib.cs" />
+    <Compile Include="Library\TechLib.cs" />
+    <Compile Include="Library\Types.cs" />
+    <Compile Include="Library\ValueReference.cs" />
+    <Compile Include="Security\TechneAuthentication.cs" />
+    <Compile Include="Security\TechneAuthorization.cs" />
+    <Compile Include="Security\TechneHttpApplication.cs" />
+    <Compile Include="Security\TLog.cs" />
+    <Compile Include="Security\TPermission.cs" />
+    <Compile Include="Web\CachedImageService.cs" />
+    <Compile Include="Web\Data\TSearchQuery.cs" />
+    <Compile Include="Web\DynamicHelp.cs" />
+    <Compile Include="Web\Navigation.cs" />
+    <Compile Include="TPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HadesHttpApplicationBase.resx">
+      <DependentUpon>HadesHttpApplicationBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GridButtons\DataColumnList.resx">
+      <DependentUpon>DataColumnList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TDataGrid\TDataGridColumnCollectionEditorForm.resx">
+      <DependentUpon>TDataGridColumnCollectionEditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TTableDataSource\ConfigureTTableDataSource.resx">
+      <DependentUpon>ConfigureTTableDataSource.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Library\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\TechneAuthentication.resx">
+      <DependentUpon>TechneAuthentication.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Security\TechneAuthorization.resx">
+      <DependentUpon>TechneAuthorization.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Controls\EditButtons.bmp" />
+    <Content Include="Controls\GridButtons.bmp" />
+    <Content Include="Controls\ImageLink.bmp" />
+    <Content Include="Controls\TCheckBox.bmp" />
+    <Content Include="Controls\TDataGrid.bmp" />
+    <Content Include="Controls\TDateBox.bmp" />
+    <Content Include="Controls\TDateBox\TDateBox.js" />
+    <Content Include="Controls\TDropDownList.bmp" />
+    <Content Include="Controls\THyperLink\THyperLinkList.bmp" />
+    <Content Include="Controls\TLinkButton.bmp" />
+    <Content Include="Controls\TSearch.bmp" />
+    <Content Include="Controls\TTextBox.bmp" />
+    <Content Include="icons\ArrowDown.gif" />
+    <Content Include="icons\ArrowUp.gif" />
+    <Content Include="icons\BoundColumn.ico" />
+    <Content Include="icons\ButtonColumn.ico" />
+    <Content Include="icons\DataGridColumn.ico" />
+    <Content Include="icons\HyperLinkColumn.ico" />
+    <Content Include="icons\MarkColumn.ico" />
+    <Content Include="icons\SmallArrowDown.bmp" />
+    <Content Include="icons\SmallArrowDown.gif" />
+    <Content Include="icons\TemplateColumn.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

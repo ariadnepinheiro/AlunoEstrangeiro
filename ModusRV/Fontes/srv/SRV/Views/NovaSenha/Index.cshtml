@@ -1,0 +1,49 @@
+﻿@model SRV.Models.DTO.NovaSenha
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(ViewBag.UsuarioLogado.Id != 0 ? true : false, "btSalvar");
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(m => m.Token)
+
+        @if (ViewBag.UsuarioLogado.Id != 0)
+        {
+            <div class="boxInfo">
+                Por favor escolha uma nova senha contendo letras maiúsculas, minúsculas, números e com tamanho entre 7 e 10 caracteres
+            </div>
+        }
+
+        @if (ViewBag.UsuarioLogado.Id != 0)
+        {
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Senha)</td>
+                    <td>
+                        @Html.PasswordFor(m => m.Senha, new { style = "width:200px;" })<br/>
+                        @Html.ValidationMessageFor(m => m.Senha)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.ConfirmacaoSenha)</td>
+                    <td>
+                        @Html.PasswordFor(m => m.ConfirmacaoSenha, new { style = "width:200px;" })<br/>
+                        @Html.ValidationMessageFor(m => m.ConfirmacaoSenha)
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+}

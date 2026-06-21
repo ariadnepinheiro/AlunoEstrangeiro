@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.42775cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.13671cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.79817cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>5.74115cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4.97385cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.9101cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>MATRICULA</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <LeftIndent>0cm</LeftIndent>
+                          <HangingIndent>0cm</HangingIndent>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>VÍNCULO</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <LeftIndent>0cm</LeftIndent>
+                          <HangingIndent>0cm</HangingIndent>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>ID FUNCIONAL</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>NOME DOCENTE</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>DISCIPLINA DE INGRESSO</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>CARGA HORÁRIA</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.6cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="MATRICULA">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!MATRICULA.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>MATRICULA</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=iif(Rownumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="VINCULO">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!VINCULO.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>VINCULO</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=iif(Rownumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="IDFUNCIONAL">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!IDFUNCIONAL.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>IDFUNCIONAL</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=iif(Rownumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="NOME_COMPL">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!NOME_COMPL.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>NOME_COMPL</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=iif(Rownumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="DESCRICAO">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!DESCRICAO.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>DESCRICAO</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=iif(Rownumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CH_SEMANAL_EFETIVA">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!CH_SEMANAL_EFETIVA.Value</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CH_SEMANAL_EFETIVA</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>=iif(Rownumber(Nothing) Mod 2, "White", "Silver")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>CH_livre1</DataSetName>
+        <Top>0.9525cm</Top>
+        <Height>1.2cm</Height>
+        <Width>20.98773cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CARGA HORARIA LIVRE</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>0.17611cm</Top>
+        <Left>0.79375cm</Left>
+        <Height>0.6cm</Height>
+        <Width>13.90354cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>0.98286in</Height>
+    <Style />
+  </Body>
+  <Width>9.62748in</Width>
+  <Page>
+    <PageHeight>21cm</PageHeight>
+    <PageWidth>29.7cm</PageWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="cd_rel_ch_livre">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=10.11.69.201;Initial Catalog=LYCEUM</ConnectString>
+      </ConnectionProperties>
+      <rd:SecurityType>DataBase</rd:SecurityType>
+      <rd:DataSourceID>a807f783-f9ea-45c5-92c6-af7a50187174</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="CH_livre1">
+      <Query>
+        <DataSourceName>cd_rel_ch_livre</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@SETOR">
+            <Value>=Parameters!SETOR.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>DECLARE @MUNICIPIO INT;
+DECLARE @escola INT;
+DECLARE @coord INT;
+
+SET @escola = null;
+SET @coord = null;
+
+SET @MUNICIPIO = NULL;
+
+SELECT   
+MATRICULA,      
+IDFUNCIONAL,                        
+VINCULO,
+NOME_COMPL,  
+DESCRICAO,
+NUM_FUNC,  
+         CONVERT(INT,CH_SEMANAL_EFETIVA)CH_SEMANAL_EFETIVA                       
+FROM (                
+SELECT DISTINCT       
+      
+--CAMPOS:      
+DD.MATRICULA,      
+PE.IDFUNCIONAL,                        
+DD.VINCULO,
+PE.NOME_COMPL,  
+INGR.DESCRICAO,
+DD.NUM_FUNC,   
+ISNULL(CH.CARGAHORARIAREGENCIA,0)CH_SEMANAL_EFETIVA
+
+FROM  LY_DOCENTE DD (NOLOCK)
+JOIN LY_PESSOA PE ON PE.PESSOA = DD.PESSOA                          
+JOIN LY_LOTACAO LT (NOLOCK) ON DD.MATRICULA = LT.MATRICULA
+							AND (LT.DATA_NOMEACAO &lt;= CONVERT(DATE, CURRENT_TIMESTAMP) 
+							AND (LT.DATA_DESATIVACAO &gt; CONVERT(DATE,CURRENT_TIMESTAMP) OR LT.DATA_DESATIVACAO IS NULL))    
+JOIN HADES..VW_SETOR VS ON VS.SETOR = LT.SETOR 
+LEFT JOIN (
+			SELECT	NUM_FUNC, MAX(HH.DESCRICAO) DESCRICAO, MAX(HH.AGRUPAMENTO) AGRUPAMENTO
+			FROM	LY_GRUPO_HABILITACAO HH (NOLOCK)  
+			JOIN	LY_GRUPO_HABILITACAO_DOC DF (NOLOCK) 
+			ON		DF.AGRUPAMENTO = HH.AGRUPAMENTO        
+			WHERE	DF.AGRUPAMENTO_INGRESSO = 'S'
+			GROUP BY NUM_FUNC
+			) AS INGR  ON		INGR.NUM_FUNC = DD.NUM_FUNC 			
+JOIN LY_FUNCAO FU (NOLOCK)			ON	 FU.FUNCAO = LT.FUNCAO 
+									AND	 FU.CAMPO_01 = 'S'
+JOIN LY_UNIDADE_ENSINO EU  (NOLOCK) ON	 LT.SETOR = EU.SETOR 
+									AND LT.UNIDADE_ENS = EU.UNIDADE_ENS
+JOIN TCE_REGIONAL R (NOLOCK)		ON	 R.ID_REGIONAL = EU.ID_REGIONAL
+JOIN MUNICIPIO MM (NOLOCK)			ON	 MM.CODIGO = EU.MUNICIPIO
+LEFT JOIN LY_CATEGORIA_DOCENTE CO ( NOLOCK ) ON CO.CATEGORIA = DD.CATEGORIA  
+LEFT JOIN RecursosHumanos.CH_AGRUPAMENTOCARGO AS CH ( NOLOCK ) ON CH.AGRUPAMENTOCARGOSID = CO.AGRUPAMENTOCARGOSID
+                                                              AND CH.FUNCAO = LT.FUNCAO          
+LEFT JOIN APOLLO..REL_CARENCIA_UNID (NOLOCK) CARUNID	ON	CARUNID.UNIDADE_ENS = EU.UNIDADE_ENS
+											AND	CARUNID.AGRUPAMENTO = INGR.AGRUPAMENTO
+LEFT JOIN (
+			SELECT	REGIONAL, MUNICIPIO, AGRUPAMENTO, SUM(CARENCIA_REAL) CARENCIA_REAL, SUM(GLP_REAL) GLP_REAL, SUM(CONTRATO_TEMP) CONTRATO_TEMP
+			FROM	(
+						SELECT	REGIONAL, UE1.MUNICIPIO, AGRUPAMENTO, C.UNIDADE_ENS, CARENCIA_REAL, GLP_REAL, CONTRATO_TEMP
+						FROM	APOLLO..REL_CARENCIA_UNID C (NOLOCK)
+						JOIN	LY_UNIDADE_ENSINO UE1
+						ON		UE1.UNIDADE_ENS = C.UNIDADE_ENS
+					) AS MUN
+			GROUP BY MUNICIPIO, AGRUPAMENTO, REGIONAL
+			) CARMUN	ON		CARMUN.AGRUPAMENTO = INGR.AGRUPAMENTO
+								AND		EU.MUNICIPIO = CARMUN.MUNICIPIO			
+								AND		EU.ID_REGIONAL = CARMUN.REGIONAL
+LEFT JOIN (
+			SELECT	NUM_FUNC, ANO, CENSO, TURNO, DIAS
+			FROM	APOLLO..REL_AULAS_DOCENTE (NOLOCK)
+			WHERE	ANO = year(getdate())
+			) AL	ON		AL.NUM_FUNC = DD.NUM_FUNC
+LEFT JOIN -- aulas do docente no ano corrente em turma aberta sem contar as GLPs      
+(	SELECT	NUM_FUNC, ATUACAO, ANO 
+	FROM	APOLLO..REL_CH_LIVRE (NOLOCK)
+	WHERE	ANO = year(getdate())
+ ) AS SS   ON SS.NUM_FUNC = DD.NUM_FUNC           
+LEFT JOIN (
+			SELECT NUM_FUNC, MOTIVO
+			FROM LY_LICENCA_DOCENTE WITH(NOLOCK) 
+			WHERE MOTIVO = '43' 
+			AND DTINI &lt;= CONVERT(DATE, CURRENT_TIMESTAMP) 
+			AND DTFIM &gt;= CONVERT(DATE, CURRENT_TIMESTAMP) 
+			) MT	ON MT.NUM_FUNC = DD.NUM_FUNC
+LEFT JOIN (
+			SELECT	NUM_FUNC, DTFIM, LB1.DESCRICAO MOTIVO, DTINI
+			FROM	LY_LICENCA_DOCENTE MB (NOLOCK) 
+			JOIN	LY_LICENCAS LB1 (NOLOCK)
+			ON		MB.MOTIVO = LB1.MOTIVO
+			WHERE	MB.MOTIVO &lt;&gt; '13'
+			AND		DTFIM IS NOT NULL
+			AND		STR(MB.NUM_FUNC) + CONVERT(VARCHAR(20),(CONVERT(DATE, DTINI))) IN (
+										SELECT	STR(NUM_FUNC) + CONVERT(VARCHAR(20), MAX(CONVERT(DATE, DTINI)))
+										FROM	LY_LICENCA_DOCENTE (NOLOCK) 
+										GROUP BY NUM_FUNC)
+			) ULC	ON ULC.NUM_FUNC = DD.NUM_FUNC
+WHERE         
+--LOTAÇÃO EM FUNÇÃO DE REGÊNCIA              
+	DD.CONCURSO IS NULL
+	AND DD.CANDIDATO IS NULL
+	      
+--TEM CARGA LIVRE SOBRANDO                        
+AND CASE WHEN MT.MOTIVO = '43'  THEN (CH.CARGAHORARIAREGENCIA/2 - isnull(SS.ATUACAO,0))
+	ELSE (CH.CARGAHORARIAREGENCIA - isnull(SS.ATUACAO,0))  END  &gt; 0
+      
+-- NÃO TEM LICENÇA DE CARGA HORÁRIA REDUZIDA                    
+AND		EXISTS (
+				SELECT	1
+				FROM	LY_UNIDADE_ENSINO_SITUACAO US (NOLOCK)
+				WHERE	US.UNIDADE_ENS = EU.UNIDADE_ENS
+				AND		US.SITUACAO = 'ESTADUAL'
+				AND		US.UNIDADE_ENS+CONVERT(VARCHAR(20),US.DT_SITUACAO) IN 
+																				(
+																				SELECT	UNIDADE_ENS+CONVERT(VARCHAR(20),MAX(DT_SITUACAO)) 
+																				FROM LY_UNIDADE_ENSINO_SITUACAO (NOLOCK) GROUP BY UNIDADE_ENS
+																				)
+				)
+AND		(EU.SIT_FUNCIONAMENTO IS NULL OR EU.SIT_FUNCIONAMENTO = 'EMATIVIDADE')      
+AND		ISNULL(DD.VOLUNTARIO,'N') = 'N'
+AND (EU.ID_REGIONAL = @coord or @coord is null)      
+AND (EU.MUNICIPIO = @MUNICIPIO or @MUNICIPIO is null)        
+AND (EU.UNIDADE_ENS = @escola or @escola is null)    
+AND EU.SETOR = @SETOR  
+) AS S           
+      
+--NÃO EXISTE LICENÇA DIFERENTE DA CH REDUZIDA (43)      
+where   NOT EXISTS (
+					SELECT	1  
+					FROM	LY_LICENCA_DOCENTE (NOLOCK) 
+					WHERE	S.NUM_FUNC = NUM_FUNC 
+					AND		MOTIVO &lt;&gt; '43' 
+					AND		(DTFIM IS NULL OR DTFIM &gt;= CONVERT(DATE, CURRENT_TIMESTAMP))
+					)
+					</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="IDFUNCIONAL">
+          <DataField>IDFUNCIONAL</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NOME_COMPL">
+          <DataField>NOME_COMPL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DESCRICAO">
+          <DataField>DESCRICAO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NUM_FUNC">
+          <DataField>NUM_FUNC</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CH_SEMANAL_EFETIVA">
+          <DataField>CH_SEMANAL_EFETIVA</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MATRICULA">
+          <DataField>MATRICULA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VINCULO">
+          <DataField>VINCULO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="SETOR">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>SETOR</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>b627d490-8fe8-462a-ac09-b425adec7563</rd:ReportID>
+</Report>

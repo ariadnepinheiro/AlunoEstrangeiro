@@ -1,0 +1,81 @@
+﻿@model SRV.Models.Domain.AnoReferencia
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(true, "Create", null, null, "btNovo");
+        @Html.ToolbarItemSubmit(true, "btSalvar");
+        
+        if (ViewBag.IsEdit)
+        {
+            @Html.ToolbarItemJS(true, "deleteItemAndRedirect(this, '" + @Url.Action("Delete", "AnoReferencia") + "', '" + @Url.Action("Create", "AnoReferencia") + "', " + @Model.IdAnoReferencia + ")", null, "btExcluir");
+        }
+                                                                                                                                                                                                
+        @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <table class="tableForm">
+            
+            @if (ViewBag.IsEdit)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdAnoReferencia)</td>
+                    <td>@Html.DisplayTextFor(m => m.IdAnoReferencia)<br/>
+                        @Html.HiddenFor(m => m.IdAnoReferencia, new { id = "IdAnoReferencia" })
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdAnoReferencia)</td>
+                    <td>@Html.TextBoxFor(m => m.IdAnoReferencia, new { id = "IdAnoReferencia", style = "width:80px; text-align: right", maxlength = 4 })<br/>
+                        @Html.ValidationMessageFor(m => m.IdAnoReferencia)
+                    </td>
+                </tr>
+            }
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.DtInicioPeriodoLetivo)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.DtInicioPeriodoLetivo, new { style = "width: 80px", @class = "date" })
+                    @Html.ValidationMessageFor(m => m.DtInicioPeriodoLetivo)
+                </td>
+            </tr>
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.DtFimPeriodoLetivo)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.DtFimPeriodoLetivo, new { style = "width: 80px", @class = "date" })
+                    @Html.ValidationMessageFor(m => m.DtFimPeriodoLetivo)
+                </td>
+            </tr>
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.NomeProcCalculo)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.NomeProcCalculo, new { style = "width:380px;", maxlength = 50 })<br/>
+                    @Html.ValidationMessageFor(m => m.NomeProcCalculo)
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $("#IdAnoReferencia").mask("??9999", { placeholder: "" });
+    })
+
+</script>

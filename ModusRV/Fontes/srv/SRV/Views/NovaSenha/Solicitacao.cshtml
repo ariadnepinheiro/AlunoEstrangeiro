@@ -1,0 +1,69 @@
+﻿@model SRV.Models.DTO.EsqueciSenha
+
+@{
+    Layout = null;
+    
+    AjaxOptions ajaxOpts = new AjaxOptions {
+        OnSuccess = "OnSuccessEsqueciSenha",
+        OnFailure = "OnFailureEsqueciSenha"
+    };
+}
+
+@using (Ajax.BeginForm(ajaxOpts))
+{
+    <div class="dialogContent">
+
+        <div id="boxFeedback"></div>
+
+        <table class="tableFormDialog">
+            <tr>
+                <td style="width: 90px">Matrícula</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Login, new { style = "width:150px;" })<br/>
+                    @Html.ValidationMessageFor(m => m.Login)
+                </td>
+            </tr>
+        </table>
+
+        <div style="text-align:center; margin-top: 15px;">
+            <input type="submit" id="btEnviar" value="Enviar"/>
+            <input type="submit" id="btCancelar" value="Cancelar"/>
+        </div>            
+    </div>                       
+}
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#btEnviar").button();
+        $("#btCancelar").button();
+
+        $("#btCancelar").click(function () {
+            $('#modalEsqueciSenha').dialog('destroy');
+            return false;
+        });
+    });
+
+    function OnSuccessEsqueciSenha(data) {
+
+        if (data.SuccessMessage) {
+            $("#boxFeedback").empty().prepend("<div class='boxInfo'>" + data.SuccessMessage + "</div>");
+            $("#Login").val("");
+        }
+        if (data.ValidationMessage) {
+            $("#boxFeedback").empty().append("<div class='validation-summary-errors'><ul><li id='liError'>");
+
+            $.each(data.ValidationMessage, function (index, value) {
+                $("#liError").append("" + value + "<br/>");
+            });
+            $("#boxFeedback").append("</li></ul></div>");
+        }
+
+    }
+
+    function OnFailureEsqueciSenha(request, error) {
+        $("#boxFeedback").empty().prepend("<div class='validation-summary-errors validation-summary-errors-esquecisenha'><ul><li>" + request.responseText + "</li></ul></div>");
+    }
+
+</script>

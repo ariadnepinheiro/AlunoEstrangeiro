@@ -1,0 +1,49 @@
+﻿@model SRV.Models.DTO.AlteracaoSenha
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btSalvar");
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <div class="boxInfo">
+            Conforme política de segurança todos os usuários devem efetuar a troca de senha no primeiro acesso.<br/>
+            Por favor escolha uma nova senha contendo letras maiúsculas, minúsculas, números e com tamanho entre 7 e 10 caracteres
+        </div>
+
+        <table class="tableForm">
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.SenhaAtual)</td>
+                <td>
+                    @Html.PasswordFor(m => m.SenhaAtual, new { style = "width:200px;" })<br/>
+                    @Html.ValidationMessageFor(m => m.SenhaAtual)
+                </td>
+            </tr>
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.NovaSenha)</td>
+                <td>
+                    @Html.PasswordFor(m => m.NovaSenha, new { style = "width:200px;" })<br/>
+                    @Html.ValidationMessageFor(m => m.NovaSenha)
+                </td>
+            </tr>
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.ConfirmacaoSenha)</td>
+                <td>
+                    @Html.PasswordFor(m => m.ConfirmacaoSenha, new { style = "width:200px;" })<br/>
+                    @Html.ValidationMessageFor(m => m.ConfirmacaoSenha)
+                </td>
+            </tr>
+        </table>
+    </div>
+}

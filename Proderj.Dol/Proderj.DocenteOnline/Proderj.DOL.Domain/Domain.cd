@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Proderj.DOL.Domain.DocenteDisponivelGLP">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Municipio" Type="Proderj.DOL.Domain.Municipio" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="2.438" />
+        <Point X="2.75" Y="2.438" />
+        <Point X="2.75" Y="4.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Regional" Type="Proderj.DOL.Domain.Regional" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="1.875" />
+        <Point X="5.25" Y="1.875" />
+        <Point X="5.25" Y="4.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="UnidadeEnsino" Type="Proderj.DOL.Domain.UnidadeEnsino" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="1.312" />
+        <Point X="8" Y="1.312" />
+        <Point X="8" Y="4.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ACACAAAAAAAIAEQAAAAAAAAEIAAAAAAAAAAAgAAAIAA=</HashCode>
+      <FileName>CadastroGLP\DocenteDisponivelGLP.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Docente" />
+      <Property Name="Municipio" />
+      <Property Name="Regional" />
+      <Property Name="UnidadeEnsino" />
+      <Property Name="GrupoHabilitacao" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.GrupoHabilitacao">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAw=</HashCode>
+      <FileName>CadastroGLP\GrupoHabilitacao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Nucleo">
+    <Position X="7.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CadastroGLP\Nucleo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Regional">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CadastroGLP\Regional.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Municipio">
+    <Position X="2.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Core\Municipio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Pessoa">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAAACAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Core\Pessoa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.AvaliacaoCurriculoMinimo">
+    <Position X="20.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACQAAAEAgAAABAAAARAAAAAAAAgBAAAAAAAAAAAAA=</HashCode>
+      <FileName>CurriculoMinimo\Avaliacao\AvaliacaoCurriculoMinimo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="AvaliacoesCurriculoMinimoDocente" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.AvaliacaoCurriculoMinimoDocente">
+    <Position X="23.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAEAAAAEAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CurriculoMinimo\Avaliacao\AvaliacaoCurriculoMinimoDocente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AvaliacaoCurriculoMinimo" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.AvaliacaoCurriculoMinimoJustificativa">
+    <Position X="7.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACRAAAEAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CurriculoMinimo\Avaliacao\AvaliacaoCurriculoMinimoJustificativa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LogAvaliacaoCurriculoMinimoDocente">
+    <Position X="16.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAEAAgAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CurriculoMinimo\Avaliacao\LogAvaliacaoCurriculoMinimoDocente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LogAvaliacaoCurriculoMinimoJustificativa">
+    <Position X="11" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACRAAAEAAAAAJAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CurriculoMinimo\Avaliacao\LogAvaliacaoCurriculoMinimoJustificativa.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.CompetenciaHabilidadeDocente">
+    <Position X="15.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACQAAAMAAAAAJAAAAQAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>CurriculoMinimo\CompetenciaHabilidadeDocente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CompetenciaHabilidadeItem" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.CompetenciaHabilidadeGrupo">
+    <Position X="12.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAgCQIAAIQAAAABAAABAAAAAAAAAgAAAAAAAAQAAAAE=</HashCode>
+      <FileName>CurriculoMinimo\CompetenciaHabilidadeGrupo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="CompetenciaHabilidadeItens" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.CompetenciaHabilidadeItem">
+    <Position X="12.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAgAAAAAAAAQAAAAAAAAgAAAAAAAgAAAAAA=</HashCode>
+      <FileName>CurriculoMinimo\CompetenciaHabilidadeItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CompetenciaHabilidadeGrupo" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LogCompetenciaHabilidadeDocente">
+    <Position X="2.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAECQAAAMAAAAAJAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CurriculoMinimo\LogCompetenciaHabilidadeDocente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.DadosCapacitacaoDocente">
+    <Position X="5.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAIAAgQAAAABAAAAAAgAAAAAAAYIAAAA=</HashCode>
+      <FileName>Docente\DadosCapacitacaoDocente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.DadosFormacaoDocente">
+    <Position X="14.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEQQIAAIAQAAAEAABAAABAgAAAAAAABAEAAA=</HashCode>
+      <FileName>Docente\DadosFormacaoDocente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.DadosGeraisDocente">
+    <Position X="4" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DQBAAAAAkCQBBCAEgCEAAACAAABAAhAICAABIA0BEAA=</HashCode>
+      <FileName>Docente\DadosGeraisDocente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Docente">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAEAAAAAgIAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Docente\Docente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pessoa" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.HD_PAIS">
+    <Position X="0.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HADES\HD_PAIS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.TCE_LOGRADOURO">
+    <Position X="18.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADAAAAAAAABAAAAAAQAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>HADES\TCE_LOGRADOURO.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Municipio" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.TCE_MUNICIPIO">
+    <Position X="18.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAQQAAgBAAAAAAAAAAAEAAAACAAAA=</HashCode>
+      <FileName>HADES\TCE_MUNICIPIO.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Logradouros" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_DOCENTE">
+    <Position X="26.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AZQAAEACIAABAAAAAEgQAAQAkAAAAAAACCAiEABAAAA=</HashCode>
+      <FileName>LYCEUM\LY_DOCENTE.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pessoa" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_FL_PESSOA">
+    <Position X="31.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAA8AAAAPB4eDwCAFh6CBwAAjwc=</HashCode>
+      <FileName>LYCEUM\LY_FL_PESSOA.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pessoa" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_PESSOA">
+    <Position X="29.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>0x7coiBiEcFELQqbSBYAGCCUIkAGgBgAhGgSNACAYQQ=</HashCode>
+      <FileName>LYCEUM\LY_PESSOA.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FieldsPessoa" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Docentes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LY_UNIDADE_ENSINO">
+    <Position X="12.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IUABIABiCArAABAxDBABAGqEUCAAAAACACwCAAAgBwA=</HashCode>
+      <FileName>LYCEUM\LY_UNIDADE_ENSINO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.UnidadeEnsino">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <AssociationLine Name="Municipio" Type="Proderj.DOL.Domain.Municipio" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.625" Y="6.247" />
+        <Point X="7.625" Y="6.906" />
+        <Point X="3.5" Y="6.906" />
+        <Point X="3.5" Y="6.44" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAQAAAAQIAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LancamentoNotas\UnidadeEnsino.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Municipio" />
+      <Property Name="Nucleo" />
+      <Property Name="Regional" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Matricula">
+    <Position X="18" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAQIAAAAAIAAAAAAAAAAAAAAAAAAIAAAAABAAA=</HashCode>
+      <FileName>SelecaoTurmas\Matricula.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.SelecaoTurmas">
+    <Position X="19.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAwAAAUAIQAAAAIAgAAAFAAAIAAAAAEAQJAAAAAAAAU=</HashCode>
+      <FileName>SelecaoTurmas\SelecaoTurmas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.AceiteTermoCompromissoDocente">
+    <Position X="21.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAEAAAAAAAAAAAAAAAIAAAAAAAEEAAAAAAAAA=</HashCode>
+      <FileName>TermoAceite\AceiteTermoCompromissoDocente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TermoCompromissoDocente" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.TermoCompromissoDocente">
+    <Position X="24.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAEACAAAAAAAAQAAAAAAAAAIAAAACAAAAAEAA=</HashCode>
+      <FileName>TermoAceite\TermoCompromissoDocente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="AceiteTermoCompromissoDocente" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Login">
+    <Position X="34.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAEAAAAAAAABAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Login\Login.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Sistema" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.UltimoReset">
+    <Position X="21.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Login\UltimoReset.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Aluno">
+    <Position X="0.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>LancamentoNotas\Aluno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.DeclaracaoSemNota">
+    <Position X="9.25" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAAEAAAAAAAAAAQAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LancamentoNotas\DeclaracaoSemNota.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Disciplina">
+    <Position X="16.25" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAICAIAAgACAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>LancamentoNotas\Disciplina.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Falta">
+    <Position X="18" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAIAAEAAIAAAAAAAAAAAAAAACAAIAAAAABAAA=</HashCode>
+      <FileName>LancamentoNotas\Falta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Frequencia">
+    <Position X="28.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAgAIAABAAJAAAAAAAAAAAAAAAAAIIAABAAAAAA=</HashCode>
+      <FileName>LancamentoNotas\Frequencia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.ItemTabela">
+    <Position X="7.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAhAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LancamentoNotas\ItemTabela.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LancamentoNotas">
+    <Position X="14.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQACAIAoAAABAIAAAAAAAAAASIABAAFAMQBAIAAMAI=</HashCode>
+      <FileName>LancamentoNotas\LancamentoNotas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LancamentoNotasConsolidado">
+    <Position X="19.75" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAgEAAACEAACAAAAAAABAAAAAAABAIAAACA=</HashCode>
+      <FileName>LancamentoNotas\LancamentoNotasConsolidado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.LogNota">
+    <Position X="26.75" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEACAAAAIAAAAAoAAAAAQAgCQAAAAAIAAYhEAAABAAA=</HashCode>
+      <FileName>LancamentoNotas\LogNota.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Nota">
+    <Position X="11" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACDAIAIIAAgAIgAEAAAAAAAAAAgEAAgMAAAAABIAA=</HashCode>
+      <FileName>LancamentoNotas\Nota.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.NotaConsolidado">
+    <Position X="2.25" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>LancamentoNotas\NotaConsolidado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.PeriodoLetivo">
+    <Position X="21.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAQAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LancamentoNotas\PeriodoLetivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Protocolo">
+    <Position X="25" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACYAAAMAAAAAJAAAAQAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>LancamentoNotas\Protocolo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.Prova">
+    <Position X="5.75" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAIAAAAAJgAAAAAAAAAAAAgAAAAIAAAAEAAAI=</HashCode>
+      <FileName>LancamentoNotas\Prova.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.SolicitacaoAlteracaoNotas">
+    <Position X="4" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACRAAEIAAAAAJAAAAAAAAAIAAAAAAAGAAAAAAACIA=</HashCode>
+      <FileName>LancamentoNotas\SolicitacaoAlteracaoNotas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Proderj.DOL.Domain.SubPeriodoLetivo">
+    <Position X="23.25" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAQBAAAAABAAhAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LancamentoNotas\SubPeriodoLetivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Proderj.DOL.Domain.TipoFormacaoEnum">
+    <Position X="9.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Docente\DadosFormacaoDocente.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Proderj.DOL.Domain.TipoSistema">
+    <Position X="37" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Login\Enum\TipoSistema.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Proderj.DOL.Domain.TipoDeclaracaoSemNotaEnum">
+    <Position X="12.75" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAACAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LancamentoNotas\DeclaracaoSemNota.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Proderj.DOL.Domain.MotivoSemNotaEnum">
+    <Position X="12.75" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAEAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>LancamentoNotas\Nota.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

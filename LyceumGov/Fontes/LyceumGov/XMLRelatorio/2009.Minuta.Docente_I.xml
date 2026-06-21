@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<relatorio>
+    <!--Os paramêtros da query segue a ordem de: 1º Parâmetros Querystring; 2º Parâmetros XML-->
+    <query>select cd.NOME as nome2, (cd.ENDERECO + ', ' + cd.END_NUM) as rua, cd.BAIRRO as bairro, mun.NOME as cidade, (substring(cd.CPF,1,3) + '.' + substring(cd.CPF,4,3) + '.' + substring(cd.CPF,7,3) + '-' + substring(cd.CPF,10,2)) as cpf from LY_CANDIDATO_DOCENTE cd  inner join LY_CONCURSO_DOCENTE conc on cd.CONCURSO = conc.CONCURSO inner join MUNICIPIO mun on cd.END_MUNICIPIO = mun.CODIGO where cd.CONCURSO = ? and CANDIDATO = ?</query>
+  
+    <!--Todos os parâmetros aqui são obrigatórios.
+      fieldType: text, date.
+      label: Texto que descreve o significado do campo.
+      name: Nome único que não pode se repetir.-->
+    <parametros>
+      
+    </parametros>
+  
+    <texto>
+          <![CDATA[
+	<style type="text/css">
+		.margem
+		{
+			margin: 0 113.385826772px;
+		}
+		.titulo
+		{
+			font-family: Arial;
+			font-size: 12px;
+			text-align: center;
+		}
+		.subtitulo
+		{
+			font-family: Times New Roman;
+			font-size: 12px;
+			text-align: center;
+		}
+		.texto
+		{
+			font-family: Times New Roman;
+			font-size: 12px;
+			text-align: justify;
+		}
+		.destaque
+		{
+			font-weight: bold;
+		}
+	</style>
+	<div class="margem">
+		<div class="titulo">
+			ESTADO DO RIO DE JANEIRO</div>
+		<div class="titulo">
+			SECRETARIA DE EDUCAÇÃO</div>
+		<br />
+		<div class="subtitulo">
+			Contrato nº ___________/</div>
+		<br />
+		<br />
+		<div class="texto">
+			CONTRATO DE PRESTAÇÃO DE SERVIÇOS POR TEMPO DETERMINADO, NA FORMA DO ARTIGO 37,
+			INCISO IX DA CONSTITUIÇÃO DA REPÚBLICA E ARTIGO 77, INCISO XI, DA CONSTITUIÇÃO DO
+			ESTADO QUE ENTRE SI CELEBRAM O ESTADO DO RIO DE JANEIRO, PELA SECRETARIA DE EDUCAÇÃO
+			E O SR MARCUS VINICIUS MEDINA COSTA.
+			<br />
+			<br />
+			<br />
+			O ESTADO DO RIO DE JANEIRO, neste ato pela Secretaria de Educação, doravante denominado
+			CONTRATANTE, representado neste ato pelo Superintendente de Gestão de Pessoas, MARCUS
+			VINICIUS MEDINA COSTA, cédula de Identidade nº 09552242-1 – expedida pelo DETRAN,
+			conforme autorização do Exmo. Sr. Governador do Estado, constante do Decreto Estadual
+			nº 41.848/09, e o Sr(a)., #nome2#, domiciliado na Rua #rua#, Bairro #bairro#, Cidade
+			#cidade# e inscrito no CPF/MF sob o nº #cpf# ,daqui por diante denominado CONTRATADO,
+			resolvem celebrar o presente Contrato de Prestação de Serviços por tempo determinado,
+			na forma do artigo 37, inciso IX, da Constituição da República, e artigo 77, inciso
+			XI, da Constituição do Estado, que se regerá pelas normas da Lei estadual nº 4.599,
+			de 27 de setembro de 2005, Decreto nº 38.604, de 06 de dezembro de 2005, aplicando-se
+			a este contrato suas disposições irrestrita e incondicionalmente, bem como pelas
+			cláusulas e condições seguintes:
+			<br />
+			<br />
+			<b><u>CLÁUSULA PRIMEIRA:</u> DO OBJETO</b>
+			<br />
+			<br />
+			O presente instrumento tem por objeto a prestação de serviços de Professor Docente
+			I à CONTRATANTE, de acordo com o resultado do processo seletivo simplificado, pelo
+			prazo determinado na Cláusula Segunda, na forma da Lei Estadual nº 4.599/05 e Decreto
+			Estadual nº 41.848/09, de 5 de maio de 2009 e Resolução SEEDUC nº 4278 de 8 de maio de 2009.
+			<br />
+			<br />
+			<b><u>CLÁUSULA SEGUNDA:</u> DO PRAZO</b>
+			<br />
+			<br />
+			Os contratos terão validade a partir da data de suas formalizações, por tempo determinado,
+			para atendimento ao ano letivo de 2009.
+			<br />
+			<br />
+			PARÁGRAFO PRIMEIRO – O prazo contratual poderá ser prorrogado pelo prazo máximo
+			de 1 (um) ano, observando-se a disciplina do artigo 2º e parágrafo único, da Lei
+			nº 4.599, de 27 de setembro de 2005, desde que o prazo total seja de 3 (três) anos.
+			<br />
+			<br />
+			PARÁGRAFO SEGUNDO – O período do contrato previsto no caput deverá ser executado
+			integralmente e sem interrupções, salvo aquelas expressamente previstas em lei e
+			neste contrato, sob pena de ser caracterizada a inadimplência do CONTRATADO, com
+			a conseqüente extinção do contrato de prestação de serviço.
+			<br />
+			<br />
+			PARÁGRAFO TERCEIRO – A prorrogação prevista nesta Cláusula só poderá ser efetivada
+			segundo a conveniência da Administração, a critério exclusivo do CONTRATANTE.
+			<br />
+			<br />
+			PARÁGRAFO QUARTO - O CONTRATADO não poderá prestar serviços no âmbito da Secretaria
+			de Educação após o término do contrato, sob pena de apuração da responsabilidade
+			administrativa e civil das autoridades que determinarem, solicitarem, permitirem
+			ou tolerarem tal situação.
+			<br />
+			<br />
+			<b><u>CLÁUSULA TERCEIRA:</u> DAS OBRIGAÇÕES DO CONTRATANTE</b>
+			<br />
+			<br />
+			O CONTRATANTE se obriga a:
+			<br />
+			<br />
+			a) depositar a quantia líquida da retribuição a que fizer jus o CONTRATADO, em conta
+			aberta em seu nome no Banco ITAÚ, conforme o calendário de pagamento dos servidores
+			públicos da Administração Direta, Indireta, Fundações e dos Pensionistas do Estado
+			do Rio de Janeiro;
+			<br />
+			b) recolher contribuição Previdenciária mensal e o imposto de renda de pessoas físicas
+			– IRPF, deduzidos da retribuição do CONTRATADO;
+			<br />
+			c) expedir certidões que atestem a contratação, bem como o tempo de prestação de
+			serviços, para defesa de direitos ou esclarecimento de situação, a requerimento
+			do CONTRATADO;
+			<br />
+			d) abster-se de determinar tarefas ou funções que impliquem em eventual desvio de
+			função do CONTRATADO;
+			<br />
+			e) pagar tempestiva e integralmente a remuneração pactuada na Cláusula Décima Primeira.
+			<br />
+			<br />
+			<b><u>CLÁUSULA QUARTA:</u> DAS PROIBIÇÕES DA CONTRATADA</b>
+			<br />
+			<br />
+			Constituem obrigações da CONTRATADA:
+			<br />
+			<br />
+			a) desenvolver satisfatoriamente, de acordo com sua formação profissional e capacitação
+			técnica especializada, as atividades determinadas pelo superior hierárquico;
+			<br />
+			b) estar presente no local de trabalho durante todo o tempo de desenvolvimento normal
+			das atividades de execução do contrato, que corresponderá ao horário de expediente
+			do CONTRATANTE;
+			<br />
+			c) submeter-se às normas, rotinas e horários de trabalho estabelecidos pelo CONTRATANTE;
+			<br />
+			d) aceitar os descontos de lei incidentes em sua remuneração mensal bruta, bem como
+			os decorrentes de horas não trabalhadas em função de ausência não autorizada ou
+			falta não abonada, devidamente apontadas no período de vigência deste contrato;
+			<br />
+			e) cumprir as determinações legais emanadas das autoridades competentes do (órgão
+			ou entidade contratante).
+			<br />
+			f) exercer com zelo e dedicação os encargos que lhe forem cometidos;
+			<br />
+			g) ser leal ao CONTRATANTE;
+			<br />
+			h) observar as normas legais e regulamentares aplicáveis às atividades do CONTRATANTE;
+			<br />
+			i) cumprir as ordens lícitas de superior hierárquico;
+			<br />
+			j) atender, com presteza, ao público em geral, prestando as informações requeridas,
+			ressalvadas as legalmente protegidas por sigilo, e preparar aquelas requeridas para
+			a defesa do CONTRATANTE em juízo;
+			<br />
+			l) levar ao conhecimento da autoridade superior as irregularidades de que tiver
+			ciência em razão do exercício de suas atividades;
+			<br />
+			m) zelar pela economia do material e a conservação do patrimônio público;
+			<br />
+			n) guardar sigilo sobre assuntos do CONTRATANTE;
+			<br />
+			o) manter conduta compatível com a moralidade administrativa;
+			<br />
+			p) ser assíduo e pontual na prestação de seus serviços;
+			<br />
+			q) tratar com urbanidade as pessoas;
+			<br />
+			r) representar, por intermédio da via hierárquica, contra ilegalidade, omissão ou
+			abuso de poder.
+			<br />
+			<br />
+			<b><u>CLÁUSULA QUINTA:</u> DAS PROIBIÇÕES</b>
+			<br />
+			<br />
+			Ao CONTRATADO é vedado:
+			<br />
+			<br />
+			a) ausentar-se do local de prestação de seus serviços, durante o desenvolvimento
+			diário das atividades do projeto, sem prévia autorização do seu superior hierárquico
+			ou de funcionário por ele indicado;
+			<br />
+			b) retirar, sem prévia anuência da autoridade competente, qualquer documento ou
+			objeto das dependências do CONTRATANTE;
+			<br />
+			c) opor resistência injustificada ao andamento de documento ou processo ou à execução
+			de serviços;
+			<br />
+			d) promover manifestação de cunho político-partidário nas dependências do CONTRATANTE;
+			<br />
+			e) promover, nas dependências do CONTRATANTE, manifestação pública de agravo ou
+			desagravo a outros agentes públicos ou a terceiros que tenham com aquele órgão ou
+			entidade administrativa;
+			<br />
+			f) cometer a pessoa estranha à execução do projeto, fora dos casos previstos em
+			lei, o desempenho de atividades de sua responsabilidade;
+			<br />
+			g) atuar como procurador ou intermediário junto a repartições públicas;
+			<br />
+			h) receber, exigir ou solicitar, para si ou para terceiros, propina, comissão, presente
+			ou vantagem de qualquer espécie, em razão de seus serviços, para a prática ou omissão
+			de ato de ofício, ou valer-se da função exercida para obtenção de vantagem pessoal
+			para si ou para terceiros;
+			<br />
+			i) praticar usura sob qualquer de suas formas;
+			<br />
+			j) proceder de forma desidiosa;
+			<br />
+			l) utilizar pessoal ou recursos materiais do CONTRATANTE em serviços ou atividades
+			particulares;
+			<br />
+			m) exercer quaisquer atividades incompatíveis com os serviços técnicos prestados
+			ao CONTRATANTE e com o horário de trabalho;
+			<br />
+			n) ser nomeado ou designado, ainda que a título precário ou em substituição, para
+			o exercício de cargo em comissão ou função de confiança em órgão ou entidade diversos
+			daquele para o qual foi contratado;
+			<br />
+			o) participar de gerência ou administração de empresa privada, de sociedade civil
+			ou exercer o comércio, exceto na qualidade de acionista, cotista ou comanditário;
+			<br />
+			<br />
+			<b><u>CLÁUSULA SEXTA:</u> DA RESPONSABILIDADE</b>
+			<br />
+			<br />
+			O CONTRATADO responde pessoalmente pelo exercício irregular de seus encargos, por
+			atos omissivos ou comissivos, dolosos ou culposos, nos termos da legislação penal,
+			administrativa e civil, não excluída ou atenuada essa responsabilidade pela presença
+			ou pelo acompanhamento da execução por servidor ou empregado público.
+			<br />
+			<br />
+			<b><u>CLÁUSULA SÉTIMA:</u> DOS DIREITOS E DEVERES</b>
+			<br />
+			<br />
+			O CONTRATADO terá direito a: I – licença maternidade; II - licença paternidade,
+			III – férias, quando o período do contrato for superior a 12 (doze) meses, IV –
+			verba indenizatória por rescisão unilateral imotivado por parte da Administração.
+			<br />
+			<br />
+			PARÁGRAFO ÚNICO – Em caso de faltas por até três dias por motivo de doença, as faltas
+			serão abonadas mediante comprovação por atestado médico, desde que apresentado no
+			prazo de 48 (quarenta e oito) horas do primeiro dia de afastamento. Em hipótese
+			de faltas superiores a três dias e inferiores ou iguais a 15 dias, o abono dependerá
+			de laudo positivo da Perícia Médica do Estado. Não serão abonadas, por motivo de
+			saúde, mais do que 15 (quinze) faltas por ano de execução do contrato.
+			<br />
+			<br />
+			<b><u>CLÁUSULA OITAVA:</u> DAS FÉRIAS</b>
+			<br />
+			<br />
+			Após a vigência de 12 (doze) meses do presente contrato, o CONTRATADO terá direito
+			a afastar-se do trabalho por trinta (30) dias consecutivos, sem prejuízo de sua
+			retribuição, a partir de data ajustada entre as partes, atendida a conveniência
+			da Administração Pública.
+			<br />
+			<br />
+			PARÁGRAFO PRIMEIRO - A rejeição de pedido de férias regulamente formulado pelo CONTRATADO
+			só será possível em casos excepcionalíssimos, assim reconhecidos pelo titular do
+			órgão a que o mesmo estiver vinculado, mediante motivação expressa e específica
+			para o caso concreto, indicando-se pormenorizadamente as tarefas e funções que não
+			podem ser reduzidas ou suspensas naquele período específico.
+			<br />
+			<br />
+			PARÁGRAFO SEGUNDO - Ainda que configurada a estrita e inadiável necessidade do serviço
+			a justificar a rejeição do pedido de férias formulado pelo CONTRATADO, a concessão
+			de tal afastamento deverá ser tão somente postergada para período futuro, ainda
+			no prazo de vigência do contrato, indicando-se expressamente a previsão das datas
+			de início e término do período de férias então adiadas, de modo a evitar a necessidade
+			de indenização pecuniária de período não gozado de férias.
+			<br />
+			<br />
+			<b><u>CLÁUSULA NONA:</u> DA DOTAÇÃO ORÇAMENTÁRIA</b>
+			<br />
+			<br />
+			As despesas com a execução do presente contrato correrão à conta das seguintes dotações
+			orçamentárias, para o corrente exercício de 2008, assim classificados:
+			<br />
+			Natureza das Despesas: 3190-04
+			<br />
+			Fonte de Recurso: 15
+			<br />
+			Programa de Trabalho: 1801.12.362.0152.2018
+			<br />
+			Nota de Empenho: 09714 - 09719
+			<br />
+			<br />
+			PARÁGRAFO ÚNICO – As despesas relativas aos exercícios subseqüentes correrão por
+			conta das dotações orçamentárias respectivas, devendo ser empenhadas no início de
+			cada exercício.
+			<br />
+			<br />
+			<b><u>CLÁUSULA DÉCIMA:</u> DA REMUNERAÇÃO</b>
+			<br />
+			<br />
+			A remuneração bruta total do CONTRATADO será de R$ 607,26 (seiscentos e sete reais
+			e vinte e seis centavos) por mês.
+			<br />
+			<br />
+			PARÁGRAFO ÚNICO - As vantagens e benefícios previstos em legislação específica da
+			categoria funcional ou de cargo análogo na estrutura estadual não repercutirão sobre
+			a remuneração do CONTRATADO.
+			<br />
+			<br />
+			<b><u>CLÁUSULA DÉCIMA PRIMEIRA:</u> DA EXECUÇÃO E FISCALIZAÇÃO DO CONTRATO</b>
+			<br />
+			<br />
+			O CONTRATADO executará os serviços descritos na Cláusula Primeira, com carga horária
+			de 16 (dezesseis) horas semanais, ficando subordinado às determinações da Secretaria
+			de Educação, quanto à forma de exercício de suas funções e horário, observadas as
+			normas legais vigentes.
+			<br />
+			<br />
+			PARÁGRAFO PRIMEIRO - O CONTRATADO se obriga a exercer sua função na unidade indicada
+			pelo CONTRATANTE.
+			<br />
+			<br />
+			PARÁGRAFO SEGUNDO - O CONTRATADO, por necessidade do serviço, poderá ser removido
+			para qualquer unidade integrante da estrutura da CONTRATANTE, vedado, entretanto,
+			o desvio de função, sob pena de rescisão do presente CONTRATO e a apuração da responsabilidade
+			administrativa e civil das autoridades que determinarem, solicitarem, permitirem
+			ou tolerarem tal desvio.
+			<br />
+			<br />
+			PARÁGRAFO TERCEIRO - A execução do contrato será acompanhada e fiscalizada pela
+			Secretaria de Educação, juntamente com a unidade em que o CONTRATADO estiver prestando
+			o serviço.
+			<br />
+			<br />
+			PARÁGRAFO SEGUNDO - O CONTRATADO, por necessidade do serviço, poderá ser removido
+			para qualquer unidade integrante da estrutura da CONTRATANTE, vedado, entretanto,
+			o desvio de função, sob pena de rescisão do presente CONTRATO e a apuração da responsabilidade
+			administrativa e civil das autoridades que determinarem, solicitarem, permitirem
+			ou tolerarem tal desvio.
+			<br />
+			<br />
+			PARÁGRAFO TERCEIRO - A execução do contrato será acompanhada e fiscalizada pela
+			Secretaria de Educação, juntamente com a unidade em que o CONTRATADO estiver prestando
+			o serviço.
+			<br />
+			<br />
+			<b><u>CLÁUSULA DÉCIMA SEGUNDA:</u> DA EXTINÇÃO DO CONTRATO</b>
+			<br />
+			<br />
+			Este contrato será extinto, sem indenização ao CONTRATADO, verificada uma das seguintes
+			hipóteses:
+			<br />
+			a) término do prazo contratual ou de sua prorrogação, independentemente de termo
+			de rescisão, quando as partes se darão mútua quitação, se satisfeitas todas as obrigações
+			reciprocamente pactuadas;
+			<br />
+			b) por manifestação unilateral motivada do CONTRATANTE;
+			<br />
+			c) por vontade de ambas as partes;
+			<br />
+			d) por infração aos deveres de assiduidade, pontualidade, urbanidade, discrição,
+			boa conduta, lealdade e respeito às instituições constitucionais e administrativas
+			a que servir, observância das normas legais e regulamentares, sem prejuízo das demais
+			disposições constitucionais e legais impostas aos ocupantes de funções públicas
+			ou incidência nas proibições estabelecidos em suas cláusulas, imputadas à responsabilidade
+			do CONTRATADO, depois de apurada a falta em sindicância conduzida pelo CONTRATANTE,
+			no prazo de trinta (30) dias, em que se lhe tenham sido assegurados o contraditório
+			e a ampla defesa, com os recursos inerentes.
+			<br />
+			<br />
+			PARÁGRAFO PRIMEIRO - A rescisão decorrente de manifestação unilateral imotivada
+			do CONTRATANTE importará no pagamento, ao CONTRATADO, de indenização no valor correspondente
+			a 1/12 (um doze) avos da remuneração mensal, por mês e/ou período igual ou superior
+			a 15 (quinze) dias efetivamente trabalhados.
+			<br />
+			<br />
+			PARÁGRAFO SEGUNDO - Não será computado no cálculo da verba indenizatória da rescisão
+			unilateral, referida no parágrafo primeiro desta cláusula, o período de trabalho
+			inferior a 15 (quinze) dias.
+			<br />
+			<br />
+			PARÁGRAFO TERCEIRO - O CONTRATANTE poderá, ainda, rescindir unilateralmente o contrato,
+			sem que caiba indenização ao CONTRATADO, em razão de:
+			<br />
+			a) ocorrência de qualquer hipótese impeditiva ao fiel cumprimento do contrato pelo
+			período acordado, inadmitindo-se qualquer suspensão da sua execução;
+			<br />
+			b) falta ao trabalho por três dias consecutivos ou cinco intercalados em um período
+			de trinta dias, mesmo com justificação, ressalvadas as faltas abonadas por motivo
+			de doença, em conformidade com o disposto no parágrafo único da cláusula sétima;
+			<br />
+			c) afastamento por motivo de doença por prazo superior a 15 dias consecutivos;
+			<br />
+			d) apresentação de documento falso ou declaração falsa ou inexata;
+			<br />
+			e) insuficiência de desempenho na função para a qual apresentou prova de capacitação.
+			<br />
+			<br />
+			PARÁGRAFO QUARTO - A declaração de rescisão deste contrato, em todos os casos em
+			que ela é admitida, será sempre feita independentemente de prévia notificação judicial
+			ou extrajudicial e operará seus efeitos a partir da publicação do ato no Diário
+			Oficial do Estado.
+			<br />
+			<br />
+			PARÁGRAFO QUINTO - No ajuste final de contas, dos valores eventualmente devidos
+			ao CONTRATADO, o CONTRATANTE, como lhe incumbe, procederá aos descontos previstos
+			na legislação específica, na forma estabelecida em suas disposições.
+			<br />
+			<br />
+			PARÁGRAFO SEXTO – O CONTRATADO só poderá rescindir ou interromper a prestação de
+			serviços por conta de infração contratual ou legal do CONTRATANTE mediante propositura
+			de ação judicial, devendo manter o cumprimento integral de suas obrigações legais
+			e contratuais até expresso pronunciamento judicial que suspenda ou extinga a exigibilidade
+			das mesmas.
+			<br />
+			<br />
+			<b><u>CLÁUSULA DÉCIMA TERCEIRA:</u> DAS CONDIÇÕES RESOLUTIVAS</b>
+			<br />
+			<br />
+			O presente contrato estará resolvido de pleno direito, não cabendo qualquer indenização
+			ao CONTRATADO, nas hipóteses de sua substituição por servidor efetivo investido
+			em cargo que abarque as funções objeto do presente contrato.
+			<br />
+			<br />
+			PARÁGRAFO ÚNICO – A substituição mencionada no caput da presente Cláusula pode decorrer
+			de qualquer forma de provimento originário ou derivado do servidor efetivo em questão.
+			<br />
+			<br />
+			<b><u>CLÁUSULA DÉCIMA QUARTA:</u> DA INEXISTÊNCIA DE VÍNCULO</b>
+			<br />
+			<br />
+			A presente contratação não cria vínculo empregatício ou estatutário entre o CONTRATANTE
+			e o CONTRATADO, nem gera para este o direito de ser posteriormente admitido como
+			servidor estadual e nem o de ser aproveitado nos órgãos da administração direta
+			ou indireta ou, ainda, fundação instituída ou mantida pelo Estado.
+			<br />
+			<br />
+			<b><u>CLÁUSULA DÉCIMA QUINTA:</u> DAS DECLARAÇÕES</b>
+			<br />
+			<br />
+			O CONTRATADO assina, neste ato, as seguintes declarações anexo ao presente instrumento,
+			e que dele passam a fazer parte integrante:
+			<br />
+			<br />
+			a) ciência das proibições do artigo 37, incisos XVI, XVII e §10º, da Constituição
+			da República;
+			<br />
+			b) ciência e observância das proibições do art. 7º, III, da Lei Estadual nº 4.599,
+			de 27/09/2005.
+			<br />
+			<br />
+			<b><u>CLÁUSULA DÉCIMA SEXTA:</u> DA CESSÃO OU TRANSFERÊNCIA</b>
+			<br />
+			<br />
+			O presente contrato não poderá ser objeto de cessão ou transferência no todo ou
+			em parte.
+			<br />
+			<br />
+			<b><u>CLÁUSULA DÉCIMA SÉTIMA:</u> DA EXCEÇÃO DA RESPONSABILIDADE DO CONTRATANTE</b>
+			<br />
+			<br />
+			A superveniência de decisão judicial que anule a presente contratação, em especial
+			a declaração de inconstitucionalidade da Lei Estadual nº 4.599/05, não assegurará
+			qualquer direito de reparação ao CONTRATADO, o qual renuncia expressa e irrevogavelmente
+			a qualquer pretensão indenizatória.
+			<br />
+			<br />
+			<b><u>CLÁUSULA DÉCIMA OITAVA:</u> DA PUBLICAÇÃO E CONTROLE DO CONTRATO</b>
+			<br />
+			<br />
+			Após a assinatura do contrato deverá seu extrato ser publicado, dentro do prazo
+			de 20 (vinte) dias, no Diário Oficial do Estado do Rio de Janeiro, devendo ser encaminhado
+			ao Tribunal de Contas do Estado, para conhecimento, cópia autenticada do contrato
+			até o quinto dia útil seguinte ao da sua assinatura.
+			<br />
+			<br />
+			PARÁGRAFO ÚNICO – O extrato da publicação deve conter a identificação do instrumento,
+			partes, objeto, prazo, valor, número do empenho e fundamento do ato.
+			<br />
+			<br />
+			<b><u>CLÁUSULA DÉCIMA NONA:</u> DO FORO DE ELEIÇÃO</b>
+			<br />
+			<br />
+			Fica eleito o Foro da Cidade do Rio de Janeiro, comarca da Capital, para dirimir
+			qualquer litígio decorrente do presente contrato que não possa ser resolvido por
+			meio amigável, com expressa renúncia a qualquer outro, por mais privilegiado que
+			seja.
+			<br />
+			E, por estarem assim acordes em todas as condições e cláusulas estabelecidas neste
+			contrato, firmam as partes o presente instrumento em 4 (quatro) vias de igual forma
+			e teor, depois de lido e achado conforme, em presença de testemunhas abaixo firmadas.
+			<br />
+			<br />
+			<br />
+			<br />
+			Rio de Janeiro, em ________ de ______________ de ________.
+		</div>
+		<br />
+		<br />
+		<div class="subtitulo">
+			<br />
+			________________________________________________
+			<br />
+			SECRETARIA DE EDUCAÇÃO
+			<br />
+			<br />
+			<br />
+			<br />
+			________________________________________________
+			<br />
+			<b>CONTRATADA</b>
+			<br />
+			<br />
+			<br />
+			<table>
+				<tr>
+					<td style="width: 10%">
+						________________________________________________
+					</td>
+					<td style="width: 10%">
+						________________________________________________
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 10%">
+						TESTEMUNHA
+					</td>
+					<td style="width: 10%">
+						TESTEMUNHA
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>]]>   
+     </texto>
+</relatorio>        

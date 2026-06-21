@@ -1,0 +1,240 @@
+﻿@model SRV.Models.DTO.CadastroParametroPeso
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemJS(@Role.IsGranted("Administrador") && Model.IdTipoUnidadeAdm != null, "salvar()", new { id = "salvar" }, "btSalvar")
+    }
+    
+    <div class="boxContent">
+        
+        @if (@TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdModalidade)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.IdModalidade, (IEnumerable<SelectListItem>)Model.Modalidades ?? new List<SelectListItem>(), "", new { style = "width:350px;" })<br/>                        
+                        @Html.ValidationMessageFor(m => m.IdModalidade)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.IdTipoUnidadeAdm)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.IdTipoUnidadeAdm, (IEnumerable<SelectListItem>)Model.TiposUnidadesAdm ?? new List<SelectListItem>(), "", new { style = "width:350px;" })<br/>                        
+                        @Html.ValidationMessageFor(m => m.IdTipoUnidadeAdm)
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br/>
+
+        @if (Model.Grupos != null)
+        {
+            <table class="grid">
+            
+                @* Cabeçalho *@
+                <thead>
+                    <tr>
+                        <th width="100%" rowspan="2">Grupo de Função</th>
+                        <th width="245px" colspan="3" style="text-align: center;">Com IGE</th>
+                        <th width="160px" colspan="2" style="text-align: center;">Sem IGE</th>
+                  
+                    </tr>
+
+                    <tr>
+                        <th style="text-align: center;">ID</th>
+                        <th style="text-align: center;">IF</th>
+                        <th style="text-align: center;">IGE</th>
+                        <th style="text-align: center;">ID</th>
+                        <th style="text-align: center;">IF</th>
+                    </tr>
+
+                </thead>
+
+                @* Corpo *@
+                <tbody>
+
+                    @{ short rowCont = 0; }
+
+                    @{ decimal[] valorPeso = new decimal[5]; }
+                    @{ int?[] idParametroPeso = new int?[5]; }
+
+                    @{ string classe = "gridrow"; }
+
+                    @foreach (var grupo in @Model.Grupos)
+                    {
+                        classe = rowCont % 2 == 0 ? "gridrow" : "gridrow_alternate";
+                
+                        <tr class="@classe">
+                        
+                            <td width="100%" 
+                                @if (Model.Errors != null && Model.Errors[rowCont]) 
+                                { 
+                                    @:style="color: Red;" 
+                                }
+                            >@grupo.DesGrupoFuncao</td>
+
+                            @if(@Model.Values != null)
+                            {
+                                foreach (var value in @Model.Values)
+                                {   
+                                    if (value.GrupoFuncao.IdGrupoFuncao == grupo.IdGrupoFuncao)
+                                    {
+                                        //Com IGE
+                                        
+                                        //ID
+                                        if (value.Indicador.IdIndicador == SRV.Common.Constants.IdIndicadorID && value.TemIGE)
+                                        {
+                                            valorPeso[0] = value.ValorPeso;
+                                            idParametroPeso[0] = value.IdParametroPeso;
+                                        }
+
+                                        //IF
+                                        if (value.Indicador.IdIndicador == SRV.Common.Constants.IdIndicadorIF && value.TemIGE)
+                                        {
+                                            valorPeso[1] = value.ValorPeso;
+                                            idParametroPeso[1] = value.IdParametroPeso;
+                                        }
+
+                                        //IGE
+                                        if (value.Indicador.IdIndicador == SRV.Common.Constants.IdIndicadorIGE && value.TemIGE)
+                                        {
+                                            valorPeso[2] = value.ValorPeso;
+                                            idParametroPeso[2] = value.IdParametroPeso;
+                                        }
+
+                                        //Sem IGE
+
+                                        //ID
+                                        if (value.Indicador.IdIndicador == SRV.Common.Constants.IdIndicadorID && !value.TemIGE)
+                                        {
+                                            valorPeso[3] = value.ValorPeso;
+                                            idParametroPeso[3] = value.IdParametroPeso;
+                                        }
+
+                                        //IF
+                                        if (value.Indicador.IdIndicador == SRV.Common.Constants.IdIndicadorIF && !value.TemIGE)
+                                        {
+                                            valorPeso[4] = value.ValorPeso;
+                                            idParametroPeso[4] = value.IdParametroPeso;
+                                        }
+                                    }
+                                }
+                            }
+                                           
+                            @* ID - Com IGE *@
+                            <td width="75px">
+                                @Html.TextBox("NewValues[" + @rowCont + "][0].ValorPeso", valorPeso != null ? valorPeso[0] : 0, new { @class = "nota", maxlength = "6", style = "width: 70px; text-align: right;" })
+                                @Html.Hidden("NewValues[" + @rowCont + "][0].GrupoFuncao.IdGrupoFuncao", @grupo.IdGrupoFuncao)
+                                @Html.Hidden("NewValues[" + @rowCont + "][0].AnoReferencia.IdAnoReferencia", (int)@ViewBag.UsuarioLogado.Ciclo)
+                                @Html.Hidden("NewValues[" + @rowCont + "][0].TipoUnidadeAdministrativa.IdTipoUnidAdm", @Model.IdTipoUnidadeAdm)
+                                @Html.Hidden("NewValues[" + @rowCont + "][0].Modalidade.IdModalidade", @Model.IdModalidade)
+                                @Html.Hidden("NewValues[" + @rowCont + "][0].Indicador.IdIndicador", SRV.Common.Constants.IdIndicadorID)
+                                @Html.Hidden("NewValues[" + @rowCont + "][0].IdParametroPeso", idParametroPeso[0])
+                                @Html.Hidden("NewValues[" + @rowCont + "][0].TemIGE", true)                                
+                            </td>
+
+                            @* IF - Com IGE *@
+                            <td width="75px">
+                                @Html.TextBox("NewValues[" + @rowCont + "][1].ValorPeso", valorPeso != null ? valorPeso[1] : 0, new { @class = "nota", maxlength = "6", style = "width: 70px; text-align: right;" })
+                                @Html.Hidden("NewValues[" + @rowCont + "][1].GrupoFuncao.IdGrupoFuncao", @grupo.IdGrupoFuncao)
+                                @Html.Hidden("NewValues[" + @rowCont + "][1].AnoReferencia.IdAnoReferencia", (int)@ViewBag.UsuarioLogado.Ciclo)
+                                @Html.Hidden("NewValues[" + @rowCont + "][1].TipoUnidadeAdministrativa.IdTipoUnidAdm", @Model.IdTipoUnidadeAdm)
+                                @Html.Hidden("NewValues[" + @rowCont + "][1].Modalidade.IdModalidade", @Model.IdModalidade)
+                                @Html.Hidden("NewValues[" + @rowCont + "][1].Indicador.IdIndicador", SRV.Common.Constants.IdIndicadorIF)
+                                @Html.Hidden("NewValues[" + @rowCont + "][1].IdParametroPeso", idParametroPeso[1])
+                                @Html.Hidden("NewValues[" + @rowCont + "][1].TemIGE", true)
+                            </td>
+
+                            @* IGE - Com IGE *@
+                            <td width="75px">
+                                @Html.TextBox("NewValues[" + @rowCont + "][2].ValorPeso", valorPeso != null ? valorPeso[2] : 0, new { @class = "nota", maxlength = "6", style = "width: 70px; text-align: right;" })
+                                @Html.Hidden("NewValues[" + @rowCont + "][2].GrupoFuncao.IdGrupoFuncao", @grupo.IdGrupoFuncao)
+                                @Html.Hidden("NewValues[" + @rowCont + "][2].AnoReferencia.IdAnoReferencia", (int)@ViewBag.UsuarioLogado.Ciclo)
+                                @Html.Hidden("NewValues[" + @rowCont + "][2].TipoUnidadeAdministrativa.IdTipoUnidAdm", @Model.IdTipoUnidadeAdm)
+                                @Html.Hidden("NewValues[" + @rowCont + "][2].Modalidade.IdModalidade", @Model.IdModalidade)
+                                @Html.Hidden("NewValues[" + @rowCont + "][2].Indicador.IdIndicador", SRV.Common.Constants.IdIndicadorIGE)
+                                @Html.Hidden("NewValues[" + @rowCont + "][2].IdParametroPeso", idParametroPeso[2])
+                                @Html.Hidden("NewValues[" + @rowCont + "][2].TemIGE", true)                                
+                            </td>
+
+                            @* ID - Sem IGE *@
+                            <td width="75px">
+                                @Html.TextBox("NewValues[" + @rowCont + "][3].ValorPeso", valorPeso != null ? valorPeso[3] : 0, new { @class = "nota", maxlength = "6", style = "width: 70px; text-align: right;" })
+                                @Html.Hidden("NewValues[" + @rowCont + "][3].GrupoFuncao.IdGrupoFuncao", @grupo.IdGrupoFuncao)
+                                @Html.Hidden("NewValues[" + @rowCont + "][3].AnoReferencia.IdAnoReferencia", (int)@ViewBag.UsuarioLogado.Ciclo)
+                                @Html.Hidden("NewValues[" + @rowCont + "][3].TipoUnidadeAdministrativa.IdTipoUnidAdm", @Model.IdTipoUnidadeAdm)
+                                @Html.Hidden("NewValues[" + @rowCont + "][3].Modalidade.IdModalidade", @Model.IdModalidade)
+                                @Html.Hidden("NewValues[" + @rowCont + "][3].Indicador.IdIndicador", SRV.Common.Constants.IdIndicadorID)
+                                @Html.Hidden("NewValues[" + @rowCont + "][3].IdParametroPeso", idParametroPeso[3])
+                                @Html.Hidden("NewValues[" + @rowCont + "][3].TemIGE", false)
+                            </td>
+
+                            @* IF - Sem IGE *@
+                            <td width="75px">
+                                @Html.TextBox("NewValues[" + @rowCont + "][4].ValorPeso", valorPeso != null ? valorPeso[4] : 0, new { @class = "nota", maxlength = "6", style = "width: 70px; text-align: right;" })
+                                @Html.Hidden("NewValues[" + @rowCont + "][4].GrupoFuncao.IdGrupoFuncao", @grupo.IdGrupoFuncao)
+                                @Html.Hidden("NewValues[" + @rowCont + "][4].AnoReferencia.IdAnoReferencia", (int)@ViewBag.UsuarioLogado.Ciclo)
+                                @Html.Hidden("NewValues[" + @rowCont + "][4].TipoUnidadeAdministrativa.IdTipoUnidAdm", @Model.IdTipoUnidadeAdm)
+                                @Html.Hidden("NewValues[" + @rowCont + "][4].Modalidade.IdModalidade", @Model.IdModalidade)
+                                @Html.Hidden("NewValues[" + @rowCont + "][4].Indicador.IdIndicador", SRV.Common.Constants.IdIndicadorIF)
+                                @Html.Hidden("NewValues[" + @rowCont + "][4].IdParametroPeso", idParametroPeso[4])
+                                @Html.Hidden("NewValues[" + @rowCont + "][4].TemIGE", false)
+                            </td>
+
+                            @{ valorPeso = new decimal[5]; }
+                            @{ idParametroPeso = new int?[5]; }
+
+                        </tr>
+                        
+                        rowCont++;
+                    }
+
+                </tbody>
+            </table>
+        }
+    </div>    
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $(".nota").maskMoney({ thousands: '', decimal: ',', precision: 2, allowZero: true, allowNegative: false, defaultZero: true });
+
+        $("#IdModalidade").change(function () {
+
+            if ($('#IdTipoUnidadeAdm').val() != "") {
+                $('#IdModalidade').closest("form").attr('action', '@Url.Action("Index", "ParametroPeso")');
+                $('#IdModalidade').closest("form").submit();
+            }
+        });
+
+        $("#IdTipoUnidadeAdm").change(function () {
+
+            if ($('#IdModalidade').val() != "") {
+                $('#IdTipoUnidadeAdm').closest("form").attr('action', '@Url.Action("Index", "ParametroPeso")');
+                $('#IdTipoUnidadeAdm').closest("form").submit();
+            }
+        });
+    })
+
+    function salvar() {
+
+        $('#salvar').closest("form").attr('action', '@Url.Action("Edit", "ParametroPeso")');
+        $('#salvar').closest("form").submit();
+    }
+
+</script>

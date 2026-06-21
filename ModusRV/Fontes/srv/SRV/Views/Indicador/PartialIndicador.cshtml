@@ -1,0 +1,87 @@
+﻿@model SRV.Models.DTO.CadastroIndicador
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(true, "Create", null, null, "btNovo");
+        @Html.ToolbarItemSubmit(true, "btSalvar");
+
+        if (ViewBag.IsEdit)
+        {
+            @Html.ToolbarItemJS(true, "deleteItemAndRedirect(this, '" + @Url.Action("Delete", "Indicador") + "', '" + @Url.Action("Create", "Indicador") + "', " + @Model.Indicador.IdIndicador + ")", null, "btExcluir");
+        }
+                                                                                                                                                                                                
+        @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        <table class="tableForm">
+            @if (ViewBag.IsEdit)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Indicador.IdIndicador)</td>
+                    <td>@Html.DisplayTextFor(m => m.Indicador.IdIndicador)<br/>
+                        @Html.HiddenFor(m => m.Indicador.IdIndicador, new { id = "IdIndicador" })
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Indicador.IdIndicador)</td>
+                    <td>@Html.TextBoxFor(m => m.Indicador.IdIndicador, new { id = "IdIndicador", style = "width:80px; text-align: right", maxlength = 9 })<br/>
+                        @Html.ValidationMessageFor(m => m.Indicador.IdIndicador)
+                    </td>
+                </tr>
+            }
+
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.Indicador.DesIndicador)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Indicador.DesIndicador, new { style = "width:450px;", maxlength = 50 })<br/>
+                    @Html.ValidationMessageFor(m => m.Indicador.DesIndicador)
+                </td>
+            </tr>
+
+            @if (ViewBag.IsEdit && ViewBag.BloqueiaTipoIndicador)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Indicador.TipoIndicador)</td>
+                    <td><label>@Model.Indicador.TipoIndicador.ToDescription()</label><br/>
+                        @Html.HiddenFor(m => m.Indicador.TipoIndicador)
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Indicador.TipoIndicador)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.Indicador.TipoIndicador, (IEnumerable<SelectListItem>)Model.TiposIndicador ?? new List<SelectListItem>(), new { id = "IdTipoIndicador", style = "width:250px;" })<br/>                        
+                        @Html.ValidationMessageFor(m => m.Indicador.TipoIndicador)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $("#IdIndicador").mask("??999999999", { placeholder: "" });
+    })
+
+</script>

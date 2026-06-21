@@ -1,0 +1,114 @@
+﻿/*****
+SELECAO TURMAS - LISTA - INICIO
+*****/
+
+.conteudo .titulo-pagina  
+{
+	font-size:14px;
+	color:#000;
+	margin-bottom: 10px;
+	width: 623px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.conteudo .mensagem-lancamento 
+{
+	font-size:12px;
+	width:600px;
+	margin:auto;
+	color:#444;
+	padding:10px;
+	border: 1px solid #C0C0C0;
+	background-color: #FFA;
+	margin-bottom:10px;
+}
+
+.conteudo .validation-summary-errors
+{
+	margin:auto;
+	width: 600px;
+	font-size:12px;
+	color:#F00;
+	padding:10px;
+	border: 1px solid #F77;
+	background-color: #FDD;
+	margin-bottom:10px;	
+}
+
+.conteudo .validation-summary-errors li 
+{
+	margin:4px 0px;	
+}
+
+.conteudo .unidade h2 {
+	color:#000;
+}
+
+.tabela-padrao 
+{
+	width: 600px;
+	margin:auto;	
+}
+
+.tabela-padrao table 
+{
+	width: 570px;	
+}
+
+.tabela-padrao table .td-status 
+{
+	text-align:center;	
+	color:#333;
+}
+
+.tabela-padrao table thead .td-status 
+{
+	cursor:help;
+}
+
+.tabela-padrao thead td {
+	border-color: #C0C0C0;
+}
+
+.tabela-padrao table tbody tr:hover
+{
+	background-color:#C0C0C0;
+	cursor:pointer;
+}
+
+.tabela-padrao table tbody tr td
+{
+	color:#080;
+}
+
+.tabela-padrao table tbody tr.possui-nota-pendente td
+{
+	color:#F00;
+}
+
+.tabela-padrao table tbody tr.frequencia-prova td
+{
+	color:#0000ff;
+}
+
+.unidade 
+{
+	margin-bottom:20px;	
+}
+
+.periodo 
+{
+	margin-top:4px;
+	margin-left:15px;	
+}
+
+.periodo table
+{
+	margin-top:4px;
+	margin-left:15px;	
+}
+
+/*****
+SELECAO TURMAS - LISTA - FIM
+*****/

@@ -1,0 +1,61 @@
+﻿@model SRV.Models.DTO.CadastroOcorrencia
+@using SRV.Common.Extension
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+    @Html.ToolbarItemLink(true, "Create", null, null, "btNovo");
+    @Html.ToolbarItemSubmit(true, "btSalvar");
+
+                                             if (Model.Ocorrencia.IdOcorrencia != null)
+                                             {
+    @Html.ToolbarItemJS(true, "deleteItemAndRedirect(this, '" + @Url.Action("Delete", "Ocorrencia") + "', '" + @Url.Action("Create", "Ocorrencia") + "', " + @Model.Ocorrencia.IdOcorrencia + ")", null, "btExcluir");
+                                             }
+                                                                                                                                                                                                
+    @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        @Html.ValidationSummary(true)
+        <table class="tableForm">
+            @if (!Model.OperacaoInsert)
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Ocorrencia.IdOcorrencia)
+                    </td>
+                    <td>@Html.DisplayTextFor(m => m.Ocorrencia.IdOcorrencia)<br />
+                        @Html.HiddenFor(m => m.Ocorrencia.IdOcorrencia, new { id = "IdOcorrencia" })
+                        @Html.ValidationMessageFor(m => m.Ocorrencia.IdOcorrencia)
+                    </td>
+                </tr> 
+            }
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.Ocorrencia.DesOcorrencia)
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Ocorrencia.DesOcorrencia, new { style = "width:450px;", maxlength = 50 })<br />
+                    @Html.ValidationMessageFor(m => m.Ocorrencia.DesOcorrencia)
+                </td>
+            </tr>
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.Ocorrencia.TipoOcorrencia)
+                </td>
+                <td>
+                    @Html.DropDownListFor(m => m.Ocorrencia.TipoOcorrencia.IdTipoOcorrencia, (IEnumerable<SelectListItem>)Model.TiposOcorrencia ?? new List<SelectListItem>(), "", new { id = "IdTipoOcorrencia", style = "width:250px;" })<br />
+                    @Html.ValidationMessageFor(m => m.Ocorrencia.TipoOcorrencia.IdTipoOcorrencia)
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+    })
+
+</script>

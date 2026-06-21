@@ -1,0 +1,68 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PublicMaster.master.cs"
+    Inherits="Techne.Lyceum.Net.Modulos.PublicMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>SEEDUC - Governo do Rio de Janeiro</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Scripts/themes/basic/grid.css" rel="stylesheet" type="text/css" />
+    <link href="../Scripts/themes/jqModal.css" rel="stylesheet" type="text/css" />
+    <link href="../LyceumNet.css" type="text/css" rel="stylesheet" />
+    <link rel='stylesheet' type='text/css' href="../Scripts/themes/calendar.css" />
+
+    <script type='text/javascript' src='../Scripts/js/calendar.js'></script>
+
+</head>
+<body onload="moveRelogio();" approot='<%=Page.ResolveClientUrl("~/") %>'>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery-1.7.1.min.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.jqGrid.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/js/jqModal.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/MaskTypes.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.maskedinput-1.2.2.min.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.numeric.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.PrintArea.js") %>'></script>
+
+    <form id="form1" runat="server" submitdisabledcontrols="True">
+    <div class="top_inf">
+        <div class="top">
+            <div class="top_logo" align="center">
+                <asp:Image runat="server" AlternateText="Governo do Rio de Janeiro - Sec de Estado de Educação"
+                    ImageUrl="~/Images/logo.gif" /></div>
+            <div class="tit_sist">
+                <asp:Image runat="server" ImageUrl="~/Images/logo_CEG.png" border="0" /></div>
+            <div class="user_saud" align="right">
+                <asp:Literal ID="lblSaudacoes" runat="server" /><br />
+                <div id="divHoraData">
+                </div>
+            </div>
+            <div id="top_menu">
+            </div>
+        </div>
+    </div>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div id="conteudo" class="conteudo" style="">
+        <asp:ContentPlaceHolder ID="cphFormulario" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="bas-inf">
+        <div class="bas">
+            &copy; Todos os direitos reservados -
+            <%= DateTime.Now.Year %>
+            | versão
+            <asp:Literal ID="lblVersao" runat="server" /></div>
+    </div>
+    </form>
+</body>
+</html>

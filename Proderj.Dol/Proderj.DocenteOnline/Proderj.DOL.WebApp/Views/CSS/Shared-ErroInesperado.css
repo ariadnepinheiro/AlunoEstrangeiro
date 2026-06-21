@@ -1,0 +1,30 @@
+﻿/*****
+RODAPE INICIO
+*****/
+
+.conteudo > h3 {
+	font-size:14px;
+	color:#F00;
+}
+.painel-erro {
+	border:1px solid #F00;
+	padding:10px;
+	background-color:#FEE;
+	margin-bottom:10px;
+}
+
+.painel-erro pre {
+	width:100%;
+	border:1px solid #000;
+	overflow:auto;
+	background-color:#FFF;
+}
+
+.painel-erro p {
+	font-size:12px;
+	line-height:18px;
+}
+
+/*****
+RODAPE FIM
+*****/

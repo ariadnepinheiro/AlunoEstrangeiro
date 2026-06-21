@@ -1,0 +1,2745 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Techne.Lyceum.Infra</name>
+    </assembly>
+    <members>
+        <member name="M:Techne.Data.ConnectionList.CreateConnection(System.String)">
+            <summary>
+              Cria uma conexão a partir de um item da lista de connections strings do arquivo de configuração (web.config).
+            </summary>
+            <param name = "application">Um elemento da lista de connection strings declarada na seção configuration/techne/database do web.config.</param>
+        </member>
+        <member name="M:Techne.Data.ConnectionList.CreateConnection(System.String,System.String)">
+            <summary>
+              Cria uma conexão a partir de um item da lista de connections strings do arquivo de configuração (web.config).
+            </summary>
+            <param name = "application">Um elemento da lista de connection strings declarada na seção configuration/techne/database do web.config.</param>
+        </member>
+        <member name="M:Techne.Data.ConnectionList.CreateWritableConnection(Techne.TPermission,System.String)">
+            <summary>
+              Cria uma conexão a partir de um item da lista de connections strings do arquivo de configuração (web.config).
+            </summary>
+            <param name = "application">Um elemento da lista de connection strings declarada na seção configuration/techne/database do web.config.</param>
+        </member>
+        <member name="M:Techne.Data.ConnectionList.CreateWritableConnection(Techne.TPermission,System.String,System.String)">
+            <summary>
+              Cria uma conexão a partir de um item da lista de connections strings do arquivo de configuração (web.config).
+            </summary>
+            <param name = "application">Um elemento da lista de connection strings declarada na seção configuration/techne/database do web.config.</param>
+        </member>
+        <member name="M:Techne.Data.ConnectionList.CreateWritableConnection(System.String,System.String)">
+            <summary>
+              Cria uma conexão a partir de um item da lista de connections strings do arquivo de configuração (web.config).
+            </summary>
+            <param name = "application">Um elemento da lista de connection strings declarada na seção configuration/techne/database do web.config.</param>
+        </member>
+        <member name="M:Techne.Data.ConnectionList.CreateWritableConnection(System.String)">
+            <summary>
+              Cria uma conexão a partir de um item da lista de connections strings do arquivo de configuração (web.config).
+            </summary>
+            <param name = "application">Um elemento da lista de connection strings declarada na seção configuration/techne/database do web.config.</param>
+        </member>
+        <member name="M:Techne.Data.ConnectionList.GetConnectionString(System.String)">
+            <summary>
+              Retorna uma ConnectString da lista
+            </summary>
+        </member>
+        <member name="M:Techne.Data.ConnectionList.Load">
+            <summary>
+              Preenche a lista de conexões com os valores contidos na seção &lt;Database%gt; do arquivo .config da aplicação
+            </summary>
+        </member>
+        <member name="M:Techne.Data.ConnectionList.GetConnectionStringFromWebConfig(System.String,System.String)">
+            <summary>
+              Abre o arquivo web.config no path informado e obtém a connection string da aplicação solicitada
+              (xpath: /configuration/techne/database/add[@key = applicationName]).
+            </summary>
+        </member>
+        <member name="M:Techne.HadesConnectionList.GetConnectionString(System.String,System.String)">
+            <summary>
+              Obtém a connection string com user id e password.
+            </summary>
+        </member>
+        <member name="M:Techne.HadesConnectionList.Reverse(System.String)">
+            <summary>
+              Este procedimento inverte a string passada, EXCETO o último caractere, que é REMOVIDO.
+            </summary>
+        </member>
+        <member name="M:Techne.TechneHttpApplication.GetPermission(System.String,System.String)">
+            <summary>
+              Retorna as permissões que o usuário corrente tem de acessar um objeto/recurso
+            </summary>
+            <param name = "resource">Nome do objeto/recurso, ou sua URL</param>
+            <param name = "resourcetype">Tipo do objeto ("PAGINA","RELATORIO", etc...)</param>
+            <returns>Objeto HadesPermission com os acessos permitidos. Se retornar null, o objeto não existe.</returns>
+        </member>
+        <member name="M:Techne.TechneHttpApplication.GetUserInfo(System.String,System.String[]@)">
+            <summary>
+              Retorna dados do usuário. Null se o usuário não existir ou se estiver desabilitado
+            </summary>
+            <param name = "user">Código do usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:Techne.TechneHttpApplication.IsAudit(System.String,System.String)">
+            <summary>
+              Indica se um recurso é auditável
+            </summary>
+            <param name = "resource">Nome do objeto/recurso, ou sua URL</param>
+            <param name = "resourcetype">Tipo do objeto ("PAGINA","RELATORIO", etc...)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Techne.TechneHttpApplication.ValidateUser(System.String,System.String)">
+            <summary>
+              Valida senha do usuário
+            </summary>
+            <param name = "user">código do usuário</param>
+            <param name = "password">senha</param>
+            <returns>Resultado da validação</returns>
+        </member>
+        <member name="M:Techne.TechneHttpApplication.ValidateWindowsUser(System.String,System.String@)">
+            <summary>
+              Valida um usuário do windows contra o banco de dados. Se
+              o usuário for válido e estiver habilitado, retorna o código do usuário
+              Caso contrário, retorna null.
+            </summary>
+            <param name = "windowsuser">Usuário do Windows</param>
+            <param name = "user">Usuário correspondente no banco de dados</param>
+            <returns>Resultado da validação</returns>
+        </member>
+        <member name="M:Techne.TechneHttpApplication.GetTLog">
+            <summary>
+              Cria um novo objeto de Log
+            </summary>
+            <returns>TLog criado</returns>
+        </member>
+        <member name="M:Techne.TechneHttpApplication.ObtainTPrincipalFromCookie(System.Boolean)">
+            <summary>
+              Tenta criar um TPrincipal a partir do cookie de autenticação.
+              Salva no contexto se for assim solicitado.
+            </summary>
+            <param name = "save">Salva o TPrincipal no contexto se ele tiver sido criado</param>
+            <returns>Conseguiu criar o TPrincipal; False se não há cookie ou ele se expirou.</returns>
+        </member>
+        <member name="E:Techne.TechneHttpApplication.UserLogIn">
+            <summary>
+              Evento que dispara após um usuário se logar e a sessão ser carregada
+            </summary>
+        </member>
+        <member name="P:Techne.TechneHttpApplication.ApplicationName">
+            <summary>
+              Nome da aplicação (no Hades).
+            </summary>
+        </member>
+        <member name="M:Techne.HadesHttpApplicationBase.GetUserInfo(System.String,System.String[]@)">
+            <summary>
+              Retorna dados do usuário do Hades. Retorna Null se o usuário não existir ou se estiver desabilitado
+            </summary>
+            <param name = "user">Código do usuário</param>
+            <param name="roles">Perfis do usuário</param>
+        </member>
+        <member name="M:Techne.HadesHttpApplicationBase.ValidateUser(System.String,System.String)">
+            <summary>
+              Valida usuário e senha do Hades.
+            </summary>
+            <param name = "user">Usuário do Hades</param>
+            <param name = "password">Senha do usuário no Hades</param>
+            <returns>Retorna OK, ChangePassword, InvalidUserOrPassword ou UserDisabled, dependendo do resultado da validação</returns>
+        </member>
+        <member name="M:Techne.HadesHttpApplicationBase.ValidateWindowsUser(System.String,System.String@)">
+            <summary>
+              Valida um usuário do windows contra o banco de dados do Hades. Se
+              o usuário for válido e estiver habilitado, retorna o código do usuário no Hades
+              Caso contrário, retorna null.
+            </summary>
+            <param name = "windowsuser">Usuário do Windows</param>
+            <param name = "message">Mensagem de erro</param>
+            <returns>código do usuário Hades correspondente</returns>
+        </member>
+        <member name="M:Techne.BusinessAssemblyAttribute.GetApplicationName(System.Reflection.Assembly)">
+            <summary>
+              Devolve a propriedade ApplicationName do atributo BusinessAssemblyAttribute do assembly informado.
+              Devolve null caso o atributo não exista no assembly.
+            </summary>
+        </member>
+        <member name="P:Techne.BusinessAssemblyAttribute.BusinessAssemblies">
+            <summary>
+              Lista dos assemblies que contém o atributo BusinessAssemblyAttribute.
+              Esta lista é um subconjunto de MainAssemblyAttribute.ProjectAssemblies.
+            </summary>
+        </member>
+        <member name="M:Techne.ImageAttribute.GetUrl(System.Reflection.MethodInfo)">
+            <summary>
+              Devolve o atributo ImageAttribute associado ao método informado.
+              Devolve null se o atributo não for encontrado.
+            </summary>
+        </member>
+        <member name="M:Techne.ImageAttribute.GetUrl(System.Type)">
+            <summary>
+              Devolve o atributo ImageAttribute associado à página correspondente ao tipo informado.
+              Devolve null se o atributo não for encontrado.
+            </summary>
+        </member>
+        <member name="M:Techne.MethodDescriptionAttribute.GetDescription(System.Reflection.MethodInfo,System.String)">
+            <summary>
+              Busca o texto associado ao atributo MethodDescription do método informado.
+              Devolve null se o atributo não existe.
+            </summary>
+        </member>
+        <member name="M:Techne.ToolTipAttribute.GetToolTip(System.Reflection.MethodInfo,System.String)">
+            <summary>
+              Busca o texto associado ao atributo ToolTip do método informado.
+              Devolve null se o atributo não existe.
+            </summary>
+        </member>
+        <member name="M:Techne.ControlTextAttribute.#ctor(System.String,System.String)">
+            <summary>
+              Define o ControlText da página, que será utilizado nos textos dos THyperLink's
+              que apontam para ela.
+            </summary>
+        </member>
+        <member name="M:Techne.ControlTextAttribute.#ctor(System.String)">
+            <summary>
+              Define o ControlText da página, que será utilizado nos textos dos THyperLink's
+              que apontam para ela.
+              Utiliza TPage.IDIOMADEFAULT como idioma.
+            </summary>
+        </member>
+        <member name="M:Techne.ControlTextAttribute.GetControlText(System.Type,System.String)">
+            <summary>
+              Devolve o valor do atributo ControlText no idioma fornecido.
+              Devolve null se ControlText não foi definido na classe.
+            </summary>
+        </member>
+        <member name="M:Techne.ControlTextAttribute.GetControlText(System.Reflection.MethodInfo,System.String)">
+            <summary>
+              Devolve o valor do atributo ControlText no idioma fornecido.
+              Devolve null se ControlText não foi definido no método.
+            </summary>
+        </member>
+        <member name="T:Techne.MainAssemblyAttribute">
+            <summary>
+              Atributo que indica o projeto principal (web ou win).
+              Só é permitido um por aplicação.
+            </summary>
+        </member>
+        <member name="M:Techne.MainAssemblyAttribute.AddReferencedAssembliesRecursive(System.Reflection.Assembly,System.Collections.IList)">
+            <summary>
+              Utilizado por ProjectAssemblies.
+            </summary>
+        </member>
+        <member name="M:Techne.MainAssemblyAttribute.ResetCacheIfNewer(System.Reflection.Assembly)">
+            <summary>
+              Verifica se o assembly informado é um MainAssembly mais novo que o do cache.
+              Reseta o cache se for.
+            </summary>
+        </member>
+        <member name="P:Techne.MainAssemblyAttribute.MainAssembly">
+            <summary>
+              Assembly do projeto principal (web ou win).
+              Deverá existir um, e somente um, projeto na aplicação com o atributo MainAssemblyAttribute,
+              caso contrário ocorrerá uma exception.
+            </summary>
+        </member>
+        <member name="P:Techne.MainAssemblyAttribute.ProjectAssemblies">
+            <summary>
+              Lista dos assemblies que compõe a aplicação.
+              A lista é montada a partir do MainAssembly, incluindo recursivamente os assemblies referenciados.
+              Exclui os assemblies iniciados por strings listadas em reservedAssemblies (mscorlib, jvs, System e Microsoft).
+            </summary>
+        </member>
+        <member name="T:Techne.Web.NavUrlAttribute">
+            <summary>
+              Página destino da navegação.
+              É recomendado utilizar o path completo, onde a raiz é representada por '~'.
+            </summary>
+        </member>
+        <member name="M:Techne.TitleAttribute.#ctor(System.String,System.String)">
+            <summary>
+              Define o title da página, que será utilizado como PageTitle.
+            </summary>
+        </member>
+        <member name="M:Techne.TitleAttribute.#ctor(System.String)">
+            <summary>
+              Define o title da página, que será utilizado como PageTitle.
+              Utiliza TPage.IDIOMADEFAULT como idioma.
+            </summary>
+        </member>
+        <member name="M:Techne.TitleAttribute.GetPageTitle(System.Type,System.String)">
+            <summary>
+              Devolve o valor do atributo Title no idioma fornecido.
+              Devolve null se Title não foi definido na classe.
+            </summary>
+        </member>
+        <member name="M:Techne.Auditing.AuditField.AddControlToContainer(System.Web.UI.Control,System.Reflection.Assembly)">
+            <summary>
+              Adiciona o controle-filtro associado ao campo a um controle informado.
+            </summary>
+            <param name = "container">
+              Controle que deve conter o controle-filtro. Normalmente é um Panel.
+            </param>
+        </member>
+        <member name="M:Techne.Auditing.AuditField.InitControl(Techne.Controls.TControl)">
+            <summary>
+              Inicializa o controles básicos. Não deve ser utilizado quando o tipo do controle tiver sido informado no construtor.
+              TDropDownList's são preenchidos com valores distintos que aparecem na coluna à qual estão associadas.
+              TTextBox's somente têm seu DataType setado.
+            </summary>
+        </member>
+        <member name="P:Techne.Auditing.AuditField.Caption">
+            <summary>
+              Texto que será utilizado como título do controle.
+            </summary>
+        </member>
+        <member name="P:Techne.Auditing.AuditField.ControlTypeName">
+            <summary>
+              Nome do tipo do controle que será utilizado para filtrar o campo da auditoria.
+              Se informado "[list]", o controle será um TDropDownList contendo os valores que ocorrem
+              no campo (select distinct).
+            </summary>
+        </member>
+        <member name="P:Techne.Auditing.AuditField.Field">
+            <summary>
+              Campo da auditoria sendo filtrado. Uma coluna da tabela Hist.
+              Colunas de busca customizada deverá ser precedido pela palavra "Busca".
+            </summary>
+        </member>
+        <member name="T:Techne.Configuration.SingleTagSectionHandler">
+            <summary>
+              SingleTagSectionHandler.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.BusinessMethod.GetControlText">
+            <summary>
+              Devolve o atributo ControlText associado ao método,
+              ou o nome do método se o atributo não foi informado.
+              Nunca devolve null ou string vazia.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.BusinessMethod.GetMethodSignature(System.Reflection.MethodInfo)">
+            <summary>
+              Obtém uma string no formato Namespace.Classe.Metodo(parametro1, parametro2...), ou seja,
+              includeParameters=true.
+              Veja que o primeiro parâmetro (parametro0), a TConnection, não é devolvido!
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.BusinessMethod.GetMethodSignature(System.Reflection.MethodInfo,System.Boolean)">
+            <summary>
+              Obtém uma string no formato Namespace.Classe.Metodo(parametro1, parametro2...).
+              A lista de parâmetros pode ser incluída ou não.
+              Veja que o primeiro parâmetro (parametro0), a TConnection, não é devolvido!
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.BusinessMethod.GetMethodSignature(System.Reflection.MethodInfo,System.Boolean,System.Type)">
+            <summary>
+              Obtém uma string no formato Namespace.Classe.Metodo(parametro1, parametro2...).
+              A lista de parâmetros pode ser incluída ou não.
+              Veja que o primeiro parâmetro (parametro0) não é devolvido!
+            </summary>
+            <param name = "includeParameters">
+              Inclui lista com o nome dos parâmetros.
+            </param>
+        </member>
+        <member name="M:Techne.Controls.BusinessMethod.ControlReferenceError(Techne.ValueReference[],System.Web.UI.Control)">
+            <summary>
+              Dentre as referências informadas, devolve a mensagem de
+              erro do primeiro controle referenciado com erro.
+            </summary>
+            <returns>
+              Erro do primeiro controle referenciado com erro, ou string vazia
+              se controle referenciado nesta situação não existir.
+            </returns>
+        </member>
+        <member name="P:Techne.Controls.BusinessMethod.ChangedTables">
+            <summary>
+              Lista dos nomes das tabelas alteradas na última chamada ao método Call().
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.TControl.dependers">
+            <summary>
+              Lista de controles que dependem deste controle
+              (controles que referenciam este via SqlWhere).
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.TControl.manager">
+            <summary>
+              Utilizado para otimizar chamadas à propriedade Manager.
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.TControl.recordContainer">
+            <summary>
+              Utilizado para otimizar chamadas à propriedade RecordContainer.
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.TControl.settingState">
+            <summary>
+              Exigido para implementação de IState. Não deve ser acessado diretamente.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.CreateConnection(System.Web.UI.Control,System.String)">
+            <summary>
+              Utilizado em TControls que contém a propriedade Connection.
+              Devolve conexão baseado nesta propriedade, se informada. Caso contrário, tentará obter a conexão
+              do manager ao qual o controle pertença, ou da propriedade Connection da TPage.
+            </summary>
+            <param name = "control">Controle que possui a propriedade Connection.</param>
+            <param name = "connectionPropertyValue">A propriedade Connection do TControl.</param>
+        </member>
+        <member name="M:Techne.Controls.TControl.FindContainer(System.Web.UI.Control,System.Type)">
+            <summary>
+              Encontra o container no qual o controle informado está inserido.
+            </summary>
+            <param name = "containerType">O tipo do container a ser encontrado.</param>
+        </member>
+        <member name="M:Techne.Controls.TControl.FindTControl(System.String,System.Web.UI.INamingContainer)">
+            <summary>
+              Faz um FindControl no container informado. Se não encontrar, aumenta o escopo para o
+              NamingContainer do container e faz um FindControl novamente. Aumenta o escopo até
+              encontrar. Se não encontrar, devolve null.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetChildManagers(System.Web.UI.Control)">
+            <summary>
+              Obtém os managers filhos do controle informado.
+              Caso um filho não seja manager, devolve os filhos deste filho que são, recursivamente.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetChildRecordContainers(System.Web.UI.Control,System.Boolean)">
+            <summary>
+              Devolve todos os IRecordContainer's sob o controle informado.
+            </summary>
+            <param name = "selfInclude">Quando true, devolve o próprio controle se ele implementa IRecordContainer.
+              Se false, devolve os controles que implementam IRecordContainer e que são filhos do controle informado.</param>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetChildTControls(System.Web.UI.Control)">
+            <summary>
+              Busca os controles do tipo TControl dentro do container informado.
+              A busca é recursiva, exceto quando o controle encontrado for do tipo TControl ou implementar
+              IRecordContainer ou IContainerManager, ou seja, dentro desses controles a busca não é realizada.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetChildTControls(System.Web.UI.Control,System.String,System.Boolean)">
+            <summary>
+              Obtém os controles associados à coluna informada.
+            </summary>
+            <param name = "column">Nome da coluna cujos controles deseja-se buscar.</param>
+            <param name = "editableOnly">Indica que deve devolver somente os controles com ReadOnly=false.</param>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetColumnControl(System.Web.UI.Control,System.String)">
+            <summary>
+              Obtém o controle associado à coluna informada.
+              Prioriza os controles com propriedade ReadOnly=false.
+              Se o controle correspondente não for encontrado, dá exception.
+              Se for encontrado mais de um controle, devolve o valor do primeiro deles (evite esta situação
+              acessando diretamente a propriedade DBValue do controle).
+            </summary>
+            <param name = "container">Controle que será o escopo da busca. Normalmente é IRecordContainer.</param>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetConnectionString(System.Web.UI.Control,System.String)">
+            <summary>
+              Devolve uma connection string baseado no parâmetro connectionPropertyValue (identificador
+              declarado em web.config). Se for uma string vazia, tentará obter a connection string do manager
+              ao qual o controle informado pertença, ou da propriedade Connection de TPage.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetContainsExpression(System.String,System.String,Techne.Data.Rdbms)">
+            <summary>
+              Função que monta uma chamada à função CONTAINS, para busca indexada por palavras. Se
+              a expressão com a lista de palavras tiver sintaxe inválida, dispara Exception.
+            </summary>
+            <param name = "column">Coluna da tabela onde será feita a busca. Se for null, busca em todas as colunas com texto indexado.</param>
+            <param name = "expr">Expressão com a lista de palavras a serem procuradas.</param>
+            <param name = "rdbms">Banco de dados. A sintaxe da função varia de banco pra banco</param>
+            <returns>Retorna a expressão da chamada à função CONTAINS</returns>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetManager(System.Web.UI.Control)">
+            <summary>
+              Obtém o manager no qual o controle está inserido.
+              Devolve null caso não esteja em nenhum.
+              Se o próprio controle informado for um manager, não leva isso em consideração, ou seja,
+              devolverá o manager no qual o manager informado estiver inserido.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetRecordContainer(System.Web.UI.Control)">
+            <summary>
+              Obtém o container no qual o controle está inserido.
+              Devolve null caso não esteja em nenhum.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetSqlWhere(System.Web.UI.Control,Techne.Data.Rdbms,System.Boolean,System.String@,Techne.DbObject[]@)">
+            <summary>
+              Monta uma cláusula Where válida, substituindo os tokens indicadores de ITControl's (#controle#)
+              pela propriedade DBValue respectiva, tratando os casos em que DBValue == null e DBValue is DBNull.
+              Devolve uma lista de colunas que estão sendo restritas por um valor fixo ([coluna] = valor ou [coluna] IS NULL).
+            </summary>
+            <param name = "scope">
+              Se a cláusula where continver controles delimitados por '#', deve-se indicar o escopo (Control)
+              onde a busca pelo nome do controle deverá ser realizada. Normalmente indica-se o NamingContainer
+              no qual o controle (que chama o GetSqlWhere) está inserido. Se estivermos no nível da página,
+              NamingContainer é null, situação na qual a própria Page deve ser informada.
+              Informe null se não existirem referências a controles.
+            </param>
+            <param name = "rdbms">
+              Tipo do banco no qual a cláusula where será utilizada. Normalmente utiliza-se a propriedade Rdbms
+              da TConnection através da qual a consulta será realizada.
+            </param>
+            <param name = "RestrictByNullControls">
+              Quando false, remove todas as expressões do tipo [coluna] = [valor] quando valor for NULL.
+            </param>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetSqlWhere(Techne.Data.TDataTable,Techne.Controls.IRecordContainer,System.Web.UI.Control,Techne.Data.Rdbms,System.Boolean,System.String@,Techne.DbObject[]@)">
+            <summary>
+              Dado uma cláusula where contendo parâmetros OleDb identificados por '?', controles delimitados por '#',
+              colunas delimitadas por '$', modifica-a de forma a transformar todos as referências a controles e
+              colunas em parâmetros OleDb.
+            </summary>
+            <param name = "table">
+              Quando informado, substitui todas as expressões do tipo [coluna] = [valor] por [tabela].[coluna] = [valor].
+            </param>
+            <param name = "container">
+              Se a cláusula where contiver colunas delimitadas por '$', deve-se indicar o container no qual os
+              valores deverão ser encontrados. Informe null se não existirem referências a colunas.
+            </param>
+            <param name = "scope">
+              Se a cláusula where continver controles delimitados por '#', deve-se indicar o escopo (Control)
+              onde a busca pelo nome do controle deverá ser realizada. Normalmente indica-se o NamingContainer
+              no qual o controle (que chama o GetSqlWhere) está inserido. Se estivermos no nível da página,
+              NamingContainer é null, situação na qual a própria Page deve ser informada.
+              Informe null se não existirem referências a controles.
+            </param>
+            <param name = "rdbms">
+              Tipo do banco no qual a cláusula where será utilizada. Normalmente utiliza-se a propriedade Rdbms
+              da TConnection através da qual a consulta será realizada.
+            </param>
+            <param name = "RestrictByNullControls">
+              Quando false, remove todas as expressões do tipo [coluna] = [valor] quando valor for NULL.
+            </param>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetSqlWhere(Techne.Data.TDataTable,Techne.Controls.IRecordContainer,System.Web.UI.Control,Techne.Data.Rdbms,System.Boolean,System.String@,Techne.DbObject[]@,System.String[]@,System.String[]@)">
+            <summary>
+              Dado uma cláusula where contendo parâmetros OleDb identificados por '?', controles delimitados por '#',
+              colunas delimitadas por '$', modifica-a de forma a transformar todos as referências a controles e
+              colunas em parâmetros OleDb.
+            </summary>
+            <param name = "table">
+              Quando informado, substitui todas as expressões do tipo [coluna] = [valor] por [tabela].[coluna] = [valor].
+            </param>
+            <param name = "container">
+              Se a cláusula where contiver colunas delimitadas por '$', deve-se indicar o container no qual os
+              valores deverão ser encontrados. Informe null se não existirem referências a colunas.
+            </param>
+            <param name = "scope">
+              Se a cláusula where continver controles delimitados por '#', deve-se indicar o escopo (Control)
+              onde a busca pelo nome do controle deverá ser realizada. Normalmente indica-se o NamingContainer
+              no qual o controle (que chama o GetSqlWhere) está inserido. Se estivermos no nível da página,
+              NamingContainer é null, situação na qual a própria Page deve ser informada.
+              Informe null se não existirem referências a controles.
+            </param>
+            <param name = "rdbms">
+              Tipo do banco no qual a cláusula where será utilizada. Normalmente utiliza-se a propriedade Rdbms
+              da TConnection através da qual a consulta será realizada.
+            </param>
+            <param name = "RestrictByNullControls">
+              Quando false, remove todas as expressões do tipo [coluna] = [valor] quando valor for NULL.
+            </param>
+            <param name = "columnsInWhere">
+              Lista de colunas que aparecem no parâmetro sqlWhere. As colunas estão no formato 'tabela.coluna'.
+            </param>
+            <param name = "fixedColumns">
+              Lista de colunas que estão sendo restritas por um valor fixo ([coluna] = valor ou [coluna] IS NULL).
+              As colunas estão no formato 'tabela.coluna'.
+              Esta lista está contida na lista devolvida pelo parâmetro columnsInWhere.
+            </param>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetTControl(System.String,System.Web.UI.INamingContainer)">
+            <summary>
+              Se fornecida uma string no formato "#controle#", devolve o controle correspondente.
+              Se a string estiver no formato "$campo$", devolve o controle associado ao campo. Neste caso,
+              se houver mais de controle associado ao campo, dá exception.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetValues(Techne.Controls.TControl[])">
+            <summary>
+              Obtém um array de valores correspondente às propriedades DBValues de uma série de TControl's
+              contidos em um array. Caso o controle seja null, a posição correspondente do array conterá
+              DBNull (o array devolvido sempre conterá o mesmo número de posições do array informado).
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.CopyProperties(System.Web.UI.WebControls.WebControl)">
+            <summary>
+              Copia propriedades de um TControl para um WebControl.
+              Utilizado para renderização. Nesta classe (TControl) devem ser copiadas somente as
+              propriedades comuns aos WebControl's.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.GetCaption(Techne.Controls.ITControl,Techne.Controls.IContainerManager,System.String)">
+            <summary>
+              Dado um controle, obtém seu caption.
+              Se a propriedade Caption for '?', busca o caption cadastrado no Cronos para a coluna correspondente.
+              Como o manager é passado como parâmetro, a consulta funciona mesmo se o controle não pertencer
+              fisicamente ao manager (por exemplo: na montagem do help dinâmico, ao buscar o caption para um
+              controle dentro de um TemplateColumn).
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.PreTControlCtor">
+            <summary>
+              Permite que sejam realizadas inicializações nas classes derivadas
+              antes do construtor do TControl.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.ToString(Techne.DbObject)">
+            <summary>
+              Converte um valor para string utilizando o formato e a cultura do controle.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControl.TypeString(System.String)">
+            <summary>
+              Tipa uma string de acordo com o DataType, formato e cultura do controle.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TControl.Format">
+            <summary>
+              Indica o formato a ser utilizado pelo texto do controle.
+              IMPORTANTE: Não force a ordem dia-mês no quando o tipo for DateTime.
+              Utilize 'd' ao invés de 'dd/MM/yyyy' para dia sem hora, por exemplo.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TControl.Manager">
+            <summary>
+              Obtém o manager no qual o controle está inserido.
+              Devolve null caso não esteja em nenhum manager.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TControl.RecordContainer">
+            <summary>
+              Obtém o record container no qual o controle está inserido.
+              Devolve null caso não esteja em nenhum record container.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TControl.SettingState">
+            <summary>
+              Flag indicador de operações internas. É verificado para permitir certas operações em modos
+              que não seriam permitidos para desenvolvedores. Ex: setar DBValue em modo View.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TControlEditable.GetValueError">
+            <summary>
+              Executa a validação do controle do lado do servidor e retorna o erro
+            </summary>
+            <returns>Mensagem de Erro. String.Empty se não houver erros</returns>
+        </member>
+        <member name="P:Techne.Controls.TControlEditable.Blocked">
+            <summary>
+              Indica se há algum manager fora do modo View que referencia este controle.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TControlEditable.WillRenderEdit">
+            <summary>
+              Indica se RenderControlEditMode() será chamado no lugar de RenderControlViewMode().
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.DependerLib.GetDependees(Techne.Controls.IDepender)">
+            <summary>
+              Utilizado pela propriedade Dependees dos controles que implementam IDepender.
+              Parseia o SqlWhere do controle e devolve uma lista dos id's dos controles referenciados pela cláusula.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.DependerLib.RegisterDepender(Techne.Controls.IDepender)">
+            <summary>
+              Chamado no OnLoad() dos controles que implementam IDepender.
+              Verifica quais os controles referenciados pelo controle informado.
+              Adiciona-se à lista de dependência (Dependers) desses controles.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.DependerLib.GetDependencyControls(Techne.Controls.IDepender)">
+            <summary>
+              Devolve os ITControl's correspondentes aos nomes informados.
+              Utilizado por controles que têm propriedade SqlWhere ou equivalente.
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.EditButtons.mgr">
+            <summary>
+              Deve ser utilizado somente através da propriedade Mgr.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.Design.DataColumnList.InitializeComponent">
+            <summary>
+              Required method for Designer support - do not modify
+              the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.GridButtons.grid">
+            <summary>
+              Inicializado em OnLoad()
+            </summary>
+        </member>
+        <member name="T:Techne.Controls.HtmlImageButton">
+            <summary>
+              Controle HTML de imagem com link.
+            </summary>
+        </member>
+        <member name="T:Techne.Controls.ImageLink">
+            <summary>
+              Controle WEB que é simples controle HTML (HtmlImageButton) quando a propriedade Url é informada
+              e controle WEB (LinkButton) caso contrário (neste caso o evento Click deve ser tratado).
+            </summary>
+        </member>
+        <member name="T:Techne.Controls.DataTypeConverter">
+            <summary>
+              Conversor de Type para string. Utilizado para persistência de propriedades do tipo Type persistidas
+              em páginas aspx. Tipos suportados: VarChar, Number e Date.
+            </summary>
+        </member>
+        <member name="T:Techne.Controls.TControlContainer">
+            <summary>
+              Summary description for TControlContainer.
+            </summary>
+        </member>
+        <member name="T:Techne.Controls.LabelConverter">
+            <summary>
+              Obtém lista de todos os Label's.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.LabelConverter.GetLabels(System.ComponentModel.IContainer)">
+            <summary>
+              Dado um container, obtém uma lista de todos os Label's contido nele.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.IContainerManager.CreateConnection">
+            <summary>
+              Obtém uma conexão que sirva simultaneamente a este e a todos os managers internos.
+              Caso não seja possível, gera uma Exception.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.IContainerManager.GetReturnUrl">
+            <summary>
+              Devolve o valor do parâmetro ReturnUrl na query string.
+              Se o parâmetro não existir, devolve null.
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.RecordManager.generalMessageList">
+            <summary>
+              Add's neste ArrayList devem ser realizados somente através do método AddMessage().
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.RecordManager.lastWhere">
+            <summary>
+              [0]: where (string), [1]: whereValues (DbObject[]).
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.RecordManager.settingState">
+            <summary>
+              Exigido para implementação de IState. Não deve ser acessado diretamente.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordManager.Clear">
+            <summary>
+              Remove do manager o registro corrente sem removê-lo do banco.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordManager.EnterAddNewMode">
+            <summary>
+              Coloca o manager em modo de inserção.
+              Deve ser utilizado a partir do evento RecordManager.Load, mas não antes disso.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordManager.Requery">
+            <summary>
+              Repopula o RecordManager baseado na dependência corrente (controles e contexto).
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordManager.AddMessage(System.String,System.Boolean)">
+            <summary>
+              Adiciona um erro genérico à lista de erros genéricos.
+              Caso GeneralErrorLabel não tenha sido informado, adiciona na lista do parent manager.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordManager.FillGeneralMessageLabel">
+            <summary>
+              Preenche o controle informado na propriedade GeneralErrorLabel com as mensagens geradas
+              por este controle (via AddGeneralMessage). Se a propriedade não foi informada, trata
+              as mensagens em RenderManager().
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordManager.GetDataRow(System.Object[])">
+            <summary>
+              Realiza consulta no banco de dados, de acordo com a propriedade SqlWhere.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.RecordManager.InsertInfoVisible">
+            <summary>
+              Indica se as informações de insert em tabelas historificadas estão visíveis.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.RecordManager.PrimaryKeyValues">
+            <summary>
+              Devolve os valores das colunas da primary key da tabela ao qual o controle está associado.
+              Caso nenhum registro esteja sendo apresentado (query não retornou nenhum registro, ou registro
+              foi removido), será devolvido um array DbObject[] sem nenhum elemento (.Length == 0).
+            </summary>
+        </member>
+        <member name="T:Techne.Controls.RecordManagerConverter">
+            <summary>
+              Obtém lista de todos os RecordManager's.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordManagerConverter.GetManagers(System.ComponentModel.IContainer)">
+            <summary>
+              Dado um container, obtém uma lista de todos os RecordManager's contido nele.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.AllContainersInMode(Techne.Controls.IContainerManager,Techne.Controls.RecordManagerMode)">
+            <summary>
+              Indica se todos os IRecordContainer's contidos dentro do manager informado estão no modo informado.
+              Se não houverem IRecordContainer's no manager informado, devolve true se o parâmetro mode for 'View'.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.CanEnterEdit(Techne.Controls.IContainerManagerBase)">
+            <summary>
+              Um manager pode entrar no modo Edit se pelo menos um de seus containers puder entrar em modo Edit.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.Delete(Techne.Controls.IContainerManagerInternal)">
+            <summary>
+              Remove os registros dos containers do manager informado.
+              O método se encarregará de trazer os registros afetados do banco. Não é necessário que a tabela manager.Table contenha os registros.
+              Estes registros serão removidos da tabela no final da operação.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.EnterEditMode(Techne.Controls.IContainerManagerInternal)">
+            <summary>
+              Chama SetMode(Edit) para cada um dos containers internos ao manager informado
+              (inclui o próprio manager se ele implementar IRecordContainer também).
+              Se o container não permitir Edit mas permitir AddNew, entra em AddNew.
+              Se houverem managers internos, chama recursivamente EnterEditMode() para
+              cada um deles.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.GetInitialMode(Techne.Controls.IContainerManager)">
+            <summary>
+              Obtém o estado inicial do manager de acordo com os parâmetros 'manager' e 'mode' da query string.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.Refresh(Techne.Controls.BusinessMethod,System.Web.UI.Page)">
+            <summary>
+              Chama Refresh() de todos os IContainerManager's que baseiam-se
+              em data tables cuja tabela principal esteja na lista informada.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.Rollback(Techne.Controls.IContainerManagerInternal)">
+            <summary>
+              Recoloca os valores originais nos controles baseado nas primary keys guardadas em cada um dos containers.
+              A tabela manager.Table NÃO precisa conter os DataRow's com os valores originais.
+              A operação é executada recursivamente nos managers filhos.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.SomeContainerInMode(Techne.Controls.IContainerManager,Techne.Controls.RecordManagerMode)">
+            <summary>
+              Indica se algum dos IRecordContainer's contidos dentro do manager informado está no modo informado.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.CommitPrepare(Techne.Controls.IContainerManager,Techne.Data.TConnectionWritable)">
+            <summary>
+              Efetiva a operação de insert ou update no banco de dados, mostrando possíveis mensagens de erro
+              genéricas (as específicas de cada coluna já estão nos controles correspondentes).
+              Devolve array de Triplet's, onde First é o IRecordContainer, Second é o PrimaryKeyValues e
+              Third é uma booleana que indica se a operação foi bem sucedida no manager correspondente.
+              Este método obtém o registro do banco se for necessário.
+              A manager.Table não precisa ter os registros pré-carregados.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.ConnectionEquals(Techne.Data.TConnection,Techne.Data.TConnection)">
+            <summary>
+              Compara cada parâmetro da connect string de cada uma das connections informadas.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.DeletePrepare(Techne.Controls.IContainerManagerInternal,Techne.Data.TConnectionWritable)">
+            <summary>
+              Devolve array de Pair's, onde First é o IRecordContainer e Second é uma booleana
+              que indica se a operação foi bem sucedida no manager correspondente.
+              Este método obtém o registro do banco se for necessário. A manager.Table não precisa ter os registros pré-carregados.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.DeleteRollback(System.Web.UI.Pair[],Techne.Data.TDataTable)">
+            <summary>
+              Tentará recuperar os dados originais dos containers cujos registros foram removidos com sucesso.
+              Aqueles que não foram removidos conterão mensagens de erro.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.SetModeToView(Techne.Controls.IContainerManager,Techne.Controls.ContainerManagerAction,System.Boolean)">
+            <summary>
+              Seta o modo de cada um dos containers internos para View. Opera recursivamente nos managers filhos.
+              Opcionalmente dispara o evento PostContainerOperation para cada container afetado.
+            </summary>
+            <param name = "firePostContainerOperation">
+              Dispara OnPostContainerOperation().
+            </param>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.UndeletePrepare(Techne.Controls.IContainerManagerInternal,Techne.Data.TConnectionWritable)">
+            <summary>
+              Devolve array de Pair's, onde First é o IRecordContainer e Second é uma booleana
+              que indica se a operação foi bem sucedida no manager correspondente.
+              Este método obtém o registro do banco se for necessário. A manager.Table não precisa ter os registros pré-carregados.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ContainerManagerLib.UndeleteRollback(System.Web.UI.Pair[],Techne.Data.TDataTable)">
+            <summary>
+              Tentará recuperar os dados originais dos containers cujos registros foram reinseridos com sucesso.
+              Aqueles que não foram reinseridos conterão mensagens de erro.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.PostContainerOperationEventArgs.ManagerAction">
+            <summary>
+              Operação realizada no manager (IContainerManager) para ter disparado o evento.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.PostContainerOperationEventArgs.OldContainerMode">
+            <summary>
+              Modo do container (IRecordContainer) antes da operação ter sido realizada
+              no manager correspondente.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordContainerLib.CanEnterEdit(Techne.Controls.IRecordContainer)">
+            <summary>
+              Um container pode entrar em modo Edit quando ele mesmo puder entrar
+              em modo Edit e seus managers puderem entrar em modo Edit ou New.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordContainerLib.CopyTControlsToDataRow(Techne.Controls.IRecordContainer,System.Data.DataRow,System.Boolean)">
+            <summary>
+              Copia os valores dos TControls sob o IRecordContainer informado para o DataRow.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordContainerLib.DistributeErrorMessages(Techne.Controls.IRecordContainerInternal,System.Data.DataRow)">
+            <summary>
+              Distribui as mensagens de erro contidas num DataRow pelos controles correspondentes.
+              As mensagens não relacionadas a colunas ou relacionadas a colunas que não possuam controles
+              correspondentes serão adicionadas à lista de erros do container.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordContainerLib.DistributeErrorMessages(Techne.Controls.IRecordContainerInternal,Techne.Library.ErrorList)">
+            <summary>
+              Distribui as mensagens de erro pelos controles correspondentes.
+              As mensagens não relacionadas a colunas ou relacionadas a colunas que não possuam controles
+              correspondentes serão adicionadas à lista de erros do container.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordContainerLib.EnterAddNewMode(Techne.Controls.IRecordContainerInternal)">
+            <summary>
+              Chama RecordEditorLib.EnterEditionMode() e seta o Mode do container para AddNew.
+              Chama ContainerManagerLib.EnterAddNewMode() para cada um dos managers filhos.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordContainerLib.EnterEditMode(Techne.Controls.IRecordContainerInternal)">
+            <summary>
+              Chama RecordEditorLib.EnterEditionMode() e seta o Mode do container para Edit.
+              Chama ContainerManagerLib.EnterEditMode() para cada um dos managers filhos.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordContainerLib.GetColumnNames(Techne.Controls.IRecordContainer,Techne.Data.TDataTable)">
+            <summary>
+              Obtém a lista de colunas que possuem controles associados ao DataTable informado, sem repetição.
+              Os nomes são retornados em lowercase.
+            </summary>
+            <param name = "dataTable">DataTable no qual as colunas devem estar contidas. Se for informado
+              null para este parâmetro, não realiza a verificação de existência no DataTable.</param>
+        </member>
+        <member name="M:Techne.Controls.RecordContainerLib.GetRecordFromDb(Techne.Controls.IRecordContainer,Techne.Data.TConnection,Techne.Data.TDataTable,System.Boolean)">
+            <summary>
+              Obtém do banco de dados o registro correspondente à primary key do container informado.
+              O registro será trazido para a tabela informada.
+              Caso o container não contenha nenhum registro, devolve null.
+              Se não encontrar, devolve null também.
+            </summary>
+            <param name = "connection">Se informado null, obtém uma conexão a partir do TechneDS que contém a tabela informada.</param>
+            <param name = "getAllColumns">Se false, busca apenas as colunas que possuem TControl associado no container.</param>
+        </member>
+        <member name="M:Techne.Controls.RecordContainerLib.GetRecordFromTable(Techne.Controls.IRecordContainer)">
+            <summary>
+              Devolve o TDataRow correspondente à primary key armazenada no container.
+              O manager ao qual o container pertence deve estar associado a um TDataTable que já contenha esse DataRow.
+              Devolve null se não existir primary key (DbObject[0]).
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordContainerLib.ResetTControls(Techne.Controls.IRecordContainer,System.Boolean)">
+            <summary>
+              Chama ResetValue() de cada um dos TControl's.
+            </summary>
+            <param name = "useKeepValueAfterSaveFlag">Considera o flag KeepValueAfterSave de cada controle.
+              Se false, reseta o valor de todos os controles independentemente do valor desse flag.</param>
+        </member>
+        <member name="M:Techne.Controls.RecordContainerLib.SetDataRow(Techne.Controls.IRecordContainerInternal,System.Data.DataRow)">
+            <summary>
+              Seta os valores dos controles de acordo com o DataRow informado. Seta também a primary key do container.
+              Se DataRow for null, limpa o valor dos controles (NÃO utiliza o valor do contexto) e reseta a primary
+              key do container.
+              As mensagens de erro das colunas que não possuem controle correspondente são adicionadas ao RowError.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordEditorLib.Commit(Techne.Controls.IRecordContainerInternal,Techne.Data.TConnectionWritable,Techne.Data.TDataTable,Techne.DbObject[]@)">
+            <summary>
+              Obtém o registro correspondente à primary key do container (se update) ou cria um novo,
+              atualiza esse registro com os valores correntes dos controles contidos no container e efetiva
+              a operação no banco de dados.
+              Este overload não seta a propriedade PrimaryKeyValues e nem a propriedade Mode do container.
+              IMPORTANTE: A propriedade EnforceConstraints do DataSet no qual a tabela está contida será
+              setada para false.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordEditorLib.Delete(Techne.Controls.IRecordContainerInternal,Techne.Data.TConnectionWritable,Techne.Data.TDataTable)">
+            <summary>
+              O registro correspondente ao registro corrente no container será removido do banco de dados.
+              Ele já deve estar contido na tabela informada.
+            </summary>
+            <param name = "connection">Se informado null, obtém a conexão do TechneDS no qual a tabela está contida.</param>
+        </member>
+        <member name="M:Techne.Controls.RecordEditorLib.EnterEditionMode(Techne.Controls.IRecordContainer,Techne.Data.TDataTable)">
+            <summary>
+              Verifica se o modo atual do container é diferente de View. Ele NÃO será alterado neste método,
+              devendo o chamador encarregar-se de setar container.Mode.
+              Limpa as mensagens dos controles, mas mantém seus valores.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordEditorLib.Rollback(Techne.Controls.IRecordContainerInternal,Techne.Data.TDataTable)">
+            <summary>
+              Limpa as mensagens genéricas do container e as mensagens dos controles.
+              Recoloca os valores do registro corrente do container nos controles. Não realiza nova busca no
+              banco de dados.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.RecordEditorLib.Undelete(Techne.Controls.IRecordContainerInternal,Techne.Data.TConnectionWritable,Techne.Data.TDataTable)">
+            <summary>
+              O TDataRow correspondente ao registro contido no container já deve existir na tabela.
+            </summary>
+        </member>
+        <member name="T:Techne.Controls.ReturnButton">
+            <summary>
+              Summary description for ReturnButton.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.StringList.GetResolvedDataSource(System.Object,System.String)">
+            <summary>
+              System.Web.UI.DataSourceHelper.GetResolvedDataSource()
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.StringList.Requery">
+            <summary>
+              Refaz a query.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.StringList.DataTableGet(System.Web.UI.Control,Techne.Data.TDataTable,System.String[],System.String,Techne.DbObject[],System.String)">
+            <summary>
+              Preenche uma TDataTable com registros. Devolve array de ponteiros para os registros adicionados.
+            </summary>
+            <param name = "control">Controle que utilizará os registros</param>
+            <param name = "table">TDataTable a ser preenchido</param>
+            <param name = "columnNames">Nomes das colunas que deverão ser trazidas (somente elas farão parte da query realizada no banco)</param>
+            <param name = "where">Expressão para restrição da query. Pode referenciar controles (delimitados por '#') e campos (delimitados por '$').</param>
+            <param name = "whereValues">Valores dos parâmetros indicados na cláusula where por '?'</param>
+            <param name = "order">Colunas para a cláusula ORDER BY</param>
+        </member>
+        <member name="M:Techne.Controls.StringList.RequeryFromDataSource">
+            <summary>
+              Inicializa o field 'text' a partir do TDataTable determinado através das propriedades
+              DataSource e DataMember. O TDataTable é preenchido com os registros, restringidos pelas
+              propriedades SqlWhere e SqlWhereValues.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.StringList.RequeryFromSqlSelect">
+            <summary>
+              Inicializa o field 'text' com base na propriedade SqlSelect.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TGridColumn.Find(System.String,System.Web.UI.WebControls.DataGrid)">
+            <summary>
+              Encontra uma coluna numa grid através da propriedade ColumnName.
+              O escopo são as colunas da grid derivadas de TGridColumn.
+              Se houver mais de uma, devolve somente a primeira.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TGridColumn.IndexOf(System.String,System.Web.UI.WebControls.DataGrid)">
+            <summary>
+              Determina o índice de uma coluna numa grid através da propriedade ColumnName.
+              O escopo são as colunas da grid derivadas de TGridColumn.
+              Se houver mais de uma, devolve somente o índice da primeira.
+              Se não encontrar, devolve -1.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TGridColumn.CopyProperties(Techne.Controls.ITControl)">
+            <summary>
+              Copia as propriedades deste TGridColumn para um TControl.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.MarkColumn.SetMessage(Techne.Controls.TGridItem,System.String,System.Boolean)">
+            <summary>
+              Seta mensagem na coluna MarkColumn do TGridItem informado.
+              Se a grid não contiver MarkColumn's, devolve false;
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.MarkColumn.FindCellContainer(System.Web.UI.Control)">
+            <summary>
+              Determina o TableCell que contém direta ou indiretamente o TControl informado.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.HyperLinkColumn.EmptyText">
+            <summary>
+              Texto a ser mostrado quando o valor assumido pelo campo é string.Empty ou DBNull.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.HyperLinkColumn.Text">
+            <summary>
+              Texto a ser mostrado no link.
+              Se a propriedade ColumnName for informada esta propriedade é ignorada.
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.TDataGridBase.generalMessageList">
+            <summary>
+              Add's neste ArrayList devem ser realizados somente através do método AddMessage().
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.TDataGridBase.boundCount">
+            <summary>
+              NÃO ACESSAR DIRETAMENTE.
+              Utilizado para saber quantas vezes OnItemDataBound() é chamado para registros de dados
+              (não conta header, footer ou pager) para uma chamada de DataBind().
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDataGridBase.Clear">
+            <summary>
+              Remove os registros de uma grid, voltando ao estado antes do DataBind().
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDataGridBase.Process(System.String,Techne.Data.TConnectionWritable)">
+            <summary>
+              Disparará evento ProcessMarkedItem para cada um dos registros marcados.
+              Útil quando deseja-se realizar operações sobre os registros (que não sejam insert, update ou delete).
+            </summary>
+            <param name = "commandName">
+              String que será passada ao evento disparado que identificará unicamente a chamada.
+            </param>
+            <param name = "connection">
+              Connection que será passada ao evento disparado.
+              Importante quando deseja-se realizar operações transacionais.
+              Deve-se informar null quando não for operações em banco não forem necessárias ou
+              não se desejar realizar operações transacionais.
+            </param>
+        </member>
+        <member name="M:Techne.Controls.TDataGridBase.GetDataField(System.Web.UI.WebControls.DataGridColumn)">
+            <summary>
+              Determina qual é a coluna da tabela à qual a coluna da grid está associada.
+              Atenção ao tipo TemplateColumn, tratado diferentemente.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDataGridBase.AdjustMarkColumnWidth(Techne.Controls.MarkColumn)">
+            <summary>
+              Ajusta a largura de cada uma das células da coluna informada para a largura da mais larga delas.
+            </summary>
+            <param name = "markColumn">Se null, nada faz.</param>
+        </member>
+        <member name="M:Techne.Controls.TDataGridBase.CreateTitleRow">
+            <summary>
+              Cria uma linha acima do header contendo o título (propriedade Title)
+              e o link (propriedade LinkDetailText).
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDataGridBase.InitDataSource">
+            <summary>
+              Obtém DataSource sem fazer DataBind().
+              É necessário que o DataBind() tenha sido chamado pelo menos uma vez, mesmo que tenha sido antes do postback atual.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TDataGridBase.MarkedItems">
+            <summary>
+              Devolve um array de TGridItem's que estão marcados (através da coluna MarkColumn).
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TDataGridBase.BoundRowCount">
+            <summary>
+              Indica o número de registros "bindados" na grid.
+              Isso significa que, se a grid for paginada, indica o número de
+              registros na página, não o número obtido pelo select.
+              Se o DataBind() não ocorreu, devolve -1.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TDataGridBase.MyTable">
+            <summary>
+              Só devolve valor correto após a chamada do base.DataBind().
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TDataGridBase.PersistedColumnNames">
+            <summary>
+              Devolve as colunas que deverão ser persistidas no ViewState.
+              O método DataBind() já deve ter sido chamado para que as propriedades DataSource e DataMember estejam válidas.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TDataGridBase.ShowingGrid">
+            <summary>
+              Utilizado quando AutoDataBind é false para indicar que o Get() deve ser chamado a cada postback.
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.TDataGrid.bindingConnection">
+            <summary>
+              Conexão aberta e fechada no GetDataRows().
+              É global para que o OnItemDataBound() possa aproveitá-la (GetDataRows() chama DataBind()).
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.TDataGrid.willQuery">
+            <summary>
+              Indica se será feita consulta no banco de dados para preencher a grid no OnPreRender().
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDataGrid.AllContainersInMode(Techne.Controls.RecordManagerMode)">
+            <summary>
+              Indica se todos os containers (TGridItem's) deste controle estão no modo informado.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDataGrid.Get">
+            <summary>
+              Realiza busca no banco através do DataSet informado na propriedade DataSource, utilizando
+              a propriedade SQLWhere e disparando o evento SetSqlClauses. IMPORTANTE: o método DataBind()
+              é executado automaticamente por este método, não sendo necessária a sua chamada após o Get().
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDataGrid.Process(System.String,System.Boolean,System.Boolean)">
+            <summary>
+              Disparará evento ProcessMarkedItem para cada um dos registros marcados.
+              Útil quando deseja-se realizar operações sobre os registros (que não sejam insert, update ou delete).
+            </summary>
+            <param name = "commandName">
+              String que será passada ao evento disparado que identificará unicamente a chamada.
+            </param>
+            <param name = "openConnection">
+              Indica se uma conexão será aberta para ser passada ao evento disparado.
+              A mesma conexão será passada a cada evento disparado, possibilitando a realização de operações transacionais.
+            </param>
+            <param name = "getIfSuccess">Chama o método Get() se for devolver true.</param>
+        </member>
+        <member name="M:Techne.Controls.TDataGrid.ProcessBulk(System.String)">
+            <summary>
+              Dispara o evento BulkProcessing que contém um array dos DataRow's selecionados.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDataGrid.GetDataRows(System.Object[])">
+            <summary>
+              Realiza select no banco de dados de acordo com a propriedade SQLWhere.
+              Não remove registros já existentes no DataTable.
+              Devolve a quantidade registros obtidos.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDataGrid.RemoveRows(System.Collections.ICollection)">
+            <summary>
+              Dada uma lista de DataRow's, remove-os da tabela.
+            </summary>
+        </member>
+        <member name="E:Techne.Controls.TDataGrid.RefreshDataSource">
+            <summary>
+              Permite especificar um DataSet, DataTable ou DataView como fonte de dados (DataSource) para a grid.
+              Caso um DataSet seja especificado, DataMember deve indicar o nome de um DataTable dele.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TDataGrid.InsertInfoVisible">
+            <summary>
+              Indica se as colunas contendo informações de insert em tabelas historificadas estão visíveis.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TGridItem.ItemTypeIsData(System.Web.UI.WebControls.ListItemType)">
+            <summary>
+              True se o parâmetro informado for Item, AlternatingItem, SelectedItem ou EditItem.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TGridItem.AddErrorMessage(Techne.Library.ErrorList)">
+            <summary>
+              Apresenta mensagens de erro associadas ou não a campos.
+              A operação que estiver sendo processada NÃO será desfeita.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TGridItem.AddErrorMessage(System.String)">
+            <summary>
+              Apresenta mensagem de erro.
+              A operação que estiver sendo processada NÃO será desfeita.
+            </summary>
+            <param name = "message">
+              Mensagem a ser apresentada.
+            </param>
+        </member>
+        <member name="M:Techne.Controls.TGridItem.AddErrorMessage(System.String,System.String)">
+            <summary>
+              Apresenta mensagem de erro.
+              A operação que estiver sendo processada NÃO será desfeita.
+            </summary>
+            <param name = "field">
+              Campo que contém o erro. A mensagem será apresentada próxima ao campo.
+              Se a mensagem não estiver associada a nenhum campo deve-se informar string.Empty.
+            </param>
+            <param name = "message">
+              Mensagem a ser apresentada.
+            </param>
+        </member>
+        <member name="M:Techne.Controls.TGridItem.AddWarningMessage(System.String)">
+            <summary>
+              Apresenta mensagem de warning.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TGridItem.GetCell(System.String)">
+            <summary>
+              Obtém a célula correspondente a uma coluna, se a coluna for derivada de TGridColumn.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TGridItem.IsDataItem">
+            <summary>
+              True se o ListItem for Item, AlternatingItem, SelectedItem ou EditItem.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TGridItem.RowValues">
+            <summary>
+              Valores persistidos para esta linha da grid.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.ProcessGridItemEventArgs.CommandName">
+            <summary>
+              String identificador do processo passado como argumento no método Process().
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.ProcessGridItemEventArgs.Connection">
+            <summary>
+              Conexão passada como argumento do método Process() ou, se o parâmetro openConnection
+              do método Process() for true, a conexão aberta automaticamente.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TTextBox.FormatDecimalEdit">
+            <summary>
+              Formato de apresentação de valores decimal em modo Edit.
+              Criado para ser alterado pelo controle derivado TCurrency.
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.TDropDownListBase.defaultValue">
+            <summary>
+              Inicializado por InitDefaultValue().
+              Utilizado somente quando o controle tem lista fixa.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDropDownListBase.InitFromParameters(System.String)">
+            <summary>
+              Se a lista não estiver vazia e o valor do parâmetro não estiver contido nela, nada faz.
+            </summary>
+            <param name = "parameter">Nome do parâmetro cujo valor será utilizado para setar o valor deste controle</param>
+        </member>
+        <member name="M:Techne.Controls.TDropDownListBase.ResetValue">
+            <summary>
+              Se a lista estiver preenchida, seta DBValue para o primeiro item da lista.
+              Se SelectAllAllowed=true e, além de SelectAll (e do Null, se existente), houver somente um elemento
+              na lista, esse elemento será escolhido, não o SelectAll.
+              Se a lista não estiver preenchida, seta DBValue para DBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDropDownListBase.ClearItems">
+            <summary>
+              Limpa a lista mantendo DBValue.
+              Se DBValue não estiver válido, somente limpa a lista.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDropDownListBase.CreateReservedItems">
+            <summary>
+              Adiciona à lista os itens especiais SelectAll e Null, conforme as propriedade SelectAllAllowed e NullAllowed.
+              1) Se SelectAllAllowed=true e NullAllowed=true, adiciona ambos os itens (primeiro SelectAll, depois Null)
+              se houver pelo menos um item na lista. Caso contrário, adiciona somente Null com BaseNotFoundText;
+              2) Se SelectAllAllowed=true e NullAllowed=false, adiciona SelectAll se houver pelo menos um item na lista.
+              Caso contrário, adiciona somente Null com BaseNotFoundText;
+              3) Se SelectAllAllowed=false e NullAllowed=true, adiciona Null e utiliza BaseNotFoundText somente se não
+              houver nenhum elemento na lista;
+              4) Se SelectAllAllowed=false e NullAllowed=false, adiciona Null com BaseNotFoundText se não houver nenhum
+              elemento na lista.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDropDownListBase.GetSqlSelect(System.String@,Techne.DbObject[]@)">
+            <summary>
+              Obtém o mesmo comando SELECT executado pelo controle.
+              Dispara o evento SetSqlClauses para isso.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDropDownListBase.ValueInList(Techne.DbObject)">
+            <summary>
+              Devolve true se a lista não estiver vazia e o valor informado pertence a ela.
+              Lista vazia: devolve false.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDropDownListBase.DataLoad(System.Object,Techne.Controls.ChangedEventArgs)">
+            <summary>
+              Este overload do DataLoad() é chamado quando algum controle do qual este depende é alterado
+              (está associado ao evento TControl.Changed).
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDropDownListBase.DataLoadInternal(System.Boolean)">
+            <summary>
+              Preenche a lista de itens baseado nas propriedades BaseSqlSelect e BaseSqlWhere.
+              Se o DBValue antes da chamada deste método não for encontrado na lista, utiliza o
+              parâmetro keepCurrentValue para definir o comportamento do método.
+              IMPORTANTE: Para se chamar este método, deve-se setar forceLoad=true.
+              Isso fará com que ele seja chamado automaticamente em OnPreRender().
+            </summary>
+            <param name = "keepCurrentValue">
+              Este parâmetro é ignorado caso o valor de DBValue antes da chamada do método existir na lista obtida.
+              Caso não exista: 1) se keepCurrentValue for true, a lista será descartada, DBValue será mantido e
+              ItemNotFoundException ocorrerá; 2) se keepCurrentValue for false, ResetValue() será chamado.
+            </param>
+        </member>
+        <member name="M:Techne.Controls.TDropDownListBase.FindListItem(Techne.DbObject)">
+            <summary>
+              Devolve o ListItem correspondente ao valor informado ou null
+              caso ele não seja encontrado na lista ou a lista esteja vazia.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDropDownListBase.GetConnection">
+            <summary>
+              Se Connection foi informada, devolve uma conexão com base nela.
+              Caso contrário, se o controle estiver sob um manager, obtém a conexão do TDataSet associado a ele.
+              Caso contrário, devolve connection da TPage.
+              Caso contrário, dá exception.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TDropDownListBase.InitDefaultValue">
+            <summary>
+              Inicializa a variável defaultValue com o valor selecionado na lista.
+              Utilizado no load quando o controle possue uma lista fixa (setado em design-time).
+              Poderá ser chamado somente se DataType já estiver setado.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TDropDownListBase.Loaded">
+            <summary>
+              Indica se o método DataLoad() já foi chamado.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TDropDownListBase.HasValue">
+            <summary>
+              Indica se a propriedade SQLQuery possui mais de uma coluna.
+              Só tem valor definido quando Loaded=true (após a chamada do método DataLoadInternal()).
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TLinkBase.SetDisableCause(System.String)">
+            <summary>
+              Setando um valor diferente de string vazia, fará com que o controle seja desabilitado.
+              Em compilações Debug, o texto informado é utilizado como tooltip para auxiliar o desenvolvedor.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TLinkBase.DisableCause">
+            <summary>
+              Motivo pelo qual o controle está desabilitado.
+              Em compilações Debug, o texto é utilizado como tooltip para auxiliar o desenvolvedor.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.THyperLinkBase.NavInfoClass.GetTControlReference(System.Int32,System.String@,System.Type@,System.String@)">
+            <summary>
+              Transforma $campo$ em #controle# e @parametro@ em valor.
+            </summary>
+            <param name = "error">
+              Quando não consegue resolver a referência, indica o motivo.
+              Devolve string vazia caso contrário.
+            </param>
+        </member>
+        <member name="F:Techne.Controls.THyperLink.navigInitialized">
+            <summary>
+              Se null: ainda não inicializou navigation; se string.Empty: navigation já foi inicializado;
+              caso contrário, indica o motivo do link ter sido desabilitado.
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.THyperLink.navigation">
+            <summary>
+              Não acessar diretamente. Utilize a propriedade Navig.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.THyperLink.GetImageUrl">
+            <summary>
+              Devolve ImageUrl, a não ser que seu valor seja "?".
+              Neste caso, busca o atributo Image da página destino.
+            </summary>
+        </member>
+        <member name="T:Techne.Controls.THyperLinkInternal">
+            <summary>
+              O THyperLinkInternal é um controle utilizado somente por THyperLinkList.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.THyperLinkInternal.NavigateUrl">
+            <summary>
+              Página aspx para a qual a navegação deverá ser feita.
+              Ao indicar a raiz, deve-se utilizar o caractere '~'.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.THyperLinkInternal.Parameters">
+            <summary>
+              Lista de parâmetros a serem passados à página sendo chamada.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.THyperLinkInternal.ReturnEnabled">
+            <summary>
+              Habilita a navegação inversa, ou seja, da página chamada para a chamadora
+              através do método TPage.PageReturn(). Da mesma forma, o botão \"Voltar\" de
+              EditButtons e GridButtons só serão habilitados se essa propriedade for setada para True.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TLinkParameter.getTypedValue">
+            <summary>
+              Retorna um objeto contendo a propriedade Value convertida para
+              o tipo DataType
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Techne.Controls.Design.TLinkBaseDesigner.RenderHollowControl(Techne.Controls.TLinkBase,System.Web.UI.HtmlTextWriter,System.Boolean,System.String,System.String)">
+            <summary>
+              Cria um controle visualmente semelhante ao TLinkBase informado.
+              Por não possuir funcionalidade incorporada, o controle é utilizado em design-time e help dinâmico.
+            </summary>
+            <param name = "helpMode">
+              Indica se o controle será utilizado em help dinâmico. Informar false se ele for utilizado em design.
+            </param>
+        </member>
+        <member name="F:Techne.Controls.TLinkMethod.methodResult">
+            <summary>
+              Instanciado por CallMethod(). Não setar diretamente.
+              Quando diferente de null, indica o resultado do método executado.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TLinkMethod.GetImageUrl">
+            <summary>
+              Devolve ImageUrl, a não ser que seu valor seja "?".
+              Neste caso, busca o atributo Image do método.
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.TSearchBase.ArgumentChanged">
+            <summary>
+              Indica se houve alteração no valor do controle que representa a descrição
+              após um postback. É alterado em LoadPostData().
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.TSearchBase.KeyChanged">
+            <summary>
+              Indica se houve alteração no valor do controle que representa a chave (controle base)
+              após um postback. É alterado em LoadPostData().
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TSearchBase.GetAndBind(System.Boolean)">
+            <summary>
+              Realiza a busca por código (DBValue) ou por descrição (ArgumentValue) e devolve o número
+              de registros encontrados. Se o DBValue for DBNull, busca por ArgumentValue. Se este também
+              for DBNull, nada faz e devolve 0.
+              Preenche DBValue, ArgumentValue e ArgumentText se encontrou um único registro. Se encontrou
+              mais de um registro, mostra a grid.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.TSearchBase.GetConnection">
+            <summary>
+              Se Connection foi informada, devolve uma conexão com base nela.
+              Caso contrário, se o controle estiver sob um manager, obtém a conexão do TechneDS associado a ele.
+              Caso contrário, devolve connection da TPage.
+              Caso contrário, dá exception.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.DBValue">
+            <summary>
+              Atribui um valor ao controle, buscando a descrição correspondente.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.ArgumentColumns">
+            <summary>
+              Número de caracteres da coluna de argumentos, para dimensionar o tamanho do controle de argumentos
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.ClickToSearchMsg">
+            <summary>
+              Mensagem a ser mostrada quando o usuário informou a descrição mas não clicou em Buscar
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.Connection">
+            <summary>
+              Nome da conexão com banco de dados
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.GridPageSize">
+            <summary>
+              Número de registros que serão mostrados numa página da grid de busca. Caso seja 0, não pagina.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.IsValidDBValue">
+            <summary>
+              Indica se DBValue pertence à lista de valores válidos do controle definida
+              pelas propriedades SqlSelect e SqlWhere.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.NotFoundMsg">
+            <summary>
+              Mensagem a ser mostrada quando nenhum registro é encontrado
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.Separator">
+            <summary>
+              Texto que separa o código e a descrição no modo View
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.ArgumentCol">
+            <summary>
+              Devolve BaseArgument se ele for informado, caso contrário devolve a segunda coluna de BaseSqlSelect.
+              Se BaseSqlSelect também não foi informado ou possui apenas uma coluna, dá exception.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.KeyCol">
+            <summary>
+              Devolve BaseKey se ele for informado, caso contrário devolve a primeira coluna de BaseSqlSelect.
+              Se BaseSqlSelect também não foi informado, dá exception.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.SqlSelectExtended">
+            <summary>
+              Devolve BaseSqlSelect contendo as colunas originais, mais BaseKey, BaseArgument e AlternateKeys.
+            </summary>
+        </member>
+        <member name="P:Techne.Controls.TSearchBase.Item(System.String)">
+            <summary>
+              Neste momento se supõe que tenha passado pelo GetAndBind
+            </summary>
+        </member>
+        <member name="F:Techne.Controls.ConfigureTTableDataSource.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Techne.Controls.ConfigureTTableDataSource.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Techne.Controls.ConfigureTTableDataSource.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Techne.TUtil.Base64ToCookies(System.String)">
+            <summary>
+              Converte uma string Base64 para coleção de cookies
+            </summary>
+            <param name = "base64">string Base64</param>
+            <returns>Coleção de cookies</returns>
+        </member>
+        <member name="M:Techne.TUtil.CookiesToBase64(System.Web.HttpCookieCollection)">
+            <summary>
+              Converte uma coleção de cookies para uma string Base64
+            </summary>
+            <param name = "cookies">lista de cookies</param>
+            <returns>string Base64</returns>
+        </member>
+        <member name="M:Techne.TUtil.TranslateRelativeUrl(System.String)">
+            <summary>
+              Traduz URL começadas por "~/", trocando o til pela raiz da aplicação.
+              Funciona em designtime e runtime
+            </summary>
+            <param name = "url">URL a ser traduzida</param>
+            <returns></returns>
+        </member>
+        <member name="M:Techne.TUtil.TranslateRelativeUrl(System.String,System.Web.UI.Control)">
+            <summary>
+              Traduz URL começadas por "~/", trocando o til pela raiz da aplicação.
+              Funciona em designtime e runtime
+            </summary>
+            <param name = "url">URL a ser traduzida</param>
+            <param name = "control">Controle/página que usa a url</param>
+            <returns></returns>
+        </member>
+        <member name="M:Techne.Data.TCommand.ExecuteScalar(Techne.Data.TConnection,System.String,Techne.DbObject[])">
+            <summary>
+              Devolve o valor correspondente à primeira coluna.
+              Se nenhum registro for encontrado, devolve null.
+              Se mais de um registro for encontrado, devolve o valor contido no primeiro registro.
+              Neste caso, portanto, é importante que a cláusula ORDER BY seja especificada.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TCommand.ExecuteScalar">
+            <summary>
+              Devolve o valor correspondente à primeira coluna.
+              Se nenhum registro for encontrado, devolve null.
+              Se mais de um registro for encontrado, devolve o valor contido no primeiro registro.
+              Neste caso, portanto, é importante que a cláusula ORDER BY seja especificada.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.SimpleRow.QueryFirstRow(Techne.Data.TConnection,System.String,Techne.DbObject[])">
+            <summary>
+              Realiza uma consulta no banco e devolve somente o primeiro registro.
+              Se o resultado da consulta for vazio, devolve null.
+              A conexão não precisa estar aberta.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TConnection.ConnectionStringHidePassword(System.String)">
+            <summary>
+              Troca o conteúdo de "password" para "&lt;não mostrado&gt;".
+              Utilizado para mostrar connection strings para o usuário.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TConnection.Open">
+            <summary>
+              Abre uma conexão como readonly.
+            </summary>
+        </member>
+        <member name="P:Techne.Data.TConnection.ChangedTables">
+            <summary>
+              Lista de tabelas que foram alteradas através desta conexão.
+            </summary>
+        </member>
+        <member name="P:Techne.Data.TConnection.WillRollback">
+            <summary>
+              Indica se o método Rollback() foi chamado para a conexão.
+            </summary>
+        </member>
+        <member name="P:Techne.Data.TDataColumn.FullCol">
+            <summary>
+              tabalias.coluna
+            </summary>
+        </member>
+        <member name="P:Techne.Data.TDataColumn.RefCol">
+            <summary>
+              tabela.coluna
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataRow.Undelete(Techne.Data.TConnectionWritable)">
+            <summary>
+              Reinsere um registro removido. Se Deleted = false, o método causa exception.
+              A operação é realizada no banco de dados, e a efetivação depende da conexão passada.
+            </summary>
+            <param name = "connection">
+              Conexão sob a qual a operação será realizada no banco de dados.
+              Não pode ser null. Para não ter que informar a conexão, utilize outro overload de Undelete().
+            </param>
+        </member>
+        <member name="M:Techne.Data.TDataRow.ToString(System.String)">
+            <param name = "formatText">{0}: nome da tabela; {1}: chave</param>
+        </member>
+        <member name="M:Techne.Data.TDataRow.GetHistory(Techne.Data.TConnection)">
+            <summary>
+              Cria um DataTable contendo registros de operações sobre o TDataRow corrente.
+              Devolve null se a tabela não possui histórico habilitado.
+            </summary>
+            <param name = "connection">Conexão através da qual a consulta ao histórico será feita. Pode ser null.</param>
+        </member>
+        <member name="M:Techne.Data.TDataRow.Delete(Techne.Data.TConnectionWritable,Techne.Data.TDataTable,System.String[],System.Object[])">
+            <param name = "cn">A conexão deve estar aberta para o chamador poder obter as mensagens de erro.</param>
+        </member>
+        <member name="M:Techne.Data.TDataRow.Insert(Techne.Data.TConnectionWritable,Techne.Data.TDataTable,System.String[],System.Object[],System.String,System.Object[])">
+            <summary>
+              Devolve null se e somente se cn.GetErrors() contiver novo erro.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataRow.Query(Techne.Data.TConnection,Techne.Data.TDataTable,System.String[],System.Object[])">
+            <summary>
+              Obtém um registro utilizando as colunas e os valores respectivos para montar a cláusula where
+              (normalmente utiliza-se as colunas da chave da tabela).
+              Dá exception caso o where não restrinja suficientemente e o select traga mais de um registro.
+              Devolve null se nenhum registro for encontrado. Neste caso a mensagem de erro correspondente
+              será adicionada à conexão.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataRow.Update(Techne.Data.TConnectionWritable,Techne.Data.TDataTable,System.String[],System.Object[],System.String,System.Object[])">
+            <summary>
+              Devolve null se e somente se cn.GetErrors() contiver novo erro.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataRow.CreateConnection">
+            <summary>
+              Se não conseguir obter conexão, dá exception. Nunca devolve null.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataRow.CreateWritableConnection(Techne.TPermission)">
+            <summary>
+              Se não conseguir obter conexão, dá exception. Nunca devolve null.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataRow.Query(Techne.Data.TConnection,Techne.Data.TDataTable,System.Boolean,System.String[],System.Object[])">
+            <summary>
+              Obtém um registro utilizando as colunas e os valores respectivos para montar a cláusula where
+              (normalmente utiliza-se as colunas da chave da tabela).
+              Dá exception caso o where não restrinja suficientemente e o select traga mais de um registro.
+              Devolve null se nenhum registro for encontrado. Neste caso a mensagem de erro correspondente
+              será adicionada à conexão.
+            </summary>
+        </member>
+        <member name="P:Techne.Data.TDataRow.Deleted">
+            <summary>
+              Se a tabela principal do DataTable for historificada, indica se o registro foi removido.
+            </summary>
+        </member>
+        <member name="P:Techne.Data.TDataRow.PrimaryKeyValues">
+            <summary>
+              Array contendo os valores das colunas contidas na primary key do TDataTable ao qual este TDataRow pertence.
+            </summary>
+        </member>
+        <member name="P:Techne.Data.TDataRow.Updated">
+            <summary>
+              Se a tabela for historificada, informa se o registro já foi
+              alterado (ou removido) pelo menos uma vez.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataTable.ContainsColumn(System.String)">
+            <summary>
+              Verifica se uma coluna pertence à lista de colunas.
+              Ignora case.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataTable.FindColumn(System.String)">
+            <summary>
+              Encontra um TDataColumn na collection Columns a partir do nome original da coluna
+              no formato 'tabela.coluna'. A busca NÃO É case-sensitive.
+              Devolve null se a coluna informada não for encontrada.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataTable.Get(Techne.Data.TConnection,System.String,System.Object[])">
+            <summary>
+              Utiliza false para createPrimaryKey e getDeletedRecords.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataTable.AcceptChangesWithoutError(System.Data.DataTable)">
+            <summary>
+              Chama o método AcceptChanges() somente para os DataRow's cuja propriedade HasErrors seja false.
+              Devolve true se não tiver sido encontrado nenhum erro.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataTable.AcceptChangesWithoutError(System.Data.DataRow[])">
+            <summary>
+              Chama o método AcceptChanges() somente para os DataRow's cuja propriedade HasErrors seja false.
+              Devolve true se não tiver sido encontrado nenhum erro.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataTable.FindConstructor(System.Type)">
+            <summary>
+              Dado o tipo de um TDataTable gerado pelo Cronos, obtém o construtor desse tipo ou do tipo customizado, se existir.
+              Caso exista mais de uma customização, ocorrerá exception.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TDataTable.GetUpdateErrors(Techne.Data.TDataRowUpdateEventArgs)">
+            <summary>
+              Parseia a mensagem de erro retornada pela stored procedure SQL Server e associa
+              cada erro à coluna correspondente.
+              É utilizado como tratamento do evento RowUpdated do data adapter.
+            </summary>
+        </member>
+        <member name="M:Techne.Data.TParameter.GetDateTimeError(System.Object,System.Boolean)">
+            <summary>
+              Verifica se o valor é DateTime e se a data é superior a 1/1/1753 (limitação do SQL Server).
+              Devolve mensagem de erro caso seja ou string.Empty caso contrário.
+            </summary>
+            <param name = "throwException">Causa ArgumentException ao invés de devolver mensagem de erro.</param>
+        </member>
+        <member name="M:Techne.Data.TParameter.ToArray(Techne.DbObject[])">
+            <summary>
+              Transforma um array de valores em array de TParameter's, onde cada parâmetro possui o valor
+              informado no array de origem.
+              A ordem do array de origem é mantida.
+              Todos os TParameter's serão do tipo ParameterDirection.Input.
+            </summary>
+        </member>
+        <member name="P:Techne.Data.PutDataRowArgsBase.Connection">
+            <summary>
+              Conexão a ser utilizada para operações na mesma transação.
+              Esta conexão nunca deverá ser fechada.
+            </summary>
+        </member>
+        <member name="P:Techne.Data.PrePutDataRowArgs.CancelOperation">
+            <summary>
+              Se setado para true, faz rollback na operação inteira.
+              Se houverem outros registros a serem processados, nenhum sofrerá alteração.
+            </summary>
+        </member>
+        <member name="P:Techne.Data.PrePutDataRowArgs.SkipRow">
+            <summary>
+              Se setado para true, ignora o registro correspondente.
+              Se houverem outros registros a serem processados eles serão processados normalmente.
+            </summary>
+        </member>
+        <member name="M:Techne.DataLib.ChangeCountMessage(System.Data.DataTable)">
+            <summary>
+              Obtém uma mensagem que informa a quantidade de registros novos,
+              removidos, alterados e detacheds em uma tabela. Devolve string.Empty
+              caso não haja nenhuma alteração na tabela. Nunca devolve null.
+            </summary>
+        </member>
+        <member name="M:Techne.DataLib.ChangeList(System.Data.DataTable)">
+            <summary>
+              Excetuando-se os registros detached, obtém uma lista contendo a descrição
+              da alteração de cada um dos registros alterados. Nunca devolve null.
+            </summary>
+        </member>
+        <member name="M:Techne.DataLib.FirstRowWithError(System.Data.DataTable)">
+            <summary>
+              Devolve o primeiro registro da tabela que contém erro (TDataRow.HasErrors=true).
+              Se a tabela não contém nenhum registro com erro (TDataTable.HasErrors=false), devolve null;
+            </summary>
+        </member>
+        <member name="M:Techne.DataLib.DataColumnValueToArray(System.Data.DataView,System.String,System.Type)">
+            <summary>
+              Obtém uma lista de valores correspondente a uma coluna de um DataView.
+            </summary>
+            <param name = "type">Tipo da coluna. Se informado, será possível fazer o cast para o array do tipo.</param>
+        </member>
+        <member name="M:Techne.DataLib.DataRowToString(System.Data.DataRow)">
+            <summary>
+              Mostra nome e valor de cada coluna do DataRow informado.
+            </summary>
+        </member>
+        <member name="M:Techne.DataLib.DataRowToString(System.Data.DataRow,System.Data.DataColumn[])">
+            <summary>
+              Mostra nome e valor de cada coluna do DataRow informado.
+            </summary>
+            <param name = "columns">Colunas a serem mostradas. Informar (new DataColumn[0]) para mostrar todas.</param>
+        </member>
+        <member name="M:Techne.DataLib.FindPkColumnValue(System.String,Techne.DbObject[],System.Data.DataTable)">
+            <summary>
+              Obtém o valor de uma coluna da chave primária de uma tabela.
+            </summary>
+            <param name = "pkColumnName">Nome da coluna da chave primária cujo valor deseja-se obter.</param>
+            <param name = "pkValues">Lista de valores da chave primária.</param>
+            <param name = "table">Tabela à qual a chave primária se refere.</param>
+        </member>
+        <member name="M:Techne.DataLib.FixOleDbValue(System.Object)">
+            <summary>
+              Um número do tipo 'decimal' pode ter mais de uma representação interna (lo, mid, hi, flags)
+              para o mesmo número. Aparentemente, quando um número é buscado do banco, ele vem numa
+              representação interna que, quando convertido para string via ToString(), apresenta zeros
+              após a última casa decimal, o que é indesejável para seu display.
+              Operações booleanas de comparação não detectam tal diferença pois, apesar da representação
+              interna ser diferente, representam o mesmo número.
+              Por exemplo, o número 1 torna-se 1.000000000 e 1.23 tornava-se 1.230000000.
+              Para contornar tal problema, este método converte um valor 'decimal' para o tipo 'double'
+              e o converte de volta para 'decimal'. Essas conversões fazem com que o valor
+              no tipo 'decimal' seja "reconstruído" na sua representação interna mais simples,
+              e o método ToString() funcione adequadamente.
+            </summary>
+        </member>
+        <member name="M:Techne.DataLib.FixRowState(System.Data.DataRow)">
+            <summary>
+              Retorna o RowState de um DataRow para Unchanged se não houverem alterações no registro.
+            </summary>
+        </member>
+        <member name="M:Techne.DataLib.GetColumnsOffPrimaryKey(System.Data.DataTable)">
+            <summary>
+              Devolve o conjunto de colunas que não fazem parte da primary key da tabela.
+            </summary>
+        </member>
+        <member name="M:Techne.DataLib.GetRowValues(System.Data.DataRow,System.Data.DataColumn[])">
+            <summary>
+              Devolve lista de valores do DataRow correspondente a uma lista de colunas.
+              DICA: Para obter todas as colunas, utilize diretamente a propriedade ItemArray do DataRow.
+            </summary>
+        </member>
+        <member name="M:Techne.DataLib2.CreateWhere(Techne.Data.TDataRow,System.String@,Techne.DbObject[]@)">
+            <summary>
+              Dado um registro de uma tabela, cria uma cláusula WHERE (sintaxe ADO.NET) que obtém
+              este registro restringindo as colunas da chave primária da tabela.
+            </summary>
+        </member>
+        <member name="M:Techne.DataLib2.CreateWhere(Techne.Data.TDataRow,System.String[],System.String@,Techne.DbObject[]@)">
+            <summary>
+              Dado um registro de uma tabela, cria uma cláusula WHERE (sintaxe ADO.NET)
+              baseado nas colunas informadas. Note que a cláusula obtida não obtém necessariamente
+              um registro único. Isso só acontecerá se o conjunto de colunas informadas for
+              uma unique key (ou variações dela).
+            </summary>
+        </member>
+        <member name="M:Techne.DataLib2.GetRecord(Techne.Data.TConnection,Techne.Data.TDataTable,Techne.DbObject[],System.Boolean)">
+            <summary>
+              Busca no banco de dados um registro da tabela informada, dado um array com os valores da primary key.
+              O registro será trazido para a tabela informada.
+              Traz todas as colunas da tabela.
+            </summary>
+            <param name = "connection">Se null, abre uma nova conexão.</param>
+        </member>
+        <member name="M:Techne.DataLib2.GetRecord(Techne.Data.TConnection,Techne.Data.TDataTable,Techne.DbObject[],System.String[],System.Boolean)">
+            <summary>
+              Busca no banco de dados um registro da tabela informada, dado um array com os valores da primary key.
+              O registro será trazido para a tabela informada.
+              Este overload permite informar as colunas da tabela que serão trazidas.
+            </summary>
+            <param name = "connection">Se null, abre uma nova conexão.</param>
+            <param name = "columns">Para trazer todas as colunas informe new string[0]. Null não é permitido.</param>
+        </member>
+        <member name="M:Techne.DebugLib.PrintPageViewState(System.Object)">
+            <param name = "pageState">Objeto devolvido por LoadPageStateFromPersistenceMedium().</param>
+        </member>
+        <member name="T:Techne.Library.ErrorList">
+            <summary>
+              Classe que guarda uma lista de erros
+            </summary>
+        </member>
+        <member name="M:Techne.Library.ErrorList.CreateFromDataRow(System.Data.DataRow)">
+            <summary>
+              Transforma os erros contidos num DataRow em Techne.Library.ErrorList.
+              Inverso do método SetDataRowErrors().
+            </summary>
+        </member>
+        <member name="P:Techne.Library.ErrorList.FieldList">
+            <summary>
+              Devolve a lista de campos contidos na lista de erros, sem repetições.
+              ATENÇÃO: Os nomes serão devolvidos em lowercase.
+            </summary>
+        </member>
+        <member name="P:Techne.Library.ErrorList.Item(System.String)">
+            <summary>
+              Devolve um array de strings contendo mensagens relacionadas ao campo informado como indexador.
+            </summary>
+        </member>
+        <member name="M:Techne.FileLib.GetTextFile(System.String)">
+            <summary>
+              Obtém o conteúdo de um arquivo texto como string.
+            </summary>
+            <param name = "path">Nome e path do arquivo texto.</param>
+        </member>
+        <member name="M:Techne.FileLib.SaveText(System.String,System.String)">
+            <summary>
+              Salva uma string como arquivo texto.
+            </summary>
+            <param name = "path">Nome e path do arquivo a ser criado.</param>
+            <param name = "text">String a ser salva.</param>
+        </member>
+        <member name="P:Techne.Library.HashtableOrdered.Values">
+            <summary>
+              VERIFICAR: Esta propriedade não retorna os elementos na ordem correta!!!
+            </summary>
+        </member>
+        <member name="M:Techne.HistoryLib.GetHistoryQueryString(Techne.Data.TDataRow)">
+            <summary>
+              Monta a query string para passagem de parâmetros para a página que apresentará o histórico.
+            </summary>
+        </member>
+        <member name="M:Techne.InputBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.String)">
+            <summary>
+              Mostra formulário modal contendo um campo onde o usuário digita um valor.
+              Valores vazios (string vazia ou somente espaços) serão permitidos.
+            </summary>
+            <param name = "owner">Janela que conterá o formulário modal.</param>
+            <param name = "message">Mensagem mostrada sobre o campo contendo instruções ao usuário (Ex: "Digite um valor").</param>
+            <param name = "title">Texto mostrado no título do formulário.</param>
+            <param name = "initialValue">Valor default mostrado inicialmente no campo.</param>
+        </member>
+        <member name="M:Techne.InputBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+              Mostra formulário modal contendo um campo onde o usuário digita um valor.
+            </summary>
+            <param name = "owner">Janela que conterá o formulário modal.</param>
+            <param name = "message">Mensagem mostrada sobre o campo contendo instruções ao usuário (Ex: "Digite um valor").</param>
+            <param name = "title">Texto mostrado no título do formulário.</param>
+            <param name = "initialValue">Valor default mostrado inicialmente no campo.</param>
+            <param name = "mandatory">
+              Indica se valores vazios (string vazia ou somente espaços) será permitido.
+              O bloqueio é feito desabilitando-se o botão Ok.
+            </param>
+        </member>
+        <member name="T:Techne.Library.MultiLang.NomeInfo">
+            <summary>
+              Nome de um objeto (tabela ou coluna) em um determinado idioma.
+              Contém também outras informações relacionadas ao nome no idioma.
+            </summary>
+        </member>
+        <member name="T:Techne.Library.MultiLang.NomesInfo">
+            <summary>
+              Array de NomeInfo.
+            </summary>
+        </member>
+        <member name="P:Techne.Library.MultiLang.NomesInfo.Item(System.String)">
+            <summary>
+              Determina o nome do objeto (tabela ou coluna) dado o idioma.
+            </summary>
+        </member>
+        <member name="T:Techne.Library.MultiLang.MensagemIdioma">
+            <summary>
+              Uma mensagem em um determinado idioma.
+            </summary>
+        </member>
+        <member name="T:Techne.Library.MultiLang.MensagemMultiLang">
+            <summary>
+              Array de uma mesma mensagem em diversos idiomas.
+            </summary>
+        </member>
+        <member name="T:Techne.Library.MultiLang.Idioma">
+            <summary>
+              Um idioma (pode representar um registro da tabela 'IDIOMA' do Cronos).
+            </summary>
+        </member>
+        <member name="T:Techne.Library.MultiLang.Idiomas">
+            <summary>
+              Collection de idiomas (obtido da tabela 'IDIOMA' do Cronos).
+            </summary>
+        </member>
+        <member name="M:Techne.Library.NameDbObjectCollection.#ctor">
+            <summary>
+              As chaves serão case sensitive.
+            </summary>
+        </member>
+        <member name="M:Techne.Library.NameObjectCollection.#ctor">
+            <summary>
+              As chaves serão case sensitive.
+            </summary>
+        </member>
+        <member name="M:Techne.Library.Sql.Structure.SqlSelect.GetColumnIds">
+            <summary>
+              Devolve lista com o nome das colunas. Remove tabela, se especificada,
+              e, caso seja especificado alias, devolve o alias.
+              Exemplo: [coluna] -> [coluna], [tabela].[coluna] -> [coluna], [coluna] AS [alias] -> [alias], [tabela].[coluna] AS [alias] -> [alias]
+            </summary>
+        </member>
+        <member name="M:Techne.Library.Sql.Structure.SqlSelectColumn.Parse(System.String)">
+            <summary>
+              Parseia uma coluna que pode aparecer na lista de colunas de um comando SELECT.
+            </summary>
+            <param name = "sqlColumn">String no formato [tabela].[coluna] AS [alias], [tabela].[coluna], [coluna] AS [alias] ou [coluna].</param>
+        </member>
+        <member name="P:Techne.Library.Sql.Structure.SqlSelectColumn.Id">
+            <summary>
+              Identificador da coluna. Sempre minúscula.
+              É o Alias se ele existir. Caso contrário é a Coluna.
+            </summary>
+        </member>
+        <member name="M:Techne.Library.Sql.Structure.SqlSelectColumns.Add(System.String)">
+            <param name = "sqlColumn">String no formato [tabela].[coluna] AS [alias], [tabela].[coluna], [coluna] AS [alias] ou [coluna].</param>
+        </member>
+        <member name="M:Techne.Library.StrBlock.Insert(System.String,System.Int32,System.Int32)">
+            <summary>
+              Foi criado como private só por não estar sendo usado.
+            </summary>
+        </member>
+        <member name="F:Techne.StrLib.defaultFloatStyle">
+            <summary>
+              Indica o que é aceito no parse para float (single e decimal) de uma string numérica no método TypeStr().
+            </summary>
+        </member>
+        <member name="F:Techne.StrLib.defaultIntegerStyle">
+            <summary>
+              Indica o que é aceito no parse para int de uma string numérica no método TypeStr().
+            </summary>
+        </member>
+        <member name="M:Techne.StrLib.EnumerableToStr(System.Collections.IEnumerable,System.String,System.Int32,System.String,System.String,Techne.ObjectToStringDelegate)">
+            <summary>
+              Transforma um IEnumerable em string.
+            </summary>
+            <param name = "array">Lista a ser convertida para string</param>
+            <param name = "separator">Separador dos itens na string resultante</param>
+            <param name = "leftItemDelimiter">Delimitador esquerdo de cada um dos itens</param>
+            <param name = "rightItemDelimiter">Delimitador direito de cada um dos itens</param>
+            <param name = "functionItemToString">Função que converte o item para string.
+              Se o valor null for passado, o método ToString() de cada item é utilizado.</param>
+        </member>
+        <member name="M:Techne.StrLib.IsLower(System.String)">
+            <summary>
+              Devolve true se todos os caracteres de str estiverem em lowercase.
+            </summary>
+        </member>
+        <member name="M:Techne.StrLib.Split(System.String,System.Char)">
+            <summary>
+              Se a string for vazia ou só contiver espaços, devolve array vazio (string.Split() devolve array com um elemento).
+              Caso contrário, faz string.Split() e faz string.Trim() em cada item.
+            </summary>
+        </member>
+        <member name="M:Techne.StrLib.StrToDictionary(System.String,System.Char,System.String)">
+            <summary>
+              Converte uma lista em IDictionary.
+              Cada elemento da lista é composto por um par (nome, valor).
+            </summary>
+            <param name = "stream">Lista a ser convertida cujo format é determinado pelos separadores</param>
+            <param name = "elementSeparator">Separador de elementos. Cada elemento é composto por um par (nome, valor)</param>
+            <param name = "equalitySign">Para cada elemento, indica o token que separa o nome do valor</param>
+        </member>
+        <member name="M:Techne.StrLib.StrToDictionary(System.String,System.Char,System.String,System.Boolean)">
+            <summary>
+              Converte uma lista em IDictionary.
+              Cada elemento da lista é composto por um par (nome, valor).
+            </summary>
+            <param name = "stream">Lista a ser convertida cujo format é determinado pelos separadores</param>
+            <param name = "elementSeparator">Separador de elementos. Cada elemento é composto por um par (nome, valor)</param>
+            <param name = "equalitySign">Para cada elemento, indica o token que separa o nome do valor</param>
+            <param name = "lowerKeys">Converte todos os nomes dos elementos para lowercase</param>
+        </member>
+        <member name="M:Techne.StrLib.StrToDictionary(System.String,System.Char,System.String,System.Boolean,System.Boolean)">
+            <summary>
+              Converte uma lista em IDictionary.
+              Cada elemento da lista é composto por um par (nome, valor).
+            </summary>
+            <param name = "stream">Lista a ser convertida cujo format é determinado pelos separadores</param>
+            <param name = "elementSeparator">Separador de elementos. Cada elemento é composto por um par (nome, valor)</param>
+            <param name = "equalitySign">Para cada elemento, indica o token que separa o nome do valor</param>
+            <param name = "lowerKeys">Converte todos os nomes dos elementos para lowercase</param>
+            <param name = "ignoreDuplicateKeys">
+              Se true, considera somente a primeira ocorrência de cada chave.
+              Caso contrário, dá exception caso exista mais de uma ocorrência de uma chave.
+            </param>
+        </member>
+        <member name="M:Techne.StrLib.ToStr(Techne.DbObject)">
+            <summary>
+              Converte variáveis para string de forma que possam ser recuperadas sem perda através da função TypeStr(string, Type).
+              A string retornada NÃO deve ser utilizada para apresentação final, visto que o formato utilizado
+              é fixo, independente da cultura.
+            </summary>
+        </member>
+        <member name="M:Techne.StrLib.GetDateFormat(System.Char,System.Globalization.DateTimeFormatInfo)">
+            <summary>
+              Dado um caractere especial de formatação de datas, devolve o formato "por extenso".
+              Exemplo (usando en-US): para 'd' devolve 'MM/dd/yyyy', para 'F' devolve 'dddd, dd MMMM yyyy HH:mm:ss'.
+            </summary>
+        </member>
+        <member name="M:Techne.StrLib.RemoveAccent(System.String)">
+            <summary>
+              Devolve a string sem os acentos nos caracteres que os contém.
+            </summary>
+        </member>
+        <member name="M:Techne.StrLib.RemoveAccent(System.Char)">
+            <summary>
+              Devolve o caractere sem o acento.
+              Se não contiver um, devolve o próprio.
+            </summary>
+        </member>
+        <member name="M:Techne.StrLib.RemovePrefix(System.String,System.String)">
+            <summary>
+              Se a string contém o prefixo, devolve a string sem esse prefixo.
+              Caso contrário devolve a própria string.
+            </summary>
+        </member>
+        <member name="M:Techne.StrLib.ReplaceToken(System.String,Techne.StringToStringDelegate,System.Char)">
+            <summary>
+              Substitui os tokens encontrado numa string.
+            </summary>
+            <param name = "stream">String que contém os tokens</param>
+            <param name = "func">Função de substituição</param>
+            <param name = "tokenDelimiter">Caractere delimitador de tokens</param>
+        </member>
+        <member name="M:Techne.StrLib.ToStr(Techne.DbObject,System.String,System.String)">
+            <summary>
+              Transforma uma variável em string. Utilizado para display.
+            </summary>
+            <param name = "value">A variável a ser convertida para String.</param>
+            <param name = "format">Alguns valores válidos: numéricos: c, e, f, g, n; data: d (default), g, G, t, T.
+              É permitido também montar seus formatos, porém isso NÃO É RECOMENDADO.
+              Para isso, verifique o tópico Formatting Strings do Help.</param>
+        </member>
+        <member name="M:Techne.StrLib.TypeStr(System.String,Techne.DbType)">
+            <summary>
+              Converte uma string para um determinado tipo.
+              A conversão é realizada utilizando-se a InvariantCulture. Esta função deve ser utilizada em strings
+              retornadas pela função ToStr(DbObject).
+              IMPORTANTE: caso strValue seja null ou string vazia, a função devolverá DBNull.
+            </summary>
+        </member>
+        <member name="M:Techne.StrLib.Token.ReplaceToken(Techne.StringToStringDelegate)">
+            <summary>
+              Substitui os tokens encontrado numa string.
+            </summary>
+            <param name = "func">Função de substituição</param>
+        </member>
+        <member name="M:Techne.TechLib.Ceiling(System.Decimal)">
+            <summary>
+              Devolve o primeiro inteiro maior ou igual ao decimal informado.
+            </summary>
+        </member>
+        <member name="M:Techne.TechLib.CloneReverse(System.Array)">
+            <summary>
+              Cria uma cópia do array fornecido, em ordem inversa.
+              Utiliza o método Clone() e o método estático Reverse() de Array.
+            </summary>
+        </member>
+        <member name="M:Techne.TechLib.CreateCustomizableClass(System.Type)">
+            <summary>
+              Dada uma classe, verifica se existe uma customização para ela. Caso exista, instancia a dll
+              customizada (que deve ser derivada da classe fornecida). Caso não exista, a exception
+              FileNotFoundException ocorrerá.
+            </summary>
+        </member>
+        <member name="M:Techne.TechLib.CreateCustomizableClass(System.Type,System.Boolean)">
+            <summary>
+              Dada uma classe, verifica se existe uma customização para ela. Caso exista, instancia a dll
+              customizada (que deve ser derivada da classe fornecida). Caso não exista, o parâmetro
+              exceptionOnCustomNotFound definirá qual será o comportamento do método.
+            </summary>
+            <param name = "baseType">O tipo que deve ser instanciado, passível de customização.</param>
+            <param name = "exceptionOnCustomNotFound">
+              Comportamento do método quando a dll que contém a customização não for encontrada:
+              se true, causa FileNotFoundException;
+              se false, devolve nova instância do tipo informado (não customizado).
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Techne.TechLib.EnumerableItemIndexer(System.Collections.IEnumerable,System.String)">
+            <summary>
+              Cria um array com os valores do indexador de cada item do array dado.
+              Devolve object[0] se o array informado estiver vazio.
+            </summary>
+            <param name = "indexValue">Valor do indexador.</param>
+        </member>
+        <member name="M:Techne.TechLib.EnumerableItemMethod(System.Collections.IEnumerable,System.String)">
+            <summary>
+              Cria um array com os valores do método informado de cada item do array dado.
+              Devolve object[0] se o array informado estiver vazio.
+            </summary>
+            <param name = "methodName">Nome do método do item do array cujo valor deseja-se obter.</param>
+        </member>
+        <member name="M:Techne.TechLib.EnumerableItemProperty(System.Collections.IEnumerable,System.String)">
+            <summary>
+              Cria um array com os valores da propriedade informada de cada item do array dado.
+              Devolve object[0] se o array informado estiver vazio.
+            </summary>
+            <param name = "propertyName">Nome da propriedade do item do array cujo valor deseja-se obter.</param>
+        </member>
+        <member name="M:Techne.TechLib.EnumerableTransform(System.Collections.IEnumerable,Techne.ObjectToObjectDelegate,System.Type)">
+            <summary>
+              Transforma cada elemento do enumerado fornecido, devolvendo um Array.
+            </summary>
+            <param name = "function">Função de transformação dos itens do array de origem</param>
+            <param name = "type">Tipo dos elementos no array devolvido</param>
+        </member>
+        <member name="M:Techne.TechLib.FindControls(System.Type,System.Web.UI.Control,System.Boolean,System.Type[])">
+            <summary>
+              Procura recursivamente a partir de um controle todos os controles de um tipo ou derivados desse tipo.
+            </summary>
+            <param name = "controlType">Tipo que será procurado. Os controles derivados desse tipo também farão parte do resultado.</param>
+            <param name = "scopeControl">Controle a partir do qual a procura será feita (raiz da árvore de controles).</param>
+            <param name = "inclusive">Indica se próprio controle passado em scopeControl será incluído na lista caso seu tipo satisfaça a condição.</param>
+            <param name = "excludeSearchInTypes">Tipos dos controles dentro dos quais a procura não será feita.</param>
+        </member>
+        <member name="M:Techne.TechLib.FindControls(System.Type,System.Web.UI.Control)">
+            <summary>
+              Procura recursivamente a partir de um controle todos os controles de um tipo ou derivados desse tipo.
+            </summary>
+        </member>
+        <member name="M:Techne.TechLib.FindType(System.String,System.Reflection.Assembly)">
+            <summary>
+              Procura um tipo dentro de um assembly.
+              A busca é recursiva, ou seja, os assembly referenciados também estão no escopo da busca.
+              Os assemblies System* e Microsoft* não estão no escopo.
+            </summary>
+        </member>
+        <member name="M:Techne.TechLib.GetSubtypes(System.Type,System.Reflection.Assembly,System.Boolean,System.Boolean)">
+            <summary>
+              Obtém todos os tipos derivados de um determinado tipo dentro de um assembly.
+              Se a busca for recursiva, todos os assemblies referenciados também estarão no escopo.
+              A busca também incluirá o próprio tipo, se encontrado.
+            </summary>
+        </member>
+        <member name="M:Techne.TechLib.IndexOf(System.Object,System.Collections.IList,System.Collections.IComparer)">
+            <summary>
+              Busca um item dentro de um IList usando o IComparer fornecido.
+            </summary>
+        </member>
+        <member name="M:Techne.TechLib.ObjectOfType(System.Object,System.Type)">
+            <summary>
+              Faz o mesmo papel de "is" em "obj is type".
+              Verifica se um objeto é do tipo informado ou de um tipo derivado dele.
+            </summary>
+        </member>
+        <member name="M:Techne.TechLib.searchControl(System.Type,System.Web.UI.Control,System.Collections.ArrayList,System.Boolean,System.Type[])">
+            <param name = "searchType">Tipo dos controles sendo procurados.</param>
+            <param name = "scopeControl">Escopo de busca (raiz da árvore de controles).</param>
+            <param name = "list">Lista contendo os controles já encontrados. Nela serão inseridos os novos controles encontrados.</param>
+            <param name = "inclusive">Indica que o controle passado como parâmetro também será verificado e adicionado à lista se for o caso.</param>
+            <param name = "excludeSearchInTypes">Indica os tipos dentro dos quais não ocorre busca.</param>
+        </member>
+        <member name="T:Techne.Internal.Nullable">
+            <summary>
+              Esta classe não deve ser referenciada.
+              Utilizar IDbObject quando isso for necessário.
+            </summary>
+        </member>
+        <member name="M:Techne.DbObject.CanConvertToDbObject(System.Object)">
+            <summary>
+              Indica se ToDbObject() devolverá um valor válido. null é válido.
+            </summary>
+        </member>
+        <member name="M:Techne.DbObject.ToDbObject(System.Object)">
+            <summary>
+              Se fornecido null, devolverá null.
+            </summary>
+        </member>
+        <member name="M:Techne.DbObject.ToObjectArray(Techne.DbObject[])">
+            <summary>
+              Cria um array onde cada elemento é ToObject() do elemento correspondente no array fornecido.
+            </summary>
+        </member>
+        <member name="M:Techne.DbObject.ToObject">
+            <summary>
+              Nunca devolve null.
+            </summary>
+        </member>
+        <member name="M:Techne.DbObject.ToSpecific(Techne.DbType)">
+            <summary>
+              Converte o valor (DbObject) para o tipo específico (VarChar, Number, Date...).
+              Necessário na passagem de parâmetros ao chamar métodos via Invoke() (reflection)
+              (situação na qual não é possível fazer o cast dos parâmetros).
+              Quando o valor é nulo, converte para o tipo fornecido.
+            </summary>
+        </member>
+        <member name="M:Techne.ValueReference.GetValues(System.String,System.Web.UI.Control,System.Type[])">
+            <summary>
+              Faz o parse de uma string no formato "[referência-1], [referência-2]... [referência-n]",
+              onde cada [referência-n] está no formato "[valor]", "#[controle]#", "$[campo]$" ou "@[parâmetro]@".
+              Devolve um array contendo o valor de cada uma dessas referências.
+            </summary>
+            <param name = "start">
+              Controle que define o escopo da busca (IRecordContainer e a TPage).
+              Pode ser o próprio IRecordContainer.
+            </param>
+        </member>
+        <member name="M:Techne.ValueReference.GetValues(Techne.ValueReference[],System.Web.UI.Control,System.Type[])">
+            <summary>
+              Recebe um array de referências e devolve um array de mesmo
+              tamanho contendo o valor de cada uma dessas referências.
+            </summary>
+            <param name = "start">
+              Controle que define o escopo da busca (IRecordContainer e a TPage).
+              Pode ser o próprio IRecordContainer.
+            </param>
+        </member>
+        <member name="M:Techne.ValueReference.Parse(System.String)">
+            <summary>
+              Faz o parse de uma string no formato "[valor]", "#[controle]#", "$[campo]$" ou "@[parâmetro]@".
+              Devolve, respectivamente, DirectValueReference, ControlReference, FieldReference ou ParameterReference.
+            </summary>
+        </member>
+        <member name="M:Techne.ValueReference.ParseList(System.String)">
+            <summary>
+              Faz o parse de uma string no formato "[referência-1], [referência-2]... [referência-n]",
+              onde cada [referência-n] está no formato "[valor]", "#[controle]#", "$[campo]$" ou "@[parâmetro]@".
+            </summary>
+        </member>
+        <member name="M:Techne.DirectValueReference.GetValue(System.Type)">
+            <summary>
+              Faz o parse da propriedade Reference, devolvendo um valor no tipo indicado.
+            </summary>
+        </member>
+        <member name="M:Techne.ControlReference.GetControl(System.Web.UI.Control)">
+            <summary>
+              Busca o controle a partir do NamingContainer no qual controle informado está contido.
+              Se o controle não for encontrado, devolve null.
+            </summary>
+        </member>
+        <member name="M:Techne.ControlReference.GetValue(System.Web.UI.Control)">
+            <summary>
+              Busca o valor do controle a partir do NamingContainer no qual controle informado está contido.
+              Devolve null somente quando o controle é um TDropDownListBase com o valor "TODOS" selecionado.
+            </summary>
+        </member>
+        <member name="M:Techne.FieldReference.GetValue(Techne.Controls.IRecordContainer)">
+            <summary>
+              Busca o valor do campo referenciado no IRecordContainer fornecido.
+              Se existir um controle associado a esse campo, devolve o valor do primeiro
+              controle nessa situação, dando preferência àqueles com ReadOnly=false.
+              Caso não exista controle, mas o campo pertencer à primary key, utiliza o
+              valor da primary key. Caso contrário, utiliza o valor armazenado através
+              da propriedade StoredValues (PersistColumns na grid).
+            </summary>
+        </member>
+        <member name="M:Techne.ParameterReference.GetValue(Techne.TPage,System.Type)">
+            <summary>
+              Busca o valor do parâmetro referenciado.
+              Dá prioridade aos valores que implementam IDbObject (coleção Parameters de TPage)
+              sobre aqueles que não implementam (coleção AllParameters de TPage).
+            </summary>
+            <param name = "typeWhenNull">
+              Tipo ISpecific a ser utilizado quando o valor que implementa IDbObject é nulo.
+            </param>
+        </member>
+        <member name="M:Techne.TechneAuthentication.Authenticate(System.String,System.String)">
+            <summary>
+              Autentica o usuário no site, criando o cookie de autenticação.
+            </summary>
+            <param name = "user">Código do usuário</param>
+            <param name = "password">Senha do usuário</param>
+            <returns>Código de erro. Se a autenticação foi bem sucedida retorna TechneAuthentication.ErrorCode.OK.</returns>
+        </member>
+        <member name="M:Techne.TechneAuthentication.Authenticate(System.String,System.String,System.String@)">
+            <summary>
+              Autentica o usuário no site, criando o cookie de autenticação.
+            </summary>
+            <param name = "user">Código do usuário</param>
+            <param name = "password">Senha do usuário</param>
+            <param name = "message">Mensagem de erro</param>
+            <returns>Código de erro. Se a autenticação foi bem sucedida retorna TechneAuthentication.ErrorCode.OK.</returns>
+        </member>
+        <member name="M:Techne.TechneAuthorization.IsAuthorized(System.String,System.String)">
+            <summary>
+              Verifica se o usuário corrente tem permissão de acesso um recurso do sistema.
+            </summary>
+            <param name = "resource">Nome do recurso</param>
+            <param name = "resourcetype">Tipo do recurso ("PAGINA", "RELATORIO", etc)</param>
+            <returns>True se o usuário tem permissão. False se o usuário não tem permissão ou se o recurso não existe na aplicação.</returns>
+        </member>
+        <member name="M:Techne.TechneAuthorization.IsUrlAuthorized(System.String)">
+            <summary>
+              Verifica se o usuário corrente tem permissão para acessar uma URL
+            </summary>
+            <param name = "url">URL verificada</param>
+            <returns>True se o usuário tem permissão. False se o usuário não tem permissão ou se a url não existe na aplicação.</returns>
+        </member>
+        <member name="M:Techne.TLog.WriteEntry(System.String,Techne.TLogCategory,System.String,System.String,Techne.TLogEntryType,System.String[],System.String[])">
+            <summary>
+              Grava evento no log
+            </summary>
+            <param name = "source">Origem do evento. Pode ser nome da transação, relatório, processo, etc.</param>
+            <param name = "category">Categoria da Origem. Por exemplo:'TRANSACAO','RELATORIO','PROCESSO','SEGURANCA'.</param>
+            <param name = "sis">Sistema que gerou o evento.</param>
+            <param name = "message">Texto descritivo do evento.</param>
+            <param name = "type">Tipo do evento (Erro, Aviso, Informação, etc)</param>
+            <returns>Retorna número identificador do registro de auditoria</returns>
+        </member>
+        <member name="M:Techne.TLog.WriteEntry(System.String,Techne.TLogCategory,System.String,System.String,Techne.TLogEntryType)">
+            <summary>
+              Grava evento no log
+            </summary>
+            <param name = "source">Origem do evento. Pode ser nome da transação, relatório, processo, etc.</param>
+            <param name = "category">Categoria da Origem. Por exemplo:'TRANSACAO','RELATORIO','PROCESSO','SEGURANCA'.</param>
+            <param name = "sis">Sistema que gerou o evento.</param>
+            <param name = "message">Texto descritivo do evento.</param>
+            <param name = "type">Tipo do evento (Erro, Aviso, Informação, etc)</param>
+            <returns>Retorna número identificador do registro de auditoria</returns>
+        </member>
+        <member name="M:Techne.Web.HelpData.GetGridControl(System.Web.UI.WebControls.DataGrid,System.String)">
+            <summary>
+              Obtém pelo id um controle contido numa grid.
+              Pela característica da grid, a busca é feita somente nos TemplateColumn's
+              (outros tipos de colunas não permitem especificar o id dos controles internos).
+            </summary>
+        </member>
+        <member name="M:Techne.Web.HelpData.InitHelpData(System.Type)">
+            <summary>
+              Dado uma classe derivada de TPage, devolve um HelpData correspondente à essa página
+              instanciando-a e chamando o HelpInit().
+            </summary>
+        </member>
+        <member name="M:Techne.Web.HelpData.FindControl(System.Web.UI.Control,System.String)">
+            <summary>
+              Faz busca recursiva de um controle pelo seu id.
+              Não busca dentro de INamingContainer's, a não ser que o controle
+              especificado já seja um INamingContainer.
+            </summary>
+        </member>
+        <member name="M:Techne.Web.HtmlString.ConvertTHyperLink(Techne.Controls.THyperLink,System.Boolean,Techne.Controls.IContainerManager)">
+            <param name = "showControlText">
+              Mostra o controle com o texto "navega para a página..." ou somente o texto.
+            </param>
+        </member>
+        <member name="M:Techne.Web.HtmlString.ConvertTLinkMethod(Techne.Controls.TLinkMethod,System.Boolean,Techne.Controls.IContainerManager)">
+            <summary>
+              Devolve html contendo a representação visual do controle,
+              mais a descrição do método chamado com os seus parâmetros.
+            </summary>
+        </member>
+        <member name="M:Techne.Web.HtmlString.GetControlHelpText(System.Object,Techne.Controls.IContainerManager)">
+            <summary>
+              Representação de um objeto (normalmente algum controle ou type, se for página web) dentro do help.
+            </summary>
+            <param name = "control">
+              Tipos tratados: TLinkBase, LinkListItem, IContainerManager, ITControl, Type.
+            </param>
+        </member>
+        <member name="M:Techne.Web.HtmlString.ConvertTControl(Techne.Controls.ITControl,Techne.Controls.IContainerManager,System.String@,System.String@,System.String@)">
+            <summary>
+              Dado um controle, determina sua representação visual no help, descrição e informações da coluna
+              no banco de dados, se aplicável.
+            </summary>
+            <param name = "manager">
+              Só é necessário ser informado quando o controle informado pertencer a um TemplateColumn,
+              caso contrário, null poderá ser informado, situação na qual control.Manager será utilizado.
+            </param>
+            <param name = "caption">Representação visual do controle no help.</param>
+            <param name = "description">Descrição da coluna cadastrada no Cronos, caso o controle esteja associado a uma.</param>
+            <param name = "colInfo">Informações da coluna, caso o controle esteja associado a uma.</param>
+        </member>
+        <member name="M:Techne.Web.HtmlString.ConvertTHyperLink(System.Object,System.Boolean,Techne.Controls.IContainerManager)">
+            <param name = "control">
+              Pode ser THyperLink ou LinkListItem (um item de THyperLinkList).
+            </param>
+            <param name = "showControlText">
+              Mostra o controle com o texto "navega para a página..." ou somente o texto.
+            </param>
+        </member>
+        <member name="M:Techne.Web.HtmlString.CreateHtmlLink(System.Type,System.String,System.Boolean)">
+            <summary>
+              Cria um link para a página ou para o help da página, conforme parâmetro.
+            </summary>
+        </member>
+        <member name="T:Techne.Web.Navigation">
+            <summary>
+              Classe que guarda informações para navegação a uma determinada página.
+              Obtém-se uma instância através do método estático GetNavigation().
+            </summary>
+        </member>
+        <member name="F:Techne.Web.Navigation.navigationClass">
+            <summary>
+              Indica se o método de navegação é de uma classe derivada de NavegaBase.
+              Utilizado para decidir se mostra ou não o nome do método (métodos GetUrl() não são mostrados).
+            </summary>
+        </member>
+        <member name="M:Techne.Web.Navigation.Create(System.String)">
+            <summary>
+              Dada uma string no formato [class]([type1] [name2], [type2] [name2],...
+              devolve o método correspondente.
+              Nunca devolve null.
+            </summary>
+        </member>
+        <member name="M:Techne.Web.Navigation.GetNavigation(System.Reflection.MethodBase)">
+            <summary>
+              Dado um método, devolve uma instância de Navigation.
+              Nunca devolve null.
+            </summary>
+        </member>
+        <member name="M:Techne.Web.Navigation.GetUrl(System.Object[])">
+            <summary>
+              Url para navegação à página especificada pela propriedade Page, passando os parâmetros
+              indicados pelo array fornecido. A quantidade de parâmetros no array fornecido deve coincidir
+              com a quantidade informada pelas propriedades ParameterNames e ParameterTypes.
+            </summary>
+        </member>
+        <member name="M:Techne.Web.Navigation.GetPageParameters(System.Web.UI.Page,Techne.Library.NameObjectCollection@,Techne.Library.NameDbObjectCollection@,System.Type[]@)">
+            <summary>
+              Dada uma página, devolve collection do tipo NameObjectCollection que contém
+              os parâmetros e valores (já tipados) passados a ela.
+            </summary>
+        </member>
+        <member name="M:Techne.Web.Navigation.GetMethod(System.Type,System.String[])">
+            <summary>
+              Dada uma lista de parâmetros (nomes), obtém o overload de GetUrl() que a contém.
+              Nunca devolve null.
+            </summary>
+        </member>
+        <member name="M:Techne.Web.Navigation.GetMethod(System.Type,System.String,System.Type,System.String[])">
+            <summary>
+              Dada o nome do método e uma lista de parâmetros (nomes), obtém MethodInfo correspondente.
+              Nunca devolve null.
+            </summary>
+        </member>
+        <member name="M:Techne.Web.Navigation.GetMethods(System.Type)">
+            <summary>
+              Obtém todos os métodos públicos estáticos de nome "GetUrl" que devolvam string.
+              O tipo deve conter o atributo NavUrlAttribute.
+            </summary>
+        </member>
+        <member name="M:Techne.Web.Navigation.VerifyNavigationMethod(System.Reflection.MethodInfo)">
+            <summary>
+              Devolve string vazia se o método informado é de navegação
+              (GetUrl() público, estático, que devolve string, declarado em classe derivada de TPage).
+              Caso não seja, devolve mensagem informando a causa.
+            </summary>
+            <param name = "method"></param>
+        </member>
+        <member name="P:Techne.Web.Navigation.FixedParameters">
+            <summary>
+              Parâmetros adicionais (constantes) passados à página destino.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.Navigation.Page">
+            <summary>
+              Nome e path da página aspx para a qual a navegação será feita.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.Navigation.PageType">
+            <summary>
+              Devolve a classe da página para a qual a navegação será feita.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.Navigation.ParameterNames">
+            <summary>
+              Array de strings contendo o nome dos parâmetros recebidos pela página aspx
+              especificada pela propriedade Page.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.Navigation.ParameterTypes">
+            <summary>
+              Array de Type's contendo os tipos dos parâmetros recebidos pela página aspx
+              especificada pela propriedade Page.
+            </summary>
+        </member>
+        <member name="P:Techne.Web.Navigation.ReturnEnabled">
+            <summary>
+              Indica se a navegação permitirá volta à página chamadora.
+            </summary>
+        </member>
+        <member name="F:Techne.TPage.compatibilityMode">
+            <summary>
+              Se true, preenche no OnInit() as variáveis de contexto a partir dos valores dos parâmetros da página.
+            </summary>
+        </member>
+        <member name="M:Techne.TPage.GetPageCaption">
+            <summary>
+              Devolve a propriedade PageCaption se foi informada.
+              Caso contrário, utiliza o atributo Caption fornecido na classe da página.
+            </summary>
+        </member>
+        <member name="M:Techne.TPage.GetPageImage">
+            <summary>
+             Devolve o atributo Image associado à página.
+             Se o atributo não tiver sido definido na página, devolve string vazia.
+            </summary>
+        </member>
+        <member name="M:Techne.TPage.GetPageTitle">
+            <summary>
+              Devolve a propriedade PageTitle se foi informada.
+              Caso contrário, utiliza o atributo Title fornecido na classe da página.
+            </summary>
+        </member>
+        <member name="M:Techne.TPage.GetPageCaption(System.Type,System.String)">
+            <summary>
+              Determina o valor do atributo Caption na classe fornecida. Se Caption não for encontrado, busca
+              o valor do atributo Title. Se também não for encontrado, usa GetDefaultName().
+            </summary>
+        </member>
+        <member name="M:Techne.TPage.GetPageImage(System.Type)">
+            <summary>
+              Devolve o atributo Image associado à página.
+              Se o atributo não tiver sido definido na página, devolve string vazia.
+            </summary>
+        </member>
+        <member name="M:Techne.TPage.GetPageTitle(System.Type,System.String)">
+            <summary>
+              Determina o valor do atributo Title na classe fornecida. Se Title não for encontrado, busca
+              o valor do atributo Caption. Se também não for encontrado, usa GetDefaultName().
+            </summary>
+        </member>
+        <member name="M:Techne.TPage.PageReturn">
+            <summary>
+              Executa Response.Redirect para a página chamadora.
+              O método utilizado para navegação para a página corrente deve possuir NavReturnAttribute setada para true,
+              caso contrário nada será feito.
+            </summary>
+        </member>
+        <member name="M:Techne.TPage.SetAppContextClass(System.Type)">
+            <summary>
+              Este método deve ser executado antes de TPage.OnInit() se existir classe derivada
+              de Techne.Web.AppContextBase na aplicação.
+            </summary>
+            <param name = "appContextClass">
+              typeof([classe]), onde [classe] é a classe derivada de Techne.Web.AppContextBase
+            </param>
+        </member>
+        <member name="M:Techne.TPage.ResetValueRecursive(System.Web.UI.Control)">
+            <summary>
+              Chama ResetValue() de todos os TControl's sob o controle informado
+              que não estejam sob managers.
+            </summary>
+        </member>
+        <member name="P:Techne.TPage.AllParameters">
+            <summary>
+              Parâmetros passados à página.
+              A declaração desses parâmetros é feita via método estático GetUrl().
+            </summary>
+        </member>
+        <member name="P:Techne.TPage.Connection">
+            <summary>
+              Controles como TDropDownList e TSearch que possuem propriedade Connection
+              não informada utilizarão esta propriedade.
+            </summary>
+        </member>
+        <member name="P:Techne.TPage.Parameters">
+            <summary>
+              Parâmetros DbObject e similares passados à página.
+              A declaração desses parâmetros é feita via método estático GetUrl().
+              Para obter parâmetros não-DbObject, utilize a propriedade AllParameters.
+            </summary>
+        </member>
+        <member name="P:Techne.TPage.ReturnUrl">
+            <summary>
+              Página chamadora.
+              O método utilizado para navegação para a página corrente deve possuir NavReturnAttribute setada para true,
+              caso contrário devolverá string.Empty (nunca devolve null).
+            </summary>
+        </member>
+    </members>
+</doc>

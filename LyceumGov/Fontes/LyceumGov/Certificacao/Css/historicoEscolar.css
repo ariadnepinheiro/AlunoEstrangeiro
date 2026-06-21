@@ -1,0 +1,109 @@
+﻿body
+{
+}
+
+@page 
+{ margin-right: 0.5in; 
+  margin-top: 0.25in; 
+  margin-bottom: 0.49in; 
+}
+
+P 
+{ 
+    margin-bottom: 0.08in; 
+    direction: ltr; 
+    color: #000000; 
+    widows: 2; 
+    orphans: 2; 
+ }
+P.western 
+{ 
+  font-family: "Times New Roman", serif; 
+  font-size: 12pt;   
+}
+
+P.cjk 
+{ 
+  font-family: "Times New Roman", serif; 
+  font-size : 12pt; 
+}
+ 
+P.ctl 
+{ 
+    font-family: "Times New Roman", serif; 
+    font-size: 12pt; 
+}
+
+H2 
+{ 
+    margin-top: 0in; 
+    margin-bottom: 0in; 
+    direction: ltr; 
+    color: #000000; 
+    text-align: justify; 
+    widows: 2; 
+    orphans: 2; 
+    text-decoration: underline 
+}
+
+H2.western 
+{ 
+    font-size: 12pt; 
+    font-weight: normal; 
+}
+
+H2.cjk 
+{ 
+    font-family: "Calibri", sans-serif; 
+    font-size: 12pt; 
+    font-weight: normal 
+}
+
+H2.ctl 
+{ 
+    font-family: "Times New Roman", serif; 
+    font-size: 12pt; 
+    font-weight: normal; 
+}
+
+H3 
+{ 
+ margin-top: 0in; 
+ margin-bottom: 0in; 
+ direction: ltr; 
+ color: #000000; 
+ text-align: center; 
+ widows: 2; 
+ orphans: 2;
+}
+
+H3.western 
+{ 
+ font-size: 12pt; 
+}
+
+H3.cjk 
+{ 
+    font-family: "Calibri", sans-serif; 
+    font-size: 12pt 
+}
+
+H3.ctl 
+{ 
+ font-family: "Times New Roman", serif; 
+ font-size: 12pt; 
+}   
+
+p.vertical
+{ 
+ writing-mode: vertical-rl; 
+ filter: flipv fliph;
+} 
+
+th.vertical 
+{ 
+ height: 220px; 
+ line-height: 14px; 
+ padding-bottom: 20px; 
+ text-align: left; 
+}

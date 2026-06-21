@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Seeduc.Infra</name>
+    </assembly>
+    <members>
+        <member name="M:Seeduc.Infra.Data.DataContext.TryToBind``1(Seeduc.Infra.Data.ContextQuery)">
+            <summary>
+            Transforma o retorno da primeira coluna do SQL em uma lista de objetos.
+            </summary>
+            <typeparam name="T">Tipo primitivo para retorno na lista</typeparam>
+            <param name="contextQuery">Objeto ContextQuery com o SQL a ser executado</param>
+            <returns>Retorna uma lista de objetos de tipo primitivo</returns>
+            <example>SELECT TOP 10 NOME FROM ALUNO</example>
+        </member>
+    </members>
+</doc>

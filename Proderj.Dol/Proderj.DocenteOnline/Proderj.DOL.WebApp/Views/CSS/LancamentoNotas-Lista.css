@@ -1,0 +1,281 @@
+﻿/*****
+LANCAMENTO DE NOTAS - LISTA - INICIO
+*****/
+body { margin-top: 150px; }
+
+.conteudo {
+	margin: auto;
+	width: 960px;
+}
+.conteudo .mensagem { font-size:12px; color:#F00; width:700px;margin-bottom:10px;display: inline-block;}
+
+.conteudo .mensagem p,
+.conteudo .mensagem-sucesso p,
+.conteudo .mensagem-solicitacao-existente p,
+.conteudo .mensagem-curriculo-minimo p { margin:5px 0px;line-height:18px; }
+
+.conteudo .mensagem-solicitacao-existente {
+	border: 1px solid #F55;
+	padding: 5px;
+	font-size: 12px;
+	margin-bottom:10px;
+
+	background-color: #FFF3CA;
+	color:#A60;
+	border-color:orange;
+}
+.conteudo .mensagem-curriculo-minimo.Parcial {
+	background-color: #FFF3CA;
+	color:#A60;
+	border-color:orange;
+}
+
+.conteudo .mensagem-curriculo-minimo.Completo {
+	background-color: #EFE;
+	color: #060;
+	border-color: #7D7;
+}
+
+.conteudo .mensagem-curriculo-minimo { 
+	border: 1px solid #F55;
+	padding: 5px;
+	background-color: #FED;
+	font-size: 12px;
+	color: red;
+	margin-bottom:10px;
+ }
+
+.conteudo .mensagem-curriculo-minimo a { 
+	color:#00F;
+ }
+
+.conteudo .mensagem-sucesso { 
+	color: #060;
+	border: 1px solid #7D7;
+	padding: 5px;
+	background-color: #EFE;
+	font-size: 12px;
+	margin-bottom:10px;
+}
+
+.conteudo .mensagem-sucesso strong { 
+	display:block;
+	margin-bottom:5px;
+}
+
+.validation-summary-errors {
+	border: 1px solid #F55;
+	padding: 5px;
+	background-color: #FED;
+	font-size: 12px;
+	color: red;
+}
+
+.validation-summary-errors > span {
+	font-weight:bold;
+}
+
+.validation-summary-errors li {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.tabela-frequencia-turma {
+	border:1px solid #C0C0C0;
+	background-color:#F0F0F0;
+	width:150px;
+	margin-bottom:20px;
+}
+
+.tabela-frequencia-turma caption {
+	font-size: 12px;
+	font-weight: bold;
+	color: #0353AB;
+	padding:5px 10px;
+	text-align:left;
+}
+.tabela-frequencia-turma input {
+	width: 30px;
+	text-align:center;
+}
+
+.tabela-frequencia-turma td.legenda {
+	text-align:right;
+	font-weight:bold;
+}
+
+.tabela-frequencia-turma-consolidado {
+	border:1px solid #C0C0C0;
+	background-color:#F0F0F0;
+	width:200px;
+	margin-bottom:20px;
+	height:50px;
+}
+
+.tabela-frequencia-turma-consolidado  caption {
+	font-size: 12px;
+	font-weight: bold;
+	color: #0353AB;
+	padding:5px 10px;
+	text-align:left;
+}
+.tabela-frequencia-turma-consolidado  input {
+	width: 30px;
+	text-align:center;
+}
+
+.tabela-frequencia-turma-consolidado td.legenda {
+	text-align:right;
+	font-weight:bold;
+}
+
+.tabela-media-turma-consolidado {
+	border:1px solid #C0C0C0;
+	background-color:#F0F0F0;
+	margin-bottom:20px;
+	height:50px;
+}
+
+.tabela-media-turma-consolidado  caption {
+	font-size: 12px;
+	font-weight: bold;
+	color: #0353AB;
+	padding:5px 10px;
+	text-align:left;
+}
+.tabela-media-turma-consolidado  input {
+	width: 30px;
+	text-align:center;
+}
+
+.tabela-media-turma-consolidado td.legenda {
+	text-align:right;
+	font-weight:bold;
+}
+.tabela-padrao { clear: both;display: inline-block; }
+	.tabela-padrao table {  }
+	.tabela-padrao thead td { border-color: #BFD7F3; }
+	.tabela-padrao table td { padding: 2px 4px;vertical-align:top;line-height:16px; }
+	.tabela-padrao table td.centralizado-pequeno { text-align:center;width:80px; }
+	.tabela-padrao table td.centralizado-micro {text-align:center; width: 40px; }
+		.tabela-padrao table td.centralizado-micro input {text-align:center; width: 40px;margin:0px; }
+				
+	.tabela-padrao .descricao-situacao { 
+		color:#700;
+		position:absolute;
+		border:1px solid #C0C0C0;
+		background-color:#FF7; 
+		padding:5px;
+		margin-top:-30px;
+		display:none;
+		cursor:default;
+	}
+
+	.tabela-padrao .descricao-situacao img.aba { 
+		position:absolute;
+		margin-top:5px;
+	}
+	.tabela-padrao select { font-size:11px; margin:0px; }
+	.tabela-padrao tr.cancelado { background-color:#FDC;}
+	.tabela-padrao tr.cancelado td.situacao { text-decoration:underline;color:#F00;cursor:pointer;}
+	.tabela-padrao table td.consolidado input { text-align:center; width: 40px; }
+
+#tab-bimestres 
+{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	display:block;
+	border-bottom:1px solid #C0C0C0;
+	width: 100%;
+	height: 20px;
+	margin-top:10px;
+	margin-bottom:10px;
+
+}
+	#tab-bimestres li 
+	{
+		display:block;
+		float:left;
+		margin-left:2px;
+		border: 1px solid #C0C0C0;
+		padding:3px;
+		background-color: #E0E0E0;
+		width:190px;
+		text-align:center;
+		cursor:pointer;
+		
+		
+
+	}
+
+	#tab-bimestres li:hover { background-color:#F0F0F0; }
+	#tab-bimestres li.selecionado { border-bottom: 1px solid #FFF; background-color: #FFF; }
+
+#bt-imprimir-filipeta img { float:left;margin-right:5px; } 
+
+#painel-justificativa { clear:both;border:1px solid #C0C0C0;background-color:#F0F0F0;padding:10px;margin:10px 0px;width: 505px;display:none;}
+	#painel-justificativa label { font-size:12px;font-weight:bold;display:block;margin-bottom:2px;}
+	#painel-justificativa textarea { width:500px; height:50px;margin:0px; }
+	#painel-justificativa small { font-size:11px;color:#555;display:block; }
+	#painel-justificativa small { font-size:11px;color:#555;display:block; }
+
+	#painel-justificativa .botoes-acoes { height: 30px;width: 500px; }
+	#painel-justificativa .botoes-acoes input { float:right; }
+
+#confirmacao-fundo {
+	width:100%;
+	height:100%;
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:10001;
+	background-color:#000;
+	opacity:0.4;
+	_filter: Alpha(Opacity=40);
+	-moz-opacity:0.4;
+	display:none;
+}
+#confirmacao {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	background-color: #DFC;
+	color: #040;
+	z-index: 10002;
+	width: 400px;
+	padding: 10px;
+	border: 2px solid #090;
+	font-size: 12px;
+	display: none;
+}
+
+#confirmacao .botoes {
+	margin: auto;
+	width: 102px;
+}
+
+#painel-justificativa textarea {
+	font-size: 12px;
+	font-family: Tahoma;
+	color: #444;
+}
+
+@media all and (max-width: 720px) {
+  body 
+	{
+		margin-top: 180px;
+	}
+}
+
+@media all and (max-width: 450px) {
+  body 
+	{
+		margin-top: 250px;
+	}
+}
+
+/*****
+LANCAMENTO DE NOTAS - LISTA - FIM
+*****/

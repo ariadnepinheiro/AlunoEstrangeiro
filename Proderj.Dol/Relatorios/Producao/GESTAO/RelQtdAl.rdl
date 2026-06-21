@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>dblyceum</DataSourceReference>
+      <rd:DataSourceID>ac19201d-3368-4dcf-a397-343724ccd0a3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="QTD_ALUNO">
+          <DataField>QTD_ALUNO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="QTD_FUND">
+          <DataField>QTD_FUND</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="QTD_MEDIO">
+          <DataField>QTD_MEDIO</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="QTD_ESPECIAL">
+          <DataField>QTD_ESPECIAL</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="QTD_UNID_PRISIONAIS">
+          <DataField>QTD_UNID_PRISIONAIS</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="QTD_INDIGENA">
+          <DataField>QTD_INDIGENA</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>SELECT  DISTINCT QTD_ALUNO, QTD_FUND, QTD_MEDIO, QTD_ESPECIAL, QTD_UNID_PRISIONAIS, QTD_INDIGENA--, QTD_ALUNOS_MUNICIPIO, QTD_ESCOLAS_MUNICIPIO
+
+FROM (
+SELECT 
+
+(select COUNT (DISTINCT A.ALUNO) FROM LY_ALUNO A
+INNER JOIN LY_MATRICULA on A.ALUNO = LY_MATRICULA.ALUNO 
+INNER join LY_TURMA on LY_TURMA.TURMA = ly_matricula.TURMA
+			AND	LY_TURMA.DISCIPLINA = ly_matricula.DISCIPLINA
+			AND	LY_TURMA.ANO = ly_matricula.ANO
+			AND	LY_TURMA.SEMESTRE = ly_matricula.SEMESTRE
+INNER JOIN LY_UNIDADE_ENSINO LL ON LL.UNIDADE_ENS=LY_TURMA.FACULDADE
+INNER JOIN LY_UNIDADE_ENSINO_SITUACAO UES ON UES.UNIDADE_ENS=LL.UNIDADE_ENS
+					AND UES.DT_SITUACAO = (SELECT MAX(DT_SITUACAO)
+											FROM LY_UNIDADE_ENSINO_SITUACAO LY_UNIDADE_ENSINO_SITUACAO
+											WHERE LL.UNIDADE_ENS=LY_UNIDADE_ENSINO_SITUACAO.UNIDADE_ENS)
+WHERE A.ALUNO not in (select ALUNO FROM LY_H_CURSOS_CONCL where DT_REABERTURA is null) 
+AND SIT_MATRICULA &lt;&gt; 'CANCELADO' AND LY_TURMA.SIT_TURMA IN ('ABERTA') AND LY_TURMA.ANO = '2011' AND SITUACAO = 'ESTADUAL') AS QTD_ALUNO,
+
+(select COUNT (DISTINCT A.ALUNO) FROM LY_ALUNO A
+INNER JOIN LY_MATRICULA on A.ALUNO = LY_MATRICULA.ALUNO 
+INNER join LY_TURMA on LY_TURMA.TURMA = ly_matricula.TURMA
+			AND	LY_TURMA.DISCIPLINA = ly_matricula.DISCIPLINA
+			AND	LY_TURMA.ANO = ly_matricula.ANO
+			AND	LY_TURMA.SEMESTRE = ly_matricula.SEMESTRE
+WHERE A.ALUNO not in (select ALUNO FROM LY_H_CURSOS_CONCL where DT_REABERTURA is null) 
+AND SIT_MATRICULA &lt;&gt; 'CANCELADO' AND LY_TURMA.SIT_TURMA IN ('ABERTA') AND LY_TURMA.ANO = '2011'
+AND A.CURSO IN ('0001.11', '0001.16', '0001.21', '0001.51')) AS QTD_FUND,
+
+(select COUNT (DISTINCT A.ALUNO) FROM LY_ALUNO A
+INNER JOIN LY_MATRICULA on A.ALUNO = LY_MATRICULA.ALUNO 
+INNER join LY_TURMA on LY_TURMA.TURMA = ly_matricula.TURMA
+			AND	LY_TURMA.DISCIPLINA = ly_matricula.DISCIPLINA
+			AND	LY_TURMA.ANO = ly_matricula.ANO
+			AND	LY_TURMA.SEMESTRE = ly_matricula.SEMESTRE
+WHERE A.ALUNO not in (select ALUNO FROM LY_H_CURSOS_CONCL where DT_REABERTURA is null) 
+AND SIT_MATRICULA &lt;&gt; 'CANCELADO' AND LY_TURMA.SIT_TURMA IN ('ABERTA') AND LY_TURMA.ANO = '2011'
+AND A.CURSO IN ('0002.31')) AS QTD_MEDIO,
+
+(select COUNT (DISTINCT A.ALUNO) FROM LY_ALUNO A
+INNER JOIN LY_MATRICULA on A.ALUNO = LY_MATRICULA.ALUNO 
+INNER join LY_TURMA on LY_TURMA.TURMA = ly_matricula.TURMA
+			AND	LY_TURMA.DISCIPLINA = ly_matricula.DISCIPLINA
+			AND	LY_TURMA.ANO = ly_matricula.ANO
+			AND	LY_TURMA.SEMESTRE = ly_matricula.SEMESTRE
+INNER JOIN LY_SERIE ON LY_SERIE.CURSO = LY_TURMA.CURSO
+			AND LY_SERIE.TURNO = LY_TURMA.TURNO						
+			AND LY_SERIE.CURRICULO = LY_TURMA.CURRICULO	
+			AND LY_SERIE.SERIE = LY_TURMA.SERIE
+INNER JOIN LY_CURSO ON LY_CURSO.CURSO = LY_SERIE.CURSO
+INNER JOIN LY_MODALIDADE_CURSO ON LY_MODALIDADE_CURSO.MODALIDADE = LY_CURSO.MODALIDADE
+WHERE A.ALUNO not in (select ALUNO FROM LY_H_CURSOS_CONCL where DT_REABERTURA is null) 
+AND SIT_MATRICULA &lt;&gt; 'CANCELADO' AND LY_TURMA.SIT_TURMA IN ('ABERTA') AND LY_TURMA.ANO = '2011'
+AND LY_MODALIDADE_CURSO.MODALIDADE = 'ES7') AS QTD_ESPECIAL,
+
+(select COUNT (DISTINCT A.ALUNO) FROM LY_ALUNO A
+INNER JOIN LY_MATRICULA on A.ALUNO = LY_MATRICULA.ALUNO 
+INNER join LY_TURMA on LY_TURMA.TURMA = ly_matricula.TURMA
+			AND	LY_TURMA.DISCIPLINA = ly_matricula.DISCIPLINA
+			AND	LY_TURMA.ANO = ly_matricula.ANO
+			AND	LY_TURMA.SEMESTRE = ly_matricula.SEMESTRE
+INNER JOIN LY_UNIDADE_ENSINO LL ON LL.UNIDADE_ENS=LY_TURMA.FACULDADE  
+inner join LY_NUCLEO N on N.NUCLEO=LL.NUCLEO
+WHERE A.ALUNO not in (select ALUNO FROM LY_H_CURSOS_CONCL where DT_REABERTURA is null) 
+AND SIT_MATRICULA &lt;&gt; 'CANCELADO' AND LY_TURMA.SIT_TURMA IN ('ABERTA') AND LY_TURMA.ANO = '2011'
+AND N.NUCLEO = '31') AS QTD_UNID_PRISIONAIS,
+
+(select COUNT (DISTINCT A.ALUNO) FROM LY_ALUNO A
+INNER JOIN LY_MATRICULA on A.ALUNO = LY_MATRICULA.ALUNO 
+INNER join LY_TURMA on LY_TURMA.TURMA = ly_matricula.TURMA
+			AND	LY_TURMA.DISCIPLINA = ly_matricula.DISCIPLINA
+			AND	LY_TURMA.ANO = ly_matricula.ANO
+			AND	LY_TURMA.SEMESTRE = ly_matricula.SEMESTRE
+INNER JOIN LY_SERIE ON LY_SERIE.CURSO = LY_TURMA.CURSO
+			AND LY_SERIE.TURNO = LY_TURMA.TURNO						
+			AND LY_SERIE.CURRICULO = LY_TURMA.CURRICULO	
+			AND LY_SERIE.SERIE = LY_TURMA.SERIE
+INNER JOIN LY_CURSO ON LY_CURSO.CURSO = LY_SERIE.CURSO
+INNER JOIN LY_MODALIDADE_CURSO ON LY_MODALIDADE_CURSO.MODALIDADE = LY_CURSO.MODALIDADE
+WHERE A.ALUNO not in (select ALUNO FROM LY_H_CURSOS_CONCL where DT_REABERTURA is null) 
+AND SIT_MATRICULA &lt;&gt; 'CANCELADO' AND LY_TURMA.SIT_TURMA IN ('ABERTA') AND LY_TURMA.ANO = '2011'
+AND LY_MODALIDADE_CURSO.MODALIDADE = 'ED3') AS QTD_INDIGENA
+
+/*(select MUNICIPIO.NOME, COUNT (DISTINCT A.ALUNO) FROM LY_ALUNO A
+INNER JOIN LY_MATRICULA on A.ALUNO = LY_MATRICULA.ALUNO 
+INNER join LY_TURMA on LY_TURMA.TURMA = ly_matricula.TURMA
+			AND	LY_TURMA.DISCIPLINA = ly_matricula.DISCIPLINA
+			AND	LY_TURMA.ANO = ly_matricula.ANO
+			AND	LY_TURMA.SEMESTRE = ly_matricula.SEMESTRE
+INNER JOIN LY_UNIDADE_ENSINO LL ON LL.UNIDADE_ENS=LY_TURMA.FACULDADE  
+inner join ly_unidade_ensino_situacao UES on UES.UNIDADE_ENS = LL.UNIDADE_ENS
+			AND UES.DT_SITUACAO = (SELECT MAX(DT_SITUACAO)
+				FROM LY_UNIDADE_ENSINO_SITUACAO LY_UNIDADE_ENSINO_SITUACAO
+				WHERE LL.UNIDADE_ENS=LY_UNIDADE_ENSINO_SITUACAO.UNIDADE_ENS)
+INNER JOIN MUNICIPIO ON MUNICIPIO.CODIGO = LL.MUNICIPIO	
+WHERE A.ALUNO not in (select ALUNO FROM LY_H_CURSOS_CONCL where DT_REABERTURA is null) 
+AND SIT_MATRICULA &lt;&gt; 'CANCELADO' AND LY_TURMA.SIT_TURMA IN ('ABERTA') AND LY_TURMA.ANO = '2011' AND SITUACAO = 'ESTADUAL'
+GROUP BY MUNICIPIO.NOME) AS QTD_ALUNOS_MUNICIPIO,
+
+(select MUNICIPIO.NOME, COUNT (DISTINCT LL.UNIDADE_ENS) FROM LY_UNIDADE_ENSINO LL
+join LY_TURMA T ON T.FACULDADE = LL.UNIDADE_ENS
+inner join ly_unidade_ensino_situacao UES on UES.UNIDADE_ENS = LL.UNIDADE_ENS
+			AND UES.DT_SITUACAO = (SELECT MAX(DT_SITUACAO)
+				FROM LY_UNIDADE_ENSINO_SITUACAO LY_UNIDADE_ENSINO_SITUACAO
+				WHERE LL.UNIDADE_ENS=LY_UNIDADE_ENSINO_SITUACAO.UNIDADE_ENS)
+INNER JOIN MUNICIPIO ON MUNICIPIO.CODIGO = LL.MUNICIPIO	
+where T.SIT_TURMA IN ('ABERTA') AND T.ANO = '2011' AND SITUACAO = 'estadual' 
+GROUP BY MUNICIPIO.NOME) AS QTD_ESCOLAS_MUNICIPIO*/
+
+FROM LY_TURMA
+--INNER JOIN LY_UNIDADE_ENSINO ON LY_UNIDADE_ENSINO.UNIDADE_ENS = LY_TURMA.FACULDADE
+--INNER JOIN LY_UNIDADE_ENSINO_SITUACAO UES ON UES.UNIDADE_ENS=ly_unidade_ensino.UNIDADE_ENS
+--					AND UES.DT_SITUACAO = (SELECT MAX(DT_SITUACAO)
+--											FROM LY_UNIDADE_ENSINO_SITUACAO LY_UNIDADE_ENSINO_SITUACAO
+--											WHERE ly_unidade_ensino.UNIDADE_ENS=LY_UNIDADE_ENSINO_SITUACAO.UNIDADE_ENS)
+--WHERE SITUACAO = 'ESTADUAL'
+
+)SQL
+</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+    <DataSet Name="coord">
+      <Fields>
+        <Field Name="nucleo">
+          <DataField>nucleo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="descricao">
+          <DataField>descricao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandText>select 'NULO' nucleo,' Selecione...' descricao 
+union
+select null nucleo,' TODAS' descricao from LY_NUCLEO L1
+join LY_UNIDADE_ENSINO l2 on L1.NUCLEO=l2.NUCLEO
+union
+select  l1.NUCLEO,SUBSTRING(l1.descricao,1,35) from ly_nucleo L1
+join LY_UNIDADE_ENSINO l2 on L1.NUCLEO=l2.NUCLEO
+join MUNICIPIO m1 on m1.CODIGO=l2.MUNICIPIO
+join LY_USUARIO_UNIDADE_FIS jj on jj.UNIDADE_FIS=l2.UNIDADE_ENS
+where (jj.USUARIO = ISNULL(@usuario,jj.USUARIO) OR  jj.USUARIO IS NULL) 
+order by descricao</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@usuario">
+            <Value>=Parameters!usuario.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Image Name="Image1">
+        <Source>Embedded</Source>
+        <Value>logo_seeduc</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.0625in</Top>
+        <Left>0.12167in</Left>
+        <Height>0.455in</Height>
+        <Width>1.39583in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Relatório de Acompanhamento  de Alunos - Resumo</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ano Letivo: 2011</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>0.635cm</Top>
+        <Left>9.24203cm</Left>
+        <Height>0.87277cm</Height>
+        <Width>10.41104cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Resumo por Município</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>9.32674cm</Top>
+        <Left>9.24203cm</Left>
+        <Height>0.50235cm</Height>
+        <Width>10.41104cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Rectangle Name="Rectangle1">
+        <ReportItems>
+          <Textbox Name="Textbox6">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Total de Alunos: </Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>0.18521cm</Top>
+            <Left>1.4865cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.79104cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox7">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Total de Alunos do Ensino Fundamental:</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>0.9616cm</Top>
+            <Left>1.4865cm</Left>
+            <Height>0.6cm</Height>
+            <Width>6.36293cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox8">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Total de Alunos do Ensino Médio:</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <HangingIndent>0cm</HangingIndent>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>1.63215cm</Top>
+            <Left>1.4865cm</Left>
+            <Height>0.58813cm</Height>
+            <Width>6.36293cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="QTD_ALUNO">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>QTD_ALUNO</Label>
+                    <Value>=First(Fields!QTD_ALUNO.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <HangingIndent>0cm</HangingIndent>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>QTD_ALUNO</rd:DefaultName>
+            <Top>0.18521cm</Top>
+            <Left>9.69897cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.06145cm</Width>
+            <ZIndex>3</ZIndex>
+            <ToolTip>QTD_ALUNO</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox15">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>QTD_FUNDAMENTAL</Label>
+                    <Value>=First(Fields!QTD_FUND.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <HangingIndent>0cm</HangingIndent>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox10</rd:DefaultName>
+            <Top>0.9616cm</Top>
+            <Left>9.69897cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.06145cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox16">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>QTD_MEDIO</Label>
+                    <Value>=First(Fields!QTD_MEDIO.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <HangingIndent>0cm</HangingIndent>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox10</rd:DefaultName>
+            <Top>1.63215cm</Top>
+            <Left>9.69897cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.06145cm</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox9">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Total de Alunos do Ensino Especial:</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <HangingIndent>0cm</HangingIndent>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>2.29598cm</Top>
+            <Left>1.47056cm</Left>
+            <Height>0.58813cm</Height>
+            <Width>6.36293cm</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox17">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Total de Alunos das Unidades Prisionais:</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <HangingIndent>0cm</HangingIndent>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>2.96273cm</Top>
+            <Left>1.47056cm</Left>
+            <Height>0.58813cm</Height>
+            <Width>6.36293cm</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox18">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Total de Alunos do Ensino Indígena:</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <HangingIndent>0cm</HangingIndent>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox6</rd:DefaultName>
+            <Top>3.62948cm</Top>
+            <Left>1.47056cm</Left>
+            <Height>0.58813cm</Height>
+            <Width>6.36293cm</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox19">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>QTD_ESPECIAL</Label>
+                    <Value>=First(Fields!QTD_ESPECIAL.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <HangingIndent>0cm</HangingIndent>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox10</rd:DefaultName>
+            <Top>2.32179cm</Top>
+            <Left>9.69897cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.06145cm</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox20">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>QTD_PRIS</Label>
+                    <Value>=First(Fields!QTD_UNID_PRISIONAIS.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <HangingIndent>0cm</HangingIndent>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox10</rd:DefaultName>
+            <Top>3.02029cm</Top>
+            <Left>9.69897cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.06145cm</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox21">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Label>QTD_INDIGENA</Label>
+                    <Value>=First(Fields!QTD_INDIGENA.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <LeftIndent>0cm</LeftIndent>
+                <HangingIndent>0cm</HangingIndent>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox10</rd:DefaultName>
+            <Top>3.68704cm</Top>
+            <Left>9.69897cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.06145cm</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>3.30412cm</Top>
+        <Left>7.89265cm</Left>
+        <Height>5.30708cm</Height>
+        <Width>13.69612cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Line Name="Line2">
+        <Top>3.09562cm</Top>
+        <Left>8.87222cm</Left>
+        <Height>0cm</Height>
+        <Width>11.86989cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Resumo da Rede</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>2.52695cm</Top>
+        <Left>9.55953cm</Left>
+        <Height>0.50235cm</Height>
+        <Width>10.41104cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line3">
+        <Top>1.82562cm</Top>
+        <Left>0.3175cm</Left>
+        <Height>0cm</Height>
+        <Width>28.63094cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+    </ReportItems>
+    <Height>4.4375in</Height>
+    <Style />
+  </Body>
+  <ReportParameters>
+    <ReportParameter Name="usuario">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>usuario</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <Width>11.62602in</Width>
+  <Page>
+    <PageFooter>
+      <Height>0.79375cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox11">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>data e hora</Label>
+                  <Value>=format(Now(),"dd/MM/yyyy HH:mm:ss")</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox11</rd:DefaultName>
+          <Left>24.22933cm</Left>
+          <Height>0.6cm</Height>
+          <Width>4.99174cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <PageHeight>21cm</PageHeight>
+    <PageWidth>29.7cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logo_seeduc">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportID>5dc90f14-d53a-46fe-836e-8a22c0068824</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+</Report>

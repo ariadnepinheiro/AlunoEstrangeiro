@@ -1,0 +1,239 @@
+﻿/****
+GERAL INICIO
+****/
+
+h3{
+	font-size: 12px;
+	color: #000;
+}
+
+h4{
+	font-size: 11px;
+	color: #000;
+}
+html{height:100%;}
+body{
+	font-family: 'Open Sans',Tahoma, Geneva, sans-serif;
+	font-size:14px;
+	background-color: #F8F9FA;
+	margin: 0;
+	padding: 0;
+	min-height: 599px;
+}
+body, td, th{	
+	font-family: 'Open Sans',Tahoma, Geneva, sans-serif;
+	color: black;
+}
+ td, th{
+    font-size:13px;
+}
+#public-bg{
+   
+    width:100%; 
+    background:#001648 url("../Imagens/bg-prof-final.png");
+    background-repeat: no-repeat;
+    background-size:100% 100%;  
+}
+.py-8{
+    padding-top: 8em;
+    padding-bottom:4em;
+}
+h2{
+	margin: 3px 0px 0px 0px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: white;
+}
+.conteudo{
+	display: block;
+	overflow: auto;
+	min-height: 628px;
+	margin:10px 0 60px 0;
+	padding: 5vh 0 ;
+	height: auto;
+}
+input[type="text"], input[type="password"], .txtbox, .txtInput{
+	border: 1px #9F9F9F solid;
+	padding: 1px 3px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	color: black;
+}
+.tabela-padrao .tabela-cabecalho{
+	background: url(<%=Url.Content("~/Imagens/tabela_cabecalho_els.gif")%>) repeat-x;
+	background-position: 0px 0px;
+	padding: 5px 0px 0px 10px;
+	height: 25px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #0353AB;
+	padding: 5px 0px 0px 10px;
+	height: 30px;
+}
+.tabela-padrao .tabela-cabecalho img.aba-direita{
+	float: right;
+}
+.tabela-padrao .tabela-cabecalho .aba-esquerda{
+	float: right;
+	background: url(<%=Url.Content("~/Imagens/tabela_cabecalho_abaesq.gif")%>) no-repeat;
+	background-position: 0px -5px;
+	height: 30px;
+	width: 60px;
+}
+.tabela-padrao .tabela-cabecalho div.centro{
+	float: right;
+	background: url(<%=Url.Content("~/Imagens/tabela_cabecalho_grade_els.gif")%>) repeat-x;
+	background-position: 0px -5px;
+	height: 25px;
+	min-width: 60px;
+	padding: 5px 5px 0px 5px;
+}
+.tabela-padrao .tabela-legenda li{
+	float: right;
+	margin-left: 10px;
+	list-style: none;
+}
+
+.tabela-padrao .tabela-legenda .caixinha-cor{
+	display: inline-block;
+	width: 20px;
+	height: 12px;
+	background-color: #F00;
+	float: left;
+	margin: 0px 4px;
+}
+
+.tabela-padrao .tabela-legenda .legenda-azul
+{
+	background-color: #0000ff;
+}
+
+.tabela-padrao .tabela-legenda .legenda-vermelho
+{
+	background-color: #F00;
+}
+
+.tabela-padrao .tabela-legenda .legenda-verde
+{
+	background-color: #080;
+}
+
+.tabela-padrao table
+{
+	border-collapse: collapse;
+}
+
+.tabela-padrao table td
+{
+	border-collapse: collapse;
+	border: 1px solid #C0C0C0;
+	padding: 4px;
+}
+
+.tabela-padrao table thead tr
+{
+	background-color: #BFD7F3;
+	font-weight: bold;
+}
+
+.tabela-padrao table tr.linha-alternada
+{
+	background-color: #F0F0F0;
+}
+
+.tabela-padrao .expansor
+{
+	background-image: url(<%=Url.Content("~/Imagens/ico_maximini.png")%>);
+	background-repeat: no-repeat;
+	background-position: right; /* começa sempre maximizado */
+	width: 11px;
+	height: 11px;
+	float: left;
+	display: inline-block;
+	margin-right: 4px;
+	cursor: pointer;
+}
+
+.tabela-padrao .td-centro
+{
+	text-align: center;
+}
+
+.tabela-padrao table
+{
+	width: 100%;
+}
+.tabela-padrao thead td
+{
+	border-color: #BFD7F3;
+}
+.tabela-padrao tfoot td
+{
+	background-image: url(<%=Url.Content("~/Imagens/tabela_rodape.gif")%>);
+	background-repeat: no-repeat;
+	height: 28px;
+	vertical-align: bottom;
+	color: #FFF;
+	border-width: 0px;
+}
+
+.botoes-acoes button, .botoes-acoes input
+{
+	font-weight: bold;
+	color: #333;
+	line-height: 25px;
+	float: left;
+	height: 31px;
+	margin: 5px 5px 10px 0px;
+}
+
+
+.botoes-acoes button img
+{
+	float: left;
+	margin-top: 3px;
+	margin-right: 2px;
+}
+
+.clear
+{
+	clear: both;
+}
+
+.inputLancamento100
+{
+	width: 100px;
+}
+
+.Bloqueado
+{
+	background-color: #F0F0F0;
+	opacity: 0.5; /* standard: ff gt 1.5, opera, safari, ie 9 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* ie 8 */ /* -ms-filter: "alpha(opacity=50)"; */
+	filter: alpha(opacity=50); /* ie 7-5 */
+	_filter: alpha(opacity=50); /* ie lt 7 */
+	-moz-opacity: 0.50; /* ff lt 1.5, netscape */
+	-khtml-opacity: 0.5; /* Safari 1.x */
+	z-index: 20000;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: -10px;
+	left: 0px;
+	background-image: url(<%=Url.Content("~/Imagens/loader.gif")%>);
+	display: block;
+}
+
+.Desbloqueado
+{
+	display: none;
+	background-image: url(<%=Url.Content("~/Imagens/loader.gif")%>); 
+}
+
+/****
+GERAL FIM
+****/

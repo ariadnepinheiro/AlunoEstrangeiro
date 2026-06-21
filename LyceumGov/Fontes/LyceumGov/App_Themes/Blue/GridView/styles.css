@@ -1,0 +1,673 @@
+/*
+.dxgvControl_Office2003_Blue,
+.dxgvDisabled_Office2003_Blue
+{
+	border: solid 1px #4f93e3;
+	font: 9pt Verdana;
+	background-color: White;
+	color: Black;
+	cursor: default;
+}
+
+.dxgvDisabled_Office2003_Blue 
+{
+	color: Gray;
+}
+.dxgvControl_Office2003_Blue a 
+{
+	color: black;
+}
+.dxgvDisabled_Office2003_Blue a
+{
+	color: Gray;
+}
+.dxgvLoadingPanel_Office2003_Blue
+{
+	border:solid 1px #4f93e3;
+	background-color: white;
+	font: 9pt Verdana;
+	color: #4B77B8;
+}
+.dxgvLoadingPanel_Office2003_Blue td
+{
+	white-space: nowrap;
+	text-align: center;
+	padding: 12px 12px 12px 12px;
+}
+.dxgvLoadingPanelStatusBar_Office2003_Blue
+{
+	background-color: transparent;
+	font: 8pt Verdana;
+	color: #4B77B8;
+}
+.dxgvLoadingPanelStatusBar_Office2003_Blue td
+{
+	white-space: nowrap;
+	text-align: center;
+	padding: 0px 2px 0px 2px;
+}
+
+.dxgvFilterPopupWindow_Office2003_Blue
+{
+	color: Black;
+	font: 9pt Verdana;
+	border: solid 1px #3a609b;
+}
+.dxgvFilterPopupItemsArea_Office2003_Blue
+{
+	color: Black;
+	background-color: White;
+}
+.dxgvFilterPopupButtonPanel_Office2003_Blue
+{
+	font: 9pt Verdana;
+	background-color: #cce2fc;
+	border: 1px solid #dcdcdc;
+	border-left-width: 0px;
+	color: Black;
+}
+
+.dxgvFilterPopupItem_Office2003_Blue td.dxgv,
+.dxgvFilterPopupActiveItem_Office2003_Blue td.dxgv,
+.dxgvFilterPopupSelectedItem_Office2003_Blue td.dxgv
+{
+	padding: 3px 2px 4px 3px;
+	border-left: 1px solid White;
+	border-bottom: 1px solid White;
+	border-right: 1px solid White;
+	cursor: default;
+	white-space: nowrap;	
+}
+.dxgvFilterPopupActiveItem_Office2003_Blue
+{
+	background: #cce2fc;
+    color: Black;
+}
+.dxgvFilterPopupSelectedItem_Office2003_Blue
+{
+	background: #ffc076;
+    color: Black;    
+}
+
+.dxgvTable_Office2003_Blue
+{
+	background-color: transparent;
+	border:0;
+	border-collapse: separate !important;
+	overflow:hidden;
+	font: 9pt Verdana;
+	color: Black;
+}
+.dxgvInlineEditRow_Office2003_Blue,
+.dxgvDataRow_Office2003_Blue
+{
+}
+.dxgvInlineEditRow_Office2003_Blue td.dxgv
+{
+	border-bottom: solid 1px #4f93e3;
+	border-right: 1px solid #4f93e3;
+	background: #c1d7f8;
+}
+.dxgvDataRowAlt_Office2003_Blue
+{
+	background-color: #edf5ff;
+}
+.dxgvFilterRow_Office2003_Blue 
+{
+	background: #94b6e8;	
+}
+.dxgvEditForm_Office2003_Blue 
+{	
+	background-color: #c1d7f8;
+}
+.dxgvEditForm_Office2003_Blue td.dxgv
+{
+	border-bottom: solid 1px #4f93e3;
+	padding: 0px 0px 2px 0px;
+}
+.dxgvSelectedRow_Office2003_Blue
+{	
+	background: #0066CC;
+}
+.dxgvFocusedRow_Office2003_Blue
+{
+	background: url(gvFocusedBack.gif) repeat-x middle middle #fff2c8;
+}
+.dxgvPreviewRow_Office2003_Blue
+{
+	background-color: white;
+}
+.dxgvDetailCell_Office2003_Blue,
+.dxgvPreviewRow_Office2003_Blue td.dxgv,
+.dxgvEmptyDataRow_Office2003_Blue td.dxgv
+{
+	padding: 2px 2px 4px 4px;
+	border-bottom: solid 1px #BFD3EE;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+}
+.dxgvDetailRow_Office2003_Blue td.dxgvIndentCell
+{
+    border-bottom: solid 1px #BFD3EE;    
+}
+.dxgvEmptyDataRow_Office2003_Blue
+{
+	color: #848484;
+}
+.dxgvEmptyDataRow_Office2003_Blue td.dxgv
+{
+	text-align:center;
+}
+
+.dxgvEditFormDisplayRow_Office2003_Blue td.dxgv,
+.dxgvDataRow_Office2003_Blue td.dxgv,
+.dxgvDataRowAlt_Office2003_Blue td.dxgv,
+.dxgvSelectedRow_Office2003_Blue td.dxgv,
+.dxgvFocusedRow_Office2003_Blue td.dxgv
+{
+	overflow:hidden;
+	border-bottom: solid 1px #bfd3ee;
+	border-right: solid 1px #bfd3ee;
+	border-top: 0;
+	border-left: 0;
+	padding: 2px 6px 5px 6px;
+}
+.dxgvEditFormDisplayRow_Office2003_Blue td.dxgv 
+{
+	background: #c1d7f8;	
+}
+.dxgvSelectedRow_Office2003_Blue td.dxgv
+{
+	border-color: #fe9552;
+}
+.dxgvEditingErrorRow_Office2003_Blue
+{
+	background-color: #FE9552;
+	color: #FFFFFF;
+}
+.dxgvEditingErrorRow_Office2003_Blue td.dxgv
+{
+	white-space: pre-wrap;
+	font-weight: bold;
+	border-bottom: solid 1px #4f93e3;
+	border-right: 0;
+	border-top: 0;
+	border-left: 0;
+	padding: 6px 10px 6px 10px;
+}
+
+.dxgvFilterRow_Office2003_Blue td.dxgv
+{
+	border-bottom: solid 1px #4f93e3;
+	border-right: 1px solid #4f93e3;
+	border-top: 0;
+	border-left: 0;
+	padding: 2px 2px 2px 2px;
+}
+.dxgvGroupRow_Office2003_Blue
+{
+	background-color: #A8C5F5;
+}
+.dxgvFocusedGroupRow_Office2003_Blue
+{
+	background: url(gvFocusedBack.gif) repeat-x middle middle #fff2c8;
+}
+.dxgvGroupRow_Office2003_Blue td.dxgv,
+.dxgvFocusedGroupRow_Office2003_Blue td.dxgv
+{
+	border: none 0;
+	vertical-align:middle;
+	white-space:nowrap;
+	border-top: solid 1px #FFFFFF;
+	border-bottom: solid 1px #4f93e3;
+	padding: 2px 6px 3px 6px;
+}
+.dxgvFocusedRow_Office2003_Blue td.dxgvIndentCell,
+.dxgvFocusedGroupRow_Office2003_Blue td.dxgvIndentCell,
+.dxgvSelectedRow_Office2003_Blue td.dxgvIndentCell
+{
+	background-color: #A8C5F5!important;  
+	border-right: solid 1px #4F93E3;
+	border-top: 0px;
+}
+.dxgvHeaderPanel_Office2003_Blue {	
+	background: url(gvGradient.gif) repeat-x center top #94b6e8;
+	color: Black;
+	padding: 8px 6px 8px 6px;
+	border-bottom: solid 1px #4f93e3;
+}
+
+.dxgvHeader_Office2003_Blue {
+	cursor:pointer;
+	white-space:nowrap;
+	padding: 4px 6px 5px 6px;
+	border: solid 1px #4f93e3;
+	background: url(gvGradient.gif) repeat-x center top #94b6e8;
+	overflow:hidden;
+	-moz-user-select: none;
+    font-weight: normal;
+    text-align: left;
+}
+.dxgvHeader_Office2003_Blue, .dxgvHeader_Office2003_Blue table {
+	color: Black;
+	font: 9pt Verdana;
+}
+.dxgvHeader_Office2003_Blue td {
+	white-space:nowrap;
+}
+.dxgvCustomization_Office2003_Blue,
+.dxgvPopupEditForm_Office2003_Blue 
+{
+	width:100%;
+	padding:0 0 0 0;
+	margin:0 0 0 0;
+	overflow:auto;
+}
+.dxgvGroupPanel_Office2003_Blue
+{
+	white-space:nowrap;	
+	font-size: 9pt;	
+	background: #a4c6f8;
+	border-bottom: solid 1px #4f93e3;
+	padding: 7px 4px 8px 6px;
+}
+.dxgvFooter_Office2003_Blue
+{	
+	background-color: #94B6E8;
+	white-space: nowrap;
+}
+.dxgvFooter_Office2003_Blue td.dxgv
+{
+	padding: 3px 6px 5px;
+	border-bottom: solid 1px #4F93E3;
+	border-right: solid 1px #4F93E3;
+}
+.dxgvGroupFooter_Office2003_Blue
+{
+	background-color: #94B6E8;
+	white-space: nowrap;
+}
+.dxgvGroupFooter_Office2003_Blue td.dxgv
+{
+	padding: 4px;
+	padding-left: 6px;
+	padding-right: 6px;
+	border-bottom: solid 1px #BFD3EE;
+	border-right: solid 1px #BFD3EE;
+}
+.dxgvDataRow_Office2003_Blue td.dxgvIndentCell,
+.dxgvGroupRow_Office2003_Blue td.dxgvIndentCell,
+.dxgvGroupFooter_Office2003_Blue td.dxgvIndentCell
+{
+    background-color: #A8C5F5;
+	border-right: solid 1px #4F93E3;
+	border-top: 0px;
+}
+
+.dxgvTitlePanel_Office2003_Blue,
+.dxgvTable_Office2003_Blue caption
+{
+	color: White;
+	font-weight:bold;
+	padding:3px;
+	text-align:center;	
+	border-bottom: solid 1px #4f93e3;
+	background: url(gvTitleBack.gif) repeat-x center top #0f439d;
+}
+.dxgvLoadingDiv_Office2003_Blue
+{
+	background-color:Gray;	
+	opacity: 0.01;
+	filter:progid:DXImageTransform.Microsoft.Alpha(Style=0, Opacity=1);
+}
+.dxgvStatusBar_Office2003_Blue 
+{
+	border-top: solid 1px #4f93e3;
+}
+.dxgvStatusBar_Office2003_Blue tr.dxgv
+{
+	height: 20px;
+}
+.dxgvCommandColumn_Office2003_Blue
+{	
+}
+.dxgvCommandColumn_Office2003_Blue a
+{
+	margin: 0px 3px 0px 0px;
+}
+.dxgvCommandColumnItem_Office2003_Blue
+{
+	padding: 2px 2px 2px 2px;
+}
+.dxgvEditFormTable_Office2003_Blue
+{
+	padding: 2px 6px 6px 4px;
+	font: 11px Verdana;
+	color: Black;
+}
+.dxgvEditFormCaption_Office2003_Blue
+{
+	padding: 4px 4px 4px 10px; 
+}
+
+.dxgvInlineEditCell_Office2003_Blue
+{
+	padding: 1px 1px 1px 1px; 
+}
+
+.dxgvEditFormCell_Office2003_Blue
+{
+	padding: 4px 4px 4px 4px; 
+	border: 0;
+}
+
+.dxgvFilterBar_Office2003_Blue 
+{	
+	border-top: solid 1px #4f93e3;
+	background-color: #A8C5F5;	
+}
+.dxgvFilterBar_Office2003_Blue a
+{	
+	color: black;
+	text-decoration: underline;		
+}
+.dxgvFilterBarCheckBoxCell_Office2003_Blue
+{
+	padding: 0 3px;
+	padding-right: 7px;
+}
+.dxgvFilterBarImageCell_Office2003_Blue
+{
+	padding: 0 3px;
+	padding-right: 1px;
+	cursor: pointer;
+	cursor: hand;
+}
+.dxgvFilterBarExpressionCell_Office2003_Blue
+{
+	font-size: 9pt;
+	padding: 5px 5px 8px 0;	
+	white-space: nowrap;
+}
+.dxgvFilterBarClearButtonCell_Office2003_Blue
+{
+	font-size: 9pt;
+	padding: 5px 6px 8px;	
+}
+.dxgvFilterBuilderMainArea_Office2003_Blue
+{
+	background: white;
+	padding: 6px 2px;
+} 
+.dxgvFilterBuilderButtonArea_Office2003_Blue
+{
+	background-color: #CFE1F9;
+	border-top: solid 1px #7BA4E0;	
+	padding: 6px;
+}
+*/
+/* -------------------------------- Tabela Ricardo ----------------------------------*/
+
+.dxgvEditingErrorRow_Office2003_Blue
+{
+}
+.dxgvEditingErrorRow_Office2003_Blue td.dxgv
+{
+	white-space: pre-wrap;
+	font-weight: bold;
+	border-bottom: 0;
+	border-right: 0;
+	border-top: 0;
+	border-left: 0;
+	padding: 6px 10px 6px 10px;
+	color: #F00;
+}
+ 
+/*css tabela*/
+.tab-full {
+min-width:600px;
+
+
+}
+
+	/* Parte Superior*/
+.tab-top_c{
+	background:url(top_bk.gif) repeat-x;
+	background-position:0px 0px;
+	padding:5px 0px 0px 10px;
+	height:25px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#0353ab;
+}
+.tab-top_dv{
+	float:right;
+	background:url(top_dv.gif) no-repeat;
+	background-position:0px -5px;
+	height:30px;
+	width:60px;
+}
+.tab-top_ct{
+	float:right;
+	background:url(top_ct.gif) repeat-x;
+	background-position:0px -5px;
+	height:25px;
+	min-width:60px;
+	padding:5px 5px 0px 5px;
+}
+.tab-top_tit{
+	float:left;
+	background-position:5px 5px;
+	height:23px;
+	max-height:25px;
+	min-width:100px;
+	padding:7px 5px 0px 0px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#0353ab;
+	}
+/* Parte das labels de colunas */
+	.tab-lab_c{
+		background:#bfd7f3;
+		padding:0px 5px 0px 5px;
+		min-height:10px;
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:11px;
+		font-weight:bold;
+		color:#000;
+		background-image:url(lab_bk.gif) repeat-y bottom;
+	}
+	/*Parte das linhas e colunas */
+
+	    .tab-mid_cinza{
+			background-color:#adadad;
+			min-height:20px;
+			font-family:Tahoma, Geneva, sans-serif;
+			font-size:11px;
+			color:#000;
+			cursor:pointer;
+		}
+		
+		.tab-mid_c{
+			background-color:#FFFFFF;
+			min-height:20px;
+			font-family:Tahoma, Geneva, sans-serif;
+			font-size:11px;
+			color:#000;
+			cursor:pointer;
+		}
+		.tab-mid_ca{
+			background-color:#F5F5F5;
+			min-height:20px;
+			font-family:Tahoma, Geneva, sans-serif;
+			font-size:11px;
+			color:#000;
+			cursor:pointer;
+		}
+		.tab-mid_c:hover{
+			background-color:#d5d5d5;
+			min-height:20px;
+			font-family:Tahoma, Geneva, sans-serif;
+			font-size:11px;
+			color:#000;
+			cursor:pointer;
+		}
+		.tab-mid_ca:hover{
+			background-color:#d5d5d5;
+			min-height:20px;
+			font-family:Tahoma, Geneva, sans-serif;
+			font-size:11px;
+			color:#000;
+			cursor:pointer;
+		}
+/*divisão da finalização da tabela*/
+	.tab-foo_c{
+		background:#cdddee;
+		max-height:2px;
+		height:2px;
+	}
+/*Parte rodapé e controles da tabela */
+.tab-bas_l{
+	float:left;
+	background:#FFF url(img-tb/bas_l.gif) no-repeat;
+	background-position:0px 0px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	width:10px;
+	height:40px;
+}
+.tab-bas_c{
+	background:#FFF url(bas_bk.gif) no-repeat;
+	padding:10px 15px 0px 5px;
+	height:40px;
+	*padding:15px 15px 0px 5px;
+	*height:35px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	text-decoration:none;
+	color:#00F;
+}
+.tab-bas_dv{
+	float:left;
+	background:url(img-tb/bas_dv.gif) no-repeat;
+	background-position:bottom;
+	height:40px;
+	width:80px;
+}
+.tab-bas_ct{
+	float:left;
+	background:url(img-tb/bas_ct.gif) repeat-x bottom;
+	height:27px;
+	min-width:60px;
+	padding:13px 5px 0px 5px;
+	color:#FFF;
+}
+.tab-bas_ct a{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	text-decoration:none;
+	color:#FFF;
+}
+.tab-bas_ct a:hover{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	text-decoration:underline;
+	color:#cdddee;
+}
+.tab-bas_r{
+	float:right;
+	background:#FFF url(img-tb/bas_r.gif) no-repeat;
+	background-position:0px 0px;
+	width:10px;
+	height:40px;
+}
+/*borda da coluna*/
+.tab-cell
+{
+	border-left:solid 1px #cdddee;
+	border-right:solid 1px #cdddee;
+	padding:2px 5px;
+}
+/* Formatações controles*/
+.pg_form{
+	border:1px solid #cdddee;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:9px;
+	height:12px;
+	width:15px;
+	float:inherit;
+	margin-top:-10px;
+	}
+.tab-edit_form{
+ border:1px #9F9F9F solid;
+ padding:1px 3px;
+ font-family:Tahoma, Geneva, sans-serif;
+ font-size:11px;
+ color:#000000;
+ background-color:#FCFCFC;
+	}
+.tab-edit_form:hover{
+ border:1px #9F9F9F solid;
+ padding:1px 3px;
+ font-family:Tahoma, Geneva, sans-serif;
+ font-size:11px;
+ color:#000000;
+ background-color:#FCFCFC;
+	}
+img {
+	border:0px;
+	 }
+.img_bt{
+	margin-right:10px;}	
+/*fim da tabela*/
+
+
+/*Tabela para TSource*/
+.ts-all{
+   font-family:Tahoma, Geneva, sans-serif;
+   font-size:11px;
+   color:#000;
+   background:#bfd7f3;
+}
+.ts-top_c{
+	background:url(top_bk.gif) repeat-x;
+	background-position:0px -25px;
+	padding:5px 0px 0px 10px;
+	height:5px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color:#0353ab;
+}
+	.ts-lab_c{
+		background:#bfd7f3;
+		padding:0px 5px 0px 5px;
+		height:20px;
+		font-family:Tahoma, Geneva, sans-serif;
+		font-size:11px;
+		font-weight:bold;
+		color:#000;
+	}
+.ts-mid_c{
+     background-color:#FFFFFF;
+}
+
+.ts-mid_ca{
+
+                  background-color:#F5F5F5;
+}
+.ts-mid_c:hover, .ts-mid_ca:hover{
+                  background-color:#d5d5d5;
+}
+.ts-bas_c{
+            background:#bfd7f3;
+            padding:2px 10px;
+}
+.ts-cell{
+	border-left:solid 1px #cdddee;
+	border-right:solid 1px #cdddee;
+	padding:2px 5px;
+}

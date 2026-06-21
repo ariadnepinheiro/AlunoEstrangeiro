@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<relatorio>
+  <!--Os paramêtros da query segue a ordem de: 1º Parâmetros Querystring; 2º Parâmetros XML-->
+  <query>select cd.NOME as nome2, (cd.ENDERECO + ', ' + cd.END_NUM) as rua, cd.BAIRRO as bairro, mun.NOME as cidade, (substring(cd.CPF,1,3) + '.' + substring(cd.CPF,4,3) + '.' + substring(cd.CPF,7,3) + '-' + substring(cd.CPF,10,2)) as cpf, cd.estado_civil as estado_civil, cd.nacionalidade as nacionalidade from LY_CANDIDATO_DOCENTE cd  inner join LY_CONCURSO_DOCENTE conc on cd.CONCURSO = conc.CONCURSO inner join MUNICIPIO mun on cd.END_MUNICIPIO = mun.CODIGO where cd.CONCURSO = ? and CANDIDATO = ?</query>
+
+  <!--Todos os parâmetros aqui são obrigatórios.
+      fieldType: text, date.
+      label: Texto que descreve o significado do campo.
+      name: Nome único que não pode se repetir.-->
+  <parametros>
+
+  </parametros>
+
+  <texto>
+    <![CDATA[
+	<style type="text/css">
+		.margem
+		{
+			margin: 0 113.385826772px;
+		}
+		.titulo
+		{
+			font-family: Arial;
+			font-size: 12px;
+      font-weight: bold;
+			text-align: center;
+		}
+		.subtitulo
+		{
+			font-family: Times New Roman;
+			font-size: 12px;
+      font-weight: bold;
+			text-align: justify;
+      margin-left: 270px;
+		}
+		.texto
+		{
+			font-family: Times New Roman;
+			font-size: 12px;
+			text-align: justify;
+		}    
+    table,tr,td
+    {
+      font-family: Times New Roman;
+      font-size: 12px;
+      font-weight: bold;
+      font-style: italic;
+    }
+		.destaque
+		{
+			font-family: Times New Roman;
+      font-size: 12px;
+      font-weight: bold;
+      font-style: italic;
+		}
+	</style>
+  <div align="center">
+    <img src="../images/logo_govrj.jpg" />
+  </div>
+	<div class="margem">    
+		<div class="titulo">      
+			GOVERNO DO ESTADO DO RIO DE JANEIRO</div>
+		<div class="titulo">
+			SECRETARIA ESTADUAL DE EDUCAÇÃO</div>
+		<br />
+		<div class="subtitulo">
+			TERMO ADITIVO AO CONTRATO DE PRESTAÇÃO DE SERVIÇOS POR TEMPO DETERMINADO OU SOB CONDIÇÕES RESOLUTIVAS, NA FORMA DO ARTIGO 37, INCISO IX DA CONSTITUIÇÃO DA REPÚBLICA, DO ARTIGO 77, INCISO XI DA CONSTITUIÇÃO DO ESTADO DO RIO DE JANEIRO, CONSOANTE O DISPOSTO NA LEI ESTADUAL Nº 4.599, DE 27 DE SETEMBRO DE 2005.</div>
+		<br />
+		<br />
+		<div class="texto">
+			<b><u>CONTRATANTE:</u></b>&nbsp;Estado do Rio de Janeiro, através da Secretaria de Estado de Educação, com sede na Rua da Ajuda nº 05, Centro, no Município do Rio de Janeiro, Estado do Rio de Janeiro, representado pelo Superintendente de Gestão de Pessoas, Sr. Marcus Vinícius Medina Costa, Carteira de Identidade nº 09552242-1/DETRAN, CPF nº 056.422.027-23, conforme art. 12 da Resolução SEEDUC nº 4.278, de 08 de maio de 2009.
+			<br />
+			<br />
+			<br />
+			<b><u>CONTRATADO:</u></b>&nbsp;#nome2#, #nacionalidade#, Natural do ___________________, Nascido(a) em __/__/19____, #estado_civil#, portador(a) da Carteira de Identidade nº ___________________, Expedida em ____/____/_____, inscrito(a) no CPF/MF sob o nº ____________________, residente e domiciliado(a) na _____________________________________________________________, no município de ___________________________________.
+			<br />
+      <br/>
+			<br />			
+			Ao(s) _______ dia(s) do mês de _____________________ do ano de dois mil e dez, é celebrado o presente Termo Aditivo ao instrumento contratual celebrado em _____/_____/2009, entre as partes acima nominadas, seguindo-se o pactuado pela legislação específica vigente e, especialmente, pelo que dispõe a Lei Estadual nº 4.599, de 27 de setembro de 2005 e o Decreto nº 42.265, de 26 de janeiro de 2010.
+			<br />
+      <br/>
+			Os dados consignados na qualificação do CONTRATADO são de reprodução da documentação fornecida pelo próprio para o preenchimento da ficha para implantação de pagamento, a qual passa a fazer parte integrante do presente instrumento.
+			<br />
+			<br />
+      <br/>
+      <br/>
+      <b><u>CLÁUSULA PRIMEIRA:</u></b>&nbsp;
+			 Prorroga-se o contrato celebrado em ___/____/2009 pelo prazo de 01 (hum) ano, a contar de 01.01.2010 passando o seu término para o fim do ano letivo de 2010 ou prazo inferior, na hipótese de condição resolutiva decorrente da assunção das funções atribuídas ao CONTRATADO por Professor ocupante de cargo efetivo.
+			<br />
+			<br />
+      <b><u>CLÁUSULA SEGUNDA:</u></b>&nbsp;
+			 Altera-se a remuneração bruta mensal do CONTRATADO prevista no item 3.1 passando a ser devido o valor de R$ 584,10 (quinhentos e oitenta e quatro reais e dez centavos) a partir da assinatura do presente termo.
+			<br />
+			<br />
+      <b><u>CLÁUSULA TERCEIRA:</u></b>&nbsp;
+			 Excetuando-se o disposto nas cláusulas antecedentes continuam em vigor, e com as primitivas relações, todas as cláusulas do contrato que não estejam sendo expressamente alteradas por força do presente instrumento.
+			<br />
+			<br />
+			E, por ficarem justos e acordados, as partes assinam o presente em 04 (quatro) vias de igual teor e na presença das duas testemunhas abaixo subscritas.
+			<br />
+			<br />
+      <br/>
+      <div align="center">
+			Rio de Janeiro,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;de&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;de 2010.			
+      </div>
+		</div>
+		<br />
+		<br />		
+		<br />
+    <table>
+      <tr>
+        <td style="width: 10%">
+          _________________________________________						    
+        </td>
+        <td style="width: 10%">
+          _________________________________________
+        </td>
+      </tr>
+      <tr>
+        <td>
+        CONTRATANTE
+        </td>
+        <td>
+        CONTRATADO
+        </td>
+      </tr>
+    </table>			
+		<br />			
+		<br />
+		<br />
+	  <table>
+      <tr>
+        <td style="width: 10%">
+          _______________________________________&nbsp;&nbsp;&nbsp;&nbsp;		    
+        </td>
+        <td style="width: 10%">
+          _______________________________________&nbsp;&nbsp;&nbsp;&nbsp;
+        </td>
+      </tr>
+      <tr>
+        <td>
+        COORDENADOR REGIONAL
+        </td>
+        <td>
+        RESPONSÁVEL PELA CONFERÊNCIA DA DOCUMENTAÇÃO NA COORDENADORIA REGIONAL
+        </td>
+      </tr>
+    </table>			
+    <br/>
+    <br/>      
+    <br/>
+    <div class="destaque">Testemunhas:</div>    
+    <br/>
+    <br/>
+    <div align="center" >
+      <table style="text-align:left">
+        <tr>
+          <td>
+            1 - ____________________________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </td>
+          <td>
+            2 - ____________________________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            CPF Nº ________________________________						    
+          </td>
+          <td>
+            CPF Nº ________________________________
+          </td>
+        </tr>
+        <tr>
+          <td>
+            IDENTIDADE Nº ________________________
+          </td>
+          <td>
+            IDENTIDADE Nº ________________________
+          </td>
+        </tr>
+      </table>      
+    </div>		
+	</div>]]>
+  </texto>
+</relatorio>

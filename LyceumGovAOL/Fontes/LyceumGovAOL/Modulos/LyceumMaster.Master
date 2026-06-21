@@ -1,0 +1,215 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LyceumMaster.master.cs"
+    Inherits="Techne.Lyceum.Net.Modulos.LyceumMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="icon" href="~/Images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="~/Images/favicon.ico" type="image/x-icon" />
+    <title>SEEDUC - Governo do Rio de Janeiro</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../Scripts/themes/basic/grid.css" rel="stylesheet" type="text/css" />
+    <link href="../Scripts/themes/jqModal.css" rel="stylesheet" type="text/css" />
+    <link href="../LyceumNet.css?data=10062015" type="text/css" rel="stylesheet" />
+    <!--2021-->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css" integrity="sha512-3icgkoIO5qm2D4bGSUkPqeQ96LS8+ukJC7Eqhl1H5B2OJMEnFqLmNDxXVmtV/eq5M65tTDkUYS/Q0P4gvZv+yA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    
+    <style>
+    .top_inf{position:fixed;width:100%;background:#1E6496;color:#ffffff;box-shadow:0 0.5rem 1rem rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 15%);height:65px;font-size:small;font-family:verdana, arial, helvetica;z-index:9999;}
+    .top_outros{position:relative;height:65px;}
+    .top_logo_governo{background-image:url("../images/logo-educacao-branca.png");background-size:cover;width:164px;height:50px;margin:7px auto;position:absolute;left:20px;}
+    .top_logo_gestao{background-image:url("../images/logo-aluno.png");background-size:cover;width:110px;height:30px;margin-top:10px;position:absolute;left:210px;}
+   .tit_pag{position:absolute;top:20px;left:210px;height:20px;width:775px;}
+    .tit_pag > h5{width:260px;}
+    .top_usuario_logado{height:50px;margin:15px auto;position:absolute;left:480px;right:178px;color:white;white-space:nowrap;overflow:hidden;}
+    .top_usuario_logado > span{display:block;}
+    .top_botoes{width:170px;height:50px;margin:7px auto;position:absolute;right:10px;}
+    .buttom-top{text-align:center;width:70px;padding:0px 8px;border:2px solid #1E6496;border-radius:5px;margin:8px 5px 0 5px;color:#1E6496;Background:white;font-size:1em;font-weight:600;font-family:'Verdana', Geneva, sans-serif!important;display:inline-flex;justify-content:space-evenly;align-items:center;}
+    .buttom-top:hover{padding:0px 8px;border:2px solid #ffffff;color:white;Background:#1E6496;font-size:1em;text-decoration:none;}
+    a:link{text-decoration:none;color:#0353ab;}
+    a:visited{text-decoration:none;color:#0353ab;}
+    a:hover{text-decoration:underline;color:#666;}
+    a:active{text-decoration:none;color:#0353ab;}
+    
+    @media (max-width: 1066px) {
+        .tit_pag {
+            margin: unset;
+            display: unset;
+            min-width: unset;
+            max-width: unset;
+            width: unset;
+            height: unset;
+            flex-direction: unset;
+            align-items: unset;
+            text-align: unset;
+            background: unset;
+            padding-top: unset;
+            border-radius: unset;
+        }
+        
+        .conteudo {
+            padding-top: 80px;
+        }
+    }
+    
+    .menu-topo{width:2000px;margin:0px;padding:0px;margin-left:3px;padding-top:1px;border-top:2px solid #dfe6ed;}
+    .menu-topo li a{display:block;height:20px;padding:0px 1px;background:#1E6496;color:#FFF;text-decoration:none;font-size:11px;padding:3px 5px;border-radius:5px;font-family:'Open Sans',Tahoma, Geneva, sans-serif;}
+    .menu-topo li a:hover{text-decoration:underline;}
+    .menu-topo li{list-style:none;float:left;margin-right:2px;}
+    #top_menu{width:2000px;margin:3px 3px;}
+    
+    
+    
+    /*! CSS Used from: https://desenvolvimento.educacao.rj.gov.br/NovoFrontEndConexao2/site.css */
+.top_botoes{width:170px;height:50px;margin:7px auto;position:absolute;right:10px;}
+.imagem-menu{display:inline-block;height:50px;width:50px;background-repeat:no-repeat;background-position:center;background-size:35px;border:1px solid transparent;}
+.imagem-home{background-image:url('<%# Page.ResolveClientUrl("~/Images/icone-site-04.png") %>');}
+.imagem-ajuda{background-image:url('<%# Page.ResolveClientUrl("~/Images/icone-site-05.png") %>');}
+.imagem-sair{background-image:url('<%# Page.ResolveClientUrl("~/Images/icone-site-06.png") %>');}
+a:link{text-decoration:none;color:#0353ab;}
+a:visited{text-decoration:none;color:#0353ab;}
+a:hover{text-decoration:underline;color:#666;}
+a:active{text-decoration:none;color:#0353ab;}
+
+
+    </style>
+        <!-- Rybená-->
+        <script type="text/javascript" src="https://cdn.rybena.com.br/dom/master/latest/rybena.js?positionPlayer=left&positionBar=right"></script>
+</head>
+<body onload="moveRelogio();" approot='<%=Page.ResolveClientUrl("~/") %>'>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery-1.7.1.min.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.jqGrid.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/js/jqModal.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/MaskTypes.js") %>'></script>
+
+    <form id="form1" runat="server" submitdisabledcontrols="True">
+    
+    <!-- Aqui é a Header "top_inf"-->
+    <div class="top_inf">
+        
+        <div class="top_outros">
+                
+            <!-- LOGO -->
+            <div class="top_logo_governo"></div>
+            
+            <div class="top_logo_gestao"></div>
+			
+			<div class="tit_pag">
+			    <h5 align="left">
+				    <asp:Literal ID="lblTituloPagina" runat="server" />
+				</h5>
+   			</div>
+   			
+   			<!-- Dados do usuário logado -->  
+            <div class="top_usuario_logado">
+                <span><b>Matrícula:</b> <asp:Literal ID="lblUsuario" runat="server" /></span>
+                <span><div id="divHoraData"></div></span>
+            </div>
+            
+            <div class="top_botoes">
+                <!-- Botões - Home -->   
+                <asp:HyperLink ID="hlInicio" runat="server" CssClass="imagem-menu imagem-home" NavigateUrl="~/Default.aspx" ToolTip="Início"><span class="imagem-home"></span></asp:HyperLink>
+                
+                <!-- Botões - Ajuda -->    
+                <asp:HyperLink ID="hlHelp" runat="server" CssClass="imagem-menu imagem-ajuda" ToolTip="Ajuda"><span class="imagem-ajuda"></span></asp:HyperLink>
+                
+                <!-- Botões - Sair -->
+                <asp:LinkButton ID="lbSair" runat="server" CssClass="imagem-menu imagem-sair" OnClick="lbSair_Click" ToolTip="Logoff"><span class="imagem-sair"></span></asp:LinkButton>
+            </div>
+        </div>
+        
+        <!-- NAVBAR - MENU INTERNO -->
+        <div class="top_menu">
+	        <ul class="menu-topo">
+		        <li>
+			        <asp:LinkButton ID="lnk1" runat="server" Text="Boletim" OnClick="lnk1_Click"></asp:LinkButton>
+		        </li>
+
+		        <li>
+			        <asp:LinkButton ID="lnk10" runat="server" Text="Conta para acessar Classroom" OnClick="lnk2_Click"></asp:LinkButton> 
+		        </li>
+
+                <li>
+			        <asp:LinkButton ID="lnk3" runat="server" Text="Acompanhamento Classroom" OnClick="lnk3_Click"></asp:LinkButton>
+		        </li>
+	        </ul>
+        </div>
+    </div>
+    
+    
+    <!-- CONTEUDO DO SITE -->
+    <div id="conteudo" class="conteudo" style="">
+        <asp:ContentPlaceHolder ID="cphFormulario" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <br />
+    
+    <!-- Redes Sociais 
+    <div>
+        <table width="30%" align="center">
+            <tr>
+                <td colspan="3" align="center">
+                    <h3>
+                        Curta as redes sociais da Seeduc e acompanhe todas as novidades
+                    </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://facebook.com/seeducrj" target="_blank">
+                        <img src="../Images/facebook_ce_pe.png" alt="Facebook" title="Facebook" /></a>
+                </td>               
+                <td>
+                    <a href="https://www.youtube.com/user/seeducrio" target="_blank">
+                        <img src="../Images/youtube_ce_pe.png" alt="Youtube" title="Youtube" /></a>
+                </td>
+                <td>
+                    <a href="https://www.instagram.com/seeducrj/" target="_blank">
+                        <img src="../Images/instagram_ce_pe.png" alt="Instagram" title="Instagram" /></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+                -->
+    
+    
+    <!-- FOOTER 
+    <div class="bas-inf">
+        <div class="bas">
+            &copy; Todos os direitos reservados -
+            <%= DateTime.Now.Year %>
+            | versão
+            <asp:Literal ID="lblVersao" runat="server" /></div>
+    </div>-->
+    
+    <div class="footer">
+        <div class="copyright">
+            &copy; Todos os direitos reservados SEEDUC - RJ -
+            <%= DateTime.Now.Year %>
+            | versão
+            <asp:Literal ID="Literal1" runat="server" />
+        </div>
+        
+        
+        <!-- A Direita - Redes sociais -->
+        <div class="midias-sociais">
+            <div class="icons-midias">
+                <a href="https://www.facebook.com/seeducRJ" target="_blank"><i class="fab fa-facebook-f fa-2x"></i></a>
+                <a href="https://www.instagram.com/seeducrj/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://www.youtube.com/channel/UCzhk54RUJtn1kwqU4LTNP-Q" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+            </div>
+        </div>          
+    </div>
+    
+    </form>
+</body>
+</html>

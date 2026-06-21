@@ -1,0 +1,740 @@
+﻿*
+{
+    /*
+    margin: 0;
+    padding: 0;*/
+}
+
+body
+{
+    font-size: 13px;
+    font-family: Tahoma, Sans-Serif;
+    color: #000000;
+    background:#fff url("images/bg-home.png") repeat-x left top;	
+    margin:0px;	
+    padding:0px;
+    /*
+    user-select: none; 
+    -moz-user-select: none; 
+    -webkit-user-select: none;  */
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset 
+{
+    border:1px solid #ddd;
+    padding:0 5px 8px 10px;
+    margin:5px 0 5px 0;
+}
+
+legend 
+{
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+textarea 
+{
+    min-height: 75px;
+}
+
+.editor-label 
+{
+    margin: 1em 0 0 0;
+}
+
+.editor-field 
+{
+    margin:0.5em 0 0 0;
+}
+
+
+textarea, input, select
+{
+    font-size: 13px;
+    font-family: Tahoma, Sans-Serif !important;
+}
+
+input
+{
+    text-transform: uppercase;    
+}
+
+form
+{
+    display: inline; 
+    margin: 0;    
+}
+
+/* Blocos
+-----------------------------------------------------------*/
+
+.boxHeader
+{
+    height: 57px;    
+    margin: 0pt auto; 
+}
+
+.all_menu
+{
+    min-width: 980px;
+}
+
+.fundoMenu
+{
+    background:#fff url("images/bg-menu.png") repeat-x left top;
+    float: left;
+}
+
+
+.boxMenu
+{
+    float: left;
+    margin: 15px 0 0 0;
+    list-style: none outside none;
+}
+
+.menuItem
+{
+    float: left;
+    margin-top: 0px;
+    margin-right: 20px;
+    color: #96CBFF;
+    font-size: 1.4em;
+}
+
+.menuItem a
+{
+    color: #96CBFF;
+    text-decoration: none;
+}
+
+.menuItem a:hover
+{
+    text-decoration:underline;
+}
+
+.boxCiclo
+{
+    float: left;  
+    color: #6F6F6F;
+    padding: 3px 0 0 30px;
+    margin-top: 1px;
+    background:url("images/bg-bordamenu.png") no-repeat left top;
+    height: 28px;
+}
+
+.boxLinks
+{
+    list-style: none outside none;
+    float: right;
+    /* margin: 32px 20px 0 0; */
+    color: #FFF; 
+    right: 20px;
+    margin: 35px 15px 0 0;
+}
+
+.boxLinks a
+{
+    color: #FFF;
+    text-decoration: none; 
+}
+
+.boxLinks a:hover
+{
+    text-decoration:underline;
+}
+
+.boxLinks li
+{
+    float: left;
+    margin-left: 5px;
+}
+
+
+
+.boxHdrLinks
+{
+    list-style: none outside none;
+    float: right;
+    color: #6F6F6F; 
+    right: 20px;
+    margin: 3px 15px 0 0;
+}
+
+.boxHdrLinks a
+{
+    color: #6F6F6F;
+    text-decoration: none; 
+}
+
+.boxHdrLinks a:hover
+{
+    text-decoration:underline;
+}
+
+.boxHdrLinks li
+{
+    float: left;
+    margin-left: 5px;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.boxTitle
+{
+    background-color: #DEDEDE;
+    height: 20px;
+    font-family: Tahoma, Sans-Serif;
+    font-weight: normal;
+    color: #6F6F6F;
+    margin: 0 10px 0 10px;
+    padding: 4px 5px 0 5px; 
+    border-top: 1px solid #D0D0D0;
+    border-right: 1px solid #D0D0D0;
+    border-bottom: 0;
+    border-left: 1px solid #D0D0D0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    overflow: hidden;
+}
+
+.breadcrumb
+{
+    list-style: none outside none; 
+    float:left; 
+    margin:0; 
+    padding: 0 0 0 3px;
+    width: 100%;height: 20px;
+}
+
+.breadcrumb li
+{
+    display: block; 
+    float: left; 
+    padding: 0 2px 0 2px;    
+}
+
+.breadcrumb .version
+{
+    color:#96CBFF; 
+    font-size:8px; 
+    padding: 5px 8px 0 0; 
+    float:right;    
+}
+
+
+.boxContent
+{
+    background-color: #f5f5f5;
+    border-bottom: #D0D0D0 1px solid; 
+    border-left: #D0D0D0 1px solid; 
+    border-right: #D0D0D0 1px solid; 
+    border-top: #D0D0D0 1px solid; 
+    padding: 10px; 
+    margin: 0 10px 0px 10px;
+/*    min-height: 650px;    
+    height: 650px;*/
+    overflow: auto;
+
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;    
+}
+
+html>body .boxContent {
+    height: auto;
+}
+
+.tableForm
+{
+    border-collapse: separate;
+    border-spacing: 5px;
+    padding: 0;
+}
+
+.formColumn
+{
+    float:left;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+.boxVersion
+{
+    text-align: center; 
+    font-size: 10px; 
+    color: #999; 
+    margin: 3px 0 10px 0;
+}
+
+
+.boxInfo
+{
+    background-color: #ffffcc;
+    border: #ffcc66 1px solid;
+    padding: 5px 10px 5px 10px;
+    margin: 5px 5px 5px 5px;
+    color: Green;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.boxErro
+{
+/*    background-color: #FFEEEE;*/
+    background: url("images/ico_erro.gif") no-repeat scroll 0 0 #FFEEEE;   
+    
+    border: #ff0000 1px solid;
+    padding: 2px 10px 5px 25px;
+    margin: 5px 5px 5px 5px;
+    color: #ff0000;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.boxStatus
+{
+    width: 200px;
+    background-color: #f5f5f5;
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    text-align:center;
+    border: white 1px solid; 
+}
+
+.boxStatusVermelho
+{
+    background-color: #FF0000;
+    color: #FFFFFF;
+}
+
+.boxStatusVerde
+{
+    background-color: #008000;
+    color: #FFFFFF;
+}
+
+.boxStatusAmarelo
+{
+    background-color: #FFFF00;
+    color: #000000;
+}
+
+.boxStatusAzul
+{
+    background-color: #0000FF;
+    color: #FFFFFF;
+}
+
+.boxStatusAzulClaro
+{
+    background-color: #cce6ff;
+    color: #000000;
+}
+
+.boxStatusCinza
+{
+    background-color: #EEEEEE;
+    color: #000000;
+}
+
+
+.custom-action-cell
+{
+    overflow:visible !important;
+}
+
+
+/* Grid
+----------------------------------------------------------*/
+
+.grid
+{
+    border: solid 1px #D0D0D0;
+    border-collapse: collapse;
+    background-color: #FFF;
+    width: 100%;
+    color: #3B3B3B;
+    table-layout:fixed;
+}
+
+
+.grid th
+{ 
+    padding: 3px 5px;
+    text-align: left;
+    background-color: #e4e4e4;   /*e3f1fa*/
+    border: solid 1px #D0D0D0;
+
+    overflow: hidden;
+}
+
+.grid th a
+{ 
+    color: #3B3B3B;
+    background-image: url('images/lk_sort.gif');
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 15px;    
+}
+
+
+.grid tr:hover
+{
+    background-color:#D4EAF5;
+    border-color:#f3d64a;
+}
+
+.grid td 
+{
+    padding: 5px;   
+    border-color: #D0D0D0;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    
+    white-space: nowrap;    
+    overflow: hidden;
+    
+}
+
+.gridrow_alternate
+{
+    background-color: #F1F2F3;
+}
+
+.gridrow
+{
+}
+
+
+.sort_asc
+{
+}
+.sort_asc a
+{
+    background-image: url('images/lk_sort_asc.png') !important;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 15px;
+}
+
+.sort_desc
+{
+}
+.sort_desc a
+{
+    background-image: url('images/lk_sort_desc.png') !important;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-left: 15px;   
+}
+
+
+
+
+.pager
+{
+    background-color: #e4e4e4; /*e3f1fa*/
+    border-color: #D0D0D0;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    height: 20px;
+    padding: 2px 5px 0 5px;
+    clear: left;
+}
+
+.pager .pagerButtons
+{
+    float: left;
+    height: 16px;    
+}
+
+.pager .currentPage
+{
+    border: solid 1px #A5B3C5;
+    display: inline-block;
+    font-size: 10px;
+    
+    height: 14px;
+    overflow: hidden;
+    text-align: center;
+    padding: 2px 4px 0 4px;
+    float: left;
+}
+
+.pager .totalItems
+{
+    display: inline-block;    
+    font-size: 10px;
+    height: 14px;
+    overflow: hidden;
+    text-align: center;
+    padding: 2px 4px 0 4px;
+    float: right;    
+}
+
+.pager .pageButton
+{
+    background: url("images/paginator.png") no-repeat scroll 100% 0 transparent;
+    border: solid 1px #e4e4e4;
+    width: 16px;
+    height: 16px;
+    margin: 0 2px 0 2px;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    text-align: center;
+    float: left;
+}
+
+
+.pager .pageFirst {background-position: 0 0;}
+.pager .pageFirst:hover {border: solid 1px #A5B3C5;}
+.pager .pageFirstDisabled {background-position: 0 -16px;}
+.pager .pagePrev {background-position: -16px 0;}
+.pager .pagePrev:hover {border: solid 1px #A5B3C5;}
+.pager .pagePrevDisabled {background-position: -16px -16px;}
+.pager .pageNext {background-position: -32px 0;}
+.pager .pageNext:hover {border: solid 1px #A5B3C5;}
+.pager .pageNextDisabled {background-position: -32px -16px;}
+.pager .pageLast {background-position: -48px 0;}
+.pager .pageLast:hover {border: solid 1px #A5B3C5;}
+.pager .pageLastDisabled {background-position: -48px -16px;}
+
+.pager .pageLink {text-decoration: none;}
+
+.pager .pageTitle
+{  
+    display: inline-block;    
+    font-size: 12px;
+    height: 14px;
+    overflow: hidden;
+    text-align: center;
+    padding: 2px 4px 0 4px;
+    font-weight: bold; 
+    width: 75%;   
+}
+
+
+.icoLinkSelect
+{
+    background: url("images/lk_retornar.gif") no-repeat top left;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+}
+
+.icoLinkOpen
+{
+    background: url("images/lk_abrir.gif") no-repeat top left;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+}
+
+.icoLinkDelete
+{
+    background: url("images/lk_excluir.gif") no-repeat top left;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+}
+
+.icoLinkImport
+{
+    background: url("images/lk_importar.gif") no-repeat top left;
+    display: block;
+    width: 19px;
+    height: 19px;
+    margin-left: 4px;
+}
+
+.icoLinkGerarFilho
+{
+    background: url("images/lk_gerar_filho.gif") no-repeat top left;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+}
+
+
+.icoStatus
+{
+    display: block;
+    float: left;
+    width: 9px;
+    height: 9px;
+}
+
+.icoStatusAmarelo
+{
+    background: url("images/statusamarelo.gif") no-repeat top left;
+}
+
+.icoStatusVermelho
+{
+    background: url("images/statusvermelho.gif") no-repeat top left;
+}
+
+.icoStatusVerde
+{
+    background: url("images/statusverde.gif") no-repeat top left;
+}
+
+.icoStatusAzul
+{
+    background: url("images/statusazul.gif") no-repeat top left;
+}
+
+.icoStatusAzulClaro
+{
+    background: url("images/statusazulclaro.gif") no-repeat top left;
+}
+
+.icoStatusCinza
+{
+    background: url("images/statuscinza.gif") no-repeat top left;
+}
+
+.icon_elegivel_sim
+{
+    background: url("images/icoSim.png") no-repeat top left;
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+.icon_elegivel_nao
+{
+    background: url("images/icoNao.png") no-repeat top left;
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+.icoLinkDetalhes
+{
+    background: url("images/icoDetalhes.png") no-repeat top left;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 18px;
+    height: 18px;
+}
+
+#ui-datepicker-div { display: none; }
+
+.ui-widget { font-size: 13px !important; font-family: Tahoma, Sans-Serif !important;}
+
+.ui-button-text { padding: 0.1em 0.8em !important;}
+
+.ui-tabs .ui-tabs-nav li a {padding: 0.2em 1em !important;}
+
+.ui-tabs-panel {overflow: hidden !important;}
+
+.ui-dialog .ui-dialog-content {padding: 0.8em 0 !important; .height: auto !important;}
+
+.ui-accordion .ui-accordion-content {padding-top: 0 !important;}
+
+
+.labelLeft
+{
+    text-align: left;
+    color: #777777;
+    padding-right: 5px;
+}
+
+.labelRight
+{
+    text-align: right;
+    color: #777777;
+    padding-right: 5px;
+}
+
+.labelTitulo
+{
+    padding:5px 0 5px 0;
+    font-weight: bold;
+    color: #3b3b3b;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+
+.validation-summary-errors
+{
+    color: #ff0000;
+/*    
+    background-color: #FFEEEE;
+    border: #ff0000 1px solid;
+    padding: 5px 10px 5px 10px;
+    margin: 0 0 5px 0;
+*/
+}
+
+.validation-summary-errors
+{
+    position: relative;
+}
+
+.validation-summary-errors ul
+{
+    list-style: none outside none;
+    padding: 0;
+    margin: 5px;    
+}
+
+.validation-summary-valid
+{
+    font-size: 10px;
+    display: none;
+}
+
+
+.validation-summary-errors li
+{
+    background: url("images/ico_erro.gif") no-repeat scroll 0 0 #FFEEEE;   
+    border: #ff0000 1px solid;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    padding: 2px 10px 2px 25px;
+    margin: 2px 0 2px 0;
+}

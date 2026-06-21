@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "DOL", "DOL.rptproj", "{51EB9484-1928-438E-82F8-48F1C5334C54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51EB9484-1928-438E-82F8-48F1C5334C54}.Debug|Default.ActiveCfg = Debug
+		{51EB9484-1928-438E-82F8-48F1C5334C54}.Debug|Default.Build.0 = DebugLocal
+		{51EB9484-1928-438E-82F8-48F1C5334C54}.Debug|Default.Deploy.0 = DebugLocal
+		{51EB9484-1928-438E-82F8-48F1C5334C54}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{51EB9484-1928-438E-82F8-48F1C5334C54}.DebugLocal|Default.Build.0 = DebugLocal
+		{51EB9484-1928-438E-82F8-48F1C5334C54}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{51EB9484-1928-438E-82F8-48F1C5334C54}.Release|Default.ActiveCfg = Release
+		{51EB9484-1928-438E-82F8-48F1C5334C54}.Release|Default.Build.0 = Release
+		{51EB9484-1928-438E-82F8-48F1C5334C54}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

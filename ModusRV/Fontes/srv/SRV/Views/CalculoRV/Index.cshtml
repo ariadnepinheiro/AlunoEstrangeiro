@@ -1,0 +1,71 @@
+﻿@model SRV.Models.Domain.ExecucaoCalculo
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+
+@using (Html.BeginForm("Index", null, FormMethod.Post, new { id = "frmCalculo" }))
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemJS(@Role.IsGranted("Administrador") && (Model == null || (Model.StatusExecucao == SRV.Models.Domain.StatusExecucao.Concluido || Model.StatusExecucao == SRV.Models.Domain.StatusExecucao.Erro)), "executarCalculo()", null, "btExecutarCalculo")
+        
+        if (Model == null || Model.StatusExecucao == SRV.Models.Domain.StatusExecucao.Concluido)
+        {
+            @Html.ToolbarItemLink(@Role.IsGranted("Administrador"), "Export", null, null, "btExportarCoeficiente")
+        }
+        
+        @Html.ToolbarItemLink(true, "Index", null, null, "btAtualizar")
+    }
+
+    <div class="boxContent">
+
+        @Html.ValidationSummary(true)
+
+        @if (Model != null)
+        {
+
+            if (Model.StatusExecucao == SRV.Models.Domain.StatusExecucao.EmExecucao)
+            {
+                <div class="boxErro">O cálculo está em execução neste momento</div>
+            }
+            else if (Model.StatusExecucao == SRV.Models.Domain.StatusExecucao.Erro)
+	        {
+		        <div class="boxErro">Algum problema ocorreu na execução do cálculo.
+                <p>
+                    Erro: @Model.MENSAGEM
+                </p>
+                </div>
+            }
+            else
+            {
+                <div class="boxInfo">Última execução concluída com sucesso</div>
+            }
+            
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.DtExecucao)</td>
+                    <td>@Html.DisplayTextFor(m => m.DtExecucao)</td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Usuario)</td>
+                    <td>@Html.DisplayTextFor(m => m.Usuario.Nome)</td>
+                </tr>
+            </table>
+        }
+
+        <br />
+
+    </div>                       
+}
+
+
+<script type="text/javascript">
+
+    function executarCalculo() {
+        if (confirm("Este processo poderá levar alguns minutos.\nConfirma a execução do cálculo geral de RV para o ciclo @ViewBag.UsuarioLogado.Ciclo?")) {
+            $("#frmCalculo").submit();
+        }
+    }
+
+</script>

@@ -1,0 +1,117 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PublicMaster.master.cs"
+    Inherits="Techne.Lyceum.Net.Modulos.PublicMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="viewport" content="width=device-width">
+    <title>SEEDUC - Governo do Rio de Janeiro</title>
+    
+    <link rel="shortcut icon" type="image/png" href="../Images/favicon.png"/>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- <link href="../LyceumNet.css" type="text/css" rel="stylesheet" />-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="../stylePublicMaster.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css" integrity="sha512-3icgkoIO5qm2D4bGSUkPqeQ96LS8+ukJC7Eqhl1H5B2OJMEnFqLmNDxXVmtV/eq5M65tTDkUYS/Q0P4gvZv+yA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link rel="stylesheet" media="(max-width: 767px)" href="../stylePublicMaster.css" />
+
+    <!-- Rybená-->
+        <script type="text/javascript" src="https://cdn.rybena.com.br/dom/master/latest/rybena.js?positionPlayer=left&positionBar=right"></script>
+</head>
+<body  class="bg-login" onload="moveRelogio();" approot='<%=Page.ResolveClientUrl("~/") %>'>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery-1.7.1.min.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/MaskTypes.js") %>'></script>
+
+    <form id="form1" runat="server" submitdisabledcontrols="True">
+    <!-- HEADER - Barra superio -->
+    <div class="top_inf">
+        <div class="top">
+        
+            <!-- Logo do Estado -->
+            <div class="top_logo" align="center">
+                <asp:Image ID="Image1" runat="server" AlternateText="Governo do Rio de Janeiro - Sec de Estado de Educação"
+                    ImageUrl="~/Images/logo-educacao.png" />
+            </div>
+            <!-- Icone menu responsivo -->
+            <input type="checkbox" id="bt_menu">
+            <label for="bt_menu">&#9776;</label>
+            
+            <div class="menu-responsivo">
+                <!-- LOGO - CONEXÃO EDUCAÇÃO -->
+                <div class="tit_sist">
+                    <%--<asp:Image runat="server" ImageUrl="~/Images/logo_CEG.png" border="0" />--%> 
+                    <asp:Image ID="Image2" runat="server" AlternateText="Governo do Rio de Janeiro - Sec de Estado de Educação"
+                    ImageUrl="~/Images/logo-conexao-azul.png" />
+                </div>
+                <!-- DATA HORA -->
+                <div class="user_saud" align="right">
+                    <asp:Literal ID="lblSaudacoes" runat="server" />
+                    <div id="divHoraData">
+                    </div>
+                </div>
+                 <!--Menu com as opções, HOME, AJUDA e SAIR-->
+                <div class="tit_pag">
+                    
+                    <asp:HyperLink ID="hlSair" runat="server"  CssClass="icon-externo"
+                        ToolTip="Sair">Sair</asp:HyperLink>
+                    <asp:HyperLink ID="hlHelp" runat="server"  CssClass="icon-externo"
+                        ToolTip="Ajuda">Ajuda</asp:HyperLink>
+                    <asp:HyperLink ID="hlInicio" runat="server"  CssClass="ocultar-asp"
+                         ToolTip="Início">Inicio</asp:HyperLink>
+                    <asp:LinkButton ID="lnkSite" runat="server" Cssclass="icon-externo">Site</asp:LinkButton>
+                    
+                    <h2>&nbsp;</h2>
+                       <!-- BorderStyle="None" -->
+                </div>
+            </div><!-- fim menu responsivo -->
+           
+        </div>
+    </div>
+    
+    <div id="conteudo" class="conteudo-externo" style="">
+        <asp:ContentPlaceHolder ID="cphFormulario" runat="server">
+        </asp:ContentPlaceHolder>
+        
+      <!--Rodapé -->
+        <footer>
+            <div class="container-footer">   
+                <!-- Conexão e Redes sociais-->
+                <div class="top-footer">
+                   <!-- A Esquerda - Logo Conexão educação-->
+                   <div class="logo-conexao">
+                       <%--<h2> Conexão Educação</h2>
+                       <p>Gestão</p>--%>
+                       <asp:Image ID="Image3" runat="server" AlternateText="Governo do Rio de Janeiro - Sec de Estado de Educação"
+                    ImageUrl="~/Images/logo-conexao.png" />
+                   </div>
+                   <!-- Redes sociais -->
+                   <div class="redes-sociais">
+                      <div class="icones-redes">
+                            <asp:LinkButton ID="lnkFacebook" runat="server"><i class="fab fa-facebook-f fa-2x"></i></asp:LinkButton>
+                            <asp:LinkButton ID="lnkInstagram" runat="server"><i class="fab fa-instagram fa-2x"></i></asp:LinkButton>
+                            <asp:LinkButton ID="lnkYoutube" runat="server"><i class="fab fa-youtube fa-2x"></i></asp:LinkButton>
+                      </div>
+                   </div>                
+               </div>
+               <!-- Copyright--> 
+               <div class="copyright-footer">
+                    <hr/>
+                   &copy; Todos os direitos reservados SEEDUC - RJ -
+                   <%= DateTime.Now.Year %>
+                   | versão
+                   <asp:Literal ID="lblVersao" runat="server" /> 
+               </div>
+            </div><!-- Fim do Rodapé -->
+        </footer><!-- Fim do Rodapé -->
+        
+    </div> <!-- Fim do conteudo-->
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/_ErrorLayout.cshtml";
+}
+
+<div class="boxContent">
+
+    <div class="boxErro">
+        Caminho não encontrado: @ViewBag.Path
+        <br/>
+        <br/>
+        Por favor verifique se a URL está correta. Se o problema persistir entre em contato com o administrador do sistema.
+        <br/>
+        Clique @Html.ActionLink("aqui", "Index", "Home") para retornar à página principal.
+    </div>
+
+</div>    

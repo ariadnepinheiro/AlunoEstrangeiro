@@ -1,0 +1,41 @@
+﻿@model IList<SRV.Models.Domain.Indicador>
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(@Role.IsGranted("Administrador"), "Create", null, null, "btNovo")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+
+        @Html.ValidationSummary(true)
+
+        <br/>
+
+        @if (Model != null)
+        {
+            @Html.Grid(Model).Columns(column =>
+            {
+                if (@Role.IsGranted("Administrador"))
+                {
+                    column.For(c => Html.ActionLink(" ", "Edit", new { id = @c.IdIndicador }, new { @class = "icoLinkOpen" })).Named("Abrir").Attributes(width => "35px", align => "center").HeaderAttributes(width => "35px", align => "center").Encode(false);
+                    column.For(c => Html.ActionLink(" ", "", null, new { href = "#", @class = "icoLinkDelete", onclick = "deleteItem(this, '" + @Url.Action("Delete", "Indicador") + "', " + @c.IdIndicador + ")" })).Named("Excluir").Attributes(width => "42px", align => "center").HeaderAttributes(width => "42px", align => "center").Encode(false);
+                }
+
+                column.For(c => c.IdIndicador).Named("Código").Attributes(width => "44px", align => "right").HeaderAttributes(width => "44px");
+                column.For(c => c.DesIndicador).Named("Indicador").Attributes(width => "50%").HeaderAttributes(width => "50%");
+                column.For(c => c.TipoIndicador == SRV.Models.Domain.TipoIndicador.Parametro ? "PARÂMETRO" : "ELEGIBILIDADE").Named("Tipo de Indicador").Attributes(width => "50%").HeaderAttributes(width => "50%");
+            }).Empty("Nenhum registro encontrado")
+
+        }
+    </div>                       
+}

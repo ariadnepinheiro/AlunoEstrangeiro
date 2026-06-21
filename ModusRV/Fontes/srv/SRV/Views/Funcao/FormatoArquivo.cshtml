@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="boxContent">
+
+    <p>As colunas do arquivo de importação devem ser obrigatoriamente separadas por ponto-e-vírgula.</p>
+
+    <table class="grid">
+        
+        @* Cabeçalho *@
+        <thead>
+            <tr>
+                <th width="50px">Coluna</th>
+                <th width="200px">Campo</th>
+                <th width="100%">Descrição</th>
+                <th width="120px">Tamanho Máximo</th> 
+            </tr>
+        </thead>
+
+        @* Corpo *@
+        <tbody>
+            <tr class="gridrow">        
+                <td width="50px">1</td>
+                <td width="200px">COD_FUNCAO</td>
+                <td width="100%">Código da Função</td>
+                <td width="120px">15</td>
+            </tr>
+
+            <tr class="gridrow_alternate">
+                <td width="50px">2</td>
+                <td width="200px">DES_FUNCAO</td>
+                <td width="100%">Descrição da Função</td>
+                <td width="120px">200</td>
+            </tr>
+
+            <tr class="gridrow">        
+                <td width="50px">3</td>
+                <td width="200px">COD_GRUPO_FUNCAO</td>
+                <td width="100%">Código do Grupo de Função Vinculado à Função</td>
+                <td width="120px">9</td>
+            </tr>
+        </tbody>
+    </table>      
+</div>

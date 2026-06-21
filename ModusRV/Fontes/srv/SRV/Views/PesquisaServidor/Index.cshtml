@@ -1,0 +1,115 @@
+﻿@model SRV.Models.DTO.PesquisaServidor
+
+@using SRV.Common.Extension
+@using MvcContrib.UI.Grid
+
+@{
+    Layout = null;
+
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        OnSuccess = "OnSuccessServidor",
+        OnFailure = "OnFailureServidor"
+    };
+}
+
+@using (Ajax.BeginForm(ajaxOpts))
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemSubmit(true, "btPesquisar")
+    }
+
+    <div class="boxContent">
+
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(m => m.IdRegionalDefault)
+        @Html.HiddenFor(m => m.IdUnidadeAdministrativaDefault)
+        @Html.HiddenFor(m => m.IdAnoReferencia)
+
+        <div class="formColumn">
+            <table class="tableForm">
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Matricula)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Matricula, new { style = "width:100px;", maxlength = 8 })<br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Nome)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Nome, new { style = "width: 300px", maxlength = "50" })
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.Cpf)</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Cpf, new { style = "width: 100px", maxlength = "11" })
+                    </td>
+                </tr>
+            </table>
+        </div>    
+        <div style="clear:both"></div>
+    
+        @if (Model != null && Model.PageServidores != null)
+        {
+            @Html.Pager(Model.PageServidores);
+
+            using (@Html.BeginScroller())
+            {
+                @Html.Grid(Model.PageServidores.Items).Columns(column =>
+                {
+                    column.For(c => Html.ActionLink(" ", "", null, new { href = "#", onclick = "returnServidor(" + @c.IdServidor + ",'" + @Html.Encode(@c.DesNomeServidor.Replace("\\", "&#92;")) + "')", @class = "icoLinkSelect" })).Named("Sel.").Attributes(width => "30px").HeaderAttributes(width => "30px");
+                            
+                    column.For(c => c.IdServidor).Named("Matrícula").Attributes(width => "55px", align => "right").HeaderAttributes(width => "55px");
+                    column.For(c => c.DesNomeServidor).Named("Servidor").Attributes(width => "350px").HeaderAttributes(width => "350px");
+                }).Empty("Nenhum registro encontrado")
+            }
+        }
+    </div>
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+        $("#Matricula").mask("??99999999", { placeholder: "" });
+
+        $("#Cpf").mask("??99999999999", { placeholder: "" });
+
+        $("#Cpf").focusin(function () {
+            $('#Cpf').unmask().mask("??99999999999", { placeholder: "" });
+            $('#Cpf').focus();
+        });
+
+        $("#Cpf").focusout(function () {
+
+            if ($('#Cpf').val() != "") {
+                if ($("#Cpf").val().length == 11) {
+                    $("#Cpf").unmask().mask("999.999.999-99");
+                } else {
+                    alert("Cpf inválido");
+                    $("#Cpf").val("");
+                    $("#Cpf").unmask().mask("??99999999999", { placeholder: "" });
+                    $('#Cpf').focus();
+                }
+            }
+        });
+    });
+
+    function returnServidor(idServidor, noServidor) {
+        eval($("#modalButtonHitServidor").dialog("option", "callback") + "({0}, '{1}')".format(idServidor, htmlDecode(noServidor)));
+
+        $("#modalButtonHitServidor").dialog('close');
+    }
+
+    function OnSuccessServidor(data) {
+        $("#modalButtonHitServidor").empty().append(data);
+    }
+
+    function OnFailureServidor(request, error) {
+        alert("Ocorreu um erro na requisição: " + error);
+    }
+
+</script>

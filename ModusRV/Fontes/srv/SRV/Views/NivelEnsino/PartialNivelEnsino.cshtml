@@ -1,0 +1,72 @@
+﻿@model SRV.Models.DTO.CadastroNivelEnsino
+
+@using SRV.Common.Extension         
+
+@using (Html.BeginForm())
+{
+    using (Html.BeginToolbar())
+    {
+        @Html.ToolbarItemLink(true, "Create", null, null, "btNovo");
+        @Html.ToolbarItemSubmit(true, "btSalvar");
+        
+        if (Model.NivelEnsino.IdNivelEnsino != null)
+        {
+            @Html.ToolbarItemJS(true, "deleteItemAndRedirect(this, '" + @Url.Action("Delete", "NivelEnsino") + "', '" + @Url.Action("Create", "NivelEnsino") + "', " + @Model.NivelEnsino.IdNivelEnsino + ", " + @Model.NivelEnsino.Modalidade.IdModalidade + ")", null, "btExcluir");
+        }
+                                                                                                                                                                                                
+        @Html.ToolbarItemLink(true, "Index", null, null, "btVoltarPesquisa")
+    }
+
+    <div class="boxContent">
+        @if (TempData["message"] != null)
+        {
+            <div class="boxInfo">@TempData["message"]</div>
+        }
+        
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(m => m.NivelEnsino.IdNivelEnsino)
+
+        <table class="tableForm">
+            
+            <tr>
+                <td class="labelRight">@Html.LabelFor(m => m.NivelEnsino.DesNivelEnsino)</td>
+                <td>
+                    @Html.TextBoxFor(m => m.NivelEnsino.DesNivelEnsino, new { style = "width:450px;", maxlength = 50 })<br/>
+                    @Html.ValidationMessageFor(m => m.NivelEnsino.DesNivelEnsino)
+                </td>
+            </tr>
+            
+            @if (ViewBag.IsEdit)
+            {   
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.NivelEnsino.Modalidade)</td>
+                    <td>
+                        @Html.DisplayTextFor(m => m.NivelEnsino.Modalidade.DesModalidade)
+                        @Html.HiddenFor(m => m.NivelEnsino.Modalidade.IdModalidade)
+                        @Html.HiddenFor(m => m.NivelEnsino.Modalidade.DesModalidade)
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td class="labelRight">@Html.LabelFor(m => m.NivelEnsino.Modalidade)</td>
+                    <td>
+                        @Html.DropDownListFor(m => m.NivelEnsino.Modalidade.IdModalidade, (IEnumerable<SelectListItem>)Model.Modalidades ?? new List<SelectListItem>(), "", new { id = "IdModalidade", style = "width:250px;" })<br/>                        
+                        @Html.ValidationMessageFor(m => m.NivelEnsino.Modalidade.IdModalidade)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+}
+
+<script type="text/javascript">
+
+    jQuery(function ($) {
+
+    })
+
+</script>

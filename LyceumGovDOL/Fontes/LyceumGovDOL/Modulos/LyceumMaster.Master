@@ -1,0 +1,329 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="LyceumMaster.master.cs"
+    Inherits="Techne.Lyceum.Net.Modulos.LyceumMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>SEEDUC - Governo do Rio de Janeiro</title>
+    <link href="../Scripts/themes/basic/grid.css" rel="stylesheet" type="text/css" />
+    <link href="../Scripts/themes/jqModal.css" rel="stylesheet" type="text/css" />
+    <link href="../LyceumNet.css" type="text/css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../Images/favicon.ico" type="image/x-icon" />
+</head>
+<body onload="moveRelogio();" approot='<%=Page.ResolveClientUrl("~/") %>'>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery-1.7.1.min.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/jquery.jqGrid.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/js/jqModal.js") %>'></script>
+
+    <script type="text/javascript" src='<%=Page.ResolveClientUrl("~/Scripts/MaskTypes.js") %>'></script>
+
+    <script type="text/javascript">
+        function GridRowClick(s, e) {
+            if (s.IsGroupRow(e.visibleIndex)) {
+                e.cancel = true;
+                return false;
+            }
+
+            var cursoValidoLancamento = grdTurmaDisciplina.GetRow(e.visibleIndex).innerHTML.match(/validoParaLancamento="S"/i);
+            if (!cursoValidoLancamento) {
+                alert("Professor(a), no momento, não está disponível o lançamento de notas dos alunos do ensino fundamental de 1a. à 5a. série. Obrigado!");
+                e.cancel = true;
+                return false;
+            }
+
+            var txtRow = document.getElementById('<%=txtRow.ClientID %>');
+            txtRow.value = e.visibleIndex;
+            pcPesquisa.Hide();
+            btnAtualizar.DoClick();
+        }
+
+        function OnGetValues(values) {
+            var txtNomeUnidadeEns = document.getElementById('<%=txtNomeUnidadeEns.ClientID %>');
+            var txtCodUnidadeEns = document.getElementById('<%=txtCodUnidadeEns.ClientID %>');
+            var txtAno = document.getElementById('<%=txtAno.ClientID %>');
+            var txtTurma = document.getElementById('<%=txtTurma.ClientID %>');
+            var txtPeriodo = document.getElementById('<%=txtPeriodo.ClientID %>');
+            var txtNomeDisciplina = document.getElementById('<%=txtNomeDisciplina.ClientID %>');
+            var txtDisciplina = document.getElementById('<%=txtDisciplina.ClientID %>');
+            var txtCurso = document.getElementById('<%=txtCurso.ClientID %>');
+            var txtModalidade = document.getElementById('<%=txtModalidade.ClientID %>');
+            var txtTipoCurso = document.getElementById('<%=txtTipoCurso.ClientID %>');
+            var txtSerie = document.getElementById('<%=txtSerie.ClientID %>');
+
+            txtNomeUnidadeEns.value = values[0];
+            txtCodUnidadeEns.value = values[1];
+            txtAno.value = values[2];
+            txtTurma.value = values[3];
+            txtPeriodo.value = values[4];
+            txtNomeDisciplina.value = values[5];
+            txtDisciplina.value = values[6];
+            txtCurso.value = values[7];
+            txtModalidade.value = values[8];
+            txtTipoCurso.value = values[9];
+            txtSerie.value = values[10];
+        }
+
+        function ShowPopup() {
+            pcPesquisa.Show();
+        }
+
+        function fechaMsg() {
+            var divMsg = document.getElementById('<%=msg.ClientID %>');
+            divMsg.style.visibility = 'hidden';
+        }
+        
+    </script>
+
+    <asp:ContentPlaceHolder ID="Scripts" runat="server">
+    </asp:ContentPlaceHolder>
+    <form id="form1" runat="server" submitdisabledcontrols="True">
+    <div class="top_inf">
+        <div class="top">
+            <div class="tit_pag">
+                <asp:LinkButton ID="lbSair" runat="server" BorderStyle="None" CssClass="ico_sair"
+                    OnClick="lbSair_Click" ToolTip="Logoff"></asp:LinkButton>
+                <asp:HyperLink ID="hlHelp" runat="server" BorderStyle="None" CssClass="ico_info"
+                    ToolTip="Ajuda"></asp:HyperLink>
+                <asp:HyperLink ID="hlInicio" runat="server" BorderStyle="None" CssClass="ico_inicio"
+                    NavigateUrl="~/Index.aspx" ToolTip="Início"></asp:HyperLink>
+                <h2 align="left">
+                    <asp:Literal ID="lblTituloPagina" runat="server" />
+                </h2>
+            </div>
+            <div class="top_logo" align="center">
+                <asp:Image ID="Image1" runat="server" AlternateText="Governo do Rio de Janeiro - Sec de Estado de Educação"
+                    ImageUrl="~/Images/logo.gif" />
+            </div>
+            <div class="tit_sist">
+                <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/logo_CEG.png" border="0" />
+            </div>
+            <div class="user_saud" align="right">
+                Matrícula:&nbsp;<asp:Literal ID="lblMatricula" runat="server" />&nbsp;&nbsp;<asp:Literal
+                    ID="lblIP" runat="server" />
+                <br />
+                <div id="divHoraData">
+                </div>
+            </div>
+            <div id="top_menu">
+                <div class="tm_bt">
+                    <img src="../images/mntop_l.gif" width="10" height="20" align="absmiddle" border="0" /><asp:LinkButton
+                        ID="lnk2" runat="server" Text="Lançamento de Notas" OnClick="lnk2_Click"></asp:LinkButton><img
+                            src="../images/mntop_r.gif" width="10" height="20" align="absmiddle" border="0" /></div>
+                <div class="tm_bt">
+                    <img src="../images/mntop_l.gif" width="10" height="20" align="absmiddle" border="0" /><asp:LinkButton
+                        ID="lnk6" runat="server" Text="Cadastramento para GLP" OnClick="lnk6_Click"></asp:LinkButton><img
+                            src="../images/mntop_r.gif" width="10" height="20" align="absmiddle" border="0" /></div>
+                <div class="tm_bt">
+                    <img src="../images/mntop_l.gif" width="10" height="20" align="absmiddle" border="0" /><asp:LinkButton
+                        ID="lnk7" runat="server" Text="Consulta Alocação QHI"></asp:LinkButton><img src="../images/mntop_r.gif"
+                            width="10" height="20" align="absmiddle" border="0" /></div>
+               <%-- <div class="tm_bt">
+                    <img src="../images/mntop_l.gif" width="10" height="20" align="absmiddle" border="0" /><asp:LinkButton
+                        ID="lnk8" runat="server" Text="Avaliação Currículo Mínimo" OnClick="lnk8_Click"></asp:LinkButton><img
+                            src="../images/mntop_r.gif" width="10" height="20" align="absmiddle" border="0" /></div>--%>
+                <div class="tm_bt">
+                    <img src="../images/mntop_l.gif" width="10" height="20" align="absmiddle" border="0" /><asp:LinkButton
+                        ID="lnk9" runat="server" Text="Currículo Mínimo" OnClick="lnk9_Click"></asp:LinkButton><img
+                            src="../images/mntop_r.gif" width="10" height="20" align="absmiddle" border="0" /></div>
+                <div class="tm_bt">
+                    <img src="../images/mntop_l.gif" width="10" height="20" align="absmiddle" border="0" /><asp:LinkButton
+                        ID="lnk10" runat="server" Text="Protocolos" OnClick="lnk10_Click"></asp:LinkButton><img
+                            src="../images/mntop_r.gif" width="10" height="20" align="absmiddle" border="0" /></div>
+            </div>
+        </div>
+    </div>
+    <asp:ObjectDataSource ID="odsTurmaDisciplina" runat="server" TypeName="Techne.Lyceum.RN.Cache.ConsultarDisciplinasDocente"
+        SelectMethod="Consultar">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="lblMatricula" Name="matricula" PropertyName="Text" />
+        </SelectParameters>
+    </asp:ObjectDataSource>
+    <dxpc:ASPxPopupControl ID="pcPesquisa" runat="server" CloseAction="CloseButton" Modal="True"
+        AllowResize="True" AutoUpdatePosition="true" Width="420px" Height="200px" PopupHorizontalAlign="WindowCenter"
+        Top="60" ClientInstanceName="pcPesquisa" HeaderText="Pesquisa" AllowDragging="True"
+        EnableAnimation="False" EnableViewState="False" ShowPageScrollbarWhenModal="true">
+        <ContentCollection>
+            <dxpc:PopupControlContentControl ID="PopupControlContentControl1" runat="server"
+                Height="200px">
+                <dxp:ASPxPanel ID="Panel1" runat="server" DefaultButton="btOK" CssClass="divTurmas">
+                    <PanelCollection>
+                        <dxp:PanelContent ID="PanelContent1" runat="server">
+                            <dxwgv:ASPxGridView ID="grdTurmaDisciplina" runat="server" AutoGenerateColumns="False"
+                                EnableCallBacks="true" DataSourceID="odsTurmaDisciplina" ClientInstanceName="grdTurmaDisciplina"
+                                KeyFieldName="chave" Width="450px" OnHtmlDataCellPrepared="grdTurmaDisciplina_HtmlDataCellPrepared">
+                                <ClientSideEvents RowClick="function(s, e) {
+                                                GridRowClick(s,e);}"></ClientSideEvents>
+                                <SettingsPager AlwaysShowPager="false" Mode="ShowAllRecords">
+                                </SettingsPager>
+                                <SettingsBehavior AllowFocusedRow="false" AutoExpandAllGroups="true" AllowMultiSelection="true"
+                                    ProcessSelectionChangedOnServer="true" AllowGroup="false" AllowSort="false" AllowDragDrop="false" />
+                                <Columns>
+                                    <dxwgv:GridViewDataColumn Caption="Unidade de Ensino" FieldName="nome_comp" VisibleIndex="0"
+                                        GroupIndex="0">
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="Ano/Período" FieldName="anosemestre" VisibleIndex="1"
+                                        GroupIndex="1">
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="Turma" FieldName="turma" VisibleIndex="2">
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="Disciplina" FieldName="nome_compl" VisibleIndex="3">
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="Status para Lançamento" FieldName="status_lancamento">
+                                        <DataItemTemplate>
+                                            <dxe:ASPxLabel runat="server" EncodeHtml="false" ID="status_lancamento" Text='<%# Bind("status_lancamento") %>'>
+                                            </dxe:ASPxLabel>
+                                        </DataItemTemplate>
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="ano" FieldName="ano" VisibleIndex="4" Visible="false">
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="semestre" FieldName="semestre" VisibleIndex="5"
+                                        Visible="false">
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="unidade_ens" FieldName="unidade_ens" VisibleIndex="6"
+                                        Visible="false">
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="disciplina" FieldName="disciplina" VisibleIndex="7"
+                                        Visible="false">
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="curso" FieldName="curso" VisibleIndex="8" Visible="false">
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="modalidade" FieldName="modalidade" VisibleIndex="9"
+                                        Visible="false">
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="tipo_curso" FieldName="tipo" VisibleIndex="10"
+                                        Visible="false">
+                                    </dxwgv:GridViewDataColumn>
+                                    <dxwgv:GridViewDataColumn Caption="serie" FieldName="serie" VisibleIndex="11" Visible="false">
+                                    </dxwgv:GridViewDataColumn>
+                                </Columns>
+                            </dxwgv:ASPxGridView>
+                            <asp:Label ID="lblLegendaTurmas" runat="server">
+                            Verde -&gt; Notas Lançadas
+                            <br />
+                            Vermelho -&gt; Notas Pendentes
+                            </asp:Label>
+                            <br />
+                            <div style="text-align: right">
+                                <asp:Button ID="btnSairLancamentoNotas" runat="server" Text="Sair" ToolTip="Sair da Seleção de Turmas"
+                                    OnClientClick="pcPesquisa.Hide();" PostBackUrl="~/Menu/Config.aspx" />
+                            </div>
+                        </dxp:PanelContent>
+                    </PanelCollection>
+                </dxp:ASPxPanel>
+            </dxpc:PopupControlContentControl>
+        </ContentCollection>
+    </dxpc:ASPxPopupControl>
+    <div class="sub_menu">
+        <div style="max-width: 1000px; height: 58px;">
+            <div class="bot">
+                <dxe:ASPxButton ID="btnTrocar" runat="server" CssClass="submit" AutoPostBack="false"
+                    UseSubmitBehavior="false" EnableDefaultAppearance="false">
+                    <ClientSideEvents Click="function(s, e) {
+	                                ShowPopup();}" />
+                </dxe:ASPxButton>
+                <div id="msg" class="msg" runat="server" visible="false">
+                    <img src="../Images/seta_top.png" alt="Clique aqui" width="30" height="30" align="left"
+                        runat="server" />Clique aqui para selecionar ou trocar de disciplina<br />
+                    <br />
+                    <dxe:ASPxCheckBox ID="chkMensagem" runat="server" Checked="true" AutoPostBack="true"
+                        ClientInstanceName="chkMensagem" Text="Clique aqui para desativar a mensagem."
+                        OnCheckedChanged="chkMensagem_CheckedChanged">
+                        <ClientSideEvents CheckedChanged="function(s,e){fechaMsg();}" />
+                    </dxe:ASPxCheckBox>
+                    <dxe:ASPxButton ID="ASPxButton1" runat="server" AutoPostBack="false" UseSubmitBehavior="false"
+                        Width="27px" ToolTip="Fechar Mensagem" Height="27px" EnableDefaultAppearance="false"
+                        Image-Url="../Images/bot_fechar.png" SkinID="botao">
+                        <Image Url="../Images/bot_fechar.png"></Image>
+                        <ClientSideEvents Click="function(s, e) {fechaMsg();}" />
+                    </dxe:ASPxButton>
+                    <br />
+                </div>
+            </div>
+            <asp:Label ID="lblUnidadeEns" runat="server" Text="Unidade de Ensino: " Visible="false"></asp:Label>
+            <input id="txtNomeUnidadeEns" runat="server" class="inputs" type="text" readonly="readonly"
+                style="border-style: none; width: 300px; color: #004A80;" />
+            <input id="txtCodUnidadeEns" type="hidden" runat="server" /><br />
+            <asp:Label ID="lblAno" runat="server" Text="Ano: " Visible="false"></asp:Label>
+            <input id="txtAno" runat="server" class="inputs" type="text" readonly="readonly"
+                style="border-style: none; width: 29px; color: #004A80; text-align: left;" />
+            &nbsp;
+            <asp:Label ID="lblPeriodo" runat="server" Text="Período: " Visible="false"></asp:Label>
+            <input id="txtPeriodo" runat="server" class="inputs" type="text" readonly="readonly"
+                style="border-style: none; width: 8px; color: #004A80; text-align: left;" />
+            &nbsp;
+            <asp:Label ID="lblTurma" runat="server" Text="Turma: " Visible="false"></asp:Label>
+            <input id="txtTurma" runat="server" class="inputs" type="text" readonly="readonly"
+                style="border-style: none; width: 150px; color: #004A80;" />
+            &nbsp;
+            <asp:Label ID="lblDisciplina" runat="server" Text="Disciplina: " Visible="false"></asp:Label>
+            <input id="txtNomeDisciplina" runat="server" class="inputs" type="text" readonly="readonly"
+                style="border-style: none; width: 237px; color: #004A80;" />
+            <input id="txtDisciplina" type="hidden" runat="server" />
+            <br />
+            <asp:Label ID="lblMatriculaProf" runat="server" Text="Matrícula: "></asp:Label>
+            <input id="txtMatriculaProf" runat="server" class="inputs" type="text" readonly="readonly"
+                style="border-style: none; width: 100px; color: #004A80;" />
+            <asp:Label ID="lblNomeProf" runat="server" Text="Nome: "></asp:Label>
+            <input id="txtNomeProf" runat="server" class="inputs" type="text" readonly="readonly"
+                style="border-style: none; width: 250px; color: #004A80;" />
+            <asp:Label ID="lblCurso" runat="server" Text="Curso: " Visible="false"></asp:Label>
+            <input id="txtCurso" runat="server" class="inputs" type="text" readonly="readonly"
+                visible="false" style="border-style: none; width: 8px; color: #004A80; text-align: left;" />
+            <asp:Label ID="lblModalidade" runat="server" Text="Modalidade: " Visible="false"></asp:Label>
+            <input id="txtModalidade" runat="server" class="inputs" type="text" readonly="readonly"
+                visible="false" style="border-style: none; width: 8px; color: #004A80; text-align: left;" />
+            <asp:Label ID="lblTipoCurso" runat="server" Text="Tipo Curso: " Visible="false"></asp:Label>
+            <input id="txtTipoCurso" runat="server" class="inputs" type="text" readonly="readonly"
+                visible="false" style="border-style: none; width: 8px; color: #004A80; text-align: left;" />
+            <asp:Label ID="lblSerie" runat="server" Text="Serie: " Visible="false"></asp:Label>
+            <input id="txtSerie" runat="server" class="inputs" type="text" readonly="readonly"
+                visible="false" style="border-style: none; width: 8px; color: #004A80; text-align: left;" />
+            <input id="txtNumFunc" runat="server" class="inputs" type="text" readonly="readonly"
+                visible="false" style="border-style: none; width: 8px; color: #004A80; text-align: left;" />
+        </div>
+    </div>
+    <dxpc:ASPxPopupControl ID="pucLoading" ClientInstanceName="pucLoading" runat="server"
+        Modal="true" ShowShadow="true" AllowDragging="false" AllowResize="false" ShowCloseButton="false"
+        ShowFooter="false" ShowHeader="false" ShowSizeGrip="False" PopupHorizontalAlign="WindowCenter"
+        PopupVerticalAlign="WindowCenter" DisappearAfter="60" Cursor="wait" EnableAnimation="false"
+        Width="150px">
+        <Border BorderColor="Gainsboro" BorderStyle="Ridge" BorderWidth="4px" />
+        <ContentCollection>
+            <dxpc:PopupControlContentControl>
+                <div style="text-align: center">
+                    <asp:Image ID="Image3" ImageUrl="~/App_Themes/Blue/GridView/gvLoadingOnStatusBar.gif"
+                        runat="server" Visible="false" />
+                    <asp:Label ID="Label1" Text="Carregando dados..." Font-Bold="true" runat="server" />
+                    <br />
+                    <br />
+                    <asp:Image ID="Image4" ImageUrl="~/App_Themes/Blue/GridView/Loading.gif" runat="server" />
+                </div>
+            </dxpc:PopupControlContentControl>
+        </ContentCollection>
+    </dxpc:ASPxPopupControl>
+    <asp:ScriptManager ID="scrMng" runat="server" AllowCustomErrorsRedirect="false" AsyncPostBackTimeout="100000000"
+        OnAsyncPostBackError="scrMng_AsyncPostBackError">
+    </asp:ScriptManager>
+    <div id="conteudo" class="conteudo" style="">
+        <asp:ContentPlaceHolder ID="cphFormulario" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div style="visibility: hidden">
+        <dxe:ASPxButton ID="btnAtualizar" runat="server" ClientInstanceName="btnAtualizar"
+            OnClick="btnAtualizar_Click" />
+        <input id="txtRow" type="hidden" runat="server" />
+    </div>
+    <div class="bas-inf">
+        <div class="bas">
+            &copy; Todos os direitos reservados -
+            <%= DateTime.Now.Year %>
+            | versão
+            <asp:Literal ID="lblVersao" runat="server" /></div>
+    </div>
+    </form>
+</body>
+</html>

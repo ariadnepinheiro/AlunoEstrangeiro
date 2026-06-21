@@ -1,0 +1,82 @@
+﻿@model SRV.Models.DTO.AlteracaoSenha
+
+@{
+    Layout = null;
+    
+    AjaxOptions ajaxOpts = new AjaxOptions {
+        OnSuccess = "OnSuccessAlteracaoSenha",
+        OnFailure = "OnFailureAlteracaoSenha"
+    };
+}
+
+@using (Ajax.BeginForm(ajaxOpts))
+{
+    <div class="boxContent">
+
+        <div id="boxFeedback"></div>
+
+        <table class="tableForm">
+            <tr>
+                <td style="width: 90px">Senha atual</td>
+                <td>
+                    @Html.PasswordFor(m => m.SenhaAtual, new { style = "width:150px;" })<br/>
+                </td>
+            </tr>
+            <tr>
+                <td>Nova senha</td>
+                <td>
+                    @Html.PasswordFor(m => m.NovaSenha, new { style = "width:150px;" })<br/>
+                </td>
+            </tr>
+            <tr>
+                <td>Confirmação</td>
+                <td>
+                    @Html.PasswordFor(m => m.ConfirmacaoSenha, new { style = "width:150px;" })<br/>
+                </td>
+            </tr>
+        </table>
+
+        <div style="text-align:center; margin-top: 15px;">
+            <input type="submit" id="btSalvar" value="Salvar"/>
+            <input type="submit" id="btCancelar" value="Cancelar"/>
+        </div>            
+    </div>                       
+}
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#btSalvar").button();
+        $("#btCancelar").button();
+
+        $("#btCancelar").click(function () {
+            $('#modalAlteracaoSenha').dialog('destroy');
+            return false;
+        });
+    });
+
+    function OnSuccessAlteracaoSenha(data) {
+
+        if (data.SuccessMessage) {
+            $("#boxFeedback").empty().prepend("<div class='boxInfo'>" + data.SuccessMessage + "</div>");
+            $("#SenhaAtual").val("");
+            $("#NovaSenha").val("");
+            $("#ConfirmacaoSenha").val("");
+        }
+        if (data.ValidationMessage) {
+            $("#boxFeedback").empty().append("<div class='validation-summary-errors'><ul><li id='liError'>");
+
+            $.each(data.ValidationMessage, function (index, value) {
+                $("#liError").append("" + value + "<br/>");
+            });
+            $("#boxFeedback").append("</li></ul></div>");
+        }
+
+    }
+
+    function OnFailureAlteracaoSenha(request, error) {
+        $("#boxFeedback").empty().prepend("<div class='validation-summary-errors'><ul><li>" + request.responseText + "</li></ul></div>");
+    }
+
+</script>

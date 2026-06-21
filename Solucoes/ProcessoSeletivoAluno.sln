@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessoSeletivoAluno", "..\ProcessoSeletivoAluno\Fontes\ProcessoSeletivoAluno\ProcessoSeletivoAluno.csproj", "{52E34758-1834-49E2-93B2-1EF3B66F5E5D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{58B5A0E4-BB70-46C6-A104-C86E181A6A7D} = {58B5A0E4-BB70-46C6-A104-C86E181A6A7D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LyceumRN", "..\LyceumGovRN\Fontes\LyceumRN\LyceumRN.csproj", "{58B5A0E4-BB70-46C6-A104-C86E181A6A7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52E34758-1834-49E2-93B2-1EF3B66F5E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E34758-1834-49E2-93B2-1EF3B66F5E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E34758-1834-49E2-93B2-1EF3B66F5E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E34758-1834-49E2-93B2-1EF3B66F5E5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B5A0E4-BB70-46C6-A104-C86E181A6A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B5A0E4-BB70-46C6-A104-C86E181A6A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B5A0E4-BB70-46C6-A104-C86E181A6A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B5A0E4-BB70-46C6-A104-C86E181A6A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,42 @@
+﻿/*****
+LOGIN - APRESENTACAO - INICIO
+*****/
+.conteudo {
+	margin: auto;
+	width: 780px;
+}
+
+#painel-apresentacao h3 {
+	font-weight: normal;
+	margin-top:5px;
+}
+#painel-apresentacao {
+	border:1px solid #C0C0C0;
+	padding:10px;
+	font-size:12px;
+	line-height:18px;
+}
+select.combo-media { width: 180px; font-size: 11px; }
+
+.tabela-padrao td.data { width: 105px; }
+
+.tabela-padrao tbody td { text-transform: uppercase; }
+
+.tabela-padrao tbody .protocolo  { 
+	overflow:hidden;
+	white-space: nowrap;
+	margin-right:5px;
+}
+.tabela-padrao thead .tipo,
+.tabela-padrao thead .periodo,
+.tabela-padrao thead .bimestre {
+	cursor:help;
+}
+
+.tabela-padrao tbody tr.pagina { display: none; }
+.tabela-padrao tbody tr.pagina-1 { display: table-row; }
+
+#cmbMudarPagina { font-size:11px;font-family:Tahoma;}
+/*****
+LOGIN - APRESENTACAO - FIM
+*****/
