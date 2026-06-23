@@ -349,6 +349,32 @@ namespace Techne.Lyceum.RN
             return string.Empty;
         }
 
+        public static string ObterPaisEstrangeiro(string PAIS)
+        {
+            if (!string.IsNullOrEmpty(PAIS))
+            {
+                TConnection connection = Techne.HadesLyc.Config.CreateConnection();
+
+                connection.Open();
+
+                try
+                {
+                    string sql = " SELECT TOP 1 NOME_PAIS FROM HD_MUNICIPIO_CERTIFICACAO WHERE NOME_PAIS = ? ";
+
+                    DbObject valorConsulta = TCommand.ExecuteScalar(connection, sql, PAIS);
+
+                    if (!valorConsulta.IsNull)
+                        return (string)valorConsulta;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return string.Empty;
+        }
+
         private static string ObterMunicipioEstrangeiro(TConnection connection, string descricaoPais, string descricao, string estado)
         {
             string sql = " select TOP 1 municipio_estrangeiro from hd_municipio_estrangeiro " +
