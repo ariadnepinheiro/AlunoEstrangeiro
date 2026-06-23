@@ -4689,6 +4689,10 @@ namespace Techne.Lyceum.Net.Academico
                 if (descricaoPais.ToUpper() != "BRASIL")
                 {
                     // Aluno nascido fora do Brasil
+                    txtPaisNasc.Text = !string.IsNullOrEmpty(dadosPessoa.Pais_nasc)
+                    ? RN.Endereco.ObterPaisEstrangeiro(dadosPessoa.Pais_nasc)
+                    : string.Empty;
+
                     tseNaturalidade.ResetValue();
 
                     if (!string.IsNullOrEmpty(dadosPessoa.Municipio_nasc))
@@ -4732,10 +4736,7 @@ namespace Techne.Lyceum.Net.Academico
                     }
                 }
 
-                // Esta linha já existia e continua correta — fica FORA do if acima
-                txtPaisNasc.Text = !string.IsNullOrEmpty(dadosPessoa.Pais_nasc)
-                    ? RN.Endereco.ObterPais(dadosPessoa.Pais_nasc)
-                    : string.Empty;
+                
             }
 
             // verifica se existe valor para municipio
@@ -4755,7 +4756,7 @@ namespace Techne.Lyceum.Net.Academico
                 txtEstado.Value = string.Empty;
             }
 
-            txtPaisNasc.Text = !string.IsNullOrEmpty(dadosPessoa.Pais_nasc) ? RN.Endereco.ObterPais(dadosPessoa.Pais_nasc) : string.Empty;
+            txtPaisNasc.Text = !string.IsNullOrEmpty(dadosPessoa.Pais_nasc) ? RN.Endereco.ObterPaisEstrangeiro(dadosPessoa.Pais_nasc) : string.Empty;
             //PreencherDadoCombo(ddlNacionalidade, Convert.ToString(dadosPessoa.Nacionalidade));
             //PreencherDadoCombo(ddlEst_Civil, Convert.ToString(dadosPessoa.Est_civil));
 
