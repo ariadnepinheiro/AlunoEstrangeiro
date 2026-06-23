@@ -359,7 +359,7 @@ namespace Techne.Lyceum.RN
 
                 try
                 {
-                    string sql = " SELECT TOP 1 NOME_PAIS FROM HD_MUNICIPIO_CERTIFICACAO WHERE NOME_PAIS = ? ";
+                    string sql = " SELECT TOP 1 NOME_PAIS FROM HD_MUNICIPIO_CERTIFICACAO WHERE ID_PAIS = ? ";
 
                     DbObject valorConsulta = TCommand.ExecuteScalar(connection, sql, PAIS);
 

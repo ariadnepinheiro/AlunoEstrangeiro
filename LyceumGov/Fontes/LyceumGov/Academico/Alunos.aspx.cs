@@ -3227,23 +3227,19 @@ namespace Techne.Lyceum.Net.Academico
                             }
 
                             // ── Carga da naturalidade ───────────────────────────
-
                             tseNaturalidadeEstrangeira.Enabled = true;
 
-                            if (!dadosPessoa.Municipio_nasc.IsNullOrEmptyOrWhiteSpace())
-                            {
-                                // Tenta primeiro na tse do Brasil
-                                tseNaturalidade.DBValue = dadosPessoa.Municipio_nasc;
+                            bool nascidoForaDoBrasil = !string.IsNullOrEmpty(dadosPessoa.Pais_nasc)
+                                                       && dadosPessoa.Pais_nasc.Trim() != "0";
 
-                                if (tseNaturalidade.IsValidDBValue && !tseNaturalidade.DBValue.IsNull)
+                            if (nascidoForaDoBrasil)
+                            {
+                                // País estrangeiro — txtPaisNasc já preenchido por CarregaDadosPessoa
+                                tseNaturalidade.ResetValue();
+
+                                if (!string.IsNullOrEmpty(dadosPessoa.Municipio_nasc)
+                                    && dadosPessoa.Municipio_nasc.Trim() != "0")
                                 {
-                                    // Encontrou → nascido no Brasil
-                                    txtUFNascimento.Text = tseNaturalidade["uf_sigla"].ToString();
-                                }
-                                else
-                                {
-                                    // Nascido fora do Brasil
-                                    tseNaturalidade.ResetValue();
                                     tseNaturalidadeEstrangeira.DBValue = dadosPessoa.Municipio_nasc;
 
                                     if (tseNaturalidadeEstrangeira.IsValidDBValue && !tseNaturalidadeEstrangeira.DBValue.IsNull)
@@ -3251,6 +3247,23 @@ namespace Techne.Lyceum.Net.Academico
                                         txtUFNascimento.Text = tseNaturalidadeEstrangeira["ESTADO"].ToString();
                                         txtPaisNasc.Text = tseNaturalidadeEstrangeira["PAIS"].ToString();
                                     }
+                                }
+                            }
+                            else
+                            {
+                                // Nascido no Brasil
+                                tseNaturalidadeEstrangeira.ResetValue();
+                                txtPaisNasc.Text = string.Empty;
+
+                                if (!string.IsNullOrEmpty(dadosPessoa.Municipio_nasc)
+                                    && dadosPessoa.Municipio_nasc.Trim() != "0")
+                                {
+                                    tseNaturalidade.DBValue = dadosPessoa.Municipio_nasc;
+
+                                    if (tseNaturalidade.IsValidDBValue && !tseNaturalidade.DBValue.IsNull)
+                                        txtUFNascimento.Text = tseNaturalidade["uf_sigla"].ToString();
+                                    else
+                                        tseNaturalidade.ResetValue();
                                 }
                             }
 
@@ -4735,8 +4748,6 @@ namespace Techne.Lyceum.Net.Academico
                         }
                     }
                 }
-
-                
             }
 
             // verifica se existe valor para municipio

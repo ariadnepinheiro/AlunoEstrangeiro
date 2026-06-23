@@ -85,17 +85,6 @@
                         </CalendarProperties>
                     </dxe:ASPxDateEdit>
                 </td>
-                <td style="text-align: right;">
-                    <asp:Label ID="lblNascidoEstrangeiro" runat="server" Text="Nascido fora do Brasil?"
-                        kinID="lblObrigatorio"></asp:Label>
-                </td>
-                <td style="text-align: right">
-                    <asp:RadioButtonList ID="rblNascidoEstrangeiro" runat="server" RepeatDirection="Horizontal"
-                        AutoPostBack="true" OnSelectedIndexChanged="rblNascidoEstrangeiro_SelectedIndexChanged">
-                        <asp:ListItem Text="Não" Value="N" Selected="True" />
-                        <asp:ListItem Text="Sim" Value="S" />
-                    </asp:RadioButtonList>
-                </td>
             </tr>
             <tr>
                 <td style="text-align: right">

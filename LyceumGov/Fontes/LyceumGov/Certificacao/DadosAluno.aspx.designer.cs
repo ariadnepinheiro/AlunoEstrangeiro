@@ -185,24 +185,6 @@ namespace Techne.Lyceum.Net.Certificacao {
         protected global::DevExpress.Web.ASPxEditors.ASPxDateEdit dtDataNasc;
         
         /// <summary>
-        /// lblNascidoEstrangeiro control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNascidoEstrangeiro;
-        
-        /// <summary>
-        /// rblNascidoEstrangeiro control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblNascidoEstrangeiro;
-        
-        /// <summary>
         /// lblNacionalidade control.
         /// </summary>
         /// <remarks>
