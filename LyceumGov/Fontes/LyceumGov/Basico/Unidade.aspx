@@ -213,18 +213,10 @@
 
             if (!endereco || !endereco.value || !municipio || !municipio.value) return;
 
-            var numero = document.getElementById('<%= txtEndNum.ClientID %>');
-            var enderecoCompleto = endereco.value
-                + (numero && numero.value ? ', ' + numero.value : '')
-                + (bairro && bairro.value ? ', ' + bairro.value : '')
-                + ', ' + municipio.value
-                + (uf && uf.value ? ' - ' + uf.value : '')
-                + ', Brasil';
-                
-            var url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' 
-                + encodeURIComponent(enderecoCompleto);
+            var enderecoCompleto = endereco.value + ', ' + bairro.value + ', ' + municipio.value + ' - ' + uf.value + ', Brasil';
+            var url = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' + encodeURIComponent(enderecoCompleto);
 
-            fetch(url, { headers: { 'Accept-Language': 'pt-BR', 'User-Agent': 'ConexaoEducacaoGestao-UnidadeFisica'} })
+            fetch(url, { headers: { 'Accept-Language': 'pt-BR' } })
                 .then(function (r) { return r.json(); })
                 .then(function (data) {
                     if (data && data.length > 0) {

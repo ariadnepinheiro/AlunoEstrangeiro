@@ -4184,6 +4184,7 @@ namespace Techne.Lyceum.RN
                     dadosAlunoCertificacao.NomeMae = Convert.ToString(reader["NOME_MAE"]);
                     dadosAlunoCertificacao.NomePai = Convert.ToString(reader["NOME_PAI"]);
                     dadosAlunoCertificacao.MunicipioNascimento = Convert.ToString(reader["MUNICIPIO_NASC"]);
+                    dadosAlunoCertificacao.PaisNascimento = Convert.ToString(reader["PAIS_NASC"]);
                     dadosAlunoCertificacao.RgTipo = Convert.ToString(reader["RG_TIPO"]);
                     dadosAlunoCertificacao.Nacionalidade = Convert.ToString(reader["NACIONALIDADE"]);
 

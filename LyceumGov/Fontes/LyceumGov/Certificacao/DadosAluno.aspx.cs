@@ -71,7 +71,6 @@ namespace Techne.Lyceum.Net.Certificacao
         {
             tseNaturalidade.Mode = ControlMode.View;
             tseNaturalidadeEstrangeira.Mode = ControlMode.View;
-            //rblNascidoEstrangeiro.Enabled = false;
             txtNomeAluno.ReadOnly = true;
             txtNRg.ReadOnly = true;
             txtNomemae.ReadOnly = true;
@@ -89,7 +88,6 @@ namespace Techne.Lyceum.Net.Certificacao
         {
             tseNaturalidade.Mode = ControlMode.Edit;
             tseNaturalidadeEstrangeira.Mode = ControlMode.Edit;
-            //rblNascidoEstrangeiro.Enabled = true;
             txtNomeAluno.ReadOnly = false;
             txtNRg.ReadOnly = false;
             txtNomemae.ReadOnly = false;
@@ -108,7 +106,6 @@ namespace Techne.Lyceum.Net.Certificacao
             //tseNaturalidade.ResetValue();
             //tseNaturalidadeEstrangeira.ResetValue();
             tseNaturalidadeEstrangeira.Enabled = false;
-            //rblNascidoEstrangeiro.SelectedValue = "N";
             txtPaisNascimento.Text = string.Empty;
             txtNomemae.Text = string.Empty;
             txtNomepai.Text = string.Empty;
@@ -390,8 +387,6 @@ namespace Techne.Lyceum.Net.Certificacao
                             cmbRGUF.SelectedValue = !dadosAluno.RgUf.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.RgUf : string.Empty;
                             cmbNacionalidade.SelectedValue = !dadosAluno.Nacionalidade.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.Nacionalidade : string.Empty;
 
-                            txtPaisNascimento.Text = !dadosAluno.PaisNascimento.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.PaisNascimento.Trim() : string.Empty;
-
                             if (dadosAluno.DataNascimento != null) dtDataNasc.Date = dadosAluno.DataNascimento.Date;
                             if (dadosAluno.RgDataExpedicao != null) dtExpedicaoRg.Date = dadosAluno.RgDataExpedicao.Date;
 
@@ -406,6 +401,8 @@ namespace Techne.Lyceum.Net.Certificacao
                             {
                                 // País estrangeiro — txtPaisNasc já preenchido por CarregaDadosPessoa
                                 tseNaturalidade.ResetValue();
+                                tseNaturalidade.Visible = false;
+                                tseNaturalidadeEstrangeira.Visible = true;
 
                                 txtPaisNascimento.Text = RN.Endereco.ObterPaisEstrangeiro(dadosAluno.PaisNascimento);
 
@@ -425,7 +422,9 @@ namespace Techne.Lyceum.Net.Certificacao
                             {
                                 // Nascido no Brasil
                                 tseNaturalidadeEstrangeira.ResetValue();
-                                txtPaisNascimento.Text = string.Empty;
+                                tseNaturalidadeEstrangeira.Visible = false;
+                                tseNaturalidade.Visible = true;
+                                //txtPaisNascimento.Text = string.Empty;
 
                                 if (!string.IsNullOrEmpty(dadosAluno.MunicipioNascimento)
                                     && dadosAluno.MunicipioNascimento.Trim() != "0")
