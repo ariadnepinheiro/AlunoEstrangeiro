@@ -4162,6 +4162,7 @@ namespace Techne.Lyceum.RN
 		                                    NOME_MAE,
 		                                    NOME_PAI,
 		                                    MUNICIPIO_NASC,
+                                            PAIS_NASC,
 		                                    RG_TIPO,
 		                                    RG_NUM,
 		                                    RG_EMISSOR,

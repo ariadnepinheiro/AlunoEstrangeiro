@@ -390,6 +390,8 @@ namespace Techne.Lyceum.Net.Certificacao
                             cmbRGUF.SelectedValue = !dadosAluno.RgUf.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.RgUf : string.Empty;
                             cmbNacionalidade.SelectedValue = !dadosAluno.Nacionalidade.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.Nacionalidade : string.Empty;
 
+                            txtPaisNascimento.Text = !dadosAluno.PaisNascimento.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.PaisNascimento.Trim() : string.Empty;
+
                             if (dadosAluno.DataNascimento != null) dtDataNasc.Date = dadosAluno.DataNascimento.Date;
                             if (dadosAluno.RgDataExpedicao != null) dtExpedicaoRg.Date = dadosAluno.RgDataExpedicao.Date;
 
@@ -404,6 +406,8 @@ namespace Techne.Lyceum.Net.Certificacao
                             {
                                 // País estrangeiro — txtPaisNasc já preenchido por CarregaDadosPessoa
                                 tseNaturalidade.ResetValue();
+
+                                txtPaisNascimento.Text = RN.Endereco.ObterPaisEstrangeiro(dadosAluno.PaisNascimento);
 
                                 if (!string.IsNullOrEmpty(dadosAluno.MunicipioNascimento)
                                     && dadosAluno.MunicipioNascimento.Trim() != "0")
