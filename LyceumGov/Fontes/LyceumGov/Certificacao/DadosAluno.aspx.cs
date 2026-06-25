@@ -49,18 +49,73 @@ namespace Techne.Lyceum.Net.Certificacao
         /// Alterar / Inicial  → ambas ocultas; o rbl decide qual mostrar
         /// Consultar / Sucesso → exibe apenas a que foi preenchida na carga
         /// </summary>
+
+        //protected void Page_PreRenderComplete(object sender, EventArgs e)
+        //{
+        //    ControlaAcesso(btnEditar, AcaoControle.novo);
+
+        //    lblPaisNascimento.Visible = true;
+        //    txtPaisNascimento.Visible = true;
+        //    lblUFNascimento.Visible = true;
+        //    txtUFNascimento.Visible = true;
+
+        //    bool nascidoFora = !string.IsNullOrEmpty(txtPaisNascimento.Text)
+        //                       && txtPaisNascimento.Text.Trim().ToUpper() != "BRASIL";
+
+        //    bool modoEdicao = (_tipoOperacao == TipoOperacao.Alterar);
+
+        //    if (modoEdicao)
+        //    {
+        //        // Em edição, mostra o TSE correto somente se a nacionalidade estiver selecionada
+        //        tseNaturalidade.Visible = false;
+        //        tseNaturalidadeEstrangeira.Visible = false;
+
+        //        if (!string.IsNullOrEmpty(cmbNacionalidade.SelectedValue))
+        //        {
+        //            tseNaturalidade.Visible = !nascidoFora;
+        //            tseNaturalidadeEstrangeira.Visible = nascidoFora;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        // Em consulta, mostra baseado no país
+        //        tseNaturalidade.Visible = !nascidoFora;
+        //        tseNaturalidadeEstrangeira.Visible = nascidoFora;
+        //    }
+        //}
+
         protected void Page_PreRenderComplete(object sender, EventArgs e)
         {
             ControlaAcesso(btnEditar, AcaoControle.novo);
-
-            bool modoEdicao = (_tipoOperacao == TipoOperacao.Alterar
-                            || _tipoOperacao == TipoOperacao.Inicial);
 
             lblPaisNascimento.Visible = true;
             txtPaisNascimento.Visible = true;
             lblUFNascimento.Visible = true;
             txtUFNascimento.Visible = true;
 
+            bool nascidoFora = !string.IsNullOrEmpty(txtPaisNascimento.Text)
+                               && txtPaisNascimento.Text.Trim().ToUpper() != "BRASIL";
+
+            bool modoEdicao = (_tipoOperacao == TipoOperacao.Alterar);
+
+            if (modoEdicao)
+            {
+                // Em edição, mostra TSE correto
+                tseNaturalidade.Visible = false;
+                tseNaturalidadeEstrangeira.Visible = false;
+
+                if (!string.IsNullOrEmpty(cmbNacionalidade.SelectedValue))
+                {
+                    tseNaturalidade.Visible = !nascidoFora;
+                    tseNaturalidadeEstrangeira.Visible = nascidoFora;
+                }
+            }
+            else
+            {
+                // Em consulta, mostra baseado no país
+                tseNaturalidade.Visible = !nascidoFora;
+                tseNaturalidadeEstrangeira.Visible = nascidoFora;
+            }
         }
 
         // ─────────────────────────────────────────────────────────
@@ -349,6 +404,49 @@ namespace Techne.Lyceum.Net.Certificacao
                             ControlarVisibilidadeControle(new ImageButton[] { btnCancel, btnSalvar });
                             lblMensagem.Text = string.Empty;
                             HabilitaCampos();
+
+                            // Só recarrega do banco se o TSE não tiver valor (primeira entrada no modo Editar)
+                            bool temEstrangeiro = tseNaturalidadeEstrangeira.IsValidDBValue && !tseNaturalidadeEstrangeira.DBValue.IsNull;
+                            bool temBrasileiro = tseNaturalidade.IsValidDBValue && !tseNaturalidade.DBValue.IsNull;
+
+                            if (!temEstrangeiro && !temBrasileiro)
+                            {
+                                RN.Pessoa rnPessoa = new Pessoa();
+                                RN.DTOs.DadosAlunoCertificacao dadosAluno = rnPessoa.ObtemDadosCertificacaoPor(Convert.ToDecimal(tseAluno["pessoa"]));
+
+                                bool nascidoForaDoBrasil = !string.IsNullOrEmpty(dadosAluno.PaisNascimento)
+                                                           && dadosAluno.PaisNascimento.Trim() != "0";
+
+                                if (nascidoForaDoBrasil)
+                                {
+                                    tseNaturalidade.ResetValue();
+                                    tseNaturalidadeEstrangeira.Enabled = true;
+                                    txtPaisNascimento.Text = RN.Endereco.ObterPaisEstrangeiro(dadosAluno.PaisNascimento);
+
+                                    if (!string.IsNullOrEmpty(dadosAluno.MunicipioNascimento) && dadosAluno.MunicipioNascimento.Trim() != "0")
+                                    {
+                                        tseNaturalidadeEstrangeira.DBValue = dadosAluno.MunicipioNascimento;
+                                        if (tseNaturalidadeEstrangeira.IsValidDBValue && !tseNaturalidadeEstrangeira.DBValue.IsNull)
+                                        {
+                                            txtUFNascimento.Text = tseNaturalidadeEstrangeira["ESTADO"].ToString();
+                                            txtPaisNascimento.Text = tseNaturalidadeEstrangeira["PAIS"].ToString();
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    tseNaturalidadeEstrangeira.ResetValue();
+                                    txtPaisNascimento.Text = string.Empty;
+                                    tseNaturalidade.Enabled = true;
+
+                                    if (!string.IsNullOrEmpty(dadosAluno.MunicipioNascimento) && dadosAluno.MunicipioNascimento.Trim() != "0")
+                                    {
+                                        tseNaturalidade.DBValue = dadosAluno.MunicipioNascimento;
+                                        if (tseNaturalidade.IsValidDBValue && !tseNaturalidade.DBValue.IsNull)
+                                            txtUFNascimento.Text = tseNaturalidade["uf_sigla"].ToString();
+                                    }
+                                }
+                            }
                         }
                         else
                         {
@@ -396,7 +494,7 @@ namespace Techne.Lyceum.Net.Certificacao
 
                             bool nascidoForaDoBrasil = !string.IsNullOrEmpty(dadosAluno.PaisNascimento)
                                                        && dadosAluno.PaisNascimento.Trim() != "0";
-                            
+
                             if (nascidoForaDoBrasil)
                             {
                                 // País estrangeiro — txtPaisNasc já preenchido por CarregaDadosPessoa
