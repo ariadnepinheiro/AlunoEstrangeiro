@@ -133,7 +133,7 @@ namespace Techne.Lyceum.Net.PrestacaoContas
 
                 if (tsePeriodoReferencia.DBValue.IsNull || !tsePeriodoReferencia.IsValidDBValue)
                 {
-                    lblMensagem.Text += "O campo obrigatorio Periodo Refrência não foi preenchido </br>";
+                    lblMensagem.Text += "O campo obrigatorio Periodo Referência não foi preenchido </br>";
                     erro = true;
                 }
                 if (tseUnidadeResponsavel.DBValue.IsNull || !tseUnidadeResponsavel.IsValidDBValue)

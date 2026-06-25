@@ -177,7 +177,9 @@
                             </dxwgv:GridViewDataTextColumn>
                             <dxwgv:GridViewDataTextColumn FieldName="OPERACAOID" VisibleIndex="3" Caption="Id" Visible="false">
                             </dxwgv:GridViewDataTextColumn>
-                            <dxwgv:GridViewDataTextColumn FieldName="plano" VisibleIndex="1" Caption="Projeto/Programa">
+                            <dxwgv:GridViewDataTextColumn FieldName="IDPLANO" VisibleIndex="1" Caption="Projeto/Programa">
+                            </dxwgv:GridViewDataTextColumn>
+                             <dxwgv:GridViewDataTextColumn FieldName="CODIGOIDENTIFICADOR" VisibleIndex="1" Caption="Código Identificador">
                             </dxwgv:GridViewDataTextColumn>
                             <dxwgv:GridViewDataTextColumn FieldName="DATACADASTRO" VisibleIndex="1" Caption="Data do Envio">
                             </dxwgv:GridViewDataTextColumn>

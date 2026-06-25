@@ -1044,7 +1044,7 @@
                                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                                             </CellStyle>
                                         </dxwgv:GridViewDataTextColumn>
-                                        <dxwgv:GridViewDataTextColumn Caption="Cód. FGV" FieldName="CODIGOFGV" VisibleIndex="4"
+                                        <dxwgv:GridViewDataTextColumn Caption="Código" FieldName="CODIGOFGV" VisibleIndex="4"
                                             Width="70px">
                                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                                             </CellStyle>
@@ -1064,7 +1064,7 @@
                                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                                             </CellStyle>
                                         </dxwgv:GridViewDataTextColumn>
-                                        <dxwgv:GridViewDataTextColumn Caption="Vr. FGV" FieldName="VALORFGV" VisibleIndex="8"
+                                        <dxwgv:GridViewDataTextColumn Caption="Valor" FieldName="VALORFGV" VisibleIndex="8"
                                             Width="70px">
                                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                                             </CellStyle>
@@ -1265,7 +1265,7 @@
                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                             </CellStyle>
                         </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Cód. FGV" FieldName="CODIGOFGV" VisibleIndex="4"
+                        <dxwgv:GridViewDataTextColumn Caption="Código" FieldName="CODIGOFGV" VisibleIndex="4"
                             Width="70px">
                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                             </CellStyle>
@@ -1285,7 +1285,7 @@
                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                             </CellStyle>
                         </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Vr. FGV" FieldName="VALORFGV" VisibleIndex="8"
+                        <dxwgv:GridViewDataTextColumn Caption="Valor" FieldName="VALORFGV" VisibleIndex="8"
                             Width="70px">
                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                             </CellStyle>

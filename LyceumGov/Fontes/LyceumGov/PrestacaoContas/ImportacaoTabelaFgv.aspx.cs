@@ -24,7 +24,7 @@ namespace Techne.Lyceum.Net.PrestacaoContas
     [
     NavUrl("~/PrestacaoContas/ImportacaoTabelaFgv.aspx"),
      ControlText("ImportacaoTabelaFgv"),
-     Title("Importar FGV"),
+     Title("Importar Tabela de Preços de Valores Máximos"),
    ]
 
     public partial class ImportacaoTabelaFgv : TPage
@@ -102,12 +102,12 @@ namespace Techne.Lyceum.Net.PrestacaoContas
                     if (!tseRegiaoFGV.IsValidDBValue)
                     {
 
-                        lblMensagem.Text = "Região FGV não ativa ou não cadastrada (favor verificar).";
+                        lblMensagem.Text = "Áreas Geográficas não ativa ou não cadastrada (favor verificar).";
                     }
                 }
                 else
                 {
-                    lblMensagem.Text = "Região FGV não ativa ou não cadastrada (favor verificar).";
+                    lblMensagem.Text = "Áreas Geográficas não ativa ou não cadastrada (favor verificar).";
 
                 }
 
@@ -118,43 +118,71 @@ namespace Techne.Lyceum.Net.PrestacaoContas
             }
         }
 
-        public static DataTable CarregarCSV(StreamReader sr, Encoding encoding)
+        public DataTable CarregarCSV(StreamReader sr, Encoding encoding)
         {
-            var linha = 1;
-            string[] headers = sr.ReadLine().Split(';');
-            DataTable dt = new DataTable();
-
-            foreach (string header in headers)
-                dt.Columns.Add(header);
-
-            dt.Columns.Add("ROW");
-
-            while (!sr.EndOfStream)
+            try
             {
-                linha++;
-                
-                string[] rows = Regex.Split(sr.ReadLine(), ";(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
-                DataRow dr = dt.NewRow();
-                dr["ROW"] = linha;
+                var linha = 1;
+                string[] headers = sr.ReadLine().Split(';');
+                DataTable dt = new DataTable();
+                int l = 0;
 
-                for (int i = 0; i < headers.Length; i++)
+                if (headers.Count() != 6)
                 {
-                    dr[i] = rows[i];
+                    lblMensagem.Text = "Arquivo fora do formato permitido. CODIGO|NOME|UNIDADEMEDIDA|VALOR|NCM|FLAGNCM";
+                    return null;
+                } 
+                
+                foreach (string header in headers)
+                    dt.Columns.Add(header);
 
-                    if (i == 4 /*NCM*/)
+                dt.Columns.Add("ROW");
+
+                while (!sr.EndOfStream)
+                {
+                    linha++;
+
+
+                    var conteudo = sr.ReadLine().Replace("\t", "");
+          
+                    string[] rows = Regex.Split(conteudo, ";(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+                    DataRow dr = dt.NewRow();
+                    dr["ROW"] = linha;
+
+                    if (rows.Count() < headers.Length)
                     {
-                        //Considerar somente o que for número na string. O que não for, descarta
-                        var ncm = Convert.ToString(dr[i]);
-                        ncm = ncm.Where(q => char.IsDigit(q)).Select(s => s.ToString()).Aggregate((c, n) => c + n);
-                        dr[i] = ncm;
+                        lblMensagem.Text = "Problema identificado na linha " + linha + ". Favor verificar pelo csv.";
+                        return null;
                     }
-                }
-                dt.Rows.Add(dr);
-            }
 
-            return dt;
+                    for (int i = 0; i < headers.Length && i < dr.Table.Columns.Count; i++)
+                    {
+                        l = i;
+                        dr[i] = rows[i];
+
+                        if (i == 4 /*NCM*/)
+                        {
+                            //Considerar somente o que for número na string. O que não for, descarta
+                            var ncm = Convert.ToString(dr[i]);
+
+                            string resultado = new string(ncm.Where(char.IsDigit).ToArray());
+
+                            dr[i] = resultado;
+                        }
+                    }
+                    dt.Rows.Add(dr);
+                }
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                lblMensagem.Text = ex.Message;
+                return null;
+            }
         }
-        public static DataTable CarregarCSV(FileInfo file, Encoding encoding)
+
+        public DataTable CarregarCSV(FileInfo file, Encoding encoding)
         {
             StreamReader sr = null;
 
@@ -183,8 +211,8 @@ namespace Techne.Lyceum.Net.PrestacaoContas
             var erros = new List<string>();
 
             //validar as colunas da planilha
-            if (!dt.Columns.Contains("CODFGV"))
-                erros.Add("Coluna \"CODFGV\" não existe na planilha especificada");
+            if (!dt.Columns.Contains("CODIGO"))
+                erros.Add("Coluna \"CODIGO\" não existe na planilha especificada");
 
             if (!dt.Columns.Contains("NOME"))
                 erros.Add("Coluna \"NOME\" não existe na planilha especificada");
@@ -207,7 +235,7 @@ namespace Techne.Lyceum.Net.PrestacaoContas
             //validar os dados da planilha
             foreach (DataRowView drv in dt.DefaultView)
             {
-                var valorCODFGV = (drv["CODFGV"] ?? "").ToString();
+                var valorCODFGV = (drv["CODIGO"] ?? "").ToString();
                 var valorNOME = (drv["NOME"] ?? "").ToString();
                 var valorUNIDADEMEDIDA = (drv["UNIDADEMEDIDA"] ?? "").ToString();
                 var valor = (drv["VALOR"] ?? "").ToString();
@@ -216,7 +244,7 @@ namespace Techne.Lyceum.Net.PrestacaoContas
                 var contador = Convert.ToInt32(drv["ROW"]);
 
                 if (valorCODFGV.Length > 10)
-                    erros.Add("Linha:" + contador + " - CODFGV não pode ter mais do que 10 caracteres");
+                    erros.Add("Linha:" + contador + " - CÓDIGO não pode ter mais do que 10 caracteres");
 
                 if (valorNOME.Length > 250)
                     erros.Add("Linha:" + contador + " - NOME não pode ter mais do que 250 caracteres");
@@ -234,7 +262,7 @@ namespace Techne.Lyceum.Net.PrestacaoContas
                     erros.Add("Linha:" + contador + " - NCM não pode ter mais do que 10 caracteres");
 
                 if (valorCODFGV.Length < 2)
-                    erros.Add("{preMsg}CODFGV não pode ter menos do que 2 caracteres");
+                    erros.Add("{preMsg}CÓDIGO não pode ter menos do que 2 caracteres");
 
 
                 if (valorNOME.Length < 2)
@@ -276,37 +304,45 @@ namespace Techne.Lyceum.Net.PrestacaoContas
                                     var csvFile = new FileInfo(arquivoserver);
 
                                     DateTime DataInicial = System.DateTime.Now;
-                                    using (DataView dv = CarregarCSV(csvFile, Encoding.UTF7).DefaultView)
+
+                                    DataTable dt = CarregarCSV(csvFile, Encoding.UTF7);
+
+                                    if (dt != null)
                                     {
-                                        //validação da planilha
-                                        var erros = EhPlanilhaValida(dv.Table);//colocar a validação dos itens conforme a tabela PRODUTOSERVICOVALORMAXIMO
-                                        if (!erros.Any())
+
+                                        using (DataView dv = dt.DefaultView)
                                         {
-                                            Techne.Lyceum.RN.PrestacaoContas.ImportacaoFgv rnImportacaoFgv = new Techne.Lyceum.RN.PrestacaoContas.ImportacaoFgv();
-                                            rnImportacaoFgv.ImportaArquivo(dv, Convert.ToInt32(ddlAno.SelectedValue), Convert.ToInt32(ddlMes.SelectedValue), regiaofgv, User.Identity.Name, out linha, out errosprocessamento, out linhaimportado);
-
-                                            var exibeerro = "";
-                                            for (int i = 0; i < errosprocessamento.Count(); i++)
+                                            //validação da planilha
+                                            var erros = EhPlanilhaValida(dv.Table);//colocar a validação dos itens conforme a tabela PRODUTOSERVICOVALORMAXIMO
+                                            if (!erros.Any())
                                             {
-                                                exibeerro = exibeerro + " " + errosprocessamento[i] + "<br/>";
+                                                Techne.Lyceum.RN.PrestacaoContas.ImportacaoFgv rnImportacaoFgv = new Techne.Lyceum.RN.PrestacaoContas.ImportacaoFgv();
+                                                rnImportacaoFgv.ImportaArquivo(dv, Convert.ToInt32(ddlAno.SelectedValue), Convert.ToInt32(ddlMes.SelectedValue), regiaofgv, User.Identity.Name, out linha, out errosprocessamento, out linhaimportado);
+
+                                                var exibeerro = "";
+                                                for (int i = 0; i < errosprocessamento.Count(); i++)
+                                                {
+                                                    exibeerro = exibeerro + " " + errosprocessamento[i] + "<br/>";
+                                                }
+
+                                                lblMensagem.Text = "Importação Finalizada!!!<br/><br/>Total de Produtos/Serviços na tabela de Preços de Valores Máximos: " + linha + "<br/>Total de Produtos/Serviços importados: " + linhaimportado + "<br/>Total de Erros: " + errosprocessamento.Count() + "<br/><br/> " + exibeerro;
+
                                             }
-
-                                            lblMensagem.Text = "Importação Finalizada!!!<br/><br/>Total de Produtos/Serviços na tabela FGV: " + linha + "<br/>Total de Produtos/Serviços importados: " + linhaimportado + "<br/>Total de Erros: " + errosprocessamento.Count() + "<br/><br/> " + exibeerro;
-
-                                        }
-                                        else 
-                                        { 
-                                            lblMensagem.Text = erros.Aggregate((c, n) => c + "<br />" + n); 
+                                            else
+                                            {
+                                                lblMensagem.Text = erros.Aggregate((c, n) => c + "<br />" + n);
+                                            }
                                         }
                                     }
                                 }
-                                else { lblMensagem.Text = "Arquivo tem que estar no formato CSV!!!"; }
+
+                                else { lblMensagem.Text = "Arquivo tem que estar no formato CSV."; }
                             }
-                            else { lblMensagem.Text = "Arquivo informado não é na extensão CSV !!!"; }
+                            else { lblMensagem.Text = "Arquivo informado não é na extensão CSV."; }
                         }
-                        else { lblMensagem.Text = "Mês ou ano não preenchidos!!!"; }
+                        else { lblMensagem.Text = "Mês ou ano não preenchidos."; }
                     }
-                    else { lblMensagem.Text = "Região não Preenchida!!!"; }
+                    else { lblMensagem.Text = "Região não Preenchida."; }
                 }
                 else { lblMensagem.Text = "Arquivo não Selecionado!!!"; }
 

@@ -905,6 +905,10 @@ namespace Techne.Lyceum.Net.Basico
             ddlSitFuncionamento.Items.Insert(0, new ListItem("Selecione", string.Empty));
         }
 
+        protected string CarregaUF(string municipio) {           
+            return RN.Municipio.BuscarUF(municipio);
+        }
+
         protected void CarregaBairroUF(string municipioId)
         {
             RN.Bairro rnBairro = new Techne.Lyceum.RN.Bairro();
@@ -1696,7 +1700,7 @@ namespace Techne.Lyceum.Net.Basico
             {
                 var idCompartilhada = Convert.ToInt32(grdCompartilhada.GetRowValues(index, "id_compartilhada"));
                 var redeEnsino = Convert.ToString(grdCompartilhada.GetRowValues(index, "rede_ensino"));
-                var censo = Convert.ToString(grdCompartilhada.GetRowValues(index, "censo"));
+                var censo = Convert.ToString(grdCompartilhada.GetRowValues(index, "censo_compartilhada"));
                 var nome = Convert.ToString(grdCompartilhada.GetRowValues(index, "nome"));
 
                 if (idCompartilhada <= 0 || string.IsNullOrEmpty(redeEnsino))
@@ -3818,6 +3822,8 @@ namespace Techne.Lyceum.Net.Basico
                 if (!hdnCodMunicipio.Value.IsNullOrEmptyOrWhiteSpace())
                 {
                     this.CarregaBairroUF(hdnCodMunicipio.Value);
+
+                    txtEstadoUF.Value = CarregaUF(hdnCodMunicipio.Value);
                 }
             }
             catch (Exception ex)
@@ -3836,6 +3842,7 @@ namespace Techne.Lyceum.Net.Basico
                     if (!hdnCodMunicipio.Value.IsNullOrEmptyOrWhiteSpace())
                     {
                         this.CarregaBairroUF(hdnCodMunicipio.Value);
+                        txtEstadoUF.Value = CarregaUF(hdnCodMunicipio.Value);
                     }
                 }
             }

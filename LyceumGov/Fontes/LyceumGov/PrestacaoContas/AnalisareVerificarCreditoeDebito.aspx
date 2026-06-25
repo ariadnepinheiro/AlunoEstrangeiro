@@ -253,17 +253,27 @@
                             <ContentCollection>
                     <dxw:ContentControl ID="ContentControl1" runat="server">
                          <table>
-                            <tr>
-                                <td>
-                                  <asp:Label ID="Label2" runat="server" Font-Names="Verdana" SkinID="lblObrigatorio"
-                                        Text="CNPJ AAE"></asp:Label>
-                                </td>
-                                <td>
-                                  <asp:Label ID="lblCNPJ" runat="server" Font-Names="Verdana" SkinID="lblObrigatorio"
-                                        Text=""></asp:Label>
-                                </td>
-                                  </tr>
-                                    <tr> 
+                                <tr>
+                                    <td>
+                                      <asp:Label ID="Label4" runat="server" Font-Names="Verdana" SkinID="lblObrigatorio"
+                                            Text="IDENTIFICADOR"></asp:Label>
+                                    </td>
+                                    <td>
+                                      <asp:Label ID="lblIdentificador" runat="server" Font-Names="Verdana" SkinID="lblObrigatorio"
+                                            Text=""></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      <asp:Label ID="Label2" runat="server" Font-Names="Verdana" SkinID="lblObrigatorio"
+                                            Text="CNPJ AAE"></asp:Label>
+                                    </td>
+                                    <td>
+                                      <asp:Label ID="lblCNPJ" runat="server" Font-Names="Verdana" SkinID="lblObrigatorio"
+                                            Text=""></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr> 
                                       <td style="text-align: right;">
                                          <asp:Label Font-Names="Verdana" ID="Label1" runat="server" Text="Data Envio:"></asp:Label>
                                       </td>

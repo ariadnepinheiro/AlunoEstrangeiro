@@ -5154,6 +5154,7 @@
     <Content Include="Images\tit_formularioRTI.png" />
     <Content Include="Images\tit_migracao.png" />
     <Content Include="Images\tit_rve.png" />
+    <Content Include="img\loading.gif" />
     <Content Include="Menu\InspecaoEscolar.aspx" />
     <Content Include="Menu\PopupA.ascx" />
     <Content Include="Menu\Rve.aspx" />

@@ -256,6 +256,16 @@ MasterPageFile="~/Modulos/LyceumMaster.Master" Inherits="Techne.Lyceum.Net.Prest
                          <table>
                             <tr>
                                 <td>
+                                  <asp:Label ID="Label4" runat="server" Font-Names="Verdana" SkinID="lblObrigatorio"
+                                        Text="IDENTIFICADOR"></asp:Label>
+                                </td>
+                                <td>
+                                  <asp:Label ID="lblIdentificador" runat="server" Font-Names="Verdana" SkinID="lblObrigatorio"
+                                        Text=""></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
                                   <asp:Label ID="Label2" runat="server" Font-Names="Verdana" SkinID="lblObrigatorio"
                                         Text="CNPJ AAE"></asp:Label>
                                 </td>

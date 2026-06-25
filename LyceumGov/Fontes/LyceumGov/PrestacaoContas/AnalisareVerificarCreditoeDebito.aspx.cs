@@ -70,7 +70,8 @@ namespace Techne.Lyceum.Net.PrestacaoContas
                
                 RN.Entidades.LyUnidadeEnsino rowUE = RN.UnidadeEnsino.Carregar(operacao.Censo.ToString());
                 lblUnidadeEnsino.Text = rowUE.NomeComp;
-                lblProjeto.Text = rnPlanoTrabalho.PesquisaPorId(operacao.PlanoTrabalhoId.ToString());
+                lblProjeto.Text = rnPlanoTrabalho.ObterPlanoTrabalhoCompleto(operacao.PlanoTrabalhoId.ToString());
+                lblIdentificador.Text = rnPlanoTrabalho.ObterIdentificadorCompleto(operacao.PlanoTrabalhoId.ToString());
                 lblOperacao.Text = operacao.TipoOperacao.ToString() == "C" ? "Crédito" : "Débito";
                 lblDataEnvio.Text = operacao.DataCadastro.ToString();
                 txtValor.Text = operacao.Valor.ToString();

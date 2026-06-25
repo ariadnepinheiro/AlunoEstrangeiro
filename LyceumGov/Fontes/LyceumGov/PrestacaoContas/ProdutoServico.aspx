@@ -214,7 +214,7 @@
                                     </asp:DropDownList>
                                 </td>
                                 <td style="text-align: right">
-                                    <asp:Label ID="Label11" runat="server" Text="Código FGV: "></asp:Label>
+                                    <asp:Label ID="Label11" runat="server" Text="Código da Tabela de Preços de Valores Máximos: "></asp:Label>
                                 </td>
                                 <td>
                                     <asp:TextBox ID="txtCodigoFGV" runat="server" Width="70%" onkeypress="return OnlyNumericEntry(event)"></asp:TextBox>
@@ -272,7 +272,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:Label ID="Label7" runat="server" Font-Names="Verdana" Text="Região FGV:*"
+                                    <asp:Label ID="Label7" runat="server" Font-Names="Verdana" Text="Áreas Geográficas:*"
                                         SkinID="lblObrigatorio"></asp:Label>
                                 </td>
                                 <td>
@@ -364,7 +364,7 @@
                                  <dxwgv:GridViewDataTextColumn Caption="REGIAOFGVID" Name="REGIAOFGVID"
                                     VisibleIndex="2" FieldName="REGIAOFGVID" Visible="false">
                                 </dxwgv:GridViewDataTextColumn>
-                                 <dxwgv:GridViewDataTextColumn Caption="Região FGV" Name="REGIAOFGV"
+                                 <dxwgv:GridViewDataTextColumn Caption="Áreas Geográficas" Name="REGIAOFGV"
                                     VisibleIndex="3" FieldName="REGIAOFGV" Visible="true" ReadOnly="true">
                                 </dxwgv:GridViewDataTextColumn>                                
                                 <dxwgv:GridViewDataTextColumn Caption="Valor Máximo" Name="VALORMAXIMO" VisibleIndex="4"

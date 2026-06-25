@@ -753,7 +753,7 @@ namespace Techne.Lyceum.Net.PrestacaoContas
                 {
                     DateTime dataLimite = Convert.ToDateTime(tsePeriodoPrestacaoContas["DATALIMITEDESPESAS"]);
 
-                    if (dataLimite != null && DateTime.Now > dataLimite)
+                    if (dataLimite != null && DateTime.Now.Date > dataLimite)
                     {
                         lblMensagem.Text = "A DATA ATUAL passou a DATA LIMITE DE DESPESAS.";
                         return;
@@ -1592,6 +1592,8 @@ namespace Techne.Lyceum.Net.PrestacaoContas
                     evento = rnEvento.ObtemDadosEventoPor(Convert.ToInt32(tseEvento.Value));
                 
                 evento.PlanoTrabalhoId = Convert.ToInt32(tsePlanoTrabalho.Value);
+                evento.PeriodoReferenciaId = Convert.ToInt32(tsePeriodoPrestacaoContas.Value);
+                evento.FinalidadeId = Convert.ToInt32(tsePlanoTrabalho["FINALIDADEID"]);
                 evento.Censo = Convert.ToString(tseUnidadeEnsino.Value);
 
                 tipoDespesa = (int)RN.PrestacaoContas.Evento.TipoDespesa.DespesaComum;
@@ -1700,6 +1702,8 @@ namespace Techne.Lyceum.Net.PrestacaoContas
                     evento = rnEvento.ObtemDadosEventoPor(Convert.ToInt32(tseEvento.Value));
 
                 evento.PlanoTrabalhoId = Convert.ToInt32(tsePlanoTrabalho.Value);
+                evento.PeriodoReferenciaId = Convert.ToInt32(tsePeriodoPrestacaoContas.Value);
+                evento.FinalidadeId = Convert.ToInt32(tsePlanoTrabalho["FINALIDADEID"]);
                 evento.Censo = Convert.ToString(tseUnidadeEnsino.Value);
                 tipoDespesa = (int)RN.PrestacaoContas.Evento.TipoDespesa.DespesaDocumentosFiscais;
 
@@ -1805,6 +1809,8 @@ namespace Techne.Lyceum.Net.PrestacaoContas
                     evento = rnEvento.ObtemDadosEventoPor(Convert.ToInt32(tseEvento.Value));
 
                 evento.PlanoTrabalhoId = Convert.ToInt32(tsePlanoTrabalho.Value);
+                evento.PeriodoReferenciaId = Convert.ToInt32(tsePeriodoPrestacaoContas.Value);
+                evento.FinalidadeId = Convert.ToInt32(tsePlanoTrabalho["FINALIDADEID"]);
                 evento.Censo = Convert.ToString(tseUnidadeEnsino.Value);
                 evento.TipoDespesa = (int)RN.PrestacaoContas.Evento.TipoDespesa.PequenaDespesaComComprovacao;
 
@@ -1865,6 +1871,8 @@ namespace Techne.Lyceum.Net.PrestacaoContas
                     evento = rnEvento.ObtemDadosEventoPor(Convert.ToInt32(tseEvento.Value));
       
                 evento.PlanoTrabalhoId = Convert.ToInt32(tsePlanoTrabalho.Value);
+                evento.PeriodoReferenciaId = Convert.ToInt32(tsePeriodoPrestacaoContas.Value);
+                evento.FinalidadeId = Convert.ToInt32(tsePlanoTrabalho["FINALIDADEID"]);
                 evento.Censo = Convert.ToString(tseUnidadeEnsino.Value);
                 evento.TipoDespesa = (int)RN.PrestacaoContas.Evento.TipoDespesa.PequenaDespesaSemComprovacao;
 
@@ -1906,6 +1914,8 @@ namespace Techne.Lyceum.Net.PrestacaoContas
                     evento = rnEvento.ObtemDadosEventoPor(Convert.ToInt32(tseEvento.Value));
 
                 evento.PlanoTrabalhoId = Convert.ToInt32(tsePlanoTrabalho.Value);
+                evento.PeriodoReferenciaId = Convert.ToInt32(tsePeriodoPrestacaoContas.Value);
+                evento.FinalidadeId = Convert.ToInt32(tsePlanoTrabalho["FINALIDADEID"]);
                 evento.Censo = Convert.ToString(tseUnidadeEnsino.Value);
                 evento.TipoDespesa = (int)RN.PrestacaoContas.Evento.TipoDespesa.PequenaDespesaComTransladoServidores;
 

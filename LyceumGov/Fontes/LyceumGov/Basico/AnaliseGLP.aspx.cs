@@ -5,6 +5,11 @@ using Techne.Data;
 using Techne.Lyceum.RN;
 using Techne.Web;
 using System.Data;
+using DevExpress.Web.ASPxEditors;
+using System.Collections.Generic;
+using Techne.Lyceum.CR;
+using System.Linq;
+using Techne.Library;
 
 namespace Techne.Lyceum.Net.Basico
 {
@@ -26,13 +31,14 @@ namespace Techne.Lyceum.Net.Basico
         {
             lblMensagem.Text = string.Empty;
             pucConfirmar.ShowOnPageLoad = false;
+            divBotoes.Visible = grdDocenteFuncaoGLP.VisibleRowCount > 0;
         }
 
         void Page_PreRenderComplete(object sender, EventArgs e)
         {
             ControlaAcesso(grdDocenteFuncaoGLP);
-            ControlaAcesso(grdDocenteFuncaoGLP, AcaoControle.editar, "btnReprovar");
-            ControlaAcesso(grdDocenteFuncaoGLP, AcaoControle.editar, "btnAceitar");
+            ControlaAcesso(btnAceitarTodos, AcaoControle.editar);
+            ControlaAcesso(btnReprovarTodos, AcaoControle.editar);
         }
 
         public static string GetUrl()
@@ -85,7 +91,6 @@ namespace Techne.Lyceum.Net.Basico
             return null;
         }
 
-
         protected void tseRegional_Changed(object sender, Techne.Controls.ChangedEventArgs args)
         {
             pnlAnaliseGLP.Visible = false;
@@ -96,7 +101,7 @@ namespace Techne.Lyceum.Net.Basico
                 {
                     return;
                 }
-              
+
                 var sessao = RN.SessaoUsuario.GetSessaoUsuario();
 
                 if (sessao != null)
@@ -146,7 +151,7 @@ namespace Techne.Lyceum.Net.Basico
                 {
                     return;
                 }
-               
+
                 var sessao = RN.SessaoUsuario.GetSessaoUsuario();
 
                 if (sessao != null)
@@ -199,7 +204,7 @@ namespace Techne.Lyceum.Net.Basico
                     sessao.Regional = Convert.ToString(tseRegional.DBValue);
                     sessao.Municipio = Convert.ToString(tseMunicipio.DBValue);
                     sessao.Escola = Convert.ToString(tseUnidade_Ensino.DBValue);
-                    
+
                 }
             }
             catch (Exception ex)
@@ -221,109 +226,54 @@ namespace Techne.Lyceum.Net.Basico
 
         protected void btConfirma_Click(object sender, EventArgs e)
         {
-            RetValue retorno = null;
-            RN.DocenteGLP rnDocenteGLP = new DocenteGLP();
+            if (string.IsNullOrEmpty(hID.Text)) return;
+
+            RN.DocenteGLP rnDocenteGLP = new RN.DocenteGLP();
+            string[] idValues = hID.Text.Split(';');
+            string[] qtdValues = hQtde.Text.Split(';');
+            string motivo = cmbMotivo.SelectedValue;
 
             try
             {
-                if (rnDocenteGLP.ehSolicitacaoPendente(Convert.ToDecimal(hID.Text)))
+                for (int i = 0; i < idValues.Length; i++)
                 {
-                    retorno = RN.DocenteGLP.ReprovarGLPEmAnalise(Convert.ToDecimal(hID.Text), Convert.ToDecimal(hQtde.Text), Convert.ToString(cmbMotivo.SelectedValue),User.Identity.Name);
-                    if (retorno != null)
+                    if (i >= qtdValues.Length) break;
+
+                    decimal id = Convert.ToDecimal(idValues[i]);
+                    decimal qtde = Convert.ToDecimal(qtdValues[i]);
+
+                    if (rnDocenteGLP.ehSolicitacaoPendente(id))
                     {
-                        if (!retorno.Ok)
+                        var retorno = RN.DocenteGLP.ReprovarGLPEmAnalise(id, qtde, motivo, User.Identity.Name);
+
+                        if (retorno != null && !retorno.Ok)
                         {
-                            throw new Exception(retorno.Errors.ToString());
+                            throw new Exception("Erro no item {id}: {retorno.Errors}");
                         }
-                        else
-                        {
-                            lblMensagem.Text = retorno.Message;
-                            odsDocenteFuncaoGLP.Select();
-                            odsDocenteFuncaoGLP.DataBind();
-                            grdDocenteFuncaoGLP.DataBind();
-                        }
-                    }
-                }
-                else
-                {
-                    lblMensagem.Text = "Esta solicitação já se encontra analisada.";
-                    odsDocenteFuncaoGLP.Select();
-                    odsDocenteFuncaoGLP.DataBind();
-                    grdDocenteFuncaoGLP.DataBind();
-                }
-            }
-            catch (Exception ex)
-            {
-                lblMensagem.Text = ex.Message;
-            }
 
-        }     
-
-        protected void grdDocenteFuncaoGLP_CustomButtonCallback(object sender, ASPxGridViewCustomButtonCallbackEventArgs e)
-        {
-            RN.DocenteGLP rnDocenteGLP = new DocenteGLP();
-            Techne.Lyceum.CR.Ly_docente_funcao_glp.Row row = new Techne.Lyceum.CR.Ly_docente_funcao_glp().NewRow();
-            row.Id_docente_funcao_glp = Convert.ToDecimal(grdDocenteFuncaoGLP.GetRowValues(e.VisibleIndex, "ID_DOCENTE_FUNCAO_GLP"));
-            row.Matricula = Convert.ToString(grdDocenteFuncaoGLP.GetRowValues(e.VisibleIndex, "MATRICULA"));
-            row.Funcao_glp = Convert.ToString(grdDocenteFuncaoGLP.GetRowValues(e.VisibleIndex, "FUNCAO_GLP"));
-            row.Unidade_ens = Convert.ToString(grdDocenteFuncaoGLP.GetRowValues(e.VisibleIndex, "UNIDADE_ENS"));
-            row.Agrupamento = Convert.ToString(grdDocenteFuncaoGLP.GetRowValues(e.VisibleIndex, "AGRUPAMENTO"));
-            row.Glp_solicitada = Convert.ToInt32(grdDocenteFuncaoGLP.GetRowValues(e.VisibleIndex, "GLP_SOLICITADA"));
-            row.Ano = DateTime.Today.Year;
-            row.Mes = DateTime.Today.Month;
-            row.Data = DateTime.Today;
-            row.Usuarioanaliseid = User.Identity.Name;
-            row.DataAnalise = DateTime.Today;
-            
-
-            RetValue retorno = null;
-
-            if (e.ButtonID == "btnReprovar")
-            {
-                pucConfirmar.ShowOnPageLoad = true;
-                hID.Text = Convert.ToString(row.Id_docente_funcao_glp);
-                hQtde.Text = Convert.ToString(row.Glp_solicitada);
-            }
-            else if (e.ButtonID == "btnAceitar")
-            {
-                try
-                {
-                    if (rnDocenteGLP.ehSolicitacaoPendente(Convert.ToDecimal(row.Id_docente_funcao_glp)))
-                    {
-                        retorno = RN.DocenteGLP.AceitarGLP(row);
-                        if (retorno != null)
-                        {
-                            if (!retorno.Ok)
-                            {
-                                throw new Exception(retorno.Errors.ToString());
-                            }
-                            else
-                            {
-                                lblMensagem.Text = retorno.Message;
-                                odsDocenteFuncaoGLP.Select();
-                                odsDocenteFuncaoGLP.DataBind();
-                                grdDocenteFuncaoGLP.DataBind();
-                            }
-                        }
+                        // Acumulamos a mensagem se necessário, ou pegamos a última
+                        lblMensagem.Text = retorno.Message ?? "Processado com sucesso.";
                     }
                     else
                     {
-                        lblMensagem.Text = "Esta solicitação já se encontra analisada.";
-                        odsDocenteFuncaoGLP.Select();
-                        odsDocenteFuncaoGLP.DataBind();
-                        grdDocenteFuncaoGLP.DataBind();
+                        lblMensagem.Text = "Algumas solicitações já haviam sido analisadas.";
                     }
                 }
-                catch (Exception ex)
-                {
-                    lblMensagem.Text = ex.Message;
-                }
+
+                odsDocenteFuncaoGLP.Select();
+                grdDocenteFuncaoGLP.DataBind();
+                pucConfirmar.ShowOnPageLoad = false; // Fecha o popup após concluir
             }
-        }    
+            catch (Exception ex)
+            {
+                lblMensagem.Text = "Erro: " + ex.Message;
+            }
+        }
 
         protected void btnPesquisar_Click(object sender, System.Web.UI.ImageClickEventArgs e)
         {
             pnlAnaliseGLP.Visible = false;
+
             try
             {
                 if (tseRegional.IsValidDBValue && !tseRegional.DBValue.IsNull)
@@ -331,8 +281,11 @@ namespace Techne.Lyceum.Net.Basico
                     DocenteGLP.RecalcularCHLivreGLP(Convert.ToString(tseRegional.Value), Convert.ToString(tseUnidade_Ensino.Value));
                     grdDocenteFuncaoGLP.Visible = true;
                     grdDocenteFuncaoGLP.DataBind();
+                    grdDocenteFuncaoGLP.Selection.UnselectAll();
+
                     pnlAnaliseGLP.Visible = true;
-                }                
+                    divBotoes.Visible = grdDocenteFuncaoGLP.VisibleRowCount > 0;
+                }
             }
             catch (Exception ex)
             {
@@ -357,6 +310,7 @@ namespace Techne.Lyceum.Net.Basico
                 lblMensagem.Text = ex.Message;
             }
 
+            divBotoes.Visible = grdDocenteFuncaoGLP.VisibleRowCount > 0;
         }
 
         protected void grdDocenteFuncaoGLP_CustomColumnDisplayText(object sender, ASPxGridViewColumnDisplayTextEventArgs e)
@@ -376,6 +330,171 @@ namespace Techne.Lyceum.Net.Basico
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Método responsável por selecionar os checkboxs da grid.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void chkSelecionarTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            ASPxCheckBox chk = (ASPxCheckBox)sender;
+
+            if (chk.Checked)
+            {
+                grdDocenteFuncaoGLP.Selection.SelectAll();
+            }
+            else
+            {
+                grdDocenteFuncaoGLP.Selection.UnselectAll();
+            }
+        }
+
+        protected void btnAcaoTodos_Command(object sender, CommandEventArgs e)
+        {
+            try
+            {
+                string acao = e.CommandArgument.ToString(); // "A" para Aceitar, "R" para Reprovar
+
+                // Lista de IDs das linhas selecionadas
+                List<object> keyValues = grdDocenteFuncaoGLP.GetSelectedFieldValues("ID_DOCENTE_FUNCAO_GLP");
+
+                if (keyValues.Count == 0)
+                {
+                    lblMensagem.Text = "Selecione ao menos um item para aprovar ou reprovar.";
+                }
+                else
+                {
+                    AprovarReprovarSelecionados(acao, keyValues);
+
+                    //Atualiza o grid após a ação
+                    grdDocenteFuncaoGLP.DataBind();
+                    grdDocenteFuncaoGLP.Selection.UnselectAll();
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMensagem.Text = ex.Message;
+            }
+
+            divBotoes.Visible = grdDocenteFuncaoGLP.VisibleRowCount > 0;
+        }
+
+        private void AprovarReprovarSelecionados(string acao, List<object> selecionados)
+        {
+            lblMensagem.ForeColor = System.Drawing.Color.Red;
+
+            RN.DocenteGLP rnDocenteGLP = new DocenteGLP();
+            List<string> lista = selecionados.ConvertAll(x => x.ToString());
+            try
+            {
+                if (acao == "R")
+                {
+                    pucConfirmar.ShowOnPageLoad = true;
+
+                    string ids = string.Join(";", lista.ToArray());
+                    hID.Text = ids;
+
+                    hQtde.Text = string.Join(";", lista.Select(key =>
+                        grdDocenteFuncaoGLP.GetRowValuesByKeyValue(key, "GLP_SOLICITADA").ToString() ?? ""
+                    ).ToArray()).ToString();
+                }
+                else if (acao == "A")
+                {
+                    string msgCompleta = string.Empty;
+                    int qtdSucesso = 0;
+                    int qtdSemCarencia = 0;
+                    int qtdFalha = 0;
+
+
+                    RetValue retorno = null;
+
+                    foreach (object key in selecionados)
+                    {
+                        try
+                        {
+                            decimal idSelecionado = Convert.ToDecimal(key);
+                            Ly_docente_funcao_glp.Row row = new Ly_docente_funcao_glp().NewRow();
+
+                            row.Id_docente_funcao_glp = Convert.ToDecimal(idSelecionado);
+                            row.Matricula = grdDocenteFuncaoGLP.GetRowValuesByKeyValue(idSelecionado, new string[] { "MATRICULA" }).ToString();
+                            row.Funcao_glp = grdDocenteFuncaoGLP.GetRowValuesByKeyValue(idSelecionado, new string[] { "FUNCAO_GLP" }).ToString();
+                            row.Unidade_ens = grdDocenteFuncaoGLP.GetRowValuesByKeyValue(idSelecionado, new string[] { "UNIDADE_ENS" }).ToString();
+                            row.Agrupamento = grdDocenteFuncaoGLP.GetRowValuesByKeyValue(idSelecionado, new string[] { "AGRUPAMENTO" }).ToString();
+                            row.Glp_solicitada = Convert.ToDecimal(grdDocenteFuncaoGLP.GetRowValuesByKeyValue(idSelecionado, new string[] { "GLP_SOLICITADA" }));
+                            row.Ano = DateTime.Today.Year;
+                            row.Mes = DateTime.Today.Month;
+                            row.Data = DateTime.Today;
+                            row.Usuarioanaliseid = User.Identity.Name;
+                            row.DataAnalise = DateTime.Today;
+
+                            if (rnDocenteGLP.ehSolicitacaoPendente(Convert.ToDecimal(idSelecionado)))
+                            {
+                                retorno = RN.DocenteGLP.AceitarGLP(row);
+                                if (retorno != null)
+                                {
+                                    if (!retorno.Ok)
+                                    {
+                                        qtdSemCarencia++;
+                                    }
+                                    else
+                                    {
+                                        qtdSucesso++;
+
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                retorno = new RetValue(false, "", new ErrorList("Esta solicitação já foi analisada."));
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            qtdFalha++;
+                        }
+                    }
+
+                    // Atualiza o grid apenas UMA VEZ após o loop todo
+                    odsDocenteFuncaoGLP.Select();
+                    odsDocenteFuncaoGLP.DataBind();
+                    grdDocenteFuncaoGLP.DataBind();
+
+                    //"Esta solicitação já se encontra analisada.";
+                    msgCompleta = "<br /><b>Resumo do Processamento de GLP:</b><br /><br />";
+
+                    // Corrigido os emojis de alerta/erro e adicionado espaçamento antes do número
+                    msgCompleta += string.Format("Pedidos selecionados: {0}<br />", selecionados.Count);
+                    msgCompleta += string.Format("Pedidos de GLP aprovada(s): {0}<br />", qtdSucesso);
+                    msgCompleta += string.Format("Disciplina sem carência disponível: {0}<br />", qtdSemCarencia);
+
+                    msgCompleta += string.Format("Falha(s): {0}<br /><br />", qtdFalha);
+
+                    lblMensagem.Text = msgCompleta;
+
+                    if (!retorno.Ok)
+                    {
+                        lblMensagem.Text += "<br /><br />" + retorno.Message;
+                    }
+
+                    if (qtdSemCarencia == 0 && qtdFalha == 0)
+                    {
+                        lblMensagem.ForeColor = System.Drawing.Color.Green;
+                    }
+                    else
+                    {
+                        lblMensagem.ForeColor = System.Drawing.Color.Red;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMensagem.Text += "<br /><br />" + ex.Message;
+            }
+
+
+            divBotoes.Visible = grdDocenteFuncaoGLP.VisibleRowCount > 0;
         }
     }
 }

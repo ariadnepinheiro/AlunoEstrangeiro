@@ -453,10 +453,12 @@ namespace Techne.Lyceum.Net.ProcessoSeletivo
 
                     txtGLP.Text = Convert.ToString(dados.QuantidadeAnosGlp);
 
-
-                    foreach (var item in dados.AnosGLP)
+                    if (dados.AnosGLP != null)
                     {
-                          chlAnosGLP.Items.FindByValue(item.ToString()).Selected = true;
+                        foreach (var item in dados.AnosGLP)
+                        {
+                            chlAnosGLP.Items.FindByValue(item.ToString()).Selected = true;
+                        }
                     }
 
                     if (!dados.Experiencia.IsNullOrEmptyOrWhiteSpace())
@@ -503,6 +505,39 @@ namespace Techne.Lyceum.Net.ProcessoSeletivo
                 dados.Experiencia = !rblExperiencia.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? rblExperiencia.SelectedValue : null;
                 dados.Titulacao = !rblTitulacao.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? rblTitulacao.SelectedValue : null;
                 dados.Acumulacao = !rblAcumulacao.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? (rblAcumulacao.SelectedValue == "Nao" ? false : true) : (bool?)null;
+                dados.Nome = !txtNomeCompleto.Text.IsNullOrEmptyOrWhiteSpace() ? txtNomeCompleto.Text.ToUpper() : null;
+                dados.DataNascimento = !dtDataNasc.Text.IsNullOrEmptyOrWhiteSpace() ? dtDataNasc.Date : (DateTime?)null;
+                dados.EstadoCivil = !ddlEst_Civil.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? ddlEst_Civil.SelectedValue : null;
+                dados.NomeMae = !txtNomeMae.Text.IsNullOrEmptyOrWhiteSpace() ? txtNomeMae.Text : null;
+                dados.NomePai = !txtNomePai.Text.IsNullOrEmptyOrWhiteSpace() ? txtNomePai.Text : null;
+                dados.NaturalidadeId = (tseNaturalidade.IsValidDBValue && !tseNaturalidade.DBValue.IsNull) ? tseNaturalidade.DBValue.ToString() : null;
+                dados.Rg = !txtRGNum.Text.IsNullOrEmptyOrWhiteSpace() ? txtRGNum.Text : null;
+                dados.RgOrgao = !cmbRGEmissor.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? cmbRGEmissor.SelectedValue : null;
+                dados.RgDataExpedicao = !dtDataExped.Text.IsNullOrEmptyOrWhiteSpace() ? dtDataExped.Date : (DateTime?)null;
+                dados.RgUf = !cmbRGUF.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? cmbRGUF.SelectedValue : null;
+                dados.Cpf = !txtCPF.Text.IsNullOrEmptyOrWhiteSpace() ? txtCPF.Text.RetirarMascaraCPF() : null;
+                dados.PisPasep = !txtPisPasep.Text.IsNullOrEmptyOrWhiteSpace() ? txtPisPasep.Text : null;
+                dados.TituloEleitor = !txtDOC_Teleitor_Num.Text.IsNullOrEmptyOrWhiteSpace() ? txtDOC_Teleitor_Num.Text : null;
+                dados.TituloEleitorZona = !txtDOC_Teleitor_Zona.Text.IsNullOrEmptyOrWhiteSpace() ? txtDOC_Teleitor_Num.Text : null;
+                dados.TituloEleitorSecao = !txtDOC_Teleitor_Secao.Text.IsNullOrEmptyOrWhiteSpace() ? txtDOC_Teleitor_Num.Text : null;
+                dados.TituloEleitorUf = !ddlEleitor_Uf.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? ddlEleitor_Uf.SelectedValue : null;
+                dados.CarteiraTrabalho = !txtCrpof_Num.Text.IsNullOrEmptyOrWhiteSpace() ? txtCrpof_Num.Text : null;
+                dados.CarteiraTrabalhoSerie = !txtCprof_Serie.Text.IsNullOrEmptyOrWhiteSpace() ? txtCprof_Serie.Text : null;
+                dados.CarteiraTrabalhoUf = !ddDlCprof_Uf.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? ddDlCprof_Uf.SelectedValue : null;
+                dados.CertificadoReservista = !txtDMIL_Cr_Num.Text.IsNullOrEmptyOrWhiteSpace() ? txtDMIL_Cr_Num.Text : null;
+                dados.CertificadoReservistaSerie = !txtDMIL_Cr_Serie.Text.IsNullOrEmptyOrWhiteSpace() ? txtDMIL_Cr_Serie.Text : null;
+                dados.CertificadoReservistaUf =!ddlCrUF.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? ddlCrUF.SelectedValue : null;
+                dados.Endereco = !txtEndereco.Text.IsNullOrEmptyOrWhiteSpace() ? txtEndereco.Text : null;
+                dados.EnderecoBairro = !txtBairro.Text.IsNullOrEmptyOrWhiteSpace() ? txtBairro.Text : null;
+                dados.EnderecoComplemento = !txtEndCompl.Text.IsNullOrEmptyOrWhiteSpace() ? txtEndCompl.Text : null;
+                dados.EnderecoNumero = !txtEndNum.Text.IsNullOrEmptyOrWhiteSpace() ? txtEndNum.Text : null;
+                dados.EnderecoUf = !txtEstado.Value.IsNullOrEmptyOrWhiteSpace() ? txtEstado.Value : null;
+                //dados.EnderecoMunicipio = 
+                dados.Cep = !txtCep.Text.IsNullOrEmptyOrWhiteSpace() ? txtCep.Text : null;
+
+
+
+
 
                 foreach (System.Web.UI.WebControls.ListItem item in chlAnosGLP.Items)
                 {

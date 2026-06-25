@@ -17,7 +17,7 @@
         <table>
             <tr>
                 <td style="text-align: right; width: 15%">
-                    <asp:Label ID="lblRegional" runat="server" Font-Names="Verdana" Text="Região FGV:*" SkinID="lblObrigatorio"></asp:Label>
+                    <asp:Label ID="lblRegional" runat="server" Font-Names="Verdana" Text="Áreas Geográficas:*" SkinID="lblObrigatorio"></asp:Label>
                 </td>
                 <td>
                     <tweb:TSearchBox ID="tseRegiaoFGV" runat="server" SqlOrder="descricao" SqlSelect="select datainicio,datafim FROM PrestacaoContas.REGIAOFGV"
@@ -51,6 +51,21 @@
                 <td colspan="2">
                     <asp:Label ID="Label2" runat="server" Font-Names="Verdana" Text="Selecione o arquivo a ser importado"></asp:Label>
                     <input id="arquivo" type="file" runat="server" name="oFile">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                   &nbsp;
+                </td>
+            </tr>
+             <tr>
+                <td colspan="2">
+                    <asp:Label ID="Label3" runat="server" Font-Names="Verdana" SkinID="lblObrigatorio" Text="O arquivo deverá estar no Formato: CODIGO|NOME|UNIDADEMEDIDA|VALOR|NCM|FLAGNCM"></asp:Label>                   
+                </td>
+            </tr>
+             <tr>
+                <td colspan="2">
+                   &nbsp;
                 </td>
             </tr>
             <tr>

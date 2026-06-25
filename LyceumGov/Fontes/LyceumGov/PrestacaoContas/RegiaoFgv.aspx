@@ -86,7 +86,7 @@
                                 <table>
                                     <tr>
                                         <td style="text-align: right; width: 15%">
-                                            <asp:Label Font-Names="Verdana" ID="Label1" runat="server" Text="Região FGV:* " SkinID="lblObrigatorio"></asp:Label>
+                                            <asp:Label Font-Names="Verdana" ID="Label1" runat="server" Text="Áreas Geográficas:* " SkinID="lblObrigatorio"></asp:Label>
                                         </td>
                                         <td colspan="3">
                                             <tweb:TSearchBox ID="tseRegiaoFGV" runat="server" SqlSelect=" select * from PrestacaoContas.REGIAOFGV "

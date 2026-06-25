@@ -83,7 +83,7 @@
         
         <div class="top_wrapper"></div>
 
-        <div id="conteudo" class="conteudo">
+        <div id="conteudo" class="conteudo padding_base">
             <dxpc:ASPxPopupControl ID="pucLoading" ClientInstanceName="pucLoading" runat="server"
                 Modal="true" ShowShadow="true" AllowDragging="false" AllowResize="false" ShowCloseButton="false"
                 ShowFooter="false" ShowHeader="false" ShowSizeGrip="False" PopupHorizontalAlign="WindowCenter"

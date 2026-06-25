@@ -781,7 +781,7 @@
                                     <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                                     </CellStyle>
                                 </dxwgv:GridViewDataComboBoxColumn>
-                                <dxwgv:GridViewDataComboBoxColumn Caption="Código FGV" FieldName="CODIGO_FGV" VisibleIndex="4" Width="150px">
+                                <dxwgv:GridViewDataComboBoxColumn Caption="Código" FieldName="CODIGO_FGV" VisibleIndex="4" Width="150px">
                                     <DataItemTemplate><%# Eval("CODIGOFGV") %></DataItemTemplate>
                                     <PropertiesComboBox ClientInstanceName="ddlCodigoFgv" TextField="DESCRICAO" ValueField="CODIGOFGV">
                                         <ClientSideEvents SelectedIndexChanged="ddlCodigoFgv_SelectedIndexChanged" />
@@ -795,7 +795,7 @@
                                     <CellStyle HorizontalAlign="Right" VerticalAlign="NotSet">
                                     </CellStyle>
                                 </dxwgv:GridViewDataColumn>
-                                <dxwgv:GridViewDataTextColumn Caption="Valor FGV" FieldName="VALORFGV" VisibleIndex="6" Width="100px" ReadOnly="true">
+                                <dxwgv:GridViewDataTextColumn Caption="Valor" FieldName="VALORFGV" VisibleIndex="6" Width="100px" ReadOnly="true">
                                     <PropertiesTextEdit ClientInstanceName="txtValorFgv"></PropertiesTextEdit>
                                     <CellStyle HorizontalAlign="Right" VerticalAlign="NotSet">
                                     </CellStyle>
@@ -1046,7 +1046,7 @@
                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                             </CellStyle>
                         </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Cód. FGV" FieldName="CODIGOFGV" VisibleIndex="4" Width="70px">
+                        <dxwgv:GridViewDataTextColumn Caption="Código" FieldName="CODIGOFGV" VisibleIndex="4" Width="70px">
                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                             </CellStyle>
                         </dxwgv:GridViewDataTextColumn>
@@ -1062,7 +1062,7 @@
                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                             </CellStyle>
                         </dxwgv:GridViewDataTextColumn>
-                        <dxwgv:GridViewDataTextColumn Caption="Vr. FGV" FieldName="VALORFGV" VisibleIndex="8" Width="70px">
+                        <dxwgv:GridViewDataTextColumn Caption="Valor" FieldName="VALORFGV" VisibleIndex="8" Width="70px">
                             <CellStyle HorizontalAlign="Justify" VerticalAlign="NotSet">
                             </CellStyle>
                         </dxwgv:GridViewDataTextColumn>

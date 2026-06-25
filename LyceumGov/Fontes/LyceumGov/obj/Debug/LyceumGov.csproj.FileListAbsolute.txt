@@ -19,7 +19,6 @@ D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\Lyceu
 D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\LyceumGov\bin\Techne.Lyceum.Control.dll
 D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\LyceumGov\bin\Techne.Lyceum.Infra.dll
 D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\LyceumGov\bin\log4net.dll
-D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\LyceumGov\bin\PostSharp.dll
 D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\LyceumGov\bin\TechneJ.dll
 D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\LyceumGov\bin\NPOI.dll
 D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\LyceumGov\bin\ICSharpCode.SharpZipLib.dll
@@ -47,3 +46,4 @@ D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\Lyceu
 D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\LyceumGov\obj\Debug\LyceumGov.dll.licenses
 D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\LyceumGov\obj\Debug\LyceumGov.dll
 D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\LyceumGov\obj\Debug\LyceumGov.pdb
+D:\ConexaoEducacao\branches\Chamado82048_AlunoEstrangeiro\LyceumGov\Fontes\LyceumGov\bin\PostSharp.dll

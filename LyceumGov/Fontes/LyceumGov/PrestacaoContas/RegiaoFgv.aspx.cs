@@ -17,7 +17,7 @@ namespace Techne.Lyceum.Net.PrestacaoContas
     [
          NavUrl("~/PrestacaoContas/RegiaoFgv.aspx"),
          ControlText("RegiaoFgv"),
-         Title("Região FGV")
+         Title("Áreas Geográficas")
      ]
     public partial class RegiaoFgv : TPage
     {
@@ -48,8 +48,8 @@ namespace Techne.Lyceum.Net.PrestacaoContas
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            TituloGrid(grdRegiaoFgv, "Região FGV");
-            TituloGrid(grdRegiaoMunicipio, "Município da Região FGV");
+            TituloGrid(grdRegiaoFgv, "Áreas Geográficas");
+            TituloGrid(grdRegiaoMunicipio, "Município das Áreas Geográficas");
         }
 
         protected void Page_PreRenderComplete(object sender, EventArgs e)
