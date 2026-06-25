@@ -50,40 +50,6 @@ namespace Techne.Lyceum.Net.Certificacao
         /// Consultar / Sucesso → exibe apenas a que foi preenchida na carga
         /// </summary>
 
-        //protected void Page_PreRenderComplete(object sender, EventArgs e)
-        //{
-        //    ControlaAcesso(btnEditar, AcaoControle.novo);
-
-        //    lblPaisNascimento.Visible = true;
-        //    txtPaisNascimento.Visible = true;
-        //    lblUFNascimento.Visible = true;
-        //    txtUFNascimento.Visible = true;
-
-        //    bool nascidoFora = !string.IsNullOrEmpty(txtPaisNascimento.Text)
-        //                       && txtPaisNascimento.Text.Trim().ToUpper() != "BRASIL";
-
-        //    bool modoEdicao = (_tipoOperacao == TipoOperacao.Alterar);
-
-        //    if (modoEdicao)
-        //    {
-        //        // Em edição, mostra o TSE correto somente se a nacionalidade estiver selecionada
-        //        tseNaturalidade.Visible = false;
-        //        tseNaturalidadeEstrangeira.Visible = false;
-
-        //        if (!string.IsNullOrEmpty(cmbNacionalidade.SelectedValue))
-        //        {
-        //            tseNaturalidade.Visible = !nascidoFora;
-        //            tseNaturalidadeEstrangeira.Visible = nascidoFora;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        // Em consulta, mostra baseado no país
-        //        tseNaturalidade.Visible = !nascidoFora;
-        //        tseNaturalidadeEstrangeira.Visible = nascidoFora;
-        //    }
-        //}
-
         protected void Page_PreRenderComplete(object sender, EventArgs e)
         {
             ControlaAcesso(btnEditar, AcaoControle.novo);
