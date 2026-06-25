@@ -207,7 +207,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
                         //Verifica se o codigo fgv é permitido para o ncm
                         if (!rnProdutoServico.EhCodigoFgvValidoPor(contexto, ncm, unidadeMedidaId, codigoFgv))
                         {
-                            mensagens.Add("Este CODIGO FGV não é permitido para esse ncm / unidade de medida.");
+                            mensagens.Add("Este CÓDIGO TABELA DE PREÇOS DE VALORES MÁXIMOS não é permitido para esse ncm / unidade de medida.");
                         }
 
                         //Busca codigo ProdutoServiço id pelo codigoFgv e unidadeMedidaId
@@ -216,7 +216,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
                         //Verifica se existe produto para o codigo FGV e unidade de medida
                         if (produtoServicoId == null || produtoServicoId <= 0)
                         {
-                            mensagens.Add("Erro ao buscar o codigo pra o FGV e unidade de medida.");
+                            mensagens.Add("Erro ao buscar o codigo para a Tabela de Preços de Valores Máximos e unidade de medida.");
                         }
                     }
                 }

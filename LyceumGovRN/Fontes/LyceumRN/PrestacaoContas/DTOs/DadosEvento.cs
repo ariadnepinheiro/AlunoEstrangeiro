@@ -10,6 +10,8 @@ namespace Techne.Lyceum.RN.PrestacaoContas.DTOs
 
         public int PlanoTrabalhoId { get; set; }
 
+        public int PeriodoReferenciaId { get; set; }
+
         public string Descricao { get; set; }
 
         public string Censo { get; set; }

@@ -28,7 +28,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
                 {
                     linha++;
                     DataRowView rowView = dv.AddNew();
-                    var auxCODFGV = drv["CODFGV"];
+                    var auxCODFGV = drv["CODIGO"];
                     var auxNOME = drv["NOME"];
                     var auxUNIDADEMEDIDA = drv["UNIDADEMEDIDA"];
                     //falta a quantidade de itens no layout
@@ -96,7 +96,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
                             else
                             {
                                 gravaPRODUTO = false;
-                                errosprocessamento.Add("Linha:" + row + "-O Produto/Serviço de Nome: " + auxNOME + ", com a Unidade de Medida: " + auxUNIDADEMEDIDA + " já consta cadastrado com outro CODIGOFGV!!! ");
+                                errosprocessamento.Add("Linha:" + row + "-O Produto/Serviço de Nome: " + auxNOME + ", com a Unidade de Medida: " + auxUNIDADEMEDIDA + " já consta cadastrado com outro CODIGO!!! ");
 
                             }
                         }
@@ -220,7 +220,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
                             }
                             else
                             {
-                                errosprocessamento.Add("Linha:" + row + "-O Produto/Serviço CodFGV: " + auxCODFGV + ", com a Unidade de Medida: " + auxUNIDADEMEDIDA + " já esta cadastrado!!! ");
+                                errosprocessamento.Add("Linha:" + row + "-O Produto/Serviço Código da Tabela de Preços de Valores Máximos: " + auxCODFGV + ", com a Unidade de Medida: " + auxUNIDADEMEDIDA + " já esta cadastrado!!! ");
                             }
                         }
                     }

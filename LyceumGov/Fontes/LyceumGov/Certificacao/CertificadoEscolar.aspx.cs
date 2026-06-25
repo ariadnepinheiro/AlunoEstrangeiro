@@ -1,6 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Data;
+using System.IO;
 using System.Web;
 using System.Web.UI.WebControls;
 using Techne.Lyceum.RN.Entidades;
@@ -185,7 +185,7 @@ namespace Techne.Lyceum.Net.Certificacao
                                 if (!string.IsNullOrEmpty(dadosAluno.Nacionalidade) &&
                                     dadosAluno.Nacionalidade.Trim().ToUpper() == "BRASILEIRA")
                                 {
-                                    lblNaturalidade.Text = RN.Util.Utils.Capitaliza(munExt + "/" + ufExt + " - " + paisExt);
+                                    lblNaturalidade.Text = RN.Util.Utils.Capitaliza(munExt + " / " + ufExt + " - " + paisExt);
                                     lblUFNasc.Text = ufExt;
                                 }
                                 // Exclusivamente estrangeiro: Município - País (sem estado)

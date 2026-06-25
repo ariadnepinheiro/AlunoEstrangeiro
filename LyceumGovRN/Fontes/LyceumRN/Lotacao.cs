@@ -2384,7 +2384,8 @@ namespace Techne.Lyceum.RN
             {
                 string mensagem = string.Empty;
                 contexto.Abandon();
-                if (!Convert.ToString(ex.Message).Contains("Falha de Acesso ao Banco de Dados. Entre em contato com o Administrador do Sistema repassando esta mensagem ou tente novamente mais tarde."))
+                if (!Convert.ToString(ex.Message).Contains("Falha de Acesso ao Banco de Dados. Entre em contato com o Administrador do Sistema repassando esta mensagem ou tente novamente mais tarde.")
+                    && ex.Message != "Não é possível reduzir a carga horária, pois o docente possui aulas GLP vinculadas.")
                 {
                     mensagem = string.Format("Falha de Acesso ao Banco de Dados. Entre em contato com o Administrador do Sistema repassando esta mensagem ou tente novamente mais tarde.{0}Erro gerado: {1}",
                         Environment.NewLine,

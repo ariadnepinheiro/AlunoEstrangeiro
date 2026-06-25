@@ -294,7 +294,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
             try
             {
                 contextQuery.ContextQueryType = ContextQueryType.StoredProcedure;
-                contextQuery.Command = @"PrestacaoContas.RECEITASRECEBIDAS";
+                contextQuery.Command = @"PrestacaoContas.RECEITASRECEBIDASTOTAL";
                 contextQuery.Parameters.Add("@CENSO", SqlDbType.VarChar, censo);
                 contextQuery.Parameters.Add("@DATAINICIO", SqlDbType.DateTime, dataInicio);
                 contextQuery.Parameters.Add("@DATAFIM", SqlDbType.DateTime, dataFim);

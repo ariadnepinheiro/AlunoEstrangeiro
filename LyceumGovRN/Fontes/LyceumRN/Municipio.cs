@@ -20,6 +20,20 @@
                 return ctx.GetDataTable(contextQuery);
             }
         }
+
+        public static string BuscarUF(string municipio)
+        {
+            using (var ctx = DataContextBuilder.FromLyceum.ToFastReadingOnly())
+            {
+                var contextQuery = new ContextQuery(
+                    @"SELECT distinct UF_SIGLA FROM MUNICIPIO WHERE codigo = @municipio");
+
+                contextQuery.Parameters.Add("@municipio", municipio);
+
+                return ctx.GetReturnValue<string>(contextQuery);
+            }
+        }
+
         public static bool ValidarMunicipio(string municipio)
         {
             var sql = @"SELECT  1

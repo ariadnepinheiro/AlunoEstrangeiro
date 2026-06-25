@@ -284,27 +284,22 @@ namespace Techne.Lyceum.Net.Certificacao
                 dadosAluno.UsuarioResponsavel = User.Identity.Name;
 
                 // ── Captura do município e país de nascimento ──────────────────
-                if (!string.IsNullOrEmpty(dadosAluno.PaisNascimento) && dadosAluno.PaisNascimento.Trim() != "0")
+                bool nascidoForaDoBrasil = tseNaturalidadeEstrangeira.IsValidDBValue
+                                           && !tseNaturalidadeEstrangeira.DBValue.IsNull;
+
+                if (nascidoForaDoBrasil)
                 {
-                    // Brasileiro nascido no exterior → HD_MUNICIPIO_CERTIFICACAO
-                    dadosAluno.MunicipioNascimento =
-                        (!tseNaturalidadeEstrangeira.DBValue.IsNull && tseNaturalidadeEstrangeira.IsValidDBValue)
-                            ? tseNaturalidadeEstrangeira.DBValue.ToString()
-                            : null;
-                    dadosAluno.PaisNascimento =
-                        tseNaturalidadeEstrangeira.IsValidDBValue && !tseNaturalidadeEstrangeira.DBValue.IsNull
-                            ? tseNaturalidadeEstrangeira["ID_PAIS"].ToString()
-                            : null;
+                    dadosAluno.MunicipioNascimento = tseNaturalidadeEstrangeira.DBValue.ToString();
+                    dadosAluno.PaisNascimento = tseNaturalidadeEstrangeira["ID_PAIS"].ToString();
                 }
                 else
                 {
-                    // Nascido no Brasil → HD_MUNICIPIO
-                    dadosAluno.MunicipioNascimento =
-                        (!tseNaturalidade.DBValue.IsNull && tseNaturalidade.IsValidDBValue)
-                            ? tseNaturalidade.DBValue.ToString()
-                            : null;
+                    dadosAluno.MunicipioNascimento = (!tseNaturalidade.DBValue.IsNull && tseNaturalidade.IsValidDBValue)
+                                                     ? tseNaturalidade.DBValue.ToString()
+                                                     : null;
+                    dadosAluno.PaisNascimento = null;
                 }
-                // ────────────────────────────────────────────────────────
+                // ────────────────────────────────────────────────────────────────
 
                 validacao = rnPessoa.ValidaDadosCertificacao(dadosAluno);
 

@@ -202,9 +202,12 @@ namespace Techne.Lyceum.RN.PrestacaoContas
                 }
 
                 contextQuery.Command = @"SELECT R.unidade_ens as CENSO, v.OPERACAOID     ,v.nome_comp      ,v.PERIODOREFERENCIAID    ,v.plano    
-                                               ,v.tipo       ,v.DATACADASTRO      ,v.status      ,v.VALOR ,count(o.OPERACAOID) as qtd  
+                                               ,v.tipo       ,v.DATACADASTRO      ,v.status      ,v.VALOR  	,pt.IDENTIFICADOR ,pt.PLANOTRABALHOID 
+                                               ,pt.IDENTIFICADOR + ' ' + v.plano AS CODIGOIDENTIFICADOR ,CAST(pt.PLANOTRABALHOID AS VARCHAR) + ' - ' + v.plano AS IDPLANO ,count(o.OPERACAOID) as qtd  
+                                               
                                          from VW_UNIDADE_ENSINO_SITUACAO_REGIONAL R
                                          INNER JOIN PrestacaoContas.VW_OPERACAO v ON V.CENSO = R.unidade_ens
+                                         INNER JOIN PrestacaoContas.PLANOTRABALHO pt ON pt.PLANOTRABALHOID = v.PLANOTRABALHOID
                                          left join PrestacaoContas.OPERACAOEXIGENCIA o on v.OPERACAOID = o.OPERACAOID  
                                          left join PrestacaoContas.OPERACAOEXIGENCIAARQUIVO e on o.OPERACAOEXIGENCIAID = e.OPERACAOEXIGENCIAID
                                          where  v.PERIODOREFERENCIAID= @PERIODOREFERENCIAID and 
@@ -212,10 +215,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
                                                (R.unidade_ens = @CENSO OR @CENSO= 99999) AND
                                                (v.PLANOTRABALHOID = @PLANO OR @PLANO= 99999) AND
                                                (v.OPERACAOID = @operacao OR @operacao= '99999999')
-                                         group by v.OPERACAOID      ,  R.unidade_ens  ,v.nome_comp      ,v.PERIODOREFERENCIAID   ,v.plano       ,v.tipo       ,v.DATACADASTRO ,v.VALOR   ,v.status     " + @existentes;
-
-
-
+                                         group by v.OPERACAOID      ,  R.unidade_ens  ,v.nome_comp      ,v.PERIODOREFERENCIAID   ,v.plano       ,v.tipo       ,v.DATACADASTRO ,v.VALOR   ,v.status  ,pt.IDENTIFICADOR, pt.PLANOTRABALHOID     " + @existentes;
 
                 contextQuery.Parameters.Add("@PERIODOREFERENCIAID", SqlDbType.Int, PeriodoReferencia);
                 contextQuery.Parameters.Add("@STATUS", SqlDbType.Int, status);

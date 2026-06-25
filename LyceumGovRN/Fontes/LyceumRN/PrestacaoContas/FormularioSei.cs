@@ -43,7 +43,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
                     DateTime dataConsulta = rnPeriodoReferencia.ObtemUltimoDiaPor(contexto, periodoReferenciaId);
                     if (dataConsulta > DateTime.Now)
                     {
-                        mensagens.Add(string.Format("Os Formulários deste periodo de refrência estarão disponvieis a após o dia {0}.", dataConsulta.ToString("dd/MM/yyyy")));
+                        mensagens.Add(string.Format("Os Formulários estarão disponvieis após o ultimo dia do periodo de referência {0}.", dataConsulta.ToString("dd/MM/yyyy")));
                     }
                     else
                     {

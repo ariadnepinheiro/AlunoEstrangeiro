@@ -937,6 +937,8 @@ namespace Techne.Lyceum.RN.PrestacaoContas
             PlanoTrabalho rnPlanoTrabalho = new PlanoTrabalho();
             Fornecedor rnFornecedor = new Fornecedor();
             string cnpjChave = string.Empty;
+            RN.PrestacaoContas.PeriodoReferencia rnPeriodoReferencia = new RN.PrestacaoContas.PeriodoReferencia();
+            RN.PrestacaoContas.PainelFinanceiro rnPainelFinanceiro = new RN.PrestacaoContas.PainelFinanceiro();
             ValidacaoDados validacaoDados = new ValidacaoDados
             {
                 Valido = false
@@ -972,6 +974,36 @@ namespace Techne.Lyceum.RN.PrestacaoContas
             else if (dados.Descricao.Length > 500)
             {
                 mensagens.Add("Campo DESCRIÇÃO DA DESPESA deve conter no máximo 500 caracteres.");
+            }
+
+            var periodoReferencia = rnPeriodoReferencia.ObtemPor(dados.PeriodoReferenciaId);
+
+            DateTime dataInicio = new DateTime(periodoReferencia.Ano, periodoReferencia.MesInicial, 1);
+            DateTime dataFim = new DateTime(periodoReferencia.Ano, periodoReferencia.MesFinal, DateTime.DaysInMonth(periodoReferencia.Ano, periodoReferencia.MesFinal));
+
+            var dadosReceitas = rnPainelFinanceiro.ObtemReceitasPor(dados.Censo,dataInicio,dataFim,dados.FinalidadeId,dados.PlanoTrabalhoId,dados.PeriodoReferenciaId);
+            var creditosAnalisados = rnPainelFinanceiro.ObtemCreditoDebitoPor(dados.Censo,dados.PeriodoReferenciaId,dados.PlanoTrabalhoId,"C");
+            var debitosAnalisados = rnPainelFinanceiro.ObtemCreditoDebitoPor(dados.Censo,dados.PeriodoReferenciaId,dados.PlanoTrabalhoId,"D");
+            decimal saldo = 0;
+
+            if (dados.FinalidadeId == 1)
+            {
+                saldo = dadosReceitas.SaldoAnterior + dadosReceitas.Repasses + creditosAnalisados + (dadosReceitas.Devolucoes + dadosReceitas.Rendimentos) - (dadosReceitas.Despesas + debitosAnalisados);
+            }
+            else
+            {
+                saldo = dadosReceitas.SaldoAnterior + dadosReceitas.Repasses + creditosAnalisados + dadosReceitas.Devolucoes - (dadosReceitas.Despesas + debitosAnalisados);
+            }
+
+            //Verifica se saldo do PROJETO/PROGRAMA e menor ou igual a 0
+            if (saldo <= 0)
+            {
+                mensagens.Add("A operação não poderá ser realizada, pois o saldo disponível neste Projeto/Programa é menor ou igual a 0");
+            }
+            //Verifica ser o VALOR DE PAGAMENTO é maior que o SALDO do PROJETO/PROGRAMA
+            else if (dados.ValorPagamento > saldo)
+            {
+                mensagens.Add("A operação não poderá ser realizada, pois o VALOR PAGO é maior que o saldo disponível neste Projeto/Programa");
             }
 
             if (dados.TipoDespesa < 0)
@@ -1143,6 +1175,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
                         {
                             mensagens.Add("Campo VALOR PAGAMENTO é obrigatório.");
                         }
+
                         else if (dados.ValorNotaFiscal != null || dados.ValorNotaFiscal > 0)
                         {
                             //O campo observação será obrigatório de ser preenchido em casos em que o valor informado de pagamento de nota fiscal for menor do que o valor informado para nota fiscal

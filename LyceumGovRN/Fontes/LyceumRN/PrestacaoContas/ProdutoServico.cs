@@ -197,7 +197,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
                         // Verifica se já existe o codigo FGV cadastrado
                         if (this.PossuiOutroCodigoFgvCadastradoPor(contexto, Convert.ToInt32(produtoServico.CodigoFgv), produtoServico.ProdutoServicoId, produtoServico.UnidadeMedidaId))
                         {
-                            mensagens.Add("O CÓDIGO FGV já foi cadastrado com esta UNIDADE DE MEDIDA.");
+                            mensagens.Add("O CÓDIGO da TABELA DE PREÇOS DE VALORES MÁXIMOS já foi cadastrado com esta UNIDADE DE MEDIDA.");
                         }
                     }
                 }

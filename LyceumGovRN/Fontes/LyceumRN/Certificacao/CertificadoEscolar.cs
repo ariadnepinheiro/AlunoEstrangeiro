@@ -241,7 +241,7 @@ namespace Techne.Lyceum.RN.Certificacao
                 if (!string.IsNullOrEmpty(dadosAluno.Naturalidade) && dadosAluno.Naturalidade.Trim() != "/")
                 {
                     // Brasileiro: município e UF já vêm no DadosFichaAluno
-                    ufNaturalidade = RN.Util.Utils.Capitaliza(dadosAluno.Naturalidade + "/" + dadosAluno.UfNascimento);
+                    ufNaturalidade = RN.Util.Utils.Capitaliza(dadosAluno.Naturalidade + " / " + dadosAluno.UfNascimento);
                 }
                 else
                 {
@@ -256,11 +256,11 @@ namespace Techne.Lyceum.RN.Certificacao
 
                         // Brasileiro nascido fora do Brasil: "Município - UF - País"
                         if ((!string.IsNullOrEmpty(nacionalidade) && nacionalidade.Trim().ToUpper() == "BRASILEIRA"))
-                            ufNaturalidade = RN.Util.Utils.Capitaliza(munExt + "/" + ufExt + " - " + paisExt);
+                            ufNaturalidade = RN.Util.Utils.Capitaliza(munExt + " / " + ufExt + " - " + paisExt);
 
                         // Exclusivamente estrangeiro: somente Município + País
                         else
-                            ufNaturalidade = RN.Util.Utils.Capitaliza(munExt + "/" + paisExt);
+                            ufNaturalidade = RN.Util.Utils.Capitaliza(munExt + " / " + paisExt);
                     }
                     else
                     {

@@ -1056,7 +1056,7 @@ namespace Techne.Lyceum.RN
 
                 contextQuery.Parameters.Add("@NUM_FUNC", numFunc);
                 contextQuery.Parameters.Add("@DTINI", dataInicio);
-                contextQuery.Parameters.Add("@MOTIVO", dataInicio);
+                contextQuery.Parameters.Add("@MOTIVO", motivo);
 
                 ctx.ApplyModifications(contextQuery);
             }

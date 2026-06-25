@@ -260,6 +260,52 @@ namespace Techne.Lyceum.RN.PrestacaoContas
             return retorno;
         }
 
+        // Obtem o PLANOTRABALHOID junto com a DESCRIÇÃO
+        public string ObterPlanoTrabalhoCompleto(string planoTrabalhoId)
+        {
+            DataContext ctx = DataContextBuilder.FromLyceum.ToFastReadingOnly();
+            ContextQuery contextQuery = new ContextQuery();
+            SqlDataReader reader = null;
+            var retorno = "";
+            contextQuery.Command = @" SELECT CAST(PLANOTRABALHOID AS VARCHAR) + ' - ' + DESCRICAO AS PLANOID 
+                                        FROM PrestacaoContas.PLANOTRABALHO (NOLOCK) 
+                                        WHERE PLANOTRABALHOID = @PLANOTRABALHOID ";
+
+            contextQuery.Parameters.Add("@PLANOTRABALHOID", SqlDbType.Int, planoTrabalhoId);
+
+            reader = ctx.GetDataReader(contextQuery);
+
+            while (reader.Read())
+            {
+                retorno = reader["PLANOID"].ToString();
+            }
+
+            return retorno;
+        }
+
+        // Obtem a IDENTIFICAÇÃO junto com a DESCRIÇÃO
+        public string ObterIdentificadorCompleto(string planoTrabalhoId)
+        {
+            DataContext ctx = DataContextBuilder.FromLyceum.ToFastReadingOnly();
+            ContextQuery contextQuery = new ContextQuery();
+            SqlDataReader reader = null;
+            var retorno = "";
+            contextQuery.Command = @" SELECT IDENTIFICADOR + ' ' + DESCRICAO AS CODIGOIDENTIFICADOR  
+                                        FROM PrestacaoContas.PLANOTRABALHO (NOLOCK) 
+                                        WHERE PLANOTRABALHOID = @PLANOTRABALHOID ";
+
+            contextQuery.Parameters.Add("@PLANOTRABALHOID", SqlDbType.Int, planoTrabalhoId);
+
+            reader = ctx.GetDataReader(contextQuery);
+
+            while (reader.Read())
+            {
+                retorno = reader["CODIGOIDENTIFICADOR"].ToString();
+            }
+
+            return retorno;
+        }
+
         public DataTable ListaTodos()
         {
 

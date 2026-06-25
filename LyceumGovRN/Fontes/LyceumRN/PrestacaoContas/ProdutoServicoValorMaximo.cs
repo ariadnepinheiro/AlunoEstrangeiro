@@ -86,7 +86,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
             }
             else if (produtoServicoValorMaximo.RegiaoFgvId <= 0)
             {
-                mensagens.Add("Campo REGIÃO FGV é obrigatório.");
+                mensagens.Add("Campo ÁREAS GEOGRÁFICAS é obrigatório.");
             }
 
             if (produtoServicoValorMaximo.ProdutoServicoId <= 0)

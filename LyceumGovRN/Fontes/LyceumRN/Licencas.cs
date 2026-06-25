@@ -40,6 +40,7 @@ namespace Techne.Lyceum.RN
 
             qt = Consultar(@"select (li.motivo + '|' + possui_dtfim) motivo, descricao 
                                     from LY_LICENCAS li 
+                                    WHERE descricao <> 'CARGA HORÁRIA REDUZIDA'
                                     union 
                                     select '' as motivo, ' Nenhum ' as descricao 
                                     ORDER BY descricao");

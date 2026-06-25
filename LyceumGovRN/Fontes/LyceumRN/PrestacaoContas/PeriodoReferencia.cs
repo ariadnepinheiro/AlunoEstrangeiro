@@ -451,7 +451,7 @@ namespace Techne.Lyceum.RN.PrestacaoContas
             }
 
             //VERIFICAÇÃO DATA LIMITE DESPESAS
-            if (periodoReferencia.DataLimiteDespesas < DateTime.Now)
+            if (periodoReferencia.DataLimiteDespesas.Date < DateTime.Now.Date)
             {
                 mensagens.Add("Campo DATA LIMITE DESPESA não pode ser menor que a data atual.");
             }
