@@ -263,28 +263,6 @@ namespace Techne.Lyceum.Net.Certificacao
                 dadosAluno.UsuarioResponsavel = User.Identity.Name;
 
                 // ── Captura do município e país de nascimento ──────────────────
-                //if (!string.IsNullOrEmpty(dadosAluno.PaisNascimento) && dadosAluno.PaisNascimento.Trim() != "0")
-                //{
-                //    // Brasileiro nascido no exterior → HD_MUNICIPIO_CERTIFICACAO
-                //    dadosAluno.MunicipioNascimento =
-                //        (!tseNaturalidadeEstrangeira.DBValue.IsNull && tseNaturalidadeEstrangeira.IsValidDBValue)
-                //            ? tseNaturalidadeEstrangeira.DBValue.ToString()
-                //            : null;
-                //    dadosAluno.PaisNascimento =
-                //        tseNaturalidadeEstrangeira.IsValidDBValue && !tseNaturalidadeEstrangeira.DBValue.IsNull
-                //            ? tseNaturalidadeEstrangeira["ID_PAIS"].ToString()
-                //            : null;
-                //}
-                //else
-                //{
-                //    // Nascido no Brasil → HD_MUNICIPIO
-                //    dadosAluno.MunicipioNascimento =
-                //        (!tseNaturalidade.DBValue.IsNull && tseNaturalidade.IsValidDBValue)
-                //            ? tseNaturalidade.DBValue.ToString()
-                //            : null;
-                //}
-
-                // ── Captura do município e país de nascimento ──────────────────
                 string nacionalidade = dadosAluno.Nacionalidade ?? string.Empty;
                 bool nascidoForaDoBrasil = tseNaturalidadeEstrangeira.IsValidDBValue
                                            && !tseNaturalidadeEstrangeira.DBValue.IsNull;
@@ -361,23 +339,6 @@ namespace Techne.Lyceum.Net.Certificacao
                         break;
                     }
 
-                //case TipoOperacao.Alterar:
-                //    {
-                //        if (!tseAluno.DBValue.IsNull && tseAluno.IsValidDBValue)
-                //        {
-                //            ControlarVisibilidadeControle(new ImageButton[] { btnCancel, btnSalvar });
-                //            lblMensagem.Text = string.Empty;
-                //            HabilitaCampos();
-                //        }
-                //        else
-                //        {
-                //            this._tipoOperacao = TipoOperacao.Inicial;
-                //            lblMensagem.Text = "Aluno ativo ou não cadastrado (favor verificar).";
-                //        }
-                //        break;
-                //    }
-
-
                 case TipoOperacao.Alterar:
                     {
                         if (!tseAluno.DBValue.IsNull && tseAluno.IsValidDBValue)
@@ -386,48 +347,62 @@ namespace Techne.Lyceum.Net.Certificacao
                             lblMensagem.Text = string.Empty;
                             HabilitaCampos();
 
-                            // ── Recarrega naturalidade para não perder o município ao editar ──
-                            RN.Pessoa rnPessoa = new Pessoa();
-                            RN.DTOs.DadosAlunoCertificacao dadosAluno = rnPessoa.ObtemDadosCertificacaoPor(Convert.ToDecimal(tseAluno["pessoa"]));
+                            // Garante visibilidade do TSE correto sem sobrescrever a seleção do usuário
+                            bool temEstrangeiro = tseNaturalidadeEstrangeira.IsValidDBValue
+                                                  && !tseNaturalidadeEstrangeira.DBValue.IsNull;
+                            bool temBrasileiro = tseNaturalidade.IsValidDBValue
+                                                  && !tseNaturalidade.DBValue.IsNull;
 
-                            bool nascidoForaDoBrasil = !string.IsNullOrEmpty(dadosAluno.PaisNascimento)
-                                                       && dadosAluno.PaisNascimento.Trim() != "0";
-
-                            if (nascidoForaDoBrasil)
+                            if (temEstrangeiro)
                             {
-                                tseNaturalidade.ResetValue();
-                                tseNaturalidade.Visible = false;
                                 tseNaturalidadeEstrangeira.Visible = true;
                                 tseNaturalidadeEstrangeira.Enabled = true;
-
-                                txtPaisNascimento.Text = RN.Endereco.ObterPaisEstrangeiro(dadosAluno.PaisNascimento);
-
-                                if (!string.IsNullOrEmpty(dadosAluno.MunicipioNascimento)
-                                    && dadosAluno.MunicipioNascimento.Trim() != "0")
-                                {
-                                    tseNaturalidadeEstrangeira.DBValue = dadosAluno.MunicipioNascimento;
-
-                                    if (tseNaturalidadeEstrangeira.IsValidDBValue && !tseNaturalidadeEstrangeira.DBValue.IsNull)
-                                    {
-                                        txtUFNascimento.Text = tseNaturalidadeEstrangeira["ESTADO"].ToString();
-                                        txtPaisNascimento.Text = tseNaturalidadeEstrangeira["PAIS"].ToString();
-                                    }
-                                }
+                                tseNaturalidade.Visible = false;
+                            }
+                            else if (temBrasileiro)
+                            {
+                                tseNaturalidade.Visible = true;
+                                tseNaturalidade.Enabled = true;
+                                tseNaturalidadeEstrangeira.Visible = false;
                             }
                             else
                             {
-                                tseNaturalidadeEstrangeira.ResetValue();
-                                tseNaturalidadeEstrangeira.Visible = false;
-                                tseNaturalidade.Visible = true;
-                                tseNaturalidade.Enabled = true;
+                                // Nenhum dos dois tem valor — recarrega do banco só nesse caso
+                                RN.Pessoa rnPessoa = new Pessoa();
+                                RN.DTOs.DadosAlunoCertificacao dadosAluno = rnPessoa.ObtemDadosCertificacaoPor(Convert.ToDecimal(tseAluno["pessoa"]));
 
-                                if (!string.IsNullOrEmpty(dadosAluno.MunicipioNascimento)
-                                    && dadosAluno.MunicipioNascimento.Trim() != "0")
+                                bool nascidoForaDoBrasil = !string.IsNullOrEmpty(dadosAluno.PaisNascimento)
+                                                           && dadosAluno.PaisNascimento.Trim() != "0";
+
+                                if (nascidoForaDoBrasil)
                                 {
-                                    tseNaturalidade.DBValue = dadosAluno.MunicipioNascimento;
+                                    tseNaturalidade.Visible = false;
+                                    tseNaturalidadeEstrangeira.Visible = true;
+                                    tseNaturalidadeEstrangeira.Enabled = true;
+                                    txtPaisNascimento.Text = RN.Endereco.ObterPaisEstrangeiro(dadosAluno.PaisNascimento);
 
-                                    if (tseNaturalidade.IsValidDBValue && !tseNaturalidade.DBValue.IsNull)
-                                        txtUFNascimento.Text = tseNaturalidade["uf_sigla"].ToString();
+                                    if (!string.IsNullOrEmpty(dadosAluno.MunicipioNascimento) && dadosAluno.MunicipioNascimento.Trim() != "0")
+                                    {
+                                        tseNaturalidadeEstrangeira.DBValue = dadosAluno.MunicipioNascimento;
+                                        if (tseNaturalidadeEstrangeira.IsValidDBValue && !tseNaturalidadeEstrangeira.DBValue.IsNull)
+                                        {
+                                            txtUFNascimento.Text = tseNaturalidadeEstrangeira["ESTADO"].ToString();
+                                            txtPaisNascimento.Text = tseNaturalidadeEstrangeira["PAIS"].ToString();
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    tseNaturalidadeEstrangeira.Visible = false;
+                                    tseNaturalidade.Visible = true;
+                                    tseNaturalidade.Enabled = true;
+
+                                    if (!string.IsNullOrEmpty(dadosAluno.MunicipioNascimento) && dadosAluno.MunicipioNascimento.Trim() != "0")
+                                    {
+                                        tseNaturalidade.DBValue = dadosAluno.MunicipioNascimento;
+                                        if (tseNaturalidade.IsValidDBValue && !tseNaturalidade.DBValue.IsNull)
+                                            txtUFNascimento.Text = tseNaturalidade["uf_sigla"].ToString();
+                                    }
                                 }
                             }
                         }
@@ -477,7 +452,7 @@ namespace Techne.Lyceum.Net.Certificacao
 
                             bool nascidoForaDoBrasil = !string.IsNullOrEmpty(dadosAluno.PaisNascimento)
                                                        && dadosAluno.PaisNascimento.Trim() != "0";
-                            
+
                             if (nascidoForaDoBrasil)
                             {
                                 // País estrangeiro — txtPaisNasc já preenchido por CarregaDadosPessoa
@@ -505,7 +480,6 @@ namespace Techne.Lyceum.Net.Certificacao
                                 tseNaturalidadeEstrangeira.ResetValue();
                                 tseNaturalidadeEstrangeira.Visible = false;
                                 tseNaturalidade.Visible = true;
-                                //txtPaisNascimento.Text = string.Empty;
 
                                 if (!string.IsNullOrEmpty(dadosAluno.MunicipioNascimento)
                                     && dadosAluno.MunicipioNascimento.Trim() != "0")
@@ -524,13 +498,6 @@ namespace Techne.Lyceum.Net.Certificacao
                         }
                         break;
                     }
-
-                //case TipoOperacao.Sucesso:
-                //    {
-                //        ControlarVisibilidadeControle(new ImageButton[] { btnEditar });
-                //        DesabilitaCampos();
-                //        break;
-                //    }
 
                 case TipoOperacao.Sucesso:
                     {
