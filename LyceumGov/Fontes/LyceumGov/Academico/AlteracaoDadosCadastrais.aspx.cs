@@ -446,6 +446,12 @@ namespace Techne.Lyceum.Net.Academico
 
                         DesabilitaCampos();
 
+                        tseAluno.Enabled = true;
+                        tseNaturalidade.Mode = ControlMode.View;
+                        tseNaturalidade.Enabled = false;
+                        tseNaturalidadeEstrangeira.Mode = ControlMode.View;
+                        tseNaturalidadeEstrangeira.Enabled = false;
+
                         txtPessoa.Visible = false;
                         lblPessoa.Visible = false;
                         break;
@@ -486,6 +492,10 @@ namespace Techne.Lyceum.Net.Academico
                 case TipoOperacao.Consultar:
                     {
                         tseAluno.Enabled = true;
+                        tseNaturalidade.Mode = ControlMode.View;
+                        tseNaturalidade.Enabled = false;
+                        tseNaturalidadeEstrangeira.Mode = ControlMode.View;
+                        tseNaturalidadeEstrangeira.Enabled = false;
 
                         lbltxtPessoa.Visible = false;
                         txtPessoa.Visible = true;
@@ -531,7 +541,6 @@ namespace Techne.Lyceum.Net.Academico
                         }
                         else
                         {
-
                             txtPessoa.Text = Convert.ToString(dadosAluno.Pessoa);
                             ImageButton[] controles = new ImageButton[] { btnEditar };
 
@@ -1058,6 +1067,39 @@ namespace Techne.Lyceum.Net.Academico
         protected void DesabilitaCampos()
         {
             tseNaturalidade.Mode = ControlMode.View;
+            tseNaturalidadeEstrangeira.Mode = ControlMode.View;
+
+            chkAreaAssentamento.Enabled = false;
+            chkTerraIndigena.Enabled = false;
+            chkQuilombos.Enabled = false;
+            chkAreaTradicional.Enabled = false;
+            chkNaoSeAplica.Enabled = false;
+            chkFalecidaMae.Enabled = false;
+            chkFalecidoPai.Enabled = false;
+            chkNaoDeclarMae.Enabled = false;
+            chkNaoDeclarPai.Enabled = false;
+            chkDeclaroAusenciaMae.Enabled = false;
+            chkDeclaroAusenciaPai.Enabled = false;
+            chkDeclaroCertidaoCivil.Enabled = false;
+
+            cmbRGUF.Enabled = false;
+            cmbRGEmissor.Enabled = false;
+
+            dboDOC_CertNasc_DtEmissao.Enabled = false;
+            ddDOC_CertNasc_Uf.Enabled = false;
+
+            dtDataExped.Enabled = false;
+            dtDataNasc.Enabled = false;
+            ddlCartorio.Enabled = false;
+            ddlNacionalidade.Enabled = false;
+            ddlEst_Civil.Enabled = false;
+            ddlEtnia.Enabled = false;
+            ddlRGTipoPessoa.Enabled = false;
+            ddlLocalZona.Enabled = false;
+            ddlTipoCertidao.Enabled = false;
+            ddlCertidaoCivil.Enabled = false;
+            ddlUFCartorio.Enabled = false;
+            ddlMunicipioCartorio.Enabled = false;
 
             txtNomeCompl.ReadOnly = true;
             txtFone.ReadOnly = true;
@@ -1075,38 +1117,8 @@ namespace Techne.Lyceum.Net.Academico
             txtDOC_CertNasc_Numero.ReadOnly = true;
             txtDOC_CertNasc_Folha.ReadOnly = true;
             txtDOC_CertNasc_Livro.ReadOnly = true;
-            ddlCartorio.Enabled = false;
             txtNomeSocial.ReadOnly = true;
             txtFilhos.ReadOnly = true;
-
-            ddlNacionalidade.Enabled = false;
-
-            dtDataNasc.Enabled = false;
-            rblSexo.Enabled = false;
-            ddlEst_Civil.Enabled = false;
-            ddlEtnia.Enabled = false;
-            ddlRGTipoPessoa.Enabled = false;
-            cmbRGUF.Enabled = false;
-            cmbRGEmissor.Enabled = false;
-            dtDataExped.Enabled = false;
-            tsCEP.ShowButton = false;
-
-            dboDOC_CertNasc_DtEmissao.Enabled = false;
-            ddDOC_CertNasc_Uf.Enabled = false;
-            ddlLocalZona.Enabled = false;
-            chkAreaAssentamento.Enabled = false;
-            chkTerraIndigena.Enabled = false;
-            chkQuilombos.Enabled = false;
-            chkAreaTradicional.Enabled = false;
-            chkNaoSeAplica.Enabled = false;
-            ddlTipoCertidao.Enabled = false;
-            txtComplIdentidade.ReadOnly = true;
-
-            txtNumMatriculaCertidao.ReadOnly = true;
-            ddlCertidaoCivil.Enabled = false;
-            ddlUFCartorio.Enabled = false;
-            ddlMunicipioCartorio.Enabled = false;
-
             txtNomeMae.ReadOnly = true;
             txtNomePai.ReadOnly = true;
             txtNomeResponsavel.ReadOnly = true;
@@ -1117,24 +1129,54 @@ namespace Techne.Lyceum.Net.Academico
             txtTelefonePai.ReadOnly = true;
             txtTelefoneResp.ReadOnly = true;
             txtMotivoCertidaoCivil.ReadOnly = true;
+            txtNumMatriculaCertidao.ReadOnly = true;
+            txtComplIdentidade.ReadOnly = true;
 
-            chkFalecidaMae.Enabled = false;
-            chkFalecidoPai.Enabled = false;
-            chkNaoDeclarMae.Enabled = false;
-            chkNaoDeclarPai.Enabled = false;
+            rblSexo.Enabled = false;
             rblResponsavel.Enabled = false;
 
-            chkDeclaroAusenciaMae.Enabled = false;
-            chkDeclaroAusenciaPai.Enabled = false;
-            chkDeclaroCertidaoCivil.Enabled = false;
+            tsCEP.ShowButton = false;
         }
 
         protected void HabilitaCampos()
         {
             tseNaturalidade.Mode = ControlMode.Edit;
+            tseNaturalidadeEstrangeira.Mode = ControlMode.View;
+            tseNaturalidade.Enabled = true;
+            tseNaturalidadeEstrangeira.Enabled = true;
+
+            chkAreaAssentamento.Enabled = true;
+            chkTerraIndigena.Enabled = true;
+            chkQuilombos.Enabled = true;
+            chkAreaTradicional.Enabled = true;
+            chkNaoSeAplica.Enabled = true;
+            chkNaoDeclarMae.Enabled = true;
+            chkNaoDeclarPai.Enabled = true;
+            chkDeclaroAusenciaMae.Enabled = true;
+            chkDeclaroCertidaoCivil.Enabled = true;
+            chkDeclaroAusenciaPai.Enabled = true;
+
+            cmbRGUF.Enabled = true;
+            cmbRGEmissor.Enabled = true;
+
+            ddlTipoCertidao.Enabled = true;
+            ddlNacionalidade.Enabled = true;
+            ddlCartorio.Enabled = true;
+            ddlEst_Civil.Enabled = true;
+            ddlEtnia.Enabled = true;
+            ddlRGTipoPessoa.Enabled = true;
+            ddlLocalZona.Enabled = true;
+            ddlCertidaoCivil.Enabled = true;
+            ddlUFCartorio.Enabled = true;
+            ddlMunicipioCartorio.Enabled = true;
+
+            dtDataNasc.Enabled = true;
+            dtDataExped.Enabled = true;
+
+            dboDOC_CertNasc_DtEmissao.Enabled = true;
+            ddDOC_CertNasc_Uf.Enabled = true;
 
             txtNomeCompl.ReadOnly = false;
-            ddlNacionalidade.Enabled = true;
             txtFone.ReadOnly = false;
             txtCelular.ReadOnly = false;
             txtRGNum.ReadOnly = false;
@@ -1142,8 +1184,6 @@ namespace Techne.Lyceum.Net.Academico
             txtDOC_CertNasc_Numero.ReadOnly = false;
             txtDOC_CertNasc_Folha.ReadOnly = false;
             txtDOC_CertNasc_Livro.ReadOnly = false;
-            ddlCartorio.Enabled = true;
-
             txtCep.ReadOnly = false;
             txtEndCompl.ReadOnly = false;
             txtEndNum.ReadOnly = false;
@@ -1152,39 +1192,19 @@ namespace Techne.Lyceum.Net.Academico
             txtEstado.Attributes.Add("readonly", "readonly");
             txtNomeSocial.ReadOnly = false;
             txtFilhos.ReadOnly = false;
-
             txtMunicipio.ReadOnly = false;
-            dtDataNasc.Enabled = true;
-            rblSexo.Enabled = true;
-            ddlEst_Civil.Enabled = true;
-            ddlEtnia.Enabled = true;
-
-            ddlRGTipoPessoa.Enabled = true;
-            cmbRGUF.Enabled = true;
-            cmbRGEmissor.Enabled = true;
-            dtDataExped.Enabled = true;
-            dboDOC_CertNasc_DtEmissao.Enabled = true;
-            ddDOC_CertNasc_Uf.Enabled = true;
-            tsCEP.ShowButton = true;
-
-            ddlLocalZona.Enabled = true;
-            chkAreaAssentamento.Enabled = true;
-            chkTerraIndigena.Enabled = true;
-            chkQuilombos.Enabled = true;
-            chkAreaTradicional.Enabled = true;
-            chkNaoSeAplica.Enabled = true;
-
-            ddlTipoCertidao.Enabled = true;
-
             txtComplIdentidade.ReadOnly = false;
             txtNumMatriculaCertidao.ReadOnly = false;
-            ddlCertidaoCivil.Enabled = true;
-            ddlUFCartorio.Enabled = true;
-            ddlMunicipioCartorio.Enabled = true;
+            txtNomeResponsavel.ReadOnly = false;
+            txtCPFResponsavel.ReadOnly = false;
+            txtTelefoneResp.ReadOnly = false;
+            txtMotivoCertidaoCivil.ReadOnly = false;
+            txtEmail.ReadOnly = false;
 
-            chkNaoDeclarMae.Enabled = true;
-            chkNaoDeclarPai.Enabled = true;
+            rblSexo.Enabled = true;          
             rblResponsavel.Enabled = true;
+
+            tsCEP.ShowButton = true;
 
             if (!chkNaoDeclarMae.Checked)
             {
@@ -1204,6 +1224,7 @@ namespace Techne.Lyceum.Net.Academico
                 chkFalecidaMae.Enabled = false;
                 chkDeclaroAusenciaMae.Visible = true;
             }
+
             if (!chkNaoDeclarPai.Checked)
             {
                 txtNomePai.ReadOnly = false;
@@ -1223,10 +1244,6 @@ namespace Techne.Lyceum.Net.Academico
                 chkDeclaroAusenciaPai.Visible = true;
             }
 
-            txtNomeResponsavel.ReadOnly = false;
-            txtCPFResponsavel.ReadOnly = false;
-            txtTelefoneResp.ReadOnly = false;
-
             if (chkNaoDeclarMae.Checked)
                 txtNomeMae.ReadOnly = true;
             else
@@ -1236,13 +1253,6 @@ namespace Techne.Lyceum.Net.Academico
                 txtNomePai.ReadOnly = true;
             else
                 txtNomePai.ReadOnly = false;
-
-            chkDeclaroAusenciaMae.Enabled = true;
-            chkDeclaroAusenciaPai.Enabled = true;
-            txtMotivoCertidaoCivil.ReadOnly = false;
-            chkDeclaroCertidaoCivil.Enabled = true;
-
-            txtEmail.ReadOnly = false;
         }
 
         private void ControlarTSearchs()
