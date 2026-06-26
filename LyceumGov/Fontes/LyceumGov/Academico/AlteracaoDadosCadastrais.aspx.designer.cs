@@ -302,24 +302,6 @@ namespace Techne.Lyceum.Net.Academico {
         protected global::System.Web.UI.WebControls.DropDownList ddlEst_Civil;
         
         /// <summary>
-        /// lblPaisNasc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPaisNasc;
-        
-        /// <summary>
-        /// ddlPaisNasc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlPaisNasc;
-        
-        /// <summary>
         /// lblNacionalidade control.
         /// </summary>
         /// <remarks>
@@ -336,24 +318,6 @@ namespace Techne.Lyceum.Net.Academico {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlNacionalidade;
-        
-        /// <summary>
-        /// lblNaturalidadeUF control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNaturalidadeUF;
-        
-        /// <summary>
-        /// ddlUFNaturalidade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlUFNaturalidade;
         
         /// <summary>
         /// lblNaturalidade control.
@@ -374,13 +338,49 @@ namespace Techne.Lyceum.Net.Academico {
         protected global::Techne.Web.TSearchBox tseNaturalidade;
         
         /// <summary>
-        /// txtMunicipioNaturalidade control.
+        /// tseNaturalidadeEstrangeira control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMunicipioNaturalidade;
+        protected global::Techne.Web.TSearchBox tseNaturalidadeEstrangeira;
+        
+        /// <summary>
+        /// lblNaturalidadeUF control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNaturalidadeUF;
+        
+        /// <summary>
+        /// txtUFNascimento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUFNascimento;
+        
+        /// <summary>
+        /// lblPaisNasc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPaisNasc;
+        
+        /// <summary>
+        /// txtPaisNasc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPaisNasc;
         
         /// <summary>
         /// pnlFiliacao control.

@@ -3,7 +3,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
- 
     <script type="text/javascript">
         function abrirPopup() {
 
@@ -45,7 +44,7 @@
 
 
         function nomeSemNumComApost(b) {
-            var a;           
+            var a;
             if (window.event) {
                 a = window.event.keyCode
             }
@@ -97,20 +96,20 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphFormulario" runat="server">
-   <script type="text/javascript">
 
-       $(document).ready(function() {
-       preencherDadosPorCEP({ tscep: '<%=tsCEP.ClientID %>',
-               cep: '<%=txtCep.ClientID %>',
-               nomeLogradouro: '<%=txtEndereco.ClientID %>',
-               nomeBairro: '<%=txtBairro.ClientID %>',
-               nomeMunicipio: '<%=txtMunicipio.ClientID %>',
-               codigoMunicipio: '<%=hdnCodMunicipio.ClientID %>',
-               uf: '<%=txtEstado.ClientID %>'
-           });
-       });
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            preencherDadosPorCEP({ tscep: '<%=tsCEP.ClientID %>',
+                cep: '<%=txtCep.ClientID %>',
+                nomeLogradouro: '<%=txtEndereco.ClientID %>',
+                nomeBairro: '<%=txtBairro.ClientID %>',
+                nomeMunicipio: '<%=txtMunicipio.ClientID %>',
+                codigoMunicipio: '<%=hdnCodMunicipio.ClientID %>',
+                uf: '<%=txtEstado.ClientID %>'
+            });
+        });
     </script>
-
 
     <asp:Panel ID="pnBusca" runat="server" GroupingText="Informe a matrícula ou o nome do aluno"
         Height="45px" Width="580px">
@@ -240,14 +239,6 @@
             <table>
                 <tr>
                     <td style="text-align: right">
-                        <asp:Label runat="server" ID="lblPaisNasc" Text="País de Nascimento:* " SkinID="lblObrigatorio"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:DropDownList ID="ddlPaisNasc" runat="server" DataTextField="nome" DataValueField="codigo"
-                            AutoPostBack="true" OnSelectedIndexChanged="ddlPaisNasc_SelectedIndexChanged">
-                        </asp:DropDownList>
-                    </td>
-                    <td style="text-align: right">
                         <asp:Label runat="server" ID="lblNacionalidade" Text="Nacionalidade:* " SkinID="lblObrigatorio"></asp:Label>
                     </td>
                     <td>
@@ -255,31 +246,48 @@
                             OnSelectedIndexChanged="ddlNacionalidade_SelectedIndexChanged" AutoPostBack="true">
                         </asp:DropDownList>
                     </td>
-                    <td style="text-align: right">
-                        <asp:Label ID="lblNaturalidadeUF" runat="server" Text="UF de Nascimento:* " SkinID="lblObrigatorio"></asp:Label>
-                    </td>
-                    <td>
-                        <asp:DropDownList ID="ddlUFNaturalidade" runat="server" DataTextField="uf_sigla"
-                            DataValueField="uf_sigla" OnSelectedIndexChanged="ddlUFNaturalidade_SelectedIndexChanged"
-                            AutoPostBack="true">
-                        </asp:DropDownList>
-                    </td>
                 </tr>
                 <tr>
                     <td style="text-align: right;">
                         <asp:Label ID="lblNaturalidade" runat="server" Text="Naturalidade:* " SkinID="lblObrigatorio"></asp:Label>
                     </td>
-                    <td colspan="5">
-                        <tweb:TSearchBox ID="tseNaturalidade" runat="server" Caption="" SqlOrder="nome" SqlSelect="SELECT codigo, nome, uf_sigla FROM municipio"
-                            Columns="10" ArgumentColumns="30" AutoPostBack="true" Key="codigo" MaxLength="10"
-                            OnChanged="tseNaturalidade_Changed" OnLoad="tseNaturalidade_Load">
+                    <td>
+                        <%-- Nascido no Brasil --%>
+                        <tweb:TSearchBox ID="tseNaturalidade" runat="server" Visible="true" Caption="" SqlOrder="nome"
+                            SqlSelect="SELECT codigo, nome, uf_sigla FROM municipio" Columns="10" ArgumentColumns="30"
+                            AutoPostBack="true" Key="codigo" MaxLength="10" OnChanged="tseNaturalidade_Changed"
+                            OnLoad="tseNaturalidade_Load">
                             <GridColumns>
                                 <tweb:TSearchBoxColumn Caption="Código" FieldName="codigo" Width="20%" />
                                 <tweb:TSearchBoxColumn Caption="Município" FieldName="nome" Width="60%" />
-                                <tweb:TSearchBoxColumn Caption="Estado" FieldName="uf_sigla" Width="20%" />
+                                <tweb:TSearchBoxColumn Caption="UF" FieldName="uf_sigla" Width="20%" />
                             </GridColumns>
                         </tweb:TSearchBox>
-                        <asp:TextBox ID="txtMunicipioNaturalidade" runat="server" MaxLength="20"></asp:TextBox>
+                        <%-- Nascido fora do Brasil --%>
+                        <tweb:TSearchBox ID="tseNaturalidadeEstrangeira" runat="server" Visible="false" SqlSelect="SELECT ESTADO, SIGLA, ID_PAIS, PAIS FROM HADES.dbo.VW_MUNICIPIO_ESTRANGEIRO"
+                            Columns="10" Argument="MUNICIPIO" ArgumentColumns="30" AutoPostBack="true" Key="CODIGO"
+                            MaxLength="10" DataType="Number" OnChanged="tseNaturalidadeEstrangeira_Changed"
+                            OnLoad="tseNaturalidadeEstrangeira_Load">
+                            <GridColumns>
+                                <tweb:TSearchBoxColumn Caption="Código" FieldName="CODIGO" Width="20%" />
+                                <tweb:TSearchBoxColumn Caption="Cidade" FieldName="MUNICIPIO" Width="50%" />
+                                <tweb:TSearchBoxColumn Caption="Estado/Província" FieldName="ESTADO" Width="30%" />
+                            </GridColumns>
+                        </tweb:TSearchBox>
+                    </td>
+                    <td style="text-align: right;">
+                        <asp:Label ID="lblNaturalidadeUF" runat="server" Text="UF Nascimento:* " SkinID="lblObrigatorio"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtUFNascimento" runat="server" Width="100px" ReadOnly="true" BackColor="Gainsboro" />
+                    </td>
+                    <td>
+                        <asp:Label ID="lblPaisNasc" runat="server" Text="País:* " SkinID="lblObrigatorio"
+                            Visible="false"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="txtPaisNasc" runat="server" MaxLength="100" Width="150px" ReadOnly="true"
+                            BackColor="Gainsboro" Visible="false" />
                     </td>
                 </tr>
             </table>

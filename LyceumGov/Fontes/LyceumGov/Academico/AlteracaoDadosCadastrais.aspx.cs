@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Techne.Web;
 using Techne.Controls;
+using Techne.Data;
 using Techne.Lyceum.RN;
 using Techne.Lyceum.RN.Entidades;
 using Techne.Lyceum.RN.Util;
-using Techne.Data;
-using System.Net;
+using Techne.Web;
 
 namespace Techne.Lyceum.Net.Academico
 {
@@ -45,6 +44,7 @@ namespace Techne.Lyceum.Net.Academico
                 ViewState["_tipoOperacao"] = value;
             }
         }
+
         override protected void OnInit(EventArgs e)
         {
             InitializeComponent();
@@ -55,6 +55,7 @@ namespace Techne.Lyceum.Net.Academico
         {
 
         }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -83,8 +84,6 @@ namespace Techne.Lyceum.Net.Academico
                     }
                     else
                     {
-
-                        CarregaPaisNascimento();
                         CarregaNacionalidade();
                         CarregaEtnia();
                         CarregaEstadoCivil();
@@ -93,32 +92,64 @@ namespace Techne.Lyceum.Net.Academico
                         CarregaUfRg();
                         CarregaUfCertNasc();
                         CarregaUFCartorio();
-                        CarregaUFNaturalidade();
 
                         this._tipoOperacao = TipoOperacao.Inicial;
                         this.ControlarTipoOperacao();
 
                         dtDataExped.MaxDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
                         dboDOC_CertNasc_DtEmissao.MaxDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-
                     }
                 }
             }
             catch (Exception ex)
             {
                 lblMensagem.Text = ex.Message;
-
             }
         }
 
         protected void Page_PreRenderComplete(object sender, EventArgs e)
         {
             ControlaAcesso(btnEditar, AcaoControle.editar);
+
+            bool nascidoFora = !string.IsNullOrEmpty(txtPaisNasc.Text)
+                               && txtPaisNasc.Text.Trim().ToUpper() != "BRASIL";
+
+            bool modoEdicao = (_tipoOperacao == TipoOperacao.Alterar);
+
+            if (modoEdicao)
+            {
+                lblPaisNasc.Visible = nascidoFora;
+                txtPaisNasc.Visible = nascidoFora;
+            }
+            else
+            {
+                lblPaisNasc.Visible = !string.IsNullOrEmpty(txtPaisNasc.Text);
+                txtPaisNasc.Visible = !string.IsNullOrEmpty(txtPaisNasc.Text);
+            }
+
+            lblNaturalidadeUF.Visible = true;
+            txtUFNascimento.Visible = true;
+
+            if (modoEdicao)
+            {
+                tseNaturalidade.Visible = false;
+                tseNaturalidadeEstrangeira.Visible = false;
+
+                if (!string.IsNullOrEmpty(ddlNacionalidade.SelectedValue))
+                {
+                    tseNaturalidade.Visible = !nascidoFora;
+                    tseNaturalidadeEstrangeira.Visible = nascidoFora;
+                }
+            }
+            else
+            {
+                tseNaturalidade.Visible = !nascidoFora;
+                tseNaturalidadeEstrangeira.Visible = nascidoFora;
+            }
         }
 
         protected void Page_LoadComplete(object sender, EventArgs e)
         {
-            this.ControlarEnderecoPais();
         }
 
         private void CarregaUFCartorio()
@@ -139,24 +170,6 @@ namespace Techne.Lyceum.Net.Academico
             ddlEtnia.DataSource = RN.Util.Cache.CarregaResultadoQueryPor(RN.Util.Cache.Etnia, RN.Basico.QueryListaEtniaAtiva);
             ddlEtnia.DataBind();
             ddlEtnia.Items.Insert(0, item);
-        }
-
-
-        private void CarregaPaisNascimento()
-        {
-            ListItem item = new ListItem("Selecione", string.Empty);
-
-            ddlPaisNasc.Items.Clear();
-            ddlPaisNasc.DataSource = RN.Util.Cache.CarregaResultadoQueryPor(RN.Util.Cache.Pais, RN.Basico.QueryListaPaises);
-            ddlPaisNasc.DataBind();
-            ddlPaisNasc.Items.Insert(0, item);
-
-            item = ddlPaisNasc.Items.FindByText("BRASIL");
-            if (item != null)
-            {
-                ddlPaisNasc.ClearSelection();
-                item.Selected = true;
-            }
         }
 
         private void CarregaEstadoCivil()
@@ -232,55 +245,10 @@ namespace Techne.Lyceum.Net.Academico
             ddDOC_CertNasc_Uf.Items.Insert(0, item);
         }
 
-        private void CarregaUFNaturalidade()
-        {
-            ListItem item = new ListItem("Selecione", string.Empty);
-
-            ddlUFNaturalidade.Items.Clear();
-            ddlUFNaturalidade.DataSource = RN.Util.Cache.CarregaResultadoQueryPor(RN.Util.Cache.UfNaturalidade, RN.Basico.QueryListaUFNaturalidade);
-            ddlUFNaturalidade.DataBind();
-            ddlUFNaturalidade.Items.Insert(0, item);
-
-        }
-
-        private void ControlarEnderecoPais()
-        {
-            if (_tipoOperacao == TipoOperacao.Alterar)
-            {
-                tsCEP.ShowButton = true;
-            }
-            else
-            {
-                tsCEP.ShowButton = false;
-            }
-
-            txtCep.MaxLength = 8;
-            txtEstado.Attributes.Add("readonly", "readonly");
-
-            if (ddlPaisNasc.SelectedItem != null)
-            {
-                if (ddlPaisNasc.SelectedItem.Text.ToUpper() != "BRASIL")
-                {
-                    txtMunicipioNaturalidade.Visible = true;
-                    tseNaturalidade.Visible = false;
-
-                    if (_tipoOperacao == TipoOperacao.Alterar)
-                        ddlUFNaturalidade.Attributes.Remove("readonly");
-                }
-                else
-                {
-                    txtMunicipioNaturalidade.Visible = false;
-                    tseNaturalidade.Visible = true;
-                }
-            }
-        }
-
         private void LimparTela()
         {
-
             hddDataAlteracaoEmail.Value = string.Empty;
             tseNaturalidade.ResetValue();
-            ddlUFNaturalidade.ClearSelection();
             txtPessoa.Text = string.Empty;
             txtNomeCompl.Text = string.Empty;
             txtNomeSocial.Text = string.Empty;
@@ -309,7 +277,6 @@ namespace Techne.Lyceum.Net.Academico
             ddlCartorio.Items.Clear();
             dboDOC_CertNasc_DtEmissao.Text = string.Empty;
             ddDOC_CertNasc_Uf.SelectedValue = string.Empty;
-            ddlPaisNasc.SelectedValue = string.Empty;
             ddlNacionalidade.SelectedValue = string.Empty;
             ddlEst_Civil.SelectedValue = string.Empty;
             txtMunicipio.Text = string.Empty;
@@ -354,7 +321,6 @@ namespace Techne.Lyceum.Net.Academico
             lblTelefoneResponsavel.Visible = false;
             txtMotivoCertidaoCivil.Text = string.Empty;
             txtMotivoCertidaoCivil.Visible = false;
-
         }
 
         protected void btnCancel_Click(object sender, ImageClickEventArgs e)
@@ -367,8 +333,6 @@ namespace Techne.Lyceum.Net.Academico
                 tseAluno.Enabled = true;
                 lblMensagem.Text = string.Empty;
                 LimparTela();
-                LimparEndereco();
-                LimparEnderecoNaturalidade();
 
                 ControlarTipoOperacao();
                 ControlarTSearchs();
@@ -409,15 +373,14 @@ namespace Techne.Lyceum.Net.Academico
             try
             {
                 Page.ClientScript.RegisterStartupScript(Page.GetType(), "popup", "abrirPopup();", true);
-
-               
             }
             catch (Exception ex)
             {
                 lblMensagem.Text = ex.Message;
             }
         }
-         protected void btnSim_Click(object sender, EventArgs e)
+
+        protected void btnSim_Click(object sender, EventArgs e)
         {
             try
             {
@@ -431,11 +394,11 @@ namespace Techne.Lyceum.Net.Academico
             }
         }
 
-         protected void btnNao_Click(object sender, EventArgs e)
-         {
-             this.pucConfirmar.ShowOnPageLoad = false;
-            
-         }
+        protected void btnNao_Click(object sender, EventArgs e)
+        {
+            this.pucConfirmar.ShowOnPageLoad = false;
+        }
+
         private void ControlarVisibilidadeControle(ImageButton[] botoes)
         {
             RetiraVisibilidadeBotao();
@@ -456,14 +419,13 @@ namespace Techne.Lyceum.Net.Academico
             btnSalvar.Visible = false;
         }
 
-
         private void ControlarTipoOperacao()
         {
             switch (this._tipoOperacao)
             {
                 case TipoOperacao.Inicial:
                     {
-                        ImageButton[] controles = new ImageButton[] {  };
+                        ImageButton[] controles = new ImageButton[] { };
                         ControlarVisibilidadeControle(controles);
 
                         tseAluno.ResetValue();
@@ -496,7 +458,7 @@ namespace Techne.Lyceum.Net.Academico
                             string censoAluno = Aluno.ConsultarCenso(tseAluno.Text);
                             RN.EventoGeral rnEventoGeral = new EventoGeral();
                             HabilitaCampos();
-                           
+
                             btnEditar.Visible = false;
                             txtPessoa.Visible = false;
 
@@ -531,7 +493,6 @@ namespace Techne.Lyceum.Net.Academico
                         lblMensagem.Text = string.Empty;
                         LimparTela();
                         LimparEndereco();
-                        LimparEnderecoNaturalidade();
 
                         var dadosAluno = Aluno.Carregar(tseAluno.DBValue.ToString());
 
@@ -570,46 +531,46 @@ namespace Techne.Lyceum.Net.Academico
                         }
                         else
                         {
-                           
-                                txtPessoa.Text = Convert.ToString(dadosAluno.Pessoa);
-                                ImageButton[] controles = new ImageButton[] { btnEditar };
 
-                                pntabDadosPessoais.Visible = true;
-                                CarregaDadosAluno(dadosAluno);
+                            txtPessoa.Text = Convert.ToString(dadosAluno.Pessoa);
+                            ImageButton[] controles = new ImageButton[] { btnEditar };
 
-                                var dadosPessoa = Pessoa.Carregar(Convert.ToInt32(dadosAluno.Pessoa));
+                            pntabDadosPessoais.Visible = true;
+                            CarregaDadosAluno(dadosAluno);
 
-                                if (dadosPessoa != null)
-                                {
-                                    CarregaDadosPessoa(dadosPessoa);
-                                }
-                                else
-                                {
-                                    lblMensagem.Text = "Pessoa não cadastrada para este aluno.";
-                                    return;
-                                }
+                            var dadosPessoa = Pessoa.Carregar(Convert.ToInt32(dadosAluno.Pessoa));
 
-                                var dadosFieldPessoa = FlPessoa.Carregar(Convert.ToDecimal(dadosAluno.Pessoa));
-
-                                if (dadosFieldPessoa != null)
-                                {
-                                    CarregaDadosFieldPessoa(dadosFieldPessoa);
-                                }
-                                else
-                                {
-                                    ddlLocalZona.SelectedValue = "";
-                                    ddlTipoCertidao.SelectedValue = "";
-
-                                }
-
-                            if (dadosAluno.SitAluno != "Ativo")                                
+                            if (dadosPessoa != null)
                             {
-                                controles = new ImageButton[] {  };                             
+                                CarregaDadosPessoa(dadosPessoa);
+                            }
+                            else
+                            {
+                                lblMensagem.Text = "Pessoa não cadastrada para este aluno.";
+                                return;
+                            }
+
+                            var dadosFieldPessoa = FlPessoa.Carregar(Convert.ToDecimal(dadosAluno.Pessoa));
+
+                            if (dadosFieldPessoa != null)
+                            {
+                                CarregaDadosFieldPessoa(dadosFieldPessoa);
+                            }
+                            else
+                            {
+                                ddlLocalZona.SelectedValue = "";
+                                ddlTipoCertidao.SelectedValue = "";
+
+                            }
+
+                            if (dadosAluno.SitAluno != "Ativo")
+                            {
+                                controles = new ImageButton[] { };
 
                                 lblMensagem.Text = "Não é possível alterar dados de um aluno que não está ativo.";
 
                             }
-                            
+
                             ControlarVisibilidadeControle(controles);
                             DesabilitaCampos();
                             txtPessoa.Visible = false;
@@ -620,10 +581,8 @@ namespace Techne.Lyceum.Net.Academico
             }
         }
 
-
         private void CarregaDadosPessoa(LyPessoa dadosPessoa)
         {
-
             string dataLimite = "31/01/" + (DateTime.Now.Year + 1);
 
             txtPessoa.Text = dadosPessoa.Pessoa > 0 ? Convert.ToString(dadosPessoa.Pessoa) : string.Empty;
@@ -632,7 +591,6 @@ namespace Techne.Lyceum.Net.Academico
             if (dadosPessoa.Dt_nasc.HasValue)
             {
                 dtDataNasc.Date = dadosPessoa.Dt_nasc.Value;
-
             }
 
             txtNomeSocial.Text = !dadosPessoa.PreNomeSocial.IsNullOrEmptyOrWhiteSpace() ? dadosPessoa.PreNomeSocial : string.Empty;
@@ -663,13 +621,12 @@ namespace Techne.Lyceum.Net.Academico
                 dboDOC_CertNasc_DtEmissao.Date = dadosPessoa.CertNascEmissao.Value;
             }
 
-            // VERIFICAR
-            PreencherDadoCombo(ddlUFCartorio, Convert.ToString(dadosPessoa.CodigoUf));
-            if (!string.IsNullOrEmpty(dadosPessoa.CodigoUf))
-            {
-                this.CarregaMunicipioCartorio();
-                PreencherDadoCombo(ddlMunicipioCartorio, Convert.ToString(dadosPessoa.CodigoMunicipio));
-            }
+            //PreencherDadoCombo(ddlUFCartorio, Convert.ToString(dadosPessoa.CodigoUf));
+            //if (!string.IsNullOrEmpty(dadosPessoa.CodigoUf))
+            //{
+            //    this.CarregaMunicipioCartorio();
+            //    PreencherDadoCombo(ddlMunicipioCartorio, Convert.ToString(dadosPessoa.CodigoMunicipio));
+            //}
 
             if (dadosPessoa.IdCartorio != null && dadosPessoa.IdCartorio != 0)
             {
@@ -680,48 +637,44 @@ namespace Techne.Lyceum.Net.Academico
             if (!string.IsNullOrEmpty(dadosPessoa.Pais_nasc))
             {
                 string descricaoPais = RN.Endereco.ObterPais(dadosPessoa.Pais_nasc);
+                bool ehEstrangeiro = descricaoPais.ToUpper() != "BRASIL";
 
-                // verifica se valor não é Brasil
-                if (descricaoPais.ToUpper() != "BRASIL")
+                if (ehEstrangeiro)
                 {
-                    // obtém o municipio estrangeiro
-                    SimpleRow sr = Endereco.ObterMunicipioEstrangeiro(dadosPessoa.Municipio_nasc);
+                    tseNaturalidade.ResetValue();
+                    txtPaisNasc.Text = descricaoPais;
+                    tseNaturalidadeEstrangeira.Enabled = true;
 
-                    //verifica se a função retornou algum valor para a simplerow
-                    if (sr != null)
+                    if (!string.IsNullOrEmpty(dadosPessoa.Municipio_nasc))
                     {
-                        //preenche os dados obtidos de municipio estrangeiro
-                        if (!sr["nome"].IsNull)
+                        tseNaturalidadeEstrangeira.DBValue = dadosPessoa.Municipio_nasc;
+
+                        if (tseNaturalidadeEstrangeira.IsValidDBValue && !tseNaturalidadeEstrangeira.DBValue.IsNull)
                         {
-                            txtMunicipioNaturalidade.Text = Convert.ToString(sr["nome"]);
+                            // UF e País preenchidos automaticamente pelo TSE
+                            txtUFNascimento.Text = tseNaturalidadeEstrangeira["ESTADO"].ToString();
+                            txtPaisNasc.Text = tseNaturalidadeEstrangeira["PAIS"].ToString();
                         }
                     }
                 }
                 else
                 {
-                    // se for Brasil
-                    // verifica se existe valor para municipio
+                    tseNaturalidadeEstrangeira.ResetValue();
+                    txtPaisNasc.Text = string.Empty;
+
                     if (!string.IsNullOrEmpty(dadosPessoa.Municipio_nasc))
                     {
-                        // preenche os dados nos controles da tela
-                        tseNaturalidade.DBValue = dadosPessoa.Municipio_nasc;
+                        tseNaturalidadeEstrangeira.ResetValue();
+                        txtPaisNasc.Text = string.Empty;
 
-                        // obtém a UF de acordo com o codigo do municipío
-                        var uf = RN.Endereco.ObterUFMunicipio(dadosPessoa.Municipio_nasc);
-
-                        foreach (ListItem item in ddlUFNaturalidade.Items)
+                        if (!string.IsNullOrEmpty(dadosPessoa.Municipio_nasc))
                         {
-                            if (item.Value.ToUpper() == uf.ToUpper())
-                            {
-                                ddlUFNaturalidade.SelectedValue = uf;
-                                break;
-                            }
+                            tseNaturalidade.DBValue = dadosPessoa.Municipio_nasc;
+                            if (tseNaturalidade.IsValidDBValue && !tseNaturalidade.DBValue.IsNull)
+                                txtUFNascimento.Text = tseNaturalidade["uf_sigla"].ToString();
+                            else
+                                tseNaturalidade.ResetValue();
                         }
-                    }
-                    else
-                    {
-                        tseNaturalidade.ResetValue();
-                        ddlUFNaturalidade.ClearSelection();
                     }
                 }
             }
@@ -743,15 +696,15 @@ namespace Techne.Lyceum.Net.Academico
                 txtEstado.Value = string.Empty;
             }
 
-            PreencherDadoCombo(ddlPaisNasc, Convert.ToString(dadosPessoa.Pais_nasc));
+            //PreencherDadoCombo(ddlPaisNasc, Convert.ToString(dadosPessoa.Pais_nasc));
 
-            if (!string.IsNullOrEmpty(dadosPessoa.Est_civil))
-            {
-                if (ddlEst_Civil.Items.FindByValue(dadosPessoa.Est_civil) != null)
-                {
-                    ddlEst_Civil.SelectedValue = dadosPessoa.Est_civil;
-                }
-            }
+            //if (!string.IsNullOrEmpty(dadosPessoa.Est_civil))
+            //{
+            //    if (ddlEst_Civil.Items.FindByValue(dadosPessoa.Est_civil) != null)
+            //    {
+            //        ddlEst_Civil.SelectedValue = dadosPessoa.Est_civil;
+            //    }
+            //}
 
             if (!string.IsNullOrEmpty(dadosPessoa.Nacionalidade))
             {
@@ -760,8 +713,6 @@ namespace Techne.Lyceum.Net.Academico
                     ddlNacionalidade.SelectedValue = dadosPessoa.Nacionalidade;
                 }
             }
-
-
 
             PreencherDadoCombo(ddlEtnia, Convert.ToString(dadosPessoa.Etnia));
             PreencherDadoCombo(cmbRGUF, Convert.ToString(dadosPessoa.Rg_uf));
@@ -1072,7 +1023,6 @@ namespace Techne.Lyceum.Net.Academico
                 }
             }
 
-
             if (ddlNacionalidade.SelectedItem.Text == "BRASILEIRA")
             {
                 if (!string.IsNullOrEmpty(ddlRGTipoPessoa.SelectedValue))
@@ -1087,7 +1037,6 @@ namespace Techne.Lyceum.Net.Academico
                     }
                 }
             }
-
 
             if (!string.IsNullOrEmpty(dadosFieldPessoa.FlField09))
             {
@@ -1104,20 +1053,13 @@ namespace Techne.Lyceum.Net.Academico
                     pnlAntigo.Visible = true;
                 }
             }
-
-
         }
-
 
         protected void DesabilitaCampos()
         {
             tseNaturalidade.Mode = ControlMode.View;
 
-            ddlUFNaturalidade.Attributes.Add("readonly", "readonly");
-            txtMunicipioNaturalidade.ReadOnly = true;
-
             txtNomeCompl.ReadOnly = true;
-
             txtFone.ReadOnly = true;
             txtCelular.ReadOnly = true;
             txtEmail.ReadOnly = true;
@@ -1136,10 +1078,9 @@ namespace Techne.Lyceum.Net.Academico
             ddlCartorio.Enabled = false;
             txtNomeSocial.ReadOnly = true;
             txtFilhos.ReadOnly = true;
-            ddlPaisNasc.Enabled = false;
+
             ddlNacionalidade.Enabled = false;
 
-            ddlUFNaturalidade.Enabled = false;
             dtDataNasc.Enabled = false;
             rblSexo.Enabled = false;
             ddlEst_Civil.Enabled = false;
@@ -1183,26 +1124,16 @@ namespace Techne.Lyceum.Net.Academico
             chkNaoDeclarPai.Enabled = false;
             rblResponsavel.Enabled = false;
 
-
             chkDeclaroAusenciaMae.Enabled = false;
             chkDeclaroAusenciaPai.Enabled = false;
             chkDeclaroCertidaoCivil.Enabled = false;
-
         }
 
         protected void HabilitaCampos()
         {
             tseNaturalidade.Mode = ControlMode.Edit;
 
-            ddlUFNaturalidade.Attributes.Add("readonly", "readonly");
-
-            if (ddlNacionalidade.SelectedItem.Text == "BRASILEIRA")
-            {
-                ddlUFNaturalidade.Enabled = true;
-            }
-            txtMunicipioNaturalidade.ReadOnly = false;
             txtNomeCompl.ReadOnly = false;
-            ddlPaisNasc.Enabled = true;
             ddlNacionalidade.Enabled = true;
             txtFone.ReadOnly = false;
             txtCelular.ReadOnly = false;
@@ -1222,13 +1153,11 @@ namespace Techne.Lyceum.Net.Academico
             txtNomeSocial.ReadOnly = false;
             txtFilhos.ReadOnly = false;
 
-
             txtMunicipio.ReadOnly = false;
             dtDataNasc.Enabled = true;
             rblSexo.Enabled = true;
             ddlEst_Civil.Enabled = true;
             ddlEtnia.Enabled = true;
-
 
             ddlRGTipoPessoa.Enabled = true;
             cmbRGUF.Enabled = true;
@@ -1299,22 +1228,14 @@ namespace Techne.Lyceum.Net.Academico
             txtTelefoneResp.ReadOnly = false;
 
             if (chkNaoDeclarMae.Checked)
-            {
                 txtNomeMae.ReadOnly = true;
-            }
             else
-            {
                 txtNomeMae.ReadOnly = false;
-            }
 
             if (chkNaoDeclarPai.Checked)
-            {
                 txtNomePai.ReadOnly = true;
-            }
             else
-            {
                 txtNomePai.ReadOnly = false;
-            }
 
             chkDeclaroAusenciaMae.Enabled = true;
             chkDeclaroAusenciaPai.Enabled = true;
@@ -1331,30 +1252,31 @@ namespace Techne.Lyceum.Net.Academico
                 case TipoOperacao.Inicial:
                     {
                         tseAluno.Enabled = true;
-
                         break;
                     }
                 case TipoOperacao.Sucesso:
                     {
                         tseAluno.Enabled = true;
                         tseNaturalidade.Mode = ControlMode.View;
+                        tseNaturalidadeEstrangeira.Mode = ControlMode.View;
                         break;
                     }
                 case TipoOperacao.Alterar:
                     {
                         tseAluno.Enabled = false;
                         tseNaturalidade.Enabled = true;
-
+                        tseNaturalidadeEstrangeira.Enabled = true;
                         break;
                     }
                 case TipoOperacao.Consultar:
                     {
                         tseNaturalidade.Mode = ControlMode.View;
+                        tseNaturalidadeEstrangeira.Mode = ControlMode.View;
                         break;
                     }
-
             }
         }
+
         private void Salvar()
         {
             try
@@ -1379,29 +1301,24 @@ namespace Techne.Lyceum.Net.Academico
                     }
                 }
 
-                if (!ddlPaisNasc.SelectedValue.IsNullOrEmptyOrWhiteSpace())
+                bool nascidoForaDoBrasil = tseNaturalidadeEstrangeira.IsValidDBValue
+                           && !tseNaturalidadeEstrangeira.DBValue.IsNull;
+
+                if (nascidoForaDoBrasil)
                 {
-                    if (ddlPaisNasc.SelectedItem.Text.ToUpper() == "BRASIL")
-                    {
-                        naturalidade = (!tseNaturalidade.DBValue.IsNull && tseNaturalidade.IsValidDBValue) ? Convert.ToString(tseNaturalidade.DBValue) : null;
-                        naturalidadeNome = (!tseNaturalidade.DBValue.IsNull && tseNaturalidade.IsValidDBValue) ? Convert.ToString(tseNaturalidade["nome"]) : null;
-                    }
-                    else
-                    {
-
-                        SimpleRow sr = Endereco.ObterCodigoMunicipioEstrangeiro(txtMunicipioNaturalidade.Text.Trim());
-
-                        if (sr != null)
-                        {
-                            if (!sr["municipio_estrangeiro"].IsNull)
-                            {
-                                municipioEstrangeiro = Convert.ToString(sr["municipio_estrangeiro"]);
-                            }
-                        }
-
-                        naturalidade = !municipioEstrangeiro.IsNullOrEmptyOrWhiteSpace() ? municipioEstrangeiro : null;
-                        naturalidadeNome = !municipioEstrangeiro.IsNullOrEmptyOrWhiteSpace() ? txtMunicipioNaturalidade.Text : null;
-                    }
+                    naturalidade = tseNaturalidadeEstrangeira.DBValue.ToString();
+                    naturalidadeNome = tseNaturalidadeEstrangeira["MUNICIPIO"].ToString();
+                    dadosAluno.Pais_nasc = tseNaturalidadeEstrangeira["ID_PAIS"].ToString();
+                    dadosAluno.Pais_nasc_nome = tseNaturalidadeEstrangeira["PAIS"].ToString();
+                    dadosAluno.UF_nasc = tseNaturalidadeEstrangeira["ESTADO"].ToString();
+                }
+                else if (!tseNaturalidade.DBValue.IsNull && tseNaturalidade.IsValidDBValue)
+                {
+                    naturalidade = tseNaturalidade.DBValue.ToString();
+                    naturalidadeNome = tseNaturalidade["nome"].ToString();
+                    dadosAluno.Pais_nasc = null; // Brasil não tem código de país
+                    dadosAluno.Pais_nasc_nome = "BRASIL";
+                    dadosAluno.UF_nasc = tseNaturalidade["uf_sigla"].ToString();
                 }
 
                 dadosAluno.Pessoa = !txtPessoa.Text.IsNullOrEmptyOrWhiteSpace() ? Convert.ToDecimal(txtPessoa.Text) : -1;
@@ -1413,9 +1330,6 @@ namespace Techne.Lyceum.Net.Academico
                 dadosAluno.QtFilhos = !txtFilhos.Text.IsNullOrEmptyOrWhiteSpace() ? Convert.ToDecimal(txtFilhos.Text.Trim()) : (decimal?)null;
                 dadosAluno.PreNomeSocial = !txtNomeSocial.Text.IsNullOrEmptyOrWhiteSpace() ? txtNomeSocial.Text.Trim().ToUpper() : null;
                 dadosAluno.Nacionalidade = !ddlNacionalidade.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? ddlNacionalidade.SelectedValue : null;
-                dadosAluno.Pais_nasc = !ddlPaisNasc.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? ddlPaisNasc.SelectedValue : null;
-                dadosAluno.Pais_nasc_nome = !ddlPaisNasc.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? ddlPaisNasc.SelectedItem.Text : null;
-                dadosAluno.UF_nasc = !ddlUFNaturalidade.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? ddlUFNaturalidade.SelectedValue : null;
                 dadosAluno.Endereco = !txtEndereco.Text.IsNullOrEmptyOrWhiteSpace() ? txtEndereco.Text.Trim() : null;
                 dadosAluno.End_num = !txtEndNum.Text.IsNullOrEmptyOrWhiteSpace() ? txtEndNum.Text.Trim() : null;
                 dadosAluno.End_compl = !txtEndCompl.Text.IsNullOrEmptyOrWhiteSpace() ? txtEndCompl.Text.Trim() : null;
@@ -1622,13 +1536,9 @@ namespace Techne.Lyceum.Net.Academico
             try
             {
                 if (chkFalecidoPai.Checked)
-                {
                     DesabilitaResponsavelLegal("H", "Pai");
-                }
                 else
-                {
                     DesabilitaResponsavelLegal("D", "Pai");
-                }
             }
             catch (Exception ex)
             {
@@ -1700,7 +1610,6 @@ namespace Techne.Lyceum.Net.Academico
             }
         }
 
-
         protected void cmbPaises_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -1719,15 +1628,15 @@ namespace Techne.Lyceum.Net.Academico
             {
                 txtComplIdentidade.ReadOnly = true;
                 txtComplIdentidade.Text = string.Empty;
-                if (ddlNacionalidade.SelectedItem.Text == "ESTRANGEIRA")
-                {
-                    ddlUFNaturalidade.Enabled = false;
-                }
+                //if (ddlNacionalidade.SelectedItem.Text == "ESTRANGEIRA")
+                //{
+                //    ddlUFNaturalidade.Enabled = false;
+                //}
 
                 if (ddlNacionalidade.SelectedItem.Text == "BRASILEIRA")
                 {
                     //habilita novamente a combo de referente a naturalidade do usuário
-                    ddlUFNaturalidade.Enabled = true;
+                    //ddlUFNaturalidade.Enabled = true;
 
                     if (!string.IsNullOrEmpty(ddlRGTipoPessoa.SelectedValue))
                     {
@@ -1737,6 +1646,12 @@ namespace Techne.Lyceum.Net.Academico
                         }
                     }
                 }
+
+                tseNaturalidade.ResetValue();
+                tseNaturalidadeEstrangeira.ResetValue();
+                txtUFNascimento.Text = string.Empty;
+                txtPaisNasc.Text = string.Empty;
+
             }
             catch (Exception ex)
             {
@@ -1860,18 +1775,6 @@ namespace Techne.Lyceum.Net.Academico
             }
         }
 
-        protected void ddlPaisNasc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                LimparEnderecoNaturalidade();
-            }
-            catch (Exception ex)
-            {
-                lblMensagem.Text = ex.Message;
-            }
-        }
-
         protected void ddlMunicipioCartorio_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -1958,7 +1861,6 @@ namespace Techne.Lyceum.Net.Academico
             {
                 lblMensagem.Text = ex.Message;
             }
-
         }
 
         private void LimparEndereco()
@@ -1976,9 +1878,7 @@ namespace Techne.Lyceum.Net.Academico
             chkQuilombos.Checked = false;
             chkAreaTradicional.Checked = false;
             chkNaoSeAplica.Checked = false;
-
         }
-
 
         private void ValidaLocalizacaoDiferenciada()
         {
@@ -2010,15 +1910,7 @@ namespace Techne.Lyceum.Net.Academico
                     }, true
                 );
             }
-
             chkNaoSeAplica.Enabled = true;
-        }
-
-        private void LimparEnderecoNaturalidade()
-        {
-            ddlUFNaturalidade.ClearSelection();
-            tseNaturalidade.ResetValue();
-            txtMunicipioNaturalidade.Text = string.Empty;
         }
 
         protected void tseAluno_Changed(object sender, EventArgs args)
@@ -2060,6 +1952,7 @@ namespace Techne.Lyceum.Net.Academico
                 lblMensagem.Text = ex.Message;
             }
         }
+
         protected void tseAluno_Load(object sender, EventArgs e)
         {
             ControlarTSearchs();
@@ -2074,32 +1967,28 @@ namespace Techne.Lyceum.Net.Academico
         {
             try
             {
-                if (tseNaturalidade.IsValidDBValue
-                    && !tseNaturalidade.DBValue.IsNull)
-                {
-                    ddlUFNaturalidade.SelectedValue = tseNaturalidade["uf_sigla"].ToString();
-                }
+                if (tseNaturalidade.IsValidDBValue && !tseNaturalidade.DBValue.IsNull)
+                    txtUFNascimento.Text = tseNaturalidade["uf_sigla"].ToString();
             }
-            catch (Exception ex)
-            {
-                lblMensagem.Text = ex.Message;
-            }
+            catch (Exception ex) { lblMensagem.Text = ex.Message; }
         }
-        protected void ddlUFNaturalidade_SelectedIndexChanged(object sender, EventArgs e)
+
+        protected void tseNaturalidadeEstrangeira_Load(object sender, EventArgs e)
+        {
+            ControlarTSearchs();
+        }
+
+        protected void tseNaturalidadeEstrangeira_Changed(object sender, EventArgs args)
         {
             try
             {
-                if (!ddlUFNaturalidade.SelectedValue.IsNullOrEmptyOrWhiteSpace())
+                if (tseNaturalidadeEstrangeira.IsValidDBValue && !tseNaturalidadeEstrangeira.DBValue.IsNull)
                 {
-                    tseNaturalidade.ResetValue();
-                    tseNaturalidade.SqlWhere = " UF_SIGLA = '" + ddlUFNaturalidade.SelectedValue + "'";
+                    txtUFNascimento.Text = tseNaturalidadeEstrangeira["ESTADO"].ToString();
+                    txtPaisNasc.Text = tseNaturalidadeEstrangeira["PAIS"].ToString();
                 }
-                tseNaturalidade.DataBind();
             }
-            catch (Exception ex)
-            {
-                lblMensagem.Text = ex.Message;
-            }
+            catch (Exception ex) { lblMensagem.Text = ex.Message; }
         }
 
         protected void chkNaoSeAplica_CheckedChanged(object sender, EventArgs e)
@@ -2124,6 +2013,5 @@ namespace Techne.Lyceum.Net.Academico
             }
         }
 
-      
     }
 }
