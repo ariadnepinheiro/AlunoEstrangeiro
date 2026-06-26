@@ -59,26 +59,25 @@ namespace Techne.Lyceum.Net.Certificacao
             lblUFNascimento.Visible = true;
             txtUFNascimento.Visible = true;
 
+            bool modoEdicao = (_tipoOperacao == TipoOperacao.Alterar);
+
+            // Nascido fora do Brasil = país carregado não é Brasil
             bool nascidoFora = !string.IsNullOrEmpty(txtPaisNascimento.Text)
                                && txtPaisNascimento.Text.Trim().ToUpper() != "BRASIL";
 
-            bool modoEdicao = (_tipoOperacao == TipoOperacao.Alterar);
+            // Estrangeiro NUNCA usa tseNaturalidade (cidades BR), independente do país
+            bool ehEstrangeiro = cmbNacionalidade.SelectedItem != null
+                                 && cmbNacionalidade.SelectedItem.Text.ToUpper() == "ESTRANGEIRA";
+
+            bool usarTseEstrangeira = nascidoFora || ehEstrangeiro;
 
             if (modoEdicao)
             {
-                // Em edição, mostra TSE correto
-                tseNaturalidade.Visible = false;
-                tseNaturalidadeEstrangeira.Visible = false;
-
-                if (!string.IsNullOrEmpty(cmbNacionalidade.SelectedValue))
-                {
-                    tseNaturalidade.Visible = !nascidoFora;
-                    tseNaturalidadeEstrangeira.Visible = nascidoFora;
-                }
+                tseNaturalidade.Visible = !usarTseEstrangeira;
+                tseNaturalidadeEstrangeira.Visible = usarTseEstrangeira;
             }
             else
             {
-                // Em consulta, mostra baseado no país
                 tseNaturalidade.Visible = !nascidoFora;
                 tseNaturalidadeEstrangeira.Visible = nascidoFora;
             }
@@ -124,8 +123,6 @@ namespace Techne.Lyceum.Net.Certificacao
 
         private void LimparTela()
         {
-            //tseNaturalidade.ResetValue();
-            //tseNaturalidadeEstrangeira.ResetValue();
             tseNaturalidadeEstrangeira.Enabled = false;
             txtPaisNascimento.Text = string.Empty;
             txtNomemae.Text = string.Empty;
@@ -215,17 +212,16 @@ namespace Techne.Lyceum.Net.Certificacao
         {
             try
             {
+                tseNaturalidade.ResetValue();
+                tseNaturalidadeEstrangeira.ResetValue();
                 txtUFNascimento.Text = string.Empty;
                 txtPaisNascimento.Text = string.Empty;
 
-                if (cmbNacionalidade.SelectedItem.Text == "ESTRANGEIRA")
-                    tseNaturalidadeEstrangeira.Enabled = true;
+                bool ehEstrangeiro = cmbNacionalidade.SelectedItem != null
+                                     && cmbNacionalidade.SelectedItem.Text.ToUpper() == "ESTRANGEIRA";
 
-                if (cmbNacionalidade.SelectedItem.Text == "BRASILEIRA")
-                {
-                    tseNaturalidade.Enabled = true;
-                    tseNaturalidadeEstrangeira.Enabled = true;
-                }
+                tseNaturalidade.Enabled = !ehEstrangeiro;
+                tseNaturalidadeEstrangeira.Enabled = ehEstrangeiro;
             }
             catch (Exception ex) { lblMensagem.Text = ex.Message; }
         }
