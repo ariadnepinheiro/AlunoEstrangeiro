@@ -1628,15 +1628,9 @@ namespace Techne.Lyceum.Net.Academico
             {
                 txtComplIdentidade.ReadOnly = true;
                 txtComplIdentidade.Text = string.Empty;
-                //if (ddlNacionalidade.SelectedItem.Text == "ESTRANGEIRA")
-                //{
-                //    ddlUFNaturalidade.Enabled = false;
-                //}
 
                 if (ddlNacionalidade.SelectedItem.Text == "BRASILEIRA")
                 {
-                    //habilita novamente a combo de referente a naturalidade do usuário
-                    //ddlUFNaturalidade.Enabled = true;
 
                     if (!string.IsNullOrEmpty(ddlRGTipoPessoa.SelectedValue))
                     {
