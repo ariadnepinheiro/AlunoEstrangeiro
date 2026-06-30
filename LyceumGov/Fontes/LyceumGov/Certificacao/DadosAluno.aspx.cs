@@ -441,10 +441,8 @@ namespace Techne.Lyceum.Net.Certificacao
                             cmbRGEmissor.SelectedValue = !dadosAluno.RgEmissor.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.RgEmissor.Trim() : string.Empty;
                             cmbRGUF.SelectedValue = !dadosAluno.RgUf.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.RgUf : string.Empty;
 
-                            cmbNacionalidade.SelectedValue = !dadosAluno.Nacionalidade.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.Nacionalidade.Trim() : string.Empty;
-
                             if (!dadosAluno.Nacionalidade.IsNullOrEmptyOrWhiteSpace()
-                                    && cmbNacionalidade.Items.FindByValue(dadosAluno.Nacionalidade) != null)
+                                    && cmbNacionalidade.Items.FindByValue(dadosAluno.Nacionalidade.Trim()) != null)
                                 cmbNacionalidade.SelectedValue = dadosAluno.Nacionalidade.Trim();
                             else
                                 cmbNacionalidade.ClearSelection();
@@ -486,7 +484,6 @@ namespace Techne.Lyceum.Net.Certificacao
                                 tseNaturalidadeEstrangeira.ResetValue();
                                 tseNaturalidadeEstrangeira.Visible = false;
                                 tseNaturalidade.Visible = true;
-                                //txtPaisNascimento.Text = string.Empty;
 
                                 if (!string.IsNullOrEmpty(dadosAluno.MunicipioNascimento)
                                     && dadosAluno.MunicipioNascimento.Trim() != "0")

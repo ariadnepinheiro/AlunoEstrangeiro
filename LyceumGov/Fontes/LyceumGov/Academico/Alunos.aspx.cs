@@ -3886,7 +3886,7 @@ namespace Techne.Lyceum.Net.Academico
                     QtFilhos = !txtFilhos.Text.IsNullOrEmptyOrWhiteSpace() ? Convert.ToDecimal(txtFilhos.Text.Trim()) : (decimal?)null,
                     PreNomeSocial = !txtNomeSocial.Text.IsNullOrEmptyOrWhiteSpace() ? txtNomeSocial.Text.Trim().ToUpper() : null,
                     Nacionalidade = !ddlNacionalidade.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? ddlNacionalidade.SelectedValue : null,
-                    Pais_nasc = !txtPaisNasc.Text.IsNullOrEmptyOrWhiteSpace() ? txtPaisNasc.Text : null,
+                    //Pais_nasc = !txtPaisNasc.Text.IsNullOrEmptyOrWhiteSpace() ? txtPaisNasc.Text : null,
                     Endereco = !txtEndereco.Text.IsNullOrEmptyOrWhiteSpace() ? txtEndereco.Text.Trim() : null,
                     End_num = !txtEndNum.Text.IsNullOrEmptyOrWhiteSpace() ? txtEndNum.Text.Trim() : null,
                     End_compl = !txtEndCompl.Text.IsNullOrEmptyOrWhiteSpace() ? txtEndCompl.Text.Trim() : null,
