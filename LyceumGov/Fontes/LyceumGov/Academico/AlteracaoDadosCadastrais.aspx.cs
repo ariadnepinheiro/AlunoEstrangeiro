@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Techne.Controls;
-using Techne.Data;
 using Techne.Lyceum.RN;
 using Techne.Lyceum.RN.Entidades;
 using Techne.Lyceum.RN.Util;

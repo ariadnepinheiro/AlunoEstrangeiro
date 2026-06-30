@@ -67,7 +67,7 @@ namespace Techne.Lyceum.Net.Certificacao
 
             // Estrangeiro NUNCA usa tseNaturalidade (cidades BR), independente do país
             bool ehEstrangeiro = cmbNacionalidade.SelectedItem != null
-                                 && cmbNacionalidade.SelectedItem.Text.ToUpper() == "ESTRANGEIRA";
+                                 && cmbNacionalidade.SelectedItem.Text.Trim() == "ESTRANGEIRA";
 
             bool usarTseEstrangeira = nascidoFora || ehEstrangeiro;
 
@@ -218,7 +218,7 @@ namespace Techne.Lyceum.Net.Certificacao
                 txtPaisNascimento.Text = string.Empty;
 
                 bool ehEstrangeiro = cmbNacionalidade.SelectedItem != null
-                                     && cmbNacionalidade.SelectedItem.Text.ToUpper() == "ESTRANGEIRA";
+                                     && cmbNacionalidade.SelectedItem.Text.Trim() == "ESTRANGEIRA";
 
                 tseNaturalidade.Enabled = !ehEstrangeiro;
                 tseNaturalidadeEstrangeira.Enabled = ehEstrangeiro;
@@ -275,7 +275,7 @@ namespace Techne.Lyceum.Net.Certificacao
                 dadosAluno.RgNumero = !txtNRg.Text.IsNullOrEmptyOrWhiteSpace() ? txtNRg.Text.Trim() : null;
                 dadosAluno.RgEmissor = !cmbRGEmissor.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? cmbRGEmissor.SelectedValue : null;
                 dadosAluno.RgUf = !cmbRGUF.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? cmbRGUF.SelectedValue : null;
-                dadosAluno.Nacionalidade = !cmbNacionalidade.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? cmbNacionalidade.SelectedValue : null;
+                dadosAluno.Nacionalidade = !cmbNacionalidade.SelectedValue.IsNullOrEmptyOrWhiteSpace() ? cmbNacionalidade.SelectedValue.Trim() : null;
                 dadosAluno.RgDataExpedicao = !dtExpedicaoRg.Text.IsNullOrEmptyOrWhiteSpace() ? dtExpedicaoRg.Date : DateTime.MinValue;
                 dadosAluno.UsuarioResponsavel = User.Identity.Name;
 
@@ -440,7 +440,14 @@ namespace Techne.Lyceum.Net.Certificacao
 
                             cmbRGEmissor.SelectedValue = !dadosAluno.RgEmissor.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.RgEmissor.Trim() : string.Empty;
                             cmbRGUF.SelectedValue = !dadosAluno.RgUf.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.RgUf : string.Empty;
-                            cmbNacionalidade.SelectedValue = !dadosAluno.Nacionalidade.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.Nacionalidade : string.Empty;
+
+                            cmbNacionalidade.SelectedValue = !dadosAluno.Nacionalidade.IsNullOrEmptyOrWhiteSpace() ? dadosAluno.Nacionalidade.Trim() : string.Empty;
+
+                            if (!dadosAluno.Nacionalidade.IsNullOrEmptyOrWhiteSpace()
+                                    && cmbNacionalidade.Items.FindByValue(dadosAluno.Nacionalidade) != null)
+                                cmbNacionalidade.SelectedValue = dadosAluno.Nacionalidade.Trim();
+                            else
+                                cmbNacionalidade.ClearSelection();
 
                             if (dadosAluno.DataNascimento != null) dtDataNasc.Date = dadosAluno.DataNascimento.Date;
                             if (dadosAluno.RgDataExpedicao != null) dtExpedicaoRg.Date = dadosAluno.RgDataExpedicao.Date;

@@ -4508,7 +4508,7 @@ namespace Techne.Lyceum.Net.Academico
                 {
                     // Carga de Nacionalidade
                     ddlNacionalidade.SelectedValue = !dadosPessoa.Nacionalidade.IsNullOrEmptyOrWhiteSpace()
-                        ? dadosPessoa.Nacionalidade
+                        ? dadosPessoa.Nacionalidade.Trim()
                         : string.Empty;
 
                     // Carga de naturalidade (Brasil ou exterior)
@@ -4786,7 +4786,6 @@ namespace Techne.Lyceum.Net.Academico
                     ddlNacionalidade.SelectedValue = dadosPessoa.Nacionalidade;
                 }
             }
-
 
             PreencherDadoCombo(cmbNecessidadeEspecial, Convert.ToString(dadosPessoa.NecessidadeEspecialId));
             VerificaNecessidadeEspecial();

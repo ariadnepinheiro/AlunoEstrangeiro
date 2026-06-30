@@ -7,7 +7,7 @@
     <file relUrl="Academico/MedidasConselhoTutelar.aspx" publishTime="05/14/2026 10:02:51" />
     <file relUrl="Curriculo/Curriculos.aspx" publishTime="05/14/2026 10:02:46" />
     <file relUrl="Cadastros/Teste.aspx" publishTime="05/14/2026 10:02:24" />
-    <file relUrl="Certificacao/DadosAluno.aspx.cs" publishTime="06/25/2026 14:51:03" />
+    <file relUrl="Certificacao/DadosAluno.aspx.cs" publishTime="06/26/2026 14:11:03" />
     <file relUrl="Certificacao/Img/Brasao.png" publishTime="05/14/2026 10:02:27" />
     <file relUrl="Interconectividade/Velocidade.aspx" publishTime="05/14/2026 10:02:55" />
     <file relUrl="App_Themes/Blue/Web/rpNoHeaderTopRightCorner.png" publishTime="05/14/2026 10:02:25" />
@@ -393,7 +393,7 @@
     <file relUrl="App_Themes/Aqua/Web/nbLoading.gif" publishTime="05/14/2026 10:02:24" />
     <file relUrl="Academico/HistoricoAlteracaoDadosAlunos.aspx.designer.cs" publishTime="05/14/2026 10:02:51" />
     <file relUrl="Basico/SolicitacaoHabilitacao.aspx.cs" publishTime="05/14/2026 10:02:49" />
-    <file relUrl="bin/LyceumGov.dll" publishTime="06/25/2026 15:32:18" />
+    <file relUrl="bin/LyceumGov.dll" publishTime="06/26/2026 14:13:35" />
     <file relUrl="App_Themes/Aqua/Web/Loading.gif" publishTime="05/14/2026 10:02:24" />
     <file relUrl="Patrimonio/Moeda.aspx.cs" publishTime="05/14/2026 10:02:23" />
     <file relUrl="Academico/DadosEnsinoRemoto.aspx" publishTime="05/14/2026 10:02:51" />
@@ -562,7 +562,7 @@
     <file relUrl="Images/topbox_r3_c3.gif" publishTime="05/14/2026 10:02:45" />
     <file relUrl="Images/tit_prestacaocontas.png" publishTime="05/14/2026 10:02:45" />
     <file relUrl="Basico/TipoTranstorno.aspx" publishTime="05/14/2026 10:02:48" />
-    <file relUrl="Academico/AlteracaoDadosCadastrais.aspx.cs" publishTime="05/14/2026 10:02:50" />
+    <file relUrl="Academico/AlteracaoDadosCadastrais.aspx.cs" publishTime="06/26/2026 12:01:26" />
     <file relUrl="Images/tit_analiseprestacao.png" publishTime="05/14/2026 10:02:45" />
     <file relUrl="PrestacaoContas/MotivoReprovacaoFornecedor.aspx.cs" publishTime="05/14/2026 10:02:54" />
     <file relUrl="Termos/AceiteTermoCompromissoGestao.aspx" publishTime="05/14/2026 10:02:52" />
@@ -1665,7 +1665,7 @@
     <file relUrl="Servico/AcompanhamentoStatusFoto.aspx.cs" publishTime="05/14/2026 10:02:26" />
     <file relUrl="Protocolo/DetalheConsultaProtocolo.aspx.cs" publishTime="05/14/2026 10:02:27" />
     <file relUrl="Academico/ProgramasPorUnidade.aspx.cs" publishTime="05/14/2026 10:02:50" />
-    <file relUrl="Academico/AlteracaoDadosCadastrais.aspx.designer.cs" publishTime="05/14/2026 10:02:51" />
+    <file relUrl="Academico/AlteracaoDadosCadastrais.aspx.designer.cs" publishTime="06/26/2026 10:27:45" />
     <file relUrl="Basico/PeriodoLetivo.aspx" publishTime="05/14/2026 10:02:48" />
     <file relUrl="PrestacaoContas/UnidadeMedida.aspx.cs" publishTime="05/14/2026 10:02:54" />
     <file relUrl="InspecaoEscolar/Grupo.aspx.designer.cs" publishTime="05/14/2026 10:02:26" />
@@ -1699,7 +1699,7 @@
     <file relUrl="Basico/SubPeriodoLetivo.aspx" publishTime="05/14/2026 10:02:49" />
     <file relUrl="Certificacao/AlunoCertificacao.aspx.designer.cs" publishTime="05/14/2026 10:02:27" />
     <file relUrl="Images/tit_planejamento3.png" publishTime="05/14/2026 10:02:45" />
-    <file relUrl="Academico/AlteracaoDadosCadastrais.aspx" publishTime="05/14/2026 10:02:51" />
+    <file relUrl="Academico/AlteracaoDadosCadastrais.aspx" publishTime="06/26/2026 10:28:15" />
     <file relUrl="App_Themes/Aqua/Editors/fcremove.png" publishTime="05/14/2026 10:02:24" />
     <file relUrl="PrestacaoContas/AnalisareVerificarCreditoeDebito.aspx" publishTime="06/24/2026 13:54:50" />
     <file relUrl="Images/icone-site-09.png" publishTime="05/14/2026 10:02:45" />
@@ -2417,7 +2417,7 @@
     <file relUrl="Images/tit_professor1.png" publishTime="05/14/2026 10:02:45" />
     <file relUrl="Basico/CursosFormacaoPessoal.help.cs" publishTime="05/14/2026 10:02:48" />
     <file relUrl="App_Themes/Aqua/Editors/fcopnotcontain.png" publishTime="05/14/2026 10:02:24" />
-    <file relUrl="bin/LyceumGov.pdb" publishTime="06/25/2026 15:32:18" />
+    <file relUrl="bin/LyceumGov.pdb" publishTime="06/26/2026 14:13:35" />
     <file relUrl="Agenda/AgendaDadosGerais.aspx.designer.cs" publishTime="05/14/2026 10:02:46" />
     <file relUrl="Cadastros/MaeMotivoDesligamento.aspx.designer.cs" publishTime="05/14/2026 10:02:24" />
     <file relUrl="Curriculo/SerieSufixo.help.cs" publishTime="05/14/2026 10:02:46" />
