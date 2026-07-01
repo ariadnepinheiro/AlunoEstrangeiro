@@ -69,6 +69,13 @@ namespace Techne.Lyceum.Net.Certificacao
             bool ehEstrangeiro = cmbNacionalidade.SelectedItem != null
                                  && cmbNacionalidade.SelectedItem.Text.Trim() == "ESTRANGEIRA";
 
+            // Pré-selecionar o radio conforme dado carregado
+            rblNascidoBrasil.SelectedValue = nascidoFora ? "N" : "S";
+
+            // Visibilidade das TSEs conforme radio
+            tseNaturalidade.Visible = !nascidoFora;
+            tseNaturalidadeEstrangeira.Visible = nascidoFora;
+
             bool usarTseEstrangeira = nascidoFora || ehEstrangeiro;
 
             if (modoEdicao)
@@ -102,6 +109,7 @@ namespace Techne.Lyceum.Net.Certificacao
             cmbRGUF.Enabled = false;
             cmbRGEmissor.Enabled = false;
             cmbNacionalidade.Enabled = false;
+            rblNascidoBrasil.Enabled = false;
         }
 
         protected void HabilitaCampos()
@@ -119,6 +127,7 @@ namespace Techne.Lyceum.Net.Certificacao
             cmbRGUF.Enabled = true;
             cmbRGEmissor.Enabled = true;
             cmbNacionalidade.Enabled = true;
+            rblNascidoBrasil.Enabled = true;
         }
 
         private void LimparTela()
@@ -136,6 +145,7 @@ namespace Techne.Lyceum.Net.Certificacao
             cmbNacionalidade.ClearSelection();
             dtExpedicaoRg.Text = string.Empty;
             dtDataNasc.Text = string.Empty;
+            rblNascidoBrasil.ClearSelection();
         }
 
         // ─────────────────────────────────────────────────────────
@@ -195,15 +205,21 @@ namespace Techne.Lyceum.Net.Certificacao
             catch (Exception ex) { lblMensagem.Text = ex.Message; }
         }
 
-        protected void rblNascidoEstrangeiro_SelectedIndexChanged(object sender, EventArgs e)
+        protected void rblNascidoBrasil_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
                 tseNaturalidade.ResetValue();
                 tseNaturalidadeEstrangeira.ResetValue();
                 txtUFNascimento.Text = string.Empty;
-                txtPaisNascimento.Text = string.Empty;
-                tseNaturalidadeEstrangeira.Enabled = false;
+
+                bool nascidoBrasil = rblNascidoBrasil.SelectedValue == "S";
+
+                txtPaisNascimento.Text = nascidoBrasil ? "BRASIL" : string.Empty; 
+                tseNaturalidade.Visible = nascidoBrasil;
+                tseNaturalidade.Enabled = nascidoBrasil;
+                tseNaturalidadeEstrangeira.Visible = !nascidoBrasil;
+                tseNaturalidadeEstrangeira.Enabled = !nascidoBrasil;
             }
             catch (Exception ex) { lblMensagem.Text = ex.Message; }
         }

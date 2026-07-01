@@ -94,12 +94,24 @@
       <FullPath>RelDespesasNValidadas.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>RelDespesasValidadas.rdl</Name>
+      <FullPath>RelDespesasValidadas.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>RelFornecedorXDespesas.rdl</Name>
+      <FullPath>RelFornecedorXDespesas.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>RelFornecedorXEscola.rdl</Name>
       <FullPath>RelFornecedorXEscola.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>RelImportacaoSEI.rdl</Name>
       <FullPath>RelImportacaoSEI.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>RelProgramacoesOrcamentarias.rdl</Name>
+      <FullPath>RelProgramacoesOrcamentarias.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>RepasseSemRetornoSefaz.rdl</Name>
@@ -178,8 +190,8 @@
       <FullPath>TotalGastoAlimentacaoEscolar.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>RelDespesasValidadas.rdl</Name>
-      <FullPath>RelDespesasValidadas.rdl</FullPath>
+      <Name>RelPendenciaDespesas.rdl</Name>
+      <FullPath>RelPendenciaDespesas.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

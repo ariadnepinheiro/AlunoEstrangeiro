@@ -961,7 +961,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CARGA H. LIVRE </Value>
+                              <Value>CARGA H. LIVRE</Value>
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Red</Color>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value xml:space="preserve"> </Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -997,6 +1005,7 @@
                               <Value>=Fields!CH_LIVRE.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <Color>Red</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>

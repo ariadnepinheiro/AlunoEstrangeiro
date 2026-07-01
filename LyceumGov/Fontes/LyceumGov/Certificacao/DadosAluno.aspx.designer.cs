@@ -203,6 +203,24 @@ namespace Techne.Lyceum.Net.Certificacao {
         protected global::System.Web.UI.WebControls.DropDownList cmbNacionalidade;
         
         /// <summary>
+        /// Label8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+        
+        /// <summary>
+        /// rblNascidoBrasil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblNascidoBrasil;
+        
+        /// <summary>
         /// lblMunicipioNascimento control.
         /// </summary>
         /// <remarks>

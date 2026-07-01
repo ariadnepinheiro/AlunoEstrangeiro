@@ -85,8 +85,6 @@
                         </CalendarProperties>
                     </dxe:ASPxDateEdit>
                 </td>
-            </tr>
-            <tr>
                 <td style="text-align: right">
                     <asp:Label runat="server" ID="lblNacionalidade" Text="Nacionalidade:* " SkinID="lblObrigatorio"></asp:Label>
                 </td>
@@ -95,7 +93,20 @@
                         AutoPostBack="true" OnSelectedIndexChanged="cmbNacionalidade_SelectedIndexChanged">
                     </asp:DropDownList>
                 </td>
+                <%-- Gatilho: nascido no Brasil ou no exterior --%>
                 <td style="text-align: right">
+                    <asp:Label Font-Names="Verdana" Font-Size="Smaller" ID="Label8" runat="server" Text="Nascido no Brasil?"></asp:Label>
+                </td>
+                <td>
+                    <asp:RadioButtonList ID="rblNascidoBrasil" runat="server" RepeatDirection="Horizontal"
+                        OnSelectedIndexChanged="rblNascidoBrasil_SelectedIndexChanged" AutoPostBack="true">
+                        <asp:ListItem Value="S" Text="Sim" />
+                        <asp:ListItem Value="N" Text="Não" />
+                    </asp:RadioButtonList>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left">
                     <asp:Label ID="lblMunicipioNascimento" runat="server" Text="Município Nascimento:*"
                         SkinID="lblObrigatorio"></asp:Label>
                 </td>
@@ -127,7 +138,7 @@
                     <asp:Label ID="lblUFNascimento" runat="server" Text="UF Nascimento:*" SkinID="lblObrigatorio"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtUFNascimento" runat="server" Width="40px" ReadOnly="true"></asp:TextBox>
+                    <asp:TextBox ID="txtUFNascimento" runat="server" Width="150px" ReadOnly="true"></asp:TextBox>
                 </td>
                 <%-- País de nascimento (preenchido automaticamente pela tseNaturalidadeEstrangeira) --%>
                 <td style="text-align: right">
@@ -136,7 +147,7 @@
                 <td>
                     <asp:TextBox ID="txtPaisNascimento" runat="server" Width="80px" ReadOnly="true"></asp:TextBox>
                 </td>
-            </tr>            
+            </tr>
             <tr>
                 <td style="text-align: right">
                     <asp:Label ID="lblRg" runat="server" Text="Nº do RG:*" SkinID="lblObrigatorio"></asp:Label>
