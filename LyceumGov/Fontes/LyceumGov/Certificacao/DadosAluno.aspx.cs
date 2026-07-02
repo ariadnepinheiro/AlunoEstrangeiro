@@ -62,12 +62,38 @@ namespace Techne.Lyceum.Net.Certificacao
             bool modoEdicao = (_tipoOperacao == TipoOperacao.Alterar);
 
             // Nascido fora do Brasil = país carregado não é Brasil
-            bool nascidoFora = !string.IsNullOrEmpty(txtPaisNascimento.Text)
-                               && txtPaisNascimento.Text.Trim().ToUpper() != "BRASIL";
+            //bool nascidoFora = !string.IsNullOrEmpty(txtPaisNascimento.Text)
+            //                   && txtPaisNascimento.Text.Trim().ToUpper() != "BRASIL";
 
             // Estrangeiro NUNCA usa tseNaturalidade (cidades BR), independente do país
             bool ehEstrangeiro = cmbNacionalidade.SelectedItem != null
                                  && cmbNacionalidade.SelectedItem.Text.Trim() == "ESTRANGEIRA";
+
+            // caso contrário infere pelo txtPaisNascimento (modo Consultar/Sucesso)
+            bool nascidoFora;
+            if (!string.IsNullOrEmpty(rblNascidoBrasil.SelectedValue))
+            {
+                nascidoFora = rblNascidoBrasil.SelectedValue == "N";
+            }
+            else
+            {
+                nascidoFora = !string.IsNullOrEmpty(txtPaisNascimento.Text)
+                              && txtPaisNascimento.Text.Trim().ToUpper() != "BRASIL";
+            }
+            // ──────────────────────────────────────────────────────────────────────
+
+            bool usarTseEstrangeira = nascidoFora || ehEstrangeiro;
+
+            if (modoEdicao)
+            {
+                tseNaturalidade.Visible = !usarTseEstrangeira;
+                tseNaturalidadeEstrangeira.Visible = usarTseEstrangeira;
+            }
+            else
+            {
+                tseNaturalidade.Visible = !nascidoFora;
+                tseNaturalidadeEstrangeira.Visible = nascidoFora;
+            }
 
             // Pré-selecionar o radio conforme dado carregado
             rblNascidoBrasil.SelectedValue = nascidoFora ? "N" : "S";
@@ -76,7 +102,7 @@ namespace Techne.Lyceum.Net.Certificacao
             tseNaturalidade.Visible = !nascidoFora;
             tseNaturalidadeEstrangeira.Visible = nascidoFora;
 
-            bool usarTseEstrangeira = nascidoFora || ehEstrangeiro;
+            //bool usarTseEstrangeira = nascidoFora || ehEstrangeiro;
 
             if (modoEdicao)
             {
@@ -132,6 +158,7 @@ namespace Techne.Lyceum.Net.Certificacao
 
         private void LimparTela()
         {
+            tseNaturalidade.Enabled = false;
             tseNaturalidadeEstrangeira.Enabled = false;
             txtPaisNascimento.Text = string.Empty;
             txtNomemae.Text = string.Empty;
@@ -215,7 +242,7 @@ namespace Techne.Lyceum.Net.Certificacao
 
                 bool nascidoBrasil = rblNascidoBrasil.SelectedValue == "S";
 
-                txtPaisNascimento.Text = nascidoBrasil ? "BRASIL" : string.Empty; 
+                txtPaisNascimento.Text = nascidoBrasil ? "BRASIL" : string.Empty;
                 tseNaturalidade.Visible = nascidoBrasil;
                 tseNaturalidade.Enabled = nascidoBrasil;
                 tseNaturalidadeEstrangeira.Visible = !nascidoBrasil;

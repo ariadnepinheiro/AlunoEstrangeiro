@@ -5391,7 +5391,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>58530</DevelopmentServerPort>
+          <DevelopmentServerPort>63082</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/LyceumGov</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
